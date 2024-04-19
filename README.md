@@ -10,6 +10,8 @@ This repo outlines a proposal for a simple data structure to store organism-spec
 
 Example rules are given for _Klebsiella pneumoniae_, and example code is given to annotate NCIB AMRfinderplus results for _Klebsiella pneumoniae_ using these rules (parse_amrfinder.py).
 
+The rule specification (still a work in progress) is available in [this Google sheet](https://docs.google.com/spreadsheets/d/1N0HXK8T5EH-4XDonvW5RmAm8tJTb1RlIMB1oF2x4ss8/edit?usp=sharing) (guidance on tab 2).
+
 
 ## Data analysis pipeline
 ![pipeline_image](pipeline.png?raw=true)
