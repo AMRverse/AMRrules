@@ -8,7 +8,7 @@ Current solutions focus on bespoke solutions for specific organisms (e.g. our [K
 
 This repo outlines a proposal for a simple data structure to store organism-specific rules for the interpretation of AMR genotype data, that could be used to enrich the outputs of standard AMR genotyping tools (such as AMRfinderplus and other tools, with or without [hAMRonization](https://github.com/pha4ge/hAMRonization)) and generate informative genome reports that capture expert knowledge about how core genes contribute to antimicrobial susceptibility.
 
-Example rules are given for _Klebsiella pneumoniae_, and example code is given to annotate NCIB AMRfinderplus results for _Klebsiella pneumoniae_ using these rules (parse_amrfinder.py).
+Example rules are given for _Klebsiella pneumoniae_, and [example code](https://github.com/interpretAMR/AMRrules/blob/main/parse_amrfinder.py) is given to annotate NCBI [AMRfinderplus](https://www.ncbi.nlm.nih.gov/pathogens/antimicrobial-resistance/AMRFinder/) results for _Klebsiella pneumoniae_ using these rules.
 
 The rule specification (still a work in progress) is available in [this Google sheet](https://docs.google.com/spreadsheets/d/1N0HXK8T5EH-4XDonvW5RmAm8tJTb1RlIMB1oF2x4ss8/edit?usp=sharing) (guidance on tab 2).
 
