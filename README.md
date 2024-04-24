@@ -1,5 +1,21 @@
 # Interpretive standards for AMR genotypes
 
+Our goal is to develop interpretive standards for AMR genotypes, akin to the interpretive standards developed by [EUCAST](https://www.eucast.org/) and [CLSI](https://clsi.org/) for antimicrobial susceptibility phenotyping. 
+
+An overview of the concept, with example data structures and code, is available below.
+
+We are partnering with [ESGEM, the ESCMID Study Group on Epidemiological Markers](https://www.escmid.org/esgem/), to form an ESGEM-AMR Working Group to curate organism-specific rule sets. Membership of the working group is open to anyone with relevant expertise, you do not have to be an ESGEM member. 
+
+If you would like to get involved, please:
+
+1. Consider [registering to attend](https://forms.gle/9cBP821bDmyyaVZe8) one of the intro sessions to find out if this is the group for you:
+* Tues 14 May 17:00 UK / 9:00 Seattle / 12:00 Boston
+* Weds 15 May 9:00 UK /  15:00 Hanoi / 18:00 Melbourne
+2. If you decide you want to join the ESGEM-AMR working group please register your interest, and let us know what organism/s you have expertise in, using [this form](https://forms.gle/QjvQNuB3vCHGMiiA7).
+
+
+# Introduction
+
 Organism-specific interpretation of antimicrobial susceptibility testing (AST) data is standard in clinical microbiology, with rules regularly reviewed by expert committees of [CLSI](https://clsi.org/) and [EUCAST](https://www.eucast.org/). EUCAST also maintains lists of [expert rules](https://www.eucast.org/expert_rules_and_expected_phenotypes) for some species, including [expected (intrinsic) resistance](https://www.eucast.org/expert_rules_and_expected_phenotypes/expected_phenotypes) and expected susceptibility phenotypes, to guide clinical labs in deciding which drugs to test and whether/how to report them.
 
 We propose there is a similar need for systematic rules for the organism-specific interpretation of antimicrobial resistance (AMR) genotypes derived from pathogen whole genome sequence (WGS) data.
