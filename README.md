@@ -38,6 +38,8 @@ The rule specification (still a work in progress) is available in [this Google s
 
 Example file: [organism_specific_rules.tsv](organism_specific_rules.tsv)
 
+Full specification (work in progress): [AMR rules specification](https://docs.google.com/spreadsheets/d/1N0HXK8T5EH-4XDonvW5RmAm8tJTb1RlIMB1oF2x4ss8/edit?usp=sharing). Note this includes some additional fields, and guidance on tab 2.
+
 ## Annotated gene table
 ![annotated_gene_report](annotated_gene_report.png?raw=true)
 
