@@ -22,11 +22,15 @@ We propose there is a similar need for systematic rules for the organism-specifi
 
 Current solutions focus on bespoke solutions for specific organisms (e.g. our [Kleborate](https://github.com/klebgenomics/Kleborate) tool for _Klebsiella pneumoniae_; Pathogenwatch [AMR libraries](https://gitlab.com/cgps/pathogenwatch/amr-libraries) for [_Salmonella_ Typhi](https://doi.org/10.1038/s41467-021-23091-2), [_Neisseria gonorrhoeae_](https://doi.org/10.1186/s13073-021-00858-2) and others; [Resfinder 4.0](https://bitbucket.org/genomicepidemiology/resfinder_db/src/master/) for _E. coli_ and others; [Mykrobe](https://github.com/Mykrobe-tools/mykrobe) and [TBProfiler](https://github.com/jodyphelan/TBProfiler) tools for _Mycobacterium tuberculosis_), but this complicates bioinformatics analyses and promotes fragmentation rather than consolidation of expertise. [AbritAMR](https://github.com/MDU-PHL/abritamr) offers a potential solution for multiple organisms, but organism-specific interpretation rules are hard-coded in Python and separated from supporting evidence, making the logic difficult for others to curate and update.
 
-This repo outlines a proposal for a simple data structure to store organism-specific rules for the interpretation of AMR genotype data, that could be used to enrich the outputs of standard AMR genotyping tools (such as AMRfinderplus and other tools, with or without [hAMRonization](https://github.com/pha4ge/hAMRonization)) and generate informative genome reports that capture expert knowledge about how core genes contribute to antimicrobial susceptibility.
+This repository outlines a proposal for a simple data structure to store organism-specific rules for the interpretation of AMR genotype data, that could be used to enrich the outputs of standard AMR genotyping tools (such as AMRfinderplus and other tools, with or without [hAMRonization](https://github.com/pha4ge/hAMRonization)) and generate informative genome reports that capture expert knowledge about how core genes contribute to antimicrobial susceptibility.
 
 Example rules are given for _Klebsiella pneumoniae_, and [example code](https://github.com/interpretAMR/AMRrules/blob/main/parse_amrfinder.py) is given to annotate NCBI [AMRfinderplus](https://www.ncbi.nlm.nih.gov/pathogens/antimicrobial-resistance/AMRFinder/) results for _Klebsiella pneumoniae_ using these rules.
 
 The rule specification (still a work in progress) is available in [this Google sheet](https://docs.google.com/spreadsheets/d/1N0HXK8T5EH-4XDonvW5RmAm8tJTb1RlIMB1oF2x4ss8/edit?usp=sharing) (guidance on tab 2).
+
+We have partnered with [ESGEM, the ESCMID Study Group on Epidemiological Markers](https://www.escmid.org/esgem/), to form an ESGEM-AMR Working Group to curate organism-specific rule sets.
+
+We are also partnering with EUCAST to ensure alignment of the AMRrules approach with the [EUCAST Subcommittee on WGS and Phenotypic AST](https://www.eucast.org/organization/subcommittees/wgs_and_phenotypic_testing), including their [first report (2017)](https://doi.org/10.1016/j.cmi.2016.11.012) and ongoing updates.
 
 
 ## Data analysis pipeline
