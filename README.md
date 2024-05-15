@@ -6,15 +6,7 @@ An overview of the concept, with example data structures and code, is available 
 
 We are partnering with [ESGEM, the ESCMID Study Group on Epidemiological Markers](https://www.escmid.org/esgem/), to form an [ESGEM-AMR Working Group](https://github.com/interpretAMR/AMRrulesCuration) to curate organism-specific rule sets. Membership of the working group is open to anyone with relevant expertise, you do not have to be an ESGEM member.
 
-If you would like to get involved, please:
-
-1. Consider [registering to attend](https://forms.gle/9cBP821bDmyyaVZe8) one of the intro sessions to find out if this is the group for you:
-* Tues 14 May 17:00 UK / 9:00 Seattle / 12:00 Boston
-* Weds 15 May 9:00 UK /  15:00 Hanoi / 18:00 Melbourne
-
-You can also read a detailed description of the Working Group and the overall AMRrules approach [here](https://github.com/interpretAMR/AMRrulesCuration/blob/main/ESGEM-AMR%20Working%20Group.pdf), including scope, plans and timeline; and [Technical guidance](https://github.com/interpretAMR/AMRrulesCuration/blob/main/ESGEM-AMR%20Technical%20Guidance.pdf) for curation of rule sets (this is a work in progress and will be refined as we go).
-
-2. If you decide you want to join the ESGEM-AMR working group please register your interest, and let us know what organism/s you have expertise in, using [this form](https://forms.gle/QjvQNuB3vCHGMiiA7), by June 2. Registrations will be reviewed before issuing formal invitations to join the working group (please note we have had a lot of interest and may need to be selective to ensure balance of expertise across organisms and to keep the group a manageable size).
+**If you would like to get involved in the ESGEM-AMR Working Group, please go [here](https://github.com/interpretAMR/AMRrulesCuration).**
 
 
 # Introduction
