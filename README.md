@@ -23,7 +23,7 @@ This repository outlines a proposal for a simple data structure to store organis
 
 Example rules are given for _Klebsiella pneumoniae_, and [example code](https://github.com/interpretAMR/AMRrules/blob/main/parse_amrfinder.py) is given to annotate NCBI [AMRfinderplus](https://www.ncbi.nlm.nih.gov/pathogens/antimicrobial-resistance/AMRFinder/) results for _Klebsiella pneumoniae_ using these rules.
 
-The rule specification (still a work in progress) is available in [this Google sheet](https://docs.google.com/spreadsheets/d/1N0HXK8T5EH-4XDonvW5RmAm8tJTb1RlIMB1oF2x4ss8/edit?usp=sharing) (guidance on tab 2).
+The rule specification (still a work in progress) is available in [this Google sheet](https://docs.google.com/spreadsheets/d/14fuGcn-29OpYNeIpsjQ1MsPB3pqo4iz044fc4HLQHZI/edit?usp=sharing) (v0.2, guidance on tab 2).
 
 We have partnered with [ESGEM, the ESCMID Study Group on Epidemiological Markers](https://www.escmid.org/esgem/), to form an ESGEM-AMR Working Group to curate organism-specific rule sets.
 
@@ -39,7 +39,7 @@ We are also partnering with EUCAST to ensure alignment of the AMRrules approach 
 
 Example file: [organism_specific_rules.tsv](organism_specific_rules.tsv)
 
-Full specification (work in progress): [AMR rules specification](https://docs.google.com/spreadsheets/d/1N0HXK8T5EH-4XDonvW5RmAm8tJTb1RlIMB1oF2x4ss8/edit?usp=sharing). Note this includes some additional fields, and guidance on tab 2.
+Full specification (work in progress): [AMR rules specification]([https://docs.google.com/spreadsheets/d/1N0HXK8T5EH-4XDonvW5RmAm8tJTb1RlIMB1oF2x4ss8/edit?usp=sharing](https://docs.google.com/spreadsheets/d/14fuGcn-29OpYNeIpsjQ1MsPB3pqo4iz044fc4HLQHZI/edit?usp=sharing)). Note this includes some additional fields, and guidance on tab 2.
 
 ## Annotated gene table
 ![annotated_gene_report](annotated_gene_report.png?raw=true)
