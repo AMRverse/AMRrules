@@ -1,8 +1,0 @@
-organism	gene	context	drug	category	PMID	note
-s__Klebsiella pneumoniae	blaSHV	core	penicillins	wt resistant	32284385	"Specific alleles can be ESBL, these are mostly mobile"
-s__Klebsiella pneumoniae	oqxA	core	multiple drug	wt susceptible	30834112	"Wildtype core gene, not expected to confer multiple drug resistance unless mobilised under strong promoter"
-s__Klebsiella pneumoniae	oqxB	core	multiple drug	wt susceptible	30834112	"Wildtype core gene, not expected to confer multiple drug resistance unless mobilised under strong promoter"
-s__Klebsiella pneumoniae	fosA5_fam	core	fosfomycin	wt susceptible	27261267	"Wildtype core gene, not expected to confer multiple drug resistance unless mobilised under strong promoter"
-s__Klebsiella pneumoniae	fosA5	core	fosfomycin	wt susceptible	25441705	"Wildtype core gene, not expected to confer multiple drug resistance unless mobilised under strong promoter"
-s__Klebsiella pneumoniae	fosA6	core	fosfomycin	wt susceptible	27261267	"Wildtype core gene, not expected to confer multiple drug resistance unless mobilised under strong promoter"
-s__Klebsiella pneumoniae	fosA10	core	fosfomycin	wt susceptible	32431524	"Wildtype core gene, not expected to confer multiple drug resistance unless mobilised under strong promoter"
