@@ -18,7 +18,7 @@ package-dir = {"" = "src"}
 where = ["src"]
 
 [tool.setuptools.package-data]
-AMRrules = ["rules/*"]
+amrrules = ["rules/*"]
 
 [project.scripts]
 amrrules = "amrrules.cli:main"

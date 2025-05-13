@@ -42,7 +42,7 @@ def run(args):
     interpreted_output_file = os.path.join(args.output_dir, args.output_prefix + '_interpreted.tsv')
     summary_output_file = os.path.join(args.output_dir, args.output_prefix + '_summary.tsv')
     with open(interpreted_output_file, 'w', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=reader.fieldnames + ['ruleID', 'context', 'drug', 'drug class', 'phenotype', 'clinical category', 'evidence grade'], delimiter='\t')
+        writer = csv.DictWriter(f, fieldnames=reader.fieldnames + ['ruleID', 'context', 'drug', 'drug class', 'phenotype', 'clinical category', 'evidence grade', 'version'], delimiter='\t')
         writer.writeheader()
         writer.writerows(output_rows)
     print(f"{len(matched_hits)} hits matched a rule and {len(unmatched_hits)} hits did not match a rule.")

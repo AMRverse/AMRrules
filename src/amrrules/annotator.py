@@ -1,5 +1,6 @@
 import re
 from amrrules.utils import aa_conversion
+from amrrules import __version__
 
 def extract_mutation(row):
     # deal with either header option from amrfp uggghhhh
@@ -93,8 +94,8 @@ def check_rules(row, rules, amrfp_nodes):
     # if nothing matched, then we reurn None
     return None
 
-def annotate_rule(row, rules, annot_opts):
-    minimal_columns = ['ruleID', 'context', 'drug', 'drug class', 'phenotype', 'clinical category', 'evidence grade']
+def annotate_rule(row, rules, annot_opts, version=__version__):
+    minimal_columns = ['ruleID', 'context', 'drug', 'drug class', 'phenotype', 'clinical category', 'evidence grade', 'version']
     full_columns = ['breakpoint', 'breakpoint standard', 'evidence code', 'evidence limitations', 'PMID', 'rule curation note']
 
     if rules is None:
@@ -103,8 +104,9 @@ def annotate_rule(row, rules, annot_opts):
             for col in minimal_columns:
                 row[col] = '-'
         elif annot_opts == 'full':
-            for col in full_columns:
+            for col in minimal_columns + full_columns:
                 row[col] = '-'
+        row['version'] = version
         return [row]
     # if we found multiple rules, we want to return each rule as its own row in the output file
     if len(rules) > 1:
@@ -116,8 +118,9 @@ def annotate_rule(row, rules, annot_opts):
                 for col in minimal_columns:
                     new_row[col] = rule.get(col)
             elif annot_opts == 'full':
-                for col in full_columns:
+                for col in minimal_columns + full_columns:
                     new_row[col] = rule.get(col)
+            new_row['version'] = version
             output_rows.append(new_row)
         return output_rows
     # if we found a single rule, we want to annotate the row with the rule info
@@ -126,6 +129,7 @@ def annotate_rule(row, rules, annot_opts):
             for col in minimal_columns:
                 row[col] = rules[0].get(col)
         elif annot_opts == 'full':
-            for col in full_columns:
+            for col in minimal_columns + full_columns:
                 row[col] = rules[0].get(col)
+        row['version'] = version
         return [row]
