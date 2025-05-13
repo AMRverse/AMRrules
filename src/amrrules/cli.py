@@ -1,5 +1,5 @@
 import argparse
-from amrrules import interpreter
+from amrrules import rules_engine
 
 def main():
     parser = argparse.ArgumentParser(description="Interpreter for AMRrules.")
@@ -13,4 +13,4 @@ def main():
     parser.add_argument('--annot_opts', '-a', default='minimal')
 
     args = parser.parse_args()
-    interpreter.run(args)
+    rules_engine.run(args)

@@ -1,4 +1,5 @@
 import re
+from amrrules.utils import aa_conversion
 
 def extract_mutation(row):
     # deal with either header option from amrfp uggghhhh
