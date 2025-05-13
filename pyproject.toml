@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "amrrules"
+version = "0.1.0"
+description = "Organism-specific interpretation of AMR genotypes"
+authors = [
+  { name = "Jane Hawkey", email = "jane.hawkey@monash.edu" }
+]
+requires-python = ">=3.12"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+AMRrules = ["rules/*"]
+
+[project.scripts]
+amrrules = "amrrules.cli:main"
