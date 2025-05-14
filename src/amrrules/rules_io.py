@@ -1,5 +1,7 @@
 import csv
 import urllib.request
+import importlib.resources as pkg_resources
+from . import rules
 import io
 
 def download_and_parse_reference_gene_hierarchy(url):
@@ -22,12 +24,16 @@ def download_and_parse_reference_gene_hierarchy(url):
     print(f"Downloaded and parsed {len(amrfp_nodes)} rows from the Reference Gene Hierarchy.")
     return amrfp_nodes
 
-def parse_rules_file(rules_file, tool):
-    rules = []
-    #if tool == 'amrfp':
-    #    key_value = 'nodeID'
-    with open(rules_file, 'r') as f:
-        reader = csv.DictReader(f, delimiter='\t')
-        for row in reader:
-            rules.append(row)
-    return rules
+def parse_rules_file(organism, tool):
+    # get the correct rules file based on the organism, from the rules directory
+    rules_file = f"{organism}.txt"
+    rules_parsed = []
+    try:
+        with pkg_resources.files(rules).joinpath(rules_file).open('r', encoding='utf-8') as f:
+            reader = csv.DictReader(f, delimiter='\t')
+            for row in reader:
+                rules_parsed.append(row)
+            return rules_parsed
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Rules file '{rules_file}' not found in packaged rules/")
+    

@@ -1,0 +1,4 @@
+Name	drug	drug class	category	phenotype	evidence grade	markers	ruleIDs	combo rules
+AH20H002	fosfomycin	-	S	wildtype	moderate	fosA (core)	KPN0004	
+AH20H002	-	penams	R	wildtype	strong	blaSHV-27 (core)	KPN0001	
+AH20H002	-	fluoroquinolone	S	wildtype	moderate	oqxB25 (core);oqxA (core)	KPN0003;KPN0002	-

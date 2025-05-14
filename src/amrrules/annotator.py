@@ -23,7 +23,10 @@ def extract_mutation(row):
 def check_rules(row, rules, amrfp_nodes):
 
     # if the row is a point mutation, we need to extract that info and look only for those rules
-    if row.get('Element subtype') == "POINT" or row.get('Subtype') == "POINT":
+    # skip any rows that have nothing to do with AMR
+    if row.get('Element type') != "AMR":
+        return None
+    elif row.get('Element subtype') == "POINT" or row.get('Subtype') == "POINT":
         amrrules_mutation, type = extract_mutation(row)
     elif row.get('Element subtype') == "AMR" or row.get('Subtype') == "AMR":
         amrrules_mutation = None

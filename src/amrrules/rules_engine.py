@@ -1,6 +1,6 @@
 from amrrules.rules_io import parse_rules_file, download_and_parse_reference_gene_hierarchy
 from amrrules.annotator import check_rules, annotate_rule
-from amrrules.summariser import write_summary
+from amrrules.summariser import prepare_summary, write_output_files
 import os, csv
 
 def run(args):
@@ -13,7 +13,8 @@ def run(args):
         reference_gene_hierarchy_url = "https://ftp.ncbi.nlm.nih.gov/pathogen/Antimicrobial_resistance/AMRFinderPlus/database/latest/ReferenceGeneHierarchy.txt"
         amrfp_nodes = download_and_parse_reference_gene_hierarchy(reference_gene_hierarchy_url)
 
-    rules = parse_rules_file(args.rules, args.amr_tool)
+    # let's first deal with the instance of using a single organism across all samples
+    rules = parse_rules_file(args.organism, args.amr_tool)
 
     matched_hits = {}
     unmatched_hits = []
@@ -23,9 +24,18 @@ def run(args):
         reader = csv.DictReader(f, delimiter='\t')
         if 'Hierarchy node' not in reader.fieldnames:
             raise ValueError("Input file does not contain 'Hierarchy node' column. Please re-run AMRFinderPlus with the --print_node option to ensure this column is in the output file.")
+        
+        # we need to check if there are multiple samples in this file
+        # if there are, we will need to make sure our summary output includes this information
+        sample_ids = set()
 
         row_count = 1
         for row in reader:
+            # extract the sample IDs, we will need this later
+            # but even if there are multiple sample IDs, it doesn't matter because we're just writing one interpreted output file
+            # which is being assessed row by row
+            if 'Name' in row:
+                sample_ids.add(row.get('Name'))
             matched_rules = check_rules(row, rules, amrfp_nodes)
             if matched_rules is not None:
                 # annotate the row with the rule info, based on whether we're using minimal or full annotation
@@ -37,21 +47,9 @@ def run(args):
             row_count += 1
             # add the new rows to the output row list
             output_rows.extend(new_rows)
+    
+    # okay now we need the unique sample IDs, for the summary output
+    sample_ids = list(sample_ids)
+    summary_output = prepare_summary(output_rows, rules, sample_ids, args.no_flag_core)
 
-    # write the output files
-    interpreted_output_file = os.path.join(args.output_dir, args.output_prefix + '_interpreted.tsv')
-    summary_output_file = os.path.join(args.output_dir, args.output_prefix + '_summary.tsv')
-    with open(interpreted_output_file, 'w', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=reader.fieldnames + ['ruleID', 'context', 'drug', 'drug class', 'phenotype', 'clinical category', 'evidence grade', 'version'], delimiter='\t')
-        writer.writeheader()
-        writer.writerows(output_rows)
-    print(f"{len(matched_hits)} hits matched a rule and {len(unmatched_hits)} hits did not match a rule.")
-    print(f"Output written to {interpreted_output_file}.")
-
-    summary_output = write_summary(output_rows, rules)
-
-    with open(summary_output_file, 'w', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=['drug', 'drug class', 'category', 'phenotype', 'evidence grade', 'markers', 'ruleIDs', 'combo rules'], delimiter='\t')
-        writer.writeheader()
-        writer.writerows(summary_output)
-    print(f"Summary output written to {summary_output_file}.")
+    write_output_files(output_rows, reader, summary_output, args, unmatched_hits, matched_hits)
