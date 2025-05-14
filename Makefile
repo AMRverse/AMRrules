@@ -20,4 +20,3 @@ build:
 clean:
 	@echo "🧹 Cleaning build artifacts..."
 	rm -rf build dist *.egg-info
-	rm -rf src/amrrules/rules/*.txt
