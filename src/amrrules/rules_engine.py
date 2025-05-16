@@ -1,7 +1,8 @@
-from amrrules.rules_io import parse_rules_file, download_and_parse_reference_gene_hierarchy
+from amrrules.rules_io import parse_rules_file, download_and_parse_reference_gene_hierarchy, get_organisms, extract_relevant_rules
 from amrrules.annotator import check_rules, annotate_rule
 from amrrules.summariser import prepare_summary, write_output_files
 import os, csv
+from importlib import resources
 
 def run(args):
     if args.amr_tool != 'amrfp':
@@ -13,8 +14,24 @@ def run(args):
         reference_gene_hierarchy_url = "https://ftp.ncbi.nlm.nih.gov/pathogen/Antimicrobial_resistance/AMRFinderPlus/database/latest/ReferenceGeneHierarchy.txt"
         amrfp_nodes = download_and_parse_reference_gene_hierarchy(reference_gene_hierarchy_url)
 
-    # let's first deal with the instance of using a single organism across all samples
-    rules = parse_rules_file(args.organism, args.amr_tool)
+    
+    # determine which organisms we're parsing rules for
+    organism_dict = get_organisms(args.organism_file)
+    
+    # collate the required rules for the user-specified organisms
+    rule_files = []
+    # open the rules key file and get the organism name
+    key_file_path = resources.files("amrrules.rules").joinpath("rule_key_file.tsv")
+    with open(key_file_path, 'r') as key_file:
+        for row in key_file:
+            # split the row into the organism and rules file
+            organism, rules_filename = row.strip().split('\t')
+            # if it's an organism we're interested in, add it to the list of rule files to parse
+            if organism in set(organism_dict.values()):
+                rule_files.append(rules_filename)
+
+    # parse the rule files
+    rules = parse_rules_file(rule_files)
 
     matched_hits = {}
     unmatched_hits = []
@@ -35,8 +52,12 @@ def run(args):
             # but even if there are multiple sample IDs, it doesn't matter because we're just writing one interpreted output file
             # which is being assessed row by row
             if 'Name' in row:
-                sample_ids.add(row.get('Name'))
-            matched_rules = check_rules(row, rules, amrfp_nodes)
+                sample_id = row.get('Name')
+                sample_ids.add(sample_id)
+            # extract the relevant rules for this ID, based on its organism
+            sample_organism = organism_dict.get(sample_id)
+            relevant_rules = extract_relevant_rules(rules, sample_organism)
+            matched_rules = check_rules(row, relevant_rules, amrfp_nodes)
             if matched_rules is not None:
                 # annotate the row with the rule info, based on whether we're using minimal or full annotation
                 new_rows = annotate_rule(row, matched_rules, args.annot_opts)

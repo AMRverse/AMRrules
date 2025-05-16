@@ -1,13 +1,11 @@
 import argparse, os
 from amrrules import rules_engine, __version__
-from amrrules.utils import get_supported_organisms, create_rules_file_key
+from amrrules.utils import get_supported_organisms
 
 def main():
 
     # Get list of valid organism names
     supported_organisms = get_supported_organisms()
-    # create the rules key file
-    create_rules_file_key()
 
     parser = argparse.ArgumentParser(description="Interpreter for AMRrules.")
     parser.add_argument('--input', type=str, required=True, help='Path to the input file.')

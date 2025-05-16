@@ -13,9 +13,22 @@ def extract_mutation(row):
     # this means it is a protein mutation
     if row.get('Method') in ["POINTX", "POINTP"]:
         # convert the single letter AA code to the 3 letter code
-        ref = aa_conversion.get(ref)
-        alt = aa_conversion.get(alt)
-        return(f"p.{ref}{pos}{alt}", "Protein variant detected")
+        # note that we need to determine if we've got a simple substitution of ref to alt
+        # or do we have a deletion or an insertion?
+        # gyrA_S83L -> p.Ser83Leu, this is a substitution
+        # penA_D346DD -> p.345_346insAsp
+        # okay so if there are two characters in alt, then we have an insertion
+        if len(alt) > 1 and alt != 'STOP':
+            # then we have an insertion, and the inserted AA is the second character of alt
+            alt = aa_conversion.get(alt[1])
+            # our coordinates are the original pos, and original - 1
+            pos_coords = str(int(pos) - 1) + "_" + str(pos)
+            return(f"p.{pos_coords}ins{alt}", "Protein variant detected")
+
+        else:
+            ref = aa_conversion.get(ref)
+            alt = aa_conversion.get(alt)
+            return(f"p.{ref}{pos}{alt}", "Protein variant detected")
     elif row.get('Method') == "POINTN":
         # e.g., 23S_G2032T -> c.2032G>T
         return(f"c.{pos}{ref}>{alt}", "Nucleotide variant detected")
