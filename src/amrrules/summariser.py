@@ -66,16 +66,16 @@ def prepare_summary(output_rows, rules, sample_ids, no_flag_core):
         # extract all the rows for this sample
         sample_rows = [row for row in output_rows if row.get('Name') == sample]
 
-        drugs = [] # list of unique drugs to parse
-        drug_classes = [] # list of unique drug classes to parse
+        drugs = set() # list of unique drugs to parse
+        drug_classes = set() # list of unique drug classes to parse
         for row in sample_rows:
             drug = row.get('drug')
             drug_class = row.get('drug class')
-            drugs.append(drug)
-            drug_classes.append(drug_class)
+            drugs.add(drug)
+            drug_classes.add(drug_class)
         # remove duplicates
-        drugs = list(set(drugs))
-        drug_classes = list(set(drug_classes))
+        #drugs = list(set(drugs))
+        #drug_classes = list(set(drug_classes))
         # remove any '-' or '' values
         drugs = [x for x in drugs if x not in ['-', '']]
         drug_classes = [x for x in drug_classes if x not in ['-', '']]
@@ -91,7 +91,7 @@ def prepare_summary(output_rows, rules, sample_ids, no_flag_core):
                 drug = None
                 drug_class = drug_or_class
             # extract all rows that match this drug or class
-            matching_rows = [row for row in output_rows if row.get('drug') == drug_or_class or row.get('drug class') == drug_or_class]
+            matching_rows = [row for row in sample_rows if row.get('drug') == drug_or_class or row.get('drug class') == drug_or_class]
             # if there's only one row, then just add the relevant info to the summary
             if len(matching_rows) == 1:
                 # add the sample
@@ -109,6 +109,8 @@ def prepare_summary(output_rows, rules, sample_ids, no_flag_core):
                         marker_value = marker_value + ' (core)'
                 summarised['markers'] = marker_value
                 summarised['ruleIDs'] = matching_rows[0].get('ruleID')
+                summarised['combo rules'] = '-'
+                summarised['organism'] = matching_rows[0].get('organism')
 
                 summary_rows.append(summarised)
             # if there are multiple rows, we need to combine some of the info
@@ -170,6 +172,7 @@ def prepare_summary(output_rows, rules, sample_ids, no_flag_core):
                     summarised['combo rules'] = ';'.join(combo_ruleIDs)
                 else:
                     summarised['combo rules'] = '-'
+                summarised['organism'] = matching_rows[0].get('organism')
                 summary_rows.append(summarised)
     
     return summary_rows
@@ -180,7 +183,7 @@ def write_output_files(output_rows, reader, summary_output, args, unmatched_hits
     interpreted_output_file = os.path.join(args.output_dir, args.output_prefix + '_interpreted.tsv')
     summary_output_file = os.path.join(args.output_dir, args.output_prefix + '_summary.tsv')
 
-    minimal_columns = ['ruleID', 'context', 'drug', 'drug class', 'phenotype', 'clinical category', 'evidence grade', 'version']
+    minimal_columns = ['ruleID', 'context', 'drug', 'drug class', 'phenotype', 'clinical category', 'evidence grade', 'version', 'organism']
     full_columns = ['breakpoint', 'breakpoint standard', 'evidence code', 'evidence limitations', 'PMID', 'rule curation note']
     if args.annot_opts == 'minimal':
         interpreted_output_cols = minimal_columns
@@ -195,7 +198,7 @@ def write_output_files(output_rows, reader, summary_output, args, unmatched_hits
     print(f"Output written to {interpreted_output_file}.")
 
     with open(summary_output_file, 'w', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=['Name', 'drug', 'drug class', 'category', 'phenotype', 'evidence grade', 'markers', 'ruleIDs', 'combo rules'], delimiter='\t')
+        writer = csv.DictWriter(f, fieldnames=['Name', 'drug', 'drug class', 'category', 'phenotype', 'evidence grade', 'markers', 'ruleIDs', 'combo rules', 'organism'], delimiter='\t')
         writer.writeheader()
         writer.writerows(summary_output)
     print(f"Summary output written to {summary_output_file}.")

@@ -1,89 +1,89 @@
-Name	drug	drug class	category	phenotype	evidence grade	markers	ruleIDs	combo rules
-SAMD00055728	fosfomycin	-	S	wildtype	moderate	glpT_E448K (core);fosA (core)	ECO0082;KPN0004	-
-SAMD00055728	-	penams	R	wildtype	strong	blaSHV-1 (core)	KPN0001	-
-SAMD00055728	-	fluoroquinolone	S	wildtype	moderate	oqxB19 (core);oqxA10 (core);oqxA (core);oqxB (core)	KPN0003;KPN0002	-
-SAMD00000724	cefoxitin	-	S	wildtype	strong	blaEC (core)	ECO0008	-
-SAMD00000724	cefazolin	-	I	wildtype	strong	blaEC (core)	ECO0006	-
-SAMD00000724	colistin	-	S	wildtype	moderate	pmrB_Y358N (core)	ECO0081	-
-SAMD00000724	fosfomycin	-	S	wildtype	moderate	glpT_E448K (core);fosA (core)	ECO0082;KPN0004	-
-SAMD00000724	cefixime	-	S	wildtype	strong	blaEC (core)	ECO0015	-
-SAMD00000724	aztreonam	-	S	wildtype	strong	blaEC (core)	ECO0018	-
-SAMD00000724	ceftazidime	-	R	wildtype	strong	blaADC (core);blaEC (core)	ACI0153;ECO0014	-
-SAMD00000724	imipenem	-	R	nonwildtype	strong	blaOXA;blaEC (core)	ACI0050;ECO0017	-
-SAMD00000724	cefotaxime	-	R	wildtype	strong	blaADC (core);blaEC (core)	ACI0154;ECO0011	-
-SAMD00000724	ceftriaxone	-	S	wildtype	strong	blaEC (core)	ECO0013	-
-SAMD00000724	amoxicillin	-	R	wildtype	strong	blaEC (core);blaA (core)	ECO0003;YER0037	-
-SAMD00000724	piperacillin	-	S	wildtype	strong	blaEC (core)	ECO0004	-
-SAMD00000724	cefuroxime	-	I	wildtype	strong	blaEC (core)	ECO0009;ECO0010	-
-SAMD00000724	ampicillin	-	S	wildtype	strong	blaEC (core)	ECO0002	-
-SAMD00000724	-	penicillin beta-lactam	S	wildtype	strong	blaEC (core)	ECO0001	-
-SAMD00000724	-	second-generation cephalosporin	S	wildtype	strong	blaEC (core)	ECO0007	-
-SAMD00000724	-	third-generation cephalosporin	R	wildtype	strong	blaADC (core);blaEC (core)	ACI0152;ECO0012	-
-SAMD00000724	-	carbapenem	R	nonwildtype	strong	blaOXA (core);blaOXA;blaOXA-66 (core);blaEC (core)	ACI0146;ACI0001;ECO0016	-
-SAMD00000724	-	first-generation cephalosporin	S	wildtype	strong	blaEC (core)	ECO0005	-
-SAMD00028846	spectinomycin	-	R	wildtype	strong	ant(3'')-IIa (core)	ACI0166	-
-SAMD00028846	ceftazidime	-	R	wildtype	strong	blaADC (core);blaEC (core)	ACI0153;ECO0014	-
-SAMD00028846	imipenem	-	R	nonwildtype	strong	blaOXA;blaEC (core)	ACI0050;ECO0017	-
-SAMD00028846	cefotaxime	-	R	wildtype	strong	blaADC (core);blaEC (core)	ACI0154;ECO0011	-
-SAMD00028846	meropenem	-	R	nonwildtype	moderate	blaOXA	ACI0051	
-SAMD00028846	streptomycin	-	R	wildtype	strong	ant(3'')-IIa (core)	ACI0167	-
-SAMD00028846	-	fluoroquinolone antibiotic	R	nonwildtype	strong	gyrA_S81L	ACI0162	-
-SAMD00028846	-	third-generation cephalosporin	R	wildtype	strong	blaADC (core);blaEC (core)	ACI0152;ECO0012	-
-SAMD00028846	-	aminoglycoside antibiotic	S	wildtype	strong	ant(3'')-IIa (core)	ACI0165	-
-SAMD00028846	-	carbapenem	R	nonwildtype	strong	blaOXA (core);blaOXA;blaOXA-66 (core);blaEC (core)	ACI0146;ACI0001;ECO0016	-
-SAMD00002817	tigecycline	-	S	wildtype	strong	mepA (core)	STA0003	-
-SAMD00002817	tetracycline	-	R	nonwildtype	strong	tet(38) (core);mtrR_G45D;rpsJ_V57M	STA0002;NGO0046;NGO0116	-
-SAMEA1572980	azithromycin	-	S	nonwildtype	moderate	mtrR_G45D	NGO0035	
-SAMEA1572980	tetracycline	-	R	nonwildtype	strong	tet(38) (core);mtrR_G45D;rpsJ_V57M	STA0002;NGO0046;NGO0116	-
-SAMEA1572980	benzylpenicillin	-	I	nonwildtype	strong	mtrR_G45D;ponA_L421P;porB1b_A121N;porB1b_G120K;penA_D346DD;penA_P551S;penA_G545S;penA_I312M;penA_V316T	NGO0040;NGO0093;NGO0098;NGO0094;NGO0077;NGO0092;NGO0089;NGO0074;NGO0075	NGO0123
-SAMEA1572980	-	cephalosporin	R	nonwildtype	strong	penA_A510V;penA_A516G;penA_D346DD;penA_F504L;penA_P551S;penA_G545S;penA_I312M;penA_N512Y;penA_V316T	NGO0083;NGO0085;NGO0069;NGO0082;NGO0091;NGO0087;NGO0066;NGO0084;NGO0067	-
-SAMEA1572980	-	sulfonamide antibiotic	R	nonwildtype	moderate	folP_R228S	NGO0014	-
-SAMD00055732	fosfomycin	-	S	wildtype	moderate	glpT_E448K (core);fosA (core)	ECO0082;KPN0004	-
-SAMD00055732	-	fluoroquinolone	S	wildtype	moderate	oqxB19 (core);oqxA10 (core);oqxA (core);oqxB (core)	KPN0003;KPN0002	-
-SAMD00055732	-	penams	R	wildtype	strong	blaSHV-1 (core)	KPN0001	-
-SAMEA1677294	tetracycline	-	R	nonwildtype	strong	tet(38) (core);mtrR_G45D;rpsJ_V57M	STA0002;NGO0046;NGO0116	-
-SAMEA1677294	ciprofloxacin	-	S	nonwildtype	moderate	parC_S87R	NGO0057	
-SAMEA1677294	benzylpenicillin	-	I	nonwildtype	strong	mtrR_G45D;ponA_L421P;porB1b_A121N;porB1b_G120K;penA_D346DD;penA_P551S;penA_G545S;penA_I312M;penA_V316T	NGO0040;NGO0093;NGO0098;NGO0094;NGO0077;NGO0092;NGO0089;NGO0074;NGO0075	NGO0123
-SAMEA1677294	-	cephalosporin	R	nonwildtype	strong	penA_A510V;penA_A516G;penA_D346DD;penA_F504L;penA_P551S;penA_G545S;penA_I312M;penA_N512Y;penA_V316T	NGO0083;NGO0085;NGO0069;NGO0082;NGO0091;NGO0087;NGO0066;NGO0084;NGO0067	-
-SAMEA1677294	-	sulfonamide antibiotic	R	nonwildtype	moderate	folP_R228S	NGO0014	-
-SAMD00009488	tigecycline	-	S	wildtype	strong	mepA (core)	STA0003	-
-SAMD00009488	tetracycline	-	R	nonwildtype	strong	tet(38) (core);mtrR_G45D;rpsJ_V57M	STA0002;NGO0046;NGO0116	-
-SAMEA110125481	cefalexin	-	R	wildtype	strong	blaA (core)	YER0041	-
-SAMEA110125481	ticarcillin	-	R	wildtype	strong	blaA (core)	YER0039	-
-SAMEA110125481	amoxicillin-clavulanic acid	-	R	wildtype	strong	blaA (core)	YER0038	-
-SAMEA110125481	ampicillin-sulbactam	-	S	wildtype	strong	blaA (core)	YER0040	-
-SAMEA110125481	amoxicillin	-	R	wildtype	strong	blaEC (core);blaA (core)	ECO0003;YER0037	-
-SAMEA110125481	-	streptogramin antibiotic	R	wildtype	moderate	vat(F) (core)	YER0050	-
-SAMD00499917	cefalexin	-	R	wildtype	strong	blaA (core)	YER0041	-
-SAMD00499917	ticarcillin	-	R	wildtype	strong	blaA (core)	YER0039	-
-SAMD00499917	amoxicillin-clavulanic acid	-	R	wildtype	strong	blaA (core)	YER0038	-
-SAMD00499917	ampicillin-sulbactam	-	S	wildtype	strong	blaA (core)	YER0040	-
-SAMD00499917	amoxicillin	-	R	wildtype	strong	blaEC (core);blaA (core)	ECO0003;YER0037	-
-SAMD00499917	-	streptogramin antibiotic	R	wildtype	moderate	vat(F) (core)	YER0050	-
-SAMD00028844	spectinomycin	-	R	wildtype	strong	ant(3'')-IIa (core)	ACI0166	-
-SAMD00028844	ceftazidime	-	R	wildtype	strong	blaADC (core);blaEC (core)	ACI0153;ECO0014	-
-SAMD00028844	cefotaxime	-	R	wildtype	strong	blaADC (core);blaEC (core)	ACI0154;ECO0011	-
-SAMD00028844	streptomycin	-	R	wildtype	strong	ant(3'')-IIa (core)	ACI0167	-
-SAMD00028844	-	fluoroquinolone antibiotic	R	nonwildtype	strong	gyrA_S81L	ACI0162	-
-SAMD00028844	-	third-generation cephalosporin	R	wildtype	strong	blaADC (core);blaEC (core)	ACI0152;ECO0012	-
-SAMD00028844	-	aminoglycoside antibiotic	S	wildtype	strong	ant(3'')-IIa (core)	ACI0165	-
-SAMD00028844	-	carbapenem	R	nonwildtype	strong	blaOXA (core);blaOXA;blaOXA-66 (core);blaEC (core)	ACI0146;ACI0001;ECO0016	-
-SAMD00000649	cefoxitin	-	S	wildtype	strong	blaEC (core)	ECO0008	-
-SAMD00000649	cefazolin	-	I	wildtype	strong	blaEC (core)	ECO0006	-
-SAMD00000649	colistin	-	S	wildtype	moderate	pmrB_Y358N (core)	ECO0081	-
-SAMD00000649	fosfomycin	-	S	wildtype	moderate	glpT_E448K (core);fosA (core)	ECO0082;KPN0004	-
-SAMD00000649	cefixime	-	S	wildtype	strong	blaEC (core)	ECO0015	-
-SAMD00000649	aztreonam	-	S	wildtype	strong	blaEC (core)	ECO0018	-
-SAMD00000649	ceftazidime	-	R	wildtype	strong	blaADC (core);blaEC (core)	ACI0153;ECO0014	-
-SAMD00000649	imipenem	-	R	nonwildtype	strong	blaOXA;blaEC (core)	ACI0050;ECO0017	-
-SAMD00000649	cefotaxime	-	R	wildtype	strong	blaADC (core);blaEC (core)	ACI0154;ECO0011	-
-SAMD00000649	ceftriaxone	-	S	wildtype	strong	blaEC (core)	ECO0013	-
-SAMD00000649	amoxicillin	-	R	wildtype	strong	blaEC (core);blaA (core)	ECO0003;YER0037	-
-SAMD00000649	piperacillin	-	S	wildtype	strong	blaEC (core)	ECO0004	-
-SAMD00000649	cefuroxime	-	I	wildtype	strong	blaEC (core)	ECO0009;ECO0010	-
-SAMD00000649	ampicillin	-	S	wildtype	strong	blaEC (core)	ECO0002	-
-SAMD00000649	-	penicillin beta-lactam	S	wildtype	strong	blaEC (core)	ECO0001	-
-SAMD00000649	-	second-generation cephalosporin	S	wildtype	strong	blaEC (core)	ECO0007	-
-SAMD00000649	-	third-generation cephalosporin	R	wildtype	strong	blaADC (core);blaEC (core)	ACI0152;ECO0012	-
-SAMD00000649	-	carbapenem	R	nonwildtype	strong	blaOXA (core);blaOXA;blaOXA-66 (core);blaEC (core)	ACI0146;ACI0001;ECO0016	-
-SAMD00000649	-	first-generation cephalosporin	S	wildtype	strong	blaEC (core)	ECO0005	-
+Name	drug	drug class	category	phenotype	evidence grade	markers	ruleIDs	combo rules	organism
+SAMEA110125481	cefalexin	-	R	wildtype	strong	blaA (core)	YER0041	-	s__Yersinia enterocolitica
+SAMEA110125481	amoxicillin-clavulanic acid	-	R	wildtype	strong	blaA (core)	YER0038	-	s__Yersinia enterocolitica
+SAMEA110125481	ampicillin-sulbactam	-	S	wildtype	strong	blaA (core)	YER0040	-	s__Yersinia enterocolitica
+SAMEA110125481	amoxicillin	-	R	wildtype	strong	blaA (core)	YER0037	-	s__Yersinia enterocolitica
+SAMEA110125481	ticarcillin	-	R	wildtype	strong	blaA (core)	YER0039	-	s__Yersinia enterocolitica
+SAMEA110125481	-	streptogramin antibiotic	R	wildtype	moderate	vat(F) (core)	YER0050	-	s__Yersinia enterocolitica
+SAMD00002817	tigecycline	-	S	wildtype	strong	mepA (core)	STA0003	-	s__Staphylococcus aureus
+SAMD00002817	tetracycline	-	S	wildtype	strong	tet(38) (core)	STA0002	-	s__Staphylococcus aureus
+SAMD00028844	spectinomycin	-	R	wildtype	strong	ant(3'')-IIa (core)	ACI0166	-	s__Acinetobacter baumannii
+SAMD00028844	cefotaxime	-	R	wildtype	moderate	blaADC (core)	ACI0154	-	s__Acinetobacter baumannii
+SAMD00028844	streptomycin	-	R	wildtype	strong	ant(3'')-IIa (core)	ACI0167	-	s__Acinetobacter baumannii
+SAMD00028844	ceftazidime	-	R	wildtype	moderate	blaADC (core)	ACI0153	-	s__Acinetobacter baumannii
+SAMD00028844	-	fluoroquinolone antibiotic	R	nonwildtype	strong	gyrA_S81L	ACI0162	-	s__Acinetobacter baumannii
+SAMD00028844	-	aminoglycoside antibiotic	S	wildtype	strong	ant(3'')-IIa (core)	ACI0165	-	s__Acinetobacter baumannii
+SAMD00028844	-	carbapenem	S	wildtype	moderate	blaOXA (core)	ACI0146	-	s__Acinetobacter baumannii
+SAMD00028844	-	third-generation cephalosporin	R	wildtype	moderate	blaADC (core)	ACI0152	-	s__Acinetobacter baumannii
+SAMEA1677294	ciprofloxacin	-	S	nonwildtype	moderate	parC_S87R	NGO0057	-	s__Neisseria gonorrhoeae
+SAMEA1677294	benzylpenicillin	-	I	nonwildtype	strong	porB1b_A121N;porB1b_G120K;ponA_L421P;penA_G545S;penA_I312M;penA_V316T	NGO0098;NGO0094;NGO0093;NGO0089;NGO0074;NGO0075	NGO0123	s__Neisseria gonorrhoeae
+SAMEA1677294	tetracycline	-	R	nonwildtype	strong	rpsJ_V57M	NGO0116	-	s__Neisseria gonorrhoeae
+SAMEA1677294	-	cephalosporin	R	nonwildtype	strong	penA_A510V;penA_F504L;penA_G545S;penA_I312M;penA_N512Y;penA_V316T	NGO0083;NGO0082;NGO0087;NGO0066;NGO0084;NGO0067	-	s__Neisseria gonorrhoeae
+SAMEA1677294	-	sulfonamide antibiotic	R	nonwildtype	moderate	folP_R228S	NGO0014	-	s__Neisseria gonorrhoeae
+SAMEA1572980	azithromycin	-	S	nonwildtype	moderate	mtrR_G45D	NGO0035	-	s__Neisseria gonorrhoeae
+SAMEA1572980	benzylpenicillin	-	I	nonwildtype	strong	mtrR_G45D;ponA_L421P;porB1b_A121N;porB1b_G120K;penA_D346DD;penA_P551S	NGO0040;NGO0093;NGO0098;NGO0094;NGO0077;NGO0092	NGO0123	s__Neisseria gonorrhoeae
+SAMEA1572980	tetracycline	-	R	nonwildtype	strong	mtrR_G45D;rpsJ_V57M	NGO0046;NGO0116	-	s__Neisseria gonorrhoeae
+SAMEA1572980	-	cephalosporin	S	nonwildtype	strong	penA_A510V;penA_A516G;penA_D346DD;penA_F504L;penA_P551S	NGO0083;NGO0085;NGO0069;NGO0082;NGO0091	-	s__Neisseria gonorrhoeae
+SAMEA1572980	-	sulfonamide antibiotic	R	nonwildtype	moderate	folP_R228S	NGO0014	-	s__Neisseria gonorrhoeae
+SAMD00009488	tigecycline	-	S	wildtype	strong	mepA (core)	STA0003	-	s__Staphylococcus aureus
+SAMD00009488	tetracycline	-	S	wildtype	strong	tet(38) (core)	STA0002	-	s__Staphylococcus aureus
+SAMD00055728	fosfomycin	-	S	wildtype	moderate	fosA (core)	KPN0004	-	s__Klebsiella pneumoniae
+SAMD00055728	-	fluoroquinolone	S	wildtype	moderate	oqxB19 (core);oqxA10 (core)	KPN0003;KPN0002	-	s__Klebsiella pneumoniae
+SAMD00055728	-	penams	R	wildtype	strong	blaSHV-1 (core)	KPN0001	-	s__Klebsiella pneumoniae
+SAMD00499917	ticarcillin	-	R	wildtype	strong	blaA (core)	YER0039	-	s__Yersinia enterocolitica
+SAMD00499917	cefalexin	-	R	wildtype	strong	blaA (core)	YER0041	-	s__Yersinia enterocolitica
+SAMD00499917	ampicillin-sulbactam	-	S	wildtype	strong	blaA (core)	YER0040	-	s__Yersinia enterocolitica
+SAMD00499917	amoxicillin	-	R	wildtype	strong	blaA (core)	YER0037	-	s__Yersinia enterocolitica
+SAMD00499917	amoxicillin-clavulanic acid	-	R	wildtype	strong	blaA (core)	YER0038	-	s__Yersinia enterocolitica
+SAMD00499917	-	streptogramin antibiotic	R	wildtype	moderate	vat(F) (core)	YER0050	-	s__Yersinia enterocolitica
+SAMD00055732	fosfomycin	-	S	wildtype	moderate	fosA (core)	KPN0004	-	s__Klebsiella pneumoniae
+SAMD00055732	-	fluoroquinolone	S	wildtype	moderate	oqxA (core);oqxB (core)	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMD00055732	-	penams	R	wildtype	strong	blaSHV-1 (core)	KPN0001	-	s__Klebsiella pneumoniae
+SAMD00000649	fosfomycin	-	S	wildtype	moderate	glpT_E448K (core)	ECO0082	-	s__Escherichia coli
+SAMD00000649	colistin	-	S	wildtype	moderate	pmrB_Y358N (core)	ECO0081	-	s__Escherichia coli
+SAMD00000649	ampicillin	-	S	wildtype	strong	blaEC (core)	ECO0002	-	s__Escherichia coli
+SAMD00000649	ceftriaxone	-	S	wildtype	strong	blaEC (core)	ECO0013	-	s__Escherichia coli
+SAMD00000649	cefoxitin	-	S	wildtype	strong	blaEC (core)	ECO0008	-	s__Escherichia coli
+SAMD00000649	aztreonam	-	S	wildtype	strong	blaEC (core)	ECO0018	-	s__Escherichia coli
+SAMD00000649	cefazolin	-	I	wildtype	strong	blaEC (core)	ECO0006	-	s__Escherichia coli
+SAMD00000649	cefuroxime	-	I	wildtype	strong	blaEC (core)	ECO0009;ECO0010	-	s__Escherichia coli
+SAMD00000649	cefotaxime	-	S	wildtype	strong	blaEC (core)	ECO0011	-	s__Escherichia coli
+SAMD00000649	amoxicillin	-	S	wildtype	strong	blaEC (core)	ECO0003	-	s__Escherichia coli
+SAMD00000649	imipenem	-	S	wildtype	strong	blaEC (core)	ECO0017	-	s__Escherichia coli
+SAMD00000649	ceftazidime	-	S	wildtype	strong	blaEC (core)	ECO0014	-	s__Escherichia coli
+SAMD00000649	piperacillin	-	S	wildtype	strong	blaEC (core)	ECO0004	-	s__Escherichia coli
+SAMD00000649	cefixime	-	S	wildtype	strong	blaEC (core)	ECO0015	-	s__Escherichia coli
+SAMD00000649	-	penicillin beta-lactam	S	wildtype	strong	blaEC (core)	ECO0001	-	s__Escherichia coli
+SAMD00000649	-	second-generation cephalosporin	S	wildtype	strong	blaEC (core)	ECO0007	-	s__Escherichia coli
+SAMD00000649	-	carbapenem	S	wildtype	strong	blaEC (core)	ECO0016	-	s__Escherichia coli
+SAMD00000649	-	third-generation cephalosporin	S	wildtype	strong	blaEC (core)	ECO0012	-	s__Escherichia coli
+SAMD00000649	-	first-generation cephalosporin	S	wildtype	strong	blaEC (core)	ECO0005	-	s__Escherichia coli
+SAMD00000724	fosfomycin	-	S	wildtype	moderate	glpT_E448K (core)	ECO0082	-	s__Escherichia coli
+SAMD00000724	colistin	-	S	wildtype	moderate	pmrB_Y358N (core)	ECO0081	-	s__Escherichia coli
+SAMD00000724	ampicillin	-	S	wildtype	strong	blaEC (core)	ECO0002	-	s__Escherichia coli
+SAMD00000724	ceftriaxone	-	S	wildtype	strong	blaEC (core)	ECO0013	-	s__Escherichia coli
+SAMD00000724	cefoxitin	-	S	wildtype	strong	blaEC (core)	ECO0008	-	s__Escherichia coli
+SAMD00000724	aztreonam	-	S	wildtype	strong	blaEC (core)	ECO0018	-	s__Escherichia coli
+SAMD00000724	cefazolin	-	I	wildtype	strong	blaEC (core)	ECO0006	-	s__Escherichia coli
+SAMD00000724	cefuroxime	-	I	wildtype	strong	blaEC (core)	ECO0009;ECO0010	-	s__Escherichia coli
+SAMD00000724	cefotaxime	-	S	wildtype	strong	blaEC (core)	ECO0011	-	s__Escherichia coli
+SAMD00000724	amoxicillin	-	S	wildtype	strong	blaEC (core)	ECO0003	-	s__Escherichia coli
+SAMD00000724	imipenem	-	S	wildtype	strong	blaEC (core)	ECO0017	-	s__Escherichia coli
+SAMD00000724	ceftazidime	-	S	wildtype	strong	blaEC (core)	ECO0014	-	s__Escherichia coli
+SAMD00000724	piperacillin	-	S	wildtype	strong	blaEC (core)	ECO0004	-	s__Escherichia coli
+SAMD00000724	cefixime	-	S	wildtype	strong	blaEC (core)	ECO0015	-	s__Escherichia coli
+SAMD00000724	-	penicillin beta-lactam	S	wildtype	strong	blaEC (core)	ECO0001	-	s__Escherichia coli
+SAMD00000724	-	second-generation cephalosporin	S	wildtype	strong	blaEC (core)	ECO0007	-	s__Escherichia coli
+SAMD00000724	-	carbapenem	S	wildtype	strong	blaEC (core)	ECO0016	-	s__Escherichia coli
+SAMD00000724	-	third-generation cephalosporin	S	wildtype	strong	blaEC (core)	ECO0012	-	s__Escherichia coli
+SAMD00000724	-	first-generation cephalosporin	S	wildtype	strong	blaEC (core)	ECO0005	-	s__Escherichia coli
+SAMD00028846	spectinomycin	-	R	wildtype	strong	ant(3'')-IIa (core)	ACI0166	-	s__Acinetobacter baumannii
+SAMD00028846	cefotaxime	-	R	wildtype	moderate	blaADC (core)	ACI0154	-	s__Acinetobacter baumannii
+SAMD00028846	streptomycin	-	R	wildtype	strong	ant(3'')-IIa (core)	ACI0167	-	s__Acinetobacter baumannii
+SAMD00028846	meropenem	-	R	nonwildtype	moderate	blaOXA	ACI0051	-	s__Acinetobacter baumannii
+SAMD00028846	imipenem	-	R	nonwildtype	moderate	blaOXA	ACI0050	-	s__Acinetobacter baumannii
+SAMD00028846	ceftazidime	-	R	wildtype	moderate	blaADC (core)	ACI0153	-	s__Acinetobacter baumannii
+SAMD00028846	-	fluoroquinolone antibiotic	R	nonwildtype	strong	gyrA_S81L	ACI0162	-	s__Acinetobacter baumannii
+SAMD00028846	-	aminoglycoside antibiotic	S	wildtype	strong	ant(3'')-IIa (core)	ACI0165	-	s__Acinetobacter baumannii
+SAMD00028846	-	carbapenem	R	nonwildtype	moderate	blaOXA;blaOXA-66 (core)	ACI0001;ACI0146	-	s__Acinetobacter baumannii
+SAMD00028846	-	third-generation cephalosporin	R	wildtype	moderate	blaADC (core)	ACI0152	-	s__Acinetobacter baumannii

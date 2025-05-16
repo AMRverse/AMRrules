@@ -111,7 +111,7 @@ def check_rules(row, rules, amrfp_nodes):
     return None
 
 def annotate_rule(row, rules, annot_opts, version=__version__):
-    minimal_columns = ['ruleID', 'context', 'drug', 'drug class', 'phenotype', 'clinical category', 'evidence grade', 'version']
+    minimal_columns = ['ruleID', 'context', 'drug', 'drug class', 'phenotype', 'clinical category', 'evidence grade', 'version', 'organism']
     full_columns = ['breakpoint', 'breakpoint standard', 'evidence code', 'evidence limitations', 'PMID', 'rule curation note']
 
     if rules is None:
@@ -123,6 +123,7 @@ def annotate_rule(row, rules, annot_opts, version=__version__):
             for col in minimal_columns + full_columns:
                 row[col] = '-'
         row['version'] = version
+        row['organism'] = '-'
         return [row]
     # if we found multiple rules, we want to return each rule as its own row in the output file
     if len(rules) > 1:
