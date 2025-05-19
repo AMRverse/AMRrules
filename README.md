@@ -37,7 +37,7 @@ Currently available rule sets are in the [rules/](rules/) directory of this repo
 * [Yersinia](Yersinia.txt)
 
 
-## Interpreting AMRfinderplus genotype results with AMRrules: TO BE UPDATED
+## Interpreting AMRfinderplus genotype results with AMRrules
 
 <img src="amrfinder_pipeline.png" width="600">
 
