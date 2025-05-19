@@ -65,7 +65,7 @@ amrrules  --input tests/data/input/test_ecoli_genome.tsv
           --organism 's__Escherichia coli'
 
 amrrules --input AMRrules/tests/data/input/test_klebs_genome.tsv
-          --output_prefix test2
+          --output_prefix test_klebs_genome
           --organism 's__Klebsiella pneumoniae'
 ```
 
@@ -99,7 +99,7 @@ Note the image includes only selected fields from the AMRfinderplus report, for 
 Example file, generated using test commands above: [test_kleb_SGH10_interpreted.tsv](tests/data/output/test_kleb_SGH10_interpreted.tsv)
 
 ## Example generic genome report
-Work in progress, not yet available in the beta release
+_Work in progress, not yet available in the beta release_
 
 ## Contributors
 The AMRrules concept was initially workshopped by members of the [Holt lab](https://holtlab.net) at [London School of Hygiene and Tropical Medicine](https://www.lshtm.ac.uk) and further developed in collaboration with [Jane Hawkey](https://github.com/jhawkey) at [Monash University](https://research.monash.edu/en/persons/jane-hawkey). The AMRrules specification was developed by the ESGEM-AMR Data & Tools group, and the rules curated by the ESGEM-AMR Working Group (see [list of members](https://github.com/interpretAMR/AMRrulesCuration/)), chaired by Natacha Couto (ESGEM Chair). Code was developed by Jane Hawkey and Kat Holt.
