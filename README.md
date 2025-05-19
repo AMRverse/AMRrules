@@ -62,22 +62,16 @@ make dev
 Use AMRrules to interpret AMRfinderplus results for a single genome
 
 ```
-amrrules  --input tests/data/input/test_ecoli_genome.tsv
-          --output_prefix test_ecoli_genome
-          --organism 's__Escherichia coli'
+amrrules --input tests/data/input/test_ecoli_genome.tsv --output_prefix test_ecoli_genome --organism 's__Escherichia coli'
 
-amrrules --input AMRrules/tests/data/input/test_klebs_genome.tsv
-          --output_prefix test_klebs_genome
-          --organism 's__Klebsiella pneumoniae'
+amrrules --input AMRrules/tests/data/input/test_klebs_genome.tsv --output_prefix test_klebs_genome --organism 's__Klebsiella pneumoniae'
 ```
 
 
 Use AMRrules to interpret results for multiple genomes of different organisms (test data)
 
 ```
-amrrules  --input tests/data/input/test_data_amrfp_multiSpp.tsv
-          --output_prefix test_multispp
-          --organism_file tests/data/input/test_data_sppCalls.tsv
+amrrules  --input tests/data/input/test_data_amrfp_multiSpp.tsv --output_prefix test_multispp --organism_file tests/data/input/test_data_sppCalls.tsv
 ```
 
 
@@ -94,11 +88,13 @@ amrrules --input Kpn1_AMRfp.tsv --output_prefix Kpn1 --organism 's__Klebsiella p
 ## Example interpreted genotype report
 ![rules_table](interpreted_genotype_report.png?raw=true)
 
-Example interpretated summary output for wildtype _Klebsiella pneumoniae_ str. SGH10
+Example interpreted summary output for wildtype _Klebsiella pneumoniae_ str. SGH10
 
 Note the image includes only selected fields from the AMRfinderplus report, for illustration purposes. The AMRrules output file includes all columns in the input genotype file, with the additional AMRrules annotation columns (highlighted in purple) added to the end.
 
 Example file, generated using test commands above: [test_kleb_SGH10_interpreted.tsv](tests/data/output/test_kleb_SGH10_interpreted.tsv)
+
+Example file with multiple genomes from different species, generated using test commands above: [test_multiSpp_interpreted.tsv](tests/data/output/test_multiSpp_interpreted.tsv)
 
 ## Example generic genome report
 _Work in progress, not yet available in the beta release_
