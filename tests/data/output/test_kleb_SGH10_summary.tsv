@@ -1,4 +1,0 @@
-drug	drug class	category	phenotype	evidence grade	markers	ruleIDs	combo rules	organism
-ciprofloxacin	-	S	wildtype	moderate	oqxB19 (core);oqxA (core)	KPN0003;KPN0002	-	s__Klebsiella pneumoniae
-fosfomycin	-	S	wildtype	moderate	fosA (core)	KPN0004	-	s__Klebsiella pneumoniae
--	penicillin beta-lactam	R	wildtype	strong	blaSHV-11 (core)	KPN0001	-	s__Klebsiella pneumoniae
