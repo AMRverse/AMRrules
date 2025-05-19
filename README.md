@@ -26,6 +26,8 @@ Rule curation is being actively worked on by the ESGEM-AMR working group.
 Currently available rule sets are in the [rules/](rules/) directory of this repository, named by organism, and focus mainly on core genes and expected resistances:
 
 * [Acinetobacter baumannii](rules/Acinetobacter_baumannii.txt)
+* [Enterococcus faecalis](Enterococcus_faecalis.txt)
+* [Enterococcus faecium](Enterococcus_faecium.txt)
 * [Escherichia coli](Escherichia_coli.txt)
 * [Klebsiella pneumoniae](Klebsiella_pneumoniae.txt)
 * [Neisseria gonorrhoeae](Neisseria_gonorrhoeae.txt) (acquired resistances, based on analysis of geno-pheno data)
@@ -76,12 +78,8 @@ amrfinder -n example_data_kleb/ERR257656.fasta --plus
 
 ## Example interpreted genotype report: TO BE UPDATED
 
-## Example generic genome report: TO BE UPDATED
-![genome_report](genome_report.png?raw=true)
-
-Example file (PDF): [genome_report.pdf](genome_report.pdf)
-
-Example file (RTF): [genome_report.rtf](genome_report.rtf)
+## Example generic genome report
+Work in progress, not yet available in the beta release
 
 ## Contributors
 The AMRrules concept was initially workshopped by members of the [Holt lab](https://holtlab.net) at [London School of Hygiene and Tropical Medicine](https://www.lshtm.ac.uk) and further developed in collaboration with [Jane Hawkey](https://github.com/jhawkey) at [Monash University](https://research.monash.edu/en/persons/jane-hawkey). The AMRrules specification was developed by the ESGEM-AMR Data & Tools group, and the rules curated by the ESGEM-AMR Working Group (see [list of members](https://github.com/interpretAMR/AMRrulesCuration/)), chaired by Natacha Couto (ESGEM Chair). Code was developed by Jane Hawkey and Kat Holt.
