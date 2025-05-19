@@ -44,7 +44,17 @@ Currently available rule sets are in the [rules/](rules/) directory of this repo
 ### Package installation
 
 ```
-TBD
+conda create -n amrrules_beta -c bioconda python=3.12
+
+conda activate amrrules_beta
+
+conda install pip
+
+git clone https://github.com/interpretAMR/AMRrules
+
+cd AMRrules
+
+make dev
 ```
 
 Use AMRrules to interpret AMRfinderplus results for a single genome
@@ -52,7 +62,11 @@ Use AMRrules to interpret AMRfinderplus results for a single genome
 ```
 amrrules  --input tests/data/input/test_ecoli_genome.tsv
           --output_prefix test_ecoli_genome
-          --organism 'Escherichia coli'
+          --organism 's__Escherichia coli'
+
+amrrules --input AMRrules/tests/data/input/test_klebs_genome.tsv
+          --output_prefix test2
+          --organism 's__Klebsiella pneumoniae'
 ```
 
 
@@ -65,14 +79,13 @@ amrrules  --input tests/data/input/test_data_amrfp_multiSpp.tsv
 ```
 
 
-Example command to run AMRfinder plus, using the --print_node option
+Example command to run AMRfinder plus (note the --print_node option)
+and interpret the output with AMRrules
 
 ```
-amrfinder -n example_data_kleb/ERR257656.fasta --plus
-                                               --print_node
-                                               --name ERR257656
-                                               --organism Klebsiella_pneumoniae
-                                               > ERR257656_amrFinderPlusOutput.tsv
+amrfinder -n Kpn1.fasta --plus --print_node --name Kpn1 --organism Klebsiella_pneumoniae > Kpn1_AMRfp.tsv
+
+amrrules --input Kpn1_AMRfp.tsv --output_prefix Kpn1 --organism 's__Klebsiella pneumoniae'
 ```
 
 
