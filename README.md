@@ -43,6 +43,8 @@ Currently available rule sets are in the [rules/](rules/) directory of this repo
 
 ### Package installation
 
+The only dependency is Python, v3.12 or higher
+
 ```
 conda create -n amrrules_beta -c bioconda python=3.12
 
