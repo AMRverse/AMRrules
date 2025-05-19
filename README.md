@@ -45,7 +45,7 @@ Currently available rule sets are in the [rules/](rules/) directory of this repo
 TBD
 ```
 
-Use AMRrules to interpret AMRfinderplus results for a single genome (E. coli test data)
+Use AMRrules to interpret AMRfinderplus results for a single genome
 
 ```
 amrrules  --input tests/data/input/test_ecoli_genome.tsv
@@ -59,7 +59,7 @@ Use AMRrules to interpret results for multiple genomes of different organisms (t
 ```
 amrrules  --input tests/data/input/test_data_amrfp_multiSpp.tsv
           --output_prefix test_multispp
-          --organism_file 'test_data_sppCalls.tsv'
+          --organism_file tests/data/input/test_data_sppCalls.tsv
 ```
 
 
