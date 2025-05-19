@@ -64,7 +64,7 @@ Use AMRrules to interpret AMRfinderplus results for a single genome
 ```
 amrrules --input tests/data/input/test_ecoli_genome.tsv --output_prefix test_ecoli_genome --organism 's__Escherichia coli'
 
-amrrules --input AMRrules/tests/data/input/test_klebs_genome.tsv --output_prefix test_klebs_genome --organism 's__Klebsiella pneumoniae'
+amrrules --input tests/data/input/test_kleb_SGH10.tsv --output_prefix test_kleb_SGH10 --organism 's__Klebsiella pneumoniae'
 ```
 
 
