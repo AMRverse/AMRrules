@@ -17,13 +17,13 @@ Initial rule curation has focused on defining rules for the interpretation of co
 ## Organism-specific rules
 ![rules_table](organism_specific_rules.png?raw=true)
 
-Full specification: [AMRrules spec v0.5](https://docs.google.com/spreadsheets/d/1F-J-_8Kyo3W0Oh6eDYyd0N8ahqVwiddM2112-Fg1gKc/edit?usp=sharing). Note this includes several additional fields beyond those pictured above, and detailed guidance tabs.
+Full specification: [AMRrules spec v0.5](https://docs.google.com/spreadsheets/d/1F-J-_8Kyo3W0Oh6eDYyd0N8ahqVwiddM2112-Fg1gKc/edit?usp=sharing). Note this includes several additional fields beyond those pictured above, including NCBI and CARD ARO accessions to uniquely identify genes; details of the breakpoints and standards used; evidence codes, grades and limitations; and a rule annotation note.
 
 ### Available rules
 
-Rule curation is being actively worked on by the ESGEM-AMR working group.
+Rule curation is a work in progress, under active development by the [ESGEM-AMR](https://github.com/interpretAMR/AMRrulesCuration/) Working Group.
 
-Currently available rule sets are in the [rules/](rules/) directory of this repository, named by organism, and focus mainly on core genes and expected resistances:
+Currently available rule sets are in the [rules/](rules/) directory of this repository, named by organism. In this beta release they focus mainly on core genes and expected resistances, however acquired genes and mutations are included for some organisms already and will be added to others as the necessary data to define them accurately is accumulated and curated by the ESGEM-AMR working group.
 
 * [Acinetobacter baumannii](rules/Acinetobacter_baumannii.txt)
 * [Enterococcus faecalis](Enterococcus_faecalis.txt)
@@ -37,14 +37,24 @@ Currently available rule sets are in the [rules/](rules/) directory of this repo
 * [Yersinia](Yersinia.txt)
 
 
-## Interpreting AMRfinderplus genotype results with AMRrules: TO BE UPDATED
+## Interpreting AMRfinderplus genotype results with AMRrules
 
 <img src="amrfinder_pipeline.png" width="600">
 
 ### Package installation
 
 ```
-TBD
+conda create -n amrrules_beta -c bioconda python=3.12
+
+conda activate amrrules_beta
+
+conda install pip
+
+git clone https://github.com/interpretAMR/AMRrules
+
+cd AMRrules
+
+make dev
 ```
 
 Use AMRrules to interpret AMRfinderplus results for a single genome
@@ -52,7 +62,11 @@ Use AMRrules to interpret AMRfinderplus results for a single genome
 ```
 amrrules  --input tests/data/input/test_ecoli_genome.tsv
           --output_prefix test_ecoli_genome
-          --organism 'Escherichia coli'
+          --organism 's__Escherichia coli'
+
+amrrules --input AMRrules/tests/data/input/test_klebs_genome.tsv
+          --output_prefix test_klebs_genome
+          --organism 's__Klebsiella pneumoniae'
 ```
 
 
@@ -65,21 +79,27 @@ amrrules  --input tests/data/input/test_data_amrfp_multiSpp.tsv
 ```
 
 
-Example command to run AMRfinder plus, using the --print_node option
+Example command to run AMRfinder plus (note the --print_node option)
+and interpret the output with AMRrules
 
 ```
-amrfinder -n example_data_kleb/ERR257656.fasta --plus
-                                               --print_node
-                                               --name ERR257656
-                                               --organism Klebsiella_pneumoniae
-                                               > ERR257656_amrFinderPlusOutput.tsv
+amrfinder -n Kpn1.fasta --plus --print_node --name Kpn1 --organism Klebsiella_pneumoniae > Kpn1_AMRfp.tsv
+
+amrrules --input Kpn1_AMRfp.tsv --output_prefix Kpn1 --organism 's__Klebsiella pneumoniae'
 ```
 
 
-## Example interpreted genotype report: TO BE UPDATED
+## Example interpreted genotype report
+![rules_table](interpreted_genotype_report.png?raw=true)
+
+Example interpretated summary output for wildtype _Klebsiella pneumoniae_ str. SGH10
+
+Note the image includes only selected fields from the AMRfinderplus report, for illustration purposes. The AMRrules output file includes all columns in the input genotype file, with the additional AMRrules annotation columns (highlighted in purple) added to the end.
+
+Example file, generated using test commands above: [test_kleb_SGH10_interpreted.tsv](tests/data/output/test_kleb_SGH10_interpreted.tsv)
 
 ## Example generic genome report
-Work in progress, not yet available in the beta release
+_Work in progress, not yet available in the beta release_
 
 ## Contributors
 The AMRrules concept was initially workshopped by members of the [Holt lab](https://holtlab.net) at [London School of Hygiene and Tropical Medicine](https://www.lshtm.ac.uk) and further developed in collaboration with [Jane Hawkey](https://github.com/jhawkey) at [Monash University](https://research.monash.edu/en/persons/jane-hawkey). The AMRrules specification was developed by the ESGEM-AMR Data & Tools group, and the rules curated by the ESGEM-AMR Working Group (see [list of members](https://github.com/interpretAMR/AMRrulesCuration/)), chaired by Natacha Couto (ESGEM Chair). Code was developed by Jane Hawkey and Kat Holt.
