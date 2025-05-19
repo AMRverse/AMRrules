@@ -67,6 +67,7 @@ def run(args):
             output_rows.extend(new_rows)
     
     # okay now we need the unique sample IDs, for the summary output
-    summary_output = prepare_summary(output_rows, rules, samples_to_parse, args.no_flag_core)
+    #summary_output = prepare_summary(output_rows, rules, samples_to_parse, args.no_flag_core)
+    summary_output = None
 
     write_output_files(output_rows, reader, summary_output, args, unmatched_hits, matched_hits)

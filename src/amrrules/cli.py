@@ -14,8 +14,7 @@ def main():
     
     org_args = parser.add_mutually_exclusive_group(required=True)
     org_args.add_argument('--organism', '-o', type=str, help=f"Organism to interpret. Must be one of: {', '.join(supported_organisms)}")
-    org_args.add_argument('--organism_file', '-of', type=str, help='Path to the organism file. This file should have two columns: genome name in col1 (matching the sample name in the first col of the input file), and col2 is the organism name, ' \
-                                                                    'which should be one of the supported organisms. File should be in tab-delimited format, with no header')
+    org_args.add_argument('--organism_file', '-of', type=str, help='Path to the organism file. This file should have two columns: genome name in col1 (matching the sample name in the first col of the input file), and col2 is the organism name, which should be one of the supported organisms. File should be in tab-delimited format, with no header')
     #TODO: implement card and resfinder options, currently only amrfp is supported
     parser.add_argument('--amr_tool', '-t', type=str, default='amrfp', help='AMR tool used to detect genotypes: options are amrfp, card, resfinder. Currently only amrfp is supported.')
     parser.add_argument('--hamronized', '-H', action='store_true', help='Input file has been hamronized')
