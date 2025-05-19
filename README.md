@@ -17,13 +17,13 @@ Initial rule curation has focused on defining rules for the interpretation of co
 ## Organism-specific rules
 ![rules_table](organism_specific_rules.png?raw=true)
 
-Full specification: [AMRrules spec v0.5](https://docs.google.com/spreadsheets/d/1F-J-_8Kyo3W0Oh6eDYyd0N8ahqVwiddM2112-Fg1gKc/edit?usp=sharing). Note this includes several additional fields beyond those pictured above, and detailed guidance tabs.
+Full specification: [AMRrules spec v0.5](https://docs.google.com/spreadsheets/d/1F-J-_8Kyo3W0Oh6eDYyd0N8ahqVwiddM2112-Fg1gKc/edit?usp=sharing). Note this includes several additional fields beyond those pictured above, including NCBI and CARD ARO accessions to uniquely identify genes; details of the breakpoints and standards used; evidence codes, grades and limitations; and a rule annotation note.
 
 ### Available rules
 
-Rule curation is being actively worked on by the ESGEM-AMR working group.
+Rule curation is a work in progress, under active development by the [ESGEM-AMR](https://github.com/interpretAMR/AMRrulesCuration/) Working Group.
 
-Currently available rule sets are in the [rules/](rules/) directory of this repository, named by organism, and focus mainly on core genes and expected resistances:
+Currently available rule sets are in the [rules/](rules/) directory of this repository, named by organism, and in this beta release focus mainly on core genes and expected resistances:
 
 * [Acinetobacter baumannii](rules/Acinetobacter_baumannii.txt)
 * [Enterococcus faecalis](Enterococcus_faecalis.txt)
