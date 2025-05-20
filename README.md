@@ -2,76 +2,102 @@
 
 # Interpretive standards for AMR genotypes
 
-Our goal is to develop interpretive standards for AMR genotypes, akin to the interpretive standards developed by [EUCAST](https://www.eucast.org/) and [CLSI](https://clsi.org/) for antimicrobial susceptibility phenotyping. 
+<img src="AMRrules_logo.png" width="200" align="left">
 
-An overview of the concept, with example data structures and code, is available below.
+Organism-specific interpretation of antimicrobial susceptibility testing (AST) data is standard in clinical microbiology, with rules regularly reviewed by expert committees of [EUCAST](https://www.eucast.org/) and [CLSI](https://clsi.org/). We aim to provide an analagous resource to support organism-specific interpretation of antimicrobial resistance (AMR) genotypes derived from pathogen whole genome sequence (WGS) data.
 
-We are partnering with [ESGEM, the ESCMID Study Group on Epidemiological Markers](https://www.escmid.org/esgem/), to form an [ESGEM-AMR Working Group](https://github.com/interpretAMR/AMRrulesCuration) to curate organism-specific rule sets. Membership of the working group is open to anyone with relevant expertise, you do not have to be an ESGEM member.
+AMRrules encode organism-specific rules for the interpretation of AMR genotype data, and are curated by organism experts belonging to [ESGEM-AMR](https://github.com/interpretAMR/AMRrulesCuration/), a working group of [ESGEM, the ESCMID Study Group on Epidemiological Markers](https://www.escmid.org/esgem/). The rule specification is available in [this Google sheet](https://docs.google.com/spreadsheets/d/1F-J-_8Kyo3W0Oh6eDYyd0N8ahqVwiddM2112-Fg1gKc/edit?usp=sharing) (v0.5, guidance on tab 2).
 
-**If you would like to get involved in the ESGEM-AMR Working Group, please go [here](https://github.com/interpretAMR/AMRrulesCuration).**
+This AMRrules Python package includes the rules themselves (see `rules/` directory) as well as code to apply the rules to interpret AMR genotypes (currently limited to [AMRfinderplus](https://www.ncbi.nlm.nih.gov/pathogens/antimicrobial-resistance/AMRFinder/) output), generating informative genome reports that capture expert knowledge about how core and acquired genes and mutations contribute to antimicrobial susceptibility. 
 
+We are focusing early development on compatibility with NCBI resources (i.e. the [AMRfinderplus](https://www.ncbi.nlm.nih.gov/pathogens/antimicrobial-resistance/AMRFinder/) genotyping tool, and the associated NCBI databases including [AMR refgene](https://www.ncbi.nlm.nih.gov/pathogens/refgene/), [AMR Reference Gene Hierarchy](https://www.ncbi.nlm.nih.gov/pathogens/genehierarchy), and the [Reference HMM Catalog](https://www.ncbi.nlm.nih.gov/pathogens/hmm/)). In future we plan for interoperability with [CARD](https://card.mcmaster.ca/) and [ResFinder](http://genepi.food.dtu.dk/resfinder) (and other tools based on these), using [hAMRonization](https://github.com/pha4ge/hAMRonization).
 
-# Introduction
-
-Organism-specific interpretation of antimicrobial susceptibility testing (AST) data is standard in clinical microbiology, with rules regularly reviewed by expert committees of [CLSI](https://clsi.org/) and [EUCAST](https://www.eucast.org/). EUCAST also maintains lists of [expert rules](https://www.eucast.org/expert_rules_and_expected_phenotypes) for some species, including [expected (intrinsic) resistance](https://www.eucast.org/expert_rules_and_expected_phenotypes/expected_phenotypes) and expected susceptibility phenotypes, to guide clinical labs in deciding which drugs to test and whether/how to report them.
-
-We propose there is a similar need for systematic rules for the organism-specific interpretation of antimicrobial resistance (AMR) genotypes derived from pathogen whole genome sequence (WGS) data.
-
-Current solutions focus on bespoke solutions for specific organisms (e.g. our [Kleborate](https://github.com/klebgenomics/Kleborate) tool for _Klebsiella pneumoniae_; Pathogenwatch [AMR libraries](https://gitlab.com/cgps/pathogenwatch/amr-libraries) for [_Salmonella_ Typhi](https://doi.org/10.1038/s41467-021-23091-2), [_Neisseria gonorrhoeae_](https://doi.org/10.1186/s13073-021-00858-2) and others; [Resfinder 4.0](https://bitbucket.org/genomicepidemiology/resfinder_db/src/master/) for _E. coli_ and others; [Mykrobe](https://github.com/Mykrobe-tools/mykrobe) and [TBProfiler](https://github.com/jodyphelan/TBProfiler) tools for _Mycobacterium tuberculosis_), but this complicates bioinformatics analyses and promotes fragmentation rather than consolidation of expertise. [AbritAMR](https://github.com/MDU-PHL/abritamr) offers a potential solution for multiple organisms, but organism-specific interpretation rules are hard-coded in Python and separated from supporting evidence, making the logic difficult for others to curate and update.
-
-This repository outlines a proposal for a simple data structure to store organism-specific rules for the interpretation of AMR genotype data, that could be used to enrich the outputs of standard AMR genotyping tools (such as AMRfinderplus and other tools, with or without [hAMRonization](https://github.com/pha4ge/hAMRonization)) and generate informative genome reports that capture expert knowledge about how core genes contribute to antimicrobial susceptibility.
-
-Example rules are given for _Klebsiella pneumoniae_, and [example code](https://github.com/interpretAMR/AMRrules/blob/main/parse_amrfinder.py) is given to annotate NCBI [AMRfinderplus](https://www.ncbi.nlm.nih.gov/pathogens/antimicrobial-resistance/AMRFinder/) results for _Klebsiella pneumoniae_ using these rules.
-
-The rule specification (still a work in progress) is available in [this Google sheet](https://docs.google.com/spreadsheets/d/14fuGcn-29OpYNeIpsjQ1MsPB3pqo4iz044fc4HLQHZI/edit?usp=sharing) (v0.2, guidance on tab 2).
-
-We have partnered with [ESGEM, the ESCMID Study Group on Epidemiological Markers](https://www.escmid.org/esgem/), to form an ESGEM-AMR Working Group to curate organism-specific rule sets.
-
-We are also partnering with EUCAST to ensure alignment of the AMRrules approach with the [EUCAST Subcommittee on WGS and Phenotypic AST](https://www.eucast.org/organization/subcommittees/wgs_and_phenotypic_testing), including their [first report (2017)](https://doi.org/10.1016/j.cmi.2016.11.012) and ongoing updates.
-
-
-## Data analysis pipeline
-
-<img src="pipeline.png" width="800">
+Initial rule curation has focused on defining rules for the interpretation of core genes and expected resistances, but acquired genes and mutations are included for some organisms already and will be added to others as the necessary data to define them accurately is accumulated and curated by the ESGEM-AMR working group.
 
 ## Organism-specific rules
 ![rules_table](organism_specific_rules.png?raw=true)
 
-Example file: [organism_specific_rules.tsv](organism_specific_rules.tsv)
+Full specification: [AMRrules spec v0.5](https://docs.google.com/spreadsheets/d/1F-J-_8Kyo3W0Oh6eDYyd0N8ahqVwiddM2112-Fg1gKc/edit?usp=sharing). Note this includes several additional fields beyond those pictured above, including NCBI and CARD ARO accessions to uniquely identify genes; details of the breakpoints and standards used; evidence codes, grades and limitations; and a rule annotation note.
 
-Full specification (work in progress): [AMR rules specification]([https://docs.google.com/spreadsheets/d/1N0HXK8T5EH-4XDonvW5RmAm8tJTb1RlIMB1oF2x4ss8/edit?usp=sharing](https://docs.google.com/spreadsheets/d/14fuGcn-29OpYNeIpsjQ1MsPB3pqo4iz044fc4HLQHZI/edit?usp=sharing)). Note this includes some additional fields, and guidance on tab 2.
+### Available rules
 
-## Annotated gene table
-![annotated_gene_report](annotated_gene_report.png?raw=true)
+Rule curation is a work in progress, under active development by the [ESGEM-AMR](https://github.com/interpretAMR/AMRrulesCuration/) Working Group.
 
-Example file: [annotated_gene_report.tsv](annotated_gene_report.tsv)
+Currently available rule sets are in the [rules/](rules/) directory of this repository, named by organism. In this beta release they focus mainly on core genes and expected resistances, however acquired genes and mutations are included for some organisms already and will be added to others as the necessary data to define them accurately is accumulated and curated by the ESGEM-AMR working group.
 
-### Example code
+* [Acinetobacter baumannii](rules/Acinetobacter_baumannii.txt)
+* [Enterococcus faecalis](Enterococcus_faecalis.txt)
+* [Enterococcus faecium](Enterococcus_faecium.txt)
+* [Escherichia coli](Escherichia_coli.txt)
+* [Klebsiella pneumoniae](Klebsiella_pneumoniae.txt)
+* [Neisseria gonorrhoeae](Neisseria_gonorrhoeae.txt) (acquired resistances, based on analysis of geno-pheno data)
+* [Pseudomonas aeruginosa](Pseudomonas_aeruginosa.txt)
+* [Salmonella](Salmonella.txt)
+* [Staphylococcus aureus](Staphylococcus_aureus.txt)
+* [Yersinia](Yersinia.txt)
 
-The example annotated gene report can be generated by running AMRfinderplus, and then annotating the output with the above organism-specific rules for _Klebsiella pneumoniae_, using [parse_amrfinder.py](parse_amrfinder.py)
+
+## Interpreting AMRfinderplus genotype results with AMRrules
 
 <img src="amrfinder_pipeline.png" width="600">
 
+### Package installation
+
+The only dependency is Python, v3.12 or higher
+
 ```
-amrfinder -n example_data_kleb/ERR257656.fasta --plus
-                                               --print_node
-                                               --name ERR257656
-                                               --organism Klebsiella_pneumoniae
-                                               > ERR257656_amrFinderPlusOutput.tsv
+conda create -n amrrules_beta -c bioconda python=3.12
 
-./parse_amrfinder.py --reports example_data_kleb/*_amrFinderPlusOutput.tsv 
-                     --species 'Klebsiella pneumoniae'
-                     --organism_rules organism_specific_rules.tsv
-                     --drug_dictionary example_dict_kleb/Kleb_local_dict.tsv
-                     --output example_annotatedAMRreport.tsv
+conda activate amrrules_beta
+
+conda install pip
+
+git clone https://github.com/interpretAMR/AMRrules
+
+cd AMRrules
+
+make dev
 ```
 
-## Genome report
-![genome_report](genome_report.png?raw=true)
+Use AMRrules to interpret AMRfinderplus results for a single genome
 
-Example file (PDF): [genome_report.pdf](genome_report.pdf)
+```
+amrrules --input tests/data/input/test_ecoli_genome.tsv --output_prefix test_ecoli_genome --organism 's__Escherichia coli'
 
-Example file (RTF): [genome_report.rtf](genome_report.rtf)
+amrrules --input tests/data/input/test_kleb_SGH10.tsv --output_prefix test_kleb_SGH10 --organism 's__Klebsiella pneumoniae'
+```
+
+
+Use AMRrules to interpret results for multiple genomes of different organisms (test data)
+
+```
+amrrules  --input tests/data/input/test_data_amrfp_multiSpp.tsv --output_prefix test_multispp --organism_file tests/data/input/test_data_sppCalls.tsv
+```
+
+
+Example command to run AMRfinder plus (note the --print_node option)
+and interpret the output with AMRrules
+
+```
+amrfinder -n Kpn1.fasta --plus --print_node --name Kpn1 --organism Klebsiella_pneumoniae > Kpn1_AMRfp.tsv
+
+amrrules --input Kpn1_AMRfp.tsv --output_prefix Kpn1 --organism 's__Klebsiella pneumoniae'
+```
+
+
+## Example interpreted genotype report
+![rules_table](interpreted_genotype_report.png?raw=true)
+
+Example interpreted summary output for wildtype _Klebsiella pneumoniae_ str. SGH10
+
+Note the image includes only selected fields from the AMRfinderplus report, for illustration purposes. The AMRrules output file includes all columns in the input genotype file, with the additional AMRrules annotation columns (highlighted in purple) added to the end.
+
+Example file, generated using test commands above: [test_kleb_SGH10_interpreted.tsv](tests/data/output/test_kleb_SGH10_interpreted.tsv)
+
+Example file with multiple genomes from different species, generated using test commands above: [test_multiSpp_interpreted.tsv](tests/data/output/test_multiSpp_interpreted.tsv)
+
+## Example generic genome report
+_Work in progress, not yet available in the beta release_
 
 ## Contributors
-This concept was workshopped by members of the [Holt lab](https://holtlab.net) at [London School of Hygiene and Tropical Medicine](https://www.lshtm.ac.uk) and further developed in collaboration with [Jane Hawkey](https://github.com/jhawkey) at [Monash University](https://research.monash.edu/en/persons/jane-hawkey).
+The AMRrules concept was initially workshopped by members of the [Holt lab](https://holtlab.net) at [London School of Hygiene and Tropical Medicine](https://www.lshtm.ac.uk) and further developed in collaboration with [Jane Hawkey](https://github.com/jhawkey) at [Monash University](https://research.monash.edu/en/persons/jane-hawkey). The AMRrules specification was developed by the ESGEM-AMR Data & Tools group, and the rules curated by the ESGEM-AMR Working Group (see [list of members](https://github.com/interpretAMR/AMRrulesCuration/)), chaired by Natacha Couto (ESGEM Chair). Code was developed by Jane Hawkey and Kat Holt.
