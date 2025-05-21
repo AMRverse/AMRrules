@@ -26,15 +26,16 @@ Rule curation is a work in progress, under active development by the [ESGEM-AMR]
 Currently available rule sets are in the [rules/](rules/) directory of this repository, named by organism. In this beta release they focus mainly on core genes and expected resistances, however acquired genes and mutations are included for some organisms already and will be added to others as the necessary data to define them accurately is accumulated and curated by the ESGEM-AMR working group.
 
 * [Acinetobacter baumannii](rules/Acinetobacter_baumannii.txt)
-* [Enterococcus faecalis](Enterococcus_faecalis.txt)
-* [Enterococcus faecium](Enterococcus_faecium.txt)
-* [Escherichia coli](Escherichia_coli.txt)
-* [Klebsiella pneumoniae](Klebsiella_pneumoniae.txt)
-* [Neisseria gonorrhoeae](Neisseria_gonorrhoeae.txt) (acquired resistances, based on analysis of geno-pheno data)
-* [Pseudomonas aeruginosa](Pseudomonas_aeruginosa.txt)
-* [Salmonella](Salmonella.txt)
-* [Staphylococcus aureus](Staphylococcus_aureus.txt)
-* [Yersinia](Yersinia.txt)
+* [Enterobacter hormaechei](rules/Enterobacter.txt)
+* [Enterococcus faecalis](rules/Enterococcus_faecalis.txt)
+* [Enterococcus faecium](rules/Enterococcus_faecium.txt)
+* [Escherichia coli](rules/Escherichia_coli.txt)
+* [Klebsiella pneumoniae](rules/Klebsiella_pneumoniae.txt)
+* [Neisseria gonorrhoeae](rules/Neisseria_gonorrhoeae.txt) (acquired resistances, based on analysis of geno-pheno data)
+* [Pseudomonas aeruginosa](rules/Pseudomonas_aeruginosa.txt)
+* [Salmonella](rules/Salmonella.txt)
+* [Staphylococcus aureus](rules/Staphylococcus_aureus.txt)
+* [Yersinia](rules/Yersinia.txt)
 
 
 ## Interpreting AMRfinderplus genotype results with AMRrules
