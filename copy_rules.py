@@ -5,7 +5,11 @@ import csv
 SRC_DIR = "rules"
 DST_DIR = "src/amrrules/rules"
 
-def copy_rules():
+def clean_and_copy_rules():
+    # run some checks on each rules file before it's copied
+    # make sure that there are no trailing spaces in any of the columns
+    # make sure there are no empty rows
+    # make sure that the second row isn't the 'required' 'optional' stuff from the spec
     if not os.path.isdir(SRC_DIR):
         raise FileNotFoundError(f"Source rules folder not found: {SRC_DIR}")
 
@@ -13,8 +17,26 @@ def copy_rules():
 
     for file in os.listdir(SRC_DIR):
         if file.endswith(".txt"):
-            shutil.copy(os.path.join(SRC_DIR, file), os.path.join(DST_DIR, file))
-            print(f"Copied: {file}")
+            file_path = os.path.join(SRC_DIR, file)
+            out_file_path = os.path.join(DST_DIR, file)
+            with open(file_path, 'r') as f:
+                reader = csv.reader(f, delimiter='\t')
+                cleaned_rows = []
+                for row in reader:
+                    # skip empty rows
+                    if not row or all(cell.strip() == '' for cell in row):
+                        continue
+                    # skip the second row if it contains 'required' or 'optional'
+                    if len(row) > 1 and (row[0].lower() == 'required' or row[0].lower() == 'optional'):
+                        continue
+                    # strip trailing spaces from each cell
+                    cleaned_row = [cell.strip() for cell in row]
+                    cleaned_rows.append(cleaned_row)
+            # write the cleaned rows back to the file
+            with open(out_file_path, 'w', newline='') as f:
+                writer = csv.writer(f, delimiter='\t')
+                writer.writerows(cleaned_rows)
+            print(f"Cleaned and copied: {file}")
 
 def create_rules_file_key():
     """
@@ -54,5 +76,5 @@ def create_rules_file_key():
     print(f"Rules key file created at: {key_file_path}")
 
 if __name__ == "__main__":
-    copy_rules()
+    clean_and_copy_rules()
     create_rules_file_key()
