@@ -61,6 +61,9 @@ def summarise_by_drug_or_class(row_indicies, row, drug_class_name):
         row_indicies[drug_class_name].append(row)
     return row_indicies
 
+def group_by_wt_nwt(marker_dict, summary_row):
+    """Return two columns for the summary row"""
+
 def create_summary_row(sample_rows, sample, rules, no_flag_core):
 
     summarised_rows = []
@@ -75,7 +78,7 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core):
     # for rows where rules have been applied, that's easy, it's already done
     # for rows where they haven't, we need to convert the AMRFP Subclass to it's corresponding CARD drug or class
     # some rows will have NA for Subclass because they aren't relevant, these can be skipped
-    # some rows will have a Subclass but be NA for card, these need to be grouped under 'undetermined'
+    # some rows will have a Subclass but be NA for card, these need to be grouped under 'other markers'
 
     drug_class_row_indicies = {}
 
@@ -91,7 +94,7 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core):
                     drugs.add(summary_drug)
                 if summary_drug == 'NA' or summary_drug == '-': # only grab class if we can't get a drug
                     drug_class = card_amrfp_conversion.get(subclass, {}).get('class', 'NA')
-                    if summary_drug == 'NA' and drug_class == 'NA': # both are NA so it's undetermined
+                    if summary_drug == 'NA' and drug_class == 'NA': # both are NA so it's other
                         summary_drug = 'other markers'
                     elif summary_drug != 'NA' or summary_drug != '-': # only drug is NA, so we can set the class instead
                         summary_drug = drug_class
@@ -141,16 +144,22 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core):
                 summarised['Name'] = sample
             # get the category, pheno, and evidence grade info
             summarised['category'] = rows_to_process[0].get('clinical category')
-            summarised['phenotype'] = rows_to_process[0].get('phenotype')
+            phenotype = rows_to_process[0].get('phenotype')
+            summarised['phenotype'] = phenotype
             summarised['evidence grade'] = rows_to_process[0].get('evidence grade')
             # grab marker and check if it's a core gene, flag if user wants this
             marker_value = rows_to_process[0].get('Gene symbol') or rows_to_process[0].get('Element symbol')
-            if not no_flag_core:
-                # check if the gene symbol is a core gene
-                context_value = rows_to_process[0].get('context')
-                if context_value == 'core':
-                    marker_value = marker_value + ' (core)'
-            summarised['markers'] = marker_value
+            context_value = rows_to_process[0].get('context')
+            if context_value == 'core' and not no_flag_core:
+                marker_value = marker_value + ' (core)'
+            # split the marker into one of two columns depending on wt and nwt
+            if phenotype == 'wildtype':
+                summarised['markers wt'] = marker_value
+                summarised['markers nwt'] = '-'
+            if phenotype == 'nonwildtype':
+                summarised['markers nwt'] = marker_value
+                summarised['markers wt'] = '-'
+
             ruleID = rows_to_process[0].get('ruleID')
             if ruleID == '-':
                 ruleID = 'marker has no rule'
@@ -215,17 +224,29 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core):
             # get the highest evidence grade
             highest_evidence_grade = max(evidence_grades, key=lambda x: ['-', 'very low', 'low', 'moderate', 'strong'].index(x))
             summarised['evidence grade'] = highest_evidence_grade
-            # combine all the markers into a single string
-            markers = []
+            
+            # combine all the markers into two strings, one for wildtype markers and one for nonwildtype markers
+            wt_markers = []
+            nwt_markers = []
             for row in rows_to_process:
                 gene_symbol = row.get('Gene symbol') or row.get('Element symbol')
                 if not no_flag_core:
                     if row.get('context') == 'core':
                         gene_symbol = gene_symbol + ' (core)'
-                if gene_symbol not in markers:
-                    markers.append(gene_symbol)
-            summarised['markers'] = ';'.join(markers)
-            
+                if row.get('phenotype') == 'wildtype':
+                    if gene_symbol not in wt_markers:
+                        wt_markers.append(gene_symbol)
+                elif row.get('phenotype') == 'nonwildtype':
+                    if gene_symbol not in nwt_markers:
+                        nwt_markers.append(gene_symbol)
+            # set the lists to blank if there are no entries
+            if wt_markers == []:
+                wt_markers = ['-']
+            if nwt_markers == []:
+                nwt_markers = ['-']
+            summarised['markers wt'] = ';'.join(wt_markers)
+            summarised['markers nwt'] = ';'.join(nwt_markers)
+
             if matched_combo_rules is not None:
                 summarised['combo rules'] = ';'.join(combo_ruleIDs)
             else:
@@ -281,9 +302,9 @@ def write_output_files(output_rows, reader, summary_output, args, unmatched_hits
     summary_output_file = os.path.join(args.output_dir, args.output_prefix + '_geome_summary.tsv')
     with open(summary_output_file, 'w', newline='') as f:
         if 'Name' in summary_output[0].keys():
-            col_names = ['Name', 'drug', 'drug class', 'category', 'phenotype', 'evidence grade', 'markers', 'ruleIDs', 'combo rules', 'organism']
+            col_names = ['Name', 'drug', 'drug class', 'category', 'phenotype', 'evidence grade', 'markers wt', 'markers nwt', 'ruleIDs', 'combo rules', 'organism']
         else:
-            col_names = ['drug', 'drug class', 'category', 'phenotype', 'evidence grade', 'markers', 'ruleIDs', 'combo rules', 'organism']
+            col_names = ['drug', 'drug class', 'category', 'phenotype', 'evidence grade', 'markers wt', 'markers nwt', 'ruleIDs', 'combo rules', 'organism']
         writer = csv.DictWriter(f, fieldnames=col_names, delimiter='\t')
         writer.writeheader()
         writer.writerows(summary_output)
