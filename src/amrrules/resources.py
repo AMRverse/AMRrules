@@ -24,13 +24,13 @@ class ResourceManager:
             if refseq_file.exists():
                 self._refseq_nodes_cache = self._load_refseq_nodes(str(refseq_file))
             else:
-                # Return empty list if file doesn't exist yet
-                self._refseq_nodes_cache = []
+                # Return empty dict if file doesn't exist yet
+                self._refseq_nodes_cache = {}
         return self._refseq_nodes_cache
 
     def _load_refseq_nodes(self, node_file: str):
         """Load RefSeq nodes from the given file."""
-        self._refseq_nodes_cache = []
+        self._refseq_nodes_cache = {}
 
         refseq_hierarchy = csv.DictReader(open(node_file, 'r'), delimiter='\t')
         for row in refseq_hierarchy:

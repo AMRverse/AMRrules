@@ -2,7 +2,7 @@ from amrrules.rules_io import parse_rules_file, download_and_parse_reference_gen
 from amrrules.annotator import check_rules, annotate_rule
 from amrrules.summariser import prepare_summary, write_output_files
 from amrrules.utils import validate_input_file
-from amrrules.resources import ResourceManager
+from amrrules.resources import ResourceManager as rm
 import csv
 from importlib import resources
 
@@ -11,8 +11,7 @@ def run(args):
     if args.amr_tool == 'amrfp':
         # then we need to grab the refgene heirarchy direct from the ncbi website (get latest for now)
         #TODO: user specifies version of amrfp database they used, or we extract this from hamronized file
-        reference_gene_hierarchy_url = "https://ftp.ncbi.nlm.nih.gov/pathogen/Antimicrobial_resistance/AMRFinderPlus/database/latest/ReferenceGeneHierarchy.txt"
-        amrfp_nodes = download_and_parse_reference_gene_hierarchy(reference_gene_hierarchy_url)
+        amrfp_nodes = rm().refseq_nodes()
 
     # We need to validate the input file, and if we've got an organism file, we need to check that all the IDs are in there
     # if only some IDs are missing, in either file, we can still run, but throw a warning to the user

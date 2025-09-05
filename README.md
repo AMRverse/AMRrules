@@ -60,11 +60,24 @@ cd AMRrules
 make dev
 ```
 
-Use AMRrules to interpret AMRfinderplus results for a single genome
+amrrules --input tests/data/input/test_kleb_SGH10.tsv --output_prefix test_kleb_SGH10 --organism 's__Klebsiella pneumoniae'
+
+## Resource setup (required after install)
+
+After installing AMRrules, you must download the required AMRFinderPlus resource files. Run:
+
+```
+amrrules --download-resources
+```
+
+This will download and cache the necessary files for AMRrules to function. You only need to run this once after installation or when updating resources.
+
+## Usage
+
+Use AMRrules to interpret AMRfinderplus results for a single genome:
 
 ```
 amrrules --input tests/data/input/test_ecoli_genome.tsv --output_prefix test_ecoli_genome --organism 's__Escherichia coli'
-
 amrrules --input tests/data/input/test_kleb_SGH10.tsv --output_prefix test_kleb_SGH10 --organism 's__Klebsiella pneumoniae'
 ```
 
