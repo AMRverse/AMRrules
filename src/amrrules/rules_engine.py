@@ -1,4 +1,4 @@
-from amrrules.rules_io import parse_rules_file, download_and_parse_reference_gene_hierarchy, extract_relevant_rules
+from amrrules.rules_io import parse_rules_file, extract_relevant_rules
 from amrrules.annotator import check_rules, annotate_rule
 from amrrules.summariser import prepare_summary, write_output_files
 from amrrules.utils import validate_input_file

@@ -53,83 +53,147 @@ def evaluate_logic_string(logic_string, id_list):
     except Exception as e:
         raise ValueError(f"Error evaluating logic string: {logic_string}") from e
 
+def summarise_by_drug_or_class(row_indicies, row, drug_class_name):
+    
+    if drug_class_name not in row_indicies:
+            row_indicies[drug_class_name] = [row]
+    else:
+        row_indicies[drug_class_name].append(row)
+    return row_indicies
+
 def create_summary_row(sample_rows, sample, rules, no_flag_core):
 
     summarised_rows = []
 
     drugs = set() # list of unique drugs to parse
     drug_classes = set() # list of unique drug classes to parse
-    # here we need to get not just the drugs and drug classes where we've applied rules
-    # we also need to get the rows where NO rules have been applied, and group these by drug or drug class (as relevant)
-    card_amrfp_conversion = rm().get_amrfp_card_conversion()
+
+    card_amrfp_conversion = rm().get_amrfp_card_conversion() # get the AMRFP to CARD conversion mapping
+
+    # we need to evaluate markers by drug/class, because that's how we're summarising
+    # so first every marker/row needs to be assigned to a drug or class
+    # for rows where rules have been applied, that's easy, it's already done
+    # for rows where they haven't, we need to convert the AMRFP Subclass to it's corresponding CARD drug or class
+    # some rows will have NA for Subclass because they aren't relevant, these can be skipped
+    # some rows will have a Subclass but be NA for card, these need to be grouped under 'undetermined'
+
+    drug_class_row_indicies = {}
+
     for row in sample_rows:
-        drug = row.get('drug')
-        drug_class = row.get('drug class')
-        drugs.add(drug)
-        drug_classes.add(drug_class)
+        if row.get('ruleID') == '-' and row.get('Subclass') != 'NA': # convert AMRFP Subclass to CARD, skipping non-AMR rows
+            subclasses = row.get('Subclass')
+            drug_class = None
+            # if there are '/' between items, we need to split these
+            subclasses = subclasses.split('/') if '/' in subclasses else [subclasses]
+            for subclass in subclasses:
+                summary_drug = card_amrfp_conversion.get(subclass, {}).get('drug', 'NA')
+                if summary_drug != 'NA' and summary_drug != '-':
+                    drugs.add(summary_drug)
+                if summary_drug == 'NA' or summary_drug == '-': # only grab class if we can't get a drug
+                    drug_class = card_amrfp_conversion.get(subclass, {}).get('class', 'NA')
+                    if summary_drug == 'NA' and drug_class == 'NA': # both are NA so it's undetermined
+                        summary_drug = 'other markers'
+                    elif summary_drug != 'NA' or summary_drug != '-': # only drug is NA, so we can set the class instead
+                        summary_drug = drug_class
+                        drug_classes.add(drug_class)
+                # because no rule has been applied, we need to fill in some of the additional info
+                # all will be nonwildtype and R, with evidence grade of low
+                row['phenotype'] = 'nonwildtype'
+                row['clinical category'] = 'R'
+                row['evidence grade'] = 'very low'
+                drug_class_row_indicies = summarise_by_drug_or_class(drug_class_row_indicies, row, summary_drug)
+        elif row.get('ruleID') != '-': # process the rows with matching rules
+            summary_drug = row.get('drug')
+            if summary_drug == '-':
+                summary_drug = row.get('drug class')
+                drug_classes.add(summary_drug)
+            else:
+                drugs.add(summary_drug)
+            drug_class_row_indicies = summarise_by_drug_or_class(drug_class_row_indicies, row, summary_drug)
+        else: # these are rows we want to skip
+            continue
 
-    # remove any '-' or '' values
-    drugs = [x for x in drugs if x not in ['-', '']]
-    drug_classes = [x for x in drug_classes if x not in ['-', '']]
-    drugs_and_classes = drugs + drug_classes
-
-    for drug_or_class in drugs_and_classes:
+    # once each row is assigned to a drug or class, we can then process all rows for that drug/class
+    for drug_or_class in drug_class_row_indicies.keys():
+        # initialise values
+        no_rule_markers = False
+        drug = None
+        drug_class = None
+        # work out if we are dealing with a drug or a class
         if drug_or_class in drugs:
-            summarised = {'drug': drug_or_class, 'drug class': '-'} #TODO: look up drug class for drug from the card ontology
+            summarised = {'drug': drug_or_class, 'drug class': '-'}
             drug = drug_or_class
             drug_class = None
         elif drug_or_class in drug_classes:
             summarised = {'drug': '-', 'drug class': drug_or_class}
             drug = None
             drug_class = drug_or_class
-        # extract all rows that match this drug or class
-        matching_rows = [row for row in sample_rows if row.get('drug') == drug_or_class or row.get('drug class') == drug_or_class]
+        elif drug_or_class == 'other markers':
+            summarised = {'drug': '-', 'drug class': 'other markers'}
+            # no need to apply combo rules in this case
+            drug = None
+            drug_class = None 
+        rows_to_process = drug_class_row_indicies[drug_or_class]
         # if there's only one row, then just add the relevant info to the summary
-        if len(matching_rows) == 1:
+        if len(rows_to_process) == 1:
             # add the sample
             if sample is not None:
                 summarised['Name'] = sample
             # get the category, pheno, and evidence grade info
-            summarised['category'] = matching_rows[0].get('clinical category')
-            summarised['phenotype'] = matching_rows[0].get('phenotype')
-            summarised['evidence grade'] = matching_rows[0].get('evidence grade')
+            summarised['category'] = rows_to_process[0].get('clinical category')
+            summarised['phenotype'] = rows_to_process[0].get('phenotype')
+            summarised['evidence grade'] = rows_to_process[0].get('evidence grade')
             # grab marker and check if it's a core gene, flag if user wants this
-            marker_value = matching_rows[0].get('Gene symbol') or matching_rows[0].get('Element symbol')
+            marker_value = rows_to_process[0].get('Gene symbol') or rows_to_process[0].get('Element symbol')
             if not no_flag_core:
                 # check if the gene symbol is a core gene
-                context_value = matching_rows[0].get('context')
+                context_value = rows_to_process[0].get('context')
                 if context_value == 'core':
                     marker_value = marker_value + ' (core)'
             summarised['markers'] = marker_value
-            summarised['ruleIDs'] = matching_rows[0].get('ruleID')
+            ruleID = rows_to_process[0].get('ruleID')
+            if ruleID == '-':
+                ruleID = 'marker has no rule'
+            summarised['ruleIDs'] = ruleID
             summarised['combo rules'] = '-'
-            summarised['organism'] = matching_rows[0].get('organism')
+            summarised['organism'] = rows_to_process[0].get('organism')
 
             summarised_rows.append(summarised)
         # if there are multiple rows, we need to combine some of the info
-        elif len(matching_rows) > 1:
+        # note that there may be some rows where rules have been applied, and some where they haven't
+        elif len(rows_to_process) > 1:
             # add the sample
             if sample is not None:
                 summarised['Name'] = sample
             # combine all the rule IDs into a single string
             ruleIDs = []
-            for row in matching_rows:
+            for row in rows_to_process:
                 ruleID = row.get('ruleID')
-                if ruleID not in ruleIDs:
+                if ruleID == '-':
+                    no_rule_markers = True
+                if ruleID not in ruleIDs and ruleID != '-':
                     ruleIDs.append(ruleID)
+            if no_rule_markers: # want to make sure this is at the end of the string
+                if len(ruleIDs) == 0:
+                    ruleIDs = ['markers have no rules']
+                else:
+                    ruleIDs.append('includes markers with no rules')
             summarised['ruleIDs'] = ';'.join(ruleIDs)
 
             # we now need to check if there are any combo rules, and if so, we need to add them to the summary
-            matched_combo_rules = check_comboo_rules(ruleIDs, rules, drug, drug_class)
+            if drug or drug_class:
+                matched_combo_rules = check_comboo_rules(ruleIDs, rules, drug, drug_class)
+            else:
+                matched_combo_rules = None
 
             # extract the current categories, phenotypes and evidence grades
-            categories = [row.get('clinical category') for row in matching_rows]
-            phenotypes = [row.get('phenotype') for row in matching_rows]
-            evidence_grades = [row.get('evidence grade') for row in matching_rows]
+            categories = [row.get('clinical category') for row in rows_to_process]
+            phenotypes = [row.get('phenotype') for row in rows_to_process]
+            evidence_grades = [row.get('evidence grade') for row in rows_to_process]
 
             # if there are combo rules, then we need to add these rules to our clinical category and phenotype checks
             # and return the highest category and phenotype including the combos
-            if matched_combo_rules is not None:
+            if matched_combo_rules:
                 combo_ruleIDs = []
                 # we need to check if the combo rules are in the matching rows
                 for rule in matched_combo_rules:
@@ -149,11 +213,11 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core):
             highest_phenotype = max(phenotypes, key=lambda x: ['-', 'wildtype', 'nonwildtype'].index(x))
             summarised['phenotype'] = highest_phenotype
             # get the highest evidence grade
-            highest_evidence_grade = max(evidence_grades, key=lambda x: ['-', 'weak', 'moderate', 'strong'].index(x))
+            highest_evidence_grade = max(evidence_grades, key=lambda x: ['-', 'very low', 'low', 'moderate', 'strong'].index(x))
             summarised['evidence grade'] = highest_evidence_grade
             # combine all the markers into a single string
             markers = []
-            for row in matching_rows:
+            for row in rows_to_process:
                 gene_symbol = row.get('Gene symbol') or row.get('Element symbol')
                 if not no_flag_core:
                     if row.get('context') == 'core':
@@ -166,7 +230,7 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core):
                 summarised['combo rules'] = ';'.join(combo_ruleIDs)
             else:
                 summarised['combo rules'] = '-'
-            summarised['organism'] = matching_rows[0].get('organism')
+            summarised['organism'] = rows_to_process[0].get('organism')
             summarised_rows.append(summarised)
    
     return summarised_rows
