@@ -210,12 +210,13 @@ def write_output_files(output_rows, reader, summary_output, args, unmatched_hits
     print(f"{len(matched_hits)} hits matched a rule and {len(unmatched_hits)} hits did not match a rule.")
     print(f"Output written to {interpreted_output_file}.")
 
-    #with open(summary_output_file, 'w', newline='') as f:
-    #    if 'Name' in summary_output[0].keys():
-    #        col_names = ['Name', 'drug', 'drug class', 'category', 'phenotype', 'evidence grade', 'markers', 'ruleIDs', 'combo rules', 'organism']
-    #    else:
-    #        col_names = ['drug', 'drug class', 'category', 'phenotype', 'evidence grade', 'markers', 'ruleIDs', 'combo rules', 'organism']
-    #    writer = csv.DictWriter(f, fieldnames=col_names, delimiter='\t')
-    #    writer.writeheader()
-    #    writer.writerows(summary_output)
-    #print(f"Summary output written to {summary_output_file}.")
+    summary_output_file = os.path.join(args.output_dir, args.output_prefix + '_geome_summary.tsv')
+    with open(summary_output_file, 'w', newline='') as f:
+        if 'Name' in summary_output[0].keys():
+            col_names = ['Name', 'drug', 'drug class', 'category', 'phenotype', 'evidence grade', 'markers', 'ruleIDs', 'combo rules', 'organism']
+        else:
+            col_names = ['drug', 'drug class', 'category', 'phenotype', 'evidence grade', 'markers', 'ruleIDs', 'combo rules', 'organism']
+        writer = csv.DictWriter(f, fieldnames=col_names, delimiter='\t')
+        writer.writeheader()
+        writer.writerows(summary_output)
+    print(f"Summary output written to {summary_output_file}.")

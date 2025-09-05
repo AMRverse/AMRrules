@@ -1,8 +1,9 @@
 from amrrules.rules_io import parse_rules_file, download_and_parse_reference_gene_hierarchy, extract_relevant_rules
 from amrrules.annotator import check_rules, annotate_rule
 from amrrules.summariser import prepare_summary, write_output_files
-from amrrules.utils import validate_input_file, get_organisms
-import os, csv
+from amrrules.utils import validate_input_file
+from amrrules.resources import ResourceManager
+import csv
 from importlib import resources
 
 def run(args):
@@ -67,7 +68,16 @@ def run(args):
             output_rows.extend(new_rows)
     
     # okay now we need the unique sample IDs, for the summary output
-    #summary_output = prepare_summary(output_rows, rules, samples_to_parse, args.no_flag_core)
-    summary_output = None
+    summary_output = prepare_summary(output_rows, rules, samples_to_parse, args.no_flag_core)
+    #summary_output = None
 
     write_output_files(output_rows, reader, summary_output, args, unmatched_hits, matched_hits)
+
+
+def download_resources():
+    """
+    Download and cache AMRFinderPlus resource files using ResourceManager.
+    """
+    rm = ResourceManager()
+    rm.setup_all_resources()
+    print("Resource download complete.")
