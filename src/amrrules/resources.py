@@ -15,9 +15,9 @@ class ResourceManager:
         #self.dir.mkdir(parents=True, exist_ok=True)
         self._amrfp_card_convert_cache: Optional[list] = None
         self._amrfp_db_version: Optional[str] = None
-        self._refseq_nodes_cache: Optional[list] = None
+        self._refseq_nodes_cache: Optional[dict] = None
     
-    def refseq_nodes(self) -> list:
+    def refseq_nodes(self) -> dict:
 
         if self._refseq_nodes_cache is None:
             refseq_file = self.dir / "ReferenceGeneHierarchy.txt"
@@ -39,8 +39,37 @@ class ResourceManager:
             self._refseq_nodes_cache[node_id] = parent_node
 
         return self._refseq_nodes_cache
-    
-    
+
+    def get_amrfp_card_conversion(self) -> dict:
+
+        if self._amrfp_card_convert_cache is None:
+            card_file = self.dir / "amrfp_to_card_drugs_classes.txt"
+            if card_file.exists():
+                self._amrfp_card_convert_cache = self._load_amrfp_card_conversion(str(card_file))
+            else:
+                # Return empty dict if file doesn't exist yet
+                self._amrfp_card_convert_cache = {}
+        return self._amrfp_card_convert_cache
+
+    def _load_amrfp_card_conversion(self, card_file: str):
+        """
+        Load the dictionary that converts AMRFP Subclasses to the CARD drug and drug class ontology.
+        """
+        self._amrfp_card_convert_cache = {}
+
+        with open(card_file, 'r') as f:
+            reader = csv.DictReader(f, delimiter='\t')
+            for row in reader:
+                amrfp_subclass = row.get('AFP_Subclass')
+                card_drug = row.get('CARD drug')
+                card_class = row.get('CARD drug class')
+                self._amrfp_card_convert_cache[amrfp_subclass] = {
+                    'drug': card_drug,
+                    'class': card_class
+                }
+
+        return self._amrfp_card_convert_cache
+
     def get_amrfp_db_version(self) -> str:
         """
         Get the AMRFinderPlus database version from the downloaded version.txt file.

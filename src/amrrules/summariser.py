@@ -1,5 +1,6 @@
 import csv
 import os
+from amrrules.resources import ResourceManager as rm
 
 def check_comboo_rules(ruleIDs, rules, drug, drug_class):
 
@@ -58,6 +59,9 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core):
 
     drugs = set() # list of unique drugs to parse
     drug_classes = set() # list of unique drug classes to parse
+    # here we need to get not just the drugs and drug classes where we've applied rules
+    # we also need to get the rows where NO rules have been applied, and group these by drug or drug class (as relevant)
+    card_amrfp_conversion = rm().get_amrfp_card_conversion()
     for row in sample_rows:
         drug = row.get('drug')
         drug_class = row.get('drug class')

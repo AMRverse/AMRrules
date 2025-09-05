@@ -77,6 +77,5 @@ def download_resources():
     """
     Download and cache AMRFinderPlus resource files using ResourceManager.
     """
-    rm = ResourceManager()
-    rm.setup_all_resources()
+    rm().setup_all_resources()
     print("Resource download complete.")
