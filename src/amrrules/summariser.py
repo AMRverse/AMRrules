@@ -61,9 +61,6 @@ def summarise_by_drug_or_class(row_indicies, row, drug_class_name):
         row_indicies[drug_class_name].append(row)
     return row_indicies
 
-def group_by_wt_nwt(marker_dict, summary_row):
-    """Return two columns for the summary row"""
-
 def create_summary_row(sample_rows, sample, rules, no_flag_core):
 
     summarised_rows = []
@@ -72,6 +69,7 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core):
     drug_classes = set() # list of unique drug classes to parse
 
     card_amrfp_conversion = rm().get_amrfp_card_conversion() # get the AMRFP to CARD conversion mapping
+    card_drug_map = rm().get_card_drug_class_map() # get CARD drugs and their associated classes
 
     # we need to evaluate markers by drug/class, because that's how we're summarising
     # so first every marker/row needs to be assigned to a drug or class
@@ -124,9 +122,9 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core):
         drug_class = None
         # work out if we are dealing with a drug or a class
         if drug_or_class in drugs:
-            summarised = {'drug': drug_or_class, 'drug class': '-'}
             drug = drug_or_class
-            drug_class = None
+            drug_class = card_drug_map.get(drug_or_class, '-')
+            summarised = {'drug': drug_or_class, 'drug class': drug_class}
         elif drug_or_class in drug_classes:
             summarised = {'drug': '-', 'drug class': drug_or_class}
             drug = None
@@ -222,7 +220,7 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core):
             highest_phenotype = max(phenotypes, key=lambda x: ['-', 'wildtype', 'nonwildtype'].index(x))
             summarised['phenotype'] = highest_phenotype
             # get the highest evidence grade
-            highest_evidence_grade = max(evidence_grades, key=lambda x: ['-', 'very low', 'low', 'moderate', 'strong'].index(x))
+            highest_evidence_grade = max(evidence_grades, key=lambda x: ['-', 'very low', 'low', 'moderate', 'high'].index(x))
             summarised['evidence grade'] = highest_evidence_grade
             
             # combine all the markers into two strings, one for wildtype markers and one for nonwildtype markers
@@ -256,6 +254,29 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core):
    
     return summarised_rows
 
+def order_rows(rows):
+
+    # First, we want to sort by drug class, ensuring that 'other markers' is at the end
+    rows = sorted(rows, key=lambda x: x.get('drug class') == 'other markers')
+
+    # Then, we want to group by drug class
+    grouped = {}
+    for row in rows:
+        drug_class = row.get('drug class')
+        if drug_class not in grouped:
+            grouped[drug_class] = []
+        grouped[drug_class].append(row)
+
+    # Now we want to order each group by drug
+    # when we group by drug, we want to put the '-' option at the end
+    for drug_class in grouped:
+        grouped[drug_class] = sorted(grouped[drug_class], key=lambda x: x.get('drug') == '-')
+
+    # now we need to flatten this back out, so that we remove the upper level key
+    flattened = [item for sublist in grouped.values() for item in sublist]
+
+    return flattened
+
 def prepare_summary(output_rows, rules, sample_ids, no_flag_core):
 
     # We now want to write a sumamary file that groups hits based on drug class or drug
@@ -268,14 +289,18 @@ def prepare_summary(output_rows, rules, sample_ids, no_flag_core):
     # if we've only got one sample, sample_ids will be None
     if sample_ids is None:
         summary_rows = create_summary_row(output_rows, None, rules, no_flag_core)
-        return summary_rows
+        ordered_summary_rows = order_rows(summary_rows)
+        #flattened_summary = [item for sublist in ordered_summary_rows for item in sublist]
+        return ordered_summary_rows
 
     # we need to process this sample by sample, so the combo rules are correctly assigned
     for sample in sample_ids:
         # extract all the rows for this sample
         sample_rows = [row for row in output_rows if row.get('Name') == sample]
         summarised_row = create_summary_row(sample_rows, sample, rules, no_flag_core)
-        summary_rows.append(summarised_row)
+        # order the rows for this sample by drug and class
+        ordered_summarised_row = order_rows(summarised_row)
+        summary_rows.append(ordered_summarised_row)
     flattened_summary = [item for sublist in summary_rows for item in sublist]
     return flattened_summary
 
@@ -286,7 +311,7 @@ def write_output_files(output_rows, reader, summary_output, args, unmatched_hits
     #summary_output_file = os.path.join(args.output_dir, args.output_prefix + '_summary.tsv')
 
     minimal_columns = ['ruleID', 'context', 'drug', 'drug class', 'phenotype', 'clinical category', 'evidence grade', 'version', 'organism']
-    full_columns = ['breakpoint', 'breakpoint standard', 'evidence code', 'evidence limitations', 'PMID', 'rule curation note']
+    full_columns = ['breakpoint', 'breakpoint standard', 'breakpoint condition', 'evidence code', 'evidence limitations', 'PMID', 'rule curation note']
     if args.annot_opts == 'minimal':
         interpreted_output_cols = minimal_columns
     elif args.annot_opts == 'full':
