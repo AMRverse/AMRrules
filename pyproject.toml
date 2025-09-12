@@ -11,6 +11,10 @@ authors = [
 ]
 requires-python = ">=3.12"
 
+dependencies = [
+    "obonet>=1.1.1",
+]
+
 [tool.setuptools]
 package-dir = {"" = "src"}
 
