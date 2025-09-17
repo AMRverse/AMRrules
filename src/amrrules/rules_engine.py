@@ -1,7 +1,8 @@
 from amrrules.rules_io import parse_rules_file, extract_relevant_rules
 from amrrules.annotator import check_rules, annotate_rule
-from amrrules.summariser import prepare_summary, write_output_files
+from amrrules.summariser import prepare_summary
 from amrrules.utils import validate_input_file
+from amrrules.output import write_genotype_report, write_genome_report
 from amrrules.resources import ResourceManager as rm
 import csv
 from importlib import resources
@@ -70,7 +71,8 @@ def run(args):
     summary_output = prepare_summary(output_rows, rules, samples_to_parse, args.no_flag_core)
     #summary_output = None
 
-    write_output_files(output_rows, reader, summary_output, args, unmatched_hits, matched_hits)
+    write_genotype_report(args, output_rows, reader, unmatched_hits, matched_hits)
+    write_genome_report(args, summary_output)
 
 
 def download_resources():
