@@ -1,5 +1,3 @@
-import csv
-import os
 from amrrules.resources import ResourceManager as rm
 
 def check_comboo_rules(ruleIDs, rules, drug, drug_class):
