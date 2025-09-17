@@ -92,19 +92,23 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core, no_rule_interpr
                     drug_class = card_amrfp_conversion.get(subclass, {}).get('class', 'NA')
                     if summary_drug == 'NA' and drug_class == 'NA': # both are NA so it's other
                         summary_drug = 'other markers'
+                        # set these values to '-' as we have no info about them
+                        row['clinical category'] = '-'
+                        row['phenotype'] = '-'
+                        row['evidence grade'] = '-'
                     elif summary_drug != 'NA' or summary_drug != '-': # only drug is NA, so we can set the class instead
                         summary_drug = drug_class
                         drug_classes.add(drug_class)
                 # because no rule has been applied, we need to fill in some of the additional info
                 # this should be set by the user
-                if no_rule_interpretation == 'nwtR':
+                if no_rule_interpretation == 'nwtR' and summary_drug != 'other markers':
                     row['phenotype'] = 'nonwildtype'
                     row['clinical category'] = 'R'
-                    row['evidence grade'] = 'very low'
-                elif no_rule_interpretation == 'nwtS':
+                    row['evidence grade'] = 'no rule'
+                elif no_rule_interpretation == 'nwtS' and summary_drug != 'other markers':
                     row['phenotype'] = 'nonwildtype'
                     row['clinical category'] = 'S'
-                    row['evidence grade'] = 'very low'
+                    row['evidence grade'] = 'no rule'
                 drug_class_row_indicies = summarise_by_drug_or_class(drug_class_row_indicies, row, summary_drug)
         elif row.get('ruleID') != '-': # process the rows with matching rules
             summary_drug = row.get('drug')
@@ -161,7 +165,7 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core, no_rule_interpr
             # if it's not, put the marker in either a rule or no rule column
             # depending on if there's a rule
             ruleID = rows_to_process[0].get('ruleID')
-            if phenotype == 'nonwildtype':
+            if phenotype == 'nonwildtype' or phenotype == '-':
                 summarised['wt markers'] = '-'
                 if ruleID == '-':
                     summarised['markers (no rule)'] = marker_value
@@ -230,7 +234,7 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core, no_rule_interpr
             highest_phenotype = max(phenotypes, key=lambda x: ['-', 'wildtype', 'nonwildtype'].index(x))
             summarised['phenotype'] = highest_phenotype
             # get the highest evidence grade
-            highest_evidence_grade = max(evidence_grades, key=lambda x: ['-', 'very low', 'low', 'moderate', 'high'].index(x))
+            highest_evidence_grade = max(evidence_grades, key=lambda x: ['-', 'no rule', 'very low', 'low', 'moderate', 'high'].index(x))
             summarised['evidence grade'] = highest_evidence_grade
             
             # combine all the markers into three strings
@@ -248,7 +252,8 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core, no_rule_interpr
                 if row.get('phenotype') == 'wildtype':
                     if gene_symbol not in wt_markers:
                         wt_markers.append(gene_symbol)
-                elif row.get('phenotype') == 'nonwildtype':
+                # this option is for nonwildtype markers, or markers where drug is set to 'other markers'
+                elif row.get('phenotype') == 'nonwildtype' or row.get('phenotype') == '-':
                     if row.get('ruleID') == '-':
                         if gene_symbol not in markers_no_rule:
                             markers_no_rule.append(gene_symbol)
