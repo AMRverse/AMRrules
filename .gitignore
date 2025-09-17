@@ -1,8 +1,10 @@
 # resource files that need to be dl
-resources/aro*
-resources/ncbi_taxonomy.tsv
-resources/ReferenceGeneHierarchy.txt
-resources/version.txt
+src/amrrules/resources/aro*
+src/amrrules/resources/ncbi_taxonomy.tsv
+src/amrrules/resources/ReferenceGeneHierarchy.txt
+src/amrrules/resources/version.txt
+
+src/amrrules/rules/*.txt
 
 # Byte-compiled / cache files
 __pycache__/

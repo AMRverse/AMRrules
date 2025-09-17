@@ -61,7 +61,7 @@ def summarise_by_drug_or_class(row_indicies, row, drug_class_name):
         row_indicies[drug_class_name].append(row)
     return row_indicies
 
-def create_summary_row(sample_rows, sample, rules, no_flag_core):
+def create_summary_row(sample_rows, sample, rules, no_flag_core, no_rule_interpretation):
 
     summarised_rows = []
 
@@ -98,10 +98,15 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core):
                         summary_drug = drug_class
                         drug_classes.add(drug_class)
                 # because no rule has been applied, we need to fill in some of the additional info
-                # all will be nonwildtype and R, with evidence grade of low
-                row['phenotype'] = 'nonwildtype'
-                row['clinical category'] = 'R'
-                row['evidence grade'] = 'very low'
+                # this should be set by the user
+                if no_rule_interpretation == 'nwtR':
+                    row['phenotype'] = 'nonwildtype'
+                    row['clinical category'] = 'R'
+                    row['evidence grade'] = 'very low'
+                elif no_rule_interpretation == 'nwtS':
+                    row['phenotype'] = 'nonwildtype'
+                    row['clinical category'] = 'S'
+                    row['evidence grade'] = 'very low'
                 drug_class_row_indicies = summarise_by_drug_or_class(drug_class_row_indicies, row, summary_drug)
         elif row.get('ruleID') != '-': # process the rows with matching rules
             summary_drug = row.get('drug')
@@ -117,7 +122,7 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core):
     # once each row is assigned to a drug or class, we can then process all rows for that drug/class
     for drug_or_class in drug_class_row_indicies.keys():
         # initialise values
-        no_rule_markers = False
+        all_markers_no_rule = False
         drug = None
         drug_class = None
         # work out if we are dealing with a drug or a class
@@ -150,17 +155,23 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core):
             context_value = rows_to_process[0].get('context')
             if context_value == 'core' and not no_flag_core:
                 marker_value = marker_value + ' (core)'
-            # split the marker into one of two columns depending on wt and nwt
+            # if the marker is wildtype, add it to the wt marker column
             if phenotype == 'wildtype':
-                summarised['markers wt'] = marker_value
-                summarised['markers nwt'] = '-'
-            if phenotype == 'nonwildtype':
-                summarised['markers nwt'] = marker_value
-                summarised['markers wt'] = '-'
-
+                summarised['wt markers'] = marker_value
+                summarised['markers (with rule)'] = '-'
+                summarised['markers (no rule)'] = '-'
+            # if it's not, put the marker in either a rule or no rule column
+            # depending on if there's a rule
             ruleID = rows_to_process[0].get('ruleID')
-            if ruleID == '-':
-                ruleID = 'marker has no rule'
+            if phenotype == 'nonwildtype':
+                summarised['wt markers'] = '-'
+                if ruleID == '-':
+                    summarised['markers (no rule)'] = marker_value
+                    summarised['markers (with rule)'] = '-'
+                else:
+                    summarised['markers (with rule)'] = marker_value
+                    summarised['markers (no rule)'] = '-'
+
             summarised['ruleIDs'] = ruleID
             summarised['combo rules'] = '-'
             summarised['organism'] = rows_to_process[0].get('organism')
@@ -176,16 +187,17 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core):
             ruleIDs = []
             for row in rows_to_process:
                 ruleID = row.get('ruleID')
+                # then all markers have no rules
                 if ruleID == '-':
-                    no_rule_markers = True
+                    all_markers_no_rule = True
                 if ruleID not in ruleIDs and ruleID != '-':
                     ruleIDs.append(ruleID)
-            if no_rule_markers: # want to make sure this is at the end of the string
-                if len(ruleIDs) == 0:
-                    ruleIDs = ['markers have no rules']
-                else:
-                    ruleIDs.append('includes markers with no rules')
-            summarised['ruleIDs'] = ';'.join(ruleIDs)
+            if all_markers_no_rule: # want to make sure this is at the end of the string
+                summarised['ruleIDs'] = '-'
+            elif len(ruleIDs) == 1:
+                summarised['ruleIDs'] = ruleIDs[0]
+            else:
+                summarised['ruleIDs'] = ';'.join(ruleIDs)
 
             # we now need to check if there are any combo rules, and if so, we need to add them to the summary
             if drug or drug_class:
@@ -223,9 +235,13 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core):
             highest_evidence_grade = max(evidence_grades, key=lambda x: ['-', 'very low', 'low', 'moderate', 'high'].index(x))
             summarised['evidence grade'] = highest_evidence_grade
             
-            # combine all the markers into two strings, one for wildtype markers and one for nonwildtype markers
+            # combine all the markers into three strings
+            # one for wt markers
+            # one for markers with a rule
+            # one for markers without a rule
             wt_markers = []
-            nwt_markers = []
+            markers_rule = []
+            markers_no_rule = []
             for row in rows_to_process:
                 gene_symbol = row.get('Gene symbol') or row.get('Element symbol')
                 if not no_flag_core:
@@ -235,15 +251,22 @@ def create_summary_row(sample_rows, sample, rules, no_flag_core):
                     if gene_symbol not in wt_markers:
                         wt_markers.append(gene_symbol)
                 elif row.get('phenotype') == 'nonwildtype':
-                    if gene_symbol not in nwt_markers:
-                        nwt_markers.append(gene_symbol)
+                    if row.get('ruleID') == '-':
+                        if gene_symbol not in markers_no_rule:
+                            markers_no_rule.append(gene_symbol)
+                    else:
+                        if gene_symbol not in markers_rule:
+                            markers_rule.append(gene_symbol)
             # set the lists to blank if there are no entries
             if wt_markers == []:
                 wt_markers = ['-']
-            if nwt_markers == []:
-                nwt_markers = ['-']
-            summarised['markers wt'] = ';'.join(wt_markers)
-            summarised['markers nwt'] = ';'.join(nwt_markers)
+            if markers_rule == []:
+                markers_rule = ['-']
+            if markers_no_rule == []:
+                markers_no_rule = ['-']
+            summarised['wt markers'] = ';'.join(wt_markers)
+            summarised['markers (with rule)'] = ';'.join(markers_rule)
+            summarised['markers (no rule)'] = ';'.join(markers_no_rule)
 
             if matched_combo_rules is not None:
                 summarised['combo rules'] = ';'.join(combo_ruleIDs)
@@ -277,7 +300,7 @@ def order_rows(rows):
 
     return flattened
 
-def prepare_summary(output_rows, rules, sample_ids, no_flag_core):
+def prepare_summary(output_rows, rules, sample_ids, no_flag_core, no_rule_interpretation):
 
     # We now want to write a sumamary file that groups hits based on drug class or drug
     # In each drug/drug class, we want to list the highest category and phenotype for that drug/drug class
@@ -288,7 +311,7 @@ def prepare_summary(output_rows, rules, sample_ids, no_flag_core):
 
     # if we've only got one sample, sample_ids will be None
     if sample_ids is None:
-        summary_rows = create_summary_row(output_rows, None, rules, no_flag_core)
+        summary_rows = create_summary_row(output_rows, None, rules, no_flag_core, no_rule_interpretation)
         ordered_summary_rows = order_rows(summary_rows)
         #flattened_summary = [item for sublist in ordered_summary_rows for item in sublist]
         return ordered_summary_rows

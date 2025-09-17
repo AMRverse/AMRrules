@@ -22,6 +22,7 @@ def main():
     parser.add_argument('--hamronized', '-H', action='store_true', help='Input file has been hamronized')
     # TODO: implement this option to allow for selection of different AMRFP databases
     #parser.add_argument('--amrfp_db_version', type=str, default='latest', help='Version of the AMRFP database used. Default is latest. NOTE STILL TO BE IMPLEMENTED')
+    parser.add_argument('--no-rule-interpretation', '-nr', type=str, default = 'nwtR', choices=['nwtR', 'nwtS'], help='How to interpret hits that do not match a rule. Options are: nwtR (default) - all nonwildtype hits with no matching rule are interpreted as resistant; nwtS - all nonwildtype hits with no matching rule are interpreted as susceptible.')
     parser.add_argument('--annot_opts', '-a', type=str, default='minimal', choices=['minimal', 'full'], help='Annotation options: minimal (context, drug, phenotype, category, evidence grade), full (everything including breakpoints, standards, etc)')
     parser.add_argument('--no_flag_core', action='store_true', help='Turn off flagging core genes in the summary output')
     parser.add_argument('--version', action='version', version=f"amrrules {__version__}")
