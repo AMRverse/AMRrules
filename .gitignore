@@ -1,3 +1,9 @@
+# resource files that need to be dl
+resources/aro*
+resources/ncbi_taxonomy.tsv
+resources/ReferenceGeneHierarchy.txt
+resources/version.txt
+
 # Byte-compiled / cache files
 __pycache__/
 *.py[cod]

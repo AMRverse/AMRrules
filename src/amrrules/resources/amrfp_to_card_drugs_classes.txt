@@ -1,110 +1,110 @@
-AFP_Subclass	CARD drug	CARD ARO	CARD drug class			
-AMIKACIN	amikacin	ARO:0000013	aminoglycoside antibiotic			
-AMINOCOUMARIN	-	ARO:3000103 	aminocoumarin antibiotic			
-AMINOGLYCOSIDE	-	ARO:0000016 	aminoglycoside antibiotic			
-AMOXICILLIN-CLAVULANIC ACID	amoxicillin-clavulanic acid	ARO:3003997	antibiotic mixture			
-AMPICILLIN	ampicillin	ARO:3000637	penicillin with extended spectrum			
-APRAMYCIN	apramycin	ARO:0000037	aminoglycoside antibiotic			
-AVIBACTAM	avibactam	ARO:3000588 	adjuvant			
-AVILAMYCIN	NA	NA	NA			
-AZITHROMYCIN	azithromycin	ARO:3000158	macrolide antibiotic			
-AZTREONAM	aztreonam	ARO:3000550	monobactam			
-BACITRACIN	bacitracin	ARO:0000041	peptide antibiotic			
-BETA-LACTAM	-	ARO:3000007 	beta-lactam antibiotic			
-BLEOMYCIN	bleomycin	ARO:0000053	glycopeptide antibiotic			
-CAPREOMYCIN	capreomycin	ARO:3003993	aminoglycoside antibiotic			
-CARBAPENEM	carbapenem	ARO:0000020	carbapenem			
-CEFIDEROCOL	cefiderocol	ARO:3004474	other cephalosporins and penems			
-CEFTAROLINE	ceftaroline	ARO:3000651	other cephalosporins and penems			
-CEFTAZIDIME-AVIBACTAM	ceftazidime-avibactam	ARO:3007072	antibiotic mixture			
-CEPHALOSPORIN	cephalosporin	ARO:0000032	cephalosporin			
-CEPHALOTIN	NA	NA	NA			
-CHLORAMPHENICOL	chloramphenicol	ARO:3000385	phenicol antibiotic			
-CLARITHROMYCIN	clarithromycin	ARO:0000065	macrolide antibiotic			
-CLINDAMYCIN	clindamycin	ARO:0000066	lincosamide antibiotic			
-COLISTIN	colistin	ARO:0000067	polymyxin antibiotic			
-DAPTOMYCIN	daptomycin	ARO:0000068	lipopeptide antibiotic			
-EDEINE	edeine	ARO:3000119	peptide antibiotic			
-EFFLUX	NA	NA	NA			
-ERYTHROMYCIN	erythromycin	ARO:0000006	macrolide antibiotic			
-FIDAXOMICIN	fidaxomicin	ARO:3001319	macrocyclic antibiotic			
-FLORFENICOL	florfenicol	ARO:3000461	phenicol antibiotic			
-FLUOROQUINOLONE	-	ARO:0000001	fluoroquinolone antibiotic			
-FOSFOMYCIN	fosfomycin	ARO:0000025	phosphonic acid antibiotic			
-FOSMIDOMYCIN	fosmidomycin	ARO:3000758	phosphonic acid antibiotic			
-FUSIDIC ACID	fusidic acid	ARO:3000759	fusidane antibiotic			
-G418	G418	ARO:3000653	aminoglycoside antibiotic			
-GENTAMICIN	gentamicin	ARO:3007382	aminoglycoside antibiotic			
-GENTAMICIN C	gentamicin C	ARO:0000014	antibiotic mixture			
-HYGROMYCIN	hygromycin B	ARO:3000214	aminoglycoside antibiotic			
-IMIPENEM	imipenem	ARO:3000170	carbapenem			
-ISONIAZID	isoniazid	ARO:3000520	isoniazid-like antibiotic			
-KANAMYCIN	kanamycin A	ARO:0000049	aminoglycoside antibiotic			
-KASUGAMYCIN	kasugamycin	ARO:3001296	aminoglycoside antibiotic			
-KIRROMYCIN	kirromycin	ARO:3001234	kirromycin-like antibiotics			
-LINCOMYCIN	lincomycin	ARO:0000046	lincosamide antibiotic			
-LINCOSAMIDE	-	ARO:0000017	lincosamide antibiotic			
-LINEZOLID	linezolid	ARO:0000072	oxazolidinone antibiotic			
-MACROLIDE	-	ARO:0000000	macrolide antibiotic			
-MADURAMICIN	NA	NA	NA			
-MEROPENEM	meropenem	ARO:0000073	carbapenem			
-METHICILLIN	methicillin	ARO:0000015	beta-lactamase resistant penicillin			
-METRONIDAZOLE	metronidazole	ARO:3000689	nitroimidazole antibiotic			
-MUPIROCIN	mupirocin	ARO:3000554	mupirocin-like antibiotic			
-NALIDIXIC ACID	nalidixic acid	ARO:3000661	fluoroquinolone antibiotic			
-NARASIN	narasin	ARO:3007471	ionophore with antibiotic activity			
-NEOMYCIN	neomycin	ARO:0000005	aminoglycoside antibiotic			
-NITROFURANTOIN	nitrofurantoin	ARO:0000075	nitrofuran antibiotic			
-NITROIMIDAZOLE	-	ARO:3004115	nitroimidazole antibiotic			
-NITROXOLINE	NA	NA	NA			
-OLEANDOMYCIN	oleandomycin	ARO:3000867	macrolide antibiotic			
-OSTREOGRYCIN	ostreogrycin B3	ARO:3000682	streptogramin B antibiotic			
-OXAZOLIDINONE	-	ARO:3000079	oxazolidinone antibiotic			
-PAROMOMYCIN	paromomycin	ARO:3000657	aminoglycoside antibiotic			
-PHENICOL	-	ARO:3000387	phenicol antibiotic			
-PIPERACILLIN-TAZOBACTAM	piperacillin-tazobactam	ARO:3004021	antibiotic mixture			
-PLEUROMUTILIN	pleuromutilin	ARO:3001317	pleuromutilin antibiotic			
-PRISTINAMYCIN	NA	NA	NA			
-PULVOMYCIN	pulvomycin	ARO:3000586	elfamycin antibiotic			
-QUATERNARY AMMONIUM	NA	NA	NA			
-QUINOLONE	NA	NA	NA			
-RETAPAMULIN	retapamulin	ARO:3001314	pleuromutilin antibiotic			
-RIFAMPIN	rifampin	ARO:3000169	rifamycin antibiotic			
-RIFAMYCIN	-	ARO:3000157	rifamycin antibiotic			
-RIFAXIMIN	rifaximin	ARO:3000517	rifamycin antibiotic			
-SALINOMYCIN	salinomycin	ARO:3007547	ionophore with antibiotic activity			
-SPECTINOMYCIN	spectinomycin	ARO:0000039	aminoglycoside antibiotic			
-SPIRAMYCIN	spiramycin	ARO:3000156	macrolide antibiotic			
-STREPTOGRAMIN	-	ARO:0000026	streptogramin antibiotic			
-STREPTOGRAMIN A	streptogramin a antibiotic	ARO:0000034	streptogramin antibiotic			
-STREPTOGRAMIN B	streptogramin b antibiotic	ARO:0000050	streptogramin antibiotic			
-STREPTOMYCIN	streptomycin	ARO:0000040	aminoglycoside antibiotic			
-STREPTOTHRICIN	streptothricin	ARO:0000012	nucleoside antibiotic			
-SULBACTAM-DURLOBACTAM	sulbactam-durlobactam	ARO:3007467	antibiotic mixture			
-SULFONAMIDE	-	ARO:3000282	sulfonamide antibiotic			
-TANIBORBACTAM	taniborbactam	ARO:3007147	adjuvant			
-TAZOBACTAM	tazobactam	ARO:0000077	adjuvant			
-TEDIZOLID	tedizolid	ARO:3003897	oxazolidinone antibiotic			
-TELITHROMYCIN	telithromycin	ARO:0000057	macrolide antibiotic			
-TEMOCILLIN	temocillin	ARO:3003831	penicillin with extended spectrum			
-TETRACENOMYCIN	-	ARO:3007034	tetracenomycin antibiotic			
-TETRACYCLINE	tetracycline	ARO:0000051	tetracycline antibiotic			
-THIAMPHENICOL	thiamphenicol	ARO:3000456	phenicol antibiotic			
-THIOSTREPTON	thiostrepton	ARO:3000686	peptide antibiotic			
-TIAMULIN	tiamulin	ARO:3000671	pleuromutilin antibiotic			
-TICARCILLIN	ticarcillin	ARO:3003832	penicillin with extended spectrum			
-TICARCILLIN-CLAVULANIC ACID	ticarcillin-clavulanic acid	ARO:3004023	antibiotic mixture			
-TIGECYCLINE	tigecycline	ARO:0000030	glycylcycline			
-TOBRAMYCIN	tobramycin	ARO:0000052	aminoglycoside antibiotic			
-TRICLOSAN	triclosan	ARO:3000870	disinfecting agents and antiseptics			
-TRIMETHOPRIM	trimethoprim	ARO:3000188	diaminopyrimidine antibiotic			
-TRIMETHOPRIM-SULFAMETHOXAZOLE	trimethoprim-sulfamethoxazole	ARO:3004024	antibiotic mixture			
-TYLOSIN	tylosin	ARO:3000145	macrolide antibiotic			
-VANCOMYCIN	vancomycin	ARO:0000028	glycopeptide antibiotic			
-VERNAMYCIN B	pristinamycin IC	ARO:3000678	streptogramin B antibiotic			
-VIOMYCIN	viomycin	ARO:0000018	peptide antibiotic			
-VIRGINIAMYCIN	NA	NA	NA			
-VIRGINIAMYCIN M	virginiamycin m1	ARO:3000669	streptogramin A antibiotic			
-XERUBORBACTAM	xeruborbactam	ARO:3007048	adjuvant			
-ZOLIFLODACIN	Zoliflodacin	ARO:3004858	zoliflodacin-like antibiotic			
-ZORBAMYCIN	NA	NA	NA			
+AFP_Subclass	CARD drug	CARD ARO	CARD drug class
+AMIKACIN	amikacin	ARO:0000013	aminoglycoside antibiotic
+AMINOCOUMARIN	-	ARO:3000103 	aminocoumarin antibiotic
+AMINOGLYCOSIDE	-	ARO:0000016 	aminoglycoside antibiotic
+AMOXICILLIN-CLAVULANIC ACID	amoxicillin-clavulanic acid	ARO:3003997	antibiotic mixture
+AMPICILLIN	ampicillin	ARO:3000637	penicillin with extended spectrum
+APRAMYCIN	apramycin	ARO:0000037	aminoglycoside antibiotic
+AVIBACTAM	avibactam	ARO:3000588 	adjuvant
+AVILAMYCIN	NA	NA	NA
+AZITHROMYCIN	azithromycin	ARO:3000158	macrolide antibiotic
+AZTREONAM	aztreonam	ARO:3000550	monobactam
+BACITRACIN	bacitracin	ARO:0000041	peptide antibiotic
+BETA-LACTAM	-	ARO:3000007 	beta-lactam antibiotic
+BLEOMYCIN	bleomycin	ARO:0000053	glycopeptide antibiotic
+CAPREOMYCIN	capreomycin	ARO:3003993	aminoglycoside antibiotic
+CARBAPENEM	-	ARO:0000020	carbapenem
+CEFIDEROCOL	cefiderocol	ARO:3004474	other cephalosporins and penems
+CEFTAROLINE	ceftaroline	ARO:3000651	other cephalosporins and penems
+CEFTAZIDIME-AVIBACTAM	ceftazidime-avibactam	ARO:3007072	antibiotic mixture
+CEPHALOSPORIN	-	ARO:0000032	cephalosporin
+CEPHALOTIN	NA	NA	NA
+CHLORAMPHENICOL	chloramphenicol	ARO:3000385	phenicol antibiotic
+CLARITHROMYCIN	clarithromycin	ARO:0000065	macrolide antibiotic
+CLINDAMYCIN	clindamycin	ARO:0000066	lincosamide antibiotic
+COLISTIN	colistin	ARO:0000067	polymyxin antibiotic
+DAPTOMYCIN	daptomycin	ARO:0000068	lipopeptide antibiotic
+EDEINE	edeine	ARO:3000119	peptide antibiotic
+EFFLUX	NA	NA	NA
+ERYTHROMYCIN	erythromycin	ARO:0000006	macrolide antibiotic
+FIDAXOMICIN	fidaxomicin	ARO:3001319	macrocyclic antibiotic
+FLORFENICOL	florfenicol	ARO:3000461	phenicol antibiotic
+FLUOROQUINOLONE	-	ARO:0000001	fluoroquinolone antibiotic
+FOSFOMYCIN	fosfomycin	ARO:0000025	phosphonic acid antibiotic
+FOSMIDOMYCIN	fosmidomycin	ARO:3000758	phosphonic acid antibiotic
+FUSIDIC ACID	fusidic acid	ARO:3000759	fusidane antibiotic
+G418	G418	ARO:3000653	aminoglycoside antibiotic
+GENTAMICIN	gentamicin	ARO:3007382	aminoglycoside antibiotic
+GENTAMICIN C	gentamicin C	ARO:0000014	antibiotic mixture
+HYGROMYCIN	hygromycin B	ARO:3000214	aminoglycoside antibiotic
+IMIPENEM	imipenem	ARO:3000170	carbapenem
+ISONIAZID	isoniazid	ARO:3000520	isoniazid-like antibiotic
+KANAMYCIN	kanamycin A	ARO:0000049	aminoglycoside antibiotic
+KASUGAMYCIN	kasugamycin	ARO:3001296	aminoglycoside antibiotic
+KIRROMYCIN	kirromycin	ARO:3001234	kirromycin-like antibiotics
+LINCOMYCIN	lincomycin	ARO:0000046	lincosamide antibiotic
+LINCOSAMIDE	-	ARO:0000017	lincosamide antibiotic
+LINEZOLID	linezolid	ARO:0000072	oxazolidinone antibiotic
+MACROLIDE	-	ARO:0000000	macrolide antibiotic
+MADURAMICIN	NA	NA	NA
+MEROPENEM	meropenem	ARO:0000073	carbapenem
+METHICILLIN	methicillin	ARO:0000015	beta-lactamase resistant penicillin
+METRONIDAZOLE	metronidazole	ARO:3000689	nitroimidazole antibiotic
+MUPIROCIN	mupirocin	ARO:3000554	mupirocin-like antibiotic
+NALIDIXIC ACID	nalidixic acid	ARO:3000661	fluoroquinolone antibiotic
+NARASIN	narasin	ARO:3007471	ionophore with antibiotic activity
+NEOMYCIN	neomycin	ARO:0000005	aminoglycoside antibiotic
+NITROFURANTOIN	nitrofurantoin	ARO:0000075	nitrofuran antibiotic
+NITROIMIDAZOLE	-	ARO:3004115	nitroimidazole antibiotic
+NITROXOLINE	NA	NA	NA
+OLEANDOMYCIN	oleandomycin	ARO:3000867	macrolide antibiotic
+OSTREOGRYCIN	ostreogrycin B3	ARO:3000682	streptogramin B antibiotic
+OXAZOLIDINONE	-	ARO:3000079	oxazolidinone antibiotic
+PAROMOMYCIN	paromomycin	ARO:3000657	aminoglycoside antibiotic
+PHENICOL	-	ARO:3000387	phenicol antibiotic
+PIPERACILLIN-TAZOBACTAM	piperacillin-tazobactam	ARO:3004021	antibiotic mixture
+PLEUROMUTILIN	pleuromutilin	ARO:3001317	pleuromutilin antibiotic
+PRISTINAMYCIN	NA	NA	NA
+PULVOMYCIN	pulvomycin	ARO:3000586	elfamycin antibiotic
+QUATERNARY AMMONIUM	NA	NA	NA
+QUINOLONE	-	ARO:0000001	fluoroquinolone antibiotic
+RETAPAMULIN	retapamulin	ARO:3001314	pleuromutilin antibiotic
+RIFAMPIN	rifampin	ARO:3000169	rifamycin antibiotic
+RIFAMYCIN	-	ARO:3000157	rifamycin antibiotic
+RIFAXIMIN	rifaximin	ARO:3000517	rifamycin antibiotic
+SALINOMYCIN	salinomycin	ARO:3007547	ionophore with antibiotic activity
+SPECTINOMYCIN	spectinomycin	ARO:0000039	aminoglycoside antibiotic
+SPIRAMYCIN	spiramycin	ARO:3000156	macrolide antibiotic
+STREPTOGRAMIN	-	ARO:0000026	streptogramin antibiotic
+STREPTOGRAMIN A	streptogramin a antibiotic	ARO:0000034	streptogramin antibiotic
+STREPTOGRAMIN B	streptogramin b antibiotic	ARO:0000050	streptogramin antibiotic
+STREPTOMYCIN	streptomycin	ARO:0000040	aminoglycoside antibiotic
+STREPTOTHRICIN	streptothricin	ARO:0000012	nucleoside antibiotic
+SULBACTAM-DURLOBACTAM	sulbactam-durlobactam	ARO:3007467	antibiotic mixture
+SULFONAMIDE	-	ARO:3000282	sulfonamide antibiotic
+TANIBORBACTAM	taniborbactam	ARO:3007147	adjuvant
+TAZOBACTAM	tazobactam	ARO:0000077	adjuvant
+TEDIZOLID	tedizolid	ARO:3003897	oxazolidinone antibiotic
+TELITHROMYCIN	telithromycin	ARO:0000057	macrolide antibiotic
+TEMOCILLIN	temocillin	ARO:3003831	penicillin with extended spectrum
+TETRACENOMYCIN	-	ARO:3007034	tetracenomycin antibiotic
+TETRACYCLINE	-	ARO:0000051	tetracycline antibiotic
+THIAMPHENICOL	thiamphenicol	ARO:3000456	phenicol antibiotic
+THIOSTREPTON	thiostrepton	ARO:3000686	peptide antibiotic
+TIAMULIN	tiamulin	ARO:3000671	pleuromutilin antibiotic
+TICARCILLIN	ticarcillin	ARO:3003832	penicillin with extended spectrum
+TICARCILLIN-CLAVULANIC ACID	ticarcillin-clavulanic acid	ARO:3004023	antibiotic mixture
+TIGECYCLINE	tigecycline	ARO:0000030	glycylcycline
+TOBRAMYCIN	tobramycin	ARO:0000052	aminoglycoside antibiotic
+TRICLOSAN	triclosan	ARO:3000870	disinfecting agents and antiseptics
+TRIMETHOPRIM	trimethoprim	ARO:3000188	diaminopyrimidine antibiotic
+TRIMETHOPRIM-SULFAMETHOXAZOLE	trimethoprim-sulfamethoxazole	ARO:3004024	antibiotic mixture
+TYLOSIN	tylosin	ARO:3000145	macrolide antibiotic
+VANCOMYCIN	vancomycin	ARO:0000028	glycopeptide antibiotic
+VERNAMYCIN B	pristinamycin IC	ARO:3000678	streptogramin B antibiotic
+VIOMYCIN	viomycin	ARO:0000018	peptide antibiotic
+VIRGINIAMYCIN	NA	NA	NA
+VIRGINIAMYCIN M	virginiamycin m1	ARO:3000669	streptogramin A antibiotic
+XERUBORBACTAM	xeruborbactam	ARO:3007048	adjuvant
+ZOLIFLODACIN	Zoliflodacin	ARO:3004858	zoliflodacin-like antibiotic
+ZORBAMYCIN	NA	NA	NA
