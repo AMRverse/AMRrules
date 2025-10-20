@@ -9,9 +9,11 @@ def extract_mutation(row):
     # and convert it to the AMRrules syntax so we can identify the correct rule
     gene_symbol, mutation = gene_or_element_symbol.rsplit("_", 1)
 
-    _, ref, pos, alt, _ = re.split(r"(\D+)(\d+)(\D+)", mutation)
     # this means it is a protein mutation
     if row.get('Method') in ["POINTX", "POINTP"]:
+        # extract the relevant parts of the mutation
+        pattern = re.compile(r"(\D+)(\d+)(\D+)")
+        ref, pos, alt = pattern.match(mutation).groups()
         # convert the single letter AA code to the 3 letter code
         # note that we need to determine if we've got a simple substitution of ref to alt
         # or do we have a deletion or an insertion?
@@ -30,8 +32,31 @@ def extract_mutation(row):
             alt = aa_conversion.get(alt)
             return(f"p.{ref}{pos}{alt}", "Protein variant detected")
     elif row.get('Method') == "POINTN":
-        # e.g., 23S_G2032T -> c.2032G>T
-        return(f"c.{pos}{ref}>{alt}", "Nucleotide variant detected")
+        # we need to extract the relevant parts, this will be different because we may have promoter mutations
+        pattern = re.compile(r'^([A-Za-z]+)(-?\d+)([A-Za-z]+)$')
+        ref, pos, alt = pattern.match(mutation).groups()
+        if '-' in pos:
+            mutation_type = "Promoter variant detected"
+        else:
+            mutation_type = "Nucleotide variant detected"
+        # if there's a '-' in the position, then this is a promoter mutation
+        # if 'del' is in mutation, then we need to convert to c.PosNTdel.
+        if alt == 'del':
+            return(f"c.{pos}{ref}del", mutation_type)
+        # otherwise it's more like 23S_G2032T -> c.2032G>T, with a - if it's in the promoter.
+        else:
+            return(f"c.{pos}{ref}>{alt}", mutation_type)
+
+def get_final_rule_matches(matching_rules, type, amrrules_mutation):
+    if type == 'Gene presence detected':
+        return matching_rules
+    elif type == 'Protein variant detected' or type == 'Nucleotide variant detected' or type == "Promoter variant detected":
+        final_matching_rules = []
+        # now we need to check the mutation, extracting any matching rules
+        for rule in matching_rules:
+            if rule['mutation'] == amrrules_mutation:
+                final_matching_rules.append(rule)
+        return final_matching_rules
 
 def check_rules(row, rules, amrfp_nodes):
 
@@ -58,7 +83,7 @@ def check_rules(row, rules, amrfp_nodes):
     # otherwise we're going to be checking refseq, or HMM accessions
     #TODO Genbank accessions - not relevant for amrfp as these won't be reported in the output file
     hierarchy_id = row.get('Hierarchy node')
-    seq_acc = row.get('Accession of closest sequence')
+    seq_acc = row.get('Accession of closest sequence') or row.get('Closest reference accession')
 
     # only grab HMM if it's actually listed
     if row.get('HMM id') != 'NA':
@@ -69,18 +94,8 @@ def check_rules(row, rules, amrfp_nodes):
     # First we're going to check for the hierarchy ID, and if we have one or matches, we we return that
     matching_rules = [rule for rule in rules_to_check if rule.get('nodeID') == hierarchy_id]
     if len(matching_rules) > 0:
-        if type == 'Gene presence detected':
-            # just return these rules
-            return matching_rules
-        elif type == 'Protein variant detected' or type == 'Nucleotide variant detected':
-            # only return rules with the appropriate mutation
-            final_matching_rules = []
-            # now we need to check the mutation, extracting any matching rules
-            for rule in matching_rules:
-                if rule['mutation'] == amrrules_mutation:
-                    final_matching_rules.append(rule)
-            return final_matching_rules
-    
+        return(get_final_rule_matches(matching_rules, type, amrrules_mutation))
+
     # Okay so nothing matched directly to the nodeID, or we would've returned out of the function. 
     # So now we need to check if there's a parent node that matches
     # Note we don't need to check for variation type here, because we're not going to need to go up the hierarchy
@@ -92,20 +107,15 @@ def check_rules(row, rules, amrfp_nodes):
             return(matching_rules)
         parent_node = amrfp_nodes.get(parent_node)
 
-    # Okay so using the nodeID didn't work, so now we need to check the sequence accession
-    matching_rules = [rule for rule in rules_to_check if rule.get('refseq accession') == seq_acc]
+    #Okay so using the nodeID didn't work, so now we need to check the sequence accession
+    # start with the nucleotide accessions
+    matching_rules = [rule for rule in rules_to_check if rule.get('nucleotide accession') == seq_acc]
     if len(matching_rules) > 0:
-        if type == 'Gene presence detected':
-            # just return these rules
-            return matching_rules
-        elif type == 'Protein variant detected' or type == 'Nucleotide variant detected':
-            # only return rules with the appropriate mutation
-            final_matching_rules = []
-            # now we need to check the mutation, extracting any matching rules
-            for rule in matching_rules:
-                if rule['mutation'] == amrrules_mutation:
-                    final_matching_rules.append(rule)
-            return final_matching_rules
+        return(get_final_rule_matches(matching_rules, type, amrrules_mutation))
+    # then check the protein accessions
+    matching_rules = [rule for rule in rules_to_check if rule.get('protein accession') == seq_acc]
+    if len(matching_rules) > 0:
+        return(get_final_rule_matches(matching_rules, type, amrrules_mutation))
 
     #TODO: HMM accession check
 
@@ -114,7 +124,7 @@ def check_rules(row, rules, amrfp_nodes):
 
 def annotate_rule(row, rules, annot_opts, version=__version__):
     minimal_columns = ['ruleID', 'context', 'drug', 'drug class', 'phenotype', 'clinical category', 'evidence grade', 'version', 'organism']
-    full_columns = ['breakpoint', 'breakpoint standard', 'evidence code', 'evidence limitations', 'PMID', 'rule curation note']
+    full_columns = ['breakpoint', 'breakpoint standard', 'breakpoint condition', 'evidence code', 'evidence limitations', 'PMID', 'rule curation note']
 
     if rules is None:
         # if we didn't find a matching rule, then we need to add new columns for each of the options but using '-' as the value
