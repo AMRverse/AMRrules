@@ -77,7 +77,7 @@ def run(args):
 
 def download_resources():
     """
-    Download and cache AMRFinderPlus resource files using ResourceManager.
+    Download and cache the AMRFP and CARD database files required.
     """
     rm().setup_all_resources()
     print("Resource download complete.")

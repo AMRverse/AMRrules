@@ -9,18 +9,159 @@ import tempfile
 import tarfile
 
 class ResourceManager:
-    """Manages cached resource files for validation."""
+    """Manages external resource files required for assigning and annotating rules."""
     
     def __init__(self):
         """Initialize resource manager with default resource directory."""
         self.dir = Path(__file__).parent / "resources"
-        # Create the resources directory if it doesn't exist
-        #self.dir.mkdir(parents=True, exist_ok=True)
         self._amrfp_card_convert_cache: Optional[list] = None
         self._amrfp_db_version: Optional[str] = None
         self._refseq_nodes_cache: Optional[dict] = None
         self._card_drug_map: Optional[dict] = None
+    
+    def setup_all_resources(self):
+        """
+        Download and set up all required external resources, from AMRFP and CARD databases.
+        """
+        amrfp_success = self.download_amrfp_resources()
+        card_success = self.download_card_archives()
 
+        if amrfp_success and card_success:
+            print("All resources have been successfully set up.")
+            return True
+        else:
+            return False
+
+    # Functions for downloading AMRFP and CARD files
+    def download_amrfp_resources(self):
+        """
+        Download AMRFinderPlus Ref Gene Hierarchy and the database version number into the resource directory.
+        """
+        # URLs for the AMRFinderPlus resources
+        amrfp_nodes_url = 'https://ftp.ncbi.nlm.nih.gov/pathogen/Antimicrobial_resistance/AMRFinderPlus/database/latest/ReferenceGeneHierarchy.txt'
+        amrfp_version_url = 'https://ftp.ncbi.nlm.nih.gov/pathogen/Antimicrobial_resistance/AMRFinderPlus/database/latest/version.txt'
+        
+        # Files to download
+        file_urls = {
+            'ReferenceGeneHierarchy.txt': amrfp_nodes_url,
+            'version.txt': amrfp_version_url
+        }
+        
+        success = True
+        for filename, url in file_urls.items():
+            target_path = self.dir / filename
+            print(f"Downloading {filename} from {url}...")
+            
+            try:
+                with urllib.request.urlopen(url) as response:
+                    content = response.read()
+                    
+                with open(target_path, 'wb') as f:
+                    f.write(content)
+                
+                print(f"Successfully downloaded {filename}")
+                
+                # Get the database version
+                if filename == 'version.txt':
+                    self._amrfp_db_version = content.decode('utf-8').strip()
+                    print(f"AMRFinderPlus database version: {self._amrfp_db_version}")
+                    
+            except Exception as e:
+                print(f"Error downloading {filename}: {e}")
+                success = False
+        
+        if success:
+            print("AMRFinderPlus database files downloaded successfully.")
+            # Make sure to update the amrfp version number
+            self.get_amrfp_db_version()
+        else:
+            print("Warning: The AMRFinderPlus resources could not be downloaded.")
+        
+        return success
+
+    def download_card_archives(self):
+        """
+        Download and extract CARD ontology and data files into the resource directory.
+        """
+        # URLs for the CARD database files
+        card_ontology_url = "https://card.mcmaster.ca/download/5/ontology-v4.0.1.tar.bz2"
+        card_data_url = "https://card.mcmaster.ca/download/0/broadstreet-v4.0.1.tar.bz2"
+
+        # Files to extract from each archive
+        card_ontology_files = ["aro.obo", "ncbi_taxonomy.tsv"]
+        card_data_files = ["aro_categories.tsv"]
+
+        # Download and extract files from both archives
+        ontology_success = self.download_and_extract(card_ontology_url, card_ontology_files, self.dir)
+        data_success = self.download_and_extract(card_data_url, card_data_files, self.dir)
+        
+        if ontology_success and data_success:
+            print("CARD archives downloaded and extracted successfully.")
+            
+        # Verify that the files exist
+        missing_files = []
+        for file_name in card_ontology_files + card_data_files:
+            file_path = self.dir / file_name
+            if not file_path.exists():
+                missing_files.append(file_name)
+                
+        if missing_files:
+            print(f"Warning: The following files are missing: {', '.join(missing_files)}")
+            return False
+        else:
+            print("All required files are present in the resources directory.")
+            return ontology_success and data_success
+    
+    def download_and_extract(url, files_to_extract, dir_to_save):
+        """Function to help download CARD archives and extract specific files, saving them into the resources directory."""
+        with tempfile.NamedTemporaryFile(delete=False) as temp_file:
+            # Download the archive
+            print(f"Downloading {url}...")
+            try:
+                with urllib.request.urlopen(url) as response:
+                    temp_file.write(response.read())
+                    temp_file.flush()
+            except Exception as e:
+                print(f"Error downloading {url}: {e}")
+                return False
+
+            temp_path = temp_file.name
+        
+        try:
+            # Extract specific files
+            with tarfile.open(temp_path, "r:bz2") as tar:
+                all_members = tar.getmembers()
+                # For each file we want to extract
+                for target_file in files_to_extract:
+                    found = False
+                    # Look for exact match or file within subdirectory
+                    for member in all_members:
+                        basename = Path(member.name).name
+                        if basename == target_file:
+                            print(f"Extracting {member.name} as {target_file}...")
+                            # Extract but rename to the target filename
+                            member_obj = tar.extractfile(member)
+                            if member_obj:
+                                with open(dir_to_save / target_file, 'wb') as f:
+                                    f.write(member_obj.read())
+                                found = True
+                                break
+                    
+                    if not found:
+                        print(f"Warning: Could not find {target_file} in the archive")
+                        
+            return True
+        except Exception as e:
+            print(f"Error extracting files: {e}")
+            return False
+        finally:
+            # Clean up the temp file
+            try:
+                Path(temp_path).unlink(missing_ok=True)
+            except:
+                pass
+
+    # Functions for parsing AMRFP and CARD resources into data structures used elsewhere
     def refseq_nodes(self) -> dict:
 
         if self._refseq_nodes_cache is None:
@@ -94,52 +235,6 @@ class ResourceManager:
         else:
             print("AMRFinderPlus version file not found.")
             return "Unknown"
-    
-    def download_amrfp_resources(self):
-        """
-        Download AMRFinderPlus reference files into the resource directory.
-        """
-        # URLs for the AMRFinderPlus resources
-        amrfp_nodes_url = 'https://ftp.ncbi.nlm.nih.gov/pathogen/Antimicrobial_resistance/AMRFinderPlus/database/latest/ReferenceGeneHierarchy.txt'
-        amrfp_version_url = 'https://ftp.ncbi.nlm.nih.gov/pathogen/Antimicrobial_resistance/AMRFinderPlus/database/latest/version.txt'
-        
-        # Files to download
-        file_urls = {
-            'ReferenceGeneHierarchy.txt': amrfp_nodes_url,
-            'version.txt': amrfp_version_url
-        }
-        
-        success = True
-        for filename, url in file_urls.items():
-            target_path = self.dir / filename
-            print(f"Downloading {filename} from {url}...")
-            
-            try:
-                with urllib.request.urlopen(url) as response:
-                    content = response.read()
-                    
-                with open(target_path, 'wb') as f:
-                    f.write(content)
-                
-                print(f"Successfully downloaded {filename}")
-                
-                # Get the database version
-                if filename == 'version.txt':
-                    self._amrfp_db_version = content.decode('utf-8').strip()
-                    print(f"AMRFinderPlus database version: {self._amrfp_db_version}")
-                    
-            except Exception as e:
-                print(f"Error downloading {filename}: {e}")
-                success = False
-        
-        if success:
-            print("AMRFinderPlus resources downloaded successfully.")
-            # Make sure to update the cached version
-            self.get_amrfp_db_version()
-        else:
-            print("Warning: Some AMRFinderPlus resources could not be downloaded.")
-        
-        return success
     
     def _parse_obo_for_descendants(self, obo_file_path: str, term_id: str) -> List[str]:
         """Find all descendants of a given term in the OBO file."""
@@ -216,111 +311,3 @@ class ResourceManager:
             categories_file = self.dir / "aro_categories.tsv"
             self._card_drug_map = self._extract_card_drugs(str(obo_file), str(categories_file))
         return self._card_drug_map
-    
-    def download_card_archives(self):
-        """
-        Download and extract CARD ontology and data files into the resource directory.
-        """
-        # URLs for the CARD archives
-        card_ontology_url = "https://card.mcmaster.ca/download/5/ontology-v4.0.1.tar.bz2"
-        card_data_url = "https://card.mcmaster.ca/download/0/broadstreet-v4.0.1.tar.bz2"
-
-        # Files to extract from each archive
-        card_ontology_files = ["aro.obo", "ncbi_taxonomy.tsv"]
-        card_data_files = ["aro_categories.tsv"]
-
-        # Ensure the resource directory exists
-        if not self.dir.exists():
-            print(f"Creating resource directory: {self.dir}")
-            self.dir.mkdir(parents=True, exist_ok=True)
-            
-        print(f"Resource directory: {self.dir}")
-
-        # Helper function to download and extract files
-        def download_and_extract(url, files_to_extract):
-            with tempfile.NamedTemporaryFile(delete=False) as temp_file:
-                # Download the archive
-                print(f"Downloading {url}...")
-                try:
-                    with urllib.request.urlopen(url) as response:
-                        temp_file.write(response.read())
-                        temp_file.flush()
-                except Exception as e:
-                    print(f"Error downloading {url}: {e}")
-                    return False
-
-                temp_path = temp_file.name
-            
-            try:
-                # Extract specific files
-                with tarfile.open(temp_path, "r:bz2") as tar:
-                    # List all members for debugging
-                    all_members = tar.getmembers()
-                    print(f"Archive contains {len(all_members)} files")
-                    
-                    # For each file we want to extract
-                    for target_file in files_to_extract:
-                        found = False
-                        # Look for exact match or file within subdirectory
-                        for member in all_members:
-                            basename = Path(member.name).name
-                            if basename == target_file:
-                                print(f"Extracting {member.name} as {target_file}...")
-                                # Extract but rename to the target filename
-                                member_obj = tar.extractfile(member)
-                                if member_obj:
-                                    with open(self.dir / target_file, 'wb') as f:
-                                        f.write(member_obj.read())
-                                    found = True
-                                    break
-                        
-                        if not found:
-                            print(f"Warning: Could not find {target_file} in the archive")
-                            
-                return True
-            except Exception as e:
-                print(f"Error extracting files: {e}")
-                return False
-            finally:
-                # Clean up the temp file
-                try:
-                    Path(temp_path).unlink(missing_ok=True)
-                except:
-                    pass
-
-        # Download and extract files from both archives
-        ontology_success = download_and_extract(card_ontology_url, card_ontology_files)
-        data_success = download_and_extract(card_data_url, card_data_files)
-        
-        if ontology_success and data_success:
-            print("CARD archives downloaded and extracted successfully.")
-        else:
-            print("Warning: Some files may not have been extracted correctly.")
-            
-        # Verify that the files exist
-        missing_files = []
-        for file_name in card_ontology_files + card_data_files:
-            file_path = self.dir / file_name
-            if not file_path.exists():
-                missing_files.append(file_name)
-                
-        if missing_files:
-            print(f"Warning: The following files are missing: {', '.join(missing_files)}")
-            return False
-        else:
-            print("All required files are present in the resources directory.")
-            return ontology_success and data_success
-    
-    def setup_all_resources(self):
-        """
-        Download and set up all required resources.
-        """
-        amrfp_success = self.download_amrfp_resources()
-        card_success = self.download_card_archives()
-
-        if amrfp_success and card_success:
-            print("All resources have been successfully set up.")
-            return True
-        else:
-            print("Warning: Some resources could not be set up properly.")
-            return False
