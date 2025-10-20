@@ -92,8 +92,8 @@ class ResourceManager:
         card_data_files = ["aro_categories.tsv"]
 
         # Download and extract files from both archives
-        ontology_success = self.download_and_extract(card_ontology_url, card_ontology_files, self.dir)
-        data_success = self.download_and_extract(card_data_url, card_data_files, self.dir)
+        ontology_success = self._download_and_extract(card_ontology_url, card_ontology_files)
+        data_success = self._download_and_extract(card_data_url, card_data_files)
         
         if ontology_success and data_success:
             print("CARD archives downloaded and extracted successfully.")
@@ -112,7 +112,7 @@ class ResourceManager:
             print("All required files are present in the resources directory.")
             return ontology_success and data_success
     
-    def download_and_extract(url, files_to_extract, dir_to_save):
+    def _download_and_extract(self, url, files_to_extract):
         """Function to help download CARD archives and extract specific files, saving them into the resources directory."""
         with tempfile.NamedTemporaryFile(delete=False) as temp_file:
             # Download the archive
@@ -142,7 +142,7 @@ class ResourceManager:
                             # Extract but rename to the target filename
                             member_obj = tar.extractfile(member)
                             if member_obj:
-                                with open(dir_to_save / target_file, 'wb') as f:
+                                with open(self.dir / target_file, 'wb') as f:
                                     f.write(member_obj.read())
                                 found = True
                                 break
