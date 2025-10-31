@@ -22,7 +22,7 @@ def write_genotype_report(args, output_rows, reader, unmatched_hits, matched_hit
 
 def write_genome_report(args, summary_output):
 
-    summary_output_file = os.path.join(args.output_dir, args.output_prefix + '_geome_summary.tsv')
+    summary_output_file = os.path.join(args.output_dir, args.output_prefix + '_genome_summary.tsv')
     col_names = ['drug', 'drug class', 'category', 'phenotype', 'evidence grade', 'markers (with rule)', 'markers (no rule)', 'wt markers', 'ruleIDs', 'combo rules', 'organism']
     with open(summary_output_file, 'w', newline='') as f:
         if 'Name' in summary_output[0].keys():
