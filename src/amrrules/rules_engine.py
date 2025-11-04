@@ -1,8 +1,7 @@
 from amrrules.rules_io import parse_rules_file, extract_relevant_rules
-from amrrules.annotator import check_rules, annotate_rule
 from amrrules.summariser import prepare_summary
 from amrrules.utils import check_sample_ids, validate_amrfp_file, get_organisms
-from amrrules.output import write_genotype_report, write_genome_report
+from amrrules.output import write_genotype_report, write_genome_report, annotate_row
 from amrrules.resources import ResourceManager as rm
 from amrrules.input_file_class import InputRow
 import csv
@@ -45,7 +44,7 @@ def run(args):
 
     # parse the rule files
     rules = parse_rules_file(rule_files)
-    # TODO: convert rules to Rule objects?
+    # TODO: consider convert rules to Rule objects? Not sure how that helps us though
     #rules = [Rule(r) for r in rules]
 
     # We need to validate the input file, and if we've got an organism file, we need to check that all the IDs are in there
@@ -55,45 +54,50 @@ def run(args):
     unmatched_hits = []
     output_rows = []
 
-    # okay I think we want to take the input file and parse it row by row, but into a class that can hold the data
-    # we want these classes to be specific for the AMR tool that's being used as input, so that we can expand later to CARD/ResFinder
-    rows_to_process = []
-    # now it's time to parse the input file
+    result_rows = []
+    # now it's time to parse the input file, which we have validated to check that it has
+    # the columns we need. Each row will be parsed into an InputRow object
     with open(args.input, 'r') as f:
         reader = csv.DictReader(f, delimiter='\t')
-
+        base_fieldnames = reader.fieldnames.copy()
         row_count = 1
         for row in reader:
-            # if we have sample IDs, we know we have the Name column and can get the sample ID
-            if samples_to_parse:
-                sample_id = row.get('Name')
-                # Skip this row if it's not in our sample_to_parse list, as this means we don't have an organism for it
-                if sample_id not in samples_to_parse:
-                    continue
-                # extract the correct organism for this sample ID
-                sample_organism = organism_dict.get(sample_id)
+            row_to_process = InputRow(row, args.amr_tool, organism_dict)
+            # we only want to find matched rules for a row if it's relevant for AMR, so check this value first
+            if row_to_process.to_process:                
+                # extract the relevant rules for this ID, based on its organism
+                relevant_rules = extract_relevant_rules(rules, row_to_process.organism)
+                # determine if there's a matching rule for this row (this sets row_to_process.matched_rules)
+                row_to_process.find_matching_rules(relevant_rules, amrfp_nodes)
+
+            # now prep the row for output to the genotype report
+            # but ensure organism is present for annotator/future summary logic
+            base_row = dict(row)  # shallow copy of original CSV row
+            base_row['organism'] = row_to_process.organism
+
+            # annotate the row (may return multiple rows if there are multiple rules for this gene hit)
+            annotated_rows = annotate_row(base_row, row_to_process.matched_rules, args.annot_opts)
+
+            # annotated_rows is a list (one item per matching rule or a single annotated row)
+            output_rows.extend(annotated_rows)
+
+            # track matched / unmatched hits for reporting
+            if row_to_process.matched_rules:
+                matched_hits[row_count] = row_to_process.matched_rules
             else:
-                sample_organism = args.organism
-            rows_to_process.append(InputRow(row, args.amr_tool, sample_organism))
-            # extract the relevant rules for this ID, based on its organism
-            #relevant_rules = extract_relevant_rules(rules, sample_organism)
-            #matched_rules = check_rules(row, relevant_rules, amrfp_nodes)
-            #if matched_rules is not None:
-                # annotate the row with the rule info, based on whether we're using minimal or full annotation
-            #    new_rows = annotate_rule(row, matched_rules, args.annot_opts)
-            #    matched_hits[row_count] = matched_rules
-            #else:
-            #    new_rows = annotate_rule(row, None, args.annot_opts)
-            #    unmatched_hits.append(row.get('Hierarchy node'))
+                unmatched_hits.append(row.get('Hierarchy node'))
+
+            # still keep InputRow objects if other parts of the code expect them
+            result_rows.append(row_to_process)
             row_count += 1
-            # add the new rows to the output row list
-            #output_rows.extend(new_rows)
+    
+    # now write out the genotype report, which annotates each row with the rule info
+    write_genotype_report(args, output_rows, unmatched_hits, matched_hits, base_fieldnames)
     
     # okay now we need the unique sample IDs, for the summary output
     summary_output = prepare_summary(output_rows, rules, samples_to_parse, args.no_flag_core, args.no_rule_interpretation)
     #summary_output = None
 
-    write_genotype_report(args, output_rows, reader, unmatched_hits, matched_hits)
     write_genome_report(args, summary_output)
 
 

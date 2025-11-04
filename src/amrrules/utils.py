@@ -6,6 +6,9 @@ aa_conversion = {'G': 'Gly', 'A': 'Ala', 'S': 'Ser', 'P': 'Pro', 'T': 'Thr', 'C'
                  'M': 'Met', 'N': 'Asn', 'Q': 'Gln', 'K': 'Lys', 'R': 'Arg', 'H': 'His', 'D': 'Asp', 'E': 'Glu', 'W': 'Trp', 
                  'Y': 'Tyr', 'F': 'Phe', '*': 'STOP'}
 
+minimal_columns = ['ruleID', 'gene context', 'drug', 'drug class', 'phenotype', 'clinical category', 'evidence grade', 'version', 'organism']
+full_columns = ['breakpoint', 'breakpoint standard', 'breakpoint condition', 'evidence code', 'evidence limitations', 'PMID', 'rule curation note']
+
 def get_supported_organisms(rule_dir: str = None):
     """
     Return a list of organism names by scanning organism names in the rules folder.
@@ -45,12 +48,12 @@ def validate_amrfp_file(amrfp_file, multi_entry=False):
     """
     with open(amrfp_file, 'r') as f:
         reader = csv.DictReader(f, delimiter='\t')
-        samples_in_file = None
+        samples_in_file = '' # set this to empty string if we only have one sample and no 'Name' column
         if 'Hierarchy node' not in reader.fieldnames:
             raise ValueError(f"Input AMRFinderPlus file is missing required column: 'Hierarchy node'. Please re-run AMRFinderPlus with the --print_node option to ensure this column is in the output file.")
         if multi_entry and 'Name' not in reader.fieldnames:
             raise ValueError(f"Input AMRFinderPlus file is missing required column: 'Name'. Please ensure this column is present so we can match samples to organisms in the supplied organism file.")
-        if multi_entry:
+        if 'Name' in reader.fieldnames:
             samples_in_file = set()
             for row in reader:
                 samples_in_file.add(row.get('Name'))

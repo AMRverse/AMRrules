@@ -1,12 +1,11 @@
 from typing import Any, Dict, Optional
 import re
-
 from amrrules.utils import aa_conversion
 
 
 class InputRow:
 
-    def __init__(self, raw, tool, organism):
+    def __init__(self, raw, tool, organism_dict):
         self.raw_row = raw
         self.tool = tool
 
@@ -14,15 +13,15 @@ class InputRow:
         self.sample_name: Optional[str] = None
         self.gene_symbol: Optional[str] = None
         self.mutation: Optional[str] = None # this will be the formatted AMRrules compliant mutation
-        self.amr_type: Optional[str] = None  # type of AMR variant (Gene presence, protein variant, nucl variant etc)
+        self.variation_type: Optional[str] = None  # type of AMR variant (Gene presence, protein variant, nucl variant etc)
         self.drug_class: Optional[str] = None
         self.drug: Optional[str] = None
+        self.matched_rules: Optional[Any] = None  # will be filled with matched rules
 
         # option to process this row or just skip (eg virulence rows from AMRFP output)
         self.to_process: bool = False
 
         # amrfp relevant fields(filled by parser)
-        self.sample: Optional[str] = None
         self.nodeID: Optional[str] = None
         self.method: Optional[str] = None
         self.closest_acc: Optional[str] = None
@@ -31,12 +30,20 @@ class InputRow:
         # parse on construction
         if self.tool == "amrfp":
             self._parse_amrfp()
-
+        
         #TODO: implement parsing of other input types
         #elif self.input_type == "card":
         #    self._parse_card()
         #elif self.input_type in ("harmonized", "hamronized", "harmonised"):
         #    self._parse_harmonized()
+        
+        # get the organism info for this sample
+        if len(organism_dict.keys()) == 1:
+            # then we have a single organism regardless of row
+            self.organism = organism_dict.get('')
+        else:
+            # use the sample name to get the organism
+            self.organism = organism_dict.get(self.sample_name)
 
     # Parsing helpers for specific input types
     def _parse_amrfp(self):
@@ -61,9 +68,9 @@ class InputRow:
         # if our method is pointX or pointP, we need to extract the actual mutation
         # and convert to AMRrules syntax
         if self.method in ["POINTX", "POINTP", "POINTN"]:
-            self.mutation, self.amr_type = self._parse_mutation()
+            self.mutation, self.variation_type = self._parse_mutation()
         else:
-            self.amr_type = "Gene presence detected"
+            self.variation_type = "Gene presence detected"
 
     def _parse_mutation(self):
 
@@ -107,23 +114,58 @@ class InputRow:
             else:
                 return(f"c.{pos}{ref}>{alt}", mutation_type)
 
-    # Utility / compatibility
-    def to_dict(self) -> Dict[str, Any]:
-        """Return a dict representation (standardised fields + raw_row under 'raw')."""
-        out = {
-            "sample": self.sample,
-            "gene": self.gene,
-            "element_type": self.element_type,
-            "element_subtype": self.element_subtype,
-            "method": self.method,
-            "hierarchy_node": self.hierarchy_node,
-            "sequence_accession": self.sequence_accession,
-            "hmm_id": self.hmm_id,
-            "raw_mutation": self.raw_mutation,
-            "mutation_three_letter": self.format_mutation("three_letter"),
-            "mutation_one_letter": self.format_mutation("one_letter"),
-            "input_type": self.input_type,
-        }
-        out.update({"raw": dict(self.raw_row)})
-        return out
+    def _get_final_matches(self, matching_rules):
+        if self.variation_type == 'Gene presence detected':
+            return matching_rules
+        elif self.variation_type in ['Protein variant detected', 'Nucleotide variant detected', 'Promoter variant detected']:
+            final_matching_rules = []
+            # now we need to check the mutation, extracting any matching rules
+            for rule in matching_rules:
+                if rule['mutation'] == self.mutation:
+                    final_matching_rules.append(rule)
+            return final_matching_rules
+
+    def find_matching_rules(self, rules, amrfp_nodes):
+
+        # select rules that match our variation type
+        rules_to_check = []
+        for rule in rules:
+                if rule['variation type'] == self.variation_type:
+                    rules_to_check.append(rule)
+
+        # First we're going to check for the nodeID, and if we have one or matches, we we return that
+        matching_rules = [rule for rule in rules_to_check if rule.get('nodeID') == self.nodeID]
+        if len(matching_rules) > 0:
+            self.matched_rules = self._get_final_matches(matching_rules)
+            return
+
+        # Okay so nothing matched directly to the nodeID, or we would've returned out of the function. 
+        # So now we need to check if there's a parent node that matches our nodeID
+        # Note we don't need to check for variation type here, because we're not going to need to go up the hierarchy
+        # for that type of rule
+        parent_node = amrfp_nodes.get(self.nodeID)
+        while parent_node is not None and parent_node != 'AMR':
+            matching_rules = [rule for rule in rules_to_check if rule.get('nodeID') == parent_node]
+            if len(matching_rules) > 0:
+                self.matched_rules = self._get_final_matches(matching_rules)
+                return
+            parent_node = amrfp_nodes.get(parent_node)
+
+        #Okay so using the nodeID didn't work, so now we need to check the sequence accession
+        # start with the nucleotide accessions
+        matching_rules = [rule for rule in rules_to_check if rule.get('nucleotide accession') == self.closest_acc]
+        if len(matching_rules) > 0:
+            self.matched_rules = self._get_final_matches(matching_rules)
+            return
+        # then check the protein accessions
+        matching_rules = [rule for rule in rules_to_check if rule.get('protein accession') == self.closest_acc]
+        if len(matching_rules) > 0:
+            self.matched_rules = self._get_final_matches(matching_rules)
+            return
+
+        #TODO: HMM accession check
+
+        # if nothing matched, then we return and the value stays the default which is None
+        return
+
 
