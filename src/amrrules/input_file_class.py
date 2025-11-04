@@ -1,9 +1,10 @@
 from typing import Any, Dict, Optional
 import re
-from amrrules.utils import aa_conversion
+from amrrules import __version__
+from amrrules.utils import aa_conversion, minimal_columns, full_columns
 
 
-class InputRow:
+class Genotype:
 
     def __init__(self, raw, tool, organism_dict):
         self.raw_row = raw
@@ -14,8 +15,8 @@ class InputRow:
         self.gene_symbol: Optional[str] = None
         self.mutation: Optional[str] = None # this will be the formatted AMRrules compliant mutation
         self.variation_type: Optional[str] = None  # type of AMR variant (Gene presence, protein variant, nucl variant etc)
-        self.drug_class: Optional[str] = None
-        self.drug: Optional[str] = None
+        self.drug_class: Optional[str] = None # will match to the rule, or if AMR and no rule, will match to CARD ontology
+        self.drug: Optional[str] = None # will match to the rule, or if AMR and no rule, will be matched to CARD ontology
         self.matched_rules: Optional[Any] = None  # will be filled with matched rules
 
         # option to process this row or just skip (eg virulence rows from AMRFP output)
@@ -167,5 +168,115 @@ class InputRow:
 
         # if nothing matched, then we return and the value stays the default which is None
         return
+
+# New helper class: represents a single output row derived from a Genotype and a single matched rule (or None)
+class ResultRow:
+    def __init__(self, genotype: Genotype, matched_rule: Optional[Dict]):
+        """
+        genotype: original Genotype object
+        matched_rule: a single rule dict (or None) corresponding to this ResultRow
+        base_row: original CSV row dict (shallow copy expected)
+        """
+        self.genotype = genotype
+        self.matched_rule = matched_rule  # single rule dict or None
+        self.annotated_row: Optional[Dict] = None  # to be filled after annotation
+    
+    def annotate_row(self, annot_opts: str):
+        """
+        Annotate the base_row using the matched_rule and store in annotated_row.
+
+        Parameters:
+            annot_opts (str): Either 'minimal' or 'full'.
+                - 'minimal': Only minimal_columns are annotated.
+                - 'full': Both minimal_columns and full_columns are annotated.
+
+        Returns:
+            Dict: A dictionary containing the annotated row.
+        """
+        self.annotated_row = self.genotype.raw_row
+        if self.matched_rule is None:
+            # if we didn't find a matching rule, then we need to add new columns for each of the options but using '-' as the value
+            if annot_opts == 'minimal':
+                for col in minimal_columns:
+                    self.annotated_row[col] = '-'
+            elif annot_opts == 'full':
+                for col in minimal_columns + full_columns:
+                    self.annotated_row[col] = '-'
+            self.annotated_row['version'] = __version__
+            self.annotated_row['organism'] = '-'
+            return self.annotated_row
+        # otherwise annotated with the rule info
+        else:
+            if annot_opts == 'minimal':
+                for col in minimal_columns:
+                    self.annotated_row[col] = self.matched_rule.get(col)
+            elif annot_opts == 'full':
+                for col in minimal_columns + full_columns:
+                    self.annotated_row[col] = self.matched_rule.get(col)
+            self.annotated_row['version'] = __version__
+            return self.annotated_row
+
+# New helper class: builds a summary-compatible dict from a ResultRow
+class SummaryRow:
+    def __init__(self, result_row: ResultRow, card_conversion: Dict = None, card_drug_map: Dict = None):
+        """
+        result_row: ResultRow instance (annotated_row expected to be set)
+        card_conversion: mapping used to convert AMRFP Subclass -> CARD drug/class (optional)
+        card_drug_map: mapping from CARD drug -> drug class (optional)
+        """
+        self.result_row = result_row
+        self.card_conversion = card_conversion or {}
+        self.card_drug_map = card_drug_map or {}
+
+    def to_summary_dict(self):
+        """
+        Return a dict compatible with the summariser expectations.
+        If the ruleID is '-' (no rule) and a Subclass exists, try to infer drug/drug class from card_conversion.
+        """
+        # use annotated row if available, otherwise fallback to base_row
+        row = dict(self.result_row.annotated_row) if self.result_row.annotated_row else dict(self.result_row.base_row)
+
+        # Ensure keys used in summariser exist
+        row.setdefault('ruleID', row.get('ruleID', '-'))
+        row.setdefault('Subclass', row.get('Subclass', 'NA'))
+        row.setdefault('drug', row.get('drug', '-'))
+        row.setdefault('drug class', row.get('drug class', '-'))
+        row.setdefault('phenotype', row.get('phenotype', '-'))
+        row.setdefault('clinical category', row.get('clinical category', '-'))
+        row.setdefault('evidence grade', row.get('evidence grade', '-'))
+        row.setdefault('organism', row.get('organism', self.result_row.organism or '-'))
+        row.setdefault('Name', row.get('Name', self.result_row.sample_name))
+        row.setdefault('Gene symbol', row.get('Gene symbol', row.get('Element symbol')))
+        row.setdefault('Element symbol', row.get('Element symbol', row.get('Gene symbol')))
+        row.setdefault('context', row.get('context', '-'))
+
+        # If no rule assigned and Subclass present, attempt to resolve CARD drug/class
+        if (row.get('ruleID') == '-' or row.get('ruleID') is None) and row.get('Subclass') and row.get('Subclass') != 'NA':
+            subclasses = row.get('Subclass')
+            # handle slash-separated subclasses
+            subclasses_list = subclasses.split('/') if '/' in subclasses else [subclasses]
+            # pick first resolvable mapping; leave defaults if none found
+            for sc in subclasses_list:
+                conv = self.card_conversion.get(sc, {})
+                resolved_drug = conv.get('drug')
+                resolved_class = conv.get('class')
+                if resolved_drug and resolved_drug not in ('NA','-'):
+                    row['drug'] = resolved_drug
+                    # try to fill drug class using provided map if not present
+                    row['drug class'] = self.card_drug_map.get(resolved_drug, row.get('drug class', '-'))
+                    break
+                if (not resolved_drug or resolved_drug in ('NA','-')) and resolved_class and resolved_class not in ('NA','-'):
+                    row['drug class'] = resolved_class
+                    break
+
+            # If still NA, mark as other markers and set some fields to '-'
+            if row['drug'] in ('NA','-') and row['drug class'] in ('NA','-'):
+                row['drug'] = 'other markers'
+                row['drug class'] = 'other markers'
+                row['phenotype'] = row.get('phenotype', '-')
+                row['clinical category'] = row.get('clinical category', '-')
+                row['evidence grade'] = row.get('evidence grade', '-')
+
+        return row
 
 

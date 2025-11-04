@@ -1,9 +1,9 @@
 from amrrules.rules_io import parse_rules_file, extract_relevant_rules
 from amrrules.summariser import prepare_summary
 from amrrules.utils import check_sample_ids, validate_amrfp_file, get_organisms
-from amrrules.output import write_genotype_report, write_genome_report, annotate_row
+from amrrules.output import write_genotype_report, write_genome_report
 from amrrules.resources import ResourceManager as rm
-from amrrules.input_file_class import InputRow
+from amrrules.input_file_class import Genotype, ResultRow, SummaryRow
 import csv
 from importlib import resources
 
@@ -54,7 +54,10 @@ def run(args):
     unmatched_hits = []
     output_rows = []
 
-    result_rows = []
+    genotype_rows = []
+    result_row_objs = []
+    # collect rows prepared for summariser (dicts)
+    summary_input_rows = []
     # now it's time to parse the input file, which we have validated to check that it has
     # the columns we need. Each row will be parsed into an InputRow object
     with open(args.input, 'r') as f:
@@ -62,7 +65,7 @@ def run(args):
         base_fieldnames = reader.fieldnames.copy()
         row_count = 1
         for row in reader:
-            row_to_process = InputRow(row, args.amr_tool, organism_dict)
+            row_to_process = Genotype(row, args.amr_tool, organism_dict)
             # we only want to find matched rules for a row if it's relevant for AMR, so check this value first
             if row_to_process.to_process:                
                 # extract the relevant rules for this ID, based on its organism
@@ -70,32 +73,58 @@ def run(args):
                 # determine if there's a matching rule for this row (this sets row_to_process.matched_rules)
                 row_to_process.find_matching_rules(relevant_rules, amrfp_nodes)
 
-            # now prep the row for output to the genotype report
-            # but ensure organism is present for annotator/future summary logic
-            base_row = dict(row)  # shallow copy of original CSV row
-            base_row['organism'] = row_to_process.organism
-
-            # annotate the row (may return multiple rows if there are multiple rules for this gene hit)
-            annotated_rows = annotate_row(base_row, row_to_process.matched_rules, args.annot_opts)
-
-            # annotated_rows is a list (one item per matching rule or a single annotated row)
-            output_rows.extend(annotated_rows)
-
             # track matched / unmatched hits for reporting
+            # create a result row for each matched rule, as we need to duplicate rows in output
+            # if they have multiple matching rules
             if row_to_process.matched_rules:
                 matched_hits[row_count] = row_to_process.matched_rules
+                for rule in row_to_process.matched_rules:
+                    result_row = ResultRow(row_to_process, rule)
+                    result_row.annotate_row(args.annot_opts)
+                    result_row_objs.append(result_row)
+            # if there's no matching rule, or it's a row we don't process, still create a ResultRow, but it has no rule
             else:
                 unmatched_hits.append(row.get('Hierarchy node'))
+                result_row = ResultRow(row_to_process, None)
+                result_row.annotate_row(args.annot_opts)
+                result_row_objs.append(result_row)
 
-            # still keep InputRow objects if other parts of the code expect them
-            result_rows.append(row_to_process)
+            # keep Genotype objects in case we need them later
+            genotype_rows.append(row_to_process)
             row_count += 1
     
+
+    # annotate each ResultRow and collect outputs for genotype report and summary
+    #for rr in result_row_objs:
+    #    base_row = dict(rr.base_row)
+    #    base_row['organism'] = rr.organism
+        # pass single-rule list or None to annotate_row
+    #    annotated_rows = annotate_row(base_row, rr.rule_as_list(), args.annot_opts)
+        # annotate_row returns a list; for a single-rule we expect one annotated dict
+    #    if annotated_rows:
+    #        # attach annotated dict to ResultRow for later summary processing
+    #        rr.annotated_row = annotated_rows[0]
+    #        output_rows.extend(annotated_rows)
+    #        # build a summary-compatible dict via SummaryRow (supply conversion maps from ResourceManager)
+    #        card_conv = rm().get_amrfp_card_conversion()
+    #        card_map = rm().get_card_drug_class_map()
+    #        sr = SummaryRow(rr, card_conversion=card_conv, card_drug_map=card_map)
+    #        summary_input_rows.append(sr.to_summary_dict())
+    #    else:
+    #        # no annotated rows returned (shouldn't normally happen) -> still append base record
+    #        rr.annotated_row = base_row
+    #        output_rows.append(base_row)
+    #        card_conv = rm().get_amrfp_card_conversion()
+    #        card_map = rm().get_card_drug_class_map()
+    #        sr = SummaryRow(rr, card_conversion=card_conv, card_drug_map=card_map)
+    #        summary_input_rows.append(sr.to_summary_dict())
+    
     # now write out the genotype report, which annotates each row with the rule info
-    write_genotype_report(args, output_rows, unmatched_hits, matched_hits, base_fieldnames)
+    write_genotype_report(args, result_row_objs, unmatched_hits, matched_hits, base_fieldnames)
     
     # okay now we need the unique sample IDs, for the summary output
-    summary_output = prepare_summary(output_rows, rules, samples_to_parse, args.no_flag_core, args.no_rule_interpretation)
+    # pass summary_input_rows (a list of summary-compatible dicts built from ResultRow/annotated rows)
+    summary_output = prepare_summary(summary_input_rows, rules, samples_to_parse, args.no_flag_core, args.no_rule_interpretation)
     #summary_output = None
 
     write_genome_report(args, summary_output)
