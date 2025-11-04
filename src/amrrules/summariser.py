@@ -323,7 +323,7 @@ def prepare_summary(output_rows, rules, sample_ids, no_flag_core, no_rule_interp
     for sample in sample_ids:
         # extract all the rows for this sample
         sample_rows = [row for row in output_rows if row.get('Name') == sample]
-        summarised_row = create_summary_row(sample_rows, sample, rules, no_flag_core)
+        summarised_row = create_summary_row(sample_rows, sample, rules, no_flag_core, no_rule_interpretation)
         # order the rows for this sample by drug and class
         ordered_summarised_row = order_rows(summarised_row)
         summary_rows.append(ordered_summarised_row)

@@ -2,51 +2,6 @@ import re
 from amrrules.utils import aa_conversion
 from amrrules import __version__
 
-def extract_mutation(row):
-    # deal with either header option from amrfp uggghhhh
-    gene_or_element_symbol = row.get('Gene symbol') or row.get('Element symbol')
-    # if we've got point mutations, we need to extract the actual mutation
-    # and convert it to the AMRrules syntax so we can identify the correct rule
-    gene_symbol, mutation = gene_or_element_symbol.rsplit("_", 1)
-
-    # this means it is a protein mutation
-    if row.get('Method') in ["POINTX", "POINTP"]:
-        # extract the relevant parts of the mutation
-        pattern = re.compile(r"(\D+)(\d+)(\D+)")
-        ref, pos, alt = pattern.match(mutation).groups()
-        # convert the single letter AA code to the 3 letter code
-        # note that we need to determine if we've got a simple substitution of ref to alt
-        # or do we have a deletion or an insertion?
-        # gyrA_S83L -> p.Ser83Leu, this is a substitution
-        # penA_D346DD -> p.345_346insAsp
-        # okay so if there are two characters in alt, then we have an insertion
-        if len(alt) > 1 and alt != 'STOP':
-            # then we have an insertion, and the inserted AA is the second character of alt
-            alt = aa_conversion.get(alt[1])
-            # our coordinates are the original pos, and original - 1
-            pos_coords = str(int(pos) - 1) + "_" + str(pos)
-            return(f"p.{pos_coords}ins{alt}", "Protein variant detected")
-
-        else:
-            ref = aa_conversion.get(ref)
-            alt = aa_conversion.get(alt)
-            return(f"p.{ref}{pos}{alt}", "Protein variant detected")
-    elif row.get('Method') == "POINTN":
-        # we need to extract the relevant parts, this will be different because we may have promoter mutations
-        pattern = re.compile(r'^([A-Za-z]+)(-?\d+)([A-Za-z]+)$')
-        ref, pos, alt = pattern.match(mutation).groups()
-        if '-' in pos:
-            mutation_type = "Promoter variant detected"
-        else:
-            mutation_type = "Nucleotide variant detected"
-        # if there's a '-' in the position, then this is a promoter mutation
-        # if 'del' is in mutation, then we need to convert to c.PosNTdel.
-        if alt == 'del':
-            return(f"c.{pos}{ref}del", mutation_type)
-        # otherwise it's more like 23S_G2032T -> c.2032G>T, with a - if it's in the promoter.
-        else:
-            return(f"c.{pos}{ref}>{alt}", mutation_type)
-
 def get_final_rule_matches(matching_rules, type, amrrules_mutation):
     if type == 'Gene presence detected':
         return matching_rules

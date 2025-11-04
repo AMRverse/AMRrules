@@ -26,7 +26,8 @@ def get_supported_organisms(rule_dir: str = None):
 
 def get_organisms(organism_file):
     """
-    Read the organism file and return a dictionary of sample IDs and their corresponding organism names."""
+    Read the organism file and return a dictionary of sample IDs and their corresponding organism names.
+    """
 
     organism_dict = {}
     with open(organism_file, 'r') as org_file:
@@ -38,44 +39,33 @@ def get_organisms(organism_file):
                 raise ValueError(f"Duplicate sample ID found in organism file: {sample_id}. Please ensure that each sample ID is unique.")
     return organism_dict
 
-def validate_input_file(input_file, organism_file, organism_user, tool='amrfp'):
+def validate_amrfp_file(amrfp_file, multi_entry=False):
     """
-    Validate the input file to ensure it contains the required columns.
+    Validate that the AMRFinderPlus input file contains the required columns. All files must have Hierarchy node. Multi entry files must have Name column.
     """
-    #TODO: these checks will need to change if the tool isn't amrfp
-    with open(input_file, 'r') as f:
+    with open(amrfp_file, 'r') as f:
         reader = csv.DictReader(f, delimiter='\t')
-
+        samples_in_file = None
         if 'Hierarchy node' not in reader.fieldnames:
-            raise ValueError("Input file does not contain 'Hierarchy node' column. Please re-run AMRFinderPlus with the --print_node option to ensure this column is in the output file.")
-        if organism_file and 'Name' not in reader.fieldnames:
-            raise ValueError("Input file does not contain 'Name' column, which is required when using an organism file. Please ensure the input file has a 'Name' column, and that the IDs in this column match the IDs in column 1 of your organism file.")
-
-        # extract the sample IDs from the intput file
-        if 'Name' in reader.fieldnames:
-            sample_ids = set()
+            raise ValueError(f"Input AMRFinderPlus file is missing required column: 'Hierarchy node'. Please re-run AMRFinderPlus with the --print_node option to ensure this column is in the output file.")
+        if multi_entry and 'Name' not in reader.fieldnames:
+            raise ValueError(f"Input AMRFinderPlus file is missing required column: 'Name'. Please ensure this column is present so we can match samples to organisms in the supplied organism file.")
+        if multi_entry:
+            samples_in_file = set()
             for row in reader:
-                sample_ids.add(row.get('Name'))
+                samples_in_file.add(row.get('Name'))
+    return samples_in_file
 
-        # if we have an organism file, we need to create a dictionary (which we will then pass out to the main engine), and check all those IDs are in our organism file
-        if organism_file:
-            organism_dict = get_organisms(organism_file)
-            # check that all the sample IDs have a corresponding organism
-            # for now raise an error if any are missing
-            samples_to_skip = set()
-            for sample_id in sample_ids:
-                if sample_id not in organism_dict.keys():
-                    samples_to_skip.add(sample_id)
-            if len(samples_to_skip) > 0:
-                warnings.warn(f"Sample IDs '{', '.join(samples_to_skip)}' from input file not found in organism file. These samples will be skipped for interpretation.")
-                # create a new list of samples that will be used for interpretation
-                sample_ids = sample_ids - samples_to_skip
-            else:
-                print(f"All sample IDs from input file found in organism file. Proceeding with interpretation.")
-        # if the user has supplied just organism, then we don't need to check for samples, and we can just create a dummy dictionary
-        # for picking what rules to use
-        if organism_user:
-            organism_dict = {'': organism_user}
-            sample_ids = None
-       
-    return organism_dict, sample_ids
+def check_sample_ids(samples_with_org, samples_in_input):
+    """
+    Check that all samples in the input file have a corresponding organism in the organism file.
+    It's okay if there are samples in the organism file that aren't in the input file, we can just raise a warning in that instance.
+    """
+    
+    missing_samples = samples_in_input - samples_with_org
+    if missing_samples:
+        raise ValueError(f"The following sample IDs from the input file are missing in the organism file: {', '.join(missing_samples)}. Please ensure all sample IDs are present in the organism file.")
+    missing_from_input = samples_with_org - samples_in_input
+    if missing_from_input:
+        warnings.warn(f"The following sample IDs from the organism file are not present in the input file:\n{'\n'.join(missing_from_input)}\nAs there are no entries in the input file for these samples, they won't have interpretation results. Please check your input file if this is not what you expect.")
+    return True
