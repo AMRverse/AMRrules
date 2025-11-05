@@ -16,8 +16,7 @@ def write_genotype_report(args, output_rows, unmatched_hits, matched_hits, base_
     with open(interpreted_output_file, 'w', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=base_fieldnames + interpreted_output_cols, delimiter='\t')
         writer.writeheader()
-        for row in output_rows:
-            writer.writerow(row.annotated_row)
+        writer.writerows(output_rows)
     print(f"{len(matched_hits)} hits matched a rule and {len(unmatched_hits)} hits did not match a rule.")
     print(f"Output written to {interpreted_output_file}.")
 

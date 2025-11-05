@@ -23,6 +23,11 @@ def run(args):
         amrfp_nodes = rm().refseq_nodes()
         # check the input file has the Hierarchy node column, and if an organism file is included, that the first column is Name
         samples_to_parse = validate_amrfp_file(args.input, multi_entry=bool(args.organism_file))
+        
+        # get the AMRFP to CARD conversion mapping for later use - we only want to do this once
+        # so do it here and pass this to where it's needed
+        card_amrfp_conversion = rm().get_amrfp_card_conversion() # get the AMRFP to CARD conversion mapping
+        card_drug_map = rm().get_card_drug_class_map() # get CARD drugs and their associated classes
     
     # if the is a multi-entry file, we need to check that all our sampleIDs are in the organism file
     # will raise an error if any are missing
@@ -52,10 +57,8 @@ def run(args):
 
     matched_hits = {}
     unmatched_hits = []
-    output_rows = []
 
     genotype_rows = []
-    result_row_objs = []
     # collect rows prepared for summariser (dicts)
     summary_input_rows = []
     # now it's time to parse the input file, which we have validated to check that it has
@@ -72,62 +75,46 @@ def run(args):
                 relevant_rules = extract_relevant_rules(rules, row_to_process.organism)
                 # determine if there's a matching rule for this row (this sets row_to_process.matched_rules)
                 row_to_process.find_matching_rules(relevant_rules, amrfp_nodes)
+            
+            row_to_process.annotate_row(args.annot_opts)
 
             # track matched / unmatched hits for reporting
             # create a result row for each matched rule, as we need to duplicate rows in output
             # if they have multiple matching rules
             if row_to_process.matched_rules:
                 matched_hits[row_count] = row_to_process.matched_rules
-                for rule in row_to_process.matched_rules:
-                    result_row = ResultRow(row_to_process, rule)
-                    result_row.annotate_row(args.annot_opts)
-                    result_row_objs.append(result_row)
             # if there's no matching rule, or it's a row we don't process, still create a ResultRow, but it has no rule
             else:
                 unmatched_hits.append(row.get('Hierarchy node'))
-                result_row = ResultRow(row_to_process, None)
-                result_row.annotate_row(args.annot_opts)
-                result_row_objs.append(result_row)
 
             # keep Genotype objects in case we need them later
             genotype_rows.append(row_to_process)
             row_count += 1
     
+    # get all the output rows together into a single list
+    genotype_output_rows = []
+    for g in genotype_rows:
+        genotype_output_rows.extend(g.annotated_row)
 
-    # annotate each ResultRow and collect outputs for genotype report and summary
-    #for rr in result_row_objs:
-    #    base_row = dict(rr.base_row)
-    #    base_row['organism'] = rr.organism
-        # pass single-rule list or None to annotate_row
-    #    annotated_rows = annotate_row(base_row, rr.rule_as_list(), args.annot_opts)
-        # annotate_row returns a list; for a single-rule we expect one annotated dict
-    #    if annotated_rows:
-    #        # attach annotated dict to ResultRow for later summary processing
-    #        rr.annotated_row = annotated_rows[0]
-    #        output_rows.extend(annotated_rows)
-    #        # build a summary-compatible dict via SummaryRow (supply conversion maps from ResourceManager)
-    #        card_conv = rm().get_amrfp_card_conversion()
-    #        card_map = rm().get_card_drug_class_map()
-    #        sr = SummaryRow(rr, card_conversion=card_conv, card_drug_map=card_map)
-    #        summary_input_rows.append(sr.to_summary_dict())
-    #    else:
-    #        # no annotated rows returned (shouldn't normally happen) -> still append base record
-    #        rr.annotated_row = base_row
-    #        output_rows.append(base_row)
-    #        card_conv = rm().get_amrfp_card_conversion()
-    #        card_map = rm().get_card_drug_class_map()
-    #        sr = SummaryRow(rr, card_conversion=card_conv, card_drug_map=card_map)
-    #        summary_input_rows.append(sr.to_summary_dict())
-    
     # now write out the genotype report, which annotates each row with the rule info
-    write_genotype_report(args, result_row_objs, unmatched_hits, matched_hits, base_fieldnames)
+    write_genotype_report(args, genotype_output_rows, unmatched_hits, matched_hits, base_fieldnames)
+
+    # to create the summary output:
+    # we need to evaluate markers by drug/class, because that's how we're summarising
+
+
+    # for rows where rules have been applied, that's easy, it's already done
+    # for rows where they haven't, we need to convert the AMRFP Subclass to it's corresponding CARD drug or class
+    # some rows will have NA for Subclass because they aren't relevant, these can be skipped
+    # some rows will have a Subclass but be NA for card, these need to be grouped under 'other markers'
+
     
     # okay now we need the unique sample IDs, for the summary output
     # pass summary_input_rows (a list of summary-compatible dicts built from ResultRow/annotated rows)
-    summary_output = prepare_summary(summary_input_rows, rules, samples_to_parse, args.no_flag_core, args.no_rule_interpretation)
+    #summary_output = prepare_summary(summary_input_rows, rules, samples_to_parse, args.no_flag_core, args.no_rule_interpretation)
     #summary_output = None
 
-    write_genome_report(args, summary_output)
+    #write_genome_report(args, summary_output)
 
 
 def download_resources():

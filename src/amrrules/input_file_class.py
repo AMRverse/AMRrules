@@ -8,6 +8,7 @@ class Genotype:
 
     def __init__(self, raw, tool, organism_dict):
         self.raw_row = raw
+        self.annotated_rows: Optional[Any] = None # will populate with the anntoated version of the row after rule matching
         self.tool = tool
 
         # standard fields regardless of tool type
@@ -15,8 +16,6 @@ class Genotype:
         self.gene_symbol: Optional[str] = None
         self.mutation: Optional[str] = None # this will be the formatted AMRrules compliant mutation
         self.variation_type: Optional[str] = None  # type of AMR variant (Gene presence, protein variant, nucl variant etc)
-        self.drug_class: Optional[str] = None # will match to the rule, or if AMR and no rule, will match to CARD ontology
-        self.drug: Optional[str] = None # will match to the rule, or if AMR and no rule, will be matched to CARD ontology
         self.matched_rules: Optional[Any] = None  # will be filled with matched rules
 
         # option to process this row or just skip (eg virulence rows from AMRFP output)
@@ -27,6 +26,8 @@ class Genotype:
         self.method: Optional[str] = None
         self.closest_acc: Optional[str] = None
         self.hmm_acc: Optional[str] = None
+        self.amrfp_class: Optional[str] = None
+        self.amrfp_subclass: Optional[str] = None
 
         # parse on construction
         if self.tool == "amrfp":
@@ -168,22 +169,10 @@ class Genotype:
 
         # if nothing matched, then we return and the value stays the default which is None
         return
-
-# New helper class: represents a single output row derived from a Genotype and a single matched rule (or None)
-class ResultRow:
-    def __init__(self, genotype: Genotype, matched_rule: Optional[Dict]):
-        """
-        genotype: original Genotype object
-        matched_rule: a single rule dict (or None) corresponding to this ResultRow
-        base_row: original CSV row dict (shallow copy expected)
-        """
-        self.genotype = genotype
-        self.matched_rule = matched_rule  # single rule dict or None
-        self.annotated_row: Optional[Dict] = None  # to be filled after annotation
     
     def annotate_row(self, annot_opts: str):
         """
-        Annotate the base_row using the matched_rule and store in annotated_row.
+        Annotate the base_row using the matched_rule(s) and store in annotated_row.
 
         Parameters:
             annot_opts (str): Either 'minimal' or 'full'.
@@ -191,30 +180,38 @@ class ResultRow:
                 - 'full': Both minimal_columns and full_columns are annotated.
 
         Returns:
-            Dict: A dictionary containing the annotated row.
+            List[Dict]: A list of dictionaries containing the annotated row(s).
         """
-        self.annotated_row = self.genotype.raw_row
-        if self.matched_rule is None:
-            # if we didn't find a matching rule, then we need to add new columns for each of the options but using '-' as the value
-            if annot_opts == 'minimal':
-                for col in minimal_columns:
-                    self.annotated_row[col] = '-'
-            elif annot_opts == 'full':
-                for col in minimal_columns + full_columns:
-                    self.annotated_row[col] = '-'
-            self.annotated_row['version'] = __version__
-            self.annotated_row['organism'] = '-'
-            return self.annotated_row
-        # otherwise annotated with the rule info
+        base_row = self.raw_row
+        annotated_rows = []
+        cols = minimal_columns if annot_opts == 'minimal' else minimal_columns + full_columns
+
+        # No matching rules: return single row with '-' for annotation columns
+        if not self.matched_rules:
+            for col in cols:
+                base_row[col] = '-'
+            base_row['version'] = __version__
+            annotated_rows.append(base_row)
+            self.annotated_row = annotated_rows
+
+        # One or more matching rules: create one annotated row per rule
         else:
-            if annot_opts == 'minimal':
-                for col in minimal_columns:
-                    self.annotated_row[col] = self.matched_rule.get(col)
-            elif annot_opts == 'full':
-                for col in minimal_columns + full_columns:
-                    self.annotated_row[col] = self.matched_rule.get(col)
-            self.annotated_row['version'] = __version__
-            return self.annotated_row
+            if len(self.matched_rules) > 0:
+                rules_to_use = self.matched_rules
+            else:
+                rules_to_use = [self.matched_rule]
+            for rule in rules_to_use:
+                row = base_row.copy()
+                for col in cols:
+                    row[col] = rule.get(col, '-')
+                row['version'] = __version__
+                # prefer organism from rule if present, else from genotype
+                row['organism'] = self.organism
+                annotated_rows.append(row)
+
+        self.annotated_row = annotated_rows
+        return annotated_rows
+
 
 # New helper class: builds a summary-compatible dict from a ResultRow
 class SummaryRow:
@@ -228,6 +225,32 @@ class SummaryRow:
         self.card_conversion = card_conversion or {}
         self.card_drug_map = card_drug_map or {}
 
+    def _assign_drug_info(self, card_amrfp_conversion: Dict = None, card_drug_map: Dict = None):
+        """
+        Assign drug and drug class information
+        """
+        # if we have a matched rule, extract that info
+        # note that if we get drug, we won't have a class assigned so need to fill that in
+        if self.matched_rule:
+            self.drug = self.matched_rule.get('drug', '-')
+            if self.drug != '-':
+                # get the drug class from card
+                self.drug_class = card_drug_map.get(self.drug, '-')
+            else:
+                self.drug_class = self.matched_rule.get('drug class', '-')
+        # if we DON'T have a matched rule, we need to assign it from the AMRFP information
+        # using our conversion dictionary
+        else:
+            subclasses = self.genotype.amrfp_subclass.split('/') if '/' in self.genotype.amrfp_subclass else [self.genotype.amrfp_subclass]
+            # okay if subclasses has more than one entry.... omg we need to duplicate this for each subclass as we'll have different drugs
+            # so this is ONLY for instances where we have no matched rule, and it's an AMR marker
+            # let's save this as a list and deal with it in the summary row section
+            self.amr_subclass_drugs = []
+            for subclass in subclasses:
+                drug = self.card_conversion.get(subclass, {}).get('drug', '-')
+                drug_class = self.card_drug_map.get(drug, '-')
+                self.amr_subclass_drugs.append((subclass, drug, drug_class))
+    
     def to_summary_dict(self):
         """
         Return a dict compatible with the summariser expectations.
