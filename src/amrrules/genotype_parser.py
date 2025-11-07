@@ -6,10 +6,11 @@ from amrrules.utils import aa_conversion, minimal_columns, full_columns
 
 class GenoResult:
 
-    def __init__(self, raw, tool, organism_dict):
+    def __init__(self, raw, tool, organism_dict, sample_name=None):
         self.raw_row = raw
         self.annotated_rows: Optional[Any] = None # will populate with the anntoated version of the row after rule matching
         self.tool = tool
+        self.sample_name = sample_name
 
         # standard fields regardless of tool type
         self.gene_symbol: Optional[str] = None
@@ -58,8 +59,13 @@ class GenoResult:
             self.to_process = True
         
         # get the sample name, but only if the column exists
-        if "Name" in r.keys():
+        # otherwise we will use the sample name provided by the user
+        if "Name" in r.keys() and not self.sample_name:
             self.sample_name = r.get("Name")
+        # if we weren't provide a sample name, and also we don't have one
+        # from the input file, we will use the default name "sample" instead
+        if "Name" not in r.keys() and not self.sample_name:
+            self.sample_name = "sample"
         self.gene_symbol = (r.get("Gene symbol") or r.get("Element symbol"))
         self.method = r.get("Method")
         self.nodeID = r.get("Hierarchy node")

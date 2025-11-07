@@ -12,13 +12,14 @@ def main():
     parser.add_argument('--input', type=str, help='Path to the input file.')
     parser.add_argument('--output_prefix', type=str, help='Prefix name for the output files.')
     parser.add_argument('--output_dir', '-d', type=str, default=os.getcwd(), help='Output directory. Default is current working directory.')
+    parser.add_argument('--sample_id', type=str, help="If interpreting a single genome, can optionally provide sample ID here. If no sample_id is provided, and the first column of the input file doesn't define a sample_id, then the default value will be 'sample'.", default=None)
     parser.add_argument('--download-resources', action='store_true', help='Download AMRFinderPlus resource files and exit.')
 
     org_args = parser.add_mutually_exclusive_group()
     org_args.add_argument('--organism', '-o', type=str, help=f"Organism to interpret. Must be one of: {', '.join(supported_organisms)}")
     org_args.add_argument('--organism_file', '-of', type=str, help='Path to the organism file. This file should have two columns: genome name in col1 (matching the sample name in the first col of the input file), and col2 is the organism name, which should be one of the supported organisms. File should be in tab-delimited format, with no header')
     #TODO: implement card and resfinder options, currently only amrfp is supported
-    parser.add_argument('--amr_tool', '-t', type=str, default='amrfp', help='AMR tool used to detect genotypes: options are amrfp, card, resfinder. Currently only amrfp is supported.')
+    parser.add_argument('--amr_tool', '-t', type=str, default='amrfp', help='AMR tool used to detect genotypes: options are amrfp, rgi, resfinder. Currently only amrfp is supported.')
     parser.add_argument('--hamronized', '-H', action='store_true', help='Input file has been hamronized')
     # TODO: implement this option to allow for selection of different AMRFP databases
     #parser.add_argument('--amrfp_db_version', type=str, default='latest', help='Version of the AMRFP database used. Default is latest. NOTE STILL TO BE IMPLEMENTED')
@@ -35,9 +36,14 @@ def main():
 
     # Require input/output/organism for normal run
     if not args.input or not args.output_prefix or (not args.organism and not args.organism_file):
-        parser.error('You must specify --input, --output_prefix, and --organism or --organism_file unless using --download-resources.')
+        parser.error('You must specify --input, --output_prefix, and --organism (or --organism_file) unless using --download-resources.')
 
     if args.amr_tool != 'amrfp':
         raise NotImplementedError("Currently only amrfp is supported. Please use amrfp as the AMR tool.")
+    
+    # can't have both organism_file and sample_id, as sample_id is only allowed for single entry files
+    if args.organism_file and args.sample_id:
+        parser.error("Please provide either --sample_id or --organism_file, not both. --sample_id should only be used if there is a single sample in the input file. Providing --organism_file presumes multiple samples to be processed, and is incompatible.")
+
 
     rules_engine.run(args)

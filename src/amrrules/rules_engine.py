@@ -61,7 +61,10 @@ def run(args):
         base_fieldnames = reader.fieldnames.copy()
         row_count = 1
         for row in reader:
-            row_to_process = GenoResult(row, args.amr_tool, organism_dict)
+            if args.sample_id:
+                row_to_process = GenoResult(row, args.amr_tool, organism_dict, sample_name=args.sample_id)
+            else:
+                row_to_process = GenoResult(row, args.amr_tool, organism_dict)
             # we only want to find matched rules for a row if it's relevant for AMR, so check this value first
             if row_to_process.to_process:                
                 # extract the relevant rules for this ID, based on its organism
