@@ -1,11 +1,12 @@
 from amrrules.rules_io import parse_rules_file, extract_relevant_rules
-from amrrules.summariser import prepare_summary
+from amrrules.summariser import create_summary_dict
 from amrrules.utils import check_sample_ids, validate_amrfp_file, get_organisms
 from amrrules.output import write_genotype_report, write_genome_report
 from amrrules.resources import ResourceManager as rm
-from amrrules.input_file_class import Genotype, ResultRow, SummaryRow
+from amrrules.genotype_parser import GenoResult, Genotype
 import csv
 from importlib import resources
+from collections import defaultdict
 
 def run(args):
 
@@ -49,18 +50,10 @@ def run(args):
 
     # parse the rule files
     rules = parse_rules_file(rule_files)
-    # TODO: consider convert rules to Rule objects? Not sure how that helps us though
-    #rules = [Rule(r) for r in rules]
-
-    # We need to validate the input file, and if we've got an organism file, we need to check that all the IDs are in there
-    # if only some IDs are missing, in either file, we can still run, but throw a warning to the user
 
     matched_hits = {}
     unmatched_hits = []
-
     genotype_rows = []
-    # collect rows prepared for summariser (dicts)
-    summary_input_rows = []
     # now it's time to parse the input file, which we have validated to check that it has
     # the columns we need. Each row will be parsed into an InputRow object
     with open(args.input, 'r') as f:
@@ -68,7 +61,7 @@ def run(args):
         base_fieldnames = reader.fieldnames.copy()
         row_count = 1
         for row in reader:
-            row_to_process = Genotype(row, args.amr_tool, organism_dict)
+            row_to_process = GenoResult(row, args.amr_tool, organism_dict)
             # we only want to find matched rules for a row if it's relevant for AMR, so check this value first
             if row_to_process.to_process:                
                 # extract the relevant rules for this ID, based on its organism
@@ -96,25 +89,35 @@ def run(args):
     for g in genotype_rows:
         genotype_output_rows.extend(g.annotated_row)
 
-    # now write out the genotype report, which annotates each row with the rule info
+    # now write out the interpreted genotype report, which annotates each row with the rule info
     write_genotype_report(args, genotype_output_rows, unmatched_hits, matched_hits, base_fieldnames)
 
-    # to create the summary output:
-    # we need to evaluate markers by drug/class, because that's how we're summarising
+    # we now want to create one object per rule/AMRFP subclass, so that we can summarise by drug or drug class.
+    genotype_objects = []
+    for g in genotype_rows:
+        if g.to_process:
+            if g.matched_rules:
+                for rule in g.matched_rules:
+                    geno_obj = Genotype.from_result_row(g, card_map=card_drug_map, rule=rule)
+                    genotype_objects.append(geno_obj)
+            else:
+                # extract the subclasses and split as needed
+                g_subclasses = g.amrfp_subclass.split('/')
+                for subclass in g_subclasses:
+                    geno_obj = Genotype.from_result_row(g, card_amrfp=card_amrfp_conversion, amrfp_subclass=subclass, no_rule_interp=args.no_rule_interpretation)
+                    genotype_objects.append(geno_obj)
+
+    # now we want to group all of these objects by sample ID (if we have multiple samples)
+    # because we need to summarise per genome
+    # then we want to group by drug, or drug class if drug is '-', in each sample
+    grouped_by_sample = defaultdict(list)
+    for geno_obj in genotype_objects:
+        grouped_by_sample[geno_obj.sample_name].append(geno_obj)
 
 
-    # for rows where rules have been applied, that's easy, it's already done
-    # for rows where they haven't, we need to convert the AMRFP Subclass to it's corresponding CARD drug or class
-    # some rows will have NA for Subclass because they aren't relevant, these can be skipped
-    # some rows will have a Subclass but be NA for card, these need to be grouped under 'other markers'
-
+    summary_entry_dict = create_summary_dict(grouped_by_sample, rules)
     
-    # okay now we need the unique sample IDs, for the summary output
-    # pass summary_input_rows (a list of summary-compatible dicts built from ResultRow/annotated rows)
-    #summary_output = prepare_summary(summary_input_rows, rules, samples_to_parse, args.no_flag_core, args.no_rule_interpretation)
-    #summary_output = None
-
-    #write_genome_report(args, summary_output)
+    write_genome_report(summary_entry_dict, args.output_dir, args.output_prefix)
 
 
 def download_resources():

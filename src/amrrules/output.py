@@ -20,14 +20,35 @@ def write_genotype_report(args, output_rows, unmatched_hits, matched_hits, base_
     print(f"{len(matched_hits)} hits matched a rule and {len(unmatched_hits)} hits did not match a rule.")
     print(f"Output written to {interpreted_output_file}.")
 
-def write_genome_report(args, summary_output):
 
-    summary_output_file = os.path.join(args.output_dir, args.output_prefix + '_genome_summary.tsv')
-    col_names = ['drug', 'drug class', 'category', 'phenotype', 'evidence grade', 'markers (with rule)', 'markers (no rule)', 'wt markers', 'ruleIDs', 'combo rules', 'organism']
-    with open(summary_output_file, 'w', newline='') as f:
-        if 'Name' in summary_output[0].keys():
-            col_names = ['Name'] + col_names
-        writer = csv.DictWriter(f, fieldnames=col_names, delimiter='\t')
+def write_genome_report(summary_entry_dict, out_dir, out_prefix):
+
+    # now we want to write out the summary entry report
+    # we have all the values we need in each row, under each sample
+    summary_output_file = os.path.join(out_dir, out_prefix + '_genome_summary.tsv')
+    summary_output_header = ['sample_name', 'drug', 'drug_class', 'category', 'phenotype', 'evidence_grade', 'markers_with_rule', 'markers_with_norule', 'wt_markers', 'ruleIDs', 'combo_rules', 'organism']
+    header_mapping = {
+    'sample_name': 'sample',
+    'drug': 'drug',
+    'drug_class': 'drug class',
+    'category': 'clinical category',
+    'phenotype': 'phenotype',
+    'evidence_grade': 'evidence grade',
+    'markers_with_rule': 'markers (with rule)',
+    'markers_with_norule': 'markers (no rule)',
+    'wt_markers': 'wt markers',
+    'ruleIDs': 'ruleIDs',
+    'combo_rules': 'combo rules',
+    'organism': 'organism'   
+    }
+    csv_header = [header_mapping.get(attr, attr.replace("_", " ").title()) for attr in summary_output_header]
+
+    with open(summary_output_file, 'w', newline='') as out:
+        writer = csv.DictWriter(out, fieldnames=csv_header, delimiter='\t')
         writer.writeheader()
-        writer.writerows(summary_output)
+        for sample, objs in summary_entry_dict.items():
+        # Build each row using a dict comprehension, mapping attribute -> CSV header
+            rows = [{csv_header[i]: getattr(o, attr, '-') for i, attr in enumerate(summary_output_header)} for o in objs]
+            writer.writerows(rows)
+    
     print(f"Summary output written to {summary_output_file}.")

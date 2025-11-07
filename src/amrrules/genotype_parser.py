@@ -1,10 +1,10 @@
-from typing import Any, Dict, Optional
+from typing import Any, Optional
 import re
 from amrrules import __version__
 from amrrules.utils import aa_conversion, minimal_columns, full_columns
 
 
-class Genotype:
+class GenoResult:
 
     def __init__(self, raw, tool, organism_dict):
         self.raw_row = raw
@@ -12,7 +12,6 @@ class Genotype:
         self.tool = tool
 
         # standard fields regardless of tool type
-        self.sample_name: Optional[str] = None
         self.gene_symbol: Optional[str] = None
         self.mutation: Optional[str] = None # this will be the formatted AMRrules compliant mutation
         self.variation_type: Optional[str] = None  # type of AMR variant (Gene presence, protein variant, nucl variant etc)
@@ -66,6 +65,8 @@ class Genotype:
         self.nodeID = r.get("Hierarchy node")
         self.closest_acc = r.get("Accession of closest sequence") or r.get("Closest reference accession")
         self.hmm_acc = r.get("HMM id")
+        self.amrfp_class = r.get("Class")
+        self.amrfp_subclass = r.get("Subclass")
 
         # if our method is pointX or pointP, we need to extract the actual mutation
         # and convert to AMRrules syntax
@@ -212,94 +213,74 @@ class Genotype:
         self.annotated_row = annotated_rows
         return annotated_rows
 
+# we now need to take our genotype objects, and instead group them by drug (or class if no drug specified)
+# so each genotype object may have multiple drugs associated with it, regardless of whether it has a matched rule or not
 
-# New helper class: builds a summary-compatible dict from a ResultRow
-class SummaryRow:
-    def __init__(self, result_row: ResultRow, card_conversion: Dict = None, card_drug_map: Dict = None):
-        """
-        result_row: ResultRow instance (annotated_row expected to be set)
-        card_conversion: mapping used to convert AMRFP Subclass -> CARD drug/class (optional)
-        card_drug_map: mapping from CARD drug -> drug class (optional)
-        """
-        self.result_row = result_row
-        self.card_conversion = card_conversion or {}
-        self.card_drug_map = card_drug_map or {}
-
-    def _assign_drug_info(self, card_amrfp_conversion: Dict = None, card_drug_map: Dict = None):
-        """
-        Assign drug and drug class information
-        """
-        # if we have a matched rule, extract that info
-        # note that if we get drug, we won't have a class assigned so need to fill that in
-        if self.matched_rule:
-            self.drug = self.matched_rule.get('drug', '-')
-            if self.drug != '-':
-                # get the drug class from card
-                self.drug_class = card_drug_map.get(self.drug, '-')
-            else:
-                self.drug_class = self.matched_rule.get('drug class', '-')
-        # if we DON'T have a matched rule, we need to assign it from the AMRFP information
-        # using our conversion dictionary
-        else:
-            subclasses = self.genotype.amrfp_subclass.split('/') if '/' in self.genotype.amrfp_subclass else [self.genotype.amrfp_subclass]
-            # okay if subclasses has more than one entry.... omg we need to duplicate this for each subclass as we'll have different drugs
-            # so this is ONLY for instances where we have no matched rule, and it's an AMR marker
-            # let's save this as a list and deal with it in the summary row section
-            self.amr_subclass_drugs = []
-            for subclass in subclasses:
-                drug = self.card_conversion.get(subclass, {}).get('drug', '-')
-                drug_class = self.card_drug_map.get(drug, '-')
-                self.amr_subclass_drugs.append((subclass, drug, drug_class))
+class Genotype(GenoResult):
+    def __init__(self, row, tool, organism_dict, matching_rule=None, amrfp_subclass=None):
+        super().__init__(row, tool, organism_dict)
+        self.matching_rule = matching_rule
+        self.amrfp_subclass = amrfp_subclass
+        self.drug: Optional[str] = None
+        self.drug_class: Optional[str] = None
     
-    def to_summary_dict(self):
+    @classmethod
+    def from_result_row(cls, geno_result_obj, card_amrfp=None, card_map=None, rule=None, amrfp_subclass=None, no_rule_interp = None):
         """
-        Return a dict compatible with the summariser expectations.
-        If the ruleID is '-' (no rule) and a Subclass exists, try to infer drug/drug class from card_conversion.
+        Create a Genotype instance from an existing GenoResult object,
+        copying all of its attributes.
         """
-        # use annotated row if available, otherwise fallback to base_row
-        row = dict(self.result_row.annotated_row) if self.result_row.annotated_row else dict(self.result_row.base_row)
+        # Create an empty Genotype object without re-parsing anything
+        # by bypassing GenoResult.__init__
+        new_obj = cls.__new__(cls)
 
-        # Ensure keys used in summariser exist
-        row.setdefault('ruleID', row.get('ruleID', '-'))
-        row.setdefault('Subclass', row.get('Subclass', 'NA'))
-        row.setdefault('drug', row.get('drug', '-'))
-        row.setdefault('drug class', row.get('drug class', '-'))
-        row.setdefault('phenotype', row.get('phenotype', '-'))
-        row.setdefault('clinical category', row.get('clinical category', '-'))
-        row.setdefault('evidence grade', row.get('evidence grade', '-'))
-        row.setdefault('organism', row.get('organism', self.result_row.organism or '-'))
-        row.setdefault('Name', row.get('Name', self.result_row.sample_name))
-        row.setdefault('Gene symbol', row.get('Gene symbol', row.get('Element symbol')))
-        row.setdefault('Element symbol', row.get('Element symbol', row.get('Gene symbol')))
-        row.setdefault('context', row.get('context', '-'))
+        # Copy all data from the GenoResult instance
+        new_obj.__dict__ = dict(geno_result_obj.__dict__)
 
-        # If no rule assigned and Subclass present, attempt to resolve CARD drug/class
-        if (row.get('ruleID') == '-' or row.get('ruleID') is None) and row.get('Subclass') and row.get('Subclass') != 'NA':
-            subclasses = row.get('Subclass')
-            # handle slash-separated subclasses
-            subclasses_list = subclasses.split('/') if '/' in subclasses else [subclasses]
-            # pick first resolvable mapping; leave defaults if none found
-            for sc in subclasses_list:
-                conv = self.card_conversion.get(sc, {})
-                resolved_drug = conv.get('drug')
-                resolved_class = conv.get('class')
-                if resolved_drug and resolved_drug not in ('NA','-'):
-                    row['drug'] = resolved_drug
-                    # try to fill drug class using provided map if not present
-                    row['drug class'] = self.card_drug_map.get(resolved_drug, row.get('drug class', '-'))
-                    break
-                if (not resolved_drug or resolved_drug in ('NA','-')) and resolved_class and resolved_class not in ('NA','-'):
-                    row['drug class'] = resolved_class
-                    break
+        # asign the new attributes
+        new_obj.rule = rule
+        new_obj.amrfp_subclass = amrfp_subclass
+        new_obj.has_rule = False
 
-            # If still NA, mark as other markers and set some fields to '-'
-            if row['drug'] in ('NA','-') and row['drug class'] in ('NA','-'):
-                row['drug'] = 'other markers'
-                row['drug class'] = 'other markers'
-                row['phenotype'] = row.get('phenotype', '-')
-                row['clinical category'] = row.get('clinical category', '-')
-                row['evidence grade'] = row.get('evidence grade', '-')
+        # Assign drugs if the rule is provided
+        # also assign the important values from the rule that are relevant for our summary functions
+        if new_obj.rule:
+            new_obj._assign_drug_from_rule(card_map)
+            new_obj.has_rule = True
+            new_obj._assign_rule_attributes(rule)
+        elif new_obj.amrfp_subclass:
+            new_obj._assign_drug_from_amrfp(card_amrfp)
+            new_obj._assign_norule_attributes(no_rule_interp)
 
-        return row
+        return new_obj
 
-
+    def _assign_drug_from_rule(self, card_drug_map):
+        self.drug = self.rule.get('drug', '-')
+        if self.drug != '-':
+            # get the drug class from card
+            self.drug_class = card_drug_map.get(self.drug, '-')
+        else:
+            self.drug_class = self.rule.get('drug class', '-')
+    
+    def _assign_drug_from_amrfp(self, card_amrfp_conversion):
+        self.drug = card_amrfp_conversion.get(self.amrfp_subclass).get('drug', '-')
+        self.drug_class = card_amrfp_conversion.get(self.amrfp_subclass).get('class', '-')
+    
+    def _assign_rule_attributes(self, rule):
+        # assign other important attributes from the rule for summary purposes
+        self.phenotype = rule.get('phenotype')
+        self.clinical_category = rule.get('clinical category')
+        self.evidence_grade = rule.get('evidence grade')
+        self.ruleID = rule.get('ruleID')
+    
+    def _assign_norule_attributes(self, no_rule_interpretation):
+        # assign default values when no rule is matched
+        if no_rule_interpretation == 'nwtR':
+            self.phenotype = 'nonwildtype'
+            self.clinical_category = 'R'
+        else:
+            self.phenotype = 'nonwildtype'
+            self.clinical_category = 'S'
+            
+        self.evidence_grade = 'very low'
+        self.ruleID = None
