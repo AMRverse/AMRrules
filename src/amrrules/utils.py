@@ -11,7 +11,7 @@ full_columns = ['breakpoint', 'breakpoint standard', 'breakpoint condition', 'ev
 
 CATEGORY_ORDER = ['S', 'I', 'R']
 PHENOTYPE_ORDER = ['wildtype', 'nonwildtype']
-EVIDENCE_GRADE_ORDER = ['very low', 'low', 'moderate', 'high']
+EVIDENCE_GRADE_ORDER = ['-', 'very low', 'low', 'moderate', 'high']
 
 def get_supported_organisms(rule_dir: str = None):
     """
@@ -37,14 +37,22 @@ def get_organisms(organism_file):
     """
 
     organism_dict = {}
+    skipped_samples = set()
+    supported_orgs = get_supported_organisms()
     with open(organism_file, 'r') as org_file:
         for line in org_file:
             sample_id, organism_name = line.strip().split('\t')
+            # check it's a valid organism for the sample
+            # if not, we need to skip the sample and raise a warning
+            if organism_name not in supported_orgs:
+                warnings.warn(f"{organism_name} is not a supported organism. Skipping sample {sample_id}.")
+                skipped_samples.add(sample_id)
+                continue
             if sample_id not in organism_dict:
                 organism_dict[sample_id] = organism_name
             elif sample_id in organism_dict:
                 raise ValueError(f"Duplicate sample ID found in organism file: {sample_id}. Please ensure that each sample ID is unique.")
-    return organism_dict
+    return organism_dict, skipped_samples
 
 def validate_amrfp_file(amrfp_file, multi_entry=False):
     """
@@ -63,13 +71,14 @@ def validate_amrfp_file(amrfp_file, multi_entry=False):
                 samples_in_file.add(row.get('Name'))
     return samples_in_file
 
-def check_sample_ids(samples_with_org, samples_in_input):
+def check_sample_ids(samples_with_org, samples_in_input, skipped_samples):
     """
     Check that all samples in the input file have a corresponding organism in the organism file.
     It's okay if there are samples in the organism file that aren't in the input file, we can just raise a warning in that instance.
+    Make sure we exclude any samples that are deliberately being skipped.
     """
     
-    missing_samples = samples_in_input - samples_with_org
+    missing_samples = samples_in_input - samples_with_org - skipped_samples
     if missing_samples:
         raise ValueError(f"The following sample IDs from the input file are missing in the organism file: {', '.join(missing_samples)}. Please ensure all sample IDs are present in the organism file.")
     missing_from_input = samples_with_org - samples_in_input

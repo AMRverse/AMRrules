@@ -12,7 +12,7 @@ def run(args):
 
     # extract all the rules relevant to the organisms we're processing
     if args.organism_file:
-        organism_dict = get_organisms(args.organism_file)
+        organism_dict, skipped_samples = get_organisms(args.organism_file)
         samples_with_org = set(organism_dict.keys())
     else:
         organism_dict = {'': args.organism}
@@ -34,7 +34,7 @@ def run(args):
     # will raise an error if any are missing
     # will raise a warning if there are samples in the org file but aren't in the input file
     if args.organism_file:
-        check_sample_ids(samples_with_org, samples_to_parse)
+        check_sample_ids(samples_with_org, samples_to_parse, skipped_samples)
 
     # collate the required rules for the organisms we need to parse
     rule_files = []
@@ -65,7 +65,11 @@ def run(args):
                 row_to_process = GenoResult(row, args.amr_tool, organism_dict, sample_name=args.sample_id)
             else:
                 row_to_process = GenoResult(row, args.amr_tool, organism_dict)
+            # if this row belongs to a sample we should skip, update the to_process attribute to False
+            if row_to_process.sample_name in skipped_samples:
+                row_to_process.to_process = False
             # we only want to find matched rules for a row if it's relevant for AMR, so check this value first
+            # also make sure it's not a row belonging to a sample we should skip
             if row_to_process.to_process:                
                 # extract the relevant rules for this ID, based on its organism
                 relevant_rules = extract_relevant_rules(rules, row_to_process.organism)

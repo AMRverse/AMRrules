@@ -7,7 +7,6 @@ def main():
     # Get list of valid organism names
     supported_organisms = get_supported_organisms()
 
-
     parser = argparse.ArgumentParser(description="Interpretation engine for AMRrules.")
     parser.add_argument('--input', type=str, help='Path to the input file.')
     parser.add_argument('--output_prefix', type=str, help='Prefix name for the output files.')
@@ -44,6 +43,11 @@ def main():
     # can't have both organism_file and sample_id, as sample_id is only allowed for single entry files
     if args.organism_file and args.sample_id:
         parser.error("Please provide either --sample_id or --organism_file, not both. --sample_id should only be used if there is a single sample in the input file. Providing --organism_file presumes multiple samples to be processed, and is incompatible.")
+    
+    # check that the organism provided actually exists in the ruleset
+    if args.organism:
+        if args.organism not in supported_organisms:
+            parser.error(f"Invalid organism name. Must be one of:\n{'\n'.join(supported_organisms)}")
 
 
     rules_engine.run(args)
