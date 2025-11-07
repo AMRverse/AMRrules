@@ -38,14 +38,21 @@ class SummaryEntry:
             return max(valid_values, key=lambda v: order.index(v))
 
         # Extract values from genotype objects
-        categories = [g.clinical_category for g in self.geno_objs if hasattr(g, 'clinical_category')]
+        #categories = [g.clinical_category for g in self.geno_objs if hasattr(g, 'clinical_category')]
         phenotypes = [g.phenotype for g in self.geno_objs if hasattr(g, 'phenotype')]
-        evidence_grades = [g.evidence_grade for g in self.geno_objs if hasattr(g, 'evidence_grade')]
+        #evidence_grades = [g.evidence_grade for g in self.geno_objs if hasattr(g, 'evidence_grade')]
+
+        # update evidence grade to be linked to the evidence for the highest category call 
+        # (eg if oqx is S with rule, but there is gyrA marker with no rule that's R, category is R but evidence grade is very low)
+        best_obj = max(self.geno_objs, key=lambda o: (
+            CATEGORY_ORDER.index(o.clinical_category),
+            EVIDENCE_GRADE_ORDER.index(o.evidence_grade)
+            ))
 
         # Set the “maximum” according to ordering
-        self.category = get_max_value(categories, CATEGORY_ORDER)
+        self.category = best_obj.clinical_category
         self.phenotype = get_max_value(phenotypes, PHENOTYPE_ORDER)
-        self.evidence_grade = get_max_value(evidence_grades, EVIDENCE_GRADE_ORDER)
+        self.evidence_grade = best_obj.evidence_grade
     
     def set_ruleIDs_and_combo(self, combo_rules):
         # deal with the ruleIDs
