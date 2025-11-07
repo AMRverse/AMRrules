@@ -78,6 +78,8 @@ class GenoResult:
         # and convert to AMRrules syntax
         if self.method in ["POINTX", "POINTP", "POINTN"]:
             self.mutation, self.variation_type = self._parse_mutation()
+        elif self.method == "INTERNAL_STOP":
+            self.variation_type = "Inactivation mutation detected"
         else:
             self.variation_type = "Gene presence detected"
 
