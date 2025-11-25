@@ -4,7 +4,7 @@ src/amrrules/resources/ncbi_taxonomy.tsv
 src/amrrules/resources/ReferenceGeneHierarchy.txt
 src/amrrules/resources/version.txt
 
-src/amrrules/rules/*.txt
+src/amrrules/rules/*
 
 # Byte-compiled / cache files
 __pycache__/
