@@ -17,6 +17,7 @@ def run(args):
     else:
         organism_dict = {'': args.organism}
         samples_with_org = None
+        skipped_samples = None
     
     if args.amr_tool == 'amrfp':
         # then we need to grab the refgene heirarchy direct from the ncbi website (get latest for now)
@@ -66,7 +67,7 @@ def run(args):
             else:
                 row_to_process = GenoResult(row, args.amr_tool, organism_dict)
             # if this row belongs to a sample we should skip, update the to_process attribute to False
-            if row_to_process.sample_name in skipped_samples:
+            if skipped_samples and row_to_process.sample_name in skipped_samples:
                 row_to_process.to_process = False
             # we only want to find matched rules for a row if it's relevant for AMR, so check this value first
             # also make sure it's not a row belonging to a sample we should skip
