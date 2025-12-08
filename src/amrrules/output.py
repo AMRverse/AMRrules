@@ -26,7 +26,7 @@ def write_genome_report(summary_entry_dict, out_dir, out_prefix):
     # now we want to write out the summary entry report
     # we have all the values we need in each row, under each sample
     summary_output_file = os.path.join(out_dir, out_prefix + '_genome_summary.tsv')
-    summary_output_header = ['sample_name', 'drug', 'drug_class', 'category', 'phenotype', 'evidence_grade', 'markers_with_rule', 'markers_with_norule', 'wt_markers', 'ruleIDs', 'combo_rules', 'organism']
+    summary_output_header = ['sample_name', 'drug', 'drug_class', 'category', 'phenotype', 'evidence_grade', 'markers_rule_nonS', 'markers_with_norule', 'markers_S', 'ruleIDs', 'combo_rules', 'organism']
     header_mapping = {
     'sample_name': 'sample',
     'drug': 'drug',
@@ -34,9 +34,9 @@ def write_genome_report(summary_entry_dict, out_dir, out_prefix):
     'category': 'clinical category',
     'phenotype': 'phenotype',
     'evidence_grade': 'evidence grade',
-    'markers_with_rule': 'markers (with rule)',
+    'markers_rule_nonS': 'markers (non-S)',
     'markers_with_norule': 'markers (no rule)',
-    'wt_markers': 'wt markers',
+    'markers_S': 'markers (S)',
     'ruleIDs': 'ruleIDs',
     'combo_rules': 'combo rules',
     'organism': 'organism'   

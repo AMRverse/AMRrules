@@ -21,9 +21,9 @@ class SummaryEntry:
         self.category = None
         self.phenotype = None
         self.evidence_grade = None
-        self.markers_with_rule = None
+        self.markers_rule_nonS = None
         self.markers_with_norule = None
-        self.wt_markers = None
+        self.markers_s = None
         self.ruleIDs = None
         self.combo_rules = None
     
@@ -80,23 +80,25 @@ class SummaryEntry:
     def set_markers(self):
         # for each object, extract the marker and place it into the correct
         # list based on whether it has a rule, no rule, or is wildtype
-        markers_with_rule = []
+        markers_rule_nonS = []
         markers_with_norule = []
-        wt_markers = []
+        markers_s = []
         for g in self.geno_objs:
             #TODO: add mutation to marker if there is one? Or leave as default from AMRFP?
             marker = g.gene_symbol
-            if g.phenotype == 'wildtype':
-                wt_markers.append(marker)
-            else:
-                if g.has_rule:
-                    markers_with_rule.append(marker)
+            if g.has_rule:
+                if g.phenotype == 'wildtype':
+                    marker = marker + " (core)"
+                if g.clinical_category == 'S':
+                    markers_s.append(marker)
                 else:
-                    markers_with_norule.append(marker)
+                    markers_rule_nonS.append(marker)
+            else:
+                markers_with_norule.append(marker)
 
-        self.markers_with_rule = ';'.join(markers_with_rule) or '-'
+        self.markers_rule_nonS = ';'.join(markers_rule_nonS) or '-'
         self.markers_with_norule = ';'.join(markers_with_norule) or '-'
-        self.wt_markers = ';'.join(wt_markers) or '-'
+        self.markers_S = ';'.join(markers_s) or '-'
 
     def _evaluate_logic_string(logic_string, id_list):
         """
