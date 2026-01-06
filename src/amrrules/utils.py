@@ -6,7 +6,7 @@ aa_conversion = {'G': 'Gly', 'A': 'Ala', 'S': 'Ser', 'P': 'Pro', 'T': 'Thr', 'C'
                  'M': 'Met', 'N': 'Asn', 'Q': 'Gln', 'K': 'Lys', 'R': 'Arg', 'H': 'His', 'D': 'Asp', 'E': 'Glu', 'W': 'Trp', 
                  'Y': 'Tyr', 'F': 'Phe', '*': 'STOP'}
 
-minimal_columns = ['ruleID', 'gene context', 'drug', 'drug class', 'phenotype', 'clinical category', 'evidence grade', 'version', 'organism']
+minimal_columns = ['ruleID', 'variation type', 'gene', 'mutation', 'gene context', 'drug', 'drug class', 'phenotype', 'clinical category', 'evidence grade', 'version', 'organism']
 full_columns = ['breakpoint', 'breakpoint standard', 'breakpoint condition', 'evidence code', 'evidence limitations', 'PMID', 'rule curation note']
 
 CATEGORY_ORDER = ['not available', 'S', 'I', 'R']
