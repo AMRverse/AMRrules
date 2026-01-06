@@ -77,7 +77,7 @@ class SummaryEntry:
         else:
             self.combo_rules = ";".join(matched_combo_rules)
     
-    def set_markers(self):
+    def set_markers(self, no_flag_core):
         # for each object, extract the marker and place it into the correct
         # list based on whether it has a rule, no rule, or is wildtype
         markers_rule_nonS = []
@@ -87,7 +87,7 @@ class SummaryEntry:
             #TODO: add mutation to marker if there is one? Or leave as default from AMRFP?
             marker = g.gene_symbol
             if g.has_rule:
-                if g.phenotype == 'wildtype':
+                if g.phenotype == 'wildtype' and not no_flag_core:
                     marker = marker + " (core)"
                 if g.clinical_category == 'S':
                     markers_s.append(marker)
@@ -147,7 +147,7 @@ def order_summary_objs(objs):
 
     return sorted_list
 
-def create_summary_dict(grouped_by_sample, rules):
+def create_summary_dict(grouped_by_sample, rules, no_flag_core):
 
     summary_entry_dict = {} # key: sample name, value: list of summary entry objs
     for sample_name, genotypes in grouped_by_sample.items():
@@ -166,7 +166,7 @@ def create_summary_dict(grouped_by_sample, rules):
             # determine the highest category/pheno/evidence grade for this drug/drug_class
             summary_entry.summarise_rules()
             # assign markers with, without rules, and wt markers
-            summary_entry.set_markers()
+            summary_entry.set_markers(no_flag_core)
             # assign ruleIDs and combo rules
             #TODO: Test combo rule implementation
             # to get the list of possible combo rules to evaluate, we need to extract all 'Combination' rules for this organism

@@ -123,7 +123,7 @@ def run(args):
         grouped_by_sample[geno_obj.sample_name].append(geno_obj)
 
 
-    summary_entry_dict = create_summary_dict(grouped_by_sample, rules)
+    summary_entry_dict = create_summary_dict(grouped_by_sample, rules, args.no_flag_core)
     
     write_genome_report(summary_entry_dict, args.output_dir, args.output_prefix)
 
