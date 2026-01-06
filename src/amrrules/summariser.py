@@ -84,8 +84,8 @@ class SummaryEntry:
         markers_with_norule = []
         markers_s = []
         for g in self.geno_objs:
-            #TODO: add mutation to marker if there is one? Or leave as default from AMRFP?
-            marker = g.gene_symbol
+            # set the marker to be the amrrules formatted version
+            marker = g.marker_amrrules
             if g.has_rule:
                 if g.phenotype == 'wildtype' and not no_flag_core:
                     marker = marker + " (core)"

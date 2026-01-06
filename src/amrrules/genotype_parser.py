@@ -14,6 +14,7 @@ class GenoResult:
 
         # standard fields regardless of tool type
         self.gene_symbol: Optional[str] = None
+        self.marker_amrrules: Optional[str] = None  # this will be the formatted AMRrules compliant marker, format gene:mutation (if mutation exists)
         self.mutation: Optional[str] = None # this will be the formatted AMRrules compliant mutation
         self.variation_type: Optional[str] = None  # type of AMR variant (Gene presence, protein variant, nucl variant etc)
         self.matched_rules: Optional[Any] = None  # will be filled with matched rules
@@ -88,10 +89,15 @@ class GenoResult:
             self.variation_type = "Inactivation mutation detected"
         else:
             self.variation_type = "Gene presence detected"
+        
+        # create the AMRrules compliant marker
+        self.marker_amrrules = self._create_amrrules_marker()
 
     def _parse_mutation(self):
 
         gene_symbol, mutation = self.gene_symbol.rsplit("_", 1)
+        # set the amrrules marker to the gene symbol for now
+        self.marker_amrrules = gene_symbol
 
         # this means it is a protein mutation
         if self.method in ["POINTX", "POINTP"]:
@@ -130,6 +136,16 @@ class GenoResult:
             # otherwise it's more like 23S_G2032T -> c.2032G>T, with a - if it's in the promoter.
             else:
                 return(f"c.{pos}{ref}>{alt}", mutation_type)
+    def _create_amrrules_marker(self):
+        # if variation type is gene presence, then just return the gene symbol
+        if self.variation_type == "Gene presence detected":
+            return self.gene_symbol
+        # if the variation type is an inactivating mutation, return gene:-, where - indicates inactivation
+        elif self.variation_type == "Inactivation mutation detected":
+            return f"{self.gene_symbol}:-"
+        # otherwise return gene:mutation
+        else:
+            return f"{self.marker_amrrules}:{self.mutation}"
 
     def _get_final_matches(self, matching_rules, guideline_pref = None):
         #TODO MAKE THIS ITS OWN FUNCTION
