@@ -63,12 +63,13 @@ def run(args):
         row_count = 1
         for row in reader:
             if args.sample_id:
-                row_to_process = GenoResult(row, args.amr_tool, organism_dict, sample_name=args.sample_id)
+                row_to_process = GenoResult(row, args.amr_tool, organism_dict, args.print_non_amr, sample_name=args.sample_id)
             else:
-                row_to_process = GenoResult(row, args.amr_tool, organism_dict)
-            # if this row belongs to a sample we should skip, update the to_process attribute to False
+                row_to_process = GenoResult(row, args.amr_tool, organism_dict, args.print_non_amr)
+            # if this row belongs to a sample we should skip, update the to_process and to_print attributes to False
             if skipped_samples and row_to_process.sample_name in skipped_samples:
                 row_to_process.to_process = False
+                row_to_process.print_row = False
             # we only want to find matched rules for a row if it's relevant for AMR, so check this value first
             # also make sure it's not a row belonging to a sample we should skip
             if row_to_process.to_process:                
@@ -95,7 +96,8 @@ def run(args):
     # get all the output rows together into a single list
     genotype_output_rows = []
     for g in genotype_rows:
-        genotype_output_rows.extend(g.annotated_row)
+        if g.print_row:
+            genotype_output_rows.extend(g.annotated_row)
 
     # now write out the interpreted genotype report, which annotates each row with the rule info
     write_genotype_report(args, genotype_output_rows, unmatched_hits, matched_hits, base_fieldnames)

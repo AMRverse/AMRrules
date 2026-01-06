@@ -25,6 +25,7 @@ def main():
     parser.add_argument('--no-rule-interpretation', '-nr', type=str, default = 'nwtR', choices=['nwtR', 'nwtS'], help='How to interpret hits that do not match a rule. Options are: nwtR (default) - all nonwildtype hits with no matching rule are interpreted as resistant; nwtS - all nonwildtype hits with no matching rule are interpreted as susceptible.')
     parser.add_argument('--annot_opts', '-a', type=str, default='minimal', choices=['minimal', 'full'], help='Annotation options: minimal (context, drug, phenotype, category, evidence grade), full (everything including breakpoints, standards, etc)')
     parser.add_argument('--no_flag_core', action='store_true', help='Turn off flagging core genes in the summary output')
+    parser.add_argument('--print_non_amr', action='store_true', help='Include non-AMR rows (eg VIRULENCE, STRESS) from the input file in the interpreted output. By default, these rows are skipped.')
     parser.add_argument('--version', action='version', version=f"amrrules {__version__}")
 
     args = parser.parse_args()

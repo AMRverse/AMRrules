@@ -6,7 +6,7 @@ from amrrules.utils import aa_conversion, minimal_columns, full_columns
 
 class GenoResult:
 
-    def __init__(self, raw, tool, organism_dict, sample_name=None):
+    def __init__(self, raw, tool, organism_dict, print_non_amr, sample_name=None):
         self.raw_row = raw
         self.annotated_rows: Optional[Any] = None # will populate with the anntoated version of the row after rule matching
         self.tool = tool
@@ -20,6 +20,8 @@ class GenoResult:
 
         # option to process this row or just skip (eg virulence rows from AMRFP output)
         self.to_process: bool = False
+        # option to print this row into the interpreted output, default is not to print
+        self.print_row: bool = False
 
         # amrfp relevant fields(filled by parser)
         self.nodeID: Optional[str] = None
@@ -31,7 +33,7 @@ class GenoResult:
 
         # parse on construction
         if self.tool == "amrfp":
-            self._parse_amrfp()
+            self._parse_amrfp(print_non_amr)
         
         #TODO: implement parsing of other input types
         #elif self.input_type == "card":
@@ -48,15 +50,19 @@ class GenoResult:
             self.organism = organism_dict.get(self.sample_name)
 
     # Parsing helpers for specific input types
-    def _parse_amrfp(self):
+    def _parse_amrfp(self, print_non_amr):
         r = self.raw_row
         element_type = r.get("Element type") or r.get("Type")
         # only process AMR rows
         if element_type != "AMR":
             self.to_process = False
+            # default is to skip non-AMR rows, but these can be put back in with user optio
+            if print_non_amr:
+                self.print_row = True
             return
         else:
             self.to_process = True
+            self.print_row = True
         
         # get the sample name, but only if the column exists
         # otherwise we will use the sample name provided by the user
@@ -125,7 +131,14 @@ class GenoResult:
             else:
                 return(f"c.{pos}{ref}>{alt}", mutation_type)
 
-    def _get_final_matches(self, matching_rules):
+    def _get_final_matches(self, matching_rules, guideline_pref = None):
+        #TODO MAKE THIS ITS OWN FUNCTION
+        # we have multiple rules that match, and if there's a guideline preference
+        # we need to pick one
+        #if guideline_pref:
+        #    for rule in matching_rules:
+                    # extract the first word inside breakpoint standard (which will be either EUCAST or CLSI)
+        #            guideline_for_rule = rule['breakpoint standard'].split()[0]
         if self.variation_type == 'Gene presence detected':
             return matching_rules
         elif self.variation_type in ['Protein variant detected', 'Nucleotide variant detected', 'Promoter variant detected']:
@@ -136,7 +149,7 @@ class GenoResult:
                     final_matching_rules.append(rule)
             return final_matching_rules
 
-    def find_matching_rules(self, rules, amrfp_nodes):
+    def find_matching_rules(self, rules, amrfp_nodes, guideline_pref = None):
 
         # select rules that match our variation type
         rules_to_check = []
