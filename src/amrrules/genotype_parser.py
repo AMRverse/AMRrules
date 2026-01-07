@@ -79,7 +79,7 @@ class GenoResult:
         self.method = r.get("Method")
         self.nodeID = r.get("Hierarchy node")
         self.closest_acc = r.get("Accession of closest sequence") or r.get("Closest reference accession")
-        self.hmm_acc = r.get("HMM id")
+        self.hmm_acc = r.get("HMM id") or r.get("HMM accession")
         self.amrfp_class = r.get("Class")
         self.amrfp_subclass = r.get("Subclass")
 
@@ -236,7 +236,11 @@ class GenoResult:
             self.matched_rules = self._get_final_matches(matching_rules)
             return
 
-        #TODO: HMM accession check
+        #HMM accession check
+        matching_rules = [rule for rule in rules_to_check if rule.get('HMM accession') == self.hmm_acc]
+        if len(matching_rules) > 0:
+            self.matched_rules = self._get_final_matches(matching_rules)
+            return
 
         # if nothing matched, then we return and the value stays the default which is None
         return
