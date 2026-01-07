@@ -26,6 +26,7 @@ class GenoResult:
 
         # amrfp relevant fields(filled by parser)
         self.nodeID: Optional[str] = None
+        self.subtype: Optional[str] = None
         self.method: Optional[str] = None
         self.closest_acc: Optional[str] = None
         self.hmm_acc: Optional[str] = None
@@ -74,6 +75,7 @@ class GenoResult:
         if "Name" not in r.keys() and not self.sample_name:
             self.sample_name = "sample"
         self.gene_symbol = (r.get("Gene symbol") or r.get("Element symbol"))
+        self.subtype = r.get("Subtype") or r.get("Element subtype")
         self.method = r.get("Method")
         self.nodeID = r.get("Hierarchy node")
         self.closest_acc = r.get("Accession of closest sequence") or r.get("Closest reference accession")
@@ -85,8 +87,11 @@ class GenoResult:
         # and convert to AMRrules syntax
         if self.method in ["POINTX", "POINTP", "POINTN"]:
             self.mutation, self.variation_type = self._parse_mutation()
-        elif self.method == "INTERNAL_STOP":
-            self.variation_type = "Inactivation mutation detected"
+        # if there's an internal stop, or the gene is a partial hit, then it's inactivated
+        # ditto for POINT_DISRUPT
+        elif self.method == "INTERNAL_STOP" or self.method.startswith("PARTIAL"):
+            self.variation_type = "Inactivating mutation detected"
+            self.mutation = '-' # set mutation to '-' for the summary marker later
         else:
             self.variation_type = "Gene presence detected"
         
@@ -101,26 +106,50 @@ class GenoResult:
 
         # this means it is a protein mutation
         if self.method in ["POINTX", "POINTP"]:
+            # variation type is protein variant, unless subtype is POINT_DISRUPT
+            # which means the variation type is inactivation mutation
+            if self.subtype == "POINT_DISRUPT":
+                variation_type = "Inactivating mutation detected"
+            else:
+                variation_type = "Protein variant detected"
             # extract the relevant parts of the mutation
             pattern = re.compile(r"(\D+)(\d+)(\D+)")
             ref, pos, alt = pattern.match(mutation).groups()
             # convert the single letter AA code to the 3 letter code
             # note that we need to determine if we've got a simple substitution of ref to alt
-            # or do we have a deletion or an insertion?
+            # or do we have a deletion or an insertion, or a frameshift?
             # gyrA_S83L -> p.Ser83Leu, this is a substitution
-            # penA_D346DD -> p.345_346insAsp
-            # okay so if there are two characters in alt, then we have an insertion
-            if len(alt) > 1 and alt != 'STOP':
-                # then we have an insertion, and the inserted AA is the second character of alt
-                alt = aa_conversion.get(alt[1])
+            # penA_D346DD -> p.345_346insAsp, this is an insertion
+            # ompK35_E42RfsTer47 -> p.Glu42Argfs*47, this is an inactivating frameshift
+            # ompK35_Y36Ter -> p.Tyr36*, this is an inactivating frameshift
+
+            # okay so if there are two or more characters in alt, and no Ter, then we have an insertion
+            if len(alt) > 1 and alt != 'STOP' and 'Ter' not in alt:
+                # then we have an insertion, and the inserted AAs is the second character onwards of alt
+                # need to get all the inserted AAs converted
+                alt_string = ''
+                for char in alt[1:]:
+                    alt_string += aa_conversion.get(char)
                 # our coordinates are the original pos, and original - 1
                 pos_coords = str(int(pos) - 1) + "_" + str(pos)
-                return(f"p.{pos_coords}ins{alt}", "Protein variant detected")
-
+                return(f"p.{pos_coords}ins{alt_string}", variation_type)
+            if len(alt) > 1 and 'Ter' in alt:
+                # then we have a frameshift leading to a stop codon
+                # if the start of alt is Ter, then it's simply ref pos *
+                if alt.startswith('Ter'):
+                    return(f"p.{aa_conversion.get(ref)}{pos}*", variation_type)
+                else:
+                    # otherwise we need to get the first aa and convert it
+                    alt = aa_conversion.get(alt[0])
+                    # then grab the number after Ter
+                    fs_pos = re.search(r'Ter(\d+)', mutation).group(1)
+                    return(f"p.{aa_conversion.get(ref)}{pos}{alt}fs*{fs_pos}", variation_type)
+            # this is the option if we have a simple conversion of one aa to another
             else:
                 ref = aa_conversion.get(ref)
                 alt = aa_conversion.get(alt)
-                return(f"p.{ref}{pos}{alt}", "Protein variant detected")
+                return(f"p.{ref}{pos}{alt}", variation_type)
+        
         elif self.method == "POINTN":
             # we need to extract the relevant parts, this will be different because we may have promoter mutations
             pattern = re.compile(r'^([A-Za-z]+)(-?\d+)([A-Za-z]+)$')
@@ -136,16 +165,20 @@ class GenoResult:
             # otherwise it's more like 23S_G2032T -> c.2032G>T, with a - if it's in the promoter.
             else:
                 return(f"c.{pos}{ref}>{alt}", mutation_type)
+    
     def _create_amrrules_marker(self):
         # if variation type is gene presence, then just return the gene symbol
         if self.variation_type == "Gene presence detected":
             return self.gene_symbol
         # if the variation type is an inactivating mutation, return gene:-, where - indicates inactivation
-        elif self.variation_type == "Inactivation mutation detected":
-            return f"{self.gene_symbol}:-"
-        # otherwise return gene:mutation
+        #elif self.variation_type == "Inactivating mutation detected":
+        #    return f"{self.gene_symbol}:-"
+        # otherwise return gene:mutation, which will be '-' if it's an inactivating mutation with no specifics
         else:
-            return f"{self.marker_amrrules}:{self.mutation}"
+            if self.marker_amrrules:
+                return f"{self.marker_amrrules}:{self.mutation}"
+            else:
+                return f"{self.gene_symbol}:{self.mutation}"
 
     def _get_final_matches(self, matching_rules, guideline_pref = None):
         #TODO MAKE THIS ITS OWN FUNCTION
