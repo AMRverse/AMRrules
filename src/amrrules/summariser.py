@@ -94,7 +94,10 @@ class SummaryEntry:
                 else:
                     markers_rule_nonS.append(marker)
             else:
-                markers_with_norule.append(marker)
+                if g.clinical_category == 'S':
+                    markers_s.append(marker)
+                else:
+                    markers_with_norule.append(marker)
 
         self.markers_rule_nonS = ';'.join(markers_rule_nonS) or '-'
         self.markers_with_norule = ';'.join(markers_with_norule) or '-'
