@@ -357,11 +357,16 @@ class Genotype(GenoResult):
         # if the variation type is inactivating, and we've got no rule
         # then we treat it as though the gene isn't functional, so therefore is S
         if self.variation_type == "Inactivating mutation detected":
-            self.clinical_category = 'S'
+            # the ONLY exception to this is if it's a POINT_DISRUPT, in which case the default interpretation should be R
+            # (if nwtR), as these are interruptions in core genes that are likely to cause resistance
+            if self.subtype == "POINT_DISRUPT" and no_rule_interpretation == 'nwtR':
+                self.clinical_category = 'R'
+            else:
+                self.clinical_category = 'S'
         # otherwise the gene is considered functional, so we use what the user has selected
         if self.variation_type != "Inactivating mutation detected" and no_rule_interpretation == 'nwtR':
             self.clinical_category = 'R'
-        else:
+        elif no_rule_interpretation == 'nwtS':
             self.clinical_category = 'S'
         
         # regardless evidence is very low and there is no ruleID to set
