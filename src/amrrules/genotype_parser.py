@@ -349,12 +349,21 @@ class Genotype(GenoResult):
     
     def _assign_norule_attributes(self, no_rule_interpretation):
         # assign default values when no rule is matched
-        if no_rule_interpretation == 'nwtR':
-            self.phenotype = 'nonwildtype'
+        # note that our interpretation depends on user choice
+        # AND also if the variation type is "Inactivating mutation detected" but we've got no rule
+
+        # regardless of user choice, the phenotype is always nonwildtype
+        self.phenotype = 'nonwildtype'
+        # if the variation type is inactivating, and we've got no rule
+        # then we treat it as though the gene isn't functional, so therefore is S
+        if self.variation_type == "Inactivating mutation detected":
+            self.clinical_category = 'S'
+        # otherwise the gene is considered functional, so we use what the user has selected
+        if self.variation_type != "Inactivating mutation detected" and no_rule_interpretation == 'nwtR':
             self.clinical_category = 'R'
         else:
-            self.phenotype = 'nonwildtype'
             self.clinical_category = 'S'
-            
+        
+        # regardless evidence is very low and there is no ruleID to set
         self.evidence_grade = 'very low'
         self.ruleID = None
