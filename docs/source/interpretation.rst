@@ -29,6 +29,8 @@ Inactivating mutation detected   INTERNAL_STOP, PARTIAL, POINTX   If POINTX, Sub
 
 The parsed ``variation type``, ``gene``, and ``mutation`` columns are added to the interpreted output file, next to the original AMRFinderPlus columns.
 
+AMRrules also maps the AMRFinderPlus calls to ``drug`` or ``drug class`` names from the CARD ARO, by parsing the ``Subclass`` columns. 
+
 Rule matching
 ^^^^^^^^^^^^^
 
@@ -42,7 +44,7 @@ When matching a hit with a rule, the following logic applies:
    b. ``protein accession``
    c. ``HMM accession``
 
-For each matching rule, AMRrules appends the following information from the rules file to the AMRFinderPlus hit:
+For each matching rule, AMRrules appends the following fields from the rules file to the AMRFinderPlus hit:
 
 * ruleID
 * gene context
@@ -54,7 +56,7 @@ For each matching rule, AMRrules appends the following information from the rule
 * version
 * organism
 
-To add the full rule annotation information, set ``--annot-opts full``, which will add the following additional fields from the rule file:
+To get more detailed annotation, set ``--annot-opts full``, which will add the following additional fields from the rule file:
 
 * breakpoint
 * breakpoint standard
