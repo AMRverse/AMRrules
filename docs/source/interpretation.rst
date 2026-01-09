@@ -16,9 +16,9 @@ When parsing the AMRFinderPlus input file, AMRrules will first identify what ``v
 
 The table below shows the logic of how AMRrules maps AMRFinderPlus outputs to the different variation types:
 
-================================ ================================ ===================================================== == == == == == == 
+================================ ================================ =====================================================
   Variation type                   AMRFP Method                     Additional logic                                                       
- ================================ ================================ ===================================================== == == == == == == 
+ ================================ ================================ =====================================================
   Gene presence detected           EXACT, ALLELE, BLAST                                                                                    
   Protein variant detected         POINTX, POINTP                                                                                          
   Nucleotide variant detected      POINTN                                                                                                  
