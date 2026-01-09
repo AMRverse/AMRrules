@@ -7,8 +7,16 @@ Rule Specification
 =======
 
 Variation type
---------------
+^^^^^^^^
+.. csv-table:: Variation type
+   :file: _tables/variation_type_spec.tsv
+   :delim: tab
+   :header-rows: 1
 
+Evidence codes
+^^^^^^^^
+
+Specified using the `Evidence and Conclusion Ontology (ECO) <https://www.evidenceontology.org/>`__	Indicate the nature of the evidence supporting the rule. More than one can be listed, please include all forms of evidence available to support the rule (separate multiple entries with ', '). In principle any codes in the Evidence and Conclusion Ontology can be used, but in most cases it will be most appropriate to choose from the subset listed in the 'evidence codes' tab of this spreadsheet (also provided as a dropdown selection in the main data entry tab of this spreadsheet). The source for each type of evidence should be given in the 'PMID'.
 
 
 .. _syntax:
