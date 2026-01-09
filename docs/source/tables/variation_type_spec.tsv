@@ -1,4 +1,4 @@
-Values allowed in variation type column	The specified AMRrule applies if...	Notes/source
+Values allowed in variation type column	The specified AMRrule applies if...	Notes or source
 Gene presence detected	...the gene specified in the 'gene' column is detected as being present. 	hAMRonization
 Protein variant detected	...the protein variant specified in the 'mutation' column is detected in the specified 'gene'.	hAMRonization
 Nucleotide variant detected	...the nucleotide variant specified in the 'mutation' column is detected in the specified 'gene'.	hAMRonization
