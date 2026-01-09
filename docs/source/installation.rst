@@ -11,19 +11,18 @@ AMRrules requires Python 3.12 or higher, and needs pip to be be installed.
 Download and install AMRrules
 =============================
 
-Currently, AMRrules is only available for installation via source. We recommend you set up a new conda environment while the tool is under development.
+Currently, AMRrules is only available for installation via source. We recommend you set up a new conda environment while the tool is under development.::
 
-::
-    conda create -n amrrules_beta -c bioconda python=3.12
-
+    # create your conda environment
+    conda create -n amrrules_beta -c bioconda python=3.12 pip
     conda activate amrrules_beta
 
-    conda install pip
-
+    # clone the repository, switch to the development branch
     git clone https://github.com/AMRverse/AMRrules
-
     cd AMRrules
+    git checkout genome_summary_report_dev
 
+    # install AMRrules
     make dev
 
 After installation, you you must download the required AMRFinderPlus resource files. Run::
