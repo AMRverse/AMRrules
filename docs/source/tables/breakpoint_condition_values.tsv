@@ -1,0 +1,43 @@
+-
+Endocarditis
+Endocarditis with combination treatment
+Extraintestinal
+Intravenous
+Intravenous, Oral
+Investigational agent
+Liposomal, Inhaled
+Mammary gland
+Mastitis
+Meningitis
+Meningitis, Endocarditis
+Metritis
+Non-endocarditis
+Non-meningitis
+Non-meningitis, Non-endocarditis
+Non-pneumonia
+Oral
+Oral, Infections originating from the urinary tract
+Oral, Other indications
+Oral, Uncomplicated urinary tract infection
+Parenteral
+Pneumonia
+Prophylaxis
+Respiratory
+Respiratory, genital
+Respiratory, soft tissue
+Screen
+Skin
+Skin, respiratory
+Skin, soft tissue
+Skin, soft tissue, respiratory
+Skin, soft tissue, respiratory, uncomplicated urinary tract infection
+Skin, soft tissue, respiratory, uncomplicated urinary tract infection, genital
+Skin, soft tissue, uncomplicated urinary tract infection
+Skin, uncomplicated urinary tract infection
+Uncomplicated urinary tract infection
+Uncomplicated urinary tract infection, Investigational agent
+Wounds, abscesses
+Wounds, abscesses, uncomplicated urinary tract infection
+
+These are conditions used in EUCAST or CLSI 2025 Breakpoints, sourced from AMR R package using this command:
+clinical_breakpoints %>% filter(guideline=="CLSI 2025" | guideline=="EUCAST 2025") %>% group_by(site) %>% count() 
