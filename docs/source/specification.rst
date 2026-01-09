@@ -16,11 +16,11 @@ List of fields
 ^^^^^^^^^^^^^^
 
 .. csv-table:: Variation type
-   :file: _tables/specifications_and_guidance.tsv
+   :file: tables/specifications_and_guidance.tsv
    :delim: tab
    :header-rows: 1
 
-:download:`Download <_tables/specifications_and_guidance.tsv>`
+:download:`Download <tables/specifications_and_guidance.tsv>`
 
 Controlled vocabularies
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -31,11 +31,11 @@ Variation type
 Specifies the nature of the type of variation to which the rule applies. Based on the 'variant type' column in the hAMRonization specification, with additional terms from the NCIT ontology.
 
 .. csv-table:: Variation type
-   :file: _tables/variation_type_spec.tsv
+   :file: /tables/variation_type_spec.tsv
    :delim: tab
    :header-rows: 1
 
-:download:`Download <_tables/variation_type_spec.tsv>`
+:download:`Download </tables/variation_type_spec.tsv>`
 
 Evidence codes
 --------------
