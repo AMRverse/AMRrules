@@ -94,7 +94,8 @@ The following columns are included:
 Markers are formatted as ``gene:mutation``, where the mutation is formatted using :ref:`AMRrules syntax <syntax>`. Genes which are inactivated are depicted as ``gene:-``, where the ``-`` indicates an inactivating mutation.
 
 .. note::
-AMRFinderPlus hits detected using POINT_DISRUPT contain detailed information about the disruption, which is formatted using HGVS syntax. For simplicity, by default AMRrules **will not show** the full mutation after the gene when listing these markers in the genome summary. Rather, they will be formatted as ``gene:-`` as per other inactivating mutations. If you wish to show the full mutation detected by AMRFinderPlus, this can be turned on by providing the option ``--full-disrupt`` to the AMRrules call.
+
+   AMRFinderPlus hits detected using POINT_DISRUPT contain detailed information about the disruption, which is formatted using HGVS syntax. For simplicity, by default AMRrules **will not show** the full mutation after the gene when listing these markers in the genome summary. Rather, they will be formatted as ``gene:-`` as per other inactivating mutations. If you wish to show the full mutation detected by AMRFinderPlus, this can be turned on by providing the option ``--full-disrupt`` to the AMRrules call.
 
 Markers that are core genes can be optionally flagged in the genome summary output by turning on ``--flag-core``. eg the core blaSHV gene in *K. pneumoniae* will now be in the ``markers (non-S)`` column as ``blaSHV-11 (core)`` under ampicillin.
 
