@@ -6,6 +6,7 @@
    usage
    interpretation
    syntax
+   tests
 
 **************************
 AMRrules
