@@ -11,7 +11,7 @@ def main():
     parser.add_argument('--input', type=str, help='Path to the input file.')
     parser.add_argument('--output-prefix', type=str, help='Prefix name for the output files.')
     parser.add_argument('--output-dir', '-d', type=str, default=os.getcwd(), help='Output directory. Default is current working directory.')
-    parser.add_argument('--sample_id', type=str, help="If interpreting a single genome, can optionally provide sample ID here. If no sample_id is provided, and the first column of the input file doesn't define a sample_id, then the default value will be 'sample'.", default=None)
+    parser.add_argument('--sample-id', type=str, help="If interpreting a single genome, can optionally provide sample ID here. If no sample_id is provided, and the first column of the input file doesn't define a sample_id, then the default value will be 'sample'.", default=None)
 
     org_args = parser.add_mutually_exclusive_group()
     org_args.add_argument('--organism', '-o', type=str, help=f"Organism to interpret. Use --list-organisms to see all supported organisms.")
