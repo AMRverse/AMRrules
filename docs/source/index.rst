@@ -45,6 +45,6 @@ TBD
 
 Contributors
 ============
-The AMRrules concept was initially workshopped by members of the `Holt lab <https://holtlab.net>`_ at `London School of Hygiene and Tropical Medicine <https://www.lshtm.ac.uk>`_ and further developed in collaboration with `Jane Hawkey <https://github.com/jhawkey>`_ at `Monash University <https://research.monash.edu/en/persons/jane-hawkey>`_. The AMRrules specification was developed by the ESGEM-AMR Data & Tools group, and the rules curated by the ESGEM-AMR Working Group (see `list of members <https://github.com/AMRverse/AMRrulesCuration/>`_), chaired by Natacha Couto (ESGEM Chair). 
+The AMRrules concept was initially workshopped by members of the `Holt lab <https://holtlab.net>`_ at `London School of Hygiene and Tropical Medicine <https://www.lshtm.ac.uk>`_ and further developed in collaboration with `Jane Hawkey <https://github.com/jhawkey>`_ at `Monash University <https://research.monash.edu/en/persons/jane-hawkey>`_. The AMRrules specification was developed by the ESGEM-AMR Data & Tools group, and the rules curated by the ESGEM-AMR Working Group (see `list of members <https://github.com/AMRverse/ESGEM-AMR/>`_), co-chaired by Natacha Couto (ESGEM Chair). 
 
 Code was developed by Jane Hawkey and Kat Holt.
