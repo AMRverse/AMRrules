@@ -14,7 +14,7 @@ When given an AMRFinderPlus input file, and an organism, AMRrules will apply the
 
 When parsing the AMRFinderPlus input file, AMRrules will first identify what ``variation type`` each genotype call belongs to, the ``gene`` found, and if there is a mutation in the gene, this mutation will be converted to the :ref:`AMRrules syntax <syntax>`.
 
-The table below shows the logic of how AMRrules maps AMRFinderPlus outputs to the different variation types:
+The table below shows the logic of how AMRrules maps AMRFinderPlus genotype calls to the different variation types:
 
 ================================ ================================ =====================================================
 Variation type                   AMRFP Method                     Additional logic
@@ -29,7 +29,11 @@ Inactivating mutation detected   INTERNAL_STOP, PARTIAL, POINTX   If POINTX, Sub
 
 The parsed ``variation type``, ``gene``, and ``mutation`` columns are added to the interpreted output file, next to the original AMRFinderPlus columns.
 
-AMRrules also maps the AMRFinderPlus calls to ``drug`` or ``drug class`` names from the CARD ARO, by parsing the ``Subclass`` columns. 
+**Drug mapping**
+
+AMRrules maps the AMRFinderPlus calls to ``drug`` or ``drug class`` names from the CARD ARO, by parsing the ``Subclass`` columns. The dictionary used to map AMRFinderPlus ``Subclass`` to CARD ontology is in the AMRrules repository under ``src/amrrules/resources/amrfp_to_card_drugs_classes.txt``.
+
+Some genotype calls have multiple entries in the AMRFinderPlus ``Subclass`` field. In such cases, the annotated calls output by AMRrules will contain multiple copies of the genotype row, one for each mapped drug/class. E.g. `aac6-Ib-cr <https://www.ncbi.nlm.nih.gov/pathogens/refgene/#aac6-Ib-cr>`__ is assigned to Subclass "AMIKACIN/KANAMYCIN/QUINOLONE/TOBRAMYCIN" in refgene/AMRfinderplus, so the AMRrules-annotated genotype file will contain 4 rows for this gene, one each for ``drug`` = ``amikacin``, ``drug`` = ``tobramycin``, ``drug`` = ``kanamycin``, and ``drug class`` = ``fluoroquinolone antibiotic``
 
 Rule matching
 ^^^^^^^^^^^^^
