@@ -1,0 +1,10 @@
+Values allowed in 'variation type' column	The specified AMRrule applies if...	Notes/source
+Gene presence detected	...the gene specified in the 'gene' column is detected as being present. 	hAMRonization
+Protein variant detected	...the protein variant specified in the 'mutation' column is detected in the specified 'gene'.	hAMRonization
+Nucleotide variant detected	...the nucleotide variant specified in the 'mutation' column is detected in the specified 'gene'.	hAMRonization
+Promoter variant detected	...the promoter variant specified in the 'mutation' column is detected in the specified 'gene'.	NCIT:C190205
+Inactivating mutation detected	...the gene specified in the 'gene' column is inactivated by any type of mechanism (e.g. frameshift, internal stop, deletion, truncation), in the amino acid range specified in the 'mutation' column (or anywhere in the gene, if the 'mutation' column is blank i.e. '-').	NCIT:C178119
+Gene copy number variant detected	...the gene specified in the 'gene' column is detected in at least the minimum number of copies specified in the 'mutation' column.	NCIT:C189957
+Nucleotide variant detected in multi-copy gene	...the gene specified in the 'gene' column is a gene that is normally present in multiple copies (e.g. rRNA genes), and the nucleotide variant specified in the 'mutation' column is detected in at least the minimum number of alleles specified in the 'mutation' column.	
+Low frequency variant detected	...the reads data supports a mixed population, for which a minimum fraction specified in the 'mutation' column support the presence of the nucleotide variant specified in the 'mutation' column being present in the gene specified in the 'gene' column (currently intended for TB only).	
+Combination	...the logical expression in the 'gene' column, which expresses a combination of component rules identified by their 'ruleID', evaluates as true.	
