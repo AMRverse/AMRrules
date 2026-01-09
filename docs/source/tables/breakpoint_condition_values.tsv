@@ -1,4 +1,3 @@
--
 Endocarditis
 Endocarditis with combination treatment
 Extraintestinal
@@ -38,6 +37,3 @@ Uncomplicated urinary tract infection
 Uncomplicated urinary tract infection, Investigational agent
 Wounds, abscesses
 Wounds, abscesses, uncomplicated urinary tract infection
-
-These are conditions used in EUCAST or CLSI 2025 Breakpoints, sourced from AMR R package using this command:
-clinical_breakpoints %>% filter(guideline=="CLSI 2025" | guideline=="EUCAST 2025") %>% group_by(site) %>% count() 
