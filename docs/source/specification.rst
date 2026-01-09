@@ -1,5 +1,5 @@
 **************************
-AMRrules Syntax
+AMRrules Specification
 **************************
 
 .. _syntax:
