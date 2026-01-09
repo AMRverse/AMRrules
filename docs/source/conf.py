@@ -27,5 +27,5 @@ html_theme_options = {
 
 }
 html_static_path = ['_static']
-html_logo = 'https://github.com/AMRverse/AMRrules/blob/main/extras/AMRrules_logo.png?raw=true'
+html_logo = 'https://github.com/AMRverse/AMRrules/blob/genome_summary_report_dev/extras/AMRrules_logo.png?raw=true'
 #html_favicon = 'https://github.com/klebgenomics/Kaptive-Web/blob/master/static/images/favicon.png?raw=true'
