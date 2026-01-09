@@ -74,22 +74,29 @@ In addition to the interpreted AMRFinderPlus output file, AMRrules will also gen
 
 The following columns are included:
 
-=================== ==================================================================================================== == == == == == == == 
+=================== ====================================================================================================
   Column              Explanation                                                                                                              
- =================== ==================================================================================================== == == == == == == == 
-  sample              sample ID                                                                                                                
-  drug                drug, as per CARD ARO. AMRFinderPlus drugs will be converted to CARD ARO format by AMRrules                              
-  drug class          drug class, as per CARD ARO. AMRFinderPlus drugs will be converted to CARD ARO format by AMRrules                       
+=================== ====================================================================================================
+  sample              Sample ID                                                                                                                
+  drug                Drug, as per CARD ARO. AMRFinderPlus drugs will be converted to CARD ARO format by AMRrules                              
+  drug class          Drug class, as per CARD ARO. AMRFinderPlus drugs will be converted to CARD ARO format by AMRrules                       
   clinical category   S/I/R. Highest level of resistance based on markers that match this drug/drug class                                  
-  phenotype           wildtype or nonwildtype. Highest level based on markers that match this drug/drug class                                  
-  evidence grade      very low/low/moderate/high. Highest grade of evidence for markers that match this drug/drug class                       
-  markers (non-S)     any markers with a matching rule that are predicted to confer an I or R phenotype                                        
-  markers (no rule)   any markers with no rule                                                                                                 
-  markers (S)         any markers with a rule that are predicted to confer an S phenotype                                                      
-  ruleIDs             ``;`` separated list of ruleIDs that apply to this drug/drug class                                                       
-  combo rules         any combination rules that apply to this drug/drug class                                                                 
-  organism            organism these markers apply to                                                                                          
- =================== ==================================================================================================== == == == == == == == 
+  phenotype           Wildtype or nonwildtype. Highest level based on markers that match this drug/drug class                                  
+  evidence grade      Very low/low/moderate/high. Highest grade of evidence for markers that match this drug/drug class                       
+  markers (non-S)     Markers with a matching rule that are predicted to confer an I or R phenotype, separated by ``;``
+  markers (no rule)   Markers with no rule, separated by ``;``                                                                 
+  markers (S)         Markers with a rule that are predicted to confer an S phenotype, separated by ``;``                      
+  ruleIDs             List of ruleIDs that apply to this drug/drug class, separated by ``;``                                                     
+  combo rules         All combination rules that apply to this drug/drug class                                                                 
+  organism            Organism these markers apply to                                                                                          
+=================== ====================================================================================================
+
+Markers are formatted as ``gene:mutation``, where the mutation is formatted using AMRrules syntax **(link to syntax info here)**. Genes which are inactivated are depicted as ``gene:-``, where the ``-`` indicates an inactivating mutation.
+
+.. note::
+AMRFinderPlus hits detected using POINT_DISRUPT contain detailed information about the disruption, which is formatted using HGVS syntax. For simplicity, by default AMRrules **will not show** the full mutation after the gene when listing these markers in the genome summary. Rather, they will be formatted as ``gene:-`` as per other inactivating mutations. If you wish to show the full mutation detected by AMRFinderPlus, this can be turned on by providing the option ``--full-disrupt`` to the AMRrules call.
+
+Markers that are core genes can be optionally flagged in the genome summary output by turning on ``--flag-core``. eg the core blaSHV gene in *K. pneumoniae* will now be in the ``markers (non-S)`` column as ``blaSHV-11 (core)`` under ampicillin.
 
 
 Handling unmatched hits
