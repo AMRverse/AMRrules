@@ -6,7 +6,12 @@ AMRrules Syntax
 Purpose
 =======
 
-Goal is to encode AMRrules for the following types of AMR variants:
+The `AMRrules specification <https://docs.google.com/spreadsheets/d/1t6Lr_p-WAOY0yAXWKzoKk4yb56D2JdSqwImg4RZBvFA/edit?usp=sharing>`__ needs to be able to encode interpretive rules for all types of genetic variants relevant to AMR in bacteria.
+
+Approach
+=======
+
+In 2024, the `ESGEM-AMR <https://github.com/AMRverse/ESGEM-AMR>`__ working group collated and reviewed examples of known variants across diverse bacteria, and identified the following types of AMR variants:
 
 * Gene presence detected
 * Amino acid substitution or insertion
@@ -17,9 +22,11 @@ Goal is to encode AMRrules for the following types of AMR variants:
 * Mutations in multi-copy genes (e.g. 23S rRNA)
 * Low frequency variants (i.e. heterozygosity)
 
-Where possible we aim to encode the mutations in a `HGVS <https://hgvs-nomenclature.org/stable/>`__ (https://hgvs-nomenclature.org/stable/recommendations/general/)) compliant way.
+It was concluded that all such variants could be adequately addressed using a combination of three fields:
 
-It was considered that all examples submitted could be adequately addressed using a combination of ``gene``, ``mutation`` (based on `HGVS syntax <https://hgvs-nomenclature.org/stable/recommendations/summary/>`__, with some modifications) and ``variation type`` (based on `hAMRonization <https://github.com/pha4ge/hAMRonization/tree/master/schema>`__ field `Genetic Variation Type <https://github.com/pha4ge/hAMRonization/blob/master/hAMRonization/constants.py>`__, with some additions).
+* ``gene``
+* ``mutation`` (based on `HGVS syntax <https://hgvs-nomenclature.org/stable/recommendations/summary/>`__, with some modifications)
+* ``variation type`` (based on `hAMRonization <https://github.com/pha4ge/hAMRonization/tree/master/schema>`__ field `Genetic Variation Type <https://github.com/pha4ge/hAMRonization/blob/master/hAMRonization/constants.py>`__, with some additions).
 
 Specific examples of each AMR variant are shown below, with proposed mutation syntax and variation types for each (note that other fields required for rule definition, like organism, refseq accession, context, PMID are not included here for simplicity, as they are not essential to illustrate how to define a specific *kind* of variation):
 
@@ -70,12 +77,16 @@ Syntax for ‘mutation’ specific to AMRrules
 ------------------------------------------
 
 * AMRrules requires amino acids be specified as three-letter codes (whereas HGVS allows single-letter or three-letter codes)
+
+  * Accordingly, the STOP codon should be specified as 'Ter' rather than '*'
+
 * In HGVS you must specify the reference sequence explicitly using a sequence accession, followed by `:` and then the mutation, e.g. ``NF000285.3:p.Gly238Ser``. In AMRrules the gene is specified in separate column/s (‘gene’, ‘refseq accession’, ‘ARO accession’) and should not be repeated in the mutation column. So the above rule should be coded as:
 
-  a. gene = ``blaSHV``
-  b. refseq accession = ``NF000285.3``
-  c. ARO accession = ``ARO:3000015``
-  d. mutation = ``p.Gly238Ser``
+  * gene = ``blaSHV``
+  * node = ``blaSHV``
+  * refseq accession = ``NF000285.3``
+  * ARO accession = ``ARO:3000015``
+  * mutation = ``p.Gly238Ser``
 
 * In AMRrules, insertion sequences (IS) should be labelled with their IS name as per `ISfinder <https://isfinder.biotoul.fr/list_names_attributed.php>`__, as many do not have their own sequence accessions in refseq. E.g. insertion of ISAba125 should be specified as ``ins[ISAba125]``, and insertion in reverse orientation to the gene to which the rule applies should be specified as ``ins[ISAba125:inv]``.
 * In AMRrules, rules intended to apply when a gene is present in a minimum of N copies can be specified using the ``[N]`` syntax to indicate the minimum repeat/copy number of the whole coding sequence, as ``c.[N]``. 
