@@ -34,19 +34,22 @@ Eg:
 
     amrfinder -n Kpn1.fasta --plus --print_node --name Kpn1 --organism Klebsiella_pneumoniae > Kpn1_AMRfp.tsv
 
-and then to interpret this output with AMRrules:
+You can then interpret this output with AMRrules, using *Klebsiella pneumoniae* rules. Note that the organism name must be provided in the format ``s__Genus species``, and should be supplied in quotes.
 
 ::
 
     amrrules --input Kpn1_AMRfp.tsv --output_prefix Kpn1_report --organism 's__Klebsiella pneumoniae'
 
-Note that here the user has also specified ``--plus`` when running AMRFinderPlus, which will return additional virulence, stress, or metal resistance genes detected by AMRFinderPlus. By default, these entries **will be omitted** from the final AMRrules interpreted output. If the user wishes to include these entries in the final output, add the ``--print_non_amr`` flag to the AMRrules commmand:
+In this example the user has also specified ``--plus`` when running AMRFinderPlus, which will return additional virulence, stress, or metal resistance genes detected by AMRFinderPlus. By default, these entries **will be omitted** from the final AMRrules interpreted output. If the user wishes to include these entries in the final output, add the ``--print_non_amr`` flag to the AMRrules commmand:
 
 ::
 
     amrrules --input Kpn1_AMRfp.tsv --output_prefix Kpn1_report --organism 's__Klebsiella pneumoniae' --print_non_amr
 
-Users may also wish to run AMRFinderPlus with the ``--name`` option to specify the sample name. This is particularly useful if you plan to interpret multiple samples at once using a single ``amrrules`` command. If you forget to set ``--name`` when running AMRFinderPlus, and have a single genome, you can provide the sample name to AMRrules using the ``sample_id`` option:
+Naming samples in the output
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Users may also wish to run AMRFinderPlus with the ``--name`` option to specify the sample name. This is particularly useful if you plan to interpret multiple samples at once using a single ``amrrules`` command. If you forget to set ``--name`` when running AMRFinderPlus, and have a single genome to interpret, you can provide the sample name to AMRrules using the ``sample_id`` option:
 
 ::
 
@@ -84,4 +87,4 @@ Detailed options
                         Annotation options: minimal (context, drug, phenotype, category, evidence grade), full (everything including breakpoints, standards, etc)
   --flag_core           Turn on flagging core genes in the summary output
   --print_non_amr       Include non-AMR rows (eg VIRULENCE, STRESS) from the input file in the interpreted output. By default, these rows are skipped.
-  --version             show program's version number and exit
+  --version             show AMRrules version number and exit

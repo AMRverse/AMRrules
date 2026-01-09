@@ -1,10 +1,11 @@
-**************************
-Interpreting genotypes
-**************************
+*******************************
+Interpretation logic and output
+*******************************
 
 When given an AMRFinderPlus input file, and an organism, AMRrules will apply the most relevant organism-specific rule to each AMRFinderPlus hit.
 
 When annotating a hit with a rule, AMRrules will add the following information from the matching rule to the AMRFinderPlus output:
+
 * ruleID
 * gene context
 * drug
@@ -16,6 +17,7 @@ When annotating a hit with a rule, AMRrules will add the following information f
 * organism
 
 To add the full rule annotation information, set ``--annot_opts full``, which will add the following additional fields:
+
 * breakpoint
 * breakpoint standard
 * breakpoint condition
