@@ -5,6 +5,7 @@
    rules
    usage
    interpretation
+   syntax
 
 **************************
 AMRrules

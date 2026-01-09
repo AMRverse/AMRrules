@@ -12,7 +12,7 @@ When given an AMRFinderPlus input file, and an organism, AMRrules will apply the
    :align: center
 
 
-When parsing the AMRFinderPlus input file, AMRrules will first identify what ``variation type`` each hit belongs to, the ``gene`` found, and if there is a mutation in the gene, this mutation will be converted to the AMRrules syntax **(link to syntax info here)**.
+When parsing the AMRFinderPlus input file, AMRrules will first identify what ``variation type`` each hit belongs to, the ``gene`` found, and if there is a mutation in the gene, this mutation will be converted to the :ref:`AMRrules syntax <syntax>`.
 
 The table below shows the logic of how AMRrules maps AMRFinderPlus outputs to the different variation types:
 
@@ -91,7 +91,7 @@ The following columns are included:
   organism            Organism these markers apply to                                                                                          
 =================== ====================================================================================================
 
-Markers are formatted as ``gene:mutation``, where the mutation is formatted using AMRrules syntax **(link to syntax info here)**. Genes which are inactivated are depicted as ``gene:-``, where the ``-`` indicates an inactivating mutation.
+Markers are formatted as ``gene:mutation``, where the mutation is formatted using :ref:`AMRrules syntax <syntax>`. Genes which are inactivated are depicted as ``gene:-``, where the ``-`` indicates an inactivating mutation.
 
 .. note::
 AMRFinderPlus hits detected using POINT_DISRUPT contain detailed information about the disruption, which is formatted using HGVS syntax. For simplicity, by default AMRrules **will not show** the full mutation after the gene when listing these markers in the genome summary. Rather, they will be formatted as ``gene:-`` as per other inactivating mutations. If you wish to show the full mutation detected by AMRFinderPlus, this can be turned on by providing the option ``--full-disrupt`` to the AMRrules call.
