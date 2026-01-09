@@ -25,7 +25,7 @@ Currently, AMRrules is only available for installation via source. We recommend 
     # install AMRrules
     make dev
 
-After installation, you you must download the required AMRFinderPlus resource files. Run::
+After installation, you must download the required AMRFinderPlus resource files. Run::
     
     amrrules download-resources
 
