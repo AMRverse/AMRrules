@@ -6,10 +6,50 @@ AMRrules Specification
 Rule Specification
 =======
 
+This section details how interpretive rules should be encoded in the AMRrules format.
+
+The full list of fields is below, with guidelines on how each field should be specified and interpreted. 
+
+This information is also available in a `Google sheet that includes the AMRrules template <https://docs.google.com/spreadsheets/d/1t6Lr_p-WAOY0yAXWKzoKk4yb56D2JdSqwImg4RZBvFA/edit?usp=sharing>`__, with allowed values encoded in drop-down menus, to facilitate rule curation. 
+
+List of fields
+^^^^^^^^^^^^^^
+
+.. csv-table:: Variation type
+   :file: tables/specifications_and_guidance.tsv
+   :delim: tab
+   :header-rows: 1
+
+:download:`Download <tables/specifications_and_guidance.tsv>`
+
+Controlled vocabularies
+^^^^^^^^^^^^^^^^^^^^^^^
+
 Variation type
 --------------
 
+Specifies the nature of the type of variation to which the rule applies. Based on the 'variant type' column in the hAMRonization specification, with additional terms from the NCIT ontology.
 
+.. csv-table:: Variation type
+   :file: /tables/variation_type_spec.tsv
+   :delim: tab
+   :header-rows: 1
+
+:download:`Download </tables/variation_type_spec.tsv>`
+
+Evidence codes
+--------------
+
+Specified using the `Evidence and Conclusion Ontology (ECO) <https://www.evidenceontology.org/>`__, this field indicates the nature of the evidence supporting the rule. More than one can be listed, and the field should include all forms of evidence available to support the rule (multiple entries separated with ', '). 
+
+Any `ECO <https://www.evidenceontology.org/>`__ codes can be used, but curators are encouraged to choose from the subset listed here, which covers the types of evidence typically available to support resistance mechanisms in bacteria. Note the literature source for each type of evidence noted here should be indicated in the ``PMID`` field.
+
+.. csv-table:: Evidence Codes
+   :file: _tables/evidence_codes.tsv
+   :delim: tab
+   :header-rows: 1
+
+:download:`Download <_tables/evidence_codes.tsv>`
 
 .. _syntax:
 Variant Specification
