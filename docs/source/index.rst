@@ -1,7 +1,9 @@
 .. toctree::
+    :hidden:
 
    installation
    rules
+   usage
 
 **************************
 AMRrules
