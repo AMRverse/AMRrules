@@ -67,9 +67,34 @@ To add the full rule annotation information, set ``--annot_opts full``, which wi
 The resulting output file is stored as ``<output_prefix>_interpreted.tsv``.
 
 
-Genome summary output
+Genome summary report
 =====================
 
+In addition to the interpreted AMRFinderPlus output file, AMRrules will also generate a genome summary report, stored as ``<output_prefix>_summary.tsv``. This file summarises the resistance per drug/drug class, based on the matched rules.
+
+The following columns are included:
+
+=================== ==================================================================================================== == == == == == == == 
+  Column              Explanation                                                                                                              
+ =================== ==================================================================================================== == == == == == == == 
+  sample              sample ID                                                                                                                
+  drug                drug, as per CARD ARO. AMRFinderPlus drugs will be converted to CARD ARO format by AMRrules                              
+  drug class          drug class, as per CARD ARO. AMRFinderPlus drugs will be converted to CARD ARO format by AMRrules                       
+  clinical category   S/I/R. Highest level of resistance based on markers that match this drug/drug class                                  
+  phenotype           wildtype or nonwildtype. Highest level based on markers that match this drug/drug class                                  
+  evidence grade      very low/low/moderate/high. Highest grade of evidence for markers that match this drug/drug class                       
+  markers (non-S)     any markers with a matching rule that are predicted to confer an I or R phenotype                                        
+  markers (no rule)   any markers with no rule                                                                                                 
+  markers (S)         any markers with a rule that are predicted to confer an S phenotype                                                      
+  ruleIDs             ``;`` separated list of ruleIDs that apply to this drug/drug class                                                       
+  combo rules         any combination rules that apply to this drug/drug class                                                                 
+  organism            organism these markers apply to                                                                                          
+ =================== ==================================================================================================== == == == == == == == 
 
 
-By default, if no organism-specific rule is found for a hit, AMRrules will apply a generic call based on the setting for ``--no-rule-interpretation``. By default, this is set to ``nwtR``: any unmatched hit will be given the phenotype ``nonwildtype`` and the clinical category of resistance will be set to ``R``. Users can change this to be ``nwtS``, if they do not wish to call unmatched hits as resistant.
+Handling unmatched hits
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By default, if no organism-specific rule is found for a hit, AMRrules will apply a prediction based on the setting of ``--no-rule-interpretation``. By default, this is set to ``nwtR``: any unmatched hit will be given the phenotype ``nonwildtype`` and the clinical category of resistance will be set to ``R``. Users can change this to be ``nwtS``, if they do not wish to call unmatched hits as resistant.
+
+In all cases, hits with no rules have an evidence grade of ``very low`` for the purposes of the summary report.

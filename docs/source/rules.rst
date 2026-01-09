@@ -2,6 +2,7 @@
 Rules and supported organisms
 **************************
 
+.. _rules:
 Available rules
 ===============
 
