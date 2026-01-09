@@ -8,12 +8,16 @@ Rule Specification
 
 This section details how interpretive rules should be encoded in the AMRrules format.
 
-The full list of fields is below, with guidelines on how each field should be specified and interpreted. 
-
 This information is also available in a `Google sheet that includes the AMRrules template <https://docs.google.com/spreadsheets/d/1t6Lr_p-WAOY0yAXWKzoKk4yb56D2JdSqwImg4RZBvFA/edit?usp=sharing>`__, with allowed values encoded in drop-down menus, to facilitate rule curation. 
 
+On this page you will find the full list of fields (indicating which external databases or ontologies apply to each field, along with a description and guidance on defining/interpreting each field), as well as bespoke AMRrules-specific controlled vocabulary for some fields.
+
+The syntax for specifying different types of variants to which a rule should be applied is given in the next section.
+
 Full list of fields
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+
+The full list of fields is below, with guidelines on how each field should be specified and interpreted. 
 
 :download:`Download <tables/specifications_and_guidance.tsv>`
 
