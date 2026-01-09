@@ -111,4 +111,4 @@ Handling unmatched genotype calls
 
 By default, if no organism-specific rule is found for a genotype reported by AMRfinderplus, AMRrules will apply an interpretation based on the setting of ``--no-rule-interpretation``. By default, this is set to ``nwtR``, meaning any unmatched genotype call will be assigned the phenotype ``nonwildtype`` and the clinical category of ``R``. Users can change this to ``nwtS``, meaning any unmatched genotype call will be assigned the phenotype ``nonwildtype`` and clinical category of ``S``.
 
-In all cases, genotype calls with no rules have an evidence grade of ``very low`` for the purposes of the summary report.
+In all cases, genotype calls with no rules will be assigned an evidence grade of ``very low`` for the purposes of the summary report.
