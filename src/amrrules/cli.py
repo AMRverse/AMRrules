@@ -9,23 +9,23 @@ def main():
 
     parser = argparse.ArgumentParser(description="Interpretation engine for AMRrules.")
     parser.add_argument('--input', type=str, help='Path to the input file.')
-    parser.add_argument('--output_prefix', type=str, help='Prefix name for the output files.')
-    parser.add_argument('--output_dir', '-d', type=str, default=os.getcwd(), help='Output directory. Default is current working directory.')
+    parser.add_argument('--output-prefix', type=str, help='Prefix name for the output files.')
+    parser.add_argument('--output-dir', '-d', type=str, default=os.getcwd(), help='Output directory. Default is current working directory.')
     parser.add_argument('--sample_id', type=str, help="If interpreting a single genome, can optionally provide sample ID here. If no sample_id is provided, and the first column of the input file doesn't define a sample_id, then the default value will be 'sample'.", default=None)
 
     org_args = parser.add_mutually_exclusive_group()
     org_args.add_argument('--organism', '-o', type=str, help=f"Organism to interpret. Use --list-organisms to see all supported organisms.")
-    org_args.add_argument('--organism_file', '-of', type=str, help='Path to the organism file. This file should have two columns: genome name in col1 (matching the sample name in the first col of the input file), and col2 is the organism name, which should be one of the supported organisms. File should be in tab-delimited format, with no header')
+    org_args.add_argument('--organism-file', '-of', type=str, help='Path to the organism file. This file should have two columns: genome name in col1 (matching the sample name in the first col of the input file), and col2 is the organism name, which should be one of the supported organisms. File should be in tab-delimited format, with no header')
     org_args.add_argument('--list-organisms', action='store_true', help='List all supported organisms and exit.')
     #TODO: implement card and resfinder options, currently only amrfp is supported
-    parser.add_argument('--amr_tool', '-t', type=str, default='amrfp', help='AMR tool used to detect genotypes: options are amrfp, rgi, resfinder. Currently only amrfp is supported.')
+    parser.add_argument('--amr-tool', '-t', type=str, default='amrfp', help='AMR tool used to detect genotypes: options are amrfp, rgi, resfinder. Currently only amrfp is supported.')
     #parser.add_argument('--hamronized', '-H', action='store_true', help='Input file has been hamronized')
     # TODO: implement this option to allow for selection of different AMRFP databases
     #parser.add_argument('--amrfp_db_version', type=str, default='latest', help='Version of the AMRFP database used. Default is latest. NOTE STILL TO BE IMPLEMENTED')
     parser.add_argument('--no-rule-interpretation', '-nr', type=str, default = 'nwtR', choices=['nwtR', 'nwtS'], help='How to interpret hits that do not match a rule. Options are: nwtR (default) - all nonwildtype hits with no matching rule are interpreted as resistant; nwtS - all nonwildtype hits with no matching rule are interpreted as susceptible.')
-    parser.add_argument('--annot_opts', '-a', type=str, default='minimal', choices=['minimal', 'full'], help='Annotation options: minimal (context, drug, phenotype, category, evidence grade), full (everything including breakpoints, standards, etc)')
-    parser.add_argument('--flag_core', action='store_true', help='Turn on flagging core genes in the summary output')
-    parser.add_argument('--print_non_amr', action='store_true', help='Include non-AMR rows (eg VIRULENCE, STRESS) from the input file in the interpreted output. By default, these rows are skipped.')
+    parser.add_argument('--annot-opts', '-a', type=str, default='minimal', choices=['minimal', 'full'], help='Annotation options: minimal (context, drug, phenotype, category, evidence grade), full (everything including breakpoints, standards, etc)')
+    parser.add_argument('--flag-core', action='store_true', help='Turn on flagging core genes in the summary output')
+    parser.add_argument('--print-non-amr', action='store_true', help='Include non-AMR rows (eg VIRULENCE, STRESS) from the input file in the interpreted output. By default, these rows are skipped.')
     parser.add_argument('--download-resources', action='store_true', help='Download AMRFinderPlus resource files and exit.')
     parser.add_argument('--version', action='version', version=f"amrrules {__version__}")
 
