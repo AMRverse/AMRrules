@@ -2,14 +2,22 @@
 AMRrules Specification
 **************************
 
+.. _specification:
+Rule Specification
+=======
+
+Variation type
+--------------
+
+
+
 .. _syntax:
-Purpose
+Variant Specification
 =======
 
 The `AMRrules specification <https://docs.google.com/spreadsheets/d/1t6Lr_p-WAOY0yAXWKzoKk4yb56D2JdSqwImg4RZBvFA/edit?usp=sharing>`__ needs to be able to encode interpretive rules for all types of genetic variants relevant to AMR in bacteria.
 
-Approach
-=======
+**Approach**
 
 In 2024, the `ESGEM-AMR <https://github.com/AMRverse/ESGEM-AMR>`__ working group collated and reviewed examples of known variants across diverse bacteria, and identified the following types of AMR variants:
 
@@ -51,7 +59,7 @@ Specific examples of each AMR variant are shown below, with proposed mutation sy
 
 
 Syntax for mutations
-====================
+^^^^^^^^^^^^^^^^^^^^
 
 Syntax for 'mutation' column follows `HGVS <https://hgvs-nomenclature.org/stable/>`__, including:
 
@@ -103,7 +111,7 @@ Syntax for ‘mutation’ specific to AMRrules
 
 
 Explanation of ‘mutation’ syntax relevant to known AMR variants
-===============================================================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * ``p.Ser83Tyr``: change to protein sequence from Ser to Tyr at codon 83
 * ``c.25C>T``: change to nucleotide coding region from C to T at nucleotide position 25
@@ -118,7 +126,7 @@ Explanation of ‘mutation’ syntax relevant to known AMR variants
 
 
 Combinatorial rules
-===================
+^^^^^^^^^^^^^^^^^^^
 
 Combinatorial rules are defined using logical expressions in the ‘gene’ column, where the objects of the expression are rule identifiers (``ruleID``) that can be used as shorthand labels for the variants defined by ``gene:mutation (variant type)`` specified in the corresponding rules. The ``variation type`` should be specified as ‘Combination’.
 
