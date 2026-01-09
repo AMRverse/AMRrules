@@ -4,7 +4,7 @@ AMRrules Specification
 
 .. _specification:
 Rule Specification
-=======
+==============
 
 This section details how interpretive rules should be encoded in the AMRrules format.
 
@@ -28,11 +28,11 @@ The full list of fields is below, with guidelines on how each field should be sp
 
 :download:`Download <tables/specifications_and_guidance.tsv>`
 
-AMRrules-specific controlled vocabularies
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Controlled vocabularies
+=======================
 
 Variation type
---------------
+^^^^^^^^^^^^^^
 
 Specifies the nature of the type of variation to which the rule applies. Based on the 'variant type' column in the hAMRonization specification, with additional terms from the NCIT ontology.
 
@@ -44,7 +44,7 @@ Specifies the nature of the type of variation to which the rule applies. Based o
 :download:`Download <tables/variation_type_spec.tsv>`
 
 Evidence codes
---------------
+^^^^^^^^^^^^^^
 
 Specified using the `Evidence and Conclusion Ontology (ECO) <https://www.evidenceontology.org/>`__, this field indicates the nature of the evidence supporting the rule. More than one can be listed, and the field should include all forms of evidence available to support the rule (multiple entries separated with ', '). 
 
@@ -58,7 +58,7 @@ Any `ECO <https://www.evidenceontology.org/>`__ codes can be used, but curators 
 :download:`Download <tables/evidence_codes.tsv>`
 
 Evidence grade
---------------
+^^^^^^^^^^^^^^
 
 This fields indicates the expert curators’ overall assessment of the level of support provided by all evidence considered. It is modelled on the `GRADE <https://book.gradepro.org/>`__ (Grading of Recommendations, Assessment, Development, and Evaluation) approach to assessing the certainty of evidence to guide decision making in healthcare.
 
@@ -77,7 +77,7 @@ There are four possible 'grades' in AMRrules, these are listed below with guidan
 
 
 Evidence limitations
---------------
+^^^^^^^^^^^^^^
 
 This fields indicates highlights what kind of evidence is lacking to support interpretation of this marker in this organism. All rules with an ``evidence grade`` other than 'high' should have at least one limitation recorded.
 
@@ -89,7 +89,7 @@ This fields indicates highlights what kind of evidence is lacking to support int
 :download:`Download <tables/evidence_limitations.tsv>`
 
 Breakpoint condition
---------------
+^^^^^^^^^^^^^^
 
 EUCAST, CLSI and others sometimes assign differen breakpoints for different clinical conditions, infection sites, or drug delivery routes (e.g. intravenous vs oral). In such cases, this field is used to indicate which specific breakpoint the rule was defined against. This will often be blank, indicating that the rule is not specific to any particular type of infection or delivery route.
 
@@ -101,12 +101,12 @@ clinical_breakpoints %>% filter(guideline=="CLSI 2025" | guideline=="EUCAST 2025
 .. csv-table::
    :file: tables/breakpoint_condition_values.tsv
    :delim: tab
-   :header-rows: 1
+   :header-rows: 0
 
 :download:`Download <tables/breakpoint_condition_values.tsv>`
 
 Organism code
--------------
+^^^^^^^^^^^^^^
 
 Each rule is assigned a ruleID, which starts with a 3-letter code to indicate the organism subgroup who curated the rule. The list of available organism subgroup codes is below.
 
