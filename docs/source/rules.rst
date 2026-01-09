@@ -14,9 +14,9 @@ Rule curation is a work in progress, under active development by the `ESGEM-AMR 
 Available rules
 ===============
 
-Currently available rule sets are in the `rules/` directory of this repository, named by organism. In this beta release they focus mainly on core genes and expected resistances, however acquired genes and mutations are included for some organisms already and will be added to others as the necessary data to define them accurately is accumulated and curated by the ESGEM-AMR working group.
+Currently available rule sets are in the ``rules/`` directory of this repository, named by organism. In this beta release they focus mainly on core genes and expected resistances, however acquired genes and mutations are included for some organisms already and will be added to others as the necessary data to define them accurately is accumulated and curated by the ESGEM-AMR working group.
 
-* *Acinetobacter baumannii* :download:`../../rules/Acinetobacter_baumannii.txt`
+* `*Acinetobacter baumannii* <https://github.com/AMRverse/AMRrules/blob/main/rules/Acinetobacter_baumannii.txt>`__
 * *Enterobacter* :doc:`../../rules/Enterobacter.txt`
 * *Enterococcus faecalis* :doc:`../../rules/Enterococcus_faecalis.txt`
 * *Enterococcus faecium* :doc:`../../rules/Enterococcus_faecium.txt`
