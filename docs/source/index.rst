@@ -4,6 +4,7 @@
    installation
    rules
    usage
+   interpretation
 
 **************************
 AMRrules

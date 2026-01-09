@@ -1,5 +1,5 @@
 **************************
-Rules
+Rules and supported organisms
 **************************
 
 Available rules
@@ -19,6 +19,14 @@ Currently available rule sets are in the ``rules/`` directory of this repository
 * `Salmonella <https://github.com/AMRverse/AMRrules/blob/main/rules/Salmonella.txt>`__
 * `Staphylococcus aureus <https://github.com/AMRverse/AMRrules/blob/main/rules/Staphylococcus_aureus.txt>`__
 * `Yersinia <https://github.com/AMRverse/AMRrules/blob/main/rules/Yersinia.txt>`__
+
+Supported organisms
+===================
+
+A full list of supported organisms can be found by running ``amrrules --list-organisms``. Currently supported organisms are:
+
+* s__Acinetobacter baumannii
+
 
 An abbreviated rules file:
 
