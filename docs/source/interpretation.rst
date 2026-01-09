@@ -54,7 +54,7 @@ For each matching rule, AMRrules appends the following information from the rule
 * version
 * organism
 
-To add the full rule annotation information, set ``--annot_opts full``, which will add the following additional fields from the rule file:
+To add the full rule annotation information, set ``--annot-opts full``, which will add the following additional fields from the rule file:
 
 * breakpoint
 * breakpoint standard

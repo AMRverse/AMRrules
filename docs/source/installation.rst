@@ -27,6 +27,6 @@ Currently, AMRrules is only available for installation via source. We recommend 
 
 After installation, you you must download the required AMRFinderPlus resource files. Run::
     
-    amrrules download_resources
+    amrrules download-resources
 
 This will download and cache the necessary files for AMRrules to function. You only need to run this **once** after installation, or when updating resources (eg a new AMRFinderPlus database has been released).
