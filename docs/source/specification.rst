@@ -34,7 +34,7 @@ Controlled vocabularies
 Variation type
 ^^^^^^^^^^^^^^
 
-Specifies the nature of the type of variation to which the rule applies. Based on the 'variant type' column in the hAMRonization specification, with additional terms from the NCIT ontology.
+Specifies the nature of the type of variation to which the rule applies. Based on the 'variant type' column in the `hAMRonization <https://github.com/pha4ge/hAMRonization>`__ AMR detection specification scheme, with additional terms from the `NCIT <https://www.ebi.ac.uk/ols4/ontologies/ncit>` ontology.
 
 .. csv-table::
    :file: tables/variation_type_spec.tsv
@@ -53,7 +53,7 @@ Any `ECO <https://www.evidenceontology.org/>`__ codes can be used, but curators 
 .. csv-table::
    :file: tables/evidence_codes.tsv
    :delim: tab
-   :header-rows: 1
+   :header-rows: 0
 
 :download:`Download <tables/evidence_codes.tsv>`
 
@@ -185,8 +185,8 @@ Syntax for 'mutation' column follows `HGVS <https://hgvs-nomenclature.org/stable
 * The letters ``inv`` indicate the inverse (i.e. reverse complement) of a sequence
 * Repeat sequences are specified as ``sequence[N]`` where ``N`` is the number of copies of the repeat
 
-Syntax for ‘mutation’ specific to AMRrules
-------------------------------------------
+AMRrules-specific syntax
+------------------------
 
 * AMRrules requires amino acids be specified as three-letter codes (whereas HGVS allows single-letter or three-letter codes)
 
