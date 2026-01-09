@@ -88,8 +88,8 @@ The following columns are included:
   markers (non-S)     Markers with rules specifying clinical category I or R, separated by ``;``
   markers (no rule)   Markers with no rule, separated by ``;``                                                                 
   markers (S)         Markers with rules specifying clinical category S, separated by ``;``                      
-  ruleIDs             List of ruleIDs that apply to this drug/drug class, separated by ``;``                                                     
-  combo rules         All combination rules that apply to this drug/drug class                                                                 
+  ruleIDs             List of IDs for single-marker rules that apply to this drug/drug class, separated by ``;``                                                     
+  combo rules         List of IDs multi-marker (combination) rules that apply to this drug/drug class, separated by ``;``
   organism            Organism whose rules were applied                                                                                  
 =================== ====================================================================================================
 
