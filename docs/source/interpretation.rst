@@ -102,6 +102,7 @@ The following columns are included:
 • Marker labels are formatted as ``gene:mutation``, where the mutation is formatted using :ref:`AMRrules syntax <syntax>`
 • If the variation type is ``Gene inactivating mutation`` the marker will be labelled as ``gene:-`` (where the ``-`` implies inactivation or functional loss).
 • If the variation type is ``Gene presence detected``, the marker label will be simply ``gene``. 
+• If ``flag-core`` has been switched on, markers with rules that have ``gene context == 'core'`` will be flagged with ``(core)`` after the marker. This is the case only if the ``variation type`` for that marker is ``Gene presence detected``.
 
 .. note::
 
