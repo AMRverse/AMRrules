@@ -77,7 +77,7 @@ Detailed options
   --organism-file, -of ORGANISM_FILE
                         Path to the organism file. This file should have two columns: genome name in col1 (matching the sample name in the first col of the input file), and col2 is
                         the organism name, which should be one of the supported organisms. File should be in tab-delimited format, with no header
-    --list-organisms     List all supported organisms and exit.
+  --list-organisms     List all supported organisms and exit.
   --amr-tool, -t AMR_TOOL
                         AMR tool used to detect genotypes: options are amrfp, rgi, resfinder. Currently only amrfp is supported.
   --no-rule-interpretation, -nr {nwtR,nwtS}
@@ -87,5 +87,5 @@ Detailed options
                         Annotation options: minimal (context, drug, phenotype, category, evidence grade), full (everything including breakpoints, standards, etc)
   --flag-core           Turn on flagging core genes in the summary output
   --print-non-amr       Include non-AMR rows (eg VIRULENCE, STRESS) from the input file in the interpreted output. By default, these rows are skipped.
-    --download-resources  Download AMRFinderPlus resource files and exit.
+  --download-resources  Download AMRFinderPlus resource files and exit.
   --version             show AMRrules version number and exit
