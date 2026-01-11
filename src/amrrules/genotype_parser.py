@@ -342,6 +342,7 @@ class Genotype(GenoResult):
     
     def _assign_rule_attributes(self, rule):
         # assign other important attributes from the rule for summary purposes
+        self.gene_context = rule.get('gene context')
         self.phenotype = rule.get('phenotype')
         self.clinical_category = rule.get('clinical category')
         self.evidence_grade = rule.get('evidence grade')

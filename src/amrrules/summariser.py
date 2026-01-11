@@ -19,6 +19,7 @@ class SummaryEntry:
 
         # these are also columns that we're going to set with the below functions
         self.category = None
+        self.gene_context = None
         self.phenotype = None
         self.evidence_grade = None
         self.markers_rule_nonS = None
@@ -87,7 +88,8 @@ class SummaryEntry:
             # set the marker to be the amrrules formatted version
             marker = g.marker_amrrules
             if g.has_rule:
-                if g.phenotype == 'wildtype' and flag_core:
+                # only label core genes if it's a core context with gene presence variation type
+                if g.gene_context == 'core' and g.variation_type == 'Gene presence detected' and flag_core:
                     marker = marker + " (core)"
                 if g.clinical_category == 'S':
                     markers_s.append(marker)
