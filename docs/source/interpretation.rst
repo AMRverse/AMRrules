@@ -102,13 +102,11 @@ The following columns are included:
 • Marker labels are formatted as ``gene:mutation``, where the mutation is formatted using :ref:`AMRrules syntax <syntax>`
 • If the variation type is ``Gene inactivating mutation`` the marker will be labelled as ``gene:-`` (where the ``-`` implies inactivation or functional loss).
 • If the variation type is ``Gene presence detected``, the marker label will be simply ``gene``. 
-• If ``flag-core`` has been switched on, markers with rules that have ``gene context == 'core'`` will be flagged with ``(core)`` after the marker. This is the case only if the ``variation type`` for that marker is ``Gene presence detected``.
+• If ``flag-core`` has been switched on, markers with rules that have ``gene context == 'core'`` will be flagged with ``(core)`` after the marker. This is the case only if the ``variation type`` for that marker is ``Gene presence detected``. eg the core blaSHV gene in *K. pneumoniae* will now be in the ``markers (non-S)`` column as ``blaSHV-11 (core)`` for penicillin beta-lactam.
 
 .. note::
 
    AMRFinderPlus genotype calls detected using POINT_DISRUPT contain detailed information about the disruption, which is formatted using HGVS syntax. For simplicity, by default the AMRrules genome summary report **will not show** the full mutation after the gene when listing these markers in the genome summary (although they can always be found in the annotated genotype report). Rather, they will be formatted in the genome summary report as ``gene:-`` as per other inactivating mutations. If you wish to show the full mutation detected by AMRFinderPlus in the summary report, this can be turned on by providing the option ``--full-disrupt`` to the AMRrules call.
-
-Markers that denote presence of core genes can be optionally flagged in the genome summary output by turning on ``--flag-core``. eg the core blaSHV gene in *K. pneumoniae* will now be in the ``markers (non-S)`` column as ``blaSHV-11 (core)`` for penicillin beta-lactam.
 
 
 Handling unmatched genotype calls
