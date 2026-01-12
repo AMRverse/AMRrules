@@ -5,7 +5,7 @@
    rules
    usage
    interpretation
-   syntax
+   specification
    tests
 
 **************************
