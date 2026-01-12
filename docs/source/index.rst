@@ -5,6 +5,7 @@ AMRrules
 
 .. toctree::
     :hidden:
+    :maxdepth: 0
 
    installation
    rules
