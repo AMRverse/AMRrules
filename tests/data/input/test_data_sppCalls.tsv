@@ -1,5 +1,5 @@
 SAMD00028844	s__Acinetobacter baumannii
-SAMD00028846	s__Acinetobacter baumannii
+SAMD00028846	s__Acinetobacter
 SAMD00000649	s__Escherichia coli
 SAMD00000724	s__Escherichia coli
 SAMD00055728	s__Klebsiella pneumoniae
@@ -12,3 +12,4 @@ SAMEA1572980	s__Neisseria gonorrhoeae
 SAMEA1677294	s__Neisseria gonorrhoeae
 SAMD00499917	s__Yersinia enterocolitica
 SAMEA110125481	s__Yersinia enterocolitica
+NOT_IN_INPUT_FILE	s__Escherichia coli
