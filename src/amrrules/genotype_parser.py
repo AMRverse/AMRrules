@@ -6,7 +6,7 @@ from amrrules.utils import aa_conversion, minimal_columns, full_columns
 
 class GenoResult:
 
-    def __init__(self, raw, tool, organism_dict, print_non_amr, sample_name=None):
+    def __init__(self, raw, tool, organism_dict, print_non_amr, full_disrupt, sample_name=None):
         self.raw_row = raw
         self.annotated_rows: Optional[Any] = None # will populate with the anntoated version of the row after rule matching
         self.tool = tool
@@ -35,7 +35,7 @@ class GenoResult:
 
         # parse on construction
         if self.tool == "amrfp":
-            self._parse_amrfp(print_non_amr)
+            self._parse_amrfp(print_non_amr, full_disrupt)
         
         #TODO: implement parsing of other input types
         #elif self.input_type == "card":
@@ -52,7 +52,7 @@ class GenoResult:
             self.organism = organism_dict.get(self.sample_name)
 
     # Parsing helpers for specific input types
-    def _parse_amrfp(self, print_non_amr):
+    def _parse_amrfp(self, print_non_amr, full_disrupt):
         r = self.raw_row
         element_type = r.get("Element type") or r.get("Type")
         # only process AMR rows
@@ -96,7 +96,7 @@ class GenoResult:
             self.variation_type = "Gene presence detected"
         
         # create the AMRrules compliant marker
-        self.marker_amrrules = self._create_amrrules_marker()
+        self.marker_amrrules = self._create_amrrules_marker(full_disrupt)
 
     def _parse_mutation(self):
 
@@ -120,8 +120,8 @@ class GenoResult:
             # or do we have a deletion or an insertion, or a frameshift?
             # gyrA_S83L -> p.Ser83Leu, this is a substitution
             # penA_D346DD -> p.345_346insAsp, this is an insertion
-            # ompK35_E42RfsTer47 -> p.Glu42Argfs*47, this is an inactivating frameshift
-            # ompK35_Y36Ter -> p.Tyr36*, this is an inactivating frameshift
+            # ompK35_E42RfsTer47 -> p.Glu42ArgfsTer47, this is an inactivating frameshift
+            # ompK35_Y36Ter -> p.Tyr36Ter, this is an inactivating frameshift
 
             # okay so if there are two or more characters in alt, and no Ter, then we have an insertion
             if len(alt) > 1 and alt != 'STOP' and 'Ter' not in alt:
@@ -137,13 +137,13 @@ class GenoResult:
                 # then we have a frameshift leading to a stop codon
                 # if the start of alt is Ter, then it's simply ref pos *
                 if alt.startswith('Ter'):
-                    return(f"p.{aa_conversion.get(ref)}{pos}*", variation_type)
+                    return(f"p.{aa_conversion.get(ref)}{pos}Ter", variation_type)
                 else:
                     # otherwise we need to get the first aa and convert it
                     alt = aa_conversion.get(alt[0])
                     # then grab the number after Ter
                     fs_pos = re.search(r'Ter(\d+)', mutation).group(1)
-                    return(f"p.{aa_conversion.get(ref)}{pos}{alt}fs*{fs_pos}", variation_type)
+                    return(f"p.{aa_conversion.get(ref)}{pos}{alt}fsTer{fs_pos}", variation_type)
             # this is the option if we have a simple conversion of one aa to another
             else:
                 ref = aa_conversion.get(ref)
@@ -166,7 +166,7 @@ class GenoResult:
             else:
                 return(f"c.{pos}{ref}>{alt}", mutation_type)
     
-    def _create_amrrules_marker(self):
+    def _create_amrrules_marker(self, full_disrupt):
         # if variation type is gene presence, then just return the gene symbol
         if self.variation_type == "Gene presence detected":
             return self.gene_symbol
@@ -176,7 +176,15 @@ class GenoResult:
         # otherwise return gene:mutation, which will be '-' if it's an inactivating mutation with no specifics
         else:
             if self.marker_amrrules:
-                return f"{self.marker_amrrules}:{self.mutation}"
+                # if we have a POINT_DISRUPT and the user has set full-disrupt option, then show the full mutation
+                if self.subtype == "POINT_DISRUPT" and full_disrupt:
+                    return f"{self.marker_amrrules}:{self.mutation}"
+                # otherwise return just a '-' to indicate it's inactivated
+                elif self.subtype == "POINT_DISRUPT" and not full_disrupt:
+                    return f"{self.marker_amrrules}:-"
+                # all other cases return gene:mutation
+                else:
+                    return f"{self.marker_amrrules}:{self.mutation}"
             else:
                 return f"{self.gene_symbol}:{self.mutation}"
 

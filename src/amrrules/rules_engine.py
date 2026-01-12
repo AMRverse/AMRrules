@@ -63,9 +63,9 @@ def run(args):
         row_count = 1
         for row in reader:
             if args.sample_id:
-                row_to_process = GenoResult(row, args.amr_tool, organism_dict, args.print_non_amr, sample_name=args.sample_id)
+                row_to_process = GenoResult(row, args.amr_tool, organism_dict, args.print_non_amr, args.full_disrupt, sample_name=args.sample_id)
             else:
-                row_to_process = GenoResult(row, args.amr_tool, organism_dict, args.print_non_amr)
+                row_to_process = GenoResult(row, args.amr_tool, organism_dict, args.print_non_amr, args.full_disrupt)
             # if this row belongs to a sample we should skip, update the to_process and to_print attributes to False
             if skipped_samples and row_to_process.sample_name in skipped_samples:
                 row_to_process.to_process = False

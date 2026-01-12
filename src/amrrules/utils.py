@@ -4,7 +4,7 @@ import warnings
 
 aa_conversion = {'G': 'Gly', 'A': 'Ala', 'S': 'Ser', 'P': 'Pro', 'T': 'Thr', 'C': 'Cys', 'V': 'Val', 'L': 'Leu', 'I': 'Ile', 
                  'M': 'Met', 'N': 'Asn', 'Q': 'Gln', 'K': 'Lys', 'R': 'Arg', 'H': 'His', 'D': 'Asp', 'E': 'Glu', 'W': 'Trp', 
-                 'Y': 'Tyr', 'F': 'Phe', '*': 'STOP'}
+                 'Y': 'Tyr', 'F': 'Phe', 'Ter': 'STOP'}
 
 minimal_columns = ['ruleID', 'variation type', 'gene', 'mutation', 'gene context', 'drug', 'drug class', 'phenotype', 'clinical category', 'evidence grade', 'version', 'organism']
 full_columns = ['breakpoint', 'breakpoint standard', 'breakpoint condition', 'evidence code', 'evidence limitations', 'PMID', 'rule curation note']

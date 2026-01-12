@@ -86,6 +86,7 @@ Detailed options
   --annot-opts, -a {minimal,full}
                         Annotation options: minimal (context, drug, phenotype, category, evidence grade), full (everything including breakpoints, standards, etc)
   --flag-core           Turn on flagging core genes in the summary output
+  --full-disrupt        Show full POINT_DISRUPT mutation details in the summary output, rather than just indicating gene inactivation with '-'.
   --print-non-amr       Include non-AMR rows (eg VIRULENCE, STRESS) from the input file in the interpreted output. By default, these rows are skipped.
   --download-resources  Download AMRFinderPlus resource files and exit.
   --version             show AMRrules version number and exit
