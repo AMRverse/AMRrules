@@ -29,6 +29,11 @@ Inactivating mutation detected   INTERNAL_STOP, PARTIAL, POINTX   If POINTX, Sub
 
 The parsed ``variation type``, ``gene``, and ``mutation`` columns are added to the interpreted output file, next to the original AMRFinderPlus columns.
 
+.. note::
+
+   If ``--print-non-amr`` is provided to AMRrules, then any additional hits from AMRFinderPlus that are not AMR-related (eg virulence, stress, or metal resistance genes) will also be included in the interpreted output file. These entries will have ``variation type`` set to ``Non-AMR element``, and ``gene`` and ``mutation`` set to ``-``. No rules will be applied to these entries, and all annotation columns will be set to ``-``.
+
+
 **Drug mapping**
 
 AMRrules maps the AMRFinderPlus calls to ``drug`` or ``drug class`` names from the CARD ARO, by parsing the ``Subclass`` columns. The dictionary used to map AMRFinderPlus ``Subclass`` to CARD ontology is in the AMRrules repository under ``src/amrrules/resources/amrfp_to_card_drugs_classes.txt``.

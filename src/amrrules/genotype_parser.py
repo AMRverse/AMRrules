@@ -268,6 +268,16 @@ class GenoResult:
         base_row = self.raw_row
         annotated_rows = []
         cols = minimal_columns if annot_opts == 'minimal' else minimal_columns + full_columns
+        # fill 'variation type', 'gene' and 'mutation' columns based on parsed info, regardless 
+        # of whether there's a matched rule or not
+        if self.to_process:
+            base_row['variation type'] = self.variation_type
+            base_row['gene'] = self.marker_amrrules.split(':')[0]  # just the gene part
+            base_row['mutation'] = self.mutation if self.mutation else '-'
+        else:
+            base_row['variation type'] = 'Non-AMR element'
+            base_row['gene'] = self.gene_symbol if self.gene_symbol else '-'
+            base_row['mutation'] = '-'
 
         # No matching rules: return single row with '-' for annotation columns
         if not self.matched_rules:
