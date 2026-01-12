@@ -2,6 +2,7 @@
 AMRrules
 **************************
 
+
 .. toctree::
     :hidden:
 
@@ -11,6 +12,7 @@ AMRrules
    interpretation
    specification
    tests
+
 
 About
 =====
