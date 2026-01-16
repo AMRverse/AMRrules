@@ -1,6 +1,6 @@
 .. toctree::
-    :hidden:
-    :maxdepth: 1
+   :hidden:
+   :maxdepth: 1
 
    installation
    rules
