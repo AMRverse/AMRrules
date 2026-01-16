@@ -75,6 +75,11 @@ To get more detailed annotation, set ``--annot-opts full``, which will add the f
 * PMID
 * rule curation note
 
+.. note::
+
+   If multiple rules match to a genotype call, then the genotype call is duplicated, and the relevant information from additional rules is appended. For example, if the genotype call for ``aac(3)`` matches to two different rules, one for amikacin and one for kanamycin, then the ``aac(3)`` row will be represented twice in the output file, and the rule information for the amikacin will be appended on one row, and kanamycin on the second row.
+
+
 The resulting output file is stored as ``<output_prefix>_interpreted.tsv``.
 
 
