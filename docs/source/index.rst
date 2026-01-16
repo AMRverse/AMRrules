@@ -43,7 +43,7 @@ We are focusing early development on compatibility with NCBI resources (i.e. the
 Citation
 ========
 
-TBD
+If you use the software, please cite "AMRrules v1.0, URL: `https://github.com/AMRverse/AMRrules <https://github.com/AMRverse/AMRrules>`__ (DOI: 10.5281/zenodo.12724317)".
 
 Contributors
 ============
