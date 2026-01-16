@@ -1,11 +1,6 @@
-**************************
-AMRrules
-**************************
-
-
 .. toctree::
     :hidden:
-    :maxdepth: 0
+    :maxdepth: 1
 
    installation
    rules
@@ -14,6 +9,10 @@ AMRrules
    specification
    tests
 
+
+**************************
+AMRrules
+**************************
 
 About
 =====
