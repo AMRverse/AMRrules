@@ -26,6 +26,6 @@ html_theme_options = {
     "navigation_depth": 4
 
 }
-html_static_path = ['_static']
+#html_static_path = ['_static']
 html_logo = 'https://github.com/AMRverse/AMRrules/blob/genome_summary_report_dev/docs/source/images/AMRrules_logo.png?raw=true'
 #html_favicon = 'https://github.com/klebgenomics/Kaptive-Web/blob/master/static/images/favicon.png?raw=true'
