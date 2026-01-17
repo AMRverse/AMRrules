@@ -1,5 +1,3 @@
-[![DOI](https://zenodo.org/badge/788956719.svg)](https://zenodo.org/doi/10.5281/zenodo.12724317)
-
 # Interpretive standards for AMR genotypes
 
 <img src="AMRrules_logo.png" width="200" align="left">
@@ -102,3 +100,5 @@ _Work in progress, not yet available in the beta release_
 
 ## Contributors
 The AMRrules concept was initially workshopped by members of the [Holt lab](https://holtlab.net) at [London School of Hygiene and Tropical Medicine](https://www.lshtm.ac.uk) and further developed in collaboration with [Jane Hawkey](https://github.com/jhawkey) at [Monash University](https://research.monash.edu/en/persons/jane-hawkey). The AMRrules specification was developed by the ESGEM-AMR Data & Tools group, and the rules curated by the ESGEM-AMR Working Group (see [list of members](https://github.com/AMRverse/AMRrulesCuration/)), co-chaired by Natacha Couto (ESGEM Chair). Code was developed by Jane Hawkey and Kat Holt.
+
+[DOI: 10.5281/zenodo.12724317](https://doi.org/10.5281/zenodo.12724317)
