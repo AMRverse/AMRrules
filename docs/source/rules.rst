@@ -51,7 +51,7 @@ A full list of supported organisms can be found by running ``amrrules --list-org
 Rule specification
 ==================
 
-The full rule specification can be found at: `AMRrules spec v0.6 <https://docs.google.com/spreadsheets/d/1t6Lr_p-WAOY0yAXWKzoKk4yb56D2JdSqwImg4RZBvFA/edit?usp=sharing>`__. An abbreviated rules file is shown below.
+The full rule specification can be found in the :ref:`AMRrules specification <specification:>` section. An abbreviated rules file is shown below.
 
 .. image:: images/organism_specific_rules.png
    :alt: Abbreviated example of organism-specific rules table
