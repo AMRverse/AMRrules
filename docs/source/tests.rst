@@ -13,8 +13,10 @@ To run the AMRrules test data, use the following commands:
 
     # test a single E. coli genome
     amrrules --input tests/data/input/test_ecoli_genome.tsv --output-prefix test_ecoli_genome --organism 's__Escherichia coli'
+    
     # test a single wild-type K. pneumoniae genome, and flag core genes in the summary output
     amrrules --input tests/data/input/test_kleb_SGH10.tsv --output-prefix test_kleb_SGH10 --organism 's__Klebsiella pneumoniae' --flag-core
+
     # test a multi-genome, multi-species example
     amrrules  --input tests/data/input/test_data_amrfp_multiSpp.tsv --output-prefix test_multispp --organism-file tests/data/input/test_data_sppCalls.tsv
 
