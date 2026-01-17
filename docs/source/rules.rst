@@ -60,4 +60,4 @@ The full rule specification can be found in the :ref:`AMRrules specification <sp
 
 Note the full specification includes several additional fields beyond those pictured above, including NCBI and CARD ARO accessions to uniquely identify genes; details of the breakpoints and standards used; evidence codes, grades and limitations; and a rule annotation note.
 
-Rule curation is a work in progress, under active development by the `ESGEM-AMR <https://github.com/AMRverse/ESGEM-AMR>`__ Working Group.
+Rule curation is a work in progress, under active development by the `ESGEM-AMR <https://amrverse.github.io/ESGEM-AMR/>`__ Working Group.
