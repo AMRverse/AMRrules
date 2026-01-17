@@ -12,11 +12,11 @@ To run the AMRrules test data, use the following commands:
 ::
 
     # test a single E. coli genome
-    amrrules --input tests/data/input/test_ecoli_genome.tsv --output_prefix test_ecoli_genome --organism 's__Escherichia coli'
+    amrrules --input tests/data/input/test_ecoli_genome.tsv --output-prefix test_ecoli_genome --organism 's__Escherichia coli'
     # test a single wild-type K. pneumoniae genome, and flag core genes in the summary output
-    amrrules --input tests/data/input/test_kleb_SGH10.tsv --output_prefix test_kleb_SGH10 --organism 's__Klebsiella pneumoniae' --flag-core
+    amrrules --input tests/data/input/test_kleb_SGH10.tsv --output-prefix test_kleb_SGH10 --organism 's__Klebsiella pneumoniae' --flag-core
     # test a multi-genome, multi-species example
-    amrrules  --input tests/data/input/test_data_amrfp_multiSpp.tsv --output_prefix test_multispp --organism_file tests/data/input/test_data_sppCalls.tsv
+    amrrules  --input tests/data/input/test_data_amrfp_multiSpp.tsv --output-prefix test_multispp --organism-file tests/data/input/test_data_sppCalls.tsv
 
 
 Outputs will be written to your current working directory, and can be compared to the output files in ``tests/data/example_output``.
