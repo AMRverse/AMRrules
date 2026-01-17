@@ -5,7 +5,7 @@ Installation
 Dependencies
 =============
 
-AMRrules requires Python 3.12 or higher, and needs pip to be be installed.
+AMRrules requires Python 3.12 or higher, and needs pip to be installed.
 
 
 Download and install AMRrules
@@ -27,6 +27,6 @@ Currently, AMRrules is only available for installation via source. We recommend 
 
 After installation, you must download the required AMRFinderPlus resource files. Run::
     
-    amrrules download-resources
+    amrrules --download-resources
 
 This will download and cache the necessary files for AMRrules to function. You only need to run this **once** after installation, or when updating resources (eg a new AMRFinderPlus database has been released).
