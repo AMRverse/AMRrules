@@ -96,10 +96,10 @@ class SummaryEntry:
                 else:
                     markers_rule_nonS.append(marker)
             else:
-                if g.clinical_category == 'S':
-                    markers_s.append(marker)
-                else:
-                    markers_with_norule.append(marker)
+                #if g.clinical_category == 'S':
+                #    markers_s.append(marker)
+                #else:
+                markers_with_norule.append(marker)
 
         self.markers_rule_nonS = ';'.join(markers_rule_nonS) or '-'
         self.markers_with_norule = ';'.join(markers_with_norule) or '-'
@@ -136,14 +136,14 @@ class SummaryEntry:
 def order_summary_objs(objs):
 
     """
-    Sort a list of summaryEntry objects first by drug_class (alphabetically, 'other markers' last),
+    Sort a list of summaryEntry objects first by drug_class (alphabetically, 'unassigned markers' last),
     then by drug (alphabetically, '-' last).
     """
     sorted_list = sorted(
         objs,
         key=lambda o: (
-            # For drug_class: sort alphabetical with 'other markers' last
-            (getattr(o, "drug_class", "").lower() == "other markers",
+            # For drug_class: sort alphabetical with 'unassigned markers' last
+            (getattr(o, "drug_class", "").lower() == "unassigned markers",
              getattr(o, "drug_class", "").lower()),
             # For drug: alphabetical, with '-' last
             (getattr(o, "drug", "").lower() == "-", getattr(o, "drug", "").lower())
