@@ -10,8 +10,8 @@ required_cols = ['variation type', 'gene', 'mutation']
 minimal_columns = ['ruleID', 'gene context', 'drug', 'drug class', 'phenotype', 'clinical category', 'evidence grade', 'version', 'organism']
 full_columns = ['breakpoint', 'breakpoint standard', 'breakpoint condition', 'evidence code', 'evidence limitations', 'PMID', 'rule curation note']
 
-CATEGORY_ORDER = ['not available', 'S', 'I', 'R']
-PHENOTYPE_ORDER = ['wildtype', 'nonwildtype']
+CATEGORY_ORDER = ['-', 'not available', 'S', 'I', 'R']
+PHENOTYPE_ORDER = ['-', 'wildtype', 'nonwildtype']
 EVIDENCE_GRADE_ORDER = ['-', 'very low', 'low', 'moderate', 'high']
 
 def get_supported_organisms(rule_dir: str = None):

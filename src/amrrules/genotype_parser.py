@@ -353,10 +353,17 @@ class Genotype(GenoResult):
             self.drug_class = card_drug_map.get(self.drug, '-')
         else:
             self.drug_class = self.rule.get('drug class', '-')
+        
+        # if the drug and drug_class are '-', set to 'unassigned markers'
+        if self.drug == '-' and self.drug_class == '-':
+            self.drug_class = 'unassigned markers'
     
     def _assign_drug_from_amrfp(self, card_amrfp_conversion):
         self.drug = card_amrfp_conversion.get(self.amrfp_subclass).get('drug', '-')
         self.drug_class = card_amrfp_conversion.get(self.amrfp_subclass).get('class', '-')
+        # if the drug_class is '-', set to 'unassigned markers'
+        if self.drug_class == '-':
+            self.drug_class = 'unassigned markers'
     
     def _assign_rule_attributes(self, rule):
         # assign other important attributes from the rule for summary purposes
@@ -373,6 +380,7 @@ class Genotype(GenoResult):
 
         # regardless of user choice, the phenotype is always nonwildtype
         self.phenotype = 'nonwildtype'
+        # if there is no rule and drug and drug class are '-'
         # if the variation type is inactivating, and we've got no rule
         # then we treat it as though the gene isn't functional, so therefore is S
         if self.variation_type == "Inactivating mutation detected":
@@ -391,3 +399,10 @@ class Genotype(GenoResult):
         # regardless evidence is very low and there is no ruleID to set
         self.evidence_grade = 'very low'
         self.ruleID = None
+
+        # if the drug class is 'antibiotic efflux' or 'unassigned markers', and we have no rule (which is why we're in this function)
+        # then we need to update phenotype, category and grade to be '-', as these are not being interpreted
+        if self.drug_class in ['antibiotic efflux', 'unassigned markers']:
+            self.phenotype = '-'
+            self.clinical_category = '-'
+            self.evidence_grade = '-'
