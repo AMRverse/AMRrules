@@ -28,7 +28,7 @@ class SummaryEntry:
         self.ruleIDs = None
         self.combo_rules = None
     
-    def summarise_rules(self):
+    def summarise_rules(self, class_summary=None):
         """Compute summary values based on geno_objs."""
 
         # Helper to get max by order list
@@ -38,6 +38,9 @@ class SummaryEntry:
                 return None
             return max(valid_values, key=lambda v: order.index(v))
 
+        # full object list creation, if we've got a drug class of objs also to consider
+        if class_summary:
+            self.geno_objs = self.geno_objs + class_summary.geno_objs
         # Extract values from genotype objects
         #categories = [g.clinical_category for g in self.geno_objs if hasattr(g, 'clinical_category')]
         phenotypes = [g.phenotype for g in self.geno_objs if hasattr(g, 'phenotype')]
@@ -157,30 +160,53 @@ def create_summary_dict(grouped_by_sample, rules, flag_core):
     summary_entry_dict = {} # key: sample name, value: list of summary entry objs
     for sample_name, genotypes in grouped_by_sample.items():
         summary_entry_list = []
-        sample_groups = defaultdict(list)
+        # for the sample, we need to group by drug class, and then by drug within that
+
+        sample_groups = defaultdict(lambda: defaultdict(list))
         for g in genotypes:
-            if g.drug != '-':
-                key = g.drug
-            else:
-                key = g.drug_class
-               
-            sample_groups[key].append(g)
-        for key in sample_groups.keys():
-            # for each group of genotype objects, we need to create a summary entry
-            summary_entry = SummaryEntry(sample_name, sample_groups[key])
-            # determine the highest category/pheno/evidence grade for this drug/drug_class
-            summary_entry.summarise_rules()
-            # assign markers with, without rules, and wt markers
-            summary_entry.set_markers(flag_core)
-            # assign ruleIDs and combo rules
-            #TODO: Test combo rule implementation
-            # to get the list of possible combo rules to evaluate, we need to extract all 'Combination' rules for this organism
-            combo_rules = [r for r in rules if r.get('organism') == summary_entry.organism and r.get('rule type') == 'Combination']
-            # then need to further filter to include only combo rules that apply to either the drug or class we're assessing
-            combo_rules = [r for r in combo_rules if summary_entry.drug in r.get('drugs', '') or summary_entry.drug_class in r.get('drug classes', '')]
-            summary_entry.set_ruleIDs_and_combo(combo_rules)
-            # add it to our list
-            summary_entry_list.append(summary_entry)
-        summary_entry_dict[sample_name] = order_summary_objs(summary_entry_list)
+            sample_groups[g.drug_class][g.drug].append(g)
+        for drug_class in sample_groups.keys():
+            # for each drug_class, we first need to apply a summary entry at the class level
+            # if the class level exists
+            class_level_hits = sample_groups[drug_class].get('-', None)
+            # initialise our claster class entry as None, will be filled later
+            master_class_entry = None
+            if class_level_hits:
+                summary_entry = SummaryEntry(sample_name, class_level_hits)
+                # determine the highest category/pheno/evidence grade for this drug_class
+                summary_entry.summarise_rules()
+                # assign markers with, without rules, and wt markers
+                summary_entry.set_markers(flag_core)
+                # assign ruleIDs and combo rules
+                #TODO: Test combo rule implementation
+                # to get the list of possible combo rules to evaluate, we need to extract all 'Combination' rules for this organism
+                combo_rules = [r for r in rules if r.get('organism') == summary_entry.organism and r.get('rule type') == 'Combination']
+                # then need to further filter to include only combo rules that apply to the drug class we're assessing
+                combo_rules = [r for r in combo_rules if summary_entry.drug_class in r.get('drug classes', '')]
+                summary_entry.set_ruleIDs_and_combo(combo_rules)
+                # this is our master entry for this drug_class, so save it
+                master_class_entry = summary_entry
+                # add it to our list
+                summary_entry_list.append(summary_entry)
+            
+            # otherwise now we're in a specific drug for the class
+            # we need to make sure that the interpretation of this drug doesn't conflict with the class level rules
+            for drug in sample_groups[drug_class].keys():
+                if drug != '-':
+                    # create our summary entry
+                    summary_entry = SummaryEntry(sample_name, sample_groups[drug_class][drug])
+                    # determine highest category/pheno/evidence grade for this drug
+                    # but take into account the rules for the drug class
+                    summary_entry.summarise_rules(master_class_entry)
+                    # assign markers
+                    summary_entry.set_markers(flag_core)
+                    # assign ruleIDs and combo rules
+                    combo_rules = [r for r in rules if r.get('organism') == summary_entry.organism and r.get('rule type') == 'Combination']
+                    # then need to further filter to include only combo rules that apply to either the drug or class we're assessing
+                    combo_rules = [r for r in combo_rules if summary_entry.drug in r.get('drugs', '') or summary_entry.drug_class in r.get('drug classes', '')]
+                    summary_entry.set_ruleIDs_and_combo(combo_rules)
+                    # add it to our list
+                    summary_entry_list.append(summary_entry)
+            summary_entry_dict[sample_name] = order_summary_objs(summary_entry_list)
     
     return(summary_entry_dict)
