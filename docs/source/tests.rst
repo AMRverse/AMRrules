@@ -3,7 +3,7 @@ Test Data
 **************************
 
 Test installation
-==========
+=================
 
 To test that AMRrules is installed and working correctly, test data is included inside ``tests/data/input/``. This includes examples of AMRFinderPlus output files for *Escherichia coli* and *Klebsiella pneumoniae* genomes, as well as a multi-species example file.
 
