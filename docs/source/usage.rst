@@ -5,19 +5,19 @@ Usage
 Quickstart
 ==========
 
-Interprting AMRFinderPlus results for a single genome:
+Interpreting AMRFinderPlus results for a single genome:
 
 ::
 
-    amrrules --input tests/data/input/test_ecoli_genome.tsv --output_prefix test_ecoli_genome --organism 's__Escherichia coli'
-    amrrules --input tests/data/input/test_kleb_SGH10.tsv --output_prefix test_kleb_SGH10 --organism 's__Klebsiella pneumoniae'
+    amrrules --input tests/data/input/test_ecoli_genome.tsv --output-prefix test_ecoli_genome --organism 's__Escherichia coli'
+    amrrules --input tests/data/input/test_kleb_SGH10.tsv --output-prefix test_kleb_SGH10 --organism 's__Klebsiella pneumoniae'
 
 
 Interpret AMRFinderPlus results for multiple genomes of different organisms, by providing a sample/organism mapping file:
 
 ::
 
-    amrrules  --input tests/data/input/test_data_amrfp_multiSpp.tsv --output_prefix test_multispp --organism_file tests/data/input/test_data_sppCalls.tsv
+    amrrules  --input tests/data/input/test_data_amrfp_multiSpp.tsv --output-prefix test_multispp --organism-file tests/data/input/test_data_sppCalls.tsv
 
 
 Usage
@@ -38,22 +38,22 @@ You can then interpret this output with AMRrules, using *Klebsiella pneumoniae* 
 
 ::
 
-    amrrules --input Kpn1_AMRfp.tsv --output_prefix Kpn1_report --organism 's__Klebsiella pneumoniae'
+    amrrules --input Kpn1_AMRfp.tsv --output-prefix Kpn1_report --organism 's__Klebsiella pneumoniae'
 
 In this example the user has also specified ``--plus`` when running AMRFinderPlus, which will return additional virulence, stress, or metal resistance genes detected by AMRFinderPlus. By default, these entries **will be omitted** from the final AMRrules interpreted output. If the user wishes to include these entries in the final output, add the ``--print-non-amr`` flag to the AMRrules commmand:
 
 ::
 
-    amrrules --input Kpn1_AMRfp.tsv --output_prefix Kpn1_report --organism 's__Klebsiella pneumoniae' --print_non_amr
+    amrrules --input Kpn1_AMRfp.tsv --output-prefix Kpn1_report --organism 's__Klebsiella pneumoniae' --print-non-amr
 
 Naming samples in the output
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Users may also wish to run AMRFinderPlus with the ``--name`` option to specify the sample name. This is particularly useful if you plan to interpret multiple samples at once using a single ``amrrules`` command. If you forget to set ``--name`` when running AMRFinderPlus, and have a single genome to interpret, you can provide the sample name to AMRrules using the ``sample-id`` option:
+Users may also wish to run AMRFinderPlus with the ``--name`` option to specify the sample name. This is particularly useful if you plan to interpret multiple samples at once using a single ``amrrules`` command. If you forget to set ``--name`` when running AMRFinderPlus, and have a single genome to interpret, you can provide the sample name to AMRrules using the ``--sample-id`` option:
 
 ::
 
-    amrrules --input Kpn1_AMRfp.tsv --output_prefix Kpn1_report --organism 's__Klebsiella pneumoniae' --sample_id Kpn1
+    amrrules --input Kpn1_AMRfp.tsv --output-prefix Kpn1_report --organism 's__Klebsiella pneumoniae' --sample-id Kpn1
 
 
 Detailed options
