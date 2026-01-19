@@ -137,17 +137,23 @@ class SummaryEntry:
 
 
 def order_summary_objs(objs):
-
     """
-    Sort a list of summaryEntry objects first by drug_class (alphabetically, 'unassigned markers' last),
+    Sort a list of summaryEntry objects first by drug_class (alphabetically, with 'antibiotic efflux' second last and 'unassigned markers' last),
     then by drug (alphabetically, '-' last).
     """
+    def drug_class_sort_key(drug_class):
+        drug_class_lower = drug_class.lower()
+        if drug_class_lower == "unassigned markers":
+            return (2, "")  # Last
+        elif drug_class_lower == "antibiotic efflux":
+            return (1, "")  # Second last
+        else:
+            return (0, drug_class_lower)  # Alphabetical for all others
+    
     sorted_list = sorted(
         objs,
         key=lambda o: (
-            # For drug_class: sort alphabetical with 'unassigned markers' last
-            (getattr(o, "drug_class", "").lower() == "unassigned markers",
-             getattr(o, "drug_class", "").lower()),
+            drug_class_sort_key(getattr(o, "drug_class", "")),
             # For drug: alphabetical, with '-' last
             (getattr(o, "drug", "").lower() == "-", getattr(o, "drug", "").lower())
         )
