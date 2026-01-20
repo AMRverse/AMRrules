@@ -35,7 +35,7 @@ Rules are curated by organism experts belonging to `ESGEM-AMR <https://amrverse.
 
 Current rulesets and supported organisms can be found :ref:`here <rules>`.
 
-The rule specification is available in `here <https://docs.google.com/spreadsheets/d/1t6Lr_p-WAOY0yAXWKzoKk4yb56D2JdSqwImg4RZBvFA/edit?usp=sharing>`__ (v0.6, guidance on tab 2).
+The rule specification is available :ref:`here <specification>`.
 
 We are focusing early development on compatibility with NCBI resources (i.e. the `AMRfinderplus <https://www.ncbi.nlm.nih.gov/pathogens/antimicrobial-resistance/AMRFinder/>`__ genotyping tool, and the associated NCBI databases including `AMR refgene <https://www.ncbi.nlm.nih.gov/pathogens/refgene/>`__, `AMR Reference Gene Hierarchy <https://www.ncbi.nlm.nih.gov/pathogens/genehierarchy>`__, and the `Reference HMM Catalog <https://www.ncbi.nlm.nih.gov/pathogens/hmm/>`__). In future we plan for interoperability with `CARD <https://card.mcmaster.ca/>`__ and `ResFinder <http://genepi.food.dtu.dk/resfinder>`__ (and other tools based on these), using `hAMRonization <https://github.com/pha4ge/hAMRonization>`__.
 
