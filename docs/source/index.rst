@@ -31,7 +31,7 @@ The AMRrules Python package includes the rules themselves (see `rules/` director
 Rule curation and development status
 ====================================
 
-Rules are curated by organism experts belonging to `ESGEM-AMR <https://github.com/AMRverse/AMRrulesCuration/>`__, a working group of `ESGEM, the ESCMID Study Group on Epidemiological Markers <https://www.escmid.org/esgem/>`__. Initial rule curation has focused on defining rules for the interpretation of core genes and expected resistances, but acquired genes and mutations are included for some organisms already and will be added to others as the necessary data to define them accurately is accumulated and curated by the ESGEM-AMR working group.
+Rules are curated by organism experts belonging to `ESGEM-AMR <https://amrverse.github.io/ESGEM-AMR/>`__, a working group of `ESGEM, the ESCMID Study Group on Epidemiological Markers <https://www.escmid.org/esgem/>`__. Initial rule curation has focused on defining rules for the interpretation of core genes and expected resistances, but acquired genes and mutations are included for some organisms already and will be added to others as the necessary data to define them accurately is accumulated and curated by the ESGEM-AMR working group.
 
 Current rulesets and supported organisms can be found :ref:`here <rules>`.
 
@@ -47,6 +47,6 @@ If you use the software, please cite "AMRrules v1.0, URL: `https://github.com/AM
 
 Contributors
 ============
-The AMRrules concept was initially workshopped by members of the `Holt lab <https://holtlab.net>`_ at `London School of Hygiene and Tropical Medicine <https://www.lshtm.ac.uk>`_ and further developed in collaboration with `Jane Hawkey <https://github.com/jhawkey>`_ at `Monash University <https://research.monash.edu/en/persons/jane-hawkey>`_. The AMRrules specification was developed by the ESGEM-AMR Data & Tools group, and the rules curated by the ESGEM-AMR Working Group (see `list of members <https://github.com/AMRverse/ESGEM-AMR/>`_), co-chaired by Natacha Couto (ESGEM Chair). 
+The AMRrules concept was initially workshopped by members of the `Holt lab <https://holtlab.net>`_ at `London School of Hygiene and Tropical Medicine <https://www.lshtm.ac.uk>`_ and further developed in collaboration with `Jane Hawkey <https://github.com/jhawkey>`_ at `Monash University <https://research.monash.edu/en/persons/jane-hawkey>`_. The AMRrules specification was developed by the ESGEM-AMR Data & Tools group, and the rules curated by the ESGEM-AMR Working Group (see `list of members <https://amrverse.github.io/ESGEM-AMR/>`_), co-chaired by Natacha Couto (ESGEM Chair). 
 
 Code was developed by Jane Hawkey and Kat Holt.
