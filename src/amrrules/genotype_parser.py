@@ -317,7 +317,7 @@ class Genotype(GenoResult):
         self.drug_class: Optional[str] = None
     
     @classmethod
-    def from_result_row(cls, geno_result_obj, card_amrfp=None, card_map=None, rule=None, amrfp_subclass=None, no_rule_interp = None):
+    def from_result_row(cls, geno_result_obj, card_amrfp=None, card_map=None, rule=None, amrfp_subclass=None, no_rule_interp = None, duplicated=False):
         """
         Create a Genotype instance from an existing GenoResult object,
         copying all of its attributes.
@@ -333,6 +333,8 @@ class Genotype(GenoResult):
         new_obj.rule = rule
         new_obj.amrfp_subclass = amrfp_subclass
         new_obj.has_rule = False
+        # save whether this genotype is duplicated or not
+        new_obj.duplicated_row = duplicated
 
         # Assign drugs if the rule is provided
         # also assign the important values from the rule that are relevant for our summary functions

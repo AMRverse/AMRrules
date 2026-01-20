@@ -107,8 +107,12 @@ def run(args):
     for g in genotype_rows:
         if g.to_process:
             if g.matched_rules:
+                duplicated_row = False
+                if len(g.matched_rules) > 0:
+                        # switch on duplicated
+                        duplicated_row = True
                 for rule in g.matched_rules:
-                    geno_obj = Genotype.from_result_row(g, card_map=card_drug_map, rule=rule)
+                    geno_obj = Genotype.from_result_row(g, card_map=card_drug_map, rule=rule, duplicated = duplicated_row)
                     genotype_objects.append(geno_obj)
             else:
                 # extract the subclasses and split as needed

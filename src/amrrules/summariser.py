@@ -80,13 +80,25 @@ class SummaryEntry:
             self.combo_rules = '-'
         else:
             self.combo_rules = ";".join(matched_combo_rules)
-    
+
     def set_markers(self, flag_core):
+        
+        def append_marker(marker, marker_list, duplicated):
+            """Check whether the marker should be appended to the list or not"""
+            # if the marker is already in the list
+            # and the row is a duplicated row
+            # don't add it!
+            if marker in marker_list and duplicated:
+                pass
+            else:
+                marker_list.append(marker)
+            return(marker_list)
         # for each object, extract the marker and place it into the correct
         # list based on whether it has a rule, no rule, or is wildtype
         markers_rule_nonS = []
         markers_with_norule = []
         markers_s = []
+    
         for g in self.geno_objs:
             # set the marker to be the amrrules formatted version
             marker = g.marker_amrrules
@@ -95,14 +107,14 @@ class SummaryEntry:
                 if g.gene_context == 'core' and g.variation_type == 'Gene presence detected' and flag_core:
                     marker = marker + " (core)"
                 if g.clinical_category == 'S':
-                    markers_s.append(marker)
+                    append_marker(marker, markers_s, g.duplicated_row)
+                    #markers_s.append(marker)
                 else:
-                    markers_rule_nonS.append(marker)
+                    append_marker(marker, markers_rule_nonS, g.duplicated_row)
+                    #markers_rule_nonS.append(marker)
             else:
-                #if g.clinical_category == 'S':
-                #    markers_s.append(marker)
-                #else:
-                markers_with_norule.append(marker)
+                #markers_with_norule.append(marker)
+                append_marker(marker, markers_with_norule, g.duplicated_row)
 
         self.markers_rule_nonS = ';'.join(markers_rule_nonS) or '-'
         self.markers_with_norule = ';'.join(markers_with_norule) or '-'
