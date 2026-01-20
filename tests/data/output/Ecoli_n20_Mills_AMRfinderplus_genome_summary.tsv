@@ -1,0 +1,451 @@
+sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
+SAMN26308925	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN26308925	-	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia coli
+SAMN26308925	-	cephalosporin	R	nonwildtype	very low	-	ampC:c.-32T>A	-	-	-	s__Escherichia coli
+SAMN26308925	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN26308925	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0005	-	s__Escherichia coli
+SAMN26308925	aztreonam	monobactam	S	wildtype	high	-	-	blaEC	ECO0018	-	s__Escherichia coli
+SAMN26308925	amoxicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN26308925	ampicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN26308925	piperacillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN26308925	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001	-	s__Escherichia coli
+SAMN26308925	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	glpT:p.Glu448Lys	ECO0082	-	s__Escherichia coli
+SAMN26308925	colistin	polymyxin antibiotic	R	nonwildtype	very low	-	pmrB:p.Glu123Asp	-	-	-	s__Escherichia coli
+SAMN26308925	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN26308925	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN26308925	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007	-	s__Escherichia coli
+SAMN26308925	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN26308925	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN26308925	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN26308925	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN26308925	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
+SAMN26308925	-	antibiotic efflux	-	-	-	-	emrD;acrF	-	-	-	s__Escherichia coli
+SAMN26308542	streptomycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(3'')-Ib;aph(6)-Id	-	-	-	s__Escherichia coli
+SAMN26308542	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN26308542	-	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia coli
+SAMN26308542	-	cephalosporin	R	nonwildtype	very low	-	blaCTX-M-15	-	-	-	s__Escherichia coli
+SAMN26308542	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrA14	-	-	-	s__Escherichia coli
+SAMN26308542	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN26308542	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0005	-	s__Escherichia coli
+SAMN26308542	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	qnrS1	-	-	-	s__Escherichia coli
+SAMN26308542	aztreonam	monobactam	S	wildtype	high	-	-	blaEC	ECO0018	-	s__Escherichia coli
+SAMN26308542	amoxicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN26308542	ampicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN26308542	piperacillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN26308542	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001	-	s__Escherichia coli
+SAMN26308542	fosfomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	uhpT:p.Glu350Gln	glpT:p.Glu448Lys	ECO0082	-	s__Escherichia coli
+SAMN26308542	fosmidomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	cyaA:p.Ser352Thr	-	-	-	s__Escherichia coli
+SAMN26308542	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN26308542	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN26308542	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007	-	s__Escherichia coli
+SAMN26308542	-	sulfonamide antibiotic	R	nonwildtype	very low	-	sul2	-	-	-	s__Escherichia coli
+SAMN26308542	tetracycline	tetracycline antibiotic	R	nonwildtype	very low	-	tet(A)	-	-	-	s__Escherichia coli
+SAMN26308542	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN26308542	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN26308542	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN26308542	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN26308542	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
+SAMN26308542	-	antibiotic efflux	-	-	-	-	mdtM;acrF;emrD	-	-	-	s__Escherichia coli
+SAMN26304718	imipenem	carbapenem	S	wildtype	high	-	-	blaEC-5	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN26304718	-	carbapenem	S	wildtype	high	-	-	blaEC-5	ECO0016	-	s__Escherichia coli
+SAMN26304718	-	cephalosporin	R	nonwildtype	very low	-	ampC:c.-32T>A	-	-	-	s__Escherichia coli
+SAMN26304718	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC-5	-	blaEC-5	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN26304718	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0005	-	s__Escherichia coli
+SAMN26304718	aztreonam	monobactam	S	wildtype	high	-	-	blaEC-5	ECO0018	-	s__Escherichia coli
+SAMN26304718	amoxicillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC-5	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN26304718	ampicillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC-5	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN26304718	piperacillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC-5	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN26304718	-	penicillin beta-lactam	S	wildtype	high	-	-	blaEC-5	ECO0001	-	s__Escherichia coli
+SAMN26304718	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	glpT:p.Glu448Lys	ECO0082	-	s__Escherichia coli
+SAMN26304718	colistin	polymyxin antibiotic	R	nonwildtype	very low	-	pmrB:p.Glu123Asp	-	-	-	s__Escherichia coli
+SAMN26304718	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN26304718	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC-5	-	blaEC-5	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN26304718	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0007	-	s__Escherichia coli
+SAMN26304718	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN26304718	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN26304718	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN26304718	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN26304718	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0012	-	s__Escherichia coli
+SAMN26304718	-	antibiotic efflux	-	-	-	-	acrF;emrD	-	-	-	s__Escherichia coli
+SAMN26304961	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN26304961	-	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia coli
+SAMN26304961	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN26304961	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0005	-	s__Escherichia coli
+SAMN26304961	aztreonam	monobactam	S	wildtype	high	-	-	blaEC	ECO0018	-	s__Escherichia coli
+SAMN26304961	amoxicillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN26304961	ampicillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN26304961	piperacillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN26304961	-	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001	-	s__Escherichia coli
+SAMN26304961	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	glpT:p.Glu448Lys	ECO0082	-	s__Escherichia coli
+SAMN26304961	fosmidomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	cyaA:p.Ser352Thr	-	-	-	s__Escherichia coli
+SAMN26304961	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN26304961	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN26304961	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007	-	s__Escherichia coli
+SAMN26304961	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN26304961	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN26304961	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN26304961	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN26304961	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
+SAMN26304961	-	antibiotic efflux	-	-	-	-	acrF	-	-	-	s__Escherichia coli
+SAMN26308874	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(3)-IId	-	-	-	s__Escherichia coli
+SAMN26308874	streptomycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadA2	-	-	-	s__Escherichia coli
+SAMN26308874	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN26308874	-	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia coli
+SAMN26308874	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrA12	-	-	-	s__Escherichia coli
+SAMN26308874	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN26308874	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0005	-	s__Escherichia coli
+SAMN26308874	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	parE:p.Ile529Leu	-	-	-	s__Escherichia coli
+SAMN26308874	azithromycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(A)	-	-	-	s__Escherichia coli
+SAMN26308874	erythromycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(A)	-	-	-	s__Escherichia coli
+SAMN26308874	spiramycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(A)	-	-	-	s__Escherichia coli
+SAMN26308874	telithromycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(A)	-	-	-	s__Escherichia coli
+SAMN26308874	aztreonam	monobactam	S	wildtype	high	-	-	blaEC	ECO0018	-	s__Escherichia coli
+SAMN26308874	amoxicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN26308874	ampicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN26308874	piperacillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN26308874	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001	-	s__Escherichia coli
+SAMN26308874	fosfomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	ptsI:p.Val25Ile;uhpT:p.Glu350Gln	glpT:p.Glu448Lys	ECO0082	-	s__Escherichia coli
+SAMN26308874	colistin	polymyxin antibiotic	R	nonwildtype	very low	-	pmrB:p.Glu123Asp	-	-	-	s__Escherichia coli
+SAMN26308874	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN26308874	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN26308874	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007	-	s__Escherichia coli
+SAMN26308874	-	sulfonamide antibiotic	R	nonwildtype	very low	-	sul1	-	-	-	s__Escherichia coli
+SAMN26308874	tetracycline	tetracycline antibiotic	R	nonwildtype	very low	-	tet(A)	-	-	-	s__Escherichia coli
+SAMN26308874	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN26308874	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN26308874	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN26308874	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN26308874	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
+SAMN26308874	-	antibiotic efflux	-	-	-	-	acrF;emrD	-	-	-	s__Escherichia coli
+SAMN26309309	streptomycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(6)-Id;aph(3'')-Ib	-	-	-	s__Escherichia coli
+SAMN26309309	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN26309309	-	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia coli
+SAMN26309309	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrA14	-	-	-	s__Escherichia coli
+SAMN26309309	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN26309309	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0005	-	s__Escherichia coli
+SAMN26309309	aztreonam	monobactam	S	wildtype	high	-	-	blaEC	ECO0018	-	s__Escherichia coli
+SAMN26309309	amoxicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN26309309	ampicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN26309309	piperacillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN26309309	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001	-	s__Escherichia coli
+SAMN26309309	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN26309309	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN26309309	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007	-	s__Escherichia coli
+SAMN26309309	-	sulfonamide antibiotic	R	nonwildtype	very low	-	sul2	-	-	-	s__Escherichia coli
+SAMN26309309	tetracycline	tetracycline antibiotic	R	nonwildtype	very low	-	tet(A)	-	-	-	s__Escherichia coli
+SAMN26309309	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN26309309	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN26309309	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN26309309	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN26309309	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
+SAMN26309309	-	antibiotic efflux	-	-	-	-	acrF:-;mdtM	-	-	-	s__Escherichia coli
+SAMN26309238	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(3)-IId	-	-	-	s__Escherichia coli
+SAMN26309238	imipenem	carbapenem	S	wildtype	high	-	-	blaEC-5	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN26309238	-	carbapenem	S	wildtype	high	-	-	blaEC-5	ECO0016	-	s__Escherichia coli
+SAMN26309238	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC-5	-	blaEC-5	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN26309238	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0005	-	s__Escherichia coli
+SAMN26309238	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Asp87Asn;gyrA:p.Ser83Leu;parE:p.Leu416Phe;parC:p.Ser80Ile;marR:p.Ser3Asn	-	-	-	s__Escherichia coli
+SAMN26309238	aztreonam	monobactam	S	wildtype	high	-	-	blaEC-5	ECO0018	-	s__Escherichia coli
+SAMN26309238	amoxicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC-5	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN26309238	ampicillin	penicillin beta-lactam	R	nonwildtype	very low	-	marR:p.Ser3Asn;blaTEM-1	blaEC-5	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN26309238	piperacillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC-5	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN26309238	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC-5	ECO0001	-	s__Escherichia coli
+SAMN26309238	chloramphenicol	phenicol antibiotic	R	nonwildtype	very low	-	marR:p.Ser3Asn	-	-	-	s__Escherichia coli
+SAMN26309238	fosfomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	uhpT:p.Glu350Gln	-	-	-	s__Escherichia coli
+SAMN26309238	colistin	polymyxin antibiotic	R	nonwildtype	very low	-	pmrB:p.Glu123Asp	-	-	-	s__Escherichia coli
+SAMN26309238	rifampin	rifamycin antibiotic	R	nonwildtype	very low	-	marR:p.Ser3Asn	-	-	-	s__Escherichia coli
+SAMN26309238	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN26309238	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC-5	-	blaEC-5	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN26309238	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0007	-	s__Escherichia coli
+SAMN26309238	tetracycline	tetracycline antibiotic	R	nonwildtype	very low	-	marR:p.Ser3Asn	-	-	-	s__Escherichia coli
+SAMN26309238	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN26309238	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN26309238	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN26309238	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN26309238	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0012	-	s__Escherichia coli
+SAMN26309238	-	antibiotic efflux	-	-	-	-	emrD;acrF	-	-	-	s__Escherichia coli
+SAMN26304368	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN26304368	-	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia coli
+SAMN26304368	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN26304368	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0005	-	s__Escherichia coli
+SAMN26304368	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	marR:p.Ser3Asn	-	-	-	s__Escherichia coli
+SAMN26304368	aztreonam	monobactam	S	wildtype	high	-	-	blaEC	ECO0018	-	s__Escherichia coli
+SAMN26304368	amoxicillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN26304368	ampicillin	penicillin beta-lactam	R	nonwildtype	very low	-	marR:p.Ser3Asn	blaEC	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN26304368	piperacillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN26304368	-	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001	-	s__Escherichia coli
+SAMN26304368	chloramphenicol	phenicol antibiotic	R	nonwildtype	very low	-	marR:p.Ser3Asn	-	-	-	s__Escherichia coli
+SAMN26304368	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	glpT:p.Glu448Lys	ECO0082	-	s__Escherichia coli
+SAMN26304368	colistin	polymyxin antibiotic	R	nonwildtype	very low	-	pmrB:p.Glu123Asp	-	-	-	s__Escherichia coli
+SAMN26304368	rifampin	rifamycin antibiotic	R	nonwildtype	very low	-	marR:p.Ser3Asn	-	-	-	s__Escherichia coli
+SAMN26304368	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN26304368	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN26304368	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007	-	s__Escherichia coli
+SAMN26304368	tetracycline	tetracycline antibiotic	R	nonwildtype	very low	-	marR:p.Ser3Asn	-	-	-	s__Escherichia coli
+SAMN26304368	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN26304368	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN26304368	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN26304368	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN26304368	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
+SAMN26304368	-	antibiotic efflux	-	-	-	-	acrF;mdtM;emrD	-	-	-	s__Escherichia coli
+SAMN26304856	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN26304856	-	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia coli
+SAMN26304856	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN26304856	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0005	-	s__Escherichia coli
+SAMN26304856	aztreonam	monobactam	S	wildtype	high	-	-	blaEC	ECO0018	-	s__Escherichia coli
+SAMN26304856	amoxicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN26304856	ampicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN26304856	piperacillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN26304856	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001	-	s__Escherichia coli
+SAMN26304856	fosfomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	uhpT:p.Glu350Gln	glpT:p.Glu448Lys	ECO0082	-	s__Escherichia coli
+SAMN26304856	colistin	polymyxin antibiotic	R	nonwildtype	very low	-	pmrB:p.Glu123Asp	-	-	-	s__Escherichia coli
+SAMN26304856	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN26304856	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN26304856	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007	-	s__Escherichia coli
+SAMN26304856	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN26304856	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN26304856	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN26304856	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN26304856	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
+SAMN26304856	-	antibiotic efflux	-	-	-	-	acrF;mdtM;emrD	-	-	-	s__Escherichia coli
+SAMN32680975	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN32680975	-	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia coli
+SAMN32680975	-	cephalosporin	R	nonwildtype	very low	-	blaCTX-M-14	-	-	-	s__Escherichia coli
+SAMN32680975	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN32680975	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0005	-	s__Escherichia coli
+SAMN32680975	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Asp87Tyr;gyrA:p.Ser83Leu;parC:p.Ser80Ile;parE:p.Ser458Ala	-	-	-	s__Escherichia coli
+SAMN32680975	aztreonam	monobactam	S	wildtype	high	-	-	blaEC	ECO0018	-	s__Escherichia coli
+SAMN32680975	amoxicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN32680975	ampicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN32680975	piperacillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN32680975	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001	-	s__Escherichia coli
+SAMN32680975	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	glpT:p.Glu448Lys	ECO0082	-	s__Escherichia coli
+SAMN32680975	fosmidomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	cyaA:p.Ser352Thr	-	-	-	s__Escherichia coli
+SAMN32680975	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN32680975	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN32680975	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007	-	s__Escherichia coli
+SAMN32680975	tetracycline	tetracycline antibiotic	R	nonwildtype	very low	-	tet(D)	-	-	-	s__Escherichia coli
+SAMN32680975	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN32680975	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN32680975	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN32680975	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN32680975	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
+SAMN32680975	-	antibiotic efflux	-	-	-	-	acrF;emrD	-	-	-	s__Escherichia coli
+SAMN26308793	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN26308793	-	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia coli
+SAMN26308793	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN26308793	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0005	-	s__Escherichia coli
+SAMN26308793	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Asp87Asn;gyrA:p.Ser83Leu;parE:p.Ile529Leu;parC:p.Glu84Val;parC:p.Ser80Ile	-	-	-	s__Escherichia coli
+SAMN26308793	aztreonam	monobactam	S	wildtype	high	-	-	blaEC	ECO0018	-	s__Escherichia coli
+SAMN26308793	amoxicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN26308793	ampicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN26308793	piperacillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN26308793	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001	-	s__Escherichia coli
+SAMN26308793	fosfomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	ptsI:p.Val25Ile;uhpT:p.Glu350Gln	glpT:p.Glu448Lys	ECO0082	-	s__Escherichia coli
+SAMN26308793	colistin	polymyxin antibiotic	R	nonwildtype	very low	-	pmrB:p.Glu123Asp	-	-	-	s__Escherichia coli
+SAMN26308793	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN26308793	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN26308793	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007	-	s__Escherichia coli
+SAMN26308793	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN26308793	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN26308793	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN26308793	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN26308793	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
+SAMN26308793	-	antibiotic efflux	-	-	-	-	acrF;mdtM;emrD	-	-	-	s__Escherichia coli
+SAMN26308347	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN26308347	-	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia coli
+SAMN26308347	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN26308347	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0005	-	s__Escherichia coli
+SAMN26308347	aztreonam	monobactam	S	wildtype	high	-	-	blaEC	ECO0018	-	s__Escherichia coli
+SAMN26308347	amoxicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN26308347	ampicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN26308347	piperacillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN26308347	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001	-	s__Escherichia coli
+SAMN26308347	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	glpT:p.Glu448Lys	ECO0082	-	s__Escherichia coli
+SAMN26308347	fosmidomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	cyaA:p.Ser352Thr	-	-	-	s__Escherichia coli
+SAMN26308347	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN26308347	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN26308347	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007	-	s__Escherichia coli
+SAMN26308347	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN26308347	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN26308347	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN26308347	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN26308347	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
+SAMN26308347	-	antibiotic efflux	-	-	-	-	mdtM;acrF;emrD	-	-	-	s__Escherichia coli
+SAMN26308629	streptomycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(6)-Id;aph(3'')-Ib	-	-	-	s__Escherichia coli
+SAMN26308629	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN26308629	-	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia coli
+SAMN26308629	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrA8	-	-	-	s__Escherichia coli
+SAMN26308629	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN26308629	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0005	-	s__Escherichia coli
+SAMN26308629	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	qnrB	-	-	-	s__Escherichia coli
+SAMN26308629	aztreonam	monobactam	S	wildtype	high	-	-	blaEC	ECO0018	-	s__Escherichia coli
+SAMN26308629	amoxicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN26308629	ampicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN26308629	piperacillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN26308629	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC	ECO0001	-	s__Escherichia coli
+SAMN26308629	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	glpT:p.Glu448Lys	ECO0082	-	s__Escherichia coli
+SAMN26308629	fosmidomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	cyaA:p.Ser352Thr	-	-	-	s__Escherichia coli
+SAMN26308629	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN26308629	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN26308629	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007	-	s__Escherichia coli
+SAMN26308629	-	sulfonamide antibiotic	R	nonwildtype	very low	-	sul2	-	-	-	s__Escherichia coli
+SAMN26308629	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN26308629	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN26308629	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN26308629	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN26308629	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
+SAMN26308629	-	antibiotic efflux	-	-	-	-	acrF;emrD;mdtM	-	-	-	s__Escherichia coli
+SAMN26304373	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN26304373	-	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia coli
+SAMN26304373	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN26304373	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0005	-	s__Escherichia coli
+SAMN26304373	aztreonam	monobactam	S	wildtype	high	-	-	blaEC	ECO0018	-	s__Escherichia coli
+SAMN26304373	amoxicillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN26304373	ampicillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN26304373	piperacillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN26304373	-	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001	-	s__Escherichia coli
+SAMN26304373	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	glpT:p.Glu448Lys	ECO0082	-	s__Escherichia coli
+SAMN26304373	fosmidomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	cyaA:p.Ser352Thr	-	-	-	s__Escherichia coli
+SAMN26304373	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN26304373	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN26304373	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007	-	s__Escherichia coli
+SAMN26304373	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN26304373	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN26304373	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN26304373	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN26304373	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
+SAMN26304373	-	antibiotic efflux	-	-	-	-	mdtM;acrF;emrD	-	-	-	s__Escherichia coli
+SAMN26304344	imipenem	carbapenem	S	wildtype	high	-	-	blaEC-5	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN26304344	-	carbapenem	S	wildtype	high	-	-	blaEC-5	ECO0016	-	s__Escherichia coli
+SAMN26304344	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC-5	-	blaEC-5	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN26304344	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0005	-	s__Escherichia coli
+SAMN26304344	aztreonam	monobactam	S	wildtype	high	-	-	blaEC-5	ECO0018	-	s__Escherichia coli
+SAMN26304344	amoxicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC-5	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN26304344	ampicillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC-5	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN26304344	piperacillin	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC-5	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN26304344	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaTEM-1	blaEC-5	ECO0001	-	s__Escherichia coli
+SAMN26304344	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	glpT:p.Glu448Lys	ECO0082	-	s__Escherichia coli
+SAMN26304344	colistin	polymyxin antibiotic	R	nonwildtype	very low	-	pmrB:p.Glu123Asp	-	-	-	s__Escherichia coli
+SAMN26304344	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN26304344	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC-5	-	blaEC-5	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN26304344	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0007	-	s__Escherichia coli
+SAMN26304344	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN26304344	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN26304344	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN26304344	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN26304344	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0012	-	s__Escherichia coli
+SAMN26304344	-	antibiotic efflux	-	-	-	-	acrF;mdtM;emrD	-	-	-	s__Escherichia coli
+SAMN26309433	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN26309433	-	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia coli
+SAMN26309433	cefiderocol	cephalosporin	R	nonwildtype	very low	-	ftsI:p.336_337insTyrArgIleAsn;blaCTX-M-15	-	-	-	s__Escherichia coli
+SAMN26309433	-	cephalosporin	R	nonwildtype	very low	-	blaCTX-M-15	-	-	-	s__Escherichia coli
+SAMN26309433	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN26309433	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0005	-	s__Escherichia coli
+SAMN26309433	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	parC:p.Ser80Ile;parE:p.Ser458Ala;gyrA:p.Asp87Asn;gyrA:p.Ser83Leu	-	-	-	s__Escherichia coli
+SAMN26309433	aztreonam	monobactam	R	nonwildtype	very low	-	ftsI:p.336_337insTyrArgIleAsn	blaEC	ECO0018	-	s__Escherichia coli
+SAMN26309433	amoxicillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN26309433	ampicillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN26309433	piperacillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN26309433	-	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001	-	s__Escherichia coli
+SAMN26309433	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN26309433	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN26309433	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007	-	s__Escherichia coli
+SAMN26309433	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN26309433	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN26309433	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN26309433	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN26309433	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
+SAMN26309433	-	antibiotic efflux	-	-	-	-	mdtM;acrF	-	-	-	s__Escherichia coli
+SAMN26304536	gentamicin	aminoglycoside antibiotic	S	nonwildtype	very low	-	aac(3)-II:-	-	-	-	s__Escherichia coli
+SAMN26304536	streptomycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(3'')-Ib;aph(6)-Id	-	-	-	s__Escherichia coli
+SAMN26304536	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN26304536	-	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia coli
+SAMN26304536	-	cephalosporin	R	nonwildtype	very low	-	blaCTX-M-14	-	-	-	s__Escherichia coli
+SAMN26304536	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN26304536	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0005	-	s__Escherichia coli
+SAMN26304536	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Asp87Asn;gyrA:p.Ser83Leu;parC:p.Glu84Val;parC:p.Ser80Ile;parE:p.Ile529Leu	-	-	-	s__Escherichia coli
+SAMN26304536	azithromycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(A)	-	-	-	s__Escherichia coli
+SAMN26304536	erythromycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(A)	-	-	-	s__Escherichia coli
+SAMN26304536	spiramycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(A)	-	-	-	s__Escherichia coli
+SAMN26304536	telithromycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(A)	-	-	-	s__Escherichia coli
+SAMN26304536	aztreonam	monobactam	S	wildtype	high	-	-	blaEC	ECO0018	-	s__Escherichia coli
+SAMN26304536	amoxicillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN26304536	ampicillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN26304536	piperacillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN26304536	-	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001	-	s__Escherichia coli
+SAMN26304536	fosfomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	ptsI:p.Val25Ile;uhpT:p.Glu350Gln	glpT:p.Glu448Lys	ECO0082	-	s__Escherichia coli
+SAMN26304536	colistin	polymyxin antibiotic	R	nonwildtype	very low	-	pmrB:p.Glu123Asp	-	-	-	s__Escherichia coli
+SAMN26304536	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN26304536	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN26304536	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007	-	s__Escherichia coli
+SAMN26304536	-	sulfonamide antibiotic	R	nonwildtype	very low	-	sul2	-	-	-	s__Escherichia coli
+SAMN26304536	tetracycline	tetracycline antibiotic	R	nonwildtype	very low	-	tet(A)	-	-	-	s__Escherichia coli
+SAMN26304536	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN26304536	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN26304536	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN26304536	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN26304536	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
+SAMN26304536	-	antibiotic efflux	-	-	-	-	mdtM;acrF;emrD	-	-	-	s__Escherichia coli
+SAMN26308724	imipenem	carbapenem	S	wildtype	high	-	-	blaEC-5	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN26308724	-	carbapenem	S	wildtype	high	-	-	blaEC-5	ECO0016	-	s__Escherichia coli
+SAMN26308724	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC-5	-	blaEC-5	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN26308724	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0005	-	s__Escherichia coli
+SAMN26308724	aztreonam	monobactam	S	wildtype	high	-	-	blaEC-5	ECO0018	-	s__Escherichia coli
+SAMN26308724	amoxicillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC-5	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN26308724	ampicillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC-5	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN26308724	piperacillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC-5	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN26308724	-	penicillin beta-lactam	S	wildtype	high	-	-	blaEC-5	ECO0001	-	s__Escherichia coli
+SAMN26308724	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	glpT:p.Glu448Lys	ECO0082	-	s__Escherichia coli
+SAMN26308724	colistin	polymyxin antibiotic	R	nonwildtype	very low	-	pmrB:p.Glu123Asp	-	-	-	s__Escherichia coli
+SAMN26308724	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN26308724	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC-5	-	blaEC-5	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN26308724	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0007	-	s__Escherichia coli
+SAMN26308724	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN26308724	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN26308724	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN26308724	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN26308724	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC-5	ECO0012	-	s__Escherichia coli
+SAMN26308724	-	antibiotic efflux	-	-	-	-	acrF;emrD	-	-	-	s__Escherichia coli
+SAMN26309144	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN26309144	-	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia coli
+SAMN26309144	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN26309144	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0005	-	s__Escherichia coli
+SAMN26309144	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	marR:p.Ser3Asn	-	-	-	s__Escherichia coli
+SAMN26309144	aztreonam	monobactam	S	wildtype	high	-	-	blaEC	ECO0018	-	s__Escherichia coli
+SAMN26309144	amoxicillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN26309144	ampicillin	penicillin beta-lactam	R	nonwildtype	very low	-	marR:p.Ser3Asn	blaEC	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN26309144	piperacillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN26309144	-	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001	-	s__Escherichia coli
+SAMN26309144	chloramphenicol	phenicol antibiotic	R	nonwildtype	very low	-	marR:p.Ser3Asn	-	-	-	s__Escherichia coli
+SAMN26309144	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	glpT:p.Glu448Lys	ECO0082	-	s__Escherichia coli
+SAMN26309144	rifampin	rifamycin antibiotic	R	nonwildtype	very low	-	marR:p.Ser3Asn	-	-	-	s__Escherichia coli
+SAMN26309144	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN26309144	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN26309144	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007	-	s__Escherichia coli
+SAMN26309144	tetracycline	tetracycline antibiotic	R	nonwildtype	very low	-	marR:p.Ser3Asn	-	-	-	s__Escherichia coli
+SAMN26309144	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN26309144	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN26309144	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN26309144	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN26309144	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
+SAMN26309144	-	antibiotic efflux	-	-	-	-	emrD;acrF	-	-	-	s__Escherichia coli
+SAMN26304916	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN26304916	-	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia coli
+SAMN26304916	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN26304916	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0005	-	s__Escherichia coli
+SAMN26304916	aztreonam	monobactam	S	wildtype	high	-	-	blaEC	ECO0018	-	s__Escherichia coli
+SAMN26304916	amoxicillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN26304916	ampicillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN26304916	piperacillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN26304916	-	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001	-	s__Escherichia coli
+SAMN26304916	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	glpT:p.Glu448Lys	ECO0082	-	s__Escherichia coli
+SAMN26304916	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN26304916	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN26304916	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007	-	s__Escherichia coli
+SAMN26304916	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN26304916	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN26304916	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN26304916	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN26304916	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
+SAMN26304916	-	antibiotic efflux	-	-	-	-	mdtM;acrF	-	-	-	s__Escherichia coli
