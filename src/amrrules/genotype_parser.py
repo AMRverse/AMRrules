@@ -357,6 +357,10 @@ class Genotype(GenoResult):
         # if the drug and drug_class are '-', set to 'unassigned markers'
         if self.drug == '-' and self.drug_class == '-':
             self.drug_class = 'unassigned markers'
+        
+        # hardcode change for penicillin
+        if self.drug_class == 'penicillin with extended spectrum':
+            self.drug_class = 'penicillin beta-lactam'
     
     def _assign_drug_from_amrfp(self, card_amrfp_conversion):
         self.drug = card_amrfp_conversion.get(self.amrfp_subclass).get('drug', '-')
