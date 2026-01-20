@@ -1,0 +1,21 @@
+sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
+SAMN26308439	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
+SAMN26308439	-	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia coli
+SAMN26308439	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
+SAMN26308439	-	first-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0005	-	s__Escherichia coli
+SAMN26308439	aztreonam	monobactam	S	wildtype	high	-	-	blaEC	ECO0018	-	s__Escherichia coli
+SAMN26308439	amoxicillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0003	-	s__Escherichia coli
+SAMN26308439	ampicillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0002	-	s__Escherichia coli
+SAMN26308439	piperacillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0004	-	s__Escherichia coli
+SAMN26308439	-	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001	-	s__Escherichia coli
+SAMN26308439	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	glpT:p.Glu448Lys	ECO0082	-	s__Escherichia coli
+SAMN26308439	colistin	polymyxin antibiotic	S	wildtype	moderate	-	-	pmrB:p.Tyr358Asn	ECO0081	-	s__Escherichia coli
+SAMN26308439	cefoxitin	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007;ECO0008	-	s__Escherichia coli
+SAMN26308439	cefuroxime	second-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0007;ECO0009;ECO0010	-	s__Escherichia coli
+SAMN26308439	-	second-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0007	-	s__Escherichia coli
+SAMN26308439	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0015	-	s__Escherichia coli
+SAMN26308439	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0011;ECO0012	-	s__Escherichia coli
+SAMN26308439	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0014	-	s__Escherichia coli
+SAMN26308439	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
+SAMN26308439	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
+SAMN26308439	-	antibiotic efflux	-	-	-	-	acrF;mdtM	-	-	-	s__Escherichia coli
