@@ -40,15 +40,17 @@ class SummaryEntry:
 
         # full object list creation, if we've got a drug class of objs also to consider
         if class_summary:
-            self.geno_objs = self.geno_objs + class_summary.geno_objs
+            geno_objs = self.geno_objs + class_summary.geno_objs
+        else:
+            geno_objs = self.geno_objs
         # Extract values from genotype objects
         #categories = [g.clinical_category for g in self.geno_objs if hasattr(g, 'clinical_category')]
-        phenotypes = [g.phenotype for g in self.geno_objs if hasattr(g, 'phenotype')]
+        phenotypes = [g.phenotype for g in geno_objs if hasattr(g, 'phenotype')]
         #evidence_grades = [g.evidence_grade for g in self.geno_objs if hasattr(g, 'evidence_grade')]
 
         # update evidence grade to be linked to the evidence for the highest category call 
         # (eg if oqx is S with rule, but there is gyrA marker with no rule that's R, category is R but evidence grade is very low)
-        best_obj = max(self.geno_objs, key=lambda o: (
+        best_obj = max(geno_objs, key=lambda o: (
             CATEGORY_ORDER.index(o.clinical_category),
             EVIDENCE_GRADE_ORDER.index(o.evidence_grade)
             ))
@@ -58,9 +60,14 @@ class SummaryEntry:
         self.phenotype = get_max_value(phenotypes, PHENOTYPE_ORDER)
         self.evidence_grade = best_obj.evidence_grade
     
-    def set_ruleIDs_and_combo(self, combo_rules):
+    def set_ruleIDs_and_combo(self, combo_rules, class_summary=None):
+        # add class info if that's provided
+        if class_summary:
+            geno_objs = self.geno_objs + class_summary.geno_objs
+        else:
+            geno_objs = self.geno_objs
         # deal with the ruleIDs
-        rule_ids = {g.ruleID for g in self.geno_objs
+        rule_ids = {g.ruleID for g in geno_objs
             if getattr(g, "ruleID", None) not in (None, "-")}
         # sets ruleIDs to '-' if there are none at all
         self.ruleIDs = ";".join(sorted(rule_ids)) if rule_ids else "-"
@@ -81,24 +88,15 @@ class SummaryEntry:
         else:
             self.combo_rules = ";".join(matched_combo_rules)
 
-    def set_markers(self, flag_core):
+    def set_markers(self, flag_core, class_summary=None):
         
-        def append_marker(marker, marker_list, duplicated):
-            """Check whether the marker should be appended to the list or not"""
-            # if the marker is already in the list
-            # and the row is a duplicated row
-            # don't add it!
-            if marker in marker_list and duplicated:
-                pass
-            else:
-                marker_list.append(marker)
-            return(marker_list)
         # for each object, extract the marker and place it into the correct
         # list based on whether it has a rule, no rule, or is wildtype
         markers_rule_nonS = []
         markers_with_norule = []
         markers_s = []
-    
+
+        # first loop through the markers for the drug
         for g in self.geno_objs:
             # set the marker to be the amrrules formatted version
             marker = g.marker_amrrules
@@ -107,14 +105,29 @@ class SummaryEntry:
                 if g.gene_context == 'core' and g.variation_type == 'Gene presence detected' and flag_core:
                     marker = marker + " (core)"
                 if g.clinical_category == 'S':
-                    append_marker(marker, markers_s, g.duplicated_row)
-                    #markers_s.append(marker)
+                    markers_s.append(marker)
                 else:
-                    append_marker(marker, markers_rule_nonS, g.duplicated_row)
-                    #markers_rule_nonS.append(marker)
+                    markers_rule_nonS.append(marker)
             else:
-                #markers_with_norule.append(marker)
-                append_marker(marker, markers_with_norule, g.duplicated_row)
+                markers_with_norule.append(marker)
+        
+        # now loop through the markers for the class, if there is one
+        if class_summary:
+            for g in class_summary.geno_objs:
+                # set the marker to be the amrrules formatted version
+                marker = g.marker_amrrules
+                if g.has_rule:
+                    # only label core genes if it's a core context with gene presence variation type
+                    if g.gene_context == 'core' and g.variation_type == 'Gene presence detected' and flag_core:
+                        marker = marker + " (core)"
+                    # append marker only if it's not already present
+                    if g.clinical_category == 'S' and marker not in markers_s:
+                        markers_s.append(marker)
+                    elif g.clinical_category != 'S' and marker not in markers_rule_nonS:
+                        markers_rule_nonS.append(marker)
+                # append marker only if it's not already present
+                elif marker not in markers_with_norule:
+                    markers_with_norule.append(marker)
 
         self.markers_rule_nonS = ';'.join(markers_rule_nonS) or '-'
         self.markers_with_norule = ';'.join(markers_with_norule) or '-'
@@ -216,13 +229,15 @@ def create_summary_dict(grouped_by_sample, rules, flag_core):
                     # determine highest category/pheno/evidence grade for this drug
                     # but take into account the rules for the drug class
                     summary_entry.summarise_rules(master_class_entry)
+                    # before assigning markers to columns
+                    # we want to remove any duplicated row markers from the class level
                     # assign markers
-                    summary_entry.set_markers(flag_core)
+                    summary_entry.set_markers(flag_core, class_summary=master_class_entry)
                     # assign ruleIDs and combo rules
                     combo_rules = [r for r in rules if r.get('organism') == summary_entry.organism and r.get('rule type') == 'Combination']
                     # then need to further filter to include only combo rules that apply to either the drug or class we're assessing
                     combo_rules = [r for r in combo_rules if summary_entry.drug in r.get('drugs', '') or summary_entry.drug_class in r.get('drug classes', '')]
-                    summary_entry.set_ruleIDs_and_combo(combo_rules)
+                    summary_entry.set_ruleIDs_and_combo(combo_rules, class_summary=master_class_entry)
                     # add it to our list
                     summary_entry_list.append(summary_entry)
             summary_entry_dict[sample_name] = order_summary_objs(summary_entry_list)
