@@ -30,3 +30,12 @@ After installation, you must download the required AMRFinderPlus resource files.
     amrrules --download-resources
 
 This will download and cache the necessary files for AMRrules to function. You only need to run this **once** after installation, or when updating resources (eg a new AMRFinderPlus database has been released).
+
+Check which organisms have rule-sets available in the installation::
+    
+    amrrules --list-organisms
+
+Test on the included example datasets::
+    
+    amrrules --input tests/data/input/test_ecoli_genome.tsv --output-prefix test_ecoli_genome --organism 's__Escherichia coli'
+    amrrules --input tests/data/input/test_kleb_SGH10.tsv --output-prefix test_kleb_SGH10 --organism 's__Klebsiella pneumoniae'
