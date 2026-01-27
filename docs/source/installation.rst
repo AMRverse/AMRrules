@@ -35,7 +35,27 @@ Check which organisms have rule-sets available in the installation::
     
     amrrules --list-organisms
 
-Test on the included example datasets::
+Test on some included example datasets::
     
-    amrrules --input tests/data/input/test_ecoli_genome.tsv --output-prefix test_ecoli_genome --organism 's__Escherichia coli'
-    amrrules --input tests/data/input/test_kleb_SGH10.tsv --output-prefix test_kleb_SGH10 --organism 's__Klebsiella pneumoniae'
+    amrrules --input tests/data/input/test_ecoli_wildtype.tsv --output-prefix test_ecoli_wildtype --organism 's__Escherichia coli'
+    amrrules --input tests/data/input/test_kleb_wildtype.tsv --output-prefix test_kleb_wildtype --organism 's__Klebsiella pneumoniae'
+
+Compare these resulting output files to those in ``tests/data/example_output``...
+
+``tests/data/example_output/test_ecoli_wildtype_interpreted.tsv``:
+
+.. csv-table::
+   :file: ../../tests/data/example_output/test_ecoli_wildtype_interpreted.tsv
+   :delim: tab
+   :header-rows: 1
+
+``tests/data/example_output/test_ecoli_wildtype_genome_summary.tsv``:
+
+.. csv-table::
+   :file: ../../tests/data/example_output/test_ecoli_wildtype_genome_summary.tsv
+   :delim: tab
+   :header-rows: 1
+
+Additional test data and example commands can be found on the :ref:`Tests <test>` page.
+
+
