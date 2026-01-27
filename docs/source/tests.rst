@@ -2,6 +2,7 @@
 Test Data
 **************************
 
+.. _test:
 Test installation
 =================
 
