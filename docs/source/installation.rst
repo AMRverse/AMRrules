@@ -56,6 +56,6 @@ Compare these resulting output files to those in ``tests/data/example_output``..
    :delim: tab
    :header-rows: 1
 
-Additional test data and example commands can be found on the :ref:`Tests <tests>` page.
+Additional test data and example commands can be found on the :ref:`Tests <test>` page.
 
 
