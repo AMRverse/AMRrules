@@ -1,0 +1,17 @@
+sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
+SAMD00055732	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(3)-IId;aac(6')-Ib4;aac(3)-IIe:-	-	-	-	s__Klebsiella pneumoniae
+SAMD00055732	streptomycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(3'')-Ib;aph(6)-Id	-	-	-	s__Klebsiella pneumoniae
+SAMD00055732	-	carbapenem	R	nonwildtype	very low	-	blaIMP-4	-	-	-	s__Klebsiella pneumoniae
+SAMD00055732	-	cephalosporin	R	nonwildtype	very low	-	blaCTX-M-15;blaOXA-1	-	-	-	s__Klebsiella pneumoniae
+SAMD00055732	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrA14	-	-	-	s__Klebsiella pneumoniae
+SAMD00055732	ciprofloxacin	fluoroquinolone antibiotic	R	nonwildtype	very low	-	qnrB1	oqxA;oqxB	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMD00055732	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	qnrB1	-	-	-	s__Klebsiella pneumoniae
+SAMD00055732	azithromycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMD00055732	erythromycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMD00055732	spiramycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMD00055732	telithromycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMD00055732	-	penicillin beta-lactam	R	nonwildtype	high	blaSHV-1	blaTEM-1	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMD00055732	chloramphenicol	phenicol antibiotic	S	nonwildtype	very low	-	catB3:-	-	-	-	s__Klebsiella pneumoniae
+SAMD00055732	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMD00055732	-	sulfonamide antibiotic	R	nonwildtype	very low	-	sul2;sul1	-	-	-	s__Klebsiella pneumoniae
+SAMD00055732	-	antibiotic efflux	-	-	-	-	emrD	-	-	-	s__Klebsiella pneumoniae
