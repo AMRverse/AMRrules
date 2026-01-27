@@ -1,0 +1,270 @@
+sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
+G18252260	amikacin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252260	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252260	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252260	streptomycin	aminoglycoside antibiotic	S	nonwildtype	very low	-	ant(6)-Ia:-	-	-	-	s__Staphylococcus aureus
+G18252260	tobramycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252260	methicillin	beta-lactamase resistant penicillin	R	nonwildtype	very low	-	mecA	-	-	-	s__Staphylococcus aureus
+G18252260	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrG	-	-	-	s__Staphylococcus aureus
+G18252260	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	parC:p.Glu84Lys;parC:p.Ser80Tyr;gyrA:p.Ser84Leu	-	-	-	s__Staphylococcus aureus
+G18252260	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
+G18252260	erythromycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(C);msr(A)	-	-	-	s__Staphylococcus aureus
+G18252260	spiramycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(C)	-	-	-	s__Staphylococcus aureus
+G18252260	telithromycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(C)	-	-	-	s__Staphylococcus aureus
+G18252260	streptothricin	nucleoside antibiotic	S	nonwildtype	very low	-	sat4:-	-	-	-	s__Staphylococcus aureus
+G18252260	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaZ;blaI;blaZ;blaR1;blaI	-	-	-	s__Staphylococcus aureus
+G18252260	fosfomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	fosB	-	-	-	s__Staphylococcus aureus
+G18252260	streptogramin b antibiotic	streptogramin antibiotic	R	nonwildtype	very low	-	msr(A)	-	-	-	s__Staphylococcus aureus
+G18252260	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
+G18252261	amikacin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252261	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252261	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadD1;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252261	tobramycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadD1;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252261	methicillin	beta-lactamase resistant penicillin	R	nonwildtype	very low	-	mecA;mecR1:-	-	-	-	s__Staphylococcus aureus
+G18252261	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrS1;dfrB:p.Ala135Thr	-	-	-	s__Staphylococcus aureus
+G18252261	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Ser84Leu;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
+G18252261	bleomycin	glycopeptide antibiotic	R	nonwildtype	very low	-	bleO	-	-	-	s__Staphylococcus aureus
+G18252261	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
+G18252261	clindamycin	lincosamide antibiotic	R	nonwildtype	very low	-	erm(C)	-	-	-	s__Staphylococcus aureus
+G18252261	erythromycin	macrolide antibiotic	R	nonwildtype	very low	-	erm(C)	-	-	-	s__Staphylococcus aureus
+G18252261	tylosin	macrolide antibiotic	R	nonwildtype	very low	-	erm(C)	-	-	-	s__Staphylococcus aureus
+G18252261	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaZ;blaI	-	-	-	s__Staphylococcus aureus
+G18252261	streptogramin b antibiotic	streptogramin antibiotic	R	nonwildtype	very low	-	erm(C)	-	-	-	s__Staphylococcus aureus
+G18252261	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
+G18252262	amikacin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252262	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252262	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadD1;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252262	tobramycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadD1;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252262	methicillin	beta-lactamase resistant penicillin	R	nonwildtype	very low	-	mecA;mecR1:-	-	-	-	s__Staphylococcus aureus
+G18252262	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrB:p.Ala135Thr	-	-	-	s__Staphylococcus aureus
+G18252262	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Ser84Leu;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
+G18252262	bleomycin	glycopeptide antibiotic	R	nonwildtype	very low	-	bleO	-	-	-	s__Staphylococcus aureus
+G18252262	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
+G18252262	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaI;blaZ	-	-	-	s__Staphylococcus aureus
+G18252262	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
+G18252263	amikacin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252263	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252263	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadD1;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252263	tobramycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadD1;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252263	methicillin	beta-lactamase resistant penicillin	R	nonwildtype	very low	-	mecR1:-;mecA	-	-	-	s__Staphylococcus aureus
+G18252263	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrS1;dfrB:p.Ala135Thr	-	-	-	s__Staphylococcus aureus
+G18252263	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Ser84Leu;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
+G18252263	bleomycin	glycopeptide antibiotic	R	nonwildtype	very low	-	bleO	-	-	-	s__Staphylococcus aureus
+G18252263	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
+G18252263	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaZ;blaI	-	-	-	s__Staphylococcus aureus
+G18252263	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
+G18252264	amikacin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252264	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252264	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252264	spectinomycin	aminoglycoside antibiotic	S	nonwildtype	very low	-	ant(9)-Ia:-	-	-	-	s__Staphylococcus aureus
+G18252264	streptomycin	aminoglycoside antibiotic	S	nonwildtype	very low	-	ant(6)-Ia:-	-	-	-	s__Staphylococcus aureus
+G18252264	tobramycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252264	methicillin	beta-lactamase resistant penicillin	R	nonwildtype	very low	-	mecI:-;mecR1:-;mecA	-	-	-	s__Staphylococcus aureus
+G18252264	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrS1	-	-	-	s__Staphylococcus aureus
+G18252264	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	parC:p.Ser80Phe;parE:p.Asp432Asn;gyrA:p.Ser84Leu;gyrA:p.Ser85Pro	-	-	-	s__Staphylococcus aureus
+G18252264	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
+G18252264	clindamycin	lincosamide antibiotic	R	nonwildtype	very low	-	erm(A)	-	-	-	s__Staphylococcus aureus
+G18252264	azithromycin	macrolide antibiotic	R	nonwildtype	very low	-	erm(A)	-	-	-	s__Staphylococcus aureus
+G18252264	clarithromycin	macrolide antibiotic	R	nonwildtype	very low	-	erm(A)	-	-	-	s__Staphylococcus aureus
+G18252264	erythromycin	macrolide antibiotic	R	nonwildtype	very low	-	erm(A)	-	-	-	s__Staphylococcus aureus
+G18252264	telithromycin	macrolide antibiotic	R	nonwildtype	very low	-	erm(A)	-	-	-	s__Staphylococcus aureus
+G18252264	streptothricin	nucleoside antibiotic	R	nonwildtype	very low	-	sat4	-	-	-	s__Staphylococcus aureus
+G18252264	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaI;blaR1;blaPC1	-	-	-	s__Staphylococcus aureus
+G18252264	fosfomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	murA:p.Gly257Asp;fosB	-	-	-	s__Staphylococcus aureus
+G18252264	rifampin	rifamycin antibiotic	R	nonwildtype	very low	-	rpoB:p.His481Asn	-	-	-	s__Staphylococcus aureus
+G18252264	-	sulfonamide antibiotic	R	nonwildtype	very low	-	folP:p.257_258insLysGlu;folP:p.Phe17Leu	-	-	-	s__Staphylococcus aureus
+G18252264	tetracycline	tetracycline antibiotic	R	nonwildtype	very low	-	tet(K);tet(M)	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
+G18252265	amikacin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia;aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+G18252265	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252265	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia;aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+G18252265	streptomycin	aminoglycoside antibiotic	S	nonwildtype	very low	-	ant(6)-Ia:-	-	-	-	s__Staphylococcus aureus
+G18252265	tobramycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252265	methicillin	beta-lactamase resistant penicillin	R	nonwildtype	very low	-	mecA	-	-	-	s__Staphylococcus aureus
+G18252265	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrG	-	-	-	s__Staphylococcus aureus
+G18252265	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Ser84Leu;parC:p.Ser80Tyr	-	-	-	s__Staphylococcus aureus
+G18252265	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
+G18252265	clindamycin	lincosamide antibiotic	S	nonwildtype	very low	-	erm(C):-	-	-	-	s__Staphylococcus aureus
+G18252265	erythromycin	macrolide antibiotic	R	nonwildtype	very low	-	msr(A);mph(C);erm(C):-	-	-	-	s__Staphylococcus aureus
+G18252265	spiramycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(C)	-	-	-	s__Staphylococcus aureus
+G18252265	telithromycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(C)	-	-	-	s__Staphylococcus aureus
+G18252265	tylosin	macrolide antibiotic	S	nonwildtype	very low	-	erm(C):-	-	-	-	s__Staphylococcus aureus
+G18252265	streptothricin	nucleoside antibiotic	S	nonwildtype	very low	-	sat4:-	-	-	-	s__Staphylococcus aureus
+G18252265	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaI;blaR1;blaZ;blaI;blaZ	-	-	-	s__Staphylococcus aureus
+G18252265	fosfomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	fosB	-	-	-	s__Staphylococcus aureus
+G18252265	streptogramin b antibiotic	streptogramin antibiotic	R	nonwildtype	very low	-	msr(A);erm(C):-	-	-	-	s__Staphylococcus aureus
+G18252265	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
+G18252266	amikacin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252266	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252266	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252266	spectinomycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	ant(9)-Ia	-	-	-	s__Staphylococcus aureus
+G18252266	streptomycin	aminoglycoside antibiotic	S	nonwildtype	very low	-	ant(6)-Ia:-	-	-	-	s__Staphylococcus aureus
+G18252266	tobramycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252266	methicillin	beta-lactamase resistant penicillin	R	nonwildtype	very low	-	mecI:-;mecR1;mecA	-	-	-	s__Staphylococcus aureus
+G18252266	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrG	-	-	-	s__Staphylococcus aureus
+G18252266	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Ser84Leu;gyrA:p.Ser85Pro;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
+G18252266	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
+G18252266	clindamycin	lincosamide antibiotic	R	nonwildtype	very low	-	erm(A)	-	-	-	s__Staphylococcus aureus
+G18252266	azithromycin	macrolide antibiotic	R	nonwildtype	very low	-	erm(A)	-	-	-	s__Staphylococcus aureus
+G18252266	clarithromycin	macrolide antibiotic	R	nonwildtype	very low	-	erm(A)	-	-	-	s__Staphylococcus aureus
+G18252266	erythromycin	macrolide antibiotic	R	nonwildtype	very low	-	erm(A)	-	-	-	s__Staphylococcus aureus
+G18252266	telithromycin	macrolide antibiotic	R	nonwildtype	very low	-	erm(A)	-	-	-	s__Staphylococcus aureus
+G18252266	streptothricin	nucleoside antibiotic	R	nonwildtype	very low	-	sat4	-	-	-	s__Staphylococcus aureus
+G18252266	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaI;blaR1;blaPC1	-	-	-	s__Staphylococcus aureus
+G18252266	fosfomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	murA:p.Gly257Asp;fosB	-	-	-	s__Staphylococcus aureus
+G18252266	-	sulfonamide antibiotic	R	nonwildtype	very low	-	folP:p.257_258insLysGlu;folP:p.Phe17Leu	-	-	-	s__Staphylococcus aureus
+G18252266	tetracycline	tetracycline antibiotic	R	nonwildtype	very low	-	tet(K);tet(M)	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
+G18252267	amikacin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252267	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252267	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadD1;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252267	tobramycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadD1;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252267	methicillin	beta-lactamase resistant penicillin	R	nonwildtype	very low	-	mecR1:-;mecA	-	-	-	s__Staphylococcus aureus
+G18252267	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrS1;dfrB:p.Ala135Thr	-	-	-	s__Staphylococcus aureus
+G18252267	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Ser84Leu;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
+G18252267	bleomycin	glycopeptide antibiotic	R	nonwildtype	very low	-	bleO	-	-	-	s__Staphylococcus aureus
+G18252267	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
+G18252267	clindamycin	lincosamide antibiotic	R	nonwildtype	very low	-	erm(C)	-	-	-	s__Staphylococcus aureus
+G18252267	erythromycin	macrolide antibiotic	R	nonwildtype	very low	-	erm(C)	-	-	-	s__Staphylococcus aureus
+G18252267	tylosin	macrolide antibiotic	R	nonwildtype	very low	-	erm(C)	-	-	-	s__Staphylococcus aureus
+G18252267	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaI;blaZ	-	-	-	s__Staphylococcus aureus
+G18252267	streptogramin b antibiotic	streptogramin antibiotic	R	nonwildtype	very low	-	erm(C)	-	-	-	s__Staphylococcus aureus
+G18252267	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
+G18252268	amikacin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252268	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252268	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadD1;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252268	tobramycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadD1;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252268	methicillin	beta-lactamase resistant penicillin	R	nonwildtype	very low	-	mecR1:-;mecA	-	-	-	s__Staphylococcus aureus
+G18252268	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrS1;dfrB:p.Ala135Thr	-	-	-	s__Staphylococcus aureus
+G18252268	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Ser84Leu;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
+G18252268	bleomycin	glycopeptide antibiotic	R	nonwildtype	very low	-	bleO	-	-	-	s__Staphylococcus aureus
+G18252268	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
+G18252268	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaZ;blaI	-	-	-	s__Staphylococcus aureus
+G18252268	chloramphenicol	phenicol antibiotic	R	nonwildtype	very low	-	catA	-	-	-	s__Staphylococcus aureus
+G18252268	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
+G18252269	amikacin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252269	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252269	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252269	spectinomycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	ant(9)-Ia	-	-	-	s__Staphylococcus aureus
+G18252269	streptomycin	aminoglycoside antibiotic	S	nonwildtype	very low	-	ant(6)-Ia:-	-	-	-	s__Staphylococcus aureus
+G18252269	tobramycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252269	methicillin	beta-lactamase resistant penicillin	R	nonwildtype	very low	-	mecI:-;mecR1;mecA	-	-	-	s__Staphylococcus aureus
+G18252269	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrG	-	-	-	s__Staphylococcus aureus
+G18252269	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Ser84Leu;gyrA:p.Ser85Pro;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
+G18252269	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
+G18252269	clindamycin	lincosamide antibiotic	R	nonwildtype	very low	-	erm(A)	-	-	-	s__Staphylococcus aureus
+G18252269	azithromycin	macrolide antibiotic	R	nonwildtype	very low	-	erm(A)	-	-	-	s__Staphylococcus aureus
+G18252269	clarithromycin	macrolide antibiotic	R	nonwildtype	very low	-	erm(A)	-	-	-	s__Staphylococcus aureus
+G18252269	erythromycin	macrolide antibiotic	R	nonwildtype	very low	-	erm(A)	-	-	-	s__Staphylococcus aureus
+G18252269	telithromycin	macrolide antibiotic	R	nonwildtype	very low	-	erm(A)	-	-	-	s__Staphylococcus aureus
+G18252269	streptothricin	nucleoside antibiotic	R	nonwildtype	very low	-	sat4	-	-	-	s__Staphylococcus aureus
+G18252269	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaZ:-;blaR1;blaI	-	-	-	s__Staphylococcus aureus
+G18252269	fosfomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	murA:p.Gly257Asp;fosB	-	-	-	s__Staphylococcus aureus
+G18252269	-	sulfonamide antibiotic	R	nonwildtype	very low	-	folP:p.257_258insLysGlu;folP:p.Phe17Leu	-	-	-	s__Staphylococcus aureus
+G18252269	tetracycline	tetracycline antibiotic	R	nonwildtype	very low	-	tet(K);tet(M)	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
+G18252272	amikacin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252272	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252272	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadD1;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252272	tobramycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadD1;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252272	methicillin	beta-lactamase resistant penicillin	R	nonwildtype	very low	-	mecA;mecR1:-	-	-	-	s__Staphylococcus aureus
+G18252272	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrS1;dfrB:p.Ala135Thr	-	-	-	s__Staphylococcus aureus
+G18252272	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Ser84Leu;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
+G18252272	bleomycin	glycopeptide antibiotic	R	nonwildtype	very low	-	bleO	-	-	-	s__Staphylococcus aureus
+G18252272	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
+G18252272	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaI;blaZ	-	-	-	s__Staphylococcus aureus
+G18252272	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
+G18252273	amikacin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252273	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252273	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252273	spectinomycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	ant(9)-Ia	-	-	-	s__Staphylococcus aureus
+G18252273	streptomycin	aminoglycoside antibiotic	S	nonwildtype	very low	-	ant(6)-Ia:-	-	-	-	s__Staphylococcus aureus
+G18252273	tobramycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252273	methicillin	beta-lactamase resistant penicillin	R	nonwildtype	very low	-	mecI:-;mecR1;mecA	-	-	-	s__Staphylococcus aureus
+G18252273	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrG	-	-	-	s__Staphylococcus aureus
+G18252273	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Ser84Leu;gyrA:p.Ser85Pro;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
+G18252273	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
+G18252273	clindamycin	lincosamide antibiotic	R	nonwildtype	very low	-	erm(A)	-	-	-	s__Staphylococcus aureus
+G18252273	azithromycin	macrolide antibiotic	R	nonwildtype	very low	-	erm(A)	-	-	-	s__Staphylococcus aureus
+G18252273	clarithromycin	macrolide antibiotic	R	nonwildtype	very low	-	erm(A)	-	-	-	s__Staphylococcus aureus
+G18252273	erythromycin	macrolide antibiotic	R	nonwildtype	very low	-	erm(A)	-	-	-	s__Staphylococcus aureus
+G18252273	telithromycin	macrolide antibiotic	R	nonwildtype	very low	-	erm(A)	-	-	-	s__Staphylococcus aureus
+G18252273	streptothricin	nucleoside antibiotic	R	nonwildtype	very low	-	sat4	-	-	-	s__Staphylococcus aureus
+G18252273	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaPC1;blaR1;blaI	-	-	-	s__Staphylococcus aureus
+G18252273	fosfomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	murA:p.Gly257Asp;fosB	-	-	-	s__Staphylococcus aureus
+G18252273	-	sulfonamide antibiotic	R	nonwildtype	very low	-	folP:p.257_258insLysGlu;folP:p.Phe17Leu	-	-	-	s__Staphylococcus aureus
+G18252273	tetracycline	tetracycline antibiotic	R	nonwildtype	very low	-	tet(K);tet(M)	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
+G18252276	amikacin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252276	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252276	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadD1;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252276	spectinomycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	ant(9)-Ia	-	-	-	s__Staphylococcus aureus
+G18252276	tobramycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadD1;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252276	methicillin	beta-lactamase resistant penicillin	R	nonwildtype	very low	-	mecR1:-;mecA;mecI:-	-	-	-	s__Staphylococcus aureus
+G18252276	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrS1;dfrB:p.Ala135Thr	-	-	-	s__Staphylococcus aureus
+G18252276	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Ser84Leu;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
+G18252276	bleomycin	glycopeptide antibiotic	R	nonwildtype	very low	-	bleO	-	-	-	s__Staphylococcus aureus
+G18252276	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
+G18252276	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaZ;blaI	-	-	-	s__Staphylococcus aureus
+G18252276	fosfomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	fosB	-	-	-	s__Staphylococcus aureus
+G18252276	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
+G18252277	amikacin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252277	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252277	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252277	tobramycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252277	methicillin	beta-lactamase resistant penicillin	R	nonwildtype	very low	-	mecA;mecR1:-	-	-	-	s__Staphylococcus aureus
+G18252277	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrS1;dfrB:p.Ala135Thr	-	-	-	s__Staphylococcus aureus
+G18252277	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Ser84Leu;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
+G18252277	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
+G18252277	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaZ;blaI	-	-	-	s__Staphylococcus aureus
+G18252277	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
+G18252278	amikacin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252278	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252278	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadD1;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252278	tobramycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadD1;aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252278	methicillin	beta-lactamase resistant penicillin	R	nonwildtype	very low	-	mecR1:-;mecA	-	-	-	s__Staphylococcus aureus
+G18252278	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrS1;dfrB:p.Ala135Thr	-	-	-	s__Staphylococcus aureus
+G18252278	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Ser84Leu;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
+G18252278	bleomycin	glycopeptide antibiotic	R	nonwildtype	very low	-	bleO	-	-	-	s__Staphylococcus aureus
+G18252278	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
+G18252278	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaZ;blaI	-	-	-	s__Staphylococcus aureus
+G18252278	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
+G18252279	amikacin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia;aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+G18252279	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252279	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia;aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+G18252279	streptomycin	aminoglycoside antibiotic	S	nonwildtype	very low	-	ant(6)-Ia:-	-	-	-	s__Staphylococcus aureus
+G18252279	tobramycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252279	methicillin	beta-lactamase resistant penicillin	R	nonwildtype	very low	-	mecA	-	-	-	s__Staphylococcus aureus
+G18252279	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrG	-	-	-	s__Staphylococcus aureus
+G18252279	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Ser84Leu;parC:p.Ser80Tyr	-	-	-	s__Staphylococcus aureus
+G18252279	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
+G18252279	erythromycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(C);msr(A)	-	-	-	s__Staphylococcus aureus
+G18252279	spiramycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(C)	-	-	-	s__Staphylococcus aureus
+G18252279	telithromycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(C)	-	-	-	s__Staphylococcus aureus
+G18252279	streptothricin	nucleoside antibiotic	S	nonwildtype	very low	-	sat4:-	-	-	-	s__Staphylococcus aureus
+G18252279	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaZ;blaR1;blaI;blaI;blaZ	-	-	-	s__Staphylococcus aureus
+G18252279	fosfomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	fosB	-	-	-	s__Staphylococcus aureus
+G18252279	streptogramin b antibiotic	streptogramin antibiotic	R	nonwildtype	very low	-	msr(A)	-	-	-	s__Staphylococcus aureus
+G18252279	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
+G18252280	amikacin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252280	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252280	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252280	tobramycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+G18252280	methicillin	beta-lactamase resistant penicillin	R	nonwildtype	very low	-	mecR1:-;mecA	-	-	-	s__Staphylococcus aureus
+G18252280	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrB:p.Ala135Thr	-	-	-	s__Staphylococcus aureus
+G18252280	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Ser84Leu;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
+G18252280	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
+G18252280	clindamycin	lincosamide antibiotic	R	nonwildtype	very low	-	erm(C)	-	-	-	s__Staphylococcus aureus
+G18252280	erythromycin	macrolide antibiotic	R	nonwildtype	very low	-	erm(C)	-	-	-	s__Staphylococcus aureus
+G18252280	tylosin	macrolide antibiotic	R	nonwildtype	very low	-	erm(C)	-	-	-	s__Staphylococcus aureus
+G18252280	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaZ;blaI	-	-	-	s__Staphylococcus aureus
+G18252280	streptogramin b antibiotic	streptogramin antibiotic	R	nonwildtype	very low	-	erm(C)	-	-	-	s__Staphylococcus aureus
+G18252280	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
+SRR19379371	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
+SRR19379371	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
+SRR19379371	fosfomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	glpT:p.Ala100Val;murA:p.Glu291Asp;murA:p.Thr396Asn	-	-	-	s__Staphylococcus aureus
+SRR19379371	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
+SRR19379375	fusidic acid	fusidane antibiotic	R	nonwildtype	very low	-	fusC	-	-	-	s__Staphylococcus aureus
+SRR19379375	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
+SRR19379375	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
+SRR19379375	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
+SRR19379418	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
+SRR19379418	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaI;blaR1;blaPC1	-	-	-	s__Staphylococcus aureus
+SRR19379418	fosfomycin	phosphonic acid antibiotic	R	nonwildtype	very low	-	glpT:p.Ala100Val;glpT:p.Val213Ile;fosB;murA:p.Asp278Glu;murA:p.Glu291Asp	-	-	-	s__Staphylococcus aureus
+SRR19379418	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
