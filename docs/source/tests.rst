@@ -29,7 +29,7 @@ Beta-testing data
 
 Additional test datasets are available for select organisms.
 
-**E. coli**: 20 *E. coli* genomes ranging from wildtype susceptible to multidrug resistant.
+**Escherichia coli**: 20 *E. coli* genomes ranging from wildtype susceptible to multidrug resistant.
 
 Genomes sourced from Mills et al, 2022, which includes AST profiles available `here <https://doi.org/10.1186/s13073-022-01150-7>`__.
 
@@ -38,3 +38,8 @@ Genomes sourced from Mills et al, 2022, which includes AST profiles available `h
     amrrules --input tests/data/input/test_ecoli_20strains.tsv --output-prefix test_ecoli_20strains --organism 's__Escherichia coli'
 
 
+**Staphylococcus aureus**: 20 *S. aureus* genomes ranging from wildtype susceptible to multidrug resistant.
+
+:: 
+
+    amrrules --input tests/data/input/test_saureus_20strains.tsv --output-prefix test_saureus_20strains --organism 's__Staphylococcus aureus'
