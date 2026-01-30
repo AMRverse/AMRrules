@@ -16,7 +16,7 @@ To run the AMRrules test data, use the following commands:
     amrrules --input tests/data/input/test_ecoli_wildtype.tsv --output-prefix test_ecoli_wildtype --organism 's__Escherichia coli'
     
     # test a single wild-type K. pneumoniae genome, and flag core genes in the summary output
-    amrrules --input tests/data/input/test_kleb_wildtype.tsv --output-prefix test_kleb_wildtype --organism 's__Klebsiella pneumoniae' --flag-core
+    amrrules --input tests/data/input/test_kpneumo_wildtype.tsv --output-prefix test_kpneumo_wildtype --organism 's__Klebsiella pneumoniae' --flag-core
 
     # test a multi-genome, multi-species example
     amrrules  --input tests/data/input/test_multispp_amrfp.tsv --output-prefix test_multispp --organism-file tests/data/input/test_multispp_species.tsv
@@ -36,6 +36,15 @@ Genomes sourced from Mills et al, 2022, which includes AST profiles available `h
 :: 
 
     amrrules --input tests/data/input/test_ecoli_20strains.tsv --output-prefix test_ecoli_20strains --organism 's__Escherichia coli'
+
+**Klebsiella pneumoniae**: 20 *K. pneumoniae* genomes ranging from wildtype susceptible to multidrug resistant.
+
+Genomes sourced from Heinz et al, 2019, which includes AST profiles available `here <https://doi.org/10.1099/mgen.0.000266>`__.
+
+:: 
+
+    amrrules --input tests/data/input/test_kpneumo_20strains.tsv --output-prefix test_kpneumo_20strains --organism 's__Klebsiella pneumoniae'
+
 
 
 **Staphylococcus aureus**: 20 *S. aureus* genomes ranging from wildtype susceptible to multidrug resistant.
