@@ -9,15 +9,15 @@ Interpreting AMRFinderPlus results for a single genome:
 
 ::
 
-    amrrules --input tests/data/input/test_ecoli_genome.tsv --output-prefix test_ecoli_genome --organism 's__Escherichia coli'
-    amrrules --input tests/data/input/test_kleb_SGH10.tsv --output-prefix test_kleb_SGH10 --organism 's__Klebsiella pneumoniae'
+    amrrules --input tests/data/input/test_ecoli_wildtype.tsv --output-prefix test_ecoli_wildtype --organism 's__Escherichia coli'
+    amrrules --input tests/data/input/test_kpneumo_wildtype.tsv --output-prefix test_kpneumo_wildtype --organism 's__Klebsiella pneumoniae'
 
 
 Interpret AMRFinderPlus results for multiple genomes of different organisms, by providing a sample/organism mapping file:
 
 ::
 
-    amrrules  --input tests/data/input/test_data_amrfp_multiSpp.tsv --output-prefix test_multispp --organism-file tests/data/input/test_data_sppCalls.tsv
+    amrrules  --input tests/data/input/test_multispp_amrfp.tsv --output-prefix test_multispp --organism-file tests/data/input/test_multispp_species.tsv
 
 
 Usage
@@ -71,9 +71,7 @@ Detailed options
                         If interpreting a single genome, can optionally provide sample ID here. If no sample_id is provided, and the first column of the input file doesn't define a
                         sample_id, then the default value will be 'sample'.
   --organism, -o ORGANISM
-                        Organism to interpret. Must be one of: s__Enterobacter hormaechei, s__Enterobacter roggenkampii, s__Enterococcus faecalis, s__Enterococcus faecium,
-                        s__Klebsiella grimontii, s__Klebsiella huaxiensis, s__Klebsiella michiganensis, s__Klebsiella oxytoca, s__Klebsiella pasteurii, s__Klebsiella spallanzanii,
-                        s__Salmonella enterica
+                        Organism to interpret. Use --list-organisms to see all supported organisms.
   --organism-file, -of ORGANISM_FILE
                         Path to the organism file. This file should have two columns: genome name in col1 (matching the sample name in the first col of the input file), and col2 is
                         the organism name, which should be one of the supported organisms. File should be in tab-delimited format, with no header
