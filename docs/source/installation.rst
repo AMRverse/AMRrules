@@ -31,6 +31,10 @@ After installation, you must download the required AMRFinderPlus resource files.
 
 This will download and cache the necessary files for AMRrules to function. You only need to run this **once** after installation, or when updating resources (eg a new AMRFinderPlus database has been released).
 
+
+Check the installation
+======================
+
 Check which organisms have rule-sets available in the installation::
     
     amrrules --list-organisms
@@ -55,6 +59,11 @@ Compare these resulting output files to those in ``tests/data/example_output``..
    :file: ../../tests/data/example_output/test_ecoli_wildtype_genome_summary.tsv
    :delim: tab
    :header-rows: 1
+
+Usage info and test data
+========================
+
+More info on usage options can be found on the :ref:`Usage <usage>` page.
 
 Additional test data and example commands can be found on the :ref:`Tests <test>` page.
 
