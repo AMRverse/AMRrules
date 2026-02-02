@@ -23,6 +23,8 @@ class GenoResult:
         self.to_process: bool = False
         # option to print this row into the interpreted output, default is not to print
         self.print_row: bool = False
+        # whether this gene is a partial hit or not
+        self.partial: bool = False
 
         # amrfp relevant fields(filled by parser)
         self.nodeID: Optional[str] = None
@@ -92,6 +94,10 @@ class GenoResult:
         elif self.method == "INTERNAL_STOP" or self.method.startswith("PARTIAL"):
             self.variation_type = "Inactivating mutation detected"
             self.mutation = '-' # set mutation to '-' for the summary marker later
+            # if it's a partial hit, then set this value to true so we can add it to the
+            # 'partial' summary column. This is different to a point_disrupt where we expect
+            # a phenotypic effect
+            self.partial = True
         else:
             self.variation_type = "Gene presence detected"
         
@@ -370,6 +376,11 @@ class Genotype(GenoResult):
         # if the drug_class is '-', set to 'unassigned markers'
         if self.drug_class == '-':
             self.drug_class = 'unassigned markers'
+        # if the marker is inactivated, and we have no assigned rule, set the class to 'partial'
+        # only do this for partial hits, not point_disrupts where we expect a phenotypic effect
+        if self.variation_type == "Inactivating mutation detected" and self.partial:
+            self.drug_class = 'partial'
+            self.drug = '-'
     
     def _assign_rule_attributes(self, rule):
         # assign other important attributes from the rule for summary purposes

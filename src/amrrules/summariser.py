@@ -43,6 +43,16 @@ class SummaryEntry:
             geno_objs = self.geno_objs + class_summary.geno_objs
         else:
             geno_objs = self.geno_objs
+
+        # if it's 'unassigned markers' or 'partial', then we have no category/phenotype/evidence
+        # so just set these values and exit
+        if self.drug_class in ['unassigned markers', 'partial']:
+            self.category = '-'
+            self.phenotype = '-'
+            self.evidence_grade = '-'
+            return
+        
+        # otherwise, continue on
         # Extract values from genotype objects
         #categories = [g.clinical_category for g in self.geno_objs if hasattr(g, 'clinical_category')]
         phenotypes = [g.phenotype for g in geno_objs if hasattr(g, 'phenotype')]
@@ -163,15 +173,17 @@ class SummaryEntry:
 
 def order_summary_objs(objs):
     """
-    Sort a list of summaryEntry objects first by drug_class (alphabetically, with 'antibiotic efflux' second last and 'unassigned markers' last),
+    Sort a list of summaryEntry objects first by drug_class (alphabetically, with 'antibiotic efflux', followed by 'unassigned markers', with 'partial' last),
     then by drug (alphabetically, '-' last).
     """
     def drug_class_sort_key(drug_class):
         drug_class_lower = drug_class.lower()
-        if drug_class_lower == "unassigned markers":
-            return (2, "")  # Last
+        if drug_class_lower == "partial":
+            return (3, "")  # Last
+        elif drug_class_lower == "unassigned markers":
+            return (2, "")  # Second last
         elif drug_class_lower == "antibiotic efflux":
-            return (1, "")  # Second last
+            return (1, "")  # Third last
         else:
             return (0, drug_class_lower)  # Alphabetical for all others
     
