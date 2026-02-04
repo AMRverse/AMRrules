@@ -47,7 +47,7 @@ Genomes sourced from Heinz et al, 2019, which includes AST profiles available `h
 
 
 
-**Staphylococcus aureus**: 20 *S. aureus* genomes ranging from wildtype susceptible to multidrug resistant.
+**Staphylococcus aureus**: 20 *S. aureus* genomes sourced from Worley et al, 2023, which includes AST profiles available `here <https://doi.org/10.1128/jcm.00014-23>`__.
 
 :: 
 
