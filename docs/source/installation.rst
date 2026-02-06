@@ -39,10 +39,9 @@ Check which organisms have rule-sets available in the installation::
     
     amrrules --list-organisms
 
-Test on some included example datasets::
+Test on one of the included example dataset::
     
     amrrules --input tests/data/input/test_ecoli_wildtype.tsv --output-prefix test_ecoli_wildtype --organism 's__Escherichia coli'
-    amrrules --input tests/data/input/test_kpneumo_wildtype.tsv --output-prefix test_kpneumo_wildtype --organism 's__Klebsiella pneumoniae'
 
 Compare these resulting output files to those in ``tests/data/example_output``...
 
