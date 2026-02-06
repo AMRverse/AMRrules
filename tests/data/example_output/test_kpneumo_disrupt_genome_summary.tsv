@@ -27,10 +27,11 @@ SAMEA3538570.fasta	azithromycin	macrolide antibiotic	R	nonwildtype	very low	-	mp
 SAMEA3538570.fasta	erythromycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
 SAMEA3538570.fasta	spiramycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
 SAMEA3538570.fasta	telithromycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
-SAMEA3538570.fasta	-	penicillin beta-lactam	R	nonwildtype	high	blaSHV-11	blaOXA:-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA3538570.fasta	-	penicillin beta-lactam	R	wildtype	high	blaSHV-11	-	-	KPN0001	-	s__Klebsiella pneumoniae
 SAMEA3538570.fasta	chloramphenicol	phenicol antibiotic	R	nonwildtype	very low	-	catA1	-	-	-	s__Klebsiella pneumoniae
 SAMEA3538570.fasta	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
 SAMEA3538570.fasta	-	sulfonamide antibiotic	R	nonwildtype	very low	-	sul1	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538570.fasta	-	partial	-	-	-	-	blaOXA:-	-	-	-	s__Klebsiella pneumoniae
 SAMEA3538572.fasta	amikacin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
 SAMEA3538572.fasta	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(3)-IIe	-	-	-	s__Klebsiella pneumoniae
 SAMEA3538572.fasta	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
@@ -42,9 +43,10 @@ SAMEA3538572.fasta	ciprofloxacin	fluoroquinolone antibiotic	R	nonwildtype	very l
 SAMEA3538572.fasta	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	parC:p.Glu84Lys;aac(6')-Ib-cr5;gyrA:p.Asp87Ala;gyrA:p.Ser83Tyr	-	-	-	s__Klebsiella pneumoniae
 SAMEA3538572.fasta	tigecycline	glycylcycline	R	nonwildtype	very low	-	ramR:p.Ala19Val	-	-	-	s__Klebsiella pneumoniae
 SAMEA3538572.fasta	-	penicillin beta-lactam	R	wildtype	high	blaSHV-11	-	-	KPN0001	-	s__Klebsiella pneumoniae
-SAMEA3538572.fasta	chloramphenicol	phenicol antibiotic	R	nonwildtype	very low	-	catA1;catB3:-	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538572.fasta	chloramphenicol	phenicol antibiotic	R	nonwildtype	very low	-	catA1	-	-	-	s__Klebsiella pneumoniae
 SAMEA3538572.fasta	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
 SAMEA3538572.fasta	-	sulfonamide antibiotic	R	nonwildtype	very low	-	sul1	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538572.fasta	-	partial	-	-	-	-	catB3:-	-	-	-	s__Klebsiella pneumoniae
 SAMEA3538584.fasta	amikacin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(3')-VIb	-	-	-	s__Klebsiella pneumoniae
 SAMEA3538584.fasta	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(3)-IId	-	-	-	s__Klebsiella pneumoniae
 SAMEA3538584.fasta	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(3')-VIb;aph(3')-Ia	-	-	-	s__Klebsiella pneumoniae

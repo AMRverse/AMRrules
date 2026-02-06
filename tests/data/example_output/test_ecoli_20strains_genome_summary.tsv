@@ -138,7 +138,8 @@ SAMN26309309	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC
 SAMN26309309	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0014	-	s__Escherichia coli
 SAMN26309309	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
 SAMN26309309	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
-SAMN26309309	-	antibiotic efflux	-	-	-	-	acrF:-;mdtM	-	-	-	s__Escherichia coli
+SAMN26309309	-	antibiotic efflux	-	-	-	-	mdtM	-	-	-	s__Escherichia coli
+SAMN26309309	-	partial	-	-	-	-	acrF:-	-	-	-	s__Escherichia coli
 SAMN26309238	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(3)-IId	-	-	-	s__Escherichia coli
 SAMN26309238	imipenem	carbapenem	S	wildtype	high	-	-	blaEC-5	ECO0016;ECO0017	-	s__Escherichia coli
 SAMN26309238	-	carbapenem	S	wildtype	high	-	-	blaEC-5	ECO0016	-	s__Escherichia coli
@@ -357,7 +358,6 @@ SAMN26309433	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaE
 SAMN26309433	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
 SAMN26309433	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
 SAMN26309433	-	antibiotic efflux	-	-	-	-	mdtM;acrF	-	-	-	s__Escherichia coli
-SAMN26304536	gentamicin	aminoglycoside antibiotic	S	nonwildtype	very low	-	aac(3)-II:-	-	-	-	s__Escherichia coli
 SAMN26304536	streptomycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(3'')-Ib;aph(6)-Id	-	-	-	s__Escherichia coli
 SAMN26304536	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
 SAMN26304536	-	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia coli
@@ -387,6 +387,7 @@ SAMN26304536	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaE
 SAMN26304536	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
 SAMN26304536	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
 SAMN26304536	-	antibiotic efflux	-	-	-	-	mdtM;acrF;emrD	-	-	-	s__Escherichia coli
+SAMN26304536	-	partial	-	-	-	-	aac(3)-II:-	-	-	-	s__Escherichia coli
 SAMN26308724	imipenem	carbapenem	S	wildtype	high	-	-	blaEC-5	ECO0016;ECO0017	-	s__Escherichia coli
 SAMN26308724	-	carbapenem	S	wildtype	high	-	-	blaEC-5	ECO0016	-	s__Escherichia coli
 SAMN26308724	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC-5	-	blaEC-5	ECO0005;ECO0006	-	s__Escherichia coli

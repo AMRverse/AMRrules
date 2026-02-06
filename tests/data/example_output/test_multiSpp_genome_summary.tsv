@@ -1,14 +1,12 @@
 sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
 SAMD00028844	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(3)-Ia	-	-	-	s__Acinetobacter baumannii
 SAMD00028844	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(3')-Ia	-	-	-	s__Acinetobacter baumannii
-SAMD00028844	spectinomycin	aminoglycoside antibiotic	S	nonwildtype	very low	-	ant(3'')-IIa:-	-	-	-	s__Acinetobacter baumannii
-SAMD00028844	streptomycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadA1;aph(6)-Id;aph(3'')-Ib;ant(3'')-IIa:-	-	-	-	s__Acinetobacter baumannii
+SAMD00028844	streptomycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadA1;aph(6)-Id;aph(3'')-Ib	-	-	-	s__Acinetobacter baumannii
 SAMD00028844	-	carbapenem	S	wildtype	moderate	-	-	blaOXA	ACI0146	-	s__Acinetobacter baumannii
-SAMD00028844	-	cephalosporin	S	nonwildtype	very low	-	blaADC:-	-	-	-	s__Acinetobacter baumannii
 SAMD00028844	-	fluoroquinolone antibiotic	R	nonwildtype	high	gyrA:p.Ser81Leu	parC:p.Ser84Leu	-	ACI0162	-	s__Acinetobacter baumannii
 SAMD00028844	-	sulfonamide antibiotic	R	nonwildtype	very low	-	sul1;sul2	-	-	-	s__Acinetobacter baumannii
 SAMD00028844	tetracycline	tetracycline antibiotic	R	nonwildtype	very low	-	tet(B)	-	-	-	s__Acinetobacter baumannii
-SAMD00028844	-	antibiotic efflux	-	-	-	-	adeC:-;amvA:-	-	-	-	s__Acinetobacter baumannii
+SAMD00028844	-	partial	-	-	-	-	adeC:-;amvA:-;blaADC:-;ant(3'')-IIa:-;ant(3'')-IIa:-	-	-	-	s__Acinetobacter baumannii
 SAMD00000649	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
 SAMD00000649	-	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia coli
 SAMD00000649	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
@@ -28,7 +26,8 @@ SAMD00000649	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC
 SAMD00000649	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0014	-	s__Escherichia coli
 SAMD00000649	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
 SAMD00000649	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	-	s__Escherichia coli
-SAMD00000649	-	antibiotic efflux	-	-	-	-	acrF:-;mdtM	-	-	-	s__Escherichia coli
+SAMD00000649	-	antibiotic efflux	-	-	-	-	mdtM	-	-	-	s__Escherichia coli
+SAMD00000649	-	partial	-	-	-	-	acrF:-	-	-	-	s__Escherichia coli
 SAMD00000724	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
 SAMD00000724	-	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia coli
 SAMD00000724	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
@@ -51,23 +50,22 @@ SAMD00000724	-	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012	
 SAMD00000724	-	antibiotic efflux	-	-	-	-	mdtM;acrF	-	-	-	s__Escherichia coli
 SAMD00055728	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ib4	-	-	-	s__Klebsiella pneumoniae
 SAMD00055728	kanamycin A	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(3')-Ia	-	-	-	s__Klebsiella pneumoniae
-SAMD00055728	streptomycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadA1;aadA2:-	-	-	-	s__Klebsiella pneumoniae
+SAMD00055728	streptomycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aadA1	-	-	-	s__Klebsiella pneumoniae
 SAMD00055728	-	carbapenem	R	nonwildtype	very low	-	ompK36:p.Gln313Ter;blaVIM-1	-	-	-	s__Klebsiella pneumoniae
 SAMD00055728	-	cephalosporin	R	nonwildtype	very low	-	blaOXA-10;blaBEL-1	-	-	-	s__Klebsiella pneumoniae
 SAMD00055728	trimethoprim	diaminopyrimidine antibiotic	R	nonwildtype	very low	-	dfrB1;dfrA12	-	-	-	s__Klebsiella pneumoniae
 SAMD00055728	ciprofloxacin	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Ser83Ile;parC:p.Ser80Ile;qnrA1	oqxB19;oqxA10	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
 SAMD00055728	-	fluoroquinolone antibiotic	R	nonwildtype	very low	-	gyrA:p.Ser83Ile;parC:p.Ser80Ile;qnrA1	-	-	-	s__Klebsiella pneumoniae
-SAMD00055728	azithromycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(A):-;msr(E)	-	-	-	s__Klebsiella pneumoniae
-SAMD00055728	erythromycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(A):-;msr(E);mph(E)	-	-	-	s__Klebsiella pneumoniae
-SAMD00055728	spiramycin	macrolide antibiotic	S	nonwildtype	very low	-	mph(A):-	-	-	-	s__Klebsiella pneumoniae
-SAMD00055728	telithromycin	macrolide antibiotic	S	nonwildtype	very low	-	mph(A):-	-	-	-	s__Klebsiella pneumoniae
+SAMD00055728	azithromycin	macrolide antibiotic	R	nonwildtype	very low	-	msr(E)	-	-	-	s__Klebsiella pneumoniae
+SAMD00055728	erythromycin	macrolide antibiotic	R	nonwildtype	very low	-	msr(E);mph(E)	-	-	-	s__Klebsiella pneumoniae
 SAMD00055728	-	penicillin beta-lactam	R	wildtype	high	blaSHV-1	-	-	KPN0001	-	s__Klebsiella pneumoniae
 SAMD00055728	chloramphenicol	phenicol antibiotic	R	nonwildtype	very low	-	catB2;catA1	-	-	-	s__Klebsiella pneumoniae
 SAMD00055728	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
 SAMD00055728	-	streptogramin antibiotic	R	nonwildtype	very low	-	msr(E)	-	-	-	s__Klebsiella pneumoniae
 SAMD00055728	-	sulfonamide antibiotic	R	nonwildtype	very low	-	sul1;sul1	-	-	-	s__Klebsiella pneumoniae
 SAMD00055728	-	antibiotic efflux	-	-	-	-	emrD	-	-	-	s__Klebsiella pneumoniae
-SAMD00055732	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(3)-IId;aac(6')-Ib4;aac(3)-IIe:-	-	-	-	s__Klebsiella pneumoniae
+SAMD00055728	-	partial	-	-	-	-	mph(A):-;mph(A):-;mph(A):-;mph(A):-;aadA2:-	-	-	-	s__Klebsiella pneumoniae
+SAMD00055732	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(3)-IId;aac(6')-Ib4	-	-	-	s__Klebsiella pneumoniae
 SAMD00055732	streptomycin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aph(3'')-Ib;aph(6)-Id	-	-	-	s__Klebsiella pneumoniae
 SAMD00055732	-	carbapenem	R	nonwildtype	very low	-	blaIMP-4	-	-	-	s__Klebsiella pneumoniae
 SAMD00055732	-	cephalosporin	R	nonwildtype	very low	-	blaCTX-M-15;blaOXA-1	-	-	-	s__Klebsiella pneumoniae
@@ -79,16 +77,16 @@ SAMD00055732	erythromycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(A)	-
 SAMD00055732	spiramycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
 SAMD00055732	telithromycin	macrolide antibiotic	R	nonwildtype	very low	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
 SAMD00055732	-	penicillin beta-lactam	R	nonwildtype	high	blaSHV-1	blaTEM-1	-	KPN0001	-	s__Klebsiella pneumoniae
-SAMD00055732	chloramphenicol	phenicol antibiotic	S	nonwildtype	very low	-	catB3:-	-	-	-	s__Klebsiella pneumoniae
 SAMD00055732	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
 SAMD00055732	-	sulfonamide antibiotic	R	nonwildtype	very low	-	sul2;sul1	-	-	-	s__Klebsiella pneumoniae
 SAMD00055732	-	antibiotic efflux	-	-	-	-	emrD	-	-	-	s__Klebsiella pneumoniae
+SAMD00055732	-	partial	-	-	-	-	catB3:-;aac(3)-IIe:-	-	-	-	s__Klebsiella pneumoniae
 SAMD00002817	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
 SAMD00002817	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
 SAMD00009488	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
 SAMD00009488	-	penicillin beta-lactam	R	nonwildtype	very low	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
-SAMD00009488	fosfomycin	phosphonic acid antibiotic	S	nonwildtype	very low	-	fosB:-	-	-	-	s__Staphylococcus aureus
 SAMD00009488	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38)	STA0002;STA0003	-	s__Staphylococcus aureus
+SAMD00009488	-	partial	-	-	-	-	fosB:-	-	-	-	s__Staphylococcus aureus
 SAMD00019033	kanamycin	-	R	wildtype	high	aph(3')-IIb;mexX	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
 SAMD00019033	amikacin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0001	-	s__Pseudomonas aeruginosa
 SAMD00019033	gentamicin	aminoglycoside antibiotic	R	nonwildtype	very low	-	aac(6')-Ib	-	-	-	s__Pseudomonas aeruginosa
