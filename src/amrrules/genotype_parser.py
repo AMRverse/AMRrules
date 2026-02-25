@@ -395,31 +395,36 @@ class Genotype(GenoResult):
         # note that our interpretation depends on user choice
         # AND also if the variation type is "Inactivating mutation detected" but we've got no rule
 
-        # regardless of user choice, the phenotype is always nonwildtype
-        self.phenotype = 'nonwildtype'
-        # if there is no rule and drug and drug class are '-'
-        # if the variation type is inactivating, and we've got no rule
-        # then we treat it as though the gene isn't functional, so therefore is S
+        # only set phenotype to nonwildtype if the user has selected one of the nwt options, otherwise it's '-'
+        if no_rule_interpretation in ['nwtR', 'nwtS', 'nwt']:
+            self.phenotype = 'nonwildtype'
+        else:
+            self.phenotype = '-'
+        
+        # set clinical category to no interpretation if none or nwt
+        if no_rule_interpretation in ['none', 'nwt']:
+            self.clinical_category = '-'
+        elif no_rule_interpretation == 'nwtS':
+            self.clinical_category = 'S'
+        elif no_rule_interpretation == 'nwtR':
+            self.clinical_category = 'R'
+        
+        # However, if the variation type is inactivating, and we've got no rule
+        # then we treat it as though the gene isn't functional
         if self.variation_type == "Inactivating mutation detected":
             # the ONLY exception to this is if it's a POINT_DISRUPT, in which case the default interpretation should be R
             # (if nwtR), as these are interruptions in core genes that are likely to cause resistance
             if self.subtype == "POINT_DISRUPT" and no_rule_interpretation == 'nwtR':
                 self.clinical_category = 'R'
-            else:
-                self.clinical_category = 'S'
         # otherwise the gene is considered functional, so we use what the user has selected
-        if self.variation_type != "Inactivating mutation detected" and no_rule_interpretation == 'nwtR':
-            self.clinical_category = 'R'
-        elif no_rule_interpretation == 'nwtS':
-            self.clinical_category = 'S'
         
-        # regardless evidence is very low and there is no ruleID to set
+        # regardless of user choice, evidence is very low and there is no ruleID to set
         self.evidence_grade = 'very low'
         self.ruleID = None
 
-        # if the drug class is 'antibiotic efflux' or 'unassigned markers', and we have no rule (which is why we're in this function)
+        # if the drug class is 'antibiotic efflux', 'unassigned markers', or 'partial', and we have no rule (which is why we're in this function)
         # then we need to update phenotype, category and grade to be '-', as these are not being interpreted
-        if self.drug_class in ['antibiotic efflux', 'unassigned markers']:
+        if self.drug_class in ['antibiotic efflux', 'unassigned markers', 'partial']:
             self.phenotype = '-'
             self.clinical_category = '-'
             self.evidence_grade = '-'
