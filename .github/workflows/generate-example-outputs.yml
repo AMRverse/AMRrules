@@ -59,7 +59,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add tests/data/example_outputs/
+          git add tests/data/example_output/
           # Only commit if there are actual changes
           git diff --cached --quiet || git commit -m "chore: regenerate example outputs [skip ci]"
           git push
