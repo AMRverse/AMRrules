@@ -26,9 +26,6 @@ jobs:
 
       - name: Download required resources
         run: amrrules --download-resources
-      
-      - name: Create output directory
-        run: mkdir -p tests/data/example_outputs
 
       # -----------------------------------------------------------------------
       # Run example commands from:
@@ -37,22 +34,22 @@ jobs:
       - name: Run example commands
         run: |
           # wildtype e coli
-          amrrules --input tests/data/input/test_ecoli_wildtype.tsv --output-prefix test_ecoli_wildtype --organism 's__Escherichia coli' --output-dir tests/data/example_outputs
+          amrrules --input tests/data/input/test_ecoli_wildtype.tsv --output-prefix test_ecoli_wildtype --organism 's__Escherichia coli' --output-dir tests/data/example_output
 
           # wildtype Kp with core genes flagged
-          amrrules --input tests/data/input/test_kpneumo_wildtype.tsv --output-prefix test_kpneumo_wildtype --organism 's__Klebsiella pneumoniae' --flag-core --output-dir tests/data/example_outputs
+          amrrules --input tests/data/input/test_kpneumo_wildtype.tsv --output-prefix test_kpneumo_wildtype --organism 's__Klebsiella pneumoniae' --flag-core --output-dir tests/data/example_output
 
           # multispecies example
-          amrrules  --input tests/data/input/test_multispp_amrfp.tsv --output-prefix test_multispp --organism-file tests/data/input/test_multispp_species.tsv --output-dir tests/data/example_outputs
+          amrrules  --input tests/data/input/test_multispp_amrfp.tsv --output-prefix test_multispp --organism-file tests/data/input/test_multispp_species.tsv --output-dir tests/data/example_output
 
           # 20 E coli strains with matched AST
-          amrrules --input tests/data/input/test_ecoli_20strains.tsv --output-prefix test_ecoli_20strains --organism 's__Escherichia coli' --output-dir tests/data/example_outputs
+          amrrules --input tests/data/input/test_ecoli_20strains.tsv --output-prefix test_ecoli_20strains --organism 's__Escherichia coli' --output-dir tests/data/example_output
 
           # 20 Kp strains with matched AST
-          amrrules --input tests/data/input/test_kpneumo_20strains.tsv --output-prefix test_kpneumo_20strains --organism 's__Klebsiella pneumoniae' --output-dir tests/data/example_outputs
+          amrrules --input tests/data/input/test_kpneumo_20strains.tsv --output-prefix test_kpneumo_20strains --organism 's__Klebsiella pneumoniae' --output-dir tests/data/example_output
 
           # 20 S aureus strains with matched AST
-          amrrules --input tests/data/input/test_saureus_20strains.tsv --output-prefix test_saureus_20strains --organism 's__Staphylococcus aureus' --output-dir tests/data/example_outputs
+          amrrules --input tests/data/input/test_saureus_20strains.tsv --output-prefix test_saureus_20strains --organism 's__Staphylococcus aureus' --output-dir tests/data/example_output
 
       # -----------------------------------------------------------------------
       # Commit and push any new or changed output files back to the branch.
