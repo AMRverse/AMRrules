@@ -26,6 +26,9 @@ jobs:
 
       - name: Download required resources
         run: amrrules --download-resources
+      
+      - name: Create output directory
+        run: mkdir -p tests/data/example_outputs
 
       # -----------------------------------------------------------------------
       # Run example commands from:
