@@ -401,13 +401,17 @@ class Genotype(GenoResult):
         else:
             self.phenotype = '-'
         
-        # set clinical category to no interpretation if none or nwt
+        # set clinical category to no interpretation if none or nwt, and evidence grade to '-'
         if no_rule_interpretation in ['none', 'nwt']:
             self.clinical_category = '-'
+            self.evidence_grade = '-'
+        # evidence grade is very low if we are giving a clinical category
         elif no_rule_interpretation == 'nwtS':
             self.clinical_category = 'S'
+            self.evidence_grade = 'very low'
         elif no_rule_interpretation == 'nwtR':
             self.clinical_category = 'R'
+            self.evidence_grade = 'very low'
         
         # However, if the variation type is inactivating, and we've got no rule
         # then we treat it as though the gene isn't functional
@@ -418,8 +422,7 @@ class Genotype(GenoResult):
                 self.clinical_category = 'R'
         # otherwise the gene is considered functional, so we use what the user has selected
         
-        # regardless of user choice, evidence is very low and there is no ruleID to set
-        self.evidence_grade = 'very low'
+        # regardless of user choice, there is no ruleID to set
         self.ruleID = None
 
         # if the drug class is 'antibiotic efflux', 'unassigned markers', or 'partial', and we have no rule (which is why we're in this function)

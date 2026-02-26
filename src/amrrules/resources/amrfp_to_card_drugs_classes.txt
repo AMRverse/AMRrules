@@ -17,7 +17,7 @@ CARBAPENEM	-	ARO:0000020	carbapenem
 CEFIDEROCOL	cefiderocol	ARO:3004474	cephalosporin
 CEFTAROLINE	ceftaroline	ARO:3000651	cephalosporin
 CEFTAZIDIME-AVIBACTAM	ceftazidime-avibactam	ARO:3007072	cephalosporin plus beta-lactamase inhibitor
-CEPHALOSPORIN	-	ARO:0000032	cephalosporin
+CEPHALOSPORIN	-	ARO:0000032	third-generation cephalosporin 
 CEPHALOTHIN	cefalotin	ARO:3000704	cephalosporin
 CHLORAMPHENICOL	chloramphenicol	ARO:3000385	phenicol antibiotic
 CLARITHROMYCIN	clarithromycin	ARO:0000065	macrolide antibiotic
@@ -117,4 +117,4 @@ VABORBACTAM	vaborbactam	ARO:3004380	beta-lactamase inhibitor
 AZTREONAM-AVIBACTAM	aztreonam-avibactam	ARO:3007366	monobactam plus beta-lactamase inhibitor
 CEFEPIME-TANIBORBACTAM	cefepime-taniborbactam	ARO:3007148	cephalosporin plus beta-lactamase inhibitor
 CEFTIBUTEN-AVIBACTAM	-	-	-
-CEFTIBUTEN	ceftibuten	ARO:3000648	cephalosporin
+CEFTIBUTEN	ceftibuten	ARO:3000648	third-generation cephalosporin

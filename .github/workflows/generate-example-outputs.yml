@@ -1,0 +1,65 @@
+name: Generate Example Outputs
+
+on:
+  push:
+    branches:
+      - genome_summary_report_dev
+
+jobs:
+  generate-outputs:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install package and dependencies
+        run: make dev
+
+      - name: Download required resources
+        run: amrrules --download-resources
+
+      # -----------------------------------------------------------------------
+      # Run example commands from:
+      # https://amrrules.readthedocs.io/en/genome_summary_report_dev/tests.html
+      # -----------------------------------------------------------------------
+      - name: Run example commands
+        run: |
+          # wildtype e coli
+          amrrules --input tests/data/input/test_ecoli_wildtype.tsv --output-prefix test_ecoli_wildtype --organism 's__Escherichia coli' --output-dir tests/data/example_output
+
+          # wildtype Kp with core genes flagged
+          amrrules --input tests/data/input/test_kpneumo_wildtype.tsv --output-prefix test_kpneumo_wildtype --organism 's__Klebsiella pneumoniae' --flag-core --output-dir tests/data/example_output
+
+          # multispecies example
+          amrrules  --input tests/data/input/test_multispp_amrfp.tsv --output-prefix test_multispp --organism-file tests/data/input/test_multispp_species.tsv --output-dir tests/data/example_output
+
+          # 20 E coli strains with matched AST
+          amrrules --input tests/data/input/test_ecoli_20strains.tsv --output-prefix test_ecoli_20strains --organism 's__Escherichia coli' --output-dir tests/data/example_output
+
+          # 20 Kp strains with matched AST
+          amrrules --input tests/data/input/test_kpneumo_20strains.tsv --output-prefix test_kpneumo_20strains --organism 's__Klebsiella pneumoniae' --output-dir tests/data/example_output
+
+          # 20 S aureus strains with matched AST
+          amrrules --input tests/data/input/test_saureus_20strains.tsv --output-prefix test_saureus_20strains --organism 's__Staphylococcus aureus' --output-dir tests/data/example_output
+
+      # -----------------------------------------------------------------------
+      # Commit and push any new or changed output files back to the branch.
+      # If nothing changed (outputs are identical), the step is a no-op.
+      # -----------------------------------------------------------------------
+      - name: Commit and push generated outputs
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add tests/data/example_output/
+          # Only commit if there are actual changes
+          git diff --cached --quiet || git commit -m "chore: regenerate example outputs [skip ci]"
+          git push

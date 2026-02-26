@@ -52,7 +52,6 @@ SAMD00055728	gentamicin	aminoglycoside antibiotic	-	-	-	-	aac(6')-Ib4	-	-	-	s__K
 SAMD00055728	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aph(3')-Ia	-	-	-	s__Klebsiella pneumoniae
 SAMD00055728	streptomycin	aminoglycoside antibiotic	-	-	-	-	aadA1	-	-	-	s__Klebsiella pneumoniae
 SAMD00055728	-	carbapenem	-	-	-	-	ompK36:p.Gln313Ter;blaVIM-1	-	-	-	s__Klebsiella pneumoniae
-SAMD00055728	-	cephalosporin	-	-	-	-	blaOXA-10;blaBEL-1	-	-	-	s__Klebsiella pneumoniae
 SAMD00055728	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrB1;dfrA12	-	-	-	s__Klebsiella pneumoniae
 SAMD00055728	ciprofloxacin	fluoroquinolone antibiotic	S	wildtype	moderate	-	gyrA:p.Ser83Ile;parC:p.Ser80Ile;qnrA1	oqxB19;oqxA10	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
 SAMD00055728	-	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser83Ile;parC:p.Ser80Ile;qnrA1	-	-	-	s__Klebsiella pneumoniae
@@ -63,12 +62,12 @@ SAMD00055728	chloramphenicol	phenicol antibiotic	-	-	-	-	catB2;catA1	-	-	-	s__Kl
 SAMD00055728	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
 SAMD00055728	-	streptogramin antibiotic	-	-	-	-	msr(E)	-	-	-	s__Klebsiella pneumoniae
 SAMD00055728	-	sulfonamide antibiotic	-	-	-	-	sul1;sul1	-	-	-	s__Klebsiella pneumoniae
+SAMD00055728	-	third-generation cephalosporin 	-	-	-	-	blaOXA-10;blaBEL-1	-	-	-	s__Klebsiella pneumoniae
 SAMD00055728	-	antibiotic efflux	-	-	-	-	emrD	-	-	-	s__Klebsiella pneumoniae
 SAMD00055728	-	partial	-	-	-	-	mph(A):-;mph(A):-;mph(A):-;mph(A):-;aadA2:-	-	-	-	s__Klebsiella pneumoniae
 SAMD00055732	gentamicin	aminoglycoside antibiotic	-	-	-	-	aac(3)-IId;aac(6')-Ib4	-	-	-	s__Klebsiella pneumoniae
 SAMD00055732	streptomycin	aminoglycoside antibiotic	-	-	-	-	aph(3'')-Ib;aph(6)-Id	-	-	-	s__Klebsiella pneumoniae
 SAMD00055732	-	carbapenem	-	-	-	-	blaIMP-4	-	-	-	s__Klebsiella pneumoniae
-SAMD00055732	-	cephalosporin	-	-	-	-	blaCTX-M-15;blaOXA-1	-	-	-	s__Klebsiella pneumoniae
 SAMD00055732	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrA14	-	-	-	s__Klebsiella pneumoniae
 SAMD00055732	ciprofloxacin	fluoroquinolone antibiotic	S	wildtype	moderate	-	qnrB1	oqxA;oqxB	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
 SAMD00055732	-	fluoroquinolone antibiotic	-	-	-	-	qnrB1	-	-	-	s__Klebsiella pneumoniae
@@ -79,6 +78,7 @@ SAMD00055732	telithromycin	macrolide antibiotic	-	-	-	-	mph(A)	-	-	-	s__Klebsiel
 SAMD00055732	-	penicillin beta-lactam	R	wildtype	high	blaSHV-1	blaTEM-1	-	KPN0001	-	s__Klebsiella pneumoniae
 SAMD00055732	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
 SAMD00055732	-	sulfonamide antibiotic	-	-	-	-	sul2;sul1	-	-	-	s__Klebsiella pneumoniae
+SAMD00055732	-	third-generation cephalosporin 	-	-	-	-	blaCTX-M-15;blaOXA-1	-	-	-	s__Klebsiella pneumoniae
 SAMD00055732	-	antibiotic efflux	-	-	-	-	emrD	-	-	-	s__Klebsiella pneumoniae
 SAMD00055732	-	partial	-	-	-	-	catB3:-;aac(3)-IIe:-	-	-	-	s__Klebsiella pneumoniae
 SAMD00002817	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
