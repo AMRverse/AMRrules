@@ -3,7 +3,9 @@ SAMD00028844	gentamicin	aminoglycoside antibiotic	-	-	-	-	aac(3)-Ia	-	-	-	s__Aci
 SAMD00028844	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aph(3')-Ia	-	-	-	s__Acinetobacter baumannii
 SAMD00028844	streptomycin	aminoglycoside antibiotic	-	-	-	-	aadA1;aph(6)-Id;aph(3'')-Ib	-	-	-	s__Acinetobacter baumannii
 SAMD00028844	-	carbapenem	S	wildtype	moderate	-	-	blaOXA	ACI0146	-	s__Acinetobacter baumannii
-SAMD00028844	-	fluoroquinolone antibiotic	R	nonwildtype	high	gyrA:p.Ser81Leu	parC:p.Ser84Leu	-	ACI0162	-	s__Acinetobacter baumannii
+SAMD00028844	ciprofloxacin	fluoroquinolone antibiotic	R	nonwildtype	high	gyrA:p.Ser81Leu	parC:p.Ser84Leu	-	ACI0377	-	s__Acinetobacter baumannii
+SAMD00028844	levofloxacin	fluoroquinolone antibiotic	R	nonwildtype	high	gyrA:p.Ser81Leu	parC:p.Ser84Leu	-	ACI0162	-	s__Acinetobacter baumannii
+SAMD00028844	-	fluoroquinolone antibiotic	-	-	-	-	parC:p.Ser84Leu	-	-	-	s__Acinetobacter baumannii
 SAMD00028844	-	sulfonamide antibiotic	-	-	-	-	sul1;sul2	-	-	-	s__Acinetobacter baumannii
 SAMD00028844	tetracycline	tetracycline antibiotic	-	-	-	-	tet(B)	-	-	-	s__Acinetobacter baumannii
 SAMD00028844	-	partial	-	-	-	-	adeC:-;amvA:-;blaADC:-;ant(3'')-IIa:-;ant(3'')-IIa:-	-	-	-	s__Acinetobacter baumannii
