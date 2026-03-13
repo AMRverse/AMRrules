@@ -54,6 +54,19 @@ jobs:
           # 20 A baumannii strains with matched AST
           amrrules --input tests/data/input/test_abaumannii_20strains.tsv --output-prefix test_abaumannii_20strains --organism 's__Acinetobacter baumannii' --output-dir tests/data/example_output
 
+          # 20 C jejuni strains with matched AST
+          amrrules --input tests/data/input/test_cjejuni_20strains.tsv --output-prefix test_cjejuni_20strains --organism 's__Campylobacter jejuni' --output-dir tests/data/example_output
+
+          # 20 E faecium strains with matched AST
+          amrrules --input tests/data/input/test_efaecium_20strains.tsv --output-prefix test_efaecium_20strains --organism 's__Enterococcus faecium' --output-dir tests/data/example_output
+
+          # 20 L pneumohila strains
+          amrrules --input tests/data/input/test_legionella_20strains.tsv --output-prefix test_legionella_20strains --organism 's__Legionella pneumophila' --output-dir tests/data/example_output
+
+          # 20 Bordetella strains
+          amrrules --input tests/data/input/test_bordetella_20strains.tsv --output-prefix test_bordetella_20strains --organism-file tests/data/input/test_bordetella_species.tsv --output-dir tests/data/example_output
+
+
       # -----------------------------------------------------------------------
       # Commit and push any new or changed output files back to the branch.
       # If nothing changed (outputs are identical), the step is a no-op.
