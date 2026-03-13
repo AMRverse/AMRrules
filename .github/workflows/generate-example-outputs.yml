@@ -33,10 +33,10 @@ jobs:
       # -----------------------------------------------------------------------
       - name: Run example commands
         run: |
-          # wildtype e coli
+          # wildtype E coli
           amrrules --input tests/data/input/test_ecoli_wildtype.tsv --output-prefix test_ecoli_wildtype --organism 's__Escherichia coli' --output-dir tests/data/example_output
 
-          # wildtype Kp with core genes flagged
+          # wildtype K pneumoniae with core genes flagged
           amrrules --input tests/data/input/test_kpneumo_wildtype.tsv --output-prefix test_kpneumo_wildtype --organism 's__Klebsiella pneumoniae' --flag-core --output-dir tests/data/example_output
 
           # multispecies example
@@ -50,6 +50,9 @@ jobs:
 
           # 20 S aureus strains with matched AST
           amrrules --input tests/data/input/test_saureus_20strains.tsv --output-prefix test_saureus_20strains --organism 's__Staphylococcus aureus' --output-dir tests/data/example_output
+
+          # 20 A baumannii strains with matched AST
+          amrrules --input tests/data/input/test_abaumannii_20strains.tsv --output-prefix test_abaumannii_20strains --organism 's__Acinetobacter baumannii' --output-dir tests/data/example_output
 
       # -----------------------------------------------------------------------
       # Commit and push any new or changed output files back to the branch.
