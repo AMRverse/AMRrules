@@ -1,0 +1,24 @@
+sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
+SAMEA12276240	-	penicillin beta-lactam	-	-	-	-	blaBOR	-	-	-	s__Bordetella pertussis
+SAMEA12276262	-	penicillin beta-lactam	-	-	-	-	blaBOR-1	-	-	-	s__Bordetella pertussis
+SAMEA12276262	-	sulfonamide antibiotic	-	-	-	-	sul2	-	-	-	s__Bordetella pertussis
+SAMEA12276301	-	penicillin beta-lactam	-	-	-	-	blaBOR	-	-	-	s__Bordetella pertussis
+SAMEA12276301	-	sulfonamide antibiotic	-	-	-	-	sul2	-	-	-	s__Bordetella pertussis
+SAMEA8769818	-	penicillin beta-lactam	-	-	-	-	blaBOR-1	-	-	-	s__Bordetella pertussis
+SAMEA8769844	-	penicillin beta-lactam	-	-	-	-	blaBOR-1	-	-	-	s__Bordetella pertussis
+SAMEA8769870	-	penicillin beta-lactam	-	-	-	-	blaBOR-1	-	-	-	s__Bordetella pertussis
+SAMEA8769887	-	penicillin beta-lactam	-	-	-	-	blaBOR-1	-	-	-	s__Bordetella pertussis
+SAMN02231433	-	penicillin beta-lactam	-	-	-	-	blaBOR	-	-	-	s__Bordetella pertussis
+SAMN02231451	-	penicillin beta-lactam	-	-	-	-	blaBOR	-	-	-	s__Bordetella pertussis
+SAMN06124593	-	penicillin beta-lactam	-	-	-	-	blaBOR	-	-	-	s__Bordetella pertussis
+SAMN06124593	-	sulfonamide antibiotic	-	-	-	-	sul2	-	-	-	s__Bordetella pertussis
+SAMN08105889	-	penicillin beta-lactam	-	-	-	-	blaBOR-1	-	-	-	s__Bordetella pertussis
+SAMN12525330	-	penicillin beta-lactam	-	-	-	-	blaBOR-1	-	-	-	s__Bordetella pertussis
+SAMN12525356	-	penicillin beta-lactam	-	-	-	-	blaBOR-1	-	-	-	s__Bordetella pertussis
+SAMN12525407	-	penicillin beta-lactam	-	-	-	-	blaBOR-1	-	-	-	s__Bordetella pertussis
+SAMN12525424	-	penicillin beta-lactam	-	-	-	-	blaBOR-1	-	-	-	s__Bordetella pertussis
+SAMN02263917	-	penicillin beta-lactam	-	-	-	-	blaTEM-229	-	-	-	s__Bordetella holmesii
+SAMN07137595	-	penicillin beta-lactam	R	wildtype	low	blaHBL-1;blaHBL-1;blaHBL-1	-	-	BOR0025	-	s__Bordetella hinzii
+SAMN16354908	-	penicillin beta-lactam	R	wildtype	low	blaHBL-1;blaHBL-1;blaHBL-1	-	-	BOR0025	-	s__Bordetella hinzii
+SAMN16354916	-	penicillin beta-lactam	R	wildtype	low	blaHBL-1;blaHBL-1;blaHBL-1	-	-	BOR0025	-	s__Bordetella hinzii
+SAMN16354944	-	penicillin beta-lactam	R	wildtype	low	blaHBL-1;blaHBL-1;blaHBL-1	-	-	BOR0025	-	s__Bordetella hinzii
