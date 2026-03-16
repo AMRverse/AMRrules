@@ -33,7 +33,7 @@ class SummaryEntry:
         self.ruleIDs = None
         self.combo_rules = None
     
-    def summarise_rules(self, class_summary=None):
+    def summarise_rules(self, no_rule_interpretation, class_summary=None):
         """Compute summary values based on geno_objs."""
 
         # Helper to get max by order list
@@ -81,6 +81,26 @@ class SummaryEntry:
         self.category = best_obj.clinical_category
         self.phenotype = get_max_value(phenotypes, PHENOTYPE_ORDER)
         self.evidence_grade = best_obj.evidence_grade
+
+        # alright, but depending on our no_rule_interpretation setting, we may need to override the category and phenotype values
+        # only matters if we have markers with no rules
+        if self.markers_with_norule != '-':
+            if no_rule_interpretation == 'none' or no_rule_interpretation == 'nwt':
+                # for the category, if we have any nwt markers, then we can't interpret
+                # what this means in combination with the S marker, so set to '-'
+                # however if the rule says 'R', then we can keep the R
+                if self.category == 'S':
+                    self.category = '-'
+                # evidence grade also gets switched to '-' regardless
+                self.evidence_grade = '-'
+                # we change the phenotype based on whether its none or nwt
+                if no_rule_interpretation == 'none':
+                # for the phenotype, if we have any nwt markers, then we can't interpret, so set to '-'
+                    self.phenotype = '-'
+                elif no_rule_interpretation == 'nwt':
+                    # in this case, our rule markers state we have a wt phenotype, but we have nwt markers
+                    # so we override the penotype to be nwt
+                    self.phenotype = 'nonwildtype'
 
         # if efflux, then set clinical category to '-'
         if self.drug_class == 'antibiotic efflux':
@@ -219,7 +239,7 @@ def order_summary_objs(objs):
 
     return sorted_list
 
-def create_summary_dict(grouped_by_sample, rules, flag_core):
+def create_summary_dict(grouped_by_sample, rules, flag_core, no_rule_interpretation):
 
     summary_entry_dict = {} # key: sample name, value: list of summary entry objs
     for sample_name, genotypes in grouped_by_sample.items():
@@ -237,10 +257,10 @@ def create_summary_dict(grouped_by_sample, rules, flag_core):
             master_class_entry = None
             if class_level_hits:
                 summary_entry = SummaryEntry(sample_name, class_level_hits)
-                # determine the highest category/pheno/evidence grade for this drug_class
-                summary_entry.summarise_rules()
                 # assign markers with, without rules, and wt markers
                 summary_entry.set_markers(flag_core)
+                # determine the highest category/pheno/evidence grade for this drug_class
+                summary_entry.summarise_rules(no_rule_interpretation)
                 # assign ruleIDs and combo rules
                 #TODO: Test combo rule implementation
                 # to get the list of possible combo rules to evaluate, we need to extract all 'Combination' rules for this organism
@@ -259,13 +279,13 @@ def create_summary_dict(grouped_by_sample, rules, flag_core):
                 if drug != '-':
                     # create our summary entry
                     summary_entry = SummaryEntry(sample_name, sample_groups[drug_class][drug])
-                    # determine highest category/pheno/evidence grade for this drug
-                    # but take into account the rules for the drug class
-                    summary_entry.summarise_rules(master_class_entry)
                     # before assigning markers to columns
                     # we want to remove any duplicated row markers from the class level
                     # assign markers
                     summary_entry.set_markers(flag_core, class_summary=master_class_entry)
+                    # determine highest category/pheno/evidence grade for this drug
+                    # but take into account the rules for the drug class
+                    summary_entry.summarise_rules(no_rule_interpretation, class_summary=master_class_entry)
                     # assign ruleIDs and combo rules
                     combo_rules = [r for r in rules if r.get('organism') == summary_entry.organism and r.get('rule type') == 'Combination']
                     # then need to further filter to include only combo rules that apply to either the drug or class we're assessing
