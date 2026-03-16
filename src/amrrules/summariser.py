@@ -17,6 +17,11 @@ class SummaryEntry:
         self.drug_class = genotype_objects[0].drug_class
         self.organism = genotype_objects[0].organism # this will be the same for all objects
 
+        # if we're just working with a drug_class, then drug should be set to (all) to make clear
+        # that this applies to the whole class
+        if self.drug == '-' and self.drug_class != '-':
+            self.drug = '(all)'
+
         # these are also columns that we're going to set with the below functions
         self.category = None
         self.gene_context = None
@@ -50,11 +55,14 @@ class SummaryEntry:
             self.category = '-'
             self.phenotype = '-'
             self.evidence_grade = '-'
-            # move the partial call to the ruleID col and set drug class to '-' to avoid confusion
+            # move the partial call to the ruleID col and set drug and class to '-' to avoid confusion
             if self.drug_class == 'partial':
                 self.ruleIDs = 'none (partial hits)'
                 self.drug_class = '-'
+                self.drug = '-'
             return
+        if self.drug_class == 'antibiotic efflux':
+            self.drug = '(n/a)'
         
         # otherwise, continue on
         # Extract values from genotype objects
@@ -221,7 +229,7 @@ def create_summary_dict(grouped_by_sample, rules, flag_core):
             # for each drug_class, we first need to apply a summary entry at the class level
             # if the class level exists
             class_level_hits = sample_groups[drug_class].get('-', None)
-            # initialise our claster class entry as None, will be filled later
+            # initialise our master class entry as None, will be filled later
             master_class_entry = None
             if class_level_hits:
                 summary_entry = SummaryEntry(sample_name, class_level_hits)
