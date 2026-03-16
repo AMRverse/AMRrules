@@ -218,9 +218,10 @@ def order_summary_objs(objs):
     Sort a list of summaryEntry objects first by drug_class (alphabetically, with 'antibiotic efflux', followed by 'unassigned markers', with 'partial' last),
     then by drug (alphabetically, '-' last).
     """
-    def drug_class_sort_key(drug_class):
-        drug_class_lower = drug_class.lower()
-        if drug_class_lower == "partial":
+    def drug_class_sort_key(obj):
+        drug_class_lower = getattr(obj, "drug_class", "").lower()
+        rule_ids = getattr(obj, "ruleIDs", "")
+        if rule_ids == "none (partial hits)":
             return (3, "")  # Last
         elif drug_class_lower == "unassigned markers":
             return (2, "")  # Second last
@@ -232,7 +233,7 @@ def order_summary_objs(objs):
     sorted_list = sorted(
         objs,
         key=lambda o: (
-            drug_class_sort_key(getattr(o, "drug_class", "")),
+            drug_class_sort_key(o),
             # For drug: alphabetical, with '-' last
             (getattr(o, "drug", "").lower() == "-", getattr(o, "drug", "").lower())
         )
