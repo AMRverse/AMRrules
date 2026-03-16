@@ -50,6 +50,10 @@ class SummaryEntry:
             self.category = '-'
             self.phenotype = '-'
             self.evidence_grade = '-'
+            # move the partial call to the ruleID col and set drug class to '-' to avoid confusion
+            if self.drug_class == 'partial':
+                self.ruleIDs = 'none (partial hits)'
+                self.drug_class = '-'
             return
         
         # otherwise, continue on
@@ -71,6 +75,11 @@ class SummaryEntry:
         self.evidence_grade = best_obj.evidence_grade
     
     def set_ruleIDs_and_combo(self, combo_rules, class_summary=None):
+        # if this is the summary of partial hits, skip all this and return out
+        if self.ruleIDs == 'none (partial hits)':
+            self.combo_rules = '-'
+            return
+        
         # add class info if that's provided
         if class_summary:
             geno_objs = self.geno_objs + class_summary.geno_objs
