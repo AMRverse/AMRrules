@@ -44,14 +44,14 @@ def main():
 
     # Require input/output/organism for normal run
     if not args.input or not args.output_prefix or (not args.organism and not args.organism_file):
-        parser.error('You must specify --input, --output_prefix, and --organism (or --organism_file) unless using --download-resources.')
+        parser.error('You must specify --input, --output-prefix, and --organism (or --organism_file) unless using --download-resources.')
 
     if args.amr_tool != 'amrfp':
         raise NotImplementedError("Currently only amrfp is supported. Please use amrfp as the AMR tool.")
     
     # can't have both organism_file and sample_id, as sample_id is only allowed for single entry files
     if args.organism_file and args.sample_id:
-        parser.error("Please provide either --sample_id or --organism_file, not both. --sample_id should only be used if there is a single sample in the input file. Providing --organism_file presumes multiple samples to be processed, and is incompatible.")
+        parser.error("Please provide either --sample-id or --organism-file, not both. --sample-id should only be used if there is a single sample in the input file. Providing --organism-file presumes multiple samples to be processed, and is incompatible.")
     
     # check that the organism provided actually exists in the ruleset
     if args.organism:
