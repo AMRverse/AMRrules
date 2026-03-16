@@ -20,16 +20,26 @@ def run(args):
         skipped_samples = None
     
     if args.amr_tool == 'amrfp':
-        # then we need to grab the refgene heirarchy direct from the ncbi website (get latest for now)
-        #TODO: user specifies version of amrfp database they used, or we extract this from hamronized file
-        amrfp_nodes = rm().refseq_nodes()
-        # check the input file has the Hierarchy node column, and if an organism file is included, that the first column is Name
-        samples_to_parse = validate_amrfp_file(args.input, multi_entry=bool(args.organism_file))
-        
-        # get the AMRFP to CARD conversion mapping for later use - we only want to do this once
-        # so do it here and pass this to where it's needed
-        card_amrfp_conversion = rm().get_amrfp_card_conversion() # get the AMRFP to CARD conversion mapping
-        card_drug_map = rm().get_card_drug_class_map() # get CARD drugs and their associated classes
+        try:
+            # then we need to grab the refgene heirarchy direct from the ncbi website (get latest for now)
+            #TODO: user specifies version of amrfp database they used, or we extract this from hamronized file
+            amrfp_nodes = rm().refseq_nodes()
+            # check the input file has the Hierarchy node column, and if an organism file is included, that the first column is Name
+            samples_to_parse = validate_amrfp_file(args.input, multi_entry=bool(args.organism_file))
+            
+            # get the AMRFP to CARD conversion mapping for later use - we only want to do this once
+            # so do it here and pass this to where it's needed
+            card_amrfp_conversion = rm().get_amrfp_card_conversion() # get the AMRFP to CARD conversion mapping
+            card_drug_map = rm().get_card_drug_class_map() # get CARD drugs and their associated classes
+        except FileNotFoundError as exc:
+            missing = f"\nMissing file: {exc.filename}" if getattr(exc, "filename", None) else ""
+            raise SystemExit(
+                "Required resource files were not found.\n"
+                "Please run: amrrules --download-resources\n"
+                "Then rerun your original command."
+                f"{missing}\n"
+                f"Details: {exc}"
+            ) from None
     
     # if the is a multi-entry file, we need to check that all our sampleIDs are in the organism file
     # will raise an error if any are missing
