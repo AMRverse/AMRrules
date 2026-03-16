@@ -359,6 +359,9 @@ class Genotype(GenoResult):
         if self.drug != '-':
             # get the drug class from card
             self.drug_class = card_drug_map.get(self.drug, '-')
+            # hardcode change for gentamicin
+            if self.drug == 'gentamicin':
+                self.drug_class = 'aminoglycoside antibiotic'
         else:
             self.drug_class = self.rule.get('drug class', '-')
         
