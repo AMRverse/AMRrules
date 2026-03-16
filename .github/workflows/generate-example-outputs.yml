@@ -43,7 +43,13 @@ jobs:
           amrrules  --input tests/data/input/test_multispp_amrfp.tsv --output-prefix test_multispp --organism-file tests/data/input/test_multispp_species.tsv --output-dir tests/data/example_output
 
           # 20 E coli strains with matched AST
-          amrrules --input tests/data/input/test_ecoli_20strains.tsv --output-prefix test_ecoli_20strains --organism 's__Escherichia coli' --output-dir tests/data/example_output
+          amrrules --input tests/data/input/test_ecoli_20strains.tsv --output-prefix test_ecoli_20strains --organism 's__Escherichia coli' --output-dir tests/data/example_output -nr none
+
+          amrrules --input tests/data/input/test_ecoli_20strains.tsv --output-prefix test_ecoli_20strains_nwt --organism 's__Escherichia coli' --output-dir tests/data/example_output -nr nwt
+
+          amrrules --input tests/data/input/test_ecoli_20strains.tsv --output-prefix test_ecoli_20strains_nwtS --organism 's__Escherichia coli' --output-dir tests/data/example_output -nr nwtS
+
+          amrrules --input tests/data/input/test_ecoli_20strains.tsv --output-prefix test_ecoli_20strains_nwtR --organism 's__Escherichia coli' --output-dir tests/data/example_output -nr nwtR
 
           # 20 Kp strains with matched AST
           amrrules --input tests/data/input/test_kpneumo_20strains.tsv --output-prefix test_kpneumo_20strains --organism 's__Klebsiella pneumoniae' --output-dir tests/data/example_output
@@ -65,6 +71,15 @@ jobs:
 
           # 20 Bordetella strains
           amrrules --input tests/data/input/test_bordetella_20strains.tsv --output-prefix test_bordetella_20strains --organism-file tests/data/input/test_bordetella_species.tsv --output-dir tests/data/example_output
+
+          # 20 Acinetobacter strains
+          amrrules --input tests/data/input/test_abaumannii_20strains.tsv --output-prefix test_abaumannii_20strains_none --organism 's__Acinetobacter baumannii' --output-dir tests/data/example_output -nr none
+
+          amrrules --input tests/data/input/test_abaumannii_20strains.tsv --output-prefix test_abaumannii_20strains_nwt --organism 's__Acinetobacter baumannii' --output-dir tests/data/example_output -nr nwt
+
+          amrrules --input tests/data/input/test_abaumannii_20strains.tsv --output-prefix test_abaumannii_20strains_nwtS --organism 's__Acinetobacter baumannii' --output-dir tests/data/example_output -nr nwtS
+
+          amrrules --input tests/data/input/test_abaumannii_20strains.tsv --output-prefix test_abaumannii_20strains_nwtR --organism 's__Acinetobacter baumannii' --output-dir tests/data/example_output -nr nwtR
 
 
       # -----------------------------------------------------------------------
