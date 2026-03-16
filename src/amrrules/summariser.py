@@ -102,6 +102,11 @@ class SummaryEntry:
                     # so we override the penotype to be nwt
                     # if we had markers with rules that were nwt R, we stay nwt anyway
                     self.phenotype = 'nonwildtype'
+            if no_rule_interpretation == 'nwtS':
+                # if we have any nwt markers, we're calling nwt and S
+                # but we want the evidence grade to be 'none' to reflect the fact
+                # that the call is being made using markers with no rules
+                self.evidence_grade = 'none'
 
         # if efflux, then set clinical category to '-'
         if self.drug_class == 'antibiotic efflux':

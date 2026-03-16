@@ -12,7 +12,7 @@ full_columns = ['breakpoint', 'breakpoint standard', 'breakpoint condition', 'ev
 
 CATEGORY_ORDER = ['-', 'not available', 'S', 'I', 'R']
 PHENOTYPE_ORDER = ['-', 'wildtype', 'nonwildtype']
-EVIDENCE_GRADE_ORDER = ['-', 'very low', 'low', 'moderate', 'high']
+EVIDENCE_GRADE_ORDER = ['-', 'none', 'very low', 'low', 'moderate', 'high']
 
 def get_supported_organisms(rule_dir: str = None):
     """

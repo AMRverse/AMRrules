@@ -415,10 +415,10 @@ class Genotype(GenoResult):
         # evidence grade is very low if we are giving a clinical category
         elif no_rule_interpretation == 'nwtS':
             self.clinical_category = 'S'
-            self.evidence_grade = 'very low'
+            self.evidence_grade = 'none'
         elif no_rule_interpretation == 'nwtR':
             self.clinical_category = 'R'
-            self.evidence_grade = 'very low'
+            self.evidence_grade = 'none'
         
         # However, if the variation type is inactivating, and we've got no rule
         # then we treat it as though the gene isn't functional
