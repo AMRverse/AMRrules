@@ -91,8 +91,8 @@ class SummaryEntry:
                 # however if the rule says 'R', then we can keep the R
                 if self.category == 'S':
                     self.category = '-'
-                # evidence grade also gets switched to '-' regardless
-                self.evidence_grade = '-'
+                # evidence grade also gets switched to 'none' regardless
+                self.evidence_grade = 'none'
                 # we change the phenotype based on whether its none or nwt
                 if no_rule_interpretation == 'none':
                 # for the phenotype, if we have any nwt markers, then we can't interpret, so set to '-'
