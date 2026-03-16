@@ -5,7 +5,7 @@ def parse_rules_file(rule_file_list):
     # get the correct rules file based on the organism, from the rules directory
     rules_parsed = []
     for rule_file in rule_file_list:
-        rule_file_name = f"{rule_file}.txt"
+        rule_file_name = f"{rule_file}.tsv"
         try:
             with resources.files("amrrules.rules").joinpath(rule_file_name).open('r', encoding='utf-8') as f:
                 reader = csv.DictReader(f, delimiter='\t')

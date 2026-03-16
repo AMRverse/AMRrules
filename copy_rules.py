@@ -16,7 +16,7 @@ def clean_and_copy_rules():
     os.makedirs(DST_DIR, exist_ok=True)
 
     for file in os.listdir(SRC_DIR):
-        if file.endswith(".txt"):
+        if file.endswith(".tsv") and file != "rule_key_file.tsv":
             file_path = os.path.join(SRC_DIR, file)
             out_file_path = os.path.join(DST_DIR, file)
             with open(file_path, 'r') as f:
@@ -42,8 +42,8 @@ def create_rules_file_key():
     """
     Create a key file that lists, for each unique organism, the rules file name.
     The file will look like this:
-    s__Klebsiella pneumoniae    Klebsiella_pneumoniae.txt
-    s__Escherichia coli        Escherichia_coli.txt
+    s__Klebsiella pneumoniae    Klebsiella_pneumoniae.tsv
+    s__Escherichia coli        Escherichia_coli.tsv
     """
 
     if DST_DIR is None:
@@ -56,7 +56,7 @@ def create_rules_file_key():
     key_file_rows = {}
 
     for filename in os.listdir(DST_DIR):
-        if filename.endswith(".txt"):
+        if filename.endswith(".tsv") and filename != "rule_key_file.tsv":
             file_org_name = os.path.splitext(filename)[0]
             #extract all unique values from the 'orgnanism' column
             reader = csv.DictReader(open(os.path.join(DST_DIR, filename), 'r'), delimiter='\t')

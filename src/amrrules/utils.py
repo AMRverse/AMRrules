@@ -25,7 +25,7 @@ def get_supported_organisms(rule_dir: str = None):
 
     organisms = set()
     for entry in rule_dir.iterdir():
-        if entry.name != "rule_key_file.tsv" and entry.name.endswith(".txt"):
+        if entry.name != "rule_key_file.tsv" and entry.name.endswith(".tsv"):
             # Extract organism name from filename
             reader = csv.DictReader(open(entry, 'r'), delimiter='\t')
             for row in reader:
