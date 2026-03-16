@@ -366,8 +366,12 @@ class Genotype(GenoResult):
             self.drug_class = self.rule.get('drug class', '-')
         
         # if the drug and drug_class are '-', set to 'unassigned markers'
+        # but only if AMRFP hasn't found this to be efflux
         if self.drug == '-' and self.drug_class == '-':
-            self.drug_class = 'unassigned markers'
+            if self.amrfp_class == 'EFFLUX':
+                self.drug_class = 'antibiotic efflux'
+            else:
+                self.drug_class = 'unassigned markers'
         
         # hardcode change for penicillin
         if self.drug_class == 'penicillin with extended spectrum':

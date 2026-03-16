@@ -81,6 +81,10 @@ class SummaryEntry:
         self.category = best_obj.clinical_category
         self.phenotype = get_max_value(phenotypes, PHENOTYPE_ORDER)
         self.evidence_grade = best_obj.evidence_grade
+
+        # if efflux, then set clinical category to '-'
+        if self.drug_class == 'antibiotic efflux':
+            self.category = '-'
     
     def set_ruleIDs_and_combo(self, combo_rules, class_summary=None):
         # if this is the summary of partial hits, skip all this and return out
