@@ -19,7 +19,7 @@ class SummaryEntry:
 
         # if we're just working with a drug_class, then drug should be set to (all) to make clear
         # that this applies to the whole class
-        if self.drug == '-' and self.drug_class != '-':
+        if self.drug == '-' and self.drug_class != '-' and self.drug_class != 'unassigned markers':
             self.drug = '(all)'
 
         # these are also columns that we're going to set with the below functions
