@@ -1,377 +1,377 @@
 sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
-SAMEA1966652	amikacin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	EFM0001	-	s__Enterococcus faecium
-SAMEA1966652	gentamicin	aminoglycoside antibiotic	-	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0002	-	s__Enterococcus faecium
-SAMEA1966652	kanamycin A	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	EFM0003	-	s__Enterococcus faecium
+SAMEA1966652	amikacin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	EFM0001	-	s__Enterococcus faecium
+SAMEA1966652	gentamicin	aminoglycoside antibiotic	-	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0002	-	s__Enterococcus faecium
+SAMEA1966652	kanamycin A	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	EFM0003	-	s__Enterococcus faecium
 SAMEA1966652	netilmicin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0004	-	s__Enterococcus faecium
-SAMEA1966652	streptomycin	aminoglycoside antibiotic	-	-	-	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
-SAMEA1966652	tobramycin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0005	-	s__Enterococcus faecium
-SAMEA1966652	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrF	-	-	-	s__Enterococcus faecium
-SAMEA1966652	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser83Tyr;parC:p.Ser80Ile	-	-	-	s__Enterococcus faecium
-SAMEA1966652	vancomycin	glycopeptide antibiotic	-	-	-	-	vanY-A;vanZ-A;vanR-A;vanS-A;vanX-A;vanA;vanH-A	-	-	-	s__Enterococcus faecium
-SAMEA1966652	clindamycin	lincosamide antibiotic	-	-	-	-	erm(B)	-	-	-	s__Enterococcus faecium
+SAMEA1966652	streptomycin	aminoglycoside antibiotic	-	-	none	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
+SAMEA1966652	tobramycin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0005	-	s__Enterococcus faecium
+SAMEA1966652	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrF	-	-	-	s__Enterococcus faecium
+SAMEA1966652	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser83Tyr;parC:p.Ser80Ile	-	-	-	s__Enterococcus faecium
+SAMEA1966652	vancomycin	glycopeptide antibiotic	-	-	none	-	vanY-A;vanZ-A;vanR-A;vanS-A;vanX-A;vanA;vanH-A	-	-	-	s__Enterococcus faecium
+SAMEA1966652	clindamycin	lincosamide antibiotic	-	-	none	-	erm(B)	-	-	-	s__Enterococcus faecium
 SAMEA1966652	azithromycin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0011	-	s__Enterococcus faecium
-SAMEA1966652	erythromycin	macrolide antibiotic	R	-	-	msr(C)	mef(H);erm(B)	-	EFM0012	-	s__Enterococcus faecium
+SAMEA1966652	erythromycin	macrolide antibiotic	R	-	none	msr(C)	mef(H);erm(B)	-	EFM0012	-	s__Enterococcus faecium
 SAMEA1966652	tylosin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0014	-	s__Enterococcus faecium
-SAMEA1966652	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Enterococcus faecium
-SAMEA1966652	(all)	penicillin beta-lactam	-	-	-	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
-SAMEA1966652	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	erm(B)	-	-	-	s__Enterococcus faecium
+SAMEA1966652	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Enterococcus faecium
+SAMEA1966652	(all)	penicillin beta-lactam	-	-	none	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
+SAMEA1966652	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	erm(B)	-	-	-	s__Enterococcus faecium
 SAMEA1966652	quinupristin	streptogramin B antibiotic	R	wildtype	high	msr(C)	-	-	EFM0013	-	s__Enterococcus faecium
-SAMEA1966652	tetracycline	tetracycline antibiotic	-	-	-	-	tet(M)	-	-	-	s__Enterococcus faecium
+SAMEA1966652	tetracycline	tetracycline antibiotic	-	-	none	-	tet(M)	-	-	-	s__Enterococcus faecium
 SAMEA1966652	-	-	-	-	-	-	dfrG:-	-	none (partial hits)	-	s__Enterococcus faecium
-SAMEA2147333	amikacin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	EFM0001	-	s__Enterococcus faecium
-SAMEA2147333	gentamicin	aminoglycoside antibiotic	-	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0002	-	s__Enterococcus faecium
-SAMEA2147333	kanamycin A	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	EFM0003	-	s__Enterococcus faecium
+SAMEA2147333	amikacin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	EFM0001	-	s__Enterococcus faecium
+SAMEA2147333	gentamicin	aminoglycoside antibiotic	-	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0002	-	s__Enterococcus faecium
+SAMEA2147333	kanamycin A	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	EFM0003	-	s__Enterococcus faecium
 SAMEA2147333	netilmicin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0004	-	s__Enterococcus faecium
-SAMEA2147333	streptomycin	aminoglycoside antibiotic	-	-	-	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
-SAMEA2147333	tobramycin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0005	-	s__Enterococcus faecium
-SAMEA2147333	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrF;dfrG	-	-	-	s__Enterococcus faecium
-SAMEA2147333	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser83Arg;parC:p.Ser80Arg	-	-	-	s__Enterococcus faecium
-SAMEA2147333	(all)	lincosamide antibiotic	-	-	-	-	erm(T)	-	-	-	s__Enterococcus faecium
-SAMEA2147333	clindamycin	lincosamide antibiotic	-	-	-	-	erm(B);erm(T)	-	-	-	s__Enterococcus faecium
+SAMEA2147333	streptomycin	aminoglycoside antibiotic	-	-	none	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
+SAMEA2147333	tobramycin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0005	-	s__Enterococcus faecium
+SAMEA2147333	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrF;dfrG	-	-	-	s__Enterococcus faecium
+SAMEA2147333	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser83Arg;parC:p.Ser80Arg	-	-	-	s__Enterococcus faecium
+SAMEA2147333	(all)	lincosamide antibiotic	-	-	none	-	erm(T)	-	-	-	s__Enterococcus faecium
+SAMEA2147333	clindamycin	lincosamide antibiotic	-	-	none	-	erm(B);erm(T)	-	-	-	s__Enterococcus faecium
 SAMEA2147333	azithromycin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0011	-	s__Enterococcus faecium
-SAMEA2147333	erythromycin	macrolide antibiotic	R	-	-	msr(C)	erm(B);erm(T)	-	EFM0012	-	s__Enterococcus faecium
-SAMEA2147333	tylosin	macrolide antibiotic	R	-	-	msr(C)	erm(T)	-	EFM0014	-	s__Enterococcus faecium
-SAMEA2147333	(all)	penicillin beta-lactam	-	-	-	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
-SAMEA2147333	(all)	streptogramin antibiotic	-	-	-	-	erm(T)	-	-	-	s__Enterococcus faecium
-SAMEA2147333	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	erm(B);erm(T)	-	-	-	s__Enterococcus faecium
+SAMEA2147333	erythromycin	macrolide antibiotic	R	-	none	msr(C)	erm(B);erm(T)	-	EFM0012	-	s__Enterococcus faecium
+SAMEA2147333	tylosin	macrolide antibiotic	R	-	none	msr(C)	erm(T)	-	EFM0014	-	s__Enterococcus faecium
+SAMEA2147333	(all)	penicillin beta-lactam	-	-	none	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
+SAMEA2147333	(all)	streptogramin antibiotic	-	-	none	-	erm(T)	-	-	-	s__Enterococcus faecium
+SAMEA2147333	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	erm(B);erm(T)	-	-	-	s__Enterococcus faecium
 SAMEA2147333	quinupristin	streptogramin B antibiotic	R	wildtype	high	msr(C)	-	-	EFM0013	-	s__Enterococcus faecium
-SAMEA2147333	tetracycline	tetracycline antibiotic	-	-	-	-	tet(L)	-	-	-	s__Enterococcus faecium
-SAMEA2149932	amikacin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa	-	EFM0001	-	s__Enterococcus faecium
+SAMEA2147333	tetracycline	tetracycline antibiotic	-	-	none	-	tet(L)	-	-	-	s__Enterococcus faecium
+SAMEA2149932	amikacin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa	-	EFM0001	-	s__Enterococcus faecium
 SAMEA2149932	gentamicin	aminoglycoside antibiotic	-	wildtype	high	aac(6')-I	-	-	EFM0002	-	s__Enterococcus faecium
-SAMEA2149932	kanamycin A	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa	-	EFM0003	-	s__Enterococcus faecium
+SAMEA2149932	kanamycin A	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa	-	EFM0003	-	s__Enterococcus faecium
 SAMEA2149932	netilmicin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0004	-	s__Enterococcus faecium
-SAMEA2149932	spectinomycin	aminoglycoside antibiotic	-	-	-	-	ant(9)-Ia	-	-	-	s__Enterococcus faecium
-SAMEA2149932	streptomycin	aminoglycoside antibiotic	-	-	-	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
+SAMEA2149932	spectinomycin	aminoglycoside antibiotic	-	-	none	-	ant(9)-Ia	-	-	-	s__Enterococcus faecium
+SAMEA2149932	streptomycin	aminoglycoside antibiotic	-	-	none	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
 SAMEA2149932	tobramycin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0005	-	s__Enterococcus faecium
-SAMEA2149932	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrF;dfrG	-	-	-	s__Enterococcus faecium
-SAMEA2149932	(all)	fluoroquinolone antibiotic	-	-	-	-	parC:p.Ser80Ile;gyrA:p.Ser83Tyr	-	-	-	s__Enterococcus faecium
-SAMEA2149932	vancomycin	glycopeptide antibiotic	-	-	-	-	vanZ-A;vanY-A;vanX-A;vanA;vanH-A;vanS-A;vanR-A	-	-	-	s__Enterococcus faecium
-SAMEA2149932	clindamycin	lincosamide antibiotic	-	-	-	-	erm(A);erm(B)	-	-	-	s__Enterococcus faecium
-SAMEA2149932	azithromycin	macrolide antibiotic	R	-	-	msr(C)	erm(A)	-	EFM0011	-	s__Enterococcus faecium
-SAMEA2149932	clarithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Enterococcus faecium
-SAMEA2149932	erythromycin	macrolide antibiotic	R	-	-	msr(C)	erm(A);erm(B)	-	EFM0012	-	s__Enterococcus faecium
-SAMEA2149932	telithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Enterococcus faecium
+SAMEA2149932	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrF;dfrG	-	-	-	s__Enterococcus faecium
+SAMEA2149932	(all)	fluoroquinolone antibiotic	-	-	none	-	parC:p.Ser80Ile;gyrA:p.Ser83Tyr	-	-	-	s__Enterococcus faecium
+SAMEA2149932	vancomycin	glycopeptide antibiotic	-	-	none	-	vanZ-A;vanY-A;vanX-A;vanA;vanH-A;vanS-A;vanR-A	-	-	-	s__Enterococcus faecium
+SAMEA2149932	clindamycin	lincosamide antibiotic	-	-	none	-	erm(A);erm(B)	-	-	-	s__Enterococcus faecium
+SAMEA2149932	azithromycin	macrolide antibiotic	R	-	none	msr(C)	erm(A)	-	EFM0011	-	s__Enterococcus faecium
+SAMEA2149932	clarithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Enterococcus faecium
+SAMEA2149932	erythromycin	macrolide antibiotic	R	-	none	msr(C)	erm(A);erm(B)	-	EFM0012	-	s__Enterococcus faecium
+SAMEA2149932	telithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Enterococcus faecium
 SAMEA2149932	tylosin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0014	-	s__Enterococcus faecium
-SAMEA2149932	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Enterococcus faecium
-SAMEA2149932	(all)	penicillin beta-lactam	-	-	-	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
-SAMEA2149932	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	erm(B)	-	-	-	s__Enterococcus faecium
+SAMEA2149932	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Enterococcus faecium
+SAMEA2149932	(all)	penicillin beta-lactam	-	-	none	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
+SAMEA2149932	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	erm(B)	-	-	-	s__Enterococcus faecium
 SAMEA2149932	quinupristin	streptogramin B antibiotic	R	wildtype	high	msr(C)	-	-	EFM0013	-	s__Enterococcus faecium
 SAMEA2149932	-	-	-	-	-	-	tet(M):-	-	none (partial hits)	-	s__Enterococcus faecium
-SAMEA2150494	amikacin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia;aph(3')-IIIa	-	EFM0001	-	s__Enterococcus faecium
-SAMEA2150494	gentamicin	aminoglycoside antibiotic	-	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0002	-	s__Enterococcus faecium
-SAMEA2150494	kanamycin A	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia;aph(3')-IIIa	-	EFM0003	-	s__Enterococcus faecium
+SAMEA2150494	amikacin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia;aph(3')-IIIa	-	EFM0001	-	s__Enterococcus faecium
+SAMEA2150494	gentamicin	aminoglycoside antibiotic	-	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0002	-	s__Enterococcus faecium
+SAMEA2150494	kanamycin A	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia;aph(3')-IIIa	-	EFM0003	-	s__Enterococcus faecium
 SAMEA2150494	netilmicin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0004	-	s__Enterococcus faecium
-SAMEA2150494	streptomycin	aminoglycoside antibiotic	-	-	-	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
-SAMEA2150494	tobramycin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0005	-	s__Enterococcus faecium
-SAMEA2150494	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrF;dfrG	-	-	-	s__Enterococcus faecium
-SAMEA2150494	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser83Arg;parC:p.Ser80Arg	-	-	-	s__Enterococcus faecium
-SAMEA2150494	vancomycin	glycopeptide antibiotic	-	-	-	-	vanH-A;vanA;vanX-A;vanY-A;vanZ-A;vanS-A;vanR-A	-	-	-	s__Enterococcus faecium
-SAMEA2150494	(all)	lincosamide antibiotic	-	-	-	-	erm(T)	-	-	-	s__Enterococcus faecium
-SAMEA2150494	clindamycin	lincosamide antibiotic	-	-	-	-	erm(B);erm(T)	-	-	-	s__Enterococcus faecium
+SAMEA2150494	streptomycin	aminoglycoside antibiotic	-	-	none	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
+SAMEA2150494	tobramycin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0005	-	s__Enterococcus faecium
+SAMEA2150494	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrF;dfrG	-	-	-	s__Enterococcus faecium
+SAMEA2150494	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser83Arg;parC:p.Ser80Arg	-	-	-	s__Enterococcus faecium
+SAMEA2150494	vancomycin	glycopeptide antibiotic	-	-	none	-	vanH-A;vanA;vanX-A;vanY-A;vanZ-A;vanS-A;vanR-A	-	-	-	s__Enterococcus faecium
+SAMEA2150494	(all)	lincosamide antibiotic	-	-	none	-	erm(T)	-	-	-	s__Enterococcus faecium
+SAMEA2150494	clindamycin	lincosamide antibiotic	-	-	none	-	erm(B);erm(T)	-	-	-	s__Enterococcus faecium
 SAMEA2150494	azithromycin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0011	-	s__Enterococcus faecium
-SAMEA2150494	erythromycin	macrolide antibiotic	R	-	-	msr(C)	erm(B);erm(T)	-	EFM0012	-	s__Enterococcus faecium
-SAMEA2150494	tylosin	macrolide antibiotic	R	-	-	msr(C)	erm(T)	-	EFM0014	-	s__Enterococcus faecium
-SAMEA2150494	(all)	penicillin beta-lactam	-	-	-	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
-SAMEA2150494	(all)	streptogramin antibiotic	-	-	-	-	erm(T)	-	-	-	s__Enterococcus faecium
-SAMEA2150494	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	erm(B);erm(T)	-	-	-	s__Enterococcus faecium
+SAMEA2150494	erythromycin	macrolide antibiotic	R	-	none	msr(C)	erm(B);erm(T)	-	EFM0012	-	s__Enterococcus faecium
+SAMEA2150494	tylosin	macrolide antibiotic	R	-	none	msr(C)	erm(T)	-	EFM0014	-	s__Enterococcus faecium
+SAMEA2150494	(all)	penicillin beta-lactam	-	-	none	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
+SAMEA2150494	(all)	streptogramin antibiotic	-	-	none	-	erm(T)	-	-	-	s__Enterococcus faecium
+SAMEA2150494	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	erm(B);erm(T)	-	-	-	s__Enterococcus faecium
 SAMEA2150494	quinupristin	streptogramin B antibiotic	R	wildtype	high	msr(C)	-	-	EFM0013	-	s__Enterococcus faecium
-SAMEA2150494	tetracycline	tetracycline antibiotic	-	-	-	-	tet(L)	-	-	-	s__Enterococcus faecium
+SAMEA2150494	tetracycline	tetracycline antibiotic	-	-	none	-	tet(L)	-	-	-	s__Enterococcus faecium
 SAMEA2150494	-	-	-	-	-	-	lnu(B):-	-	none (partial hits)	-	s__Enterococcus faecium
-SAMEA2153911	amikacin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0001	-	s__Enterococcus faecium
-SAMEA2153911	gentamicin	aminoglycoside antibiotic	-	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0002	-	s__Enterococcus faecium
-SAMEA2153911	kanamycin A	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0003	-	s__Enterococcus faecium
+SAMEA2153911	amikacin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0001	-	s__Enterococcus faecium
+SAMEA2153911	gentamicin	aminoglycoside antibiotic	-	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0002	-	s__Enterococcus faecium
+SAMEA2153911	kanamycin A	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0003	-	s__Enterococcus faecium
 SAMEA2153911	netilmicin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0004	-	s__Enterococcus faecium
-SAMEA2153911	tobramycin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0005	-	s__Enterococcus faecium
-SAMEA2153911	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrG	-	-	-	s__Enterococcus faecium
-SAMEA2153911	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser83Tyr;parC:p.Ser80Ile	-	-	-	s__Enterococcus faecium
-SAMEA2153911	vancomycin	glycopeptide antibiotic	-	-	-	-	vanZ-A;vanY-A;vanS-A;vanR-A;vanX-A;vanA;vanH-A	-	-	-	s__Enterococcus faecium
-SAMEA2153911	(all)	lincosamide antibiotic	-	-	-	-	erm(T)	-	-	-	s__Enterococcus faecium
-SAMEA2153911	clindamycin	lincosamide antibiotic	-	-	-	-	erm(B);erm(T)	-	-	-	s__Enterococcus faecium
-SAMEA2153911	daptomycin	lipopeptide antibiotic	-	-	-	-	liaR:p.Trp73Cys;liaS:p.Thr120Ala	-	-	-	s__Enterococcus faecium
+SAMEA2153911	tobramycin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0005	-	s__Enterococcus faecium
+SAMEA2153911	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrG	-	-	-	s__Enterococcus faecium
+SAMEA2153911	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser83Tyr;parC:p.Ser80Ile	-	-	-	s__Enterococcus faecium
+SAMEA2153911	vancomycin	glycopeptide antibiotic	-	-	none	-	vanZ-A;vanY-A;vanS-A;vanR-A;vanX-A;vanA;vanH-A	-	-	-	s__Enterococcus faecium
+SAMEA2153911	(all)	lincosamide antibiotic	-	-	none	-	erm(T)	-	-	-	s__Enterococcus faecium
+SAMEA2153911	clindamycin	lincosamide antibiotic	-	-	none	-	erm(B);erm(T)	-	-	-	s__Enterococcus faecium
+SAMEA2153911	daptomycin	lipopeptide antibiotic	-	-	none	-	liaR:p.Trp73Cys;liaS:p.Thr120Ala	-	-	-	s__Enterococcus faecium
 SAMEA2153911	azithromycin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0011	-	s__Enterococcus faecium
-SAMEA2153911	erythromycin	macrolide antibiotic	R	-	-	msr(C)	erm(B);erm(T)	-	EFM0012	-	s__Enterococcus faecium
-SAMEA2153911	tylosin	macrolide antibiotic	R	-	-	msr(C)	erm(T)	-	EFM0014	-	s__Enterococcus faecium
-SAMEA2153911	(all)	penicillin beta-lactam	-	-	-	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
-SAMEA2153911	(all)	streptogramin antibiotic	-	-	-	-	erm(T)	-	-	-	s__Enterococcus faecium
-SAMEA2153911	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	erm(B);erm(T)	-	-	-	s__Enterococcus faecium
+SAMEA2153911	erythromycin	macrolide antibiotic	R	-	none	msr(C)	erm(B);erm(T)	-	EFM0012	-	s__Enterococcus faecium
+SAMEA2153911	tylosin	macrolide antibiotic	R	-	none	msr(C)	erm(T)	-	EFM0014	-	s__Enterococcus faecium
+SAMEA2153911	(all)	penicillin beta-lactam	-	-	none	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
+SAMEA2153911	(all)	streptogramin antibiotic	-	-	none	-	erm(T)	-	-	-	s__Enterococcus faecium
+SAMEA2153911	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	erm(B);erm(T)	-	-	-	s__Enterococcus faecium
 SAMEA2153911	quinupristin	streptogramin B antibiotic	R	wildtype	high	msr(C)	-	-	EFM0013	-	s__Enterococcus faecium
-SAMEA2153911	tetracycline	tetracycline antibiotic	-	-	-	-	tet(L)	-	-	-	s__Enterococcus faecium
-SAMEA2155673	amikacin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	EFM0001	-	s__Enterococcus faecium
-SAMEA2155673	gentamicin	aminoglycoside antibiotic	-	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0002	-	s__Enterococcus faecium
-SAMEA2155673	kanamycin A	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	EFM0003	-	s__Enterococcus faecium
+SAMEA2153911	tetracycline	tetracycline antibiotic	-	-	none	-	tet(L)	-	-	-	s__Enterococcus faecium
+SAMEA2155673	amikacin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	EFM0001	-	s__Enterococcus faecium
+SAMEA2155673	gentamicin	aminoglycoside antibiotic	-	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0002	-	s__Enterococcus faecium
+SAMEA2155673	kanamycin A	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	EFM0003	-	s__Enterococcus faecium
 SAMEA2155673	netilmicin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0004	-	s__Enterococcus faecium
-SAMEA2155673	streptomycin	aminoglycoside antibiotic	-	-	-	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
-SAMEA2155673	tobramycin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0005	-	s__Enterococcus faecium
-SAMEA2155673	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrF	-	-	-	s__Enterococcus faecium
-SAMEA2155673	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser83Arg;parC:p.Ser80Ile	-	-	-	s__Enterococcus faecium
-SAMEA2155673	vancomycin	glycopeptide antibiotic	-	-	-	-	vanZ-A;vanY-A;vanX-A;vanA;vanH-A;vanS-A;vanR-A	-	-	-	s__Enterococcus faecium
-SAMEA2155673	clindamycin	lincosamide antibiotic	-	-	-	-	erm(B)	-	-	-	s__Enterococcus faecium
+SAMEA2155673	streptomycin	aminoglycoside antibiotic	-	-	none	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
+SAMEA2155673	tobramycin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0005	-	s__Enterococcus faecium
+SAMEA2155673	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrF	-	-	-	s__Enterococcus faecium
+SAMEA2155673	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser83Arg;parC:p.Ser80Ile	-	-	-	s__Enterococcus faecium
+SAMEA2155673	vancomycin	glycopeptide antibiotic	-	-	none	-	vanZ-A;vanY-A;vanX-A;vanA;vanH-A;vanS-A;vanR-A	-	-	-	s__Enterococcus faecium
+SAMEA2155673	clindamycin	lincosamide antibiotic	-	-	none	-	erm(B)	-	-	-	s__Enterococcus faecium
 SAMEA2155673	azithromycin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0011	-	s__Enterococcus faecium
-SAMEA2155673	erythromycin	macrolide antibiotic	R	-	-	msr(C)	erm(B)	-	EFM0012	-	s__Enterococcus faecium
+SAMEA2155673	erythromycin	macrolide antibiotic	R	-	none	msr(C)	erm(B)	-	EFM0012	-	s__Enterococcus faecium
 SAMEA2155673	tylosin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0014	-	s__Enterococcus faecium
-SAMEA2155673	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Enterococcus faecium
-SAMEA2155673	(all)	penicillin beta-lactam	-	-	-	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
-SAMEA2155673	chloramphenicol	phenicol antibiotic	-	-	-	-	catA	-	-	-	s__Enterococcus faecium
-SAMEA2155673	pleuromutilin	pleuromutilin antibiotic	-	-	-	-	eat(A):p.Thr450Ile	-	-	-	s__Enterococcus faecium
-SAMEA2155673	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	erm(B)	-	-	-	s__Enterococcus faecium
+SAMEA2155673	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Enterococcus faecium
+SAMEA2155673	(all)	penicillin beta-lactam	-	-	none	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
+SAMEA2155673	chloramphenicol	phenicol antibiotic	-	-	none	-	catA	-	-	-	s__Enterococcus faecium
+SAMEA2155673	pleuromutilin	pleuromutilin antibiotic	-	-	none	-	eat(A):p.Thr450Ile	-	-	-	s__Enterococcus faecium
+SAMEA2155673	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	erm(B)	-	-	-	s__Enterococcus faecium
 SAMEA2155673	quinupristin	streptogramin B antibiotic	R	wildtype	high	msr(C)	-	-	EFM0013	-	s__Enterococcus faecium
-SAMEA2157408	amikacin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	EFM0001	-	s__Enterococcus faecium
-SAMEA2157408	gentamicin	aminoglycoside antibiotic	-	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0002	-	s__Enterococcus faecium
-SAMEA2157408	kanamycin A	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	EFM0003	-	s__Enterococcus faecium
+SAMEA2157408	amikacin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	EFM0001	-	s__Enterococcus faecium
+SAMEA2157408	gentamicin	aminoglycoside antibiotic	-	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0002	-	s__Enterococcus faecium
+SAMEA2157408	kanamycin A	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	EFM0003	-	s__Enterococcus faecium
 SAMEA2157408	netilmicin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0004	-	s__Enterococcus faecium
-SAMEA2157408	streptomycin	aminoglycoside antibiotic	-	-	-	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
-SAMEA2157408	tobramycin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0005	-	s__Enterococcus faecium
-SAMEA2157408	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrK	-	-	-	s__Enterococcus faecium
-SAMEA2157408	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser83Arg;parC:p.Ser80Ile	-	-	-	s__Enterococcus faecium
-SAMEA2157408	vancomycin	glycopeptide antibiotic	-	-	-	-	vanX-A;vanA;vanH-A;vanS-A;vanR-A;vanZ-A	-	-	-	s__Enterococcus faecium
-SAMEA2157408	clindamycin	lincosamide antibiotic	-	-	-	-	erm(B)	-	-	-	s__Enterococcus faecium
+SAMEA2157408	streptomycin	aminoglycoside antibiotic	-	-	none	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
+SAMEA2157408	tobramycin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0005	-	s__Enterococcus faecium
+SAMEA2157408	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrK	-	-	-	s__Enterococcus faecium
+SAMEA2157408	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser83Arg;parC:p.Ser80Ile	-	-	-	s__Enterococcus faecium
+SAMEA2157408	vancomycin	glycopeptide antibiotic	-	-	none	-	vanX-A;vanA;vanH-A;vanS-A;vanR-A;vanZ-A	-	-	-	s__Enterococcus faecium
+SAMEA2157408	clindamycin	lincosamide antibiotic	-	-	none	-	erm(B)	-	-	-	s__Enterococcus faecium
 SAMEA2157408	azithromycin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0011	-	s__Enterococcus faecium
-SAMEA2157408	erythromycin	macrolide antibiotic	R	-	-	msr(C)	erm(B)	-	EFM0012	-	s__Enterococcus faecium
+SAMEA2157408	erythromycin	macrolide antibiotic	R	-	none	msr(C)	erm(B)	-	EFM0012	-	s__Enterococcus faecium
 SAMEA2157408	tylosin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0014	-	s__Enterococcus faecium
-SAMEA2157408	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Enterococcus faecium
-SAMEA2157408	(all)	penicillin beta-lactam	-	-	-	-	pbp5:p.Met485Thr	-	-	-	s__Enterococcus faecium
-SAMEA2157408	pleuromutilin	pleuromutilin antibiotic	-	-	-	-	eat(A):p.Thr450Ile	-	-	-	s__Enterococcus faecium
-SAMEA2157408	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	erm(B)	-	-	-	s__Enterococcus faecium
+SAMEA2157408	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Enterococcus faecium
+SAMEA2157408	(all)	penicillin beta-lactam	-	-	none	-	pbp5:p.Met485Thr	-	-	-	s__Enterococcus faecium
+SAMEA2157408	pleuromutilin	pleuromutilin antibiotic	-	-	none	-	eat(A):p.Thr450Ile	-	-	-	s__Enterococcus faecium
+SAMEA2157408	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	erm(B)	-	-	-	s__Enterococcus faecium
 SAMEA2157408	quinupristin	streptogramin B antibiotic	R	wildtype	high	msr(C)	-	-	EFM0013	-	s__Enterococcus faecium
-SAMEA2159898	amikacin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa	-	EFM0001	-	s__Enterococcus faecium
+SAMEA2159898	amikacin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa	-	EFM0001	-	s__Enterococcus faecium
 SAMEA2159898	gentamicin	aminoglycoside antibiotic	-	wildtype	high	aac(6')-I	-	-	EFM0002	-	s__Enterococcus faecium
-SAMEA2159898	kanamycin A	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa	-	EFM0003	-	s__Enterococcus faecium
+SAMEA2159898	kanamycin A	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa	-	EFM0003	-	s__Enterococcus faecium
 SAMEA2159898	netilmicin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0004	-	s__Enterococcus faecium
-SAMEA2159898	streptomycin	aminoglycoside antibiotic	-	-	-	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
+SAMEA2159898	streptomycin	aminoglycoside antibiotic	-	-	none	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
 SAMEA2159898	tobramycin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0005	-	s__Enterococcus faecium
-SAMEA2159898	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrG	-	-	-	s__Enterococcus faecium
-SAMEA2159898	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser83Arg;parC:p.Ser80Ile	-	-	-	s__Enterococcus faecium
-SAMEA2159898	vancomycin	glycopeptide antibiotic	-	-	-	-	vanR-A;vanS-A;vanH-A;vanA;vanX-A;vanY-A;vanZ-A	-	-	-	s__Enterococcus faecium
-SAMEA2159898	clindamycin	lincosamide antibiotic	-	-	-	-	erm(B)	-	-	-	s__Enterococcus faecium
+SAMEA2159898	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrG	-	-	-	s__Enterococcus faecium
+SAMEA2159898	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser83Arg;parC:p.Ser80Ile	-	-	-	s__Enterococcus faecium
+SAMEA2159898	vancomycin	glycopeptide antibiotic	-	-	none	-	vanR-A;vanS-A;vanH-A;vanA;vanX-A;vanY-A;vanZ-A	-	-	-	s__Enterococcus faecium
+SAMEA2159898	clindamycin	lincosamide antibiotic	-	-	none	-	erm(B)	-	-	-	s__Enterococcus faecium
 SAMEA2159898	azithromycin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0011	-	s__Enterococcus faecium
-SAMEA2159898	erythromycin	macrolide antibiotic	R	-	-	msr(C)	erm(B)	-	EFM0012	-	s__Enterococcus faecium
+SAMEA2159898	erythromycin	macrolide antibiotic	R	-	none	msr(C)	erm(B)	-	EFM0012	-	s__Enterococcus faecium
 SAMEA2159898	tylosin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0014	-	s__Enterococcus faecium
-SAMEA2159898	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Enterococcus faecium
-SAMEA2159898	(all)	penicillin beta-lactam	-	-	-	-	pbp5:p.Met485Thr	-	-	-	s__Enterococcus faecium
-SAMEA2159898	pleuromutilin	pleuromutilin antibiotic	-	-	-	-	eat(A):p.Thr450Ile	-	-	-	s__Enterococcus faecium
-SAMEA2159898	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	erm(B)	-	-	-	s__Enterococcus faecium
+SAMEA2159898	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Enterococcus faecium
+SAMEA2159898	(all)	penicillin beta-lactam	-	-	none	-	pbp5:p.Met485Thr	-	-	-	s__Enterococcus faecium
+SAMEA2159898	pleuromutilin	pleuromutilin antibiotic	-	-	none	-	eat(A):p.Thr450Ile	-	-	-	s__Enterococcus faecium
+SAMEA2159898	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	erm(B)	-	-	-	s__Enterococcus faecium
 SAMEA2159898	quinupristin	streptogramin B antibiotic	R	wildtype	high	msr(C)	-	-	EFM0013	-	s__Enterococcus faecium
-SAMEA2162746	amikacin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa	-	EFM0001	-	s__Enterococcus faecium
+SAMEA2162746	amikacin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa	-	EFM0001	-	s__Enterococcus faecium
 SAMEA2162746	gentamicin	aminoglycoside antibiotic	-	wildtype	high	aac(6')-I	-	-	EFM0002	-	s__Enterococcus faecium
-SAMEA2162746	kanamycin A	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa	-	EFM0003	-	s__Enterococcus faecium
+SAMEA2162746	kanamycin A	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa	-	EFM0003	-	s__Enterococcus faecium
 SAMEA2162746	netilmicin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0004	-	s__Enterococcus faecium
-SAMEA2162746	streptomycin	aminoglycoside antibiotic	-	-	-	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
+SAMEA2162746	streptomycin	aminoglycoside antibiotic	-	-	none	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
 SAMEA2162746	tobramycin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0005	-	s__Enterococcus faecium
-SAMEA2162746	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrG	-	-	-	s__Enterococcus faecium
-SAMEA2162746	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser83Ile;parC:p.Ser80Ile	-	-	-	s__Enterococcus faecium
-SAMEA2162746	vancomycin	glycopeptide antibiotic	-	-	-	-	vanH-A;vanA;vanX-A;vanY-A;vanZ-A;vanR-A;vanS-A	-	-	-	s__Enterococcus faecium
-SAMEA2162746	clindamycin	lincosamide antibiotic	-	-	-	-	erm(B)	-	-	-	s__Enterococcus faecium
-SAMEA2162746	daptomycin	lipopeptide antibiotic	-	-	-	-	liaR:p.Trp73Cys;liaS:p.Thr120Ala	-	-	-	s__Enterococcus faecium
+SAMEA2162746	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrG	-	-	-	s__Enterococcus faecium
+SAMEA2162746	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser83Ile;parC:p.Ser80Ile	-	-	-	s__Enterococcus faecium
+SAMEA2162746	vancomycin	glycopeptide antibiotic	-	-	none	-	vanH-A;vanA;vanX-A;vanY-A;vanZ-A;vanR-A;vanS-A	-	-	-	s__Enterococcus faecium
+SAMEA2162746	clindamycin	lincosamide antibiotic	-	-	none	-	erm(B)	-	-	-	s__Enterococcus faecium
+SAMEA2162746	daptomycin	lipopeptide antibiotic	-	-	none	-	liaR:p.Trp73Cys;liaS:p.Thr120Ala	-	-	-	s__Enterococcus faecium
 SAMEA2162746	azithromycin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0011	-	s__Enterococcus faecium
-SAMEA2162746	erythromycin	macrolide antibiotic	R	-	-	msr(C)	erm(B)	-	EFM0012	-	s__Enterococcus faecium
+SAMEA2162746	erythromycin	macrolide antibiotic	R	-	none	msr(C)	erm(B)	-	EFM0012	-	s__Enterococcus faecium
 SAMEA2162746	tylosin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0014	-	s__Enterococcus faecium
-SAMEA2162746	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Enterococcus faecium
-SAMEA2162746	(all)	penicillin beta-lactam	-	-	-	-	pbp5:p.Met485Thr	-	-	-	s__Enterococcus faecium
-SAMEA2162746	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	erm(B)	-	-	-	s__Enterococcus faecium
+SAMEA2162746	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Enterococcus faecium
+SAMEA2162746	(all)	penicillin beta-lactam	-	-	none	-	pbp5:p.Met485Thr	-	-	-	s__Enterococcus faecium
+SAMEA2162746	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	erm(B)	-	-	-	s__Enterococcus faecium
 SAMEA2162746	quinupristin	streptogramin B antibiotic	R	wildtype	high	msr(C)	-	-	EFM0013	-	s__Enterococcus faecium
-SAMEA2162746	tetracycline	tetracycline antibiotic	-	-	-	-	tet(L);tet(M)	-	-	-	s__Enterococcus faecium
+SAMEA2162746	tetracycline	tetracycline antibiotic	-	-	none	-	tet(L);tet(M)	-	-	-	s__Enterococcus faecium
 SAMEA3304341	amikacin	aminoglycoside antibiotic	R	wildtype	moderate	aac(6')-I	-	-	EFM0001	-	s__Enterococcus faecium
 SAMEA3304341	gentamicin	aminoglycoside antibiotic	-	wildtype	high	aac(6')-I	-	-	EFM0002	-	s__Enterococcus faecium
 SAMEA3304341	kanamycin A	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0003	-	s__Enterococcus faecium
 SAMEA3304341	netilmicin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0004	-	s__Enterococcus faecium
 SAMEA3304341	tobramycin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0005	-	s__Enterococcus faecium
-SAMEA3304341	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrG	-	-	-	s__Enterococcus faecium
-SAMEA3304341	(all)	fluoroquinolone antibiotic	-	-	-	-	parC:p.Ser80Ile;gyrA:p.Ser83Tyr	-	-	-	s__Enterococcus faecium
-SAMEA3304341	clindamycin	lincosamide antibiotic	-	-	-	-	erm(B)	-	-	-	s__Enterococcus faecium
+SAMEA3304341	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrG	-	-	-	s__Enterococcus faecium
+SAMEA3304341	(all)	fluoroquinolone antibiotic	-	-	none	-	parC:p.Ser80Ile;gyrA:p.Ser83Tyr	-	-	-	s__Enterococcus faecium
+SAMEA3304341	clindamycin	lincosamide antibiotic	-	-	none	-	erm(B)	-	-	-	s__Enterococcus faecium
 SAMEA3304341	azithromycin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0011	-	s__Enterococcus faecium
-SAMEA3304341	erythromycin	macrolide antibiotic	R	-	-	msr(C)	erm(B)	-	EFM0012	-	s__Enterococcus faecium
+SAMEA3304341	erythromycin	macrolide antibiotic	R	-	none	msr(C)	erm(B)	-	EFM0012	-	s__Enterococcus faecium
 SAMEA3304341	tylosin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0014	-	s__Enterococcus faecium
-SAMEA3304341	(all)	penicillin beta-lactam	-	-	-	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
-SAMEA3304341	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	erm(B)	-	-	-	s__Enterococcus faecium
+SAMEA3304341	(all)	penicillin beta-lactam	-	-	none	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
+SAMEA3304341	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	erm(B)	-	-	-	s__Enterococcus faecium
 SAMEA3304341	quinupristin	streptogramin B antibiotic	R	wildtype	high	msr(C)	-	-	EFM0013	-	s__Enterococcus faecium
-SAMEA3304341	tetracycline	tetracycline antibiotic	-	-	-	-	tet(L)	-	-	-	s__Enterococcus faecium
+SAMEA3304341	tetracycline	tetracycline antibiotic	-	-	none	-	tet(L)	-	-	-	s__Enterococcus faecium
 SAMEA3304341	-	-	-	-	-	-	tet(M):-;tet(M):-;catA:-	-	none (partial hits)	-	s__Enterococcus faecium
-SAMEA3304501	amikacin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0001	-	s__Enterococcus faecium
-SAMEA3304501	gentamicin	aminoglycoside antibiotic	-	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0002	-	s__Enterococcus faecium
-SAMEA3304501	kanamycin A	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0003	-	s__Enterococcus faecium
+SAMEA3304501	amikacin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0001	-	s__Enterococcus faecium
+SAMEA3304501	gentamicin	aminoglycoside antibiotic	-	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0002	-	s__Enterococcus faecium
+SAMEA3304501	kanamycin A	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0003	-	s__Enterococcus faecium
 SAMEA3304501	netilmicin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0004	-	s__Enterococcus faecium
-SAMEA3304501	tobramycin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0005	-	s__Enterococcus faecium
-SAMEA3304501	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrG	-	-	-	s__Enterococcus faecium
-SAMEA3304501	(all)	fluoroquinolone antibiotic	-	-	-	-	parC:p.Ser80Ile;gyrA:p.Ser83Tyr	-	-	-	s__Enterococcus faecium
-SAMEA3304501	vancomycin	glycopeptide antibiotic	-	-	-	-	vanY-B;vanW-B;vanH-B;vanB;vanX-B	-	-	-	s__Enterococcus faecium
-SAMEA3304501	(all)	lincosamide antibiotic	-	-	-	-	erm(T)	-	-	-	s__Enterococcus faecium
+SAMEA3304501	tobramycin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0005	-	s__Enterococcus faecium
+SAMEA3304501	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrG	-	-	-	s__Enterococcus faecium
+SAMEA3304501	(all)	fluoroquinolone antibiotic	-	-	none	-	parC:p.Ser80Ile;gyrA:p.Ser83Tyr	-	-	-	s__Enterococcus faecium
+SAMEA3304501	vancomycin	glycopeptide antibiotic	-	-	none	-	vanY-B;vanW-B;vanH-B;vanB;vanX-B	-	-	-	s__Enterococcus faecium
+SAMEA3304501	(all)	lincosamide antibiotic	-	-	none	-	erm(T)	-	-	-	s__Enterococcus faecium
 SAMEA3304501	azithromycin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0011	-	s__Enterococcus faecium
-SAMEA3304501	erythromycin	macrolide antibiotic	R	-	-	msr(C)	erm(T)	-	EFM0012	-	s__Enterococcus faecium
-SAMEA3304501	tylosin	macrolide antibiotic	R	-	-	msr(C)	erm(T)	-	EFM0014	-	s__Enterococcus faecium
-SAMEA3304501	(all)	penicillin beta-lactam	-	-	-	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
-SAMEA3304501	(all)	streptogramin antibiotic	-	-	-	-	erm(T)	-	-	-	s__Enterococcus faecium
+SAMEA3304501	erythromycin	macrolide antibiotic	R	-	none	msr(C)	erm(T)	-	EFM0012	-	s__Enterococcus faecium
+SAMEA3304501	tylosin	macrolide antibiotic	R	-	none	msr(C)	erm(T)	-	EFM0014	-	s__Enterococcus faecium
+SAMEA3304501	(all)	penicillin beta-lactam	-	-	none	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
+SAMEA3304501	(all)	streptogramin antibiotic	-	-	none	-	erm(T)	-	-	-	s__Enterococcus faecium
 SAMEA3304501	quinupristin	streptogramin B antibiotic	R	wildtype	high	msr(C)	-	-	EFM0013	-	s__Enterococcus faecium
-SAMEA3304501	tetracycline	tetracycline antibiotic	-	-	-	-	tet(L)	-	-	-	s__Enterococcus faecium
+SAMEA3304501	tetracycline	tetracycline antibiotic	-	-	none	-	tet(L)	-	-	-	s__Enterococcus faecium
 SAMEA3304501	-	-	-	-	-	-	tet(M):-;tet(M):-	-	none (partial hits)	-	s__Enterococcus faecium
-SAMEA3484534	(all)	aminoglycoside antibiotic	-	-	-	-	spw	-	-	-	s__Enterococcus faecium
-SAMEA3484534	amikacin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa;spw	-	EFM0001	-	s__Enterococcus faecium
-SAMEA3484534	gentamicin	aminoglycoside antibiotic	-	-	-	aac(6')-I	spw	-	EFM0002	-	s__Enterococcus faecium
-SAMEA3484534	kanamycin A	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa;spw	-	EFM0003	-	s__Enterococcus faecium
-SAMEA3484534	netilmicin	aminoglycoside antibiotic	R	-	-	aac(6')-I	spw	-	EFM0004	-	s__Enterococcus faecium
-SAMEA3484534	streptomycin	aminoglycoside antibiotic	-	-	-	-	ant(6)-Ia;spw	-	-	-	s__Enterococcus faecium
-SAMEA3484534	tobramycin	aminoglycoside antibiotic	R	-	-	aac(6')-I	spw	-	EFM0005	-	s__Enterococcus faecium
-SAMEA3484534	(all)	lincosamide antibiotic	-	-	-	-	lsa(E);lnu(B)	-	-	-	s__Enterococcus faecium
-SAMEA3484534	clindamycin	lincosamide antibiotic	-	-	-	-	erm(B);lsa(E);lnu(B)	-	-	-	s__Enterococcus faecium
+SAMEA3484534	(all)	aminoglycoside antibiotic	-	-	none	-	spw	-	-	-	s__Enterococcus faecium
+SAMEA3484534	amikacin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa;spw	-	EFM0001	-	s__Enterococcus faecium
+SAMEA3484534	gentamicin	aminoglycoside antibiotic	-	-	none	aac(6')-I	spw	-	EFM0002	-	s__Enterococcus faecium
+SAMEA3484534	kanamycin A	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa;spw	-	EFM0003	-	s__Enterococcus faecium
+SAMEA3484534	netilmicin	aminoglycoside antibiotic	R	-	none	aac(6')-I	spw	-	EFM0004	-	s__Enterococcus faecium
+SAMEA3484534	streptomycin	aminoglycoside antibiotic	-	-	none	-	ant(6)-Ia;spw	-	-	-	s__Enterococcus faecium
+SAMEA3484534	tobramycin	aminoglycoside antibiotic	R	-	none	aac(6')-I	spw	-	EFM0005	-	s__Enterococcus faecium
+SAMEA3484534	(all)	lincosamide antibiotic	-	-	none	-	lsa(E);lnu(B)	-	-	-	s__Enterococcus faecium
+SAMEA3484534	clindamycin	lincosamide antibiotic	-	-	none	-	erm(B);lsa(E);lnu(B)	-	-	-	s__Enterococcus faecium
 SAMEA3484534	azithromycin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0011	-	s__Enterococcus faecium
-SAMEA3484534	erythromycin	macrolide antibiotic	R	-	-	msr(C)	erm(B)	-	EFM0012	-	s__Enterococcus faecium
+SAMEA3484534	erythromycin	macrolide antibiotic	R	-	none	msr(C)	erm(B)	-	EFM0012	-	s__Enterococcus faecium
 SAMEA3484534	tylosin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0014	-	s__Enterococcus faecium
-SAMEA3484534	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Enterococcus faecium
-SAMEA3484534	pleuromutilin	pleuromutilin antibiotic	-	-	-	-	eat(A):p.Thr450Ile	-	-	-	s__Enterococcus faecium
-SAMEA3484534	(all)	streptogramin antibiotic	-	-	-	-	lsa(E)	-	-	-	s__Enterococcus faecium
-SAMEA3484534	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	erm(B);lsa(E)	-	-	-	s__Enterococcus faecium
+SAMEA3484534	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Enterococcus faecium
+SAMEA3484534	pleuromutilin	pleuromutilin antibiotic	-	-	none	-	eat(A):p.Thr450Ile	-	-	-	s__Enterococcus faecium
+SAMEA3484534	(all)	streptogramin antibiotic	-	-	none	-	lsa(E)	-	-	-	s__Enterococcus faecium
+SAMEA3484534	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	erm(B);lsa(E)	-	-	-	s__Enterococcus faecium
 SAMEA3484534	quinupristin	streptogramin B antibiotic	R	wildtype	high	msr(C)	-	-	EFM0013	-	s__Enterococcus faecium
-SAMEA3484534	tetracycline	tetracycline antibiotic	-	-	-	-	tet(L);tet(M)	-	-	-	s__Enterococcus faecium
+SAMEA3484534	tetracycline	tetracycline antibiotic	-	-	none	-	tet(L);tet(M)	-	-	-	s__Enterococcus faecium
 SAMEA3484534	-	-	-	-	-	-	ant(6)-Ia:-	-	none (partial hits)	-	s__Enterococcus faecium
-SAMEA3894135	amikacin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa	-	EFM0001	-	s__Enterococcus faecium
+SAMEA3894135	amikacin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa	-	EFM0001	-	s__Enterococcus faecium
 SAMEA3894135	gentamicin	aminoglycoside antibiotic	-	wildtype	high	aac(6')-I	-	-	EFM0002	-	s__Enterococcus faecium
-SAMEA3894135	kanamycin A	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa	-	EFM0003	-	s__Enterococcus faecium
+SAMEA3894135	kanamycin A	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa	-	EFM0003	-	s__Enterococcus faecium
 SAMEA3894135	netilmicin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0004	-	s__Enterococcus faecium
-SAMEA3894135	streptomycin	aminoglycoside antibiotic	-	-	-	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
+SAMEA3894135	streptomycin	aminoglycoside antibiotic	-	-	none	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
 SAMEA3894135	tobramycin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0005	-	s__Enterococcus faecium
-SAMEA3894135	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrG	-	-	-	s__Enterococcus faecium
-SAMEA3894135	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser83Tyr;parC:p.Ser80Arg	-	-	-	s__Enterococcus faecium
-SAMEA3894135	vancomycin	glycopeptide antibiotic	-	-	-	-	vanY-A;vanZ-A;vanR-A;vanS-A;vanX-A;vanA;vanH-A	-	-	-	s__Enterococcus faecium
-SAMEA3894135	clindamycin	lincosamide antibiotic	-	-	-	-	erm(B)	-	-	-	s__Enterococcus faecium
+SAMEA3894135	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrG	-	-	-	s__Enterococcus faecium
+SAMEA3894135	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser83Tyr;parC:p.Ser80Arg	-	-	-	s__Enterococcus faecium
+SAMEA3894135	vancomycin	glycopeptide antibiotic	-	-	none	-	vanY-A;vanZ-A;vanR-A;vanS-A;vanX-A;vanA;vanH-A	-	-	-	s__Enterococcus faecium
+SAMEA3894135	clindamycin	lincosamide antibiotic	-	-	none	-	erm(B)	-	-	-	s__Enterococcus faecium
 SAMEA3894135	azithromycin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0011	-	s__Enterococcus faecium
-SAMEA3894135	erythromycin	macrolide antibiotic	R	-	-	msr(C)	erm(B)	-	EFM0012	-	s__Enterococcus faecium
+SAMEA3894135	erythromycin	macrolide antibiotic	R	-	none	msr(C)	erm(B)	-	EFM0012	-	s__Enterococcus faecium
 SAMEA3894135	tylosin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0014	-	s__Enterococcus faecium
-SAMEA3894135	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Enterococcus faecium
-SAMEA3894135	(all)	penicillin beta-lactam	-	-	-	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
-SAMEA3894135	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	erm(B)	-	-	-	s__Enterococcus faecium
+SAMEA3894135	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Enterococcus faecium
+SAMEA3894135	(all)	penicillin beta-lactam	-	-	none	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
+SAMEA3894135	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	erm(B)	-	-	-	s__Enterococcus faecium
 SAMEA3894135	quinupristin	streptogramin B antibiotic	R	wildtype	high	msr(C)	-	-	EFM0013	-	s__Enterococcus faecium
-SAMEA9566009	amikacin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia;aph(3')-IIIa	-	EFM0001	-	s__Enterococcus faecium
-SAMEA9566009	gentamicin	aminoglycoside antibiotic	-	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0002	-	s__Enterococcus faecium
-SAMEA9566009	kanamycin A	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia;aph(3')-IIIa	-	EFM0003	-	s__Enterococcus faecium
+SAMEA9566009	amikacin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia;aph(3')-IIIa	-	EFM0001	-	s__Enterococcus faecium
+SAMEA9566009	gentamicin	aminoglycoside antibiotic	-	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0002	-	s__Enterococcus faecium
+SAMEA9566009	kanamycin A	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia;aph(3')-IIIa	-	EFM0003	-	s__Enterococcus faecium
 SAMEA9566009	netilmicin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0004	-	s__Enterococcus faecium
-SAMEA9566009	streptomycin	aminoglycoside antibiotic	-	-	-	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
-SAMEA9566009	tobramycin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0005	-	s__Enterococcus faecium
-SAMEA9566009	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrF	-	-	-	s__Enterococcus faecium
-SAMEA9566009	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser83Ile;parC:p.Ser80Arg	-	-	-	s__Enterococcus faecium
-SAMEA9566009	vancomycin	glycopeptide antibiotic	-	-	-	-	vanY-B;vanS-B;vanR-B;vanH-B;vanB;vanX-B	-	-	-	s__Enterococcus faecium
-SAMEA9566009	(all)	lincosamide antibiotic	-	-	-	-	lsa(E)	-	-	-	s__Enterococcus faecium
-SAMEA9566009	clindamycin	lincosamide antibiotic	-	-	-	-	erm(B);lsa(E)	-	-	-	s__Enterococcus faecium
+SAMEA9566009	streptomycin	aminoglycoside antibiotic	-	-	none	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
+SAMEA9566009	tobramycin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0005	-	s__Enterococcus faecium
+SAMEA9566009	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrF	-	-	-	s__Enterococcus faecium
+SAMEA9566009	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser83Ile;parC:p.Ser80Arg	-	-	-	s__Enterococcus faecium
+SAMEA9566009	vancomycin	glycopeptide antibiotic	-	-	none	-	vanY-B;vanS-B;vanR-B;vanH-B;vanB;vanX-B	-	-	-	s__Enterococcus faecium
+SAMEA9566009	(all)	lincosamide antibiotic	-	-	none	-	lsa(E)	-	-	-	s__Enterococcus faecium
+SAMEA9566009	clindamycin	lincosamide antibiotic	-	-	none	-	erm(B);lsa(E)	-	-	-	s__Enterococcus faecium
 SAMEA9566009	azithromycin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0011	-	s__Enterococcus faecium
-SAMEA9566009	erythromycin	macrolide antibiotic	R	-	-	msr(C)	erm(B)	-	EFM0012	-	s__Enterococcus faecium
+SAMEA9566009	erythromycin	macrolide antibiotic	R	-	none	msr(C)	erm(B)	-	EFM0012	-	s__Enterococcus faecium
 SAMEA9566009	tylosin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0014	-	s__Enterococcus faecium
-SAMEA9566009	(all)	penicillin beta-lactam	-	-	-	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
-SAMEA9566009	(all)	streptogramin antibiotic	-	-	-	-	lsa(E)	-	-	-	s__Enterococcus faecium
-SAMEA9566009	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	erm(B);lsa(E)	-	-	-	s__Enterococcus faecium
+SAMEA9566009	(all)	penicillin beta-lactam	-	-	none	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
+SAMEA9566009	(all)	streptogramin antibiotic	-	-	none	-	lsa(E)	-	-	-	s__Enterococcus faecium
+SAMEA9566009	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	erm(B);lsa(E)	-	-	-	s__Enterococcus faecium
 SAMEA9566009	quinupristin	streptogramin B antibiotic	R	wildtype	high	msr(C)	-	-	EFM0013	-	s__Enterococcus faecium
-SAMEA9566009	tetracycline	tetracycline antibiotic	-	-	-	-	tet(M)	-	-	-	s__Enterococcus faecium
+SAMEA9566009	tetracycline	tetracycline antibiotic	-	-	none	-	tet(M)	-	-	-	s__Enterococcus faecium
 SAMEA9566009	-	-	-	-	-	-	vanW-B:-;lnu(B):-	-	none (partial hits)	-	s__Enterococcus faecium
-SAMN02318174	amikacin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa	-	EFM0001	-	s__Enterococcus faecium
+SAMN02318174	amikacin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa	-	EFM0001	-	s__Enterococcus faecium
 SAMN02318174	gentamicin	aminoglycoside antibiotic	-	wildtype	high	aac(6')-I	-	-	EFM0002	-	s__Enterococcus faecium
-SAMN02318174	kanamycin A	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa	-	EFM0003	-	s__Enterococcus faecium
+SAMN02318174	kanamycin A	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa	-	EFM0003	-	s__Enterococcus faecium
 SAMN02318174	netilmicin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0004	-	s__Enterococcus faecium
-SAMN02318174	streptomycin	aminoglycoside antibiotic	-	-	-	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
+SAMN02318174	streptomycin	aminoglycoside antibiotic	-	-	none	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
 SAMN02318174	tobramycin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0005	-	s__Enterococcus faecium
-SAMN02318174	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrF;dfrG	-	-	-	s__Enterococcus faecium
-SAMN02318174	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser83Ile;parC:p.Ser80Arg	-	-	-	s__Enterococcus faecium
-SAMN02318174	vancomycin	glycopeptide antibiotic	-	-	-	-	vanY-B;vanS-B;vanR-B;vanH-B;vanB;vanX-B	-	-	-	s__Enterococcus faecium
-SAMN02318174	(all)	lincosamide antibiotic	-	-	-	-	erm(T)	-	-	-	s__Enterococcus faecium
-SAMN02318174	clindamycin	lincosamide antibiotic	-	-	-	-	erm(B);erm(T)	-	-	-	s__Enterococcus faecium
+SAMN02318174	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrF;dfrG	-	-	-	s__Enterococcus faecium
+SAMN02318174	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser83Ile;parC:p.Ser80Arg	-	-	-	s__Enterococcus faecium
+SAMN02318174	vancomycin	glycopeptide antibiotic	-	-	none	-	vanY-B;vanS-B;vanR-B;vanH-B;vanB;vanX-B	-	-	-	s__Enterococcus faecium
+SAMN02318174	(all)	lincosamide antibiotic	-	-	none	-	erm(T)	-	-	-	s__Enterococcus faecium
+SAMN02318174	clindamycin	lincosamide antibiotic	-	-	none	-	erm(B);erm(T)	-	-	-	s__Enterococcus faecium
 SAMN02318174	azithromycin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0011	-	s__Enterococcus faecium
-SAMN02318174	erythromycin	macrolide antibiotic	R	-	-	msr(C)	erm(T);erm(B)	-	EFM0012	-	s__Enterococcus faecium
-SAMN02318174	tylosin	macrolide antibiotic	R	-	-	msr(C)	erm(T)	-	EFM0014	-	s__Enterococcus faecium
-SAMN02318174	(all)	penicillin beta-lactam	-	-	-	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
-SAMN02318174	(all)	streptogramin antibiotic	-	-	-	-	erm(T)	-	-	-	s__Enterococcus faecium
-SAMN02318174	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	erm(B);erm(T)	-	-	-	s__Enterococcus faecium
+SAMN02318174	erythromycin	macrolide antibiotic	R	-	none	msr(C)	erm(T);erm(B)	-	EFM0012	-	s__Enterococcus faecium
+SAMN02318174	tylosin	macrolide antibiotic	R	-	none	msr(C)	erm(T)	-	EFM0014	-	s__Enterococcus faecium
+SAMN02318174	(all)	penicillin beta-lactam	-	-	none	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
+SAMN02318174	(all)	streptogramin antibiotic	-	-	none	-	erm(T)	-	-	-	s__Enterococcus faecium
+SAMN02318174	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	erm(B);erm(T)	-	-	-	s__Enterococcus faecium
 SAMN02318174	quinupristin	streptogramin B antibiotic	R	wildtype	high	msr(C)	-	-	EFM0013	-	s__Enterococcus faecium
 SAMN02318174	-	-	-	-	-	-	vanW-B:-	-	none (partial hits)	-	s__Enterococcus faecium
 SAMEA104415078	amikacin	aminoglycoside antibiotic	R	wildtype	moderate	aac(6')-I	-	-	EFM0001	-	s__Enterococcus faecium
 SAMEA104415078	gentamicin	aminoglycoside antibiotic	-	wildtype	high	aac(6')-I	-	-	EFM0002	-	s__Enterococcus faecium
 SAMEA104415078	kanamycin A	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0003	-	s__Enterococcus faecium
 SAMEA104415078	netilmicin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0004	-	s__Enterococcus faecium
-SAMEA104415078	streptomycin	aminoglycoside antibiotic	-	-	-	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
+SAMEA104415078	streptomycin	aminoglycoside antibiotic	-	-	none	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
 SAMEA104415078	tobramycin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0005	-	s__Enterococcus faecium
-SAMEA104415078	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrF	-	-	-	s__Enterococcus faecium
-SAMEA104415078	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser83Tyr;parC:p.Ser80Arg	-	-	-	s__Enterococcus faecium
-SAMEA104415078	vancomycin	glycopeptide antibiotic	-	-	-	-	vanY-A;vanZ-A;vanX-A;vanA;vanH-A;vanS-A;vanR-A	-	-	-	s__Enterococcus faecium
-SAMEA104415078	clindamycin	lincosamide antibiotic	-	-	-	-	erm(B)	-	-	-	s__Enterococcus faecium
+SAMEA104415078	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrF	-	-	-	s__Enterococcus faecium
+SAMEA104415078	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser83Tyr;parC:p.Ser80Arg	-	-	-	s__Enterococcus faecium
+SAMEA104415078	vancomycin	glycopeptide antibiotic	-	-	none	-	vanY-A;vanZ-A;vanX-A;vanA;vanH-A;vanS-A;vanR-A	-	-	-	s__Enterococcus faecium
+SAMEA104415078	clindamycin	lincosamide antibiotic	-	-	none	-	erm(B)	-	-	-	s__Enterococcus faecium
 SAMEA104415078	azithromycin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0011	-	s__Enterococcus faecium
-SAMEA104415078	erythromycin	macrolide antibiotic	R	-	-	msr(C)	erm(B)	-	EFM0012	-	s__Enterococcus faecium
+SAMEA104415078	erythromycin	macrolide antibiotic	R	-	none	msr(C)	erm(B)	-	EFM0012	-	s__Enterococcus faecium
 SAMEA104415078	tylosin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0014	-	s__Enterococcus faecium
-SAMEA104415078	(all)	penicillin beta-lactam	-	-	-	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
-SAMEA104415078	chloramphenicol	phenicol antibiotic	-	-	-	-	catA	-	-	-	s__Enterococcus faecium
-SAMEA104415078	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	erm(B)	-	-	-	s__Enterococcus faecium
+SAMEA104415078	(all)	penicillin beta-lactam	-	-	none	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
+SAMEA104415078	chloramphenicol	phenicol antibiotic	-	-	none	-	catA	-	-	-	s__Enterococcus faecium
+SAMEA104415078	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	erm(B)	-	-	-	s__Enterococcus faecium
 SAMEA104415078	quinupristin	streptogramin B antibiotic	R	wildtype	high	msr(C)	-	-	EFM0013	-	s__Enterococcus faecium
-SAMEA104415078	tetracycline	tetracycline antibiotic	-	-	-	-	tet(M)	-	-	-	s__Enterococcus faecium
-SAMN10248949	amikacin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0001	-	s__Enterococcus faecium
-SAMN10248949	gentamicin	aminoglycoside antibiotic	-	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0002	-	s__Enterococcus faecium
-SAMN10248949	kanamycin A	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0003	-	s__Enterococcus faecium
+SAMEA104415078	tetracycline	tetracycline antibiotic	-	-	none	-	tet(M)	-	-	-	s__Enterococcus faecium
+SAMN10248949	amikacin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0001	-	s__Enterococcus faecium
+SAMN10248949	gentamicin	aminoglycoside antibiotic	-	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0002	-	s__Enterococcus faecium
+SAMN10248949	kanamycin A	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0003	-	s__Enterococcus faecium
 SAMN10248949	netilmicin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0004	-	s__Enterococcus faecium
-SAMN10248949	tobramycin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0005	-	s__Enterococcus faecium
-SAMN10248949	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser83Ile;parC:p.Ser80Ile	-	-	-	s__Enterococcus faecium
-SAMN10248949	vancomycin	glycopeptide antibiotic	-	-	-	-	vanR-A;vanS-A;vanH-A;vanA;vanX-A;vanY-A	-	-	-	s__Enterococcus faecium
-SAMN10248949	(all)	lincosamide antibiotic	-	-	-	-	erm(T)	-	-	-	s__Enterococcus faecium
-SAMN10248949	clindamycin	lincosamide antibiotic	-	-	-	-	cfr(D);erm(T)	-	-	-	s__Enterococcus faecium
+SAMN10248949	tobramycin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0005	-	s__Enterococcus faecium
+SAMN10248949	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser83Ile;parC:p.Ser80Ile	-	-	-	s__Enterococcus faecium
+SAMN10248949	vancomycin	glycopeptide antibiotic	-	-	none	-	vanR-A;vanS-A;vanH-A;vanA;vanX-A;vanY-A	-	-	-	s__Enterococcus faecium
+SAMN10248949	(all)	lincosamide antibiotic	-	-	none	-	erm(T)	-	-	-	s__Enterococcus faecium
+SAMN10248949	clindamycin	lincosamide antibiotic	-	-	none	-	cfr(D);erm(T)	-	-	-	s__Enterococcus faecium
 SAMN10248949	azithromycin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0011	-	s__Enterococcus faecium
-SAMN10248949	erythromycin	macrolide antibiotic	R	-	-	msr(C)	erm(T)	-	EFM0012	-	s__Enterococcus faecium
-SAMN10248949	tylosin	macrolide antibiotic	R	-	-	msr(C)	erm(T)	-	EFM0014	-	s__Enterococcus faecium
-SAMN10248949	linezolid	oxazolidinone antibiotic	-	-	-	-	cfr(D);poxtA	-	-	-	s__Enterococcus faecium
-SAMN10248949	tedizolid	oxazolidinone antibiotic	-	-	-	-	cfr(D)	-	-	-	s__Enterococcus faecium
-SAMN10248949	(all)	penicillin beta-lactam	-	-	-	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
-SAMN10248949	chloramphenicol	phenicol antibiotic	-	-	-	-	cfr(D);poxtA	-	-	-	s__Enterococcus faecium
-SAMN10248949	florfenicol	phenicol antibiotic	-	-	-	-	poxtA	-	-	-	s__Enterococcus faecium
-SAMN10248949	pleuromutilin	pleuromutilin antibiotic	-	-	-	-	eat(A):p.Thr450Ile	-	-	-	s__Enterococcus faecium
-SAMN10248949	tiamulin	pleuromutilin antibiotic	-	-	-	-	cfr(D)	-	-	-	s__Enterococcus faecium
-SAMN10248949	(all)	streptogramin antibiotic	-	-	-	-	erm(T)	-	-	-	s__Enterococcus faecium
-SAMN10248949	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	cfr(D);erm(T)	-	-	-	s__Enterococcus faecium
+SAMN10248949	erythromycin	macrolide antibiotic	R	-	none	msr(C)	erm(T)	-	EFM0012	-	s__Enterococcus faecium
+SAMN10248949	tylosin	macrolide antibiotic	R	-	none	msr(C)	erm(T)	-	EFM0014	-	s__Enterococcus faecium
+SAMN10248949	linezolid	oxazolidinone antibiotic	-	-	none	-	cfr(D);poxtA	-	-	-	s__Enterococcus faecium
+SAMN10248949	tedizolid	oxazolidinone antibiotic	-	-	none	-	cfr(D)	-	-	-	s__Enterococcus faecium
+SAMN10248949	(all)	penicillin beta-lactam	-	-	none	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
+SAMN10248949	chloramphenicol	phenicol antibiotic	-	-	none	-	cfr(D);poxtA	-	-	-	s__Enterococcus faecium
+SAMN10248949	florfenicol	phenicol antibiotic	-	-	none	-	poxtA	-	-	-	s__Enterococcus faecium
+SAMN10248949	pleuromutilin	pleuromutilin antibiotic	-	-	none	-	eat(A):p.Thr450Ile	-	-	-	s__Enterococcus faecium
+SAMN10248949	tiamulin	pleuromutilin antibiotic	-	-	none	-	cfr(D)	-	-	-	s__Enterococcus faecium
+SAMN10248949	(all)	streptogramin antibiotic	-	-	none	-	erm(T)	-	-	-	s__Enterococcus faecium
+SAMN10248949	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	cfr(D);erm(T)	-	-	-	s__Enterococcus faecium
 SAMN10248949	quinupristin	streptogramin B antibiotic	R	wildtype	high	msr(C)	-	-	EFM0013	-	s__Enterococcus faecium
-SAMN10248949	tetracycline	tetracycline antibiotic	-	-	-	-	tet(L);tet(M)	-	-	-	s__Enterococcus faecium
+SAMN10248949	tetracycline	tetracycline antibiotic	-	-	none	-	tet(L);tet(M)	-	-	-	s__Enterococcus faecium
 SAMN10248949	-	-	-	-	-	-	vanZ-A:-	-	none (partial hits)	-	s__Enterococcus faecium
-SAMN12768609	amikacin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa	-	EFM0001	-	s__Enterococcus faecium
+SAMN12768609	amikacin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa	-	EFM0001	-	s__Enterococcus faecium
 SAMN12768609	gentamicin	aminoglycoside antibiotic	-	wildtype	high	aac(6')-I	-	-	EFM0002	-	s__Enterococcus faecium
-SAMN12768609	kanamycin A	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa	-	EFM0003	-	s__Enterococcus faecium
+SAMN12768609	kanamycin A	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa	-	EFM0003	-	s__Enterococcus faecium
 SAMN12768609	netilmicin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0004	-	s__Enterococcus faecium
-SAMN12768609	spectinomycin	aminoglycoside antibiotic	-	-	-	-	ant(9)-Ia	-	-	-	s__Enterococcus faecium
+SAMN12768609	spectinomycin	aminoglycoside antibiotic	-	-	none	-	ant(9)-Ia	-	-	-	s__Enterococcus faecium
 SAMN12768609	tobramycin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0005	-	s__Enterococcus faecium
-SAMN12768609	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrG	-	-	-	s__Enterococcus faecium
-SAMN12768609	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser83Tyr;parC:p.Ser80Ile	-	-	-	s__Enterococcus faecium
-SAMN12768609	vancomycin	glycopeptide antibiotic	-	-	-	-	vanR-A;vanS-A;vanH-A;vanA;vanX-A;vanY-A	-	-	-	s__Enterococcus faecium
-SAMN12768609	clindamycin	lincosamide antibiotic	-	-	-	-	erm(A);erm(B)	-	-	-	s__Enterococcus faecium
-SAMN12768609	azithromycin	macrolide antibiotic	R	-	-	msr(C)	erm(A)	-	EFM0011	-	s__Enterococcus faecium
-SAMN12768609	clarithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Enterococcus faecium
-SAMN12768609	erythromycin	macrolide antibiotic	R	-	-	msr(C)	erm(A);erm(B)	-	EFM0012	-	s__Enterococcus faecium
-SAMN12768609	telithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Enterococcus faecium
+SAMN12768609	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrG	-	-	-	s__Enterococcus faecium
+SAMN12768609	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser83Tyr;parC:p.Ser80Ile	-	-	-	s__Enterococcus faecium
+SAMN12768609	vancomycin	glycopeptide antibiotic	-	-	none	-	vanR-A;vanS-A;vanH-A;vanA;vanX-A;vanY-A	-	-	-	s__Enterococcus faecium
+SAMN12768609	clindamycin	lincosamide antibiotic	-	-	none	-	erm(A);erm(B)	-	-	-	s__Enterococcus faecium
+SAMN12768609	azithromycin	macrolide antibiotic	R	-	none	msr(C)	erm(A)	-	EFM0011	-	s__Enterococcus faecium
+SAMN12768609	clarithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Enterococcus faecium
+SAMN12768609	erythromycin	macrolide antibiotic	R	-	none	msr(C)	erm(A);erm(B)	-	EFM0012	-	s__Enterococcus faecium
+SAMN12768609	telithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Enterococcus faecium
 SAMN12768609	tylosin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0014	-	s__Enterococcus faecium
-SAMN12768609	(all)	penicillin beta-lactam	-	-	-	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
-SAMN12768609	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	erm(B)	-	-	-	s__Enterococcus faecium
+SAMN12768609	(all)	penicillin beta-lactam	-	-	none	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
+SAMN12768609	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	erm(B)	-	-	-	s__Enterococcus faecium
 SAMN12768609	quinupristin	streptogramin B antibiotic	R	wildtype	high	msr(C)	-	-	EFM0013	-	s__Enterococcus faecium
-SAMN22135179	(all)	aminoglycoside antibiotic	-	-	-	-	spw	-	-	-	s__Enterococcus faecium
-SAMN22135179	amikacin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia;aph(3')-IIIa;spw	-	EFM0001	-	s__Enterococcus faecium
-SAMN22135179	gentamicin	aminoglycoside antibiotic	-	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia;spw	-	EFM0002	-	s__Enterococcus faecium
-SAMN22135179	kanamycin A	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia;aph(3')-IIIa;spw	-	EFM0003	-	s__Enterococcus faecium
-SAMN22135179	netilmicin	aminoglycoside antibiotic	R	-	-	aac(6')-I	spw	-	EFM0004	-	s__Enterococcus faecium
-SAMN22135179	tobramycin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia;spw	-	EFM0005	-	s__Enterococcus faecium
-SAMN22135179	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrF	-	-	-	s__Enterococcus faecium
-SAMN22135179	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser83Tyr;parC:p.Ser80Arg	-	-	-	s__Enterococcus faecium
-SAMN22135179	vancomycin	glycopeptide antibiotic	-	-	-	-	vanZ-A;vanY-A;vanX-A;vanA;vanH-A;vanS-A;vanR-A	-	-	-	s__Enterococcus faecium
-SAMN22135179	(all)	lincosamide antibiotic	-	-	-	-	lsa(E);lnu(B)	-	-	-	s__Enterococcus faecium
+SAMN22135179	(all)	aminoglycoside antibiotic	-	-	none	-	spw	-	-	-	s__Enterococcus faecium
+SAMN22135179	amikacin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia;aph(3')-IIIa;spw	-	EFM0001	-	s__Enterococcus faecium
+SAMN22135179	gentamicin	aminoglycoside antibiotic	-	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia;spw	-	EFM0002	-	s__Enterococcus faecium
+SAMN22135179	kanamycin A	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia;aph(3')-IIIa;spw	-	EFM0003	-	s__Enterococcus faecium
+SAMN22135179	netilmicin	aminoglycoside antibiotic	R	-	none	aac(6')-I	spw	-	EFM0004	-	s__Enterococcus faecium
+SAMN22135179	tobramycin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia;spw	-	EFM0005	-	s__Enterococcus faecium
+SAMN22135179	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrF	-	-	-	s__Enterococcus faecium
+SAMN22135179	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser83Tyr;parC:p.Ser80Arg	-	-	-	s__Enterococcus faecium
+SAMN22135179	vancomycin	glycopeptide antibiotic	-	-	none	-	vanZ-A;vanY-A;vanX-A;vanA;vanH-A;vanS-A;vanR-A	-	-	-	s__Enterococcus faecium
+SAMN22135179	(all)	lincosamide antibiotic	-	-	none	-	lsa(E);lnu(B)	-	-	-	s__Enterococcus faecium
 SAMN22135179	azithromycin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0011	-	s__Enterococcus faecium
 SAMN22135179	erythromycin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0012	-	s__Enterococcus faecium
 SAMN22135179	tylosin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0014	-	s__Enterococcus faecium
-SAMN22135179	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Enterococcus faecium
-SAMN22135179	(all)	penicillin beta-lactam	-	-	-	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
-SAMN22135179	(all)	streptogramin antibiotic	-	-	-	-	lsa(E)	-	-	-	s__Enterococcus faecium
+SAMN22135179	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Enterococcus faecium
+SAMN22135179	(all)	penicillin beta-lactam	-	-	none	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
+SAMN22135179	(all)	streptogramin antibiotic	-	-	none	-	lsa(E)	-	-	-	s__Enterococcus faecium
 SAMN22135179	quinupristin	streptogramin B antibiotic	R	wildtype	high	msr(C)	-	-	EFM0013	-	s__Enterococcus faecium
-SAMN22135179	tetracycline	tetracycline antibiotic	-	-	-	-	tet(L)	-	-	-	s__Enterococcus faecium
+SAMN22135179	tetracycline	tetracycline antibiotic	-	-	none	-	tet(L)	-	-	-	s__Enterococcus faecium
 SAMN22135179	-	-	-	-	-	-	ant(6)-Ia:-;ant(6)-Ia:-;ant(6)-Ia:-;erm(B):-;erm(B):-;erm(B):-	-	none (partial hits)	-	s__Enterococcus faecium
-SAMN22135332	amikacin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	EFM0001	-	s__Enterococcus faecium
-SAMN22135332	gentamicin	aminoglycoside antibiotic	-	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0002	-	s__Enterococcus faecium
-SAMN22135332	kanamycin A	aminoglycoside antibiotic	R	-	-	aac(6')-I	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	EFM0003	-	s__Enterococcus faecium
+SAMN22135332	amikacin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	EFM0001	-	s__Enterococcus faecium
+SAMN22135332	gentamicin	aminoglycoside antibiotic	-	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0002	-	s__Enterococcus faecium
+SAMN22135332	kanamycin A	aminoglycoside antibiotic	R	-	none	aac(6')-I	aph(3')-IIIa;aac(6')-Ie/aph(2'')-Ia	-	EFM0003	-	s__Enterococcus faecium
 SAMN22135332	netilmicin	aminoglycoside antibiotic	R	wildtype	high	aac(6')-I	-	-	EFM0004	-	s__Enterococcus faecium
-SAMN22135332	streptomycin	aminoglycoside antibiotic	-	-	-	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
-SAMN22135332	tobramycin	aminoglycoside antibiotic	R	-	-	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0005	-	s__Enterococcus faecium
-SAMN22135332	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrG;dfrF	-	-	-	s__Enterococcus faecium
-SAMN22135332	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser83Tyr;parC:p.Ser80Ile	-	-	-	s__Enterococcus faecium
-SAMN22135332	vancomycin	glycopeptide antibiotic	-	-	-	-	vanX-A;vanA;vanH-A;vanS-A;vanR-A;vanZ-A;vanY-A	-	-	-	s__Enterococcus faecium
-SAMN22135332	clindamycin	lincosamide antibiotic	-	-	-	-	erm(B)	-	-	-	s__Enterococcus faecium
+SAMN22135332	streptomycin	aminoglycoside antibiotic	-	-	none	-	ant(6)-Ia	-	-	-	s__Enterococcus faecium
+SAMN22135332	tobramycin	aminoglycoside antibiotic	R	-	none	aac(6')-I	aac(6')-Ie/aph(2'')-Ia	-	EFM0005	-	s__Enterococcus faecium
+SAMN22135332	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrG;dfrF	-	-	-	s__Enterococcus faecium
+SAMN22135332	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser83Tyr;parC:p.Ser80Ile	-	-	-	s__Enterococcus faecium
+SAMN22135332	vancomycin	glycopeptide antibiotic	-	-	none	-	vanX-A;vanA;vanH-A;vanS-A;vanR-A;vanZ-A;vanY-A	-	-	-	s__Enterococcus faecium
+SAMN22135332	clindamycin	lincosamide antibiotic	-	-	none	-	erm(B)	-	-	-	s__Enterococcus faecium
 SAMN22135332	azithromycin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0011	-	s__Enterococcus faecium
-SAMN22135332	erythromycin	macrolide antibiotic	R	-	-	msr(C)	mef(H);erm(B)	-	EFM0012	-	s__Enterococcus faecium
+SAMN22135332	erythromycin	macrolide antibiotic	R	-	none	msr(C)	mef(H);erm(B)	-	EFM0012	-	s__Enterococcus faecium
 SAMN22135332	tylosin	macrolide antibiotic	R	wildtype	high	msr(C)	-	-	EFM0014	-	s__Enterococcus faecium
-SAMN22135332	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Enterococcus faecium
-SAMN22135332	(all)	penicillin beta-lactam	-	-	-	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
-SAMN22135332	chloramphenicol	phenicol antibiotic	-	-	-	-	catA	-	-	-	s__Enterococcus faecium
-SAMN22135332	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	erm(B)	-	-	-	s__Enterococcus faecium
+SAMN22135332	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Enterococcus faecium
+SAMN22135332	(all)	penicillin beta-lactam	-	-	none	-	pbp5:p.Met485Ala	-	-	-	s__Enterococcus faecium
+SAMN22135332	chloramphenicol	phenicol antibiotic	-	-	none	-	catA	-	-	-	s__Enterococcus faecium
+SAMN22135332	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	erm(B)	-	-	-	s__Enterococcus faecium
 SAMN22135332	quinupristin	streptogramin B antibiotic	R	wildtype	high	msr(C)	-	-	EFM0013	-	s__Enterococcus faecium

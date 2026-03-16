@@ -2,4 +2,4 @@ sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S
 sample	ciprofloxacin	fluoroquinolone antibiotic	S	wildtype	moderate	-	-	oqxB19 (core);oqxA (core)	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
 sample	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-11 (core)	-	-	KPN0001	-	s__Klebsiella pneumoniae
 sample	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA (core)	KPN0004	-	s__Klebsiella pneumoniae
-sample	(n/a)	antibiotic efflux	-	-	-	-	emrD	-	-	-	s__Klebsiella pneumoniae
+sample	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae

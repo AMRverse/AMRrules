@@ -1,17 +1,17 @@
 sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
-SAMN11959366	amikacin	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Campylobacter jejuni
-SAMN11959366	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Campylobacter jejuni
+SAMN11959366	amikacin	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Campylobacter jejuni
+SAMN11959366	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Campylobacter jejuni
 SAMN11959366	streptomycin	aminoglycoside antibiotic	R	nonwildtype	moderate	aadE	-	-	CAM0007	-	s__Campylobacter jejuni
 SAMN11959366	ciprofloxacin	fluoroquinolone antibiotic	R	nonwildtype	high	gyrA:p.Thr86Ile	-	-	CAM0036	-	s__Campylobacter jejuni
 SAMN11959366	nalidixic acid	fluoroquinolone antibiotic	R	nonwildtype	high	gyrA:p.Thr86Ile	-	-	CAM0037	-	s__Campylobacter jejuni
 SAMN11959366	azithromycin	macrolide antibiotic	R	nonwildtype	high	erm(B)	-	-	CAM0033	-	s__Campylobacter jejuni
 SAMN11959366	erythromycin	macrolide antibiotic	R	nonwildtype	high	erm(B)	-	-	CAM0032	-	s__Campylobacter jejuni
-SAMN11959366	(all)	penicillin beta-lactam	-	-	-	-	blaOXA	-	-	-	s__Campylobacter jejuni
-SAMN11959366	chloramphenicol	phenicol antibiotic	-	-	-	-	catA13	-	-	-	s__Campylobacter jejuni
+SAMN11959366	(all)	penicillin beta-lactam	-	-	none	-	blaOXA	-	-	-	s__Campylobacter jejuni
+SAMN11959366	chloramphenicol	phenicol antibiotic	-	-	none	-	catA13	-	-	-	s__Campylobacter jejuni
 SAMN11959366	(all)	tetracycline antibiotic	R	nonwildtype	high	tet(O)	-	-	CAM0016	-	s__Campylobacter jejuni
 SAMN11959366	-	-	-	-	-	-	tet(O):-;aad9:-	-	none (partial hits)	-	s__Campylobacter jejuni
-SAMN17553142	(all)	macrolide antibiotic	-	-	-	-	50S_L22:p.Ala103Val	-	-	-	s__Campylobacter jejuni
-SAMN17833673	(all)	macrolide antibiotic	-	-	-	-	50S_L22:p.Ala103Val	-	-	-	s__Campylobacter jejuni
+SAMN17553142	(all)	macrolide antibiotic	-	-	none	-	50S_L22:p.Ala103Val	-	-	-	s__Campylobacter jejuni
+SAMN17833673	(all)	macrolide antibiotic	-	-	none	-	50S_L22:p.Ala103Val	-	-	-	s__Campylobacter jejuni
 SAMN17833674	amoxicillin-clavulanic acid	antibiotic mixture	S	nonwildtype	moderate	-	-	blaOXA-193	CAM0050	-	s__Campylobacter jejuni
 SAMN17833674	(all)	carbapenem	S	nonwildtype	moderate	-	-	blaOXA-193	CAM0051	-	s__Campylobacter jejuni
 SAMN17833674	ertapenem	carbapenem	S	nonwildtype	moderate	-	-	blaOXA-193	CAM0051;CAM0052	-	s__Campylobacter jejuni
@@ -27,10 +27,10 @@ SAMN17903838	ertapenem	carbapenem	S	nonwildtype	moderate	-	-	blaOXA-193	CAM0051;
 SAMN17903838	meropenem	carbapenem	S	nonwildtype	moderate	-	-	blaOXA-193	CAM0051;CAM0060	-	s__Campylobacter jejuni
 SAMN17903838	(all)	penicillin beta-lactam	S	nonwildtype	moderate	-	-	blaOXA-193	CAM0048	-	s__Campylobacter jejuni
 SAMN17903838	ampicillin	penicillin beta-lactam	S	nonwildtype	moderate	-	-	blaOXA-193	CAM0048;CAM0049	-	s__Campylobacter jejuni
-SAMN18095316	amikacin	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Campylobacter jejuni
-SAMN18095316	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Campylobacter jejuni
-SAMN18095316	(all)	macrolide antibiotic	-	-	-	-	50S_L22:p.Ala103Val	-	-	-	s__Campylobacter jejuni
-SAMN18095316	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Campylobacter jejuni
+SAMN18095316	amikacin	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Campylobacter jejuni
+SAMN18095316	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Campylobacter jejuni
+SAMN18095316	(all)	macrolide antibiotic	-	-	none	-	50S_L22:p.Ala103Val	-	-	-	s__Campylobacter jejuni
+SAMN18095316	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Campylobacter jejuni
 SAMN18095316	-	-	-	-	-	-	ant(6)-Ia:-	-	none (partial hits)	-	s__Campylobacter jejuni
 SAMN18312824	amoxicillin-clavulanic acid	antibiotic mixture	S	nonwildtype	moderate	-	-	blaOXA-460	CAM0050	-	s__Campylobacter jejuni
 SAMN18312824	(all)	carbapenem	S	nonwildtype	moderate	-	-	blaOXA-460	CAM0051	-	s__Campylobacter jejuni
@@ -38,18 +38,18 @@ SAMN18312824	ertapenem	carbapenem	S	nonwildtype	moderate	-	-	blaOXA-460	CAM0051;
 SAMN18312824	meropenem	carbapenem	S	nonwildtype	moderate	-	-	blaOXA-460	CAM0051;CAM0060	-	s__Campylobacter jejuni
 SAMN18312824	ciprofloxacin	fluoroquinolone antibiotic	R	nonwildtype	high	gyrA:p.Thr86Ile	-	-	CAM0036	-	s__Campylobacter jejuni
 SAMN18312824	nalidixic acid	fluoroquinolone antibiotic	R	nonwildtype	high	gyrA:p.Thr86Ile	-	-	CAM0037	-	s__Campylobacter jejuni
-SAMN18312824	(all)	macrolide antibiotic	-	-	-	-	50S_L22:p.Ala103Val	-	-	-	s__Campylobacter jejuni
+SAMN18312824	(all)	macrolide antibiotic	-	-	none	-	50S_L22:p.Ala103Val	-	-	-	s__Campylobacter jejuni
 SAMN18312824	(all)	penicillin beta-lactam	S	nonwildtype	moderate	-	-	blaOXA-460	CAM0048	-	s__Campylobacter jejuni
 SAMN18312824	ampicillin	penicillin beta-lactam	S	nonwildtype	moderate	-	-	blaOXA-460	CAM0048;CAM0049	-	s__Campylobacter jejuni
 SAMN18312824	(all)	tetracycline antibiotic	R	nonwildtype	high	tet(O)	-	-	CAM0016	-	s__Campylobacter jejuni
 SAMN19332275	ciprofloxacin	fluoroquinolone antibiotic	R	nonwildtype	high	gyrA:p.Thr86Ile	-	-	CAM0036	-	s__Campylobacter jejuni
 SAMN19332275	nalidixic acid	fluoroquinolone antibiotic	R	nonwildtype	high	gyrA:p.Thr86Ile	-	-	CAM0037	-	s__Campylobacter jejuni
-SAMN19332275	(all)	macrolide antibiotic	-	-	-	-	50S_L22:p.Ala103Val	-	-	-	s__Campylobacter jejuni
+SAMN19332275	(all)	macrolide antibiotic	-	-	none	-	50S_L22:p.Ala103Val	-	-	-	s__Campylobacter jejuni
 SAMN20152676	ciprofloxacin	fluoroquinolone antibiotic	R	nonwildtype	high	gyrA:p.Thr86Ile	-	-	CAM0036	-	s__Campylobacter jejuni
 SAMN20152676	nalidixic acid	fluoroquinolone antibiotic	R	nonwildtype	high	gyrA:p.Thr86Ile	-	-	CAM0037	-	s__Campylobacter jejuni
-SAMN20152676	(all)	macrolide antibiotic	-	-	-	-	50S_L22:p.Ala103Val	-	-	-	s__Campylobacter jejuni
+SAMN20152676	(all)	macrolide antibiotic	-	-	none	-	50S_L22:p.Ala103Val	-	-	-	s__Campylobacter jejuni
 SAMN20152676	(all)	tetracycline antibiotic	R	nonwildtype	high	tet(O)	-	-	CAM0016	-	s__Campylobacter jejuni
-SAMN21923159	amikacin	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Campylobacter jejuni
-SAMN21923159	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Campylobacter jejuni
+SAMN21923159	amikacin	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Campylobacter jejuni
+SAMN21923159	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Campylobacter jejuni
 SAMN21923159	(all)	tetracycline antibiotic	R	nonwildtype	high	tet(O)	-	-	CAM0016	-	s__Campylobacter jejuni
 SAMN21923159	-	-	-	-	-	-	sat4:-;ant(6)-Ia:-	-	none (partial hits)	-	s__Campylobacter jejuni
