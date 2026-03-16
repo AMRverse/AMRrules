@@ -87,7 +87,7 @@ class SummaryEntry:
         if self.markers_with_norule != '-':
             if no_rule_interpretation == 'none' or no_rule_interpretation == 'nwt':
                 # for the category, if we have any nwt markers, then we can't interpret
-                # what this means in combination with the S marker, so set to '-'
+                # what this means in combination with an S marker, so set to '-'
                 # however if the rule says 'R', then we can keep the R
                 if self.category == 'S':
                     self.category = '-'
@@ -98,8 +98,9 @@ class SummaryEntry:
                 # for the phenotype, if we have any nwt markers, then we can't interpret, so set to '-'
                     self.phenotype = '-'
                 elif no_rule_interpretation == 'nwt':
-                    # in this case, our rule markers state we have a wt phenotype, but we have nwt markers
+                    # in this case,if  our rule markers state we have a wt phenotype, but we have nwt markers
                     # so we override the penotype to be nwt
+                    # if we had markers with rules that were nwt R, we stay nwt anyway
                     self.phenotype = 'nonwildtype'
 
         # if efflux, then set clinical category to '-'
