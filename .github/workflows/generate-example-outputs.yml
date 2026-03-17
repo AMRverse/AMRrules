@@ -3,7 +3,7 @@ name: Generate Example Outputs
 on:
   push:
     branches:
-      - genome_summary_report_dev
+      - main
 
 jobs:
   generate-outputs:
