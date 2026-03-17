@@ -19,7 +19,7 @@ About
 
 Organism-specific interpretation of antimicrobial susceptibility testing (AST) data is standard in clinical microbiology, with rules regularly reviewed by expert committees of `EUCAST <https://www.eucast.org/>`__ and `CLSI <https://clsi.org/>`__. We aim to provide an analagous resource to support organism-specific interpretation of antimicrobial resistance (AMR) genotypes derived from pathogen whole genome sequence (WGS) data.
 
-AMRrules encode organism-specific rules for the interpretation of AMR genotype data. Users first take their genomes and run them through an AMR genotyping tool such as `AMRfinderplus <https://www.ncbi.nlm.nih.gov/pathogens/antimicrobial-resistance/AMRFinder/>`__, which identifies AMR genes and mutations present in the genome. The resulting output can then interpreted using AMRrules, which applies the organism-specific rules to generate a final interpreted report of predicted antimicrobial susceptibility for that genome.
+AMRrules encode organism-specific rules for the interpretation of AMR genotype data. Users first take their genomes and run them through an AMR genotyping tool such as `AMRFinderPlus <https://www.ncbi.nlm.nih.gov/pathogens/antimicrobial-resistance/AMRFinder/>`__, which identifies AMR genes and mutations present in the genome. The resulting output can then interpreted using AMRrules, which applies the organism-specific rules to generate a final interpreted report of predicted antimicrobial susceptibility for that genome.
 
 .. image:: images/amrfinder_pipeline.png
    :alt: Workflow for interpreting AMR genotypes using AMRrules
@@ -37,7 +37,7 @@ Current rulesets and supported organisms can be found :ref:`here <rules>`.
 
 The rule specification is available :ref:`here <specification>`.
 
-We are focusing early development on compatibility with NCBI resources (i.e. the `AMRfinderplus <https://www.ncbi.nlm.nih.gov/pathogens/antimicrobial-resistance/AMRFinder/>`__ genotyping tool, and the associated NCBI databases including `AMR refgene <https://www.ncbi.nlm.nih.gov/pathogens/refgene/>`__, `AMR Reference Gene Hierarchy <https://www.ncbi.nlm.nih.gov/pathogens/genehierarchy>`__, and the `Reference HMM Catalog <https://www.ncbi.nlm.nih.gov/pathogens/hmm/>`__). In future we plan for interoperability with `CARD <https://card.mcmaster.ca/>`__ and `ResFinder <http://genepi.food.dtu.dk/resfinder>`__ (and other tools based on these), using `hAMRonization <https://github.com/pha4ge/hAMRonization>`__.
+We are focusing early development on compatibility with NCBI resources (i.e. the `AMRFinderPlus <https://www.ncbi.nlm.nih.gov/pathogens/antimicrobial-resistance/AMRFinder/>`__ genotyping tool, and the associated NCBI databases including `AMR refgene <https://www.ncbi.nlm.nih.gov/pathogens/refgene/>`__, `AMR Reference Gene Hierarchy <https://www.ncbi.nlm.nih.gov/pathogens/genehierarchy>`__, and the `Reference HMM Catalog <https://www.ncbi.nlm.nih.gov/pathogens/hmm/>`__). In future we plan for interoperability with `CARD <https://card.mcmaster.ca/>`__ and `ResFinder <http://genepi.food.dtu.dk/resfinder>`__ (and other tools based on these), using `hAMRonization <https://github.com/pha4ge/hAMRonization>`__.
 
 
 Citation
