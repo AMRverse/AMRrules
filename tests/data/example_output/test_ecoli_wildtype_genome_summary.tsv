@@ -18,4 +18,4 @@ SAMN26308439	cefixime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	E
 SAMN26308439	cefotaxime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0011;ECO0012	-	s__Escherichia coli
 SAMN26308439	ceftazidime	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0014	-	s__Escherichia coli
 SAMN26308439	ceftriaxone	third-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0012;ECO0013	-	s__Escherichia coli
-SAMN26308439	(n/a)	antibiotic efflux	-	-	-	-	acrF;mdtM	-	-	-	s__Escherichia coli
+SAMN26308439	(n/a)	antibiotic efflux	-	-	none	-	acrF;mdtM	-	-	-	s__Escherichia coli

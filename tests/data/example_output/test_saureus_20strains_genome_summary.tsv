@@ -1,268 +1,268 @@
 sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
-SAMN13687289	amikacin	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN13687289	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN13687289	methicillin	beta-lactamase resistant penicillin	-	-	-	-	mecA	-	-	-	s__Staphylococcus aureus
-SAMN13687289	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrS1	-	-	-	s__Staphylococcus aureus
+SAMN13687289	amikacin	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN13687289	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN13687289	methicillin	beta-lactamase resistant penicillin	-	-	none	-	mecA	-	-	-	s__Staphylococcus aureus
+SAMN13687289	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrS1	-	-	-	s__Staphylococcus aureus
 SAMN13687289	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
-SAMN13687289	erythromycin	macrolide antibiotic	-	-	-	-	msr(A);mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN13687289	spiramycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN13687289	telithromycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN13687289	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Staphylococcus aureus
-SAMN13687289	(all)	penicillin beta-lactam	-	-	-	-	blaZ;blaR1;blaI	-	-	-	s__Staphylococcus aureus
-SAMN13687289	fosfomycin	phosphonic acid antibiotic	-	-	-	-	fosB	-	-	-	s__Staphylococcus aureus
-SAMN13687289	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	msr(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687289	erythromycin	macrolide antibiotic	-	-	none	-	msr(A);mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN13687289	spiramycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN13687289	telithromycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN13687289	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Staphylococcus aureus
+SAMN13687289	(all)	penicillin beta-lactam	-	-	none	-	blaZ;blaR1;blaI	-	-	-	s__Staphylococcus aureus
+SAMN13687289	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosB	-	-	-	s__Staphylococcus aureus
+SAMN13687289	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	msr(A)	-	-	-	s__Staphylococcus aureus
 SAMN13687289	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38);mepA;mepA	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
 SAMN13687289	-	-	-	-	-	-	mecR1:-;ant(6)-Ia:-	-	none (partial hits)	-	s__Staphylococcus aureus
-SAMN12610227	amikacin	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN12610227	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN12610227	methicillin	beta-lactamase resistant penicillin	-	-	-	-	mecA	-	-	-	s__Staphylococcus aureus
-SAMN12610227	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrS1	-	-	-	s__Staphylococcus aureus
+SAMN12610227	amikacin	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN12610227	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN12610227	methicillin	beta-lactamase resistant penicillin	-	-	none	-	mecA	-	-	-	s__Staphylococcus aureus
+SAMN12610227	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrS1	-	-	-	s__Staphylococcus aureus
 SAMN12610227	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
-SAMN12610227	erythromycin	macrolide antibiotic	-	-	-	-	mph(C);msr(A)	-	-	-	s__Staphylococcus aureus
-SAMN12610227	spiramycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN12610227	telithromycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN12610227	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Staphylococcus aureus
-SAMN12610227	(all)	penicillin beta-lactam	-	-	-	-	blaZ;blaI;blaR1	-	-	-	s__Staphylococcus aureus
-SAMN12610227	fosfomycin	phosphonic acid antibiotic	-	-	-	-	fosB	-	-	-	s__Staphylococcus aureus
-SAMN12610227	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	msr(A)	-	-	-	s__Staphylococcus aureus
+SAMN12610227	erythromycin	macrolide antibiotic	-	-	none	-	mph(C);msr(A)	-	-	-	s__Staphylococcus aureus
+SAMN12610227	spiramycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN12610227	telithromycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN12610227	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Staphylococcus aureus
+SAMN12610227	(all)	penicillin beta-lactam	-	-	none	-	blaZ;blaI;blaR1	-	-	-	s__Staphylococcus aureus
+SAMN12610227	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosB	-	-	-	s__Staphylococcus aureus
+SAMN12610227	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	msr(A)	-	-	-	s__Staphylococcus aureus
 SAMN12610227	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	mepA;mepA;tet(38);tet(38)	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
 SAMN12610227	-	-	-	-	-	-	mecR1:-;ant(6)-Ia:-	-	none (partial hits)	-	s__Staphylococcus aureus
-SAMN13687299	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aadD1	-	-	-	s__Staphylococcus aureus
-SAMN13687299	spectinomycin	aminoglycoside antibiotic	-	-	-	-	ant(9)-Ia	-	-	-	s__Staphylococcus aureus
-SAMN13687299	tobramycin	aminoglycoside antibiotic	-	-	-	-	aadD1	-	-	-	s__Staphylococcus aureus
-SAMN13687299	methicillin	beta-lactamase resistant penicillin	-	-	-	-	mecA;mecR1;mecI	-	-	-	s__Staphylococcus aureus
-SAMN13687299	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser84Leu;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
-SAMN13687299	bleomycin	glycopeptide antibiotic	-	-	-	-	bleO	-	-	-	s__Staphylococcus aureus
+SAMN13687299	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aadD1	-	-	-	s__Staphylococcus aureus
+SAMN13687299	spectinomycin	aminoglycoside antibiotic	-	-	none	-	ant(9)-Ia	-	-	-	s__Staphylococcus aureus
+SAMN13687299	tobramycin	aminoglycoside antibiotic	-	-	none	-	aadD1	-	-	-	s__Staphylococcus aureus
+SAMN13687299	methicillin	beta-lactamase resistant penicillin	-	-	none	-	mecA;mecR1;mecI	-	-	-	s__Staphylococcus aureus
+SAMN13687299	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser84Leu;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
+SAMN13687299	bleomycin	glycopeptide antibiotic	-	-	none	-	bleO	-	-	-	s__Staphylococcus aureus
 SAMN13687299	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
-SAMN13687299	clindamycin	lincosamide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687299	azithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687299	clarithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687299	erythromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687299	telithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687299	(all)	penicillin beta-lactam	-	-	-	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
-SAMN13687299	fosfomycin	phosphonic acid antibiotic	-	-	-	-	fosB	-	-	-	s__Staphylococcus aureus
+SAMN13687299	clindamycin	lincosamide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687299	azithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687299	clarithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687299	erythromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687299	telithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687299	(all)	penicillin beta-lactam	-	-	none	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
+SAMN13687299	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosB	-	-	-	s__Staphylococcus aureus
 SAMN13687299	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38);mepA;mepA	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
-SAMN13687288	amikacin	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN13687288	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN13687288	methicillin	beta-lactamase resistant penicillin	-	-	-	-	mecA	-	-	-	s__Staphylococcus aureus
-SAMN13687288	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrS1	-	-	-	s__Staphylococcus aureus
+SAMN13687288	amikacin	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN13687288	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN13687288	methicillin	beta-lactamase resistant penicillin	-	-	none	-	mecA	-	-	-	s__Staphylococcus aureus
+SAMN13687288	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrS1	-	-	-	s__Staphylococcus aureus
 SAMN13687288	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
-SAMN13687288	erythromycin	macrolide antibiotic	-	-	-	-	msr(A);mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN13687288	spiramycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN13687288	telithromycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN13687288	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Staphylococcus aureus
-SAMN13687288	(all)	penicillin beta-lactam	-	-	-	-	blaZ;blaR1	-	-	-	s__Staphylococcus aureus
-SAMN13687288	fosfomycin	phosphonic acid antibiotic	-	-	-	-	fosB	-	-	-	s__Staphylococcus aureus
-SAMN13687288	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	msr(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687288	erythromycin	macrolide antibiotic	-	-	none	-	msr(A);mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN13687288	spiramycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN13687288	telithromycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN13687288	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Staphylococcus aureus
+SAMN13687288	(all)	penicillin beta-lactam	-	-	none	-	blaZ;blaR1	-	-	-	s__Staphylococcus aureus
+SAMN13687288	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosB	-	-	-	s__Staphylococcus aureus
+SAMN13687288	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	msr(A)	-	-	-	s__Staphylococcus aureus
 SAMN13687288	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	mepA;mepA;tet(38);tet(38)	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
 SAMN13687288	-	-	-	-	-	-	blaI:-;mecR1:-;ant(6)-Ia:-	-	none (partial hits)	-	s__Staphylococcus aureus
-SAMN12190392	amikacin	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN12190392	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN12190392	methicillin	beta-lactamase resistant penicillin	-	-	-	-	mecA	-	-	-	s__Staphylococcus aureus
+SAMN12190392	amikacin	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN12190392	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN12190392	methicillin	beta-lactamase resistant penicillin	-	-	none	-	mecA	-	-	-	s__Staphylococcus aureus
 SAMN12190392	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
-SAMN12190392	erythromycin	macrolide antibiotic	-	-	-	-	mph(C);msr(A)	-	-	-	s__Staphylococcus aureus
-SAMN12190392	spiramycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN12190392	telithromycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN12190392	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Staphylococcus aureus
-SAMN12190392	(all)	penicillin beta-lactam	-	-	-	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
-SAMN12190392	fosfomycin	phosphonic acid antibiotic	-	-	-	-	fosB;murA:p.Gly257Asp	-	-	-	s__Staphylococcus aureus
-SAMN12190392	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	msr(A)	-	-	-	s__Staphylococcus aureus
+SAMN12190392	erythromycin	macrolide antibiotic	-	-	none	-	mph(C);msr(A)	-	-	-	s__Staphylococcus aureus
+SAMN12190392	spiramycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN12190392	telithromycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN12190392	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Staphylococcus aureus
+SAMN12190392	(all)	penicillin beta-lactam	-	-	none	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
+SAMN12190392	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosB;murA:p.Gly257Asp	-	-	-	s__Staphylococcus aureus
+SAMN12190392	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	msr(A)	-	-	-	s__Staphylococcus aureus
 SAMN12190392	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38);mepA;mepA	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
 SAMN12190392	-	-	-	-	-	-	mecR1:-;ant(6)-Ia:-	-	none (partial hits)	-	s__Staphylococcus aureus
-SAMN12610313	amikacin	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN12610313	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN12610313	methicillin	beta-lactamase resistant penicillin	-	-	-	-	mecA	-	-	-	s__Staphylococcus aureus
+SAMN12610313	amikacin	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN12610313	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN12610313	methicillin	beta-lactamase resistant penicillin	-	-	none	-	mecA	-	-	-	s__Staphylococcus aureus
 SAMN12610313	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
-SAMN12610313	erythromycin	macrolide antibiotic	-	-	-	-	mph(C);msr(A)	-	-	-	s__Staphylococcus aureus
-SAMN12610313	spiramycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN12610313	telithromycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN12610313	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Staphylococcus aureus
-SAMN12610313	(all)	penicillin beta-lactam	-	-	-	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
-SAMN12610313	fosfomycin	phosphonic acid antibiotic	-	-	-	-	fosB;murA:p.Gly257Asp	-	-	-	s__Staphylococcus aureus
-SAMN12610313	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	msr(A)	-	-	-	s__Staphylococcus aureus
+SAMN12610313	erythromycin	macrolide antibiotic	-	-	none	-	mph(C);msr(A)	-	-	-	s__Staphylococcus aureus
+SAMN12610313	spiramycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN12610313	telithromycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN12610313	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Staphylococcus aureus
+SAMN12610313	(all)	penicillin beta-lactam	-	-	none	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
+SAMN12610313	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosB;murA:p.Gly257Asp	-	-	-	s__Staphylococcus aureus
+SAMN12610313	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	msr(A)	-	-	-	s__Staphylococcus aureus
 SAMN12610313	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38);mepA;mepA	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
 SAMN12610313	-	-	-	-	-	-	mecR1:-;ant(6)-Ia:-	-	none (partial hits)	-	s__Staphylococcus aureus
-SAMN13687298	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aadD1	-	-	-	s__Staphylococcus aureus
-SAMN13687298	spectinomycin	aminoglycoside antibiotic	-	-	-	-	ant(9)-Ia	-	-	-	s__Staphylococcus aureus
-SAMN13687298	tobramycin	aminoglycoside antibiotic	-	-	-	-	aadD1	-	-	-	s__Staphylococcus aureus
-SAMN13687298	methicillin	beta-lactamase resistant penicillin	-	-	-	-	mecI;mecR1;mecA	-	-	-	s__Staphylococcus aureus
-SAMN13687298	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser84Leu;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
-SAMN13687298	bleomycin	glycopeptide antibiotic	-	-	-	-	bleO	-	-	-	s__Staphylococcus aureus
+SAMN13687298	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aadD1	-	-	-	s__Staphylococcus aureus
+SAMN13687298	spectinomycin	aminoglycoside antibiotic	-	-	none	-	ant(9)-Ia	-	-	-	s__Staphylococcus aureus
+SAMN13687298	tobramycin	aminoglycoside antibiotic	-	-	none	-	aadD1	-	-	-	s__Staphylococcus aureus
+SAMN13687298	methicillin	beta-lactamase resistant penicillin	-	-	none	-	mecI;mecR1;mecA	-	-	-	s__Staphylococcus aureus
+SAMN13687298	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser84Leu;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
+SAMN13687298	bleomycin	glycopeptide antibiotic	-	-	none	-	bleO	-	-	-	s__Staphylococcus aureus
 SAMN13687298	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
-SAMN13687298	clindamycin	lincosamide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687298	azithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687298	clarithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687298	erythromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687298	telithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687298	(all)	penicillin beta-lactam	-	-	-	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
-SAMN13687298	fosfomycin	phosphonic acid antibiotic	-	-	-	-	fosB	-	-	-	s__Staphylococcus aureus
+SAMN13687298	clindamycin	lincosamide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687298	azithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687298	clarithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687298	erythromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687298	telithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687298	(all)	penicillin beta-lactam	-	-	none	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
+SAMN13687298	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosB	-	-	-	s__Staphylococcus aureus
 SAMN13687298	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38);mepA;mepA	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
-SAMN12190205	amikacin	aminoglycoside antibiotic	-	-	-	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
-SAMN12190205	gentamicin	aminoglycoside antibiotic	-	-	-	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
-SAMN12190205	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
-SAMN12190205	tobramycin	aminoglycoside antibiotic	-	-	-	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
-SAMN12190205	methicillin	beta-lactamase resistant penicillin	-	-	-	-	mecA	-	-	-	s__Staphylococcus aureus
-SAMN12190205	fusidic acid	fusidane antibiotic	-	-	-	-	fusC	-	-	-	s__Staphylococcus aureus
+SAMN12190205	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+SAMN12190205	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+SAMN12190205	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+SAMN12190205	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ie/aph(2'')-Ia	-	-	-	s__Staphylococcus aureus
+SAMN12190205	methicillin	beta-lactamase resistant penicillin	-	-	none	-	mecA	-	-	-	s__Staphylococcus aureus
+SAMN12190205	fusidic acid	fusidane antibiotic	-	-	none	-	fusC	-	-	-	s__Staphylococcus aureus
 SAMN12190205	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
-SAMN12190205	(all)	penicillin beta-lactam	-	-	-	-	blaZ;blaR1;blaI	-	-	-	s__Staphylococcus aureus
-SAMN12190205	fosfomycin	phosphonic acid antibiotic	-	-	-	-	fosB	-	-	-	s__Staphylococcus aureus
+SAMN12190205	(all)	penicillin beta-lactam	-	-	none	-	blaZ;blaR1;blaI	-	-	-	s__Staphylococcus aureus
+SAMN12190205	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosB	-	-	-	s__Staphylococcus aureus
 SAMN12190205	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38);mepA;mepA	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
-SAMN12414199	amikacin	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN12414199	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN12414199	methicillin	beta-lactamase resistant penicillin	-	-	-	-	mecA	-	-	-	s__Staphylococcus aureus
-SAMN12414199	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrS1	-	-	-	s__Staphylococcus aureus
+SAMN12414199	amikacin	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN12414199	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN12414199	methicillin	beta-lactamase resistant penicillin	-	-	none	-	mecA	-	-	-	s__Staphylococcus aureus
+SAMN12414199	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrS1	-	-	-	s__Staphylococcus aureus
 SAMN12414199	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
-SAMN12414199	erythromycin	macrolide antibiotic	-	-	-	-	mph(C);msr(A)	-	-	-	s__Staphylococcus aureus
-SAMN12414199	spiramycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN12414199	telithromycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN12414199	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Staphylococcus aureus
-SAMN12414199	(all)	penicillin beta-lactam	-	-	-	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
-SAMN12414199	fosfomycin	phosphonic acid antibiotic	-	-	-	-	fosB	-	-	-	s__Staphylococcus aureus
-SAMN12414199	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	msr(A)	-	-	-	s__Staphylococcus aureus
+SAMN12414199	erythromycin	macrolide antibiotic	-	-	none	-	mph(C);msr(A)	-	-	-	s__Staphylococcus aureus
+SAMN12414199	spiramycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN12414199	telithromycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN12414199	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Staphylococcus aureus
+SAMN12414199	(all)	penicillin beta-lactam	-	-	none	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
+SAMN12414199	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosB	-	-	-	s__Staphylococcus aureus
+SAMN12414199	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	msr(A)	-	-	-	s__Staphylococcus aureus
 SAMN12414199	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	mepA;mepA;tet(38);tet(38)	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
 SAMN12414199	-	-	-	-	-	-	mecR1:-;ant(6)-Ia:-	-	none (partial hits)	-	s__Staphylococcus aureus
-SAMN13687300	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aadD1	-	-	-	s__Staphylococcus aureus
-SAMN13687300	spectinomycin	aminoglycoside antibiotic	-	-	-	-	ant(9)-Ia	-	-	-	s__Staphylococcus aureus
-SAMN13687300	tobramycin	aminoglycoside antibiotic	-	-	-	-	aadD1	-	-	-	s__Staphylococcus aureus
-SAMN13687300	methicillin	beta-lactamase resistant penicillin	-	-	-	-	mecA;mecR1;mecI	-	-	-	s__Staphylococcus aureus
-SAMN13687300	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser84Leu;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
-SAMN13687300	bleomycin	glycopeptide antibiotic	-	-	-	-	bleO	-	-	-	s__Staphylococcus aureus
+SAMN13687300	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aadD1	-	-	-	s__Staphylococcus aureus
+SAMN13687300	spectinomycin	aminoglycoside antibiotic	-	-	none	-	ant(9)-Ia	-	-	-	s__Staphylococcus aureus
+SAMN13687300	tobramycin	aminoglycoside antibiotic	-	-	none	-	aadD1	-	-	-	s__Staphylococcus aureus
+SAMN13687300	methicillin	beta-lactamase resistant penicillin	-	-	none	-	mecA;mecR1;mecI	-	-	-	s__Staphylococcus aureus
+SAMN13687300	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser84Leu;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
+SAMN13687300	bleomycin	glycopeptide antibiotic	-	-	none	-	bleO	-	-	-	s__Staphylococcus aureus
 SAMN13687300	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
-SAMN13687300	clindamycin	lincosamide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687300	azithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687300	clarithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687300	erythromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687300	telithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687300	(all)	penicillin beta-lactam	-	-	-	-	blaZ;blaR1;blaI	-	-	-	s__Staphylococcus aureus
-SAMN13687300	fosfomycin	phosphonic acid antibiotic	-	-	-	-	fosB	-	-	-	s__Staphylococcus aureus
+SAMN13687300	clindamycin	lincosamide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687300	azithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687300	clarithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687300	erythromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687300	telithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687300	(all)	penicillin beta-lactam	-	-	none	-	blaZ;blaR1;blaI	-	-	-	s__Staphylococcus aureus
+SAMN13687300	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosB	-	-	-	s__Staphylococcus aureus
 SAMN13687300	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38);mepA;mepA	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
-SAMN13687287	amikacin	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN13687287	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN13687287	methicillin	beta-lactamase resistant penicillin	-	-	-	-	mecA	-	-	-	s__Staphylococcus aureus
-SAMN13687287	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrS1	-	-	-	s__Staphylococcus aureus
+SAMN13687287	amikacin	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN13687287	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN13687287	methicillin	beta-lactamase resistant penicillin	-	-	none	-	mecA	-	-	-	s__Staphylococcus aureus
+SAMN13687287	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrS1	-	-	-	s__Staphylococcus aureus
 SAMN13687287	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
-SAMN13687287	erythromycin	macrolide antibiotic	-	-	-	-	msr(A);mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN13687287	spiramycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN13687287	telithromycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN13687287	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Staphylococcus aureus
-SAMN13687287	(all)	penicillin beta-lactam	-	-	-	-	blaR1;blaZ	-	-	-	s__Staphylococcus aureus
-SAMN13687287	fosfomycin	phosphonic acid antibiotic	-	-	-	-	fosB	-	-	-	s__Staphylococcus aureus
-SAMN13687287	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	msr(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687287	erythromycin	macrolide antibiotic	-	-	none	-	msr(A);mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN13687287	spiramycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN13687287	telithromycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN13687287	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Staphylococcus aureus
+SAMN13687287	(all)	penicillin beta-lactam	-	-	none	-	blaR1;blaZ	-	-	-	s__Staphylococcus aureus
+SAMN13687287	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosB	-	-	-	s__Staphylococcus aureus
+SAMN13687287	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	msr(A)	-	-	-	s__Staphylococcus aureus
 SAMN13687287	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38);mepA;mepA	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
 SAMN13687287	-	-	-	-	-	-	blaI:-;mecR1:-;ant(6)-Ia:-	-	none (partial hits)	-	s__Staphylococcus aureus
-SAMN13687274	amikacin	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN13687274	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN13687274	methicillin	beta-lactamase resistant penicillin	-	-	-	-	mecA	-	-	-	s__Staphylococcus aureus
+SAMN13687274	amikacin	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN13687274	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN13687274	methicillin	beta-lactamase resistant penicillin	-	-	none	-	mecA	-	-	-	s__Staphylococcus aureus
 SAMN13687274	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
-SAMN13687274	erythromycin	macrolide antibiotic	-	-	-	-	msr(A);mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN13687274	spiramycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN13687274	telithromycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN13687274	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Staphylococcus aureus
-SAMN13687274	(all)	penicillin beta-lactam	-	-	-	-	blaZ;blaR1;blaI	-	-	-	s__Staphylococcus aureus
-SAMN13687274	fosfomycin	phosphonic acid antibiotic	-	-	-	-	fosB;murA:p.Gly257Asp	-	-	-	s__Staphylococcus aureus
-SAMN13687274	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	msr(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687274	erythromycin	macrolide antibiotic	-	-	none	-	msr(A);mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN13687274	spiramycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN13687274	telithromycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN13687274	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Staphylococcus aureus
+SAMN13687274	(all)	penicillin beta-lactam	-	-	none	-	blaZ;blaR1;blaI	-	-	-	s__Staphylococcus aureus
+SAMN13687274	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosB;murA:p.Gly257Asp	-	-	-	s__Staphylococcus aureus
+SAMN13687274	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	msr(A)	-	-	-	s__Staphylococcus aureus
 SAMN13687274	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	mepA;mepA;tet(38);tet(38)	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
 SAMN13687274	-	-	-	-	-	-	mecR1:-;ant(6)-Ia:-	-	none (partial hits)	-	s__Staphylococcus aureus
-SAMN13687297	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aadD1	-	-	-	s__Staphylococcus aureus
-SAMN13687297	spectinomycin	aminoglycoside antibiotic	-	-	-	-	ant(9)-Ia	-	-	-	s__Staphylococcus aureus
-SAMN13687297	tobramycin	aminoglycoside antibiotic	-	-	-	-	aadD1	-	-	-	s__Staphylococcus aureus
-SAMN13687297	methicillin	beta-lactamase resistant penicillin	-	-	-	-	mecI;mecR1;mecA	-	-	-	s__Staphylococcus aureus
-SAMN13687297	(all)	fluoroquinolone antibiotic	-	-	-	-	parC:p.Ser80Phe;gyrA:p.Ser84Leu	-	-	-	s__Staphylococcus aureus
-SAMN13687297	bleomycin	glycopeptide antibiotic	-	-	-	-	bleO	-	-	-	s__Staphylococcus aureus
+SAMN13687297	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aadD1	-	-	-	s__Staphylococcus aureus
+SAMN13687297	spectinomycin	aminoglycoside antibiotic	-	-	none	-	ant(9)-Ia	-	-	-	s__Staphylococcus aureus
+SAMN13687297	tobramycin	aminoglycoside antibiotic	-	-	none	-	aadD1	-	-	-	s__Staphylococcus aureus
+SAMN13687297	methicillin	beta-lactamase resistant penicillin	-	-	none	-	mecI;mecR1;mecA	-	-	-	s__Staphylococcus aureus
+SAMN13687297	(all)	fluoroquinolone antibiotic	-	-	none	-	parC:p.Ser80Phe;gyrA:p.Ser84Leu	-	-	-	s__Staphylococcus aureus
+SAMN13687297	bleomycin	glycopeptide antibiotic	-	-	none	-	bleO	-	-	-	s__Staphylococcus aureus
 SAMN13687297	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
-SAMN13687297	clindamycin	lincosamide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687297	azithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687297	clarithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687297	erythromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687297	telithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687297	(all)	penicillin beta-lactam	-	-	-	-	blaZ;blaR1;blaI	-	-	-	s__Staphylococcus aureus
-SAMN13687297	fosfomycin	phosphonic acid antibiotic	-	-	-	-	fosB	-	-	-	s__Staphylococcus aureus
+SAMN13687297	clindamycin	lincosamide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687297	azithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687297	clarithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687297	erythromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687297	telithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687297	(all)	penicillin beta-lactam	-	-	none	-	blaZ;blaR1;blaI	-	-	-	s__Staphylococcus aureus
+SAMN13687297	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosB	-	-	-	s__Staphylococcus aureus
 SAMN13687297	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38);mepA;mepA	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
-SAMN12414151	amikacin	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN12414151	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN12414151	methicillin	beta-lactamase resistant penicillin	-	-	-	-	mecA	-	-	-	s__Staphylococcus aureus
-SAMN12414151	trimethoprim	diaminopyrimidine antibiotic	-	-	-	-	dfrS1	-	-	-	s__Staphylococcus aureus
+SAMN12414151	amikacin	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN12414151	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN12414151	methicillin	beta-lactamase resistant penicillin	-	-	none	-	mecA	-	-	-	s__Staphylococcus aureus
+SAMN12414151	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrS1	-	-	-	s__Staphylococcus aureus
 SAMN12414151	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
-SAMN12414151	erythromycin	macrolide antibiotic	-	-	-	-	msr(A);mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN12414151	spiramycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN12414151	telithromycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN12414151	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Staphylococcus aureus
-SAMN12414151	(all)	penicillin beta-lactam	-	-	-	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
-SAMN12414151	fosfomycin	phosphonic acid antibiotic	-	-	-	-	fosB	-	-	-	s__Staphylococcus aureus
-SAMN12414151	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	msr(A)	-	-	-	s__Staphylococcus aureus
+SAMN12414151	erythromycin	macrolide antibiotic	-	-	none	-	msr(A);mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN12414151	spiramycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN12414151	telithromycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN12414151	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Staphylococcus aureus
+SAMN12414151	(all)	penicillin beta-lactam	-	-	none	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
+SAMN12414151	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosB	-	-	-	s__Staphylococcus aureus
+SAMN12414151	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	msr(A)	-	-	-	s__Staphylococcus aureus
 SAMN12414151	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38);mepA;mepA	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
 SAMN12414151	-	-	-	-	-	-	mecR1:-;ant(6)-Ia:-	-	none (partial hits)	-	s__Staphylococcus aureus
-SAMN13687283	amikacin	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN13687283	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN13687283	methicillin	beta-lactamase resistant penicillin	-	-	-	-	mecA	-	-	-	s__Staphylococcus aureus
+SAMN13687283	amikacin	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN13687283	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN13687283	methicillin	beta-lactamase resistant penicillin	-	-	none	-	mecA	-	-	-	s__Staphylococcus aureus
 SAMN13687283	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
-SAMN13687283	erythromycin	macrolide antibiotic	-	-	-	-	mph(C);msr(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687283	spiramycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN13687283	telithromycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN13687283	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Staphylococcus aureus
-SAMN13687283	(all)	penicillin beta-lactam	-	-	-	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
-SAMN13687283	fosfomycin	phosphonic acid antibiotic	-	-	-	-	fosB;murA:p.Gly257Asp	-	-	-	s__Staphylococcus aureus
-SAMN13687283	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	msr(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687283	erythromycin	macrolide antibiotic	-	-	none	-	mph(C);msr(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687283	spiramycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN13687283	telithromycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN13687283	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Staphylococcus aureus
+SAMN13687283	(all)	penicillin beta-lactam	-	-	none	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
+SAMN13687283	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosB;murA:p.Gly257Asp	-	-	-	s__Staphylococcus aureus
+SAMN13687283	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	msr(A)	-	-	-	s__Staphylococcus aureus
 SAMN13687283	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	mepA;mepA;tet(38);tet(38)	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
 SAMN13687283	-	-	-	-	-	-	mecR1:-;ant(6)-Ia:-	-	none (partial hits)	-	s__Staphylococcus aureus
-SAMN13687270	amikacin	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN13687270	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN13687270	methicillin	beta-lactamase resistant penicillin	-	-	-	-	mecA	-	-	-	s__Staphylococcus aureus
+SAMN13687270	amikacin	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN13687270	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN13687270	methicillin	beta-lactamase resistant penicillin	-	-	none	-	mecA	-	-	-	s__Staphylococcus aureus
 SAMN13687270	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
-SAMN13687270	erythromycin	macrolide antibiotic	-	-	-	-	mph(C);msr(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687270	spiramycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN13687270	telithromycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN13687270	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Staphylococcus aureus
-SAMN13687270	(all)	penicillin beta-lactam	-	-	-	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
-SAMN13687270	fosfomycin	phosphonic acid antibiotic	-	-	-	-	fosB;murA:p.Gly257Asp	-	-	-	s__Staphylococcus aureus
-SAMN13687270	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	msr(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687270	erythromycin	macrolide antibiotic	-	-	none	-	mph(C);msr(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687270	spiramycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN13687270	telithromycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN13687270	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Staphylococcus aureus
+SAMN13687270	(all)	penicillin beta-lactam	-	-	none	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
+SAMN13687270	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosB;murA:p.Gly257Asp	-	-	-	s__Staphylococcus aureus
+SAMN13687270	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	msr(A)	-	-	-	s__Staphylococcus aureus
 SAMN13687270	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	mepA;mepA;tet(38);tet(38)	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
 SAMN13687270	-	-	-	-	-	-	mecR1:-;ant(6)-Ia:-	-	none (partial hits)	-	s__Staphylococcus aureus
-SAMN13687304	methicillin	beta-lactamase resistant penicillin	-	-	-	-	mecA	-	-	-	s__Staphylococcus aureus
+SAMN13687304	methicillin	beta-lactamase resistant penicillin	-	-	none	-	mecA	-	-	-	s__Staphylococcus aureus
 SAMN13687304	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
-SAMN13687304	(all)	penicillin beta-lactam	-	-	-	-	blaZ;blaR1;blaI	-	-	-	s__Staphylococcus aureus
+SAMN13687304	(all)	penicillin beta-lactam	-	-	none	-	blaZ;blaR1;blaI	-	-	-	s__Staphylococcus aureus
 SAMN13687304	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	mepA;mepA;tet(38);tet(38)	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
 SAMN13687304	-	-	-	-	-	-	mecR1:-;fosB:-	-	none (partial hits)	-	s__Staphylococcus aureus
-SAMN13687293	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aadD1	-	-	-	s__Staphylococcus aureus
-SAMN13687293	spectinomycin	aminoglycoside antibiotic	-	-	-	-	ant(9)-Ia	-	-	-	s__Staphylococcus aureus
-SAMN13687293	tobramycin	aminoglycoside antibiotic	-	-	-	-	aadD1	-	-	-	s__Staphylococcus aureus
-SAMN13687293	methicillin	beta-lactamase resistant penicillin	-	-	-	-	mecA;mecR1;mecI	-	-	-	s__Staphylococcus aureus
-SAMN13687293	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser84Leu;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
-SAMN13687293	bleomycin	glycopeptide antibiotic	-	-	-	-	bleO	-	-	-	s__Staphylococcus aureus
+SAMN13687293	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aadD1	-	-	-	s__Staphylococcus aureus
+SAMN13687293	spectinomycin	aminoglycoside antibiotic	-	-	none	-	ant(9)-Ia	-	-	-	s__Staphylococcus aureus
+SAMN13687293	tobramycin	aminoglycoside antibiotic	-	-	none	-	aadD1	-	-	-	s__Staphylococcus aureus
+SAMN13687293	methicillin	beta-lactamase resistant penicillin	-	-	none	-	mecA;mecR1;mecI	-	-	-	s__Staphylococcus aureus
+SAMN13687293	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser84Leu;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
+SAMN13687293	bleomycin	glycopeptide antibiotic	-	-	none	-	bleO	-	-	-	s__Staphylococcus aureus
 SAMN13687293	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
-SAMN13687293	clindamycin	lincosamide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687293	azithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687293	clarithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687293	erythromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687293	telithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687293	(all)	penicillin beta-lactam	-	-	-	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
-SAMN13687293	fosfomycin	phosphonic acid antibiotic	-	-	-	-	fosB	-	-	-	s__Staphylococcus aureus
+SAMN13687293	clindamycin	lincosamide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687293	azithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687293	clarithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687293	erythromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687293	telithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687293	(all)	penicillin beta-lactam	-	-	none	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
+SAMN13687293	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosB	-	-	-	s__Staphylococcus aureus
 SAMN13687293	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	mepA;mepA;tet(38);tet(38)	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
-SAMN13687282	amikacin	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN13687282	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
-SAMN13687282	methicillin	beta-lactamase resistant penicillin	-	-	-	-	mecA	-	-	-	s__Staphylococcus aureus
+SAMN13687282	amikacin	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN13687282	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIIa	-	-	-	s__Staphylococcus aureus
+SAMN13687282	methicillin	beta-lactamase resistant penicillin	-	-	none	-	mecA	-	-	-	s__Staphylococcus aureus
 SAMN13687282	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
-SAMN13687282	erythromycin	macrolide antibiotic	-	-	-	-	mph(C);msr(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687282	spiramycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN13687282	telithromycin	macrolide antibiotic	-	-	-	-	mph(C)	-	-	-	s__Staphylococcus aureus
-SAMN13687282	streptothricin	nucleoside antibiotic	-	-	-	-	sat4	-	-	-	s__Staphylococcus aureus
-SAMN13687282	(all)	penicillin beta-lactam	-	-	-	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
-SAMN13687282	fosfomycin	phosphonic acid antibiotic	-	-	-	-	fosB;murA:p.Gly257Asp	-	-	-	s__Staphylococcus aureus
-SAMN13687282	streptogramin b antibiotic	streptogramin antibiotic	-	-	-	-	msr(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687282	erythromycin	macrolide antibiotic	-	-	none	-	mph(C);msr(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687282	spiramycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN13687282	telithromycin	macrolide antibiotic	-	-	none	-	mph(C)	-	-	-	s__Staphylococcus aureus
+SAMN13687282	streptothricin	nucleoside antibiotic	-	-	none	-	sat4	-	-	-	s__Staphylococcus aureus
+SAMN13687282	(all)	penicillin beta-lactam	-	-	none	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
+SAMN13687282	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosB;murA:p.Gly257Asp	-	-	-	s__Staphylococcus aureus
+SAMN13687282	streptogramin b antibiotic	streptogramin antibiotic	-	-	none	-	msr(A)	-	-	-	s__Staphylococcus aureus
 SAMN13687282	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	mepA;mepA;tet(38);tet(38)	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
 SAMN13687282	-	-	-	-	-	-	mecR1:-;ant(6)-Ia:-	-	none (partial hits)	-	s__Staphylococcus aureus
-SAMN13687271	kanamycin A	aminoglycoside antibiotic	-	-	-	-	aadD1	-	-	-	s__Staphylococcus aureus
-SAMN13687271	spectinomycin	aminoglycoside antibiotic	-	-	-	-	ant(9)-Ia	-	-	-	s__Staphylococcus aureus
-SAMN13687271	tobramycin	aminoglycoside antibiotic	-	-	-	-	aadD1	-	-	-	s__Staphylococcus aureus
-SAMN13687271	methicillin	beta-lactamase resistant penicillin	-	-	-	-	mecI;mecR1;mecA	-	-	-	s__Staphylococcus aureus
-SAMN13687271	(all)	fluoroquinolone antibiotic	-	-	-	-	gyrA:p.Ser84Leu;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
-SAMN13687271	bleomycin	glycopeptide antibiotic	-	-	-	-	bleO	-	-	-	s__Staphylococcus aureus
+SAMN13687271	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aadD1	-	-	-	s__Staphylococcus aureus
+SAMN13687271	spectinomycin	aminoglycoside antibiotic	-	-	none	-	ant(9)-Ia	-	-	-	s__Staphylococcus aureus
+SAMN13687271	tobramycin	aminoglycoside antibiotic	-	-	none	-	aadD1	-	-	-	s__Staphylococcus aureus
+SAMN13687271	methicillin	beta-lactamase resistant penicillin	-	-	none	-	mecI;mecR1;mecA	-	-	-	s__Staphylococcus aureus
+SAMN13687271	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser84Leu;parC:p.Ser80Phe	-	-	-	s__Staphylococcus aureus
+SAMN13687271	bleomycin	glycopeptide antibiotic	-	-	none	-	bleO	-	-	-	s__Staphylococcus aureus
 SAMN13687271	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Staphylococcus aureus
-SAMN13687271	clindamycin	lincosamide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687271	azithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687271	clarithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687271	erythromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687271	telithromycin	macrolide antibiotic	-	-	-	-	erm(A)	-	-	-	s__Staphylococcus aureus
-SAMN13687271	(all)	penicillin beta-lactam	-	-	-	-	blaZ;blaR1;blaI	-	-	-	s__Staphylococcus aureus
-SAMN13687271	fosfomycin	phosphonic acid antibiotic	-	-	-	-	fosB	-	-	-	s__Staphylococcus aureus
+SAMN13687271	clindamycin	lincosamide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687271	azithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687271	clarithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687271	erythromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687271	telithromycin	macrolide antibiotic	-	-	none	-	erm(A)	-	-	-	s__Staphylococcus aureus
+SAMN13687271	(all)	penicillin beta-lactam	-	-	none	-	blaZ;blaR1;blaI	-	-	-	s__Staphylococcus aureus
+SAMN13687271	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosB	-	-	-	s__Staphylococcus aureus
 SAMN13687271	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38);mepA;mepA	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
