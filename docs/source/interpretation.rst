@@ -98,7 +98,7 @@ The following columns are included:
   drug class          Drug class, as per CARD ARO. AMRFinderPlus drugs will be converted to CARD ARO format by AMRrules                       
   clinical category   S/I/R. Highest level of resistance based on markers that match this drug/drug class                                  
   phenotype           Wildtype or nonwildtype. Highest level based on markers that match this drug/drug class                                  
-  evidence grade      Very low/low/moderate/high. Highest grade of evidence for markers that match this drug/drug class                       
+  evidence grade      None/very low/low/moderate/high. Highest grade of evidence for markers that match this drug/drug class. None is used when we have no evidence for the call, as is the case of rule-less markers.                       
   markers (non-S)     Markers with rules specifying clinical category I or R, separated by ``;``
   markers (no rule)   Markers with no rule, separated by ``;``                                                                 
   markers (S)         Markers with rules specifying clinical category S, separated by ``;``                      
@@ -124,7 +124,46 @@ Handling unmatched genotype calls
 
 By default, if no organism-specific rule is found for a genotype reported by AMRfinderplus, AMRrules will apply an interpretation based on the setting of ``--no-rule-interpretation``. The options for this parameter are:
 
-• ``none`` (default): any unmatched genotype calls will not be assigned to a phenotype or clinical category (entires will be ``-``). Evidence grade will be set to ``-``, as we are not interpreting a phenotype or clinical category.
-• ``nwt``: any unmatched genotype calls will be assigned the phenotype ``nonwildtype``, but no clinical category will be assigned. Evidence grade will be set to ``-``, as we are not interpreting a clinical category.
+• ``none`` (default): any unmatched genotype calls will not be assigned to a phenotype or clinical category (entires will be ``-``). Evidence grade will be set to ``none``, as we are not interpreting a phenotype or clinical category.
+• ``nwt``: any unmatched genotype calls will be assigned the phenotype ``nonwildtype``, but no clinical category will be assigned. Evidence grade will be set to ``none``, as we are not interpreting a clinical category.
 • ``nwtS``: any unmatched genotype calls will be assigned the phenotype ``nonwildtype`` and clinical category will be set to ``S``. Evidence grade will be set to ``none``, as there is no evidence for the call.
 • ``nwtR``: any unmatched genotype calls will be assigned the phenotype ``nonwildtype`` and clinical category will be set to ``R``. Evidence grade will be set to ``none`, as there is no evidence for the call.
+
+To demonstrate the difference between these options, you can compare the output files for the same genome, a MDR Klebsiella pneumoniae strain, using different interpretations for markers with no rules.
+
+Using ``none`` (see ``tests/data/example_output/test_kpneumo_MDR_none_genome_summary.tsv``):
+
+Almost all markers have no rules, and so no clinical category, phenotype or evidence grade are set. In the case of the call for ``penicillin beta-lactam``, we have an existing ``wildtype R`` rule for ``blaSHV-1``. However, due to the presence of ``blaTEM-1``, which has no rule, we set phenotype to ``-``. However the clinical category of ``R`` remains, as regardless of the S/I/R category for the marker with no rule, an ``R`` clinical category is still expected.
+
+.. csv-table::
+   :file: ../../tests/data/example_output/test_kpneumo_MDR_none_genome_summary.tsv
+   :delim: tab
+   :header-rows: 1
+
+Using ``nwt`` (see ``tests/data/example_output/test_kpneumo_MDR_nwt_genome_summary.tsv``):
+
+Now, all drugs with markers that have no rules have ``nonwildtype`` as their phenotype. This includes the call for ``penicillin beta-lactam``. Evidence grades are set to ``none`` as we have no evidence for these calls.
+
+.. csv-table::
+   :file: ../../tests/data/example_output/test_kpneumo_MDR_nwt_genome_summary.tsv
+   :delim: tab
+   :header-rows: 1
+
+Using ``nwtS`` (see ``tests/data/example_output/test_kpneumo_MDR_nwtS_genome_summary.tsv``):
+
+Now, all drugs with markers that have no rules have ``S`` as their clinical category, and ``nonwildtype`` as their phenotype. As an ``S`` call for ``blaTEM-1`` doesn't supercede the existing ``R`` rule for the ``blaSHV-1`` marker, this clinical category remains the same. Again, evidence grades are set to ``none`` as we have no evidence for these calls.
+
+.. csv-table::
+   :file: ../../tests/data/example_output/test_kpneumo_MDR_nwtS_genome_summary.tsv
+   :delim: tab
+   :header-rows: 1
+
+Using ``nwtR`` (see ``tests/data/example_output/test_kpneumo_MDR_nwtR_genome_summary.tsv``):
+
+
+Finally, all drugs with markers that have no rules have ``R`` as their clinical category, and ``nonwildtype`` as their phenotype. Evidence grades are set to ``none`` as we have no evidence for these calls.
+
+.. csv-table::
+   :file: ../../tests/data/example_output/test_kpneumo_MDR_nwtR_genome_summary.tsv
+   :delim: tab
+   :header-rows: 1
