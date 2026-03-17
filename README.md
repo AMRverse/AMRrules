@@ -8,6 +8,6 @@ Users first take their genomes and run them through an AMR genotyping tool such 
 
 This AMRrules repository includes the rules themselves (see `rules/` directory) as well as the Python code to apply the rules to interpret AMR genotypes (currently limited to AMRFinderPlus output), generating informative genome reports that capture expert knowledge about how core and acquired genes and mutations contribute to antimicrobial susceptibility.
 
-**[Full docs can be found here](https://amrrules.readthedocs.io/en/genome_summary_report_dev/index.html)**
+**[Full docs can be found here](https://amrrules.readthedocs.io/en/latest/)**
 
 [DOI: 10.5281/zenodo.12724317](https://doi.org/10.5281/zenodo.12724317)
