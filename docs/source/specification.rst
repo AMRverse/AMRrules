@@ -94,7 +94,7 @@ This fields indicates highlights what kind of evidence is lacking to support int
 Breakpoint condition
 ^^^^^^^^^^^^^^
 
-EUCAST, CLSI and others sometimes assign differen breakpoints for different clinical conditions, infection sites, or drug delivery routes (e.g. intravenous vs oral). In such cases, this field is used to indicate which specific breakpoint the rule was defined against. This will often be blank, indicating that the rule is not specific to any particular type of infection or delivery route.
+EUCAST, CLSI and others sometimes assign different breakpoints for different clinical conditions, infection sites, or drug delivery routes (e.g. intravenous vs oral). In such cases, this field is used to indicate which specific breakpoint the rule was defined against. This will often be blank, indicating that the rule is not specific to any particular type of infection or delivery route.
 
 The list of allowed terms is taken from the EUCAST and CLSI 2025 Breakpoints, sourced from the digitized versions in the `AMR R package <https://amr-for-r.org/>`__ using this command:
 ```
@@ -126,7 +126,7 @@ Variant Specification
 
 The AMRrules specification needs to be able to encode interpretive rules for all types of genetic variants relevant to AMR in bacteria.
 
-In 2024, the `ESGEM-AMR <https://github.com/AMRverse/ESGEM-AMR>`__ working group collated and reviewed examples of known variants across diverse bacteria, and identified the following types of AMR variants:
+In 2024, the `ESGEM-AMR <https://esgem-amr.amrrules.org/>`__ working group collated and reviewed examples of known variants across diverse bacteria, and identified the following types of AMR variants:
 
 * Gene presence detected
 * Amino acid substitution or insertion
