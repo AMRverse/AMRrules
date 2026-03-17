@@ -1,0 +1,125 @@
+sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
+SAMEA3357557	ciprofloxacin	fluoroquinolone antibiotic	S	wildtype	moderate	-	-	oqxA;oqxB	KOX0008;KOX0012	-	s__Klebsiella oxytoca
+SAMEA3357557	(all)	penicillin beta-lactam	R	wildtype	high	blaOXY-2-6	-	-	KOX0002	-	s__Klebsiella oxytoca
+SAMEA3357557	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella oxytoca
+SAMEA3721070	ciprofloxacin	fluoroquinolone antibiotic	S	wildtype	moderate	-	-	oqxB;oqxA	KOX0008;KOX0012	-	s__Klebsiella oxytoca
+SAMEA3721070	(all)	penicillin beta-lactam	R	wildtype	high	blaOXY-2-18	-	-	KOX0002	-	s__Klebsiella oxytoca
+SAMEA3721070	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella oxytoca
+SAMEA6368219	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella oxytoca
+SAMEA6368219	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IIe	-	-	-	s__Klebsiella oxytoca
+SAMEA6368219	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella oxytoca
+SAMEA6368219	streptomycin	aminoglycoside antibiotic	-	-	none	-	aph(3'')-Ib;aph(6)-Id	-	-	-	s__Klebsiella oxytoca
+SAMEA6368219	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella oxytoca
+SAMEA6368219	(all)	carbapenem	-	-	none	-	blaOXA-48	-	-	-	s__Klebsiella oxytoca
+SAMEA6368219	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA14	-	-	-	s__Klebsiella oxytoca
+SAMEA6368219	(all)	fluoroquinolone antibiotic	-	-	none	-	qnrB1;aac(6')-Ib-cr5	-	-	-	s__Klebsiella oxytoca
+SAMEA6368219	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	qnrB1;aac(6')-Ib-cr5	oqxA;oqxB	KOX0008;KOX0012	-	s__Klebsiella oxytoca
+SAMEA6368219	(all)	penicillin beta-lactam	R	-	none	blaOXY-2-10	blaTEM-1	-	KOX0002	-	s__Klebsiella oxytoca
+SAMEA6368219	(all)	sulfonamide antibiotic	-	-	none	-	sul2	-	-	-	s__Klebsiella oxytoca
+SAMEA6368219	tetracycline	tetracycline antibiotic	-	-	none	-	tet(A)	-	-	-	s__Klebsiella oxytoca
+SAMEA6368219	(all)	third-generation cephalosporin 	-	-	none	-	blaCTX-M-15;blaOXA-1	-	-	-	s__Klebsiella oxytoca
+SAMEA6368219	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella oxytoca
+SAMEA6368219	-	-	-	-	-	-	catB3:-	-	none (partial hits)	-	s__Klebsiella oxytoca
+SAMEA882037	ciprofloxacin	fluoroquinolone antibiotic	S	wildtype	moderate	-	-	oqxA;oqxB	KOX0008;KOX0012	-	s__Klebsiella oxytoca
+SAMEA882037	(all)	penicillin beta-lactam	R	wildtype	high	blaOXY-2-16	-	-	KOX0002	-	s__Klebsiella oxytoca
+SAMEA882037	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella oxytoca
+SAMN03733743	amikacin	aminoglycoside antibiotic	-	-	none	-	aphA16;aac(6')-Ib-cr5	-	-	-	s__Klebsiella oxytoca
+SAMN03733743	gentamicin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	-	-	s__Klebsiella oxytoca
+SAMN03733743	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-Ia;aphA16;ant(2'')-Ia;aac(6')-Ib-cr5	-	-	-	s__Klebsiella oxytoca
+SAMN03733743	streptomycin	aminoglycoside antibiotic	-	-	none	-	aph(3'')-Ib;aph(6)-Id;aadA2	-	-	-	s__Klebsiella oxytoca
+SAMN03733743	tobramycin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia;aac(6')-Ib-cr5	-	-	-	s__Klebsiella oxytoca
+SAMN03733743	(all)	carbapenem	-	-	none	-	blaKPC-2	-	-	-	s__Klebsiella oxytoca
+SAMN03733743	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA19	-	-	-	s__Klebsiella oxytoca
+SAMN03733743	(all)	fluoroquinolone antibiotic	-	-	none	-	aac(6')-Ib-cr5;qnrB2	-	-	-	s__Klebsiella oxytoca
+SAMN03733743	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	aac(6')-Ib-cr5;qnrB2	oqxA;oqxB	KOX0008;KOX0012	-	s__Klebsiella oxytoca
+SAMN03733743	(all)	penicillin beta-lactam	R	-	none	blaOXY-2-4	blaOXA-2	-	KOX0002	-	s__Klebsiella oxytoca
+SAMN03733743	chloramphenicol	phenicol antibiotic	-	-	none	-	catB3	-	-	-	s__Klebsiella oxytoca
+SAMN03733743	colistin	polymyxin antibiotic	-	-	none	-	mcr-9.1	-	-	-	s__Klebsiella oxytoca
+SAMN03733743	(all)	rifamycin antibiotic	-	-	none	-	arr-3	-	-	-	s__Klebsiella oxytoca
+SAMN03733743	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	-	-	s__Klebsiella oxytoca
+SAMN03733743	(all)	third-generation cephalosporin 	-	-	none	-	blaSHV-30;blaOXA-1	-	-	-	s__Klebsiella oxytoca
+SAMN03733743	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella oxytoca
+SAMEA104567303	ciprofloxacin	fluoroquinolone antibiotic	S	wildtype	moderate	-	-	oqxB;oqxA	KOX0010;KOX0014	-	s__Klebsiella grimontii
+SAMEA104567303	(all)	penicillin beta-lactam	R	wildtype	moderate	blaOXY-6-5	-	-	KOX0005	-	s__Klebsiella grimontii
+SAMEA104567303	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella grimontii
+SAMEA3499934	ciprofloxacin	fluoroquinolone antibiotic	S	wildtype	moderate	-	-	oqxB;oqxA	KOX0010;KOX0014	-	s__Klebsiella grimontii
+SAMEA3499934	(all)	penicillin beta-lactam	R	wildtype	moderate	blaOXY-6-5	-	-	KOX0005	-	s__Klebsiella grimontii
+SAMEA3499934	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella grimontii
+SAMEA5049663	ciprofloxacin	fluoroquinolone antibiotic	S	wildtype	moderate	-	-	oqxB;oqxA	KOX0010;KOX0014	-	s__Klebsiella grimontii
+SAMEA5049663	(all)	penicillin beta-lactam	R	wildtype	moderate	blaOXY	-	-	KOX0005	-	s__Klebsiella grimontii
+SAMEA5049663	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella grimontii
+SAMEA5049824	(all)	fluoroquinolone antibiotic	-	-	none	-	qnrB19	-	-	-	s__Klebsiella grimontii
+SAMEA5049824	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	qnrB19	oqxA;oqxB	KOX0010;KOX0014	-	s__Klebsiella grimontii
+SAMEA5049824	(all)	penicillin beta-lactam	R	wildtype	moderate	blaOXY-4-1	-	-	KOX0005	-	s__Klebsiella grimontii
+SAMEA5049824	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella grimontii
+SAMEA5684339	ciprofloxacin	fluoroquinolone antibiotic	S	wildtype	moderate	-	-	oqxA;oqxB	KOX0010;KOX0014	-	s__Klebsiella grimontii
+SAMEA5684339	(all)	penicillin beta-lactam	R	wildtype	moderate	blaOXY-6-3	-	-	KOX0005	-	s__Klebsiella grimontii
+SAMEA5684339	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella grimontii
+SAMEA5048974	(all)	penicillin beta-lactam	R	wildtype	moderate	blaOXY	-	-	KOX0006	-	s__Klebsiella huaxiensis
+SAMEA5048974	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KOX0020	-	s__Klebsiella huaxiensis
+SAMEA5048974	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella huaxiensis
+SAMEA5049397	streptomycin	aminoglycoside antibiotic	-	-	none	-	aph(3'')-Ib	-	-	-	s__Klebsiella huaxiensis
+SAMEA5049397	(all)	penicillin beta-lactam	R	wildtype	moderate	blaOXY	-	-	KOX0006	-	s__Klebsiella huaxiensis
+SAMEA5049397	tetracycline	tetracycline antibiotic	-	-	none	-	tet(B)	-	-	-	s__Klebsiella huaxiensis
+SAMEA5049397	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella huaxiensis
+SAMEA5049397	-	-	-	-	-	-	aph(6)-Id:-	-	none (partial hits)	-	s__Klebsiella huaxiensis
+SAMN09229071	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella huaxiensis
+SAMN09229071	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IId	-	-	-	s__Klebsiella huaxiensis
+SAMN09229071	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella huaxiensis
+SAMN09229071	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA16;aph(3'')-Ib;aph(6)-Id	-	-	-	s__Klebsiella huaxiensis
+SAMN09229071	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella huaxiensis
+SAMN09229071	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA27	-	-	-	s__Klebsiella huaxiensis
+SAMN09229071	(all)	fluoroquinolone antibiotic	-	-	none	-	qnrB6;aac(6')-Ib-cr5	-	-	-	s__Klebsiella huaxiensis
+SAMN09229071	(all)	penicillin beta-lactam	R	-	none	blaOXY-8-1	blaTEM-1	-	KOX0006	-	s__Klebsiella huaxiensis
+SAMN09229071	chloramphenicol	phenicol antibiotic	-	-	none	-	catB3;catA2	-	-	-	s__Klebsiella huaxiensis
+SAMN09229071	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosA3	-	-	-	s__Klebsiella huaxiensis
+SAMN09229071	(all)	rifamycin antibiotic	-	-	none	-	arr-3	-	-	-	s__Klebsiella huaxiensis
+SAMN09229071	(all)	sulfonamide antibiotic	-	-	none	-	sul1;sul1;sul2	-	-	-	s__Klebsiella huaxiensis
+SAMN09229071	tetracycline	tetracycline antibiotic	-	-	none	-	tet(D)	-	-	-	s__Klebsiella huaxiensis
+SAMN09229071	(all)	third-generation cephalosporin 	-	-	none	-	blaCTX-M-14;blaOXA-1	-	-	-	s__Klebsiella huaxiensis
+SAMN09229071	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella huaxiensis
+SAMN15148621	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1	-	-	-	s__Klebsiella huaxiensis
+SAMN15148621	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	-	-	s__Klebsiella huaxiensis
+SAMN15148621	(all)	penicillin beta-lactam	R	wildtype	moderate	blaOXY-12-1	-	-	KOX0006	-	s__Klebsiella huaxiensis
+SAMN15148621	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	-	-	s__Klebsiella huaxiensis
+SAMN15148621	tetracycline	tetracycline antibiotic	-	-	none	-	tet(C)	-	-	-	s__Klebsiella huaxiensis
+SAMN15148621	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella huaxiensis
+SAMN15148622	(all)	penicillin beta-lactam	R	wildtype	moderate	blaOXY-12-1	-	-	KOX0006	-	s__Klebsiella huaxiensis
+SAMN15148622	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella huaxiensis
+SAMEA5049357	(all)	penicillin beta-lactam	R	wildtype	moderate	blaOXY	-	-	KOX0003	-	s__Klebsiella spallanzanii
+SAMEA5049357	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella spallanzanii
+SAMEA5049536	(all)	penicillin beta-lactam	R	wildtype	moderate	blaOXY-3-3	-	-	KOX0003	-	s__Klebsiella spallanzanii
+SAMEA5049536	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella spallanzanii
+SAMN25988707	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA5	-	-	-	s__Klebsiella spallanzanii
+SAMN25988707	(all)	carbapenem	-	-	none	-	blaKPC-2	-	-	-	s__Klebsiella spallanzanii
+SAMN25988707	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA17	-	-	-	s__Klebsiella spallanzanii
+SAMN25988707	(all)	fluoroquinolone antibiotic	-	-	none	-	qnrB1	-	-	-	s__Klebsiella spallanzanii
+SAMN25988707	azithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella spallanzanii
+SAMN25988707	erythromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella spallanzanii
+SAMN25988707	spiramycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella spallanzanii
+SAMN25988707	telithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella spallanzanii
+SAMN25988707	(all)	penicillin beta-lactam	R	wildtype	moderate	blaOXY	-	-	KOX0003	-	s__Klebsiella spallanzanii
+SAMN25988707	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	-	-	s__Klebsiella spallanzanii
+SAMN25988707	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella spallanzanii
+SAMN25988951	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA5	-	-	-	s__Klebsiella spallanzanii
+SAMN25988951	(all)	carbapenem	-	-	none	-	blaKPC-2	-	-	-	s__Klebsiella spallanzanii
+SAMN25988951	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA17	-	-	-	s__Klebsiella spallanzanii
+SAMN25988951	(all)	fluoroquinolone antibiotic	-	-	none	-	qnrB1	-	-	-	s__Klebsiella spallanzanii
+SAMN25988951	azithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella spallanzanii
+SAMN25988951	erythromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella spallanzanii
+SAMN25988951	spiramycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella spallanzanii
+SAMN25988951	telithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella spallanzanii
+SAMN25988951	(all)	penicillin beta-lactam	R	wildtype	moderate	blaOXY	-	-	KOX0003	-	s__Klebsiella spallanzanii
+SAMN25988951	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	-	-	s__Klebsiella spallanzanii
+SAMN25988951	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella spallanzanii
+SAMN25989828	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA5	-	-	-	s__Klebsiella spallanzanii
+SAMN25989828	(all)	carbapenem	-	-	none	-	blaKPC-2	-	-	-	s__Klebsiella spallanzanii
+SAMN25989828	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA17	-	-	-	s__Klebsiella spallanzanii
+SAMN25989828	(all)	fluoroquinolone antibiotic	-	-	none	-	qnrB1	-	-	-	s__Klebsiella spallanzanii
+SAMN25989828	azithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella spallanzanii
+SAMN25989828	erythromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella spallanzanii
+SAMN25989828	spiramycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella spallanzanii
+SAMN25989828	telithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella spallanzanii
+SAMN25989828	(all)	penicillin beta-lactam	R	wildtype	moderate	blaOXY	-	-	KOX0003	-	s__Klebsiella spallanzanii
+SAMN25989828	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	-	-	s__Klebsiella spallanzanii
+SAMN25989828	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella spallanzanii
