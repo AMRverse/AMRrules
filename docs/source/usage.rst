@@ -62,30 +62,28 @@ Detailed options
 
 ::
 
-    -h, --help            show this help message and exit
-  --input INPUT         Path to the input file.
+  -h, --help            show this help message and exit
+  --input INPUT         Path to the tabular input file (must be AMRFinderPlus output for this version).
   --output-prefix OUTPUT_PREFIX
-                        Prefix for the output files.
+                        Prefix name for the output files.
   --output-dir, -d OUTPUT_DIR
                         Output directory. Default is current working directory.
   --sample-id SAMPLE_ID
-                        If interpreting a single genome, can optionally provide sample ID here. If no sample_id is provided, and the first column of the input file doesn't define a
-                        sample_id, then the default value will be 'sample'.
+                        If interpreting a single genome, can optionally provide sample ID here. If no sample_id is provided, and the first column of the input file doesn't define a sample_id, then the default value will be 'sample'.
   --organism, -o ORGANISM
                         Organism to interpret. Use --list-organisms to see all supported organisms.
   --organism-file, -of ORGANISM_FILE
-                        Path to the organism file. This file should have two columns: genome name in col1 (matching the sample name in the first col of the input file), and col2 is
-                        the organism name, which should be one of the supported organisms. File should be in tab-delimited format, with no header
-  --list-organisms     List all supported organisms and exit.
+                        Path to the organism file. This file should have two columns: genome name in col1 (matching the sample name in the first col of the input file), and col2 is the organism name, which should be one of the supported organisms. File should be in tab-delimited format, with no header
+  --list-organisms      List all supported organisms and exit.
   --amr-tool, -t AMR_TOOL
                         AMR tool used to detect genotypes: options are amrfp, rgi, resfinder. Currently only amrfp is supported.
-  --no-rule-interpretation, -nr {nwtR,nwtS}
-                        How to interpret hits that do not match a rule. Options are: nwtR (default) - all nonwildtype hits with no matching rule are interpreted as resistant; nwtS -
-                        all nonwildtype hits with no matching rule are interpreted as susceptible.
+  --no-rule-interpretation, -nr {nwtR,nwtS,nwt,none}
+                        How to interpret hits that do not match a rule. Options are: none - hits will be given no phenotype and no clinical category; nwt - hits will be flagged as phenotype nonwildtype, but no clinical category will be set; nwtR - hits will be interpreted as nonwildtype and given the clinical category resistant;
+                        nwtS - hits will be interpreted as nonwildtype and given the clinical category susceptible.
   --annot-opts, -a {minimal,full}
                         Annotation options: minimal (context, drug, phenotype, category, evidence grade), full (everything including breakpoints, standards, etc)
   --flag-core           Turn on flagging core genes in the summary output
-  --full-disrupt        Show full POINT_DISRUPT mutation details in the summary output, rather than just indicating gene inactivation with '-'.
+  --full-disrupt        Show the full mutation detected by AMRFinderPlus for POINT_DISRUPT calls in the summary report, rather than just labelling them as gene:-
   --print-non-amr       Include non-AMR rows (eg VIRULENCE, STRESS) from the input file in the interpreted output. By default, these rows are skipped.
   --download-resources  Download AMRFinderPlus resource files and exit.
-  --version             show AMRrules version number and exit
+  --version             show program's version number and exit
