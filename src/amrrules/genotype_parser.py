@@ -130,7 +130,7 @@ class GenoResult:
             # ompK35_Y36Ter -> p.Tyr36Ter, this is an inactivating frameshift
 
             # okay so if there are two or more characters in alt, and no Ter, then we have an insertion
-            if len(alt) > 1 and alt != 'STOP' and 'Ter' not in alt:
+            if len(alt) > 1 and alt != 'STOP' and not any(x in alt for x in ('Ter', 'del')):
                 # then we have an insertion, and the inserted AAs is the second character onwards of alt
                 # need to get all the inserted AAs converted
                 alt_string = ''
@@ -150,6 +150,25 @@ class GenoResult:
                     # then grab the number after Ter
                     fs_pos = re.search(r'Ter(\d+)', mutation).group(1)
                     return(f"p.{aa_conversion.get(ref)}{pos}{alt}fsTer{fs_pos}", variation_type)
+            if len(ref) >= 1 and 'del' in alt:
+                # then this is an in-frame deletion, therefore not an inactivating mutation
+                # we need to convert the single letter to 3-letter aa codes
+                # and present it as a range
+                # eg: rpoD_DDDA92del -> p.Asp92_Ala95del
+                # start with the first aa in the ref
+                ref_start = aa_conversion.get(ref[0])
+                # then get the final one, if there is one
+                if len(ref) > 1:
+                    ref_end = aa_conversion.get(ref[-1])
+                    ref_start_pos = int(pos)
+                    ref_end_pos = ref_start_pos + len(ref) - 1
+                    # format the string to be the start aa and position _ end aa and position
+                    ref_string = f"{ref_start}{ref_start_pos}_{ref_end}{ref_end_pos}"
+                else:
+                    # if it's just 1 aa, then just get the position with the 3 letter code
+                    ref_string = f"{ref_start}{pos}"
+                return(f"p.{ref_string}del", variation_type)
+                
             # this is the option if we have a simple conversion of one aa to another
             else:
                 ref = aa_conversion.get(ref)
