@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "amrrules"
-version = "0.1.0"
+version = "1.0.0"
 description = "Organism-specific interpretation of AMR genotypes"
 authors = [
   { name = "Jane Hawkey", email = "jane.hawkey@monash.edu" }
