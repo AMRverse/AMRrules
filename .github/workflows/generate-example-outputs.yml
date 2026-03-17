@@ -81,6 +81,9 @@ jobs:
           # 20 Bordetella strains
           amrrules --input tests/data/input/test_bordetella_20strains.tsv --output-prefix test_bordetella_20strains --organism-file tests/data/input/test_bordetella_species.tsv --output-dir tests/data/example_output
 
+          # 20 K oxytoca complex strains
+          amrrules --input tests/data/input/test_koxycomplex_20strains.tsv --output-prefix test_koxy_complex_20strains --organism-file tests/data/input/test_koxycomplex_20strains_species.tsv --output-dir tests/data/example_output
+
           # 20 Acinetobacter strains
           amrrules --input tests/data/input/test_abaumannii_20strains.tsv --output-prefix test_abaumannii_20strains_none --organism 's__Acinetobacter baumannii' --output-dir tests/data/example_output -nr none
 
