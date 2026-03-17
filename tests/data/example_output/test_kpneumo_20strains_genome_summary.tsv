@@ -1,0 +1,221 @@
+sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
+SAMEA4873573	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-62	-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA4873573	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA4873573	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873590	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA2	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873590	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA12	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873590	ciprofloxacin	fluoroquinolone antibiotic	S	wildtype	moderate	-	-	oqxB25;oqxA	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA4873590	azithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873590	erythromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873590	spiramycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873590	telithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873590	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV	-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA4873590	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA4873590	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873590	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873611	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873611	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-Ia;aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873611	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA16;aph(3'')-Ib;aph(6)-Id	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873611	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873611	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA27	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873611	(all)	fluoroquinolone antibiotic	-	-	none	-	qnrB6;aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873611	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	qnrB6;aac(6')-Ib-cr5	oqxA;oqxB	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA4873611	(all)	penicillin beta-lactam	R	-	none	blaSHV-1	blaTEM-1	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA4873611	chloramphenicol	phenicol antibiotic	-	-	none	-	catA1	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873611	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA4873611	(all)	rifamycin antibiotic	-	-	none	-	arr-3	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873611	(all)	sulfonamide antibiotic	-	-	none	-	sul1;sul1;sul2	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873611	(all)	third-generation cephalosporin 	-	-	none	-	blaCTX-M-15;blaOXA-1	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873611	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873611	-	-	-	-	-	-	catB3:-	-	none (partial hits)	-	s__Klebsiella pneumoniae
+SAMEA4873623	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA25	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873623	(all)	fluoroquinolone antibiotic	-	-	none	-	qnrB2	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873623	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	qnrB2	oqxA;oqxB19	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA4873623	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-11	-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA4873623	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA4873623	(all)	sulfonamide antibiotic	-	-	none	-	sul1;sul1	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873623	tetracycline	tetracycline antibiotic	-	-	none	-	tet(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873623	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873647	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA2	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873647	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA15	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873647	ciprofloxacin	fluoroquinolone antibiotic	S	wildtype	moderate	-	-	oqxA;oqxB	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA4873647	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-11	-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA4873647	chloramphenicol	phenicol antibiotic	-	-	none	-	cmlA4	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873647	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA4873647	(all)	sulfonamide antibiotic	-	-	none	-	sul1;sul2	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873647	tetracycline	tetracycline antibiotic	-	-	none	-	tet(D)	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873647	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873653	ciprofloxacin	fluoroquinolone antibiotic	S	wildtype	moderate	-	-	oqxB25;oqxA	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA4873653	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-11	-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA4873653	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA4873653	tetracycline	tetracycline antibiotic	-	-	none	-	tet(D)	-	-	-	s__Klebsiella pneumoniae
+SAMEA4873653	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567779	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567779	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IIe	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567779	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567779	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567779	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA14	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567779	(all)	fluoroquinolone antibiotic	-	-	none	-	qnrB1;aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567779	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	qnrB1;aac(6')-Ib-cr5	oqxB19;oqxA11	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA104567779	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-1	-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA104567779	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA104567779	tetracycline	tetracycline antibiotic	-	-	none	-	tet(A);tet(D)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567779	(all)	third-generation cephalosporin 	-	-	none	-	blaOXA-1	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567779	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567779	-	-	-	-	-	-	catB3:-	-	none (partial hits)	-	s__Klebsiella pneumoniae
+SAMEA104567783	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567783	ciprofloxacin	fluoroquinolone antibiotic	S	wildtype	moderate	-	-	oqxB25;oqxA	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA104567783	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-1	-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA104567783	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA104567783	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567783	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567792	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567792	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IIe	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567792	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567792	streptomycin	aminoglycoside antibiotic	-	-	none	-	aph(3'')-Ib;aph(6)-Id	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567792	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567792	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA14	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567792	(all)	fluoroquinolone antibiotic	-	-	none	-	qnrB1;aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567792	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	qnrB1;aac(6')-Ib-cr5	oqxB25;oqxA	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA104567792	(all)	penicillin beta-lactam	R	-	none	blaSHV-187	blaTEM-1	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA104567792	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA104567792	(all)	sulfonamide antibiotic	-	-	none	-	sul2	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567792	(all)	third-generation cephalosporin 	-	-	none	-	blaCTX-M-15;blaOXA-1	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567792	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567792	-	-	-	-	-	-	catB3:-	-	none (partial hits)	-	s__Klebsiella pneumoniae
+SAMEA104567801	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA2;aph(6)-Id;aph(3'')-Ib	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567801	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA12	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567801	ciprofloxacin	fluoroquinolone antibiotic	S	wildtype	moderate	-	-	oqxA;oqxB5	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA104567801	azithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567801	erythromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567801	spiramycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567801	telithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567801	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-1	-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA104567801	chloramphenicol	phenicol antibiotic	-	-	none	-	catA1	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567801	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA104567801	(all)	sulfonamide antibiotic	-	-	none	-	sul1;sul2	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567801	tetracycline	tetracycline antibiotic	-	-	none	-	tet(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567801	(all)	third-generation cephalosporin 	-	-	none	-	blaCTX-M-15	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567801	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567803	ciprofloxacin	fluoroquinolone antibiotic	S	wildtype	moderate	-	-	oqxB6;oqxA	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA104567803	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-11	-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA104567803	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA104567803	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567815	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567815	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IIe	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567815	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567815	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567815	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA14	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567815	(all)	fluoroquinolone antibiotic	-	-	none	-	qnrS1;aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567815	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	qnrS1;aac(6')-Ib-cr5	oqxB;oqxA6	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA104567815	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-1	-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA104567815	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA104567815	(all)	third-generation cephalosporin 	-	-	none	-	blaCTX-M-15;blaOXA-1	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567815	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567815	-	-	-	-	-	-	catB3:-	-	none (partial hits)	-	s__Klebsiella pneumoniae
+SAMEA104567818	(all)	aminoglycoside antibiotic	-	-	none	-	rmtB1	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567818	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5;rmtB1	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567818	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IIe;rmtB1	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567818	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5;aph(3')-Ia;rmtB1	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567818	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA16;aadA1;rmtB1	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567818	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5;rmtB1	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567818	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA27;dfrA26	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567818	(all)	fluoroquinolone antibiotic	-	-	none	-	qnrB6;qepA1;aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567818	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	qnrB6;qepA1;aac(6')-Ib-cr5	oqxB;oqxA	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA104567818	(all)	penicillin beta-lactam	R	-	none	blaSHV-28	blaTEM-1	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA104567818	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA104567818	(all)	rifamycin antibiotic	-	-	none	-	arr-3	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567818	(all)	sulfonamide antibiotic	-	-	none	-	sul1;sul2	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567818	tetracycline	tetracycline antibiotic	-	-	none	-	tet(D)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567818	(all)	third-generation cephalosporin 	-	-	none	-	blaOXA-1	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567818	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567818	-	-	-	-	-	-	catB3:-;blaOXA:-;blaCTX-M:-	-	none (partial hits)	-	s__Klebsiella pneumoniae
+SAMEA104567843	gentamicin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567843	kanamycin A	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567843	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567843	tobramycin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567843	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA14	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567843	ciprofloxacin	fluoroquinolone antibiotic	S	wildtype	moderate	-	-	oqxA;oqxB	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA104567843	azithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567843	erythromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567843	spiramycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567843	telithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567843	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-27	-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA104567843	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA104567843	tetracycline	tetracycline antibiotic	-	-	none	-	tet(B)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567843	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567890	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567890	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IIe	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567890	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5;aph(3')-Ia	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567890	streptomycin	aminoglycoside antibiotic	-	-	none	-	aph(6)-Id;aph(3'')-Ib	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567890	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567890	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA14	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567890	(all)	fluoroquinolone antibiotic	-	-	none	-	qnrB4;qnrB1;aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567890	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	qnrB4;qnrB1;aac(6')-Ib-cr5	oqxB;oqxA	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA104567890	azithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567890	erythromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567890	spiramycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567890	telithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567890	(all)	penicillin beta-lactam	R	-	none	blaSHV-11	blaTEM-1	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA104567890	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA104567890	(all)	rifamycin antibiotic	-	-	none	-	arr-3	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567890	(all)	sulfonamide antibiotic	-	-	none	-	sul1;sul1;sul2	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567890	tetracycline	tetracycline antibiotic	-	-	none	-	tet(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567890	(all)	third-generation cephalosporin 	-	-	none	-	blaDHA-1;blaCTX-M-15;blaOXA-1	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567890	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567890	-	-	-	-	-	-	catB3:-	-	none (partial hits)	-	s__Klebsiella pneumoniae
+SAMEA104567898	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567898	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IIe	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567898	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5;aph(3')-Ia	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567898	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA2	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567898	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567898	(all)	carbapenem	-	-	none	-	blaKPC-2	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567898	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA12;dfrA14	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567898	(all)	fluoroquinolone antibiotic	-	-	none	-	qnrS1;qnrB19;aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567898	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	qnrS1;qnrB19;aac(6')-Ib-cr5	oqxB;oqxA	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA104567898	azithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567898	erythromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567898	spiramycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567898	telithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567898	(all)	penicillin beta-lactam	R	-	none	blaSHV-11	blaLAP-2	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA104567898	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA104567898	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567898	(all)	third-generation cephalosporin 	-	-	none	-	blaCTX-M-15;blaOXA-1	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567898	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567898	-	-	-	-	-	-	catB3:-	-	none (partial hits)	-	s__Klebsiella pneumoniae
+SAMEA104567908	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-11	-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA104567908	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA5	KPN0005	-	s__Klebsiella pneumoniae
+SAMEA104567908	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567925	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-Ia	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567925	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA14	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567925	(all)	fluoroquinolone antibiotic	-	-	none	-	qnrB4	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567925	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	qnrB4	oqxA;oqxB25	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA104567925	azithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567925	erythromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567925	spiramycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567925	telithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567925	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-1	-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA104567925	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA104567925	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567925	tetracycline	tetracycline antibiotic	-	-	none	-	tet(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567925	(all)	third-generation cephalosporin 	-	-	none	-	blaDHA-1	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567925	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567926	ciprofloxacin	fluoroquinolone antibiotic	S	wildtype	moderate	-	-	oqxA;oqxB19	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA104567926	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-11	-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA104567926	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA104567926	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567927	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IIe	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567927	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-Ia	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567927	streptomycin	aminoglycoside antibiotic	-	-	none	-	aph(3'')-Ib;aph(6)-Id	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567927	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA14	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567927	(all)	fluoroquinolone antibiotic	-	-	none	-	qnrB4	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567927	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	qnrB4	oqxA;oqxB	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA104567927	azithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567927	erythromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567927	spiramycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567927	telithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567927	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-11	-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA104567927	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA104567927	(all)	sulfonamide antibiotic	-	-	none	-	sul1;sul2	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567927	(all)	third-generation cephalosporin 	-	-	none	-	blaDHA-1;blaCTX-M-15	-	-	-	s__Klebsiella pneumoniae
+SAMEA104567927	(n/a)	antibiotic efflux	-	-	none	-	emrD	-	-	-	s__Klebsiella pneumoniae

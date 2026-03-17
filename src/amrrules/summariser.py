@@ -1,221 +1,305 @@
-import csv
-import os
+from amrrules.resources import ResourceManager as rm
+from amrrules.utils import CATEGORY_ORDER, PHENOTYPE_ORDER, EVIDENCE_GRADE_ORDER
+from collections import defaultdict
 
-def check_comboo_rules(ruleIDs, rules, drug, drug_class):
-
-    matched_combo_rules = []
-    # extract all the combination rules from the rules file for this drug or drug class
-    if drug is not None:
-        combo_rules = [rule for rule in rules if rule.get('drug') == drug and rule.get('variation type') == 'Combination']
-    elif drug_class is not None:
-        combo_rules = [rule for rule in rules if rule.get('drug class') == drug_class and rule.get('variation type') == 'Combination']
-    
-    # for each rule, we need to extract the ruleID logic and check if it matches our ruleIDs
-    for rule in combo_rules:
-        ruleID_logic = rule.get('gene')
-        # ruleID logic is a string of the form "gene1 & gene2 | gene3"
-        # we need to replace the & with a python 'and' and the | with a python 'or'
-        matched_combo = evaluate_logic_string(ruleID_logic, ruleIDs)
-        if matched_combo:
-            # add to the list of matched combos
-            matched_combo_rules.append(ruleID_logic)
-    # if we didn't find any matching combo rules, then we return None
-    if len(matched_combo_rules) == 0:
-        return None
-    else:
-        return matched_combo_rules
-
-def evaluate_logic_string(logic_string, id_list):
+class SummaryEntry:
     """
-    Evaluates a logic string against a list of IDs.
-
-    Args:
-        logic_string (str): A string containing logical expressions (e.g., "ECO1016 & ECO1026").
-        id_list (list): A list of IDs to compare against (e.g., ["ECO1016", "ECO1026"]).
-
-    Returns:
-        bool: True if the logic evaluates to True, False otherwise.
+    Class to summarise genotype rows by drug or drug class for a given sample.
     """
-    # Convert the list of IDs to a set for efficient membership testing
-    id_set = set(id_list)
 
-    # Replace logical operators in the string with Python equivalents
-    python_logic = logic_string.replace('&', ' and ').replace('|', ' or ')
+    def __init__(self, sample_name, genotype_objects):
+        
+        # these are all the columns that are going to be in the output
+        # these values will apply for a particular drug or drug class
+        self.sample_name = sample_name
+        self.geno_objs = genotype_objects
+        self.drug = genotype_objects[0].drug
+        self.drug_class = genotype_objects[0].drug_class
+        self.organism = genotype_objects[0].organism # this will be the same for all objects
 
-    # Wrap each ID in the logic string with a check for membership in the ID set
-    for id_ in id_set.union(set(logic_string.replace('(', '').replace(')', '').split())):
-        python_logic = python_logic.replace(id_, f"'{id_}' in id_set")
+        # if we're just working with a drug_class, then drug should be set to (all) to make clear
+        # that this applies to the whole class
+        if self.drug == '-' and self.drug_class != '-' and self.drug_class != 'unassigned markers':
+            self.drug = '(all)'
 
-    # Evaluate the logic string
-    try:
-        return eval(python_logic)
-    except Exception as e:
-        raise ValueError(f"Error evaluating logic string: {logic_string}") from e
-
-def create_summary_row(sample_rows, sample, rules, no_flag_core):
-
-    summarised_rows = []
-
-    drugs = set() # list of unique drugs to parse
-    drug_classes = set() # list of unique drug classes to parse
-    for row in sample_rows:
-        drug = row.get('drug')
-        drug_class = row.get('drug class')
-        drugs.add(drug)
-        drug_classes.add(drug_class)
-
-    # remove any '-' or '' values
-    drugs = [x for x in drugs if x not in ['-', '']]
-    drug_classes = [x for x in drug_classes if x not in ['-', '']]
-    drugs_and_classes = drugs + drug_classes
-
-    for drug_or_class in drugs_and_classes:
-        if drug_or_class in drugs:
-            summarised = {'drug': drug_or_class, 'drug class': '-'} #TODO: look up drug class for drug from the card ontology
-            drug = drug_or_class
-            drug_class = None
-        elif drug_or_class in drug_classes:
-            summarised = {'drug': '-', 'drug class': drug_or_class}
-            drug = None
-            drug_class = drug_or_class
-        # extract all rows that match this drug or class
-        matching_rows = [row for row in sample_rows if row.get('drug') == drug_or_class or row.get('drug class') == drug_or_class]
-        # if there's only one row, then just add the relevant info to the summary
-        if len(matching_rows) == 1:
-            # add the sample
-            if sample is not None:
-                summarised['Name'] = sample
-            # get the category, pheno, and evidence grade info
-            summarised['category'] = matching_rows[0].get('clinical category')
-            summarised['phenotype'] = matching_rows[0].get('phenotype')
-            summarised['evidence grade'] = matching_rows[0].get('evidence grade')
-            # grab marker and check if it's a core gene, flag if user wants this
-            marker_value = matching_rows[0].get('Gene symbol') or matching_rows[0].get('Element symbol')
-            if not no_flag_core:
-                # check if the gene symbol is a core gene
-                context_value = matching_rows[0].get('context')
-                if context_value == 'core':
-                    marker_value = marker_value + ' (core)'
-            summarised['markers'] = marker_value
-            summarised['ruleIDs'] = matching_rows[0].get('ruleID')
-            summarised['combo rules'] = '-'
-            summarised['organism'] = matching_rows[0].get('organism')
-
-            summarised_rows.append(summarised)
-        # if there are multiple rows, we need to combine some of the info
-        elif len(matching_rows) > 1:
-            # add the sample
-            if sample is not None:
-                summarised['Name'] = sample
-            # combine all the rule IDs into a single string
-            ruleIDs = []
-            for row in matching_rows:
-                ruleID = row.get('ruleID')
-                if ruleID not in ruleIDs:
-                    ruleIDs.append(ruleID)
-            summarised['ruleIDs'] = ';'.join(ruleIDs)
-
-            # we now need to check if there are any combo rules, and if so, we need to add them to the summary
-            matched_combo_rules = check_comboo_rules(ruleIDs, rules, drug, drug_class)
-
-            # extract the current categories, phenotypes and evidence grades
-            categories = [row.get('clinical category') for row in matching_rows]
-            phenotypes = [row.get('phenotype') for row in matching_rows]
-            evidence_grades = [row.get('evidence grade') for row in matching_rows]
-
-            # if there are combo rules, then we need to add these rules to our clinical category and phenotype checks
-            # and return the highest category and phenotype including the combos
-            if matched_combo_rules is not None:
-                combo_ruleIDs = []
-                # we need to check if the combo rules are in the matching rows
-                for rule in matched_combo_rules:
-                    # extract the category, phenotype and evidence grade from the rule
-                    for r in rules:
-                        if r.get('gene') == rule:
-                            categories.append(r.get('clinical category'))
-                            phenotypes.append(r.get('phenotype'))
-                            evidence_grades.append(r.get('evidence grade'))
-                            # extract the ruleID that links to this combo rule (rather than specifying the actual combo rule)
-                            combo_ruleIDs.append(r.get('ruleID'))
+        # these are also columns that we're going to set with the below functions
+        self.category = None
+        self.gene_context = None
+        self.phenotype = None
+        self.evidence_grade = None
+        self.markers_rule_nonS = None
+        self.markers_with_norule = None
+        self.markers_s = None
+        self.ruleIDs = None
+        self.combo_rules = None
     
-            # get the highest category
-            highest_category = max(categories, key=lambda x: ['-', 'S', 'I', 'R'].index(x))
-            summarised['category'] = highest_category
-            # get the highest phenotype
-            highest_phenotype = max(phenotypes, key=lambda x: ['-', 'wildtype', 'nonwildtype'].index(x))
-            summarised['phenotype'] = highest_phenotype
-            # get the highest evidence grade
-            highest_evidence_grade = max(evidence_grades, key=lambda x: ['-', 'weak', 'moderate', 'strong'].index(x))
-            summarised['evidence grade'] = highest_evidence_grade
-            # combine all the markers into a single string
-            markers = []
-            for row in matching_rows:
-                gene_symbol = row.get('Gene symbol') or row.get('Element symbol')
-                if not no_flag_core:
-                    if row.get('context') == 'core':
-                        gene_symbol = gene_symbol + ' (core)'
-                if gene_symbol not in markers:
-                    markers.append(gene_symbol)
-            summarised['markers'] = ';'.join(markers)
-            
-            if matched_combo_rules is not None:
-                summarised['combo rules'] = ';'.join(combo_ruleIDs)
+    def summarise_rules(self, no_rule_interpretation, class_summary=None):
+        """Compute summary values based on geno_objs."""
+
+        # Helper to get max by order list
+        def get_max_value(values, order):
+            valid_values = [v for v in values if v in order]
+            if not valid_values:
+                return None
+            return max(valid_values, key=lambda v: order.index(v))
+
+        # full object list creation, if we've got a drug class of objs also to consider
+        if class_summary:
+            geno_objs = self.geno_objs + class_summary.geno_objs
+        else:
+            geno_objs = self.geno_objs
+
+        # if it's 'unassigned markers' or 'partial', then we have no category/phenotype/evidence
+        # so just set these values and exit
+        if self.drug_class in ['unassigned markers', 'partial']:
+            self.category = '-'
+            self.phenotype = '-'
+            self.evidence_grade = '-'
+            # move the partial call to the ruleID col and set drug and class to '-' to avoid confusion
+            if self.drug_class == 'partial':
+                self.ruleIDs = 'none (partial hits)'
+                self.drug_class = '-'
+                self.drug = '-'
+            return
+        if self.drug_class == 'antibiotic efflux':
+            self.drug = '(n/a)'
+        
+        # otherwise, continue on
+        # Extract values from genotype objects
+        #categories = [g.clinical_category for g in self.geno_objs if hasattr(g, 'clinical_category')]
+        phenotypes = [g.phenotype for g in geno_objs if hasattr(g, 'phenotype')]
+        #evidence_grades = [g.evidence_grade for g in self.geno_objs if hasattr(g, 'evidence_grade')]
+
+        # update evidence grade to be linked to the evidence for the highest category call 
+        # (eg if oqx is S with rule, but there is gyrA marker with no rule that's R, category is R but evidence grade is very low)
+        best_obj = max(geno_objs, key=lambda o: (
+            CATEGORY_ORDER.index(o.clinical_category),
+            EVIDENCE_GRADE_ORDER.index(o.evidence_grade)
+            ))
+
+        # Set the “maximum” according to ordering
+        self.category = best_obj.clinical_category
+        self.phenotype = get_max_value(phenotypes, PHENOTYPE_ORDER)
+        self.evidence_grade = best_obj.evidence_grade
+
+        # alright, but depending on our no_rule_interpretation setting, we may need to override the category and phenotype values
+        # only matters if we have markers with no rules
+        if self.markers_with_norule != '-':
+            if no_rule_interpretation == 'none' or no_rule_interpretation == 'nwt':
+                # for the category, if we have any nwt markers, then we can't interpret
+                # what this means in combination with an S marker, so set to '-'
+                # however if the rule says 'R', then we can keep the R
+                if self.category == 'S':
+                    self.category = '-'
+                # evidence grade also gets switched to 'none' regardless
+                self.evidence_grade = 'none'
+                # we change the phenotype based on whether its none or nwt
+                if no_rule_interpretation == 'none':
+                # for the phenotype, if we have any nwt markers, then we can't interpret, so set to '-'
+                    self.phenotype = '-'
+                elif no_rule_interpretation == 'nwt':
+                    # in this case,if  our rule markers state we have a wt phenotype, but we have nwt markers
+                    # so we override the penotype to be nwt
+                    # if we had markers with rules that were nwt R, we stay nwt anyway
+                    self.phenotype = 'nonwildtype'
+            if no_rule_interpretation == 'nwtS':
+                # if we have any nwt markers, we're calling nwt and S
+                # but we want the evidence grade to be 'none' to reflect the fact
+                # that the call is being made using markers with no rules
+                self.evidence_grade = 'none'
+
+        # if efflux, then set clinical category to '-'
+        if self.drug_class == 'antibiotic efflux':
+            self.category = '-'
+    
+    def set_ruleIDs_and_combo(self, combo_rules, class_summary=None):
+        # if this is the summary of partial hits, skip all this and return out
+        if self.ruleIDs == 'none (partial hits)':
+            self.combo_rules = '-'
+            return
+        
+        # add class info if that's provided
+        if class_summary:
+            geno_objs = self.geno_objs + class_summary.geno_objs
+        else:
+            geno_objs = self.geno_objs
+        # deal with the ruleIDs
+        rule_ids = {g.ruleID for g in geno_objs
+            if getattr(g, "ruleID", None) not in (None, "-")}
+        # sets ruleIDs to '-' if there are none at all
+        self.ruleIDs = ";".join(sorted(rule_ids)) if rule_ids else "-"
+
+        matched_combo_rules = []
+        # for each rule, we need to extract the ruleID logic and check if it matches our ruleIDs
+        for rule in combo_rules:
+            ruleID_logic = rule.get('gene')
+            # ruleID logic is a string of the form "gene1 & gene2 | gene3"
+            # we need to replace the & with a python 'and' and the | with a python 'or'
+            matched_combo = self._evaluate_logic_string(ruleID_logic, rule_ids)
+            if matched_combo:
+                # add to the list of matched combos
+                matched_combo_rules.append(ruleID_logic)
+        # if we didn't find any matching combo rules, then we return None
+        if len(matched_combo_rules) == 0:
+            self.combo_rules = '-'
+        else:
+            self.combo_rules = ";".join(matched_combo_rules)
+
+    def set_markers(self, flag_core, class_summary=None):
+        
+        # for each object, extract the marker and place it into the correct
+        # list based on whether it has a rule, no rule, or is wildtype
+        markers_rule_nonS = []
+        markers_with_norule = []
+        markers_s = []
+
+        # first loop through the markers for the drug
+        for g in self.geno_objs:
+            # set the marker to be the amrrules formatted version
+            marker = g.marker_amrrules
+            if g.has_rule:
+                # only label core genes if it's a core context with gene presence variation type
+                if g.gene_context == 'core' and g.variation_type == 'Gene presence detected' and flag_core:
+                    marker = marker + " (core)"
+                if g.clinical_category == 'S':
+                    markers_s.append(marker)
+                else:
+                    markers_rule_nonS.append(marker)
             else:
-                summarised['combo rules'] = '-'
-            summarised['organism'] = matching_rows[0].get('organism')
-            summarised_rows.append(summarised)
-   
-    return summarised_rows
+                markers_with_norule.append(marker)
+        
+        # now loop through the markers for the class, if there is one
+        if class_summary:
+            for g in class_summary.geno_objs:
+                # set the marker to be the amrrules formatted version
+                marker = g.marker_amrrules
+                if g.has_rule:
+                    # only label core genes if it's a core context with gene presence variation type
+                    if g.gene_context == 'core' and g.variation_type == 'Gene presence detected' and flag_core:
+                        marker = marker + " (core)"
+                    # append marker only if it's not already present
+                    if g.clinical_category == 'S' and marker not in markers_s:
+                        markers_s.append(marker)
+                    elif g.clinical_category != 'S' and marker not in markers_rule_nonS:
+                        markers_rule_nonS.append(marker)
+                # append marker only if it's not already present
+                elif marker not in markers_with_norule:
+                    markers_with_norule.append(marker)
 
-def prepare_summary(output_rows, rules, sample_ids, no_flag_core):
+        self.markers_rule_nonS = ';'.join(markers_rule_nonS) or '-'
+        self.markers_with_norule = ';'.join(markers_with_norule) or '-'
+        self.markers_S = ';'.join(markers_s) or '-'
 
-    # We now want to write a sumamary file that groups hits based on drug class or drug
-    # In each drug/drug class, we want to list the highest category and phenotype for that drug/drug class
-    # then all the markers that are associated with that drug/drug class, then all the singleton rule IDs
+    def _evaluate_logic_string(logic_string, id_list):
+        """
+        Evaluates a logic string against a list of IDs.
 
-    # set up the final rows to be output
-    summary_rows = []
+        Args:
+            logic_string (str): A string containing logical expressions (e.g., "ECO1016 & ECO1026").
+            id_list (list): A list of IDs to compare against (e.g., ["ECO1016", "ECO1026"]).
 
-    # if we've only got one sample, sample_ids will be None
-    if sample_ids is None:
-        summary_rows = create_summary_row(output_rows, None, rules, no_flag_core)
-        return summary_rows
+        Returns:
+            bool: True if the logic evaluates to True, False otherwise.
+        """
+        # Convert the list of IDs to a set for efficient membership testing
+        id_set = set(id_list)
 
-    # we need to process this sample by sample, so the combo rules are correctly assigned
-    for sample in sample_ids:
-        # extract all the rows for this sample
-        sample_rows = [row for row in output_rows if row.get('Name') == sample]
-        summarised_row = create_summary_row(sample_rows, sample, rules, no_flag_core)
-        summary_rows.append(summarised_row)
-    flattened_summary = [item for sublist in summary_rows for item in sublist]
-    return flattened_summary
+        # Replace logical operators in the string with Python equivalents
+        python_logic = logic_string.replace('&', ' and ').replace('|', ' or ')
 
-def write_output_files(output_rows, reader, summary_output, args, unmatched_hits, matched_hits):
+        # Wrap each ID in the logic string with a check for membership in the ID set
+        for id_ in id_set.union(set(logic_string.replace('(', '').replace(')', '').split())):
+            python_logic = python_logic.replace(id_, f"'{id_}' in id_set")
 
-    # write the output files
-    interpreted_output_file = os.path.join(args.output_dir, args.output_prefix + '_interpreted.tsv')
-    #summary_output_file = os.path.join(args.output_dir, args.output_prefix + '_summary.tsv')
+        # Evaluate the logic string
+        try:
+            return eval(python_logic)
+        except Exception as e:
+            raise ValueError(f"Error evaluating logic string: {logic_string}") from e
 
-    minimal_columns = ['ruleID', 'context', 'drug', 'drug class', 'phenotype', 'clinical category', 'evidence grade', 'version', 'organism']
-    full_columns = ['breakpoint', 'breakpoint standard', 'evidence code', 'evidence limitations', 'PMID', 'rule curation note']
-    if args.annot_opts == 'minimal':
-        interpreted_output_cols = minimal_columns
-    elif args.annot_opts == 'full':
-        interpreted_output_cols = minimal_columns + full_columns
 
-    with open(interpreted_output_file, 'w', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=reader.fieldnames + interpreted_output_cols, delimiter='\t')
-        writer.writeheader()
-        writer.writerows(output_rows)
-    print(f"{len(matched_hits)} hits matched a rule and {len(unmatched_hits)} hits did not match a rule.")
-    print(f"Output written to {interpreted_output_file}.")
+def order_summary_objs(objs):
+    """
+    Sort a list of summaryEntry objects first by drug_class (alphabetically, with 'antibiotic efflux', followed by 'unassigned markers', with 'partial' last),
+    then by drug (alphabetically, '-' last).
+    """
+    def drug_class_sort_key(obj):
+        drug_class_lower = getattr(obj, "drug_class", "").lower()
+        rule_ids = getattr(obj, "ruleIDs", "")
+        if rule_ids == "none (partial hits)":
+            return (3, "")  # Last
+        elif drug_class_lower == "unassigned markers":
+            return (2, "")  # Second last
+        elif drug_class_lower == "antibiotic efflux":
+            return (1, "")  # Third last
+        else:
+            return (0, drug_class_lower)  # Alphabetical for all others
+    
+    sorted_list = sorted(
+        objs,
+        key=lambda o: (
+            drug_class_sort_key(o),
+            # For drug: alphabetical, with '-' last
+            (getattr(o, "drug", "").lower() == "-", getattr(o, "drug", "").lower())
+        )
+    )
 
-    #with open(summary_output_file, 'w', newline='') as f:
-    #    if 'Name' in summary_output[0].keys():
-    #        col_names = ['Name', 'drug', 'drug class', 'category', 'phenotype', 'evidence grade', 'markers', 'ruleIDs', 'combo rules', 'organism']
-    #    else:
-    #        col_names = ['drug', 'drug class', 'category', 'phenotype', 'evidence grade', 'markers', 'ruleIDs', 'combo rules', 'organism']
-    #    writer = csv.DictWriter(f, fieldnames=col_names, delimiter='\t')
-    #    writer.writeheader()
-    #    writer.writerows(summary_output)
-    #print(f"Summary output written to {summary_output_file}.")
+    return sorted_list
+
+def create_summary_dict(grouped_by_sample, rules, flag_core, no_rule_interpretation):
+
+    summary_entry_dict = {} # key: sample name, value: list of summary entry objs
+    for sample_name, genotypes in grouped_by_sample.items():
+        summary_entry_list = []
+        # for the sample, we need to group by drug class, and then by drug within that
+
+        sample_groups = defaultdict(lambda: defaultdict(list))
+        for g in genotypes:
+            sample_groups[g.drug_class][g.drug].append(g)
+        for drug_class in sample_groups.keys():
+            # for each drug_class, we first need to apply a summary entry at the class level
+            # if the class level exists
+            class_level_hits = sample_groups[drug_class].get('-', None)
+            # initialise our master class entry as None, will be filled later
+            master_class_entry = None
+            if class_level_hits:
+                summary_entry = SummaryEntry(sample_name, class_level_hits)
+                # assign markers with, without rules, and wt markers
+                summary_entry.set_markers(flag_core)
+                # determine the highest category/pheno/evidence grade for this drug_class
+                summary_entry.summarise_rules(no_rule_interpretation)
+                # assign ruleIDs and combo rules
+                #TODO: Test combo rule implementation
+                # to get the list of possible combo rules to evaluate, we need to extract all 'Combination' rules for this organism
+                combo_rules = [r for r in rules if r.get('organism') == summary_entry.organism and r.get('rule type') == 'Combination']
+                # then need to further filter to include only combo rules that apply to the drug class we're assessing
+                combo_rules = [r for r in combo_rules if summary_entry.drug_class in r.get('drug classes', '')]
+                summary_entry.set_ruleIDs_and_combo(combo_rules)
+                # this is our master entry for this drug_class, so save it
+                master_class_entry = summary_entry
+                # add it to our list
+                summary_entry_list.append(summary_entry)
+            
+            # otherwise now we're in a specific drug for the class
+            # we need to make sure that the interpretation of this drug doesn't conflict with the class level rules
+            for drug in sample_groups[drug_class].keys():
+                if drug != '-':
+                    # create our summary entry
+                    summary_entry = SummaryEntry(sample_name, sample_groups[drug_class][drug])
+                    # before assigning markers to columns
+                    # we want to remove any duplicated row markers from the class level
+                    # assign markers
+                    summary_entry.set_markers(flag_core, class_summary=master_class_entry)
+                    # determine highest category/pheno/evidence grade for this drug
+                    # but take into account the rules for the drug class
+                    summary_entry.summarise_rules(no_rule_interpretation, class_summary=master_class_entry)
+                    # assign ruleIDs and combo rules
+                    combo_rules = [r for r in rules if r.get('organism') == summary_entry.organism and r.get('rule type') == 'Combination']
+                    # then need to further filter to include only combo rules that apply to either the drug or class we're assessing
+                    combo_rules = [r for r in combo_rules if summary_entry.drug in r.get('drugs', '') or summary_entry.drug_class in r.get('drug classes', '')]
+                    summary_entry.set_ruleIDs_and_combo(combo_rules, class_summary=master_class_entry)
+                    # add it to our list
+                    summary_entry_list.append(summary_entry)
+            summary_entry_dict[sample_name] = order_summary_objs(summary_entry_list)
+    
+    return(summary_entry_dict)

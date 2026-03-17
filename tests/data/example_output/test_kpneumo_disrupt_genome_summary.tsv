@@ -1,0 +1,80 @@
+sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
+SAMEA3515203.fasta	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib	-	-	-	s__Klebsiella pneumoniae
+SAMEA3515203.fasta	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib	-	-	-	s__Klebsiella pneumoniae
+SAMEA3515203.fasta	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA2	-	-	-	s__Klebsiella pneumoniae
+SAMEA3515203.fasta	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib	-	-	-	s__Klebsiella pneumoniae
+SAMEA3515203.fasta	(all)	carbapenem	-	-	none	-	ompK36:p.134_135insGlyAsp;ompK35:-;blaKPC-3	-	-	-	s__Klebsiella pneumoniae
+SAMEA3515203.fasta	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA12	-	-	-	s__Klebsiella pneumoniae
+SAMEA3515203.fasta	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser83Ile;parC:p.Ser80Ile	-	-	-	s__Klebsiella pneumoniae
+SAMEA3515203.fasta	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser83Ile;parC:p.Ser80Ile	oqxB;oqxA	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA3515203.fasta	azithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA3515203.fasta	erythromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA3515203.fasta	spiramycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA3515203.fasta	telithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA3515203.fasta	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-11	-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA3515203.fasta	chloramphenicol	phenicol antibiotic	-	-	none	-	catA1	-	-	-	s__Klebsiella pneumoniae
+SAMEA3515203.fasta	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA3515203.fasta	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538570.fasta	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538570.fasta	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib;aph(3')-Ia	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538570.fasta	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA2	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538570.fasta	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538570.fasta	(all)	carbapenem	-	-	none	-	ompK36:p.134_135insGlyAsp;blaKPC-3;ompK35:-	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538570.fasta	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA12	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538570.fasta	(all)	fluoroquinolone antibiotic	-	-	none	-	parC:p.Ser80Ile;gyrA:p.Ser83Ile	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538570.fasta	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	parC:p.Ser80Ile;gyrA:p.Ser83Ile	oqxA;oqxB	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA3538570.fasta	azithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538570.fasta	erythromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538570.fasta	spiramycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538570.fasta	telithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538570.fasta	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-11	-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA3538570.fasta	chloramphenicol	phenicol antibiotic	-	-	none	-	catA1	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538570.fasta	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA3538570.fasta	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538570.fasta	-	-	-	-	-	-	blaOXA:-	-	none (partial hits)	-	s__Klebsiella pneumoniae
+SAMEA3538572.fasta	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538572.fasta	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IIe	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538572.fasta	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538572.fasta	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538572.fasta	(all)	carbapenem	-	-	none	-	ompK35:-;ompK36:p.135_136insAspThr	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538572.fasta	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA5	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538572.fasta	(all)	fluoroquinolone antibiotic	-	-	none	-	parC:p.Glu84Lys;aac(6')-Ib-cr5;gyrA:p.Asp87Ala;gyrA:p.Ser83Tyr	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538572.fasta	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	parC:p.Glu84Lys;aac(6')-Ib-cr5;gyrA:p.Asp87Ala;gyrA:p.Ser83Tyr	oqxB;oqxA	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA3538572.fasta	tigecycline	glycylcycline	-	-	none	-	ramR:p.Ala19Val	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538572.fasta	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-11	-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA3538572.fasta	chloramphenicol	phenicol antibiotic	-	-	none	-	catA1	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538572.fasta	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA3538572.fasta	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538572.fasta	(all)	third-generation cephalosporin 	-	-	none	-	blaOXA-1;blaCTX-M-15	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538572.fasta	-	-	-	-	-	-	catB3:-	-	none (partial hits)	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	amikacin	aminoglycoside antibiotic	-	-	none	-	aph(3')-VIb	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IId	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-VIb;aph(3')-Ia	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	streptomycin	aminoglycoside antibiotic	-	-	none	-	aph(3'')-Ib;aph(3'')-Ib;aph(6)-Id;aadA1	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	(all)	carbapenem	-	-	none	-	ompK35:-	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA14	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	(all)	fluoroquinolone antibiotic	-	-	none	-	parC:p.Ser80Ile;gyrA:p.Asp87Ala;gyrA:p.Ser83Phe	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	parC:p.Ser80Ile;gyrA:p.Asp87Ala;gyrA:p.Ser83Phe	oqxA;oqxB	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	tigecycline	glycylcycline	-	-	none	-	ramR:p.Ala19Val	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	azithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	erythromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	spiramycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	telithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-28	-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	chloramphenicol	phenicol antibiotic	-	-	none	-	floR;cmlA5	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	florfenicol	phenicol antibiotic	-	-	none	-	floR	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	(all)	rifamycin antibiotic	-	-	none	-	arr-2	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	(all)	sulfonamide antibiotic	-	-	none	-	sul2;sul1	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	tetracycline	tetracycline antibiotic	-	-	none	-	tet(A)	-	-	-	s__Klebsiella pneumoniae
+SAMEA3538584.fasta	(all)	third-generation cephalosporin 	-	-	none	-	blaCTX-M-15;blaCMY-16;blaOXA-10	-	-	-	s__Klebsiella pneumoniae
+SAMEA3727704.fasta	gentamicin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	-	-	s__Klebsiella pneumoniae
+SAMEA3727704.fasta	kanamycin A	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	-	-	s__Klebsiella pneumoniae
+SAMEA3727704.fasta	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA2	-	-	-	s__Klebsiella pneumoniae
+SAMEA3727704.fasta	tobramycin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	-	-	s__Klebsiella pneumoniae
+SAMEA3727704.fasta	(all)	carbapenem	-	-	none	-	blaOXA-427	-	-	-	s__Klebsiella pneumoniae
+SAMEA3727704.fasta	(all)	fluoroquinolone antibiotic	-	-	none	-	qnrA1	-	-	-	s__Klebsiella pneumoniae
+SAMEA3727704.fasta	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	qnrA1	oqxA;oqxB	KPN0002;KPN0003	-	s__Klebsiella pneumoniae
+SAMEA3727704.fasta	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV	-	-	KPN0001	-	s__Klebsiella pneumoniae
+SAMEA3727704.fasta	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	-	s__Klebsiella pneumoniae
+SAMEA3727704.fasta	(all)	sulfonamide antibiotic	-	-	none	-	sul1;sul1	-	-	-	s__Klebsiella pneumoniae
