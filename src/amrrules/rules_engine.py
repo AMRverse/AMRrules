@@ -1,6 +1,6 @@
 from amrrules.rules_io import parse_rules_file, extract_relevant_rules
 from amrrules.summariser import create_summary_dict
-from amrrules.utils import check_sample_ids, validate_amrfp_file, get_organisms
+from amrrules.utils import check_sample_ids, validate_amrfp_file, get_organisms, open_input
 from amrrules.output import write_genotype_report, write_genome_report
 from amrrules.resources import ResourceManager as rm
 from amrrules.genotype_parser import GenoResult, Genotype
@@ -67,7 +67,7 @@ def run(args):
     genotype_rows = []
     # now it's time to parse the input file, which we have validated to check that it has
     # the columns we need. Each row will be parsed into an InputRow object
-    with open(args.input, 'r') as f:
+    with open_input(args.input) as f:
         reader = csv.DictReader(f, delimiter='\t')
         base_fieldnames = reader.fieldnames.copy()
         row_count = 1

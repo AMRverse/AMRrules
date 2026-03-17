@@ -1,4 +1,4 @@
-import os, csv
+import csv, gzip
 from importlib import resources
 import warnings
 
@@ -13,6 +13,12 @@ full_columns = ['breakpoint', 'breakpoint standard', 'breakpoint condition', 'ev
 CATEGORY_ORDER = ['-', 'not available', 'S', 'I', 'R']
 PHENOTYPE_ORDER = ['-', 'wildtype', 'nonwildtype']
 EVIDENCE_GRADE_ORDER = ['-', 'none', 'very low', 'low', 'moderate', 'high']
+
+def open_input(path):
+    """Open a file for reading, handling gzip transparently."""
+    if path.endswith('.gz'):
+        return gzip.open(path, 'rt')  # 'rt' = read as text
+    return open(path, 'r')
 
 def get_supported_organisms(rule_dir: str = None):
     """
@@ -59,7 +65,7 @@ def validate_amrfp_file(amrfp_file, multi_entry=False):
     """
     Validate that the AMRFinderPlus input file contains the required columns. All files must have Hierarchy node. Multi entry files must have Name column.
     """
-    with open(amrfp_file, 'r') as f:
+    with open_input(amrfp_file) as f:
         reader = csv.DictReader(f, delimiter='\t')
         samples_in_file = '' # set this to empty string if we only have one sample and no 'Name' column
         if 'Hierarchy node' not in reader.fieldnames:

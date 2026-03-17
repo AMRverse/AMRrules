@@ -63,7 +63,7 @@ Detailed options
 ::
 
   -h, --help            show this help message and exit
-  --input INPUT         Path to the tabular input file (must be AMRFinderPlus output for this version).
+  --input INPUT         Path to the tabular input file (must be AMRFinderPlus output for this version). Can be gzipped.
   --output-prefix OUTPUT_PREFIX
                         Prefix name for the output files.
   --output-dir, -d OUTPUT_DIR
@@ -76,9 +76,12 @@ Detailed options
                         Path to the organism file. This file should have two columns: genome name in col1 (matching the sample name in the first col of the input file), and col2 is the organism name, which should be one of the supported organisms. File should be in tab-delimited format, with no header
   --list-organisms      List all supported organisms and exit.
   --amr-tool, -t AMR_TOOL
-                        AMR tool used to detect genotypes: options are amrfp, rgi, resfinder. Currently only amrfp is supported.
+                        AMR tool used to detect genotypes. Currently only amrfp is supported.
   --no-rule-interpretation, -nr {nwtR,nwtS,nwt,none}
-                        How to interpret hits that do not match a rule. Options are: none - hits will be given no phenotype and no clinical category; nwt - hits will be flagged as phenotype nonwildtype, but no clinical category will be set; nwtR - hits will be interpreted as nonwildtype and given the clinical category resistant;
+                        How to interpret hits that do not match a rule. Default is none. 
+                        Options are: none - hits will be given no phenotype and no clinical category; 
+                        nwt - hits will be flagged as phenotype nonwildtype, but no clinical category will be set; 
+                        nwtR - hits will be interpreted as nonwildtype and given the clinical category resistant;
                         nwtS - hits will be interpreted as nonwildtype and given the clinical category susceptible.
   --annot-opts, -a {minimal,full}
                         Annotation options: minimal (context, drug, phenotype, category, evidence grade), full (everything including breakpoints, standards, etc)

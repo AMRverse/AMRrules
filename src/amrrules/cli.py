@@ -8,7 +8,7 @@ def main():
     supported_organisms = get_supported_organisms()
 
     parser = argparse.ArgumentParser(description="Interpretation engine for AMRrules.")
-    parser.add_argument('--input', type=str, help='Path to the tabular input file (must be AMRFinderPlus output for this version).')
+    parser.add_argument('--input', type=str, help='Path to the tabular input file (must be AMRFinderPlus output for this version). Can be gzipped.')
     parser.add_argument('--output-prefix', type=str, help='Prefix name for the output files.')
     parser.add_argument('--output-dir', '-d', type=str, default=os.getcwd(), help='Output directory. Default is current working directory.')
     parser.add_argument('--sample-id', type=str, help="If interpreting a single genome, can optionally provide sample ID here. If no sample_id is provided, and the first column of the input file doesn't define a sample_id, then the default value will be 'sample'.", default=None)
@@ -18,11 +18,11 @@ def main():
     org_args.add_argument('--organism-file', '-of', type=str, help='Path to the organism file. This file should have two columns: genome name in col1 (matching the sample name in the first col of the input file), and col2 is the organism name, which should be one of the supported organisms. File should be in tab-delimited format, with no header')
     org_args.add_argument('--list-organisms', action='store_true', help='List all supported organisms and exit.')
     #TODO: implement card and resfinder options, currently only amrfp is supported
-    parser.add_argument('--amr-tool', '-t', type=str, default='amrfp', help='AMR tool used to detect genotypes: options are amrfp, rgi, resfinder. Currently only amrfp is supported.')
+    parser.add_argument('--amr-tool', '-t', type=str, default='amrfp', help='AMR tool used to detect genotypes. Currently only amrfp is supported.')
     #parser.add_argument('--hamronized', '-H', action='store_true', help='Input file has been hamronized')
     # TODO: implement this option to allow for selection of different AMRFP databases
     #parser.add_argument('--amrfp_db_version', type=str, default='latest', help='Version of the AMRFP database used. Default is latest. NOTE STILL TO BE IMPLEMENTED')
-    parser.add_argument('--no-rule-interpretation', '-nr', type=str, default = 'none', choices=['nwtR', 'nwtS', 'nwt', 'none'], help='How to interpret hits that do not match a rule. Options are: none - hits will be given no phenotype and no clinical category; nwt - hits will be flagged as phenotype nonwildtype, but no clinical category will be set; nwtR - hits will be interpreted as nonwildtype and given the clinical category resistant; nwtS - hits will be interpreted as nonwildtype and given the clinical category susceptible.')
+    parser.add_argument('--no-rule-interpretation', '-nr', type=str, default = 'none', choices=['nwtR', 'nwtS', 'nwt', 'none'], help='How to interpret hits that do not match a rule. Default is none. Options are: none - hits will be given no phenotype and no clinical category; nwt - hits will be flagged as phenotype nonwildtype, but no clinical category will be set; nwtR - hits will be interpreted as nonwildtype and given the clinical category resistant; nwtS - hits will be interpreted as nonwildtype and given the clinical category susceptible.')
     parser.add_argument('--annot-opts', '-a', type=str, default='minimal', choices=['minimal', 'full'], help='Annotation options: minimal (context, drug, phenotype, category, evidence grade), full (everything including breakpoints, standards, etc)')
     parser.add_argument('--flag-core', action='store_true', help='Turn on flagging core genes in the summary output')
     parser.add_argument('--full-disrupt', action='store_true', help='Show the full mutation detected by AMRFinderPlus for POINT_DISRUPT calls in the summary report, rather than just labelling them as gene:-')
