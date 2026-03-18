@@ -118,6 +118,11 @@ The following columns are included:
 
    AMRFinderPlus genotype calls detected using POINT_DISRUPT contain detailed information about the disruption, which is formatted using HGVS syntax. For simplicity, by default the AMRrules genome summary report **will not show** the full mutation after the gene when listing these markers in the genome summary (although they can always be found in the annotated genotype report). Rather, they will be formatted in the genome summary report as ``gene:-`` as per other inactivating mutations. If you wish to show the full mutation detected by AMRFinderPlus in the summary report, this can be turned on by providing the option ``--full-disrupt`` to the AMRrules call.
 
+Combination Rules
+^^^^^^^^^^^^^^^^^
+
+The genome summary report is where combination rules are applied. For each drug or drug class, the engine extracts all individual rules that have been applied. It then searches the combination rules for this organism and evaluates the logic strings (e.g. "rule1 & rule2 | rule3") to determine if any apply. If they do, the engine then applies the logic of the combination rule to the call for this drug or drug class.
+
 
 Handling unmatched genotype calls
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
