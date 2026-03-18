@@ -123,6 +123,8 @@ Combination Rules
 
 The genome summary report is where combination rules are applied. For each drug or drug class, the engine extracts all individual rules that have been applied. It then searches the combination rules for this organism and evaluates the logic strings (e.g. "rule1 & rule2 | rule3") to determine if any apply. If they do, the engine then applies the logic of the combination rule to the call for this drug or drug class.
 
+:ref:`Go here <combo_rules_spec>` for more information on combination rules and how they are specified.
+
 
 Handling unmatched genotype calls
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
