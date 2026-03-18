@@ -17,7 +17,6 @@ Why can't I find <insert rule> being applied in my output files?
 While the AMRrules engine itself currently only accepts AMRFinderPlus input, the rules themselves have been curated by organism experts who are aware of resistance mechanims in these organisms that may not yet be in the AMRFinderPlus database. Therefore, there are rules for some organisms which currently the engine cannot apply. :ref:`Please also see this answer <faq_why_rule_not_amrfp>`.
 
 :: _faq_why_rule_not_amrfp:
-
 Why is there a rule for <insert mechanism> when AMRFinderPlus doesn't report it?
 --------------------------------------------------------------------------------
 We envision the rules as a place where experts can collate all currently knowledge of resistance mechanisms in their organism, and strongly support curators including rules for mechanisms which are currently not yet able to be detected by AMRFinderPlus. We work closely with the AMRFinderPlus team to help update their databases to include these new mechanisms, so future versions of the software can accurately report them.
