@@ -231,7 +231,7 @@ Explanation of ‘mutation’ syntax relevant to known AMR variants
 * ``c.[3]``: gene needs to be present with a minimum of 2 copies
 * ``p.[Ala94Gly][0.13]``: protein variant is present in >13% of reads 
 
-
+.. _combo_rules_spec:
 Combinatorial rules
 ^^^^^^^^^^^^^^^^^^^
 
