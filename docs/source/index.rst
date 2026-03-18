@@ -19,7 +19,7 @@ About
 
 Organism-specific interpretation of antimicrobial susceptibility testing (AST) data is standard in clinical microbiology, with rules regularly reviewed by expert committees of `EUCAST <https://www.eucast.org/>`__ and `CLSI <https://clsi.org/>`__. We aim to provide an analagous resource to support organism-specific interpretation of antimicrobial resistance (AMR) genotypes derived from pathogen whole genome sequence (WGS) data.
 
-AMRrules encode organism-specific rules for the interpretation of AMR genotype data. Users first take their genomes and run them through an AMR genotyping tool such as `AMRFinderPlus <https://www.ncbi.nlm.nih.gov/pathogens/antimicrobial-resistance/AMRFinder/>`__, which identifies AMR genes and mutations present in the genome. The resulting output can then interpreted using AMRrules, which applies the organism-specific rules to generate a final interpreted report of predicted antimicrobial susceptibility for that genome.
+AMRrules encode organism-specific rules for the interpretation of AMR genotype data. Users first take their genomes and run them through an AMR genotyping tool such as `AMRFinderPlus <https://www.ncbi.nlm.nih.gov/pathogens/antimicrobial-resistance/AMRFinder/>`__, which identifies resistance determinants present in the genome. The resulting output can then interpreted using AMRrules, which applies the organism-specific rules to generate a final interpreted report of predicted antimicrobial susceptibility for that genome.
 
 .. image:: images/amrfinder_pipeline.png
    :alt: Workflow for interpreting AMR genotypes using AMRrules
