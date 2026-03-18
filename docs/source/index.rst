@@ -7,6 +7,7 @@
    usage
    interpretation
    specification
+   faq
    tests
 
 
