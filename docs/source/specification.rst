@@ -37,7 +37,7 @@ Controlled vocabularies
 Variation type
 ^^^^^^^^^^^^^^
 
-Specifies the nature of the type of variation to which the rule applies. Based on the 'variant type' column in the `hAMRonization <https://github.com/pha4ge/hAMRonization>`__ AMR detection specification scheme, with additional terms from the `NCIT <https://www.ebi.ac.uk/ols4/ontologies/ncit>` ontology.
+Specifies the nature of the type of variation to which the rule applies. Based on the 'variant type' column in the `hAMRonization <https://github.com/pha4ge/hAMRonization>`__ AMR detection specification scheme, with additional terms from the `NCIT <https://www.ebi.ac.uk/ols4/ontologies/ncit>`__ ontology.
 
 .. csv-table::
    :file: tables/variation_type_spec.tsv
