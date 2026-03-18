@@ -123,7 +123,7 @@ Combination Rules
 
 The genome summary report is where combination rules are applied. For each drug or drug class, the engine extracts all individual rules that have been applied. It then searches the combination rules for this organism and evaluates the logic strings (e.g. "rule1 & rule2 | rule3") to determine if any apply. If they do, the engine then applies the logic of the combination rule to the call for this drug or drug class.
 
-:ref:`Go here <combo_rules_spec>` for more information on combination rules and how they are specified.
+:ref:`See details <combo_rules_spec>` about the rules specification for more information on combination rules and how they are used.
 
 
 Handling unmatched genotype calls
@@ -134,9 +134,9 @@ By default, if no organism-specific rule is found for a genotype reported by AMR
 • ``none`` (default): any unmatched genotype calls will not be assigned to a phenotype or clinical category (entires will be ``-``). Evidence grade will be set to ``none``, as we are not interpreting a phenotype or clinical category.
 • ``nwt``: any unmatched genotype calls will be assigned the phenotype ``nonwildtype``, but no clinical category will be assigned. Evidence grade will be set to ``none``, as we are not interpreting a clinical category.
 • ``nwtS``: any unmatched genotype calls will be assigned the phenotype ``nonwildtype`` and clinical category will be set to ``S``. Evidence grade will be set to ``none``, as there is no evidence for the call.
-• ``nwtR``: any unmatched genotype calls will be assigned the phenotype ``nonwildtype`` and clinical category will be set to ``R``. Evidence grade will be set to ``none`, as there is no evidence for the call.
+• ``nwtR``: any unmatched genotype calls will be assigned the phenotype ``nonwildtype`` and clinical category will be set to ``R``. Evidence grade will be set to ``none``, as there is no evidence for the call.
 
-To demonstrate the difference between these options, you can compare the output files for the same genome, a MDR Klebsiella pneumoniae strain, using different interpretations for markers with no rules.
+To demonstrate the difference between these options, you can compare the output files for the same genome, a MDR *Klebsiella pneumoniae* strain, using different interpretations for markers with no rules.
 
 Using ``none`` (see ``tests/data/example_output/test_kpneumo_MDR_none_genome_summary.tsv``):
 
