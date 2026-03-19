@@ -13,6 +13,8 @@ SAMD00000649	(all)	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia
 SAMD00000649	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
 SAMD00000649	(all)	first-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0005	-	s__Escherichia coli
 SAMD00000649	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
+SAMD00000649	cefepime	fourth-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0084	-	s__Escherichia coli
+SAMD00000649	cefpirome	fourth-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0085	-	s__Escherichia coli
 SAMD00000649	aztreonam	monobactam	S	wildtype	high	-	-	blaEC	ECO0018	-	s__Escherichia coli
 SAMD00000649	(all)	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001	-	s__Escherichia coli
 SAMD00000649	amoxicillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0003	-	s__Escherichia coli
@@ -34,6 +36,8 @@ SAMD00000724	(all)	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016	-	s__Escherichia
 SAMD00000724	imipenem	carbapenem	S	wildtype	high	-	-	blaEC	ECO0016;ECO0017	-	s__Escherichia coli
 SAMD00000724	(all)	first-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0005	-	s__Escherichia coli
 SAMD00000724	cefazolin	first-generation cephalosporin	I	wildtype	high	blaEC	-	blaEC	ECO0005;ECO0006	-	s__Escherichia coli
+SAMD00000724	cefepime	fourth-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0084	-	s__Escherichia coli
+SAMD00000724	cefpirome	fourth-generation cephalosporin	S	wildtype	high	-	-	blaEC	ECO0085	-	s__Escherichia coli
 SAMD00000724	aztreonam	monobactam	S	wildtype	high	-	-	blaEC	ECO0018	-	s__Escherichia coli
 SAMD00000724	(all)	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001	-	s__Escherichia coli
 SAMD00000724	amoxicillin	penicillin beta-lactam	S	wildtype	high	-	-	blaEC	ECO0001;ECO0003	-	s__Escherichia coli
