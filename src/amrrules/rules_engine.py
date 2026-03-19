@@ -47,17 +47,17 @@ def run(args):
     if args.organism_file:
         check_sample_ids(samples_with_org, samples_to_parse, skipped_samples)
 
-    # collate the required rules for the organisms we need to parse
-    rule_files = []
+    # collate unique rule files required for the organisms we need to parse
+    rule_files = set()
     # open the rules key file and get the organism name
     key_file_path = resources.files("amrrules.rules").joinpath("rule_key_file.tsv")
     with open(key_file_path, 'r') as key_file:
         for row in key_file:
             # split the row into the organism and rules file
             organism, rules_filename = row.strip().split('\t')
-            # if it's an organism we're interested in, add it to the list of rule files to parse
+            # if it's an organism we're interested in, add its rules file (only if it's not already)
             if organism in set(organism_dict.values()):
-                rule_files.append(rules_filename)
+                rule_files.add(rules_filename)
 
     # parse the rule files
     rules = parse_rules_file(rule_files)

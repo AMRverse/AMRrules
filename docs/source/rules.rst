@@ -6,7 +6,7 @@ Rules and supported organisms
 Available rules
 ===============
 
-Currently available rule sets are in the ``rules/`` directory of this repository, named by organism. In this beta release they focus mainly on core genes and expected resistances, however acquired genes and mutations are included for some organisms already and will be added to others as the necessary data to define them accurately is accumulated and curated by the ESGEM-AMR working group.
+Currently available rule sets are in the ``rules/`` directory of this repository, named by organism. In this release they focus mainly on core genes and expected resistances, however acquired genes and mutations are included for some organisms already and will be added to others as the necessary data to define them accurately is accumulated and curated by the ESGEM-AMR working group.
 
 Note that multiple organisms can exist within a rules file, particularly if the rules file belongs to a genus, or the named species belongs to a species complex (eg *Klebsiella oxytoca*). 
 
@@ -22,7 +22,7 @@ A full list of supported organisms can be found below.
 * `Enterococcus faecalis <https://github.com/AMRverse/AMRrules/blob/main/rules/Enterococcus_faecalis.tsv>`__
 * `Enterococcus faecium <https://github.com/AMRverse/AMRrules/blob/main/rules/Enterococcus_faecium.tsv>`__
 * `Escherichia coli <https://github.com/AMRverse/AMRrules/blob/main/rules/Escherichia_coli.tsv>`__
-* `Klebsiella oxytoca <https://github.com/AMRverse/AMRrules/blob/main/rules/Klebsiella_oxytoca_complex.tsv>`__
+* `Klebsiella oxytoca <https://github.com/AMRverse/AMRrules/blob/main/rules/Klebsiella_oxytoca_complex.tsv>`__ (including other species in the complex)
 * `Klebsiella pneumoniae <https://github.com/AMRverse/AMRrules/blob/main/rules/Klebsiella_pneumoniae.tsv>`__
 * `Legionella <https://github.com/AMRverse/AMRrules/blob/main/rules/Legionella.tsv>`__
 * `Mycobacterium tuberculosis <https://github.com/AMRverse/AMRrules/blob/main/rules/Mycobacterium_tuberculosis.tsv>`__

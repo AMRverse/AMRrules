@@ -25,7 +25,7 @@ SAMN03571960	(all)	third-generation cephalosporin	R	wildtype	moderate	blaADC-26	
 SAMN03571960	cefotaxime	third-generation cephalosporin	R	wildtype	moderate	blaADC-26	-	-	ACI0152;ACI0154	-	s__Acinetobacter baumannii
 SAMN03571960	ceftazidime	third-generation cephalosporin	R	wildtype	moderate	blaADC-26	-	-	ACI0152;ACI0153	-	s__Acinetobacter baumannii
 SAMN03571960	(all)	third-generation cephalosporin 	S	nonwildtype	none	-	blaPER-7	-	-	-	s__Acinetobacter baumannii
-SAMN03571960	(n/a)	antibiotic efflux	-	-	none	-	adeS:p.His189Tyr;amvA	-	-	-	s__Acinetobacter baumannii
+SAMN03571960	(n/a)	antibiotic efflux	-	-	none	amvA	adeS:p.His189Tyr	-	ACI0160	-	s__Acinetobacter baumannii
 SAMN03575971	(all)	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN03575971	amikacin	aminoglycoside antibiotic	S	nonwildtype	none	-	aac(6')-Ian	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN03575971	gentamicin	aminoglycoside antibiotic	S	nonwildtype	none	-	armA;aac(3)-IIe	ant(3'')-IIa	ACI0158;ACI0165	-	s__Acinetobacter baumannii
@@ -50,7 +50,7 @@ SAMN03575971	(all)	third-generation cephalosporin	R	wildtype	moderate	blaADC-26	
 SAMN03575971	cefotaxime	third-generation cephalosporin	R	wildtype	moderate	blaADC-26	-	-	ACI0152;ACI0154	-	s__Acinetobacter baumannii
 SAMN03575971	ceftazidime	third-generation cephalosporin	R	wildtype	moderate	blaADC-26	-	-	ACI0152;ACI0153	-	s__Acinetobacter baumannii
 SAMN03575971	(all)	third-generation cephalosporin 	S	nonwildtype	none	-	blaPER-7	-	-	-	s__Acinetobacter baumannii
-SAMN03575971	(n/a)	antibiotic efflux	-	-	none	-	adeS:p.His189Tyr;amvA	-	-	-	s__Acinetobacter baumannii
+SAMN03575971	(n/a)	antibiotic efflux	-	-	none	amvA	adeS:p.His189Tyr	-	ACI0160	-	s__Acinetobacter baumannii
 SAMN03575972	(all)	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN03575972	gentamicin	aminoglycoside antibiotic	S	nonwildtype	none	-	armA;aac(3)-Ia;aac(6')-Ib'	ant(3'')-IIa	ACI0158;ACI0165	-	s__Acinetobacter baumannii
 SAMN03575972	spectinomycin	aminoglycoside antibiotic	R	wildtype	high	ant(3'')-IIa	-	ant(3'')-IIa	ACI0165;ACI0166	-	s__Acinetobacter baumannii
@@ -73,7 +73,7 @@ SAMN03575972	tetracycline	tetracycline antibiotic	S	nonwildtype	none	-	tet(B)	-	
 SAMN03575972	(all)	third-generation cephalosporin	R	wildtype	moderate	blaADC-30	-	-	ACI0152	-	s__Acinetobacter baumannii
 SAMN03575972	cefotaxime	third-generation cephalosporin	R	wildtype	moderate	blaADC-30	-	-	ACI0152;ACI0154	-	s__Acinetobacter baumannii
 SAMN03575972	ceftazidime	third-generation cephalosporin	R	wildtype	moderate	blaADC-30	-	-	ACI0152;ACI0153	-	s__Acinetobacter baumannii
-SAMN03575972	(n/a)	antibiotic efflux	-	-	none	-	amvA;adeC	-	-	-	s__Acinetobacter baumannii
+SAMN03575972	(n/a)	antibiotic efflux	-	-	none	amvA	adeC	-	ACI0160	-	s__Acinetobacter baumannii
 SAMN03575972	-	-	-	-	-	-	aph(3')-Ia:-	-	none (partial hits)	-	s__Acinetobacter baumannii
 SAMN03575974	(all)	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN03575974	gentamicin	aminoglycoside antibiotic	S	nonwildtype	none	-	armA;aac(6')-Ib'	ant(3'')-IIa	ACI0158;ACI0165	-	s__Acinetobacter baumannii
@@ -97,7 +97,7 @@ SAMN03575974	tetracycline	tetracycline antibiotic	S	nonwildtype	none	-	tet(B)	-	
 SAMN03575974	(all)	third-generation cephalosporin	R	wildtype	moderate	blaADC-30	-	-	ACI0152	-	s__Acinetobacter baumannii
 SAMN03575974	cefotaxime	third-generation cephalosporin	R	wildtype	moderate	blaADC-30	-	-	ACI0152;ACI0154	-	s__Acinetobacter baumannii
 SAMN03575974	ceftazidime	third-generation cephalosporin	R	wildtype	moderate	blaADC-30	-	-	ACI0152;ACI0153	-	s__Acinetobacter baumannii
-SAMN03575974	(n/a)	antibiotic efflux	-	-	none	-	amvA;adeC	-	-	-	s__Acinetobacter baumannii
+SAMN03575974	(n/a)	antibiotic efflux	-	-	none	amvA	adeC	-	ACI0160	-	s__Acinetobacter baumannii
 SAMN03575974	-	-	-	-	-	-	sul2:-	-	none (partial hits)	-	s__Acinetobacter baumannii
 SAMN03576356	(all)	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN03576356	gentamicin	aminoglycoside antibiotic	S	nonwildtype	none	-	armA	ant(3'')-IIa	ACI0158;ACI0165	-	s__Acinetobacter baumannii
@@ -121,7 +121,7 @@ SAMN03576356	tetracycline	tetracycline antibiotic	S	nonwildtype	none	-	tet(B)	-	
 SAMN03576356	(all)	third-generation cephalosporin	R	wildtype	moderate	blaADC-73	-	-	ACI0152	-	s__Acinetobacter baumannii
 SAMN03576356	cefotaxime	third-generation cephalosporin	R	wildtype	moderate	blaADC-73	-	-	ACI0152;ACI0154	-	s__Acinetobacter baumannii
 SAMN03576356	ceftazidime	third-generation cephalosporin	R	wildtype	moderate	blaADC-73	-	-	ACI0152;ACI0153	-	s__Acinetobacter baumannii
-SAMN03576356	(n/a)	antibiotic efflux	-	-	none	-	amvA;adeC	-	-	-	s__Acinetobacter baumannii
+SAMN03576356	(n/a)	antibiotic efflux	-	-	none	amvA	adeC	-	ACI0160	-	s__Acinetobacter baumannii
 SAMN03576511	(all)	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN03576511	amikacin	aminoglycoside antibiotic	S	nonwildtype	none	-	aac(6')-Ian	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN03576511	gentamicin	aminoglycoside antibiotic	S	nonwildtype	none	-	armA;aac(3)-IIe	ant(3'')-IIa	ACI0158;ACI0165	-	s__Acinetobacter baumannii
@@ -145,7 +145,7 @@ SAMN03576511	tetracycline	tetracycline antibiotic	S	nonwildtype	none	-	tet(B)	-	
 SAMN03576511	(all)	third-generation cephalosporin	R	wildtype	moderate	blaADC-26	-	-	ACI0152	-	s__Acinetobacter baumannii
 SAMN03576511	cefotaxime	third-generation cephalosporin	R	wildtype	moderate	blaADC-26	-	-	ACI0152;ACI0154	-	s__Acinetobacter baumannii
 SAMN03576511	ceftazidime	third-generation cephalosporin	R	wildtype	moderate	blaADC-26	-	-	ACI0152;ACI0153	-	s__Acinetobacter baumannii
-SAMN03576511	(n/a)	antibiotic efflux	-	-	none	-	adeS:p.His189Tyr;amvA	-	-	-	s__Acinetobacter baumannii
+SAMN03576511	(n/a)	antibiotic efflux	-	-	none	amvA	adeS:p.His189Tyr	-	ACI0160	-	s__Acinetobacter baumannii
 SAMN03576511	-	-	-	-	-	-	aph(3')-VIa:-;aph(3')-VIa:-	-	none (partial hits)	-	s__Acinetobacter baumannii
 SAMN04229825	(all)	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN04229825	gentamicin	aminoglycoside antibiotic	S	nonwildtype	none	-	ant(2'')-Ia	ant(3'')-IIa	ACI0158;ACI0165	-	s__Acinetobacter baumannii
@@ -163,7 +163,7 @@ SAMN04229825	(all)	third-generation cephalosporin	R	wildtype	moderate	blaADC-76	
 SAMN04229825	cefotaxime	third-generation cephalosporin	R	wildtype	moderate	blaADC-76	-	-	ACI0152;ACI0154	-	s__Acinetobacter baumannii
 SAMN04229825	ceftazidime	third-generation cephalosporin	R	wildtype	moderate	blaADC-76	-	-	ACI0152;ACI0153	-	s__Acinetobacter baumannii
 SAMN04229825	(all)	third-generation cephalosporin 	S	nonwildtype	none	-	blaCMY-30	-	-	-	s__Acinetobacter baumannii
-SAMN04229825	(n/a)	antibiotic efflux	-	-	none	-	amvA;adeC	-	-	-	s__Acinetobacter baumannii
+SAMN04229825	(n/a)	antibiotic efflux	-	-	none	amvA	adeC	-	ACI0160	-	s__Acinetobacter baumannii
 SAMN04515391	(all)	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN04515391	gentamicin	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0158;ACI0165	-	s__Acinetobacter baumannii
 SAMN04515391	spectinomycin	aminoglycoside antibiotic	R	wildtype	high	ant(3'')-IIa	-	ant(3'')-IIa	ACI0165;ACI0166	-	s__Acinetobacter baumannii
@@ -173,7 +173,7 @@ SAMN04515391	(all)	carbapenem	S	wildtype	moderate	-	-	blaOXA-314	ACI0146	-	s__Ac
 SAMN04515391	(all)	third-generation cephalosporin	R	wildtype	moderate	blaADC-242	-	-	ACI0152	-	s__Acinetobacter baumannii
 SAMN04515391	cefotaxime	third-generation cephalosporin	R	wildtype	moderate	blaADC-242	-	-	ACI0152;ACI0154	-	s__Acinetobacter baumannii
 SAMN04515391	ceftazidime	third-generation cephalosporin	R	wildtype	moderate	blaADC-242	-	-	ACI0152;ACI0153	-	s__Acinetobacter baumannii
-SAMN04515391	(n/a)	antibiotic efflux	-	-	none	-	amvA	-	-	-	s__Acinetobacter baumannii
+SAMN04515391	(n/a)	antibiotic efflux	-	-	high	amvA	-	-	ACI0160	-	s__Acinetobacter baumannii
 SAMN04515405	(all)	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN04515405	amikacin	aminoglycoside antibiotic	S	nonwildtype	none	-	aph(3')-VIa	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN04515405	gentamicin	aminoglycoside antibiotic	S	nonwildtype	none	-	ant(2'')-Ia	ant(3'')-IIa	ACI0158;ACI0165	-	s__Acinetobacter baumannii
@@ -191,7 +191,7 @@ SAMN04515405	(all)	sulfonamide antibiotic	S	nonwildtype	none	-	sul2	-	-	-	s__Aci
 SAMN04515405	(all)	third-generation cephalosporin	R	wildtype	moderate	blaADC-160	-	-	ACI0152	-	s__Acinetobacter baumannii
 SAMN04515405	cefotaxime	third-generation cephalosporin	R	wildtype	moderate	blaADC-160	-	-	ACI0152;ACI0154	-	s__Acinetobacter baumannii
 SAMN04515405	ceftazidime	third-generation cephalosporin	R	wildtype	moderate	blaADC-160	-	-	ACI0152;ACI0153	-	s__Acinetobacter baumannii
-SAMN04515405	(n/a)	antibiotic efflux	-	-	none	-	amvA	-	-	-	s__Acinetobacter baumannii
+SAMN04515405	(n/a)	antibiotic efflux	-	-	high	amvA	-	-	ACI0160	-	s__Acinetobacter baumannii
 SAMN04515807	(all)	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN04515807	gentamicin	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0158;ACI0165	-	s__Acinetobacter baumannii
 SAMN04515807	spectinomycin	aminoglycoside antibiotic	R	wildtype	high	ant(3'')-IIa	-	ant(3'')-IIa	ACI0165;ACI0166	-	s__Acinetobacter baumannii
@@ -202,7 +202,7 @@ SAMN04515807	fosfomycin	phosphonic acid antibiotic	S	nonwildtype	none	-	abaF	-	-
 SAMN04515807	(all)	third-generation cephalosporin	R	wildtype	moderate	blaADC-249	-	-	ACI0152	-	s__Acinetobacter baumannii
 SAMN04515807	cefotaxime	third-generation cephalosporin	R	wildtype	moderate	blaADC-249	-	-	ACI0152;ACI0154	-	s__Acinetobacter baumannii
 SAMN04515807	ceftazidime	third-generation cephalosporin	R	wildtype	moderate	blaADC-249	-	-	ACI0152;ACI0153	-	s__Acinetobacter baumannii
-SAMN04515807	(n/a)	antibiotic efflux	-	-	none	-	amvA;adeC	-	-	-	s__Acinetobacter baumannii
+SAMN04515807	(n/a)	antibiotic efflux	-	-	none	amvA	adeC	-	ACI0160	-	s__Acinetobacter baumannii
 SAMN04515808	(all)	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN04515808	gentamicin	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0158;ACI0165	-	s__Acinetobacter baumannii
 SAMN04515808	spectinomycin	aminoglycoside antibiotic	R	wildtype	high	ant(3'')-IIa	-	ant(3'')-IIa	ACI0165;ACI0166	-	s__Acinetobacter baumannii
@@ -213,7 +213,7 @@ SAMN04515808	fosfomycin	phosphonic acid antibiotic	S	nonwildtype	none	-	abaF	-	-
 SAMN04515808	(all)	third-generation cephalosporin	R	wildtype	moderate	blaADC-238	-	-	ACI0152	-	s__Acinetobacter baumannii
 SAMN04515808	cefotaxime	third-generation cephalosporin	R	wildtype	moderate	blaADC-238	-	-	ACI0152;ACI0154	-	s__Acinetobacter baumannii
 SAMN04515808	ceftazidime	third-generation cephalosporin	R	wildtype	moderate	blaADC-238	-	-	ACI0152;ACI0153	-	s__Acinetobacter baumannii
-SAMN04515808	(n/a)	antibiotic efflux	-	-	none	-	amvA	-	-	-	s__Acinetobacter baumannii
+SAMN04515808	(n/a)	antibiotic efflux	-	-	high	amvA	-	-	ACI0160	-	s__Acinetobacter baumannii
 SAMN04525202	(all)	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN04525202	gentamicin	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0158;ACI0165	-	s__Acinetobacter baumannii
 SAMN04525202	spectinomycin	aminoglycoside antibiotic	R	wildtype	high	ant(3'')-IIa	-	ant(3'')-IIa	ACI0165;ACI0166	-	s__Acinetobacter baumannii
@@ -224,7 +224,7 @@ SAMN04525202	fosfomycin	phosphonic acid antibiotic	S	nonwildtype	none	-	abaF	-	-
 SAMN04525202	(all)	third-generation cephalosporin	R	wildtype	moderate	blaADC-52	-	-	ACI0152	-	s__Acinetobacter baumannii
 SAMN04525202	cefotaxime	third-generation cephalosporin	R	wildtype	moderate	blaADC-52	-	-	ACI0152;ACI0154	-	s__Acinetobacter baumannii
 SAMN04525202	ceftazidime	third-generation cephalosporin	R	wildtype	moderate	blaADC-52	-	-	ACI0152;ACI0153	-	s__Acinetobacter baumannii
-SAMN04525202	(n/a)	antibiotic efflux	-	-	none	-	amvA	-	-	-	s__Acinetobacter baumannii
+SAMN04525202	(n/a)	antibiotic efflux	-	-	high	amvA	-	-	ACI0160	-	s__Acinetobacter baumannii
 SAMN04525209	(all)	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN04525209	amikacin	aminoglycoside antibiotic	S	nonwildtype	none	-	aph(3')-VIa	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN04525209	gentamicin	aminoglycoside antibiotic	S	nonwildtype	none	-	ant(2'')-Ia	ant(3'')-IIa	ACI0158;ACI0165	-	s__Acinetobacter baumannii
@@ -241,7 +241,7 @@ SAMN04525209	(all)	third-generation cephalosporin	R	wildtype	moderate	blaADC-84	
 SAMN04525209	cefotaxime	third-generation cephalosporin	R	wildtype	moderate	blaADC-84	-	-	ACI0152;ACI0154	-	s__Acinetobacter baumannii
 SAMN04525209	ceftazidime	third-generation cephalosporin	R	wildtype	moderate	blaADC-84	-	-	ACI0152;ACI0153	-	s__Acinetobacter baumannii
 SAMN04525209	(all)	third-generation cephalosporin 	S	nonwildtype	none	-	blaCTX-M-15	-	-	-	s__Acinetobacter baumannii
-SAMN04525209	(n/a)	antibiotic efflux	-	-	none	-	amvA;adeS:p.Gly336Ser	-	-	-	s__Acinetobacter baumannii
+SAMN04525209	(n/a)	antibiotic efflux	-	-	none	amvA	adeS:p.Gly336Ser	-	ACI0160	-	s__Acinetobacter baumannii
 SAMN04545407	(all)	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN04545407	gentamicin	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0158;ACI0165	-	s__Acinetobacter baumannii
 SAMN04545407	spectinomycin	aminoglycoside antibiotic	R	wildtype	high	ant(3'')-IIa	-	ant(3'')-IIa	ACI0165;ACI0166	-	s__Acinetobacter baumannii
@@ -251,7 +251,7 @@ SAMN04545407	(all)	carbapenem	S	wildtype	moderate	-	-	blaOXA-94	ACI0146	-	s__Aci
 SAMN04545407	(all)	third-generation cephalosporin	R	wildtype	moderate	blaADC-80	-	-	ACI0152	-	s__Acinetobacter baumannii
 SAMN04545407	cefotaxime	third-generation cephalosporin	R	wildtype	moderate	blaADC-80	-	-	ACI0152;ACI0154	-	s__Acinetobacter baumannii
 SAMN04545407	ceftazidime	third-generation cephalosporin	R	wildtype	moderate	blaADC-80	-	-	ACI0152;ACI0153	-	s__Acinetobacter baumannii
-SAMN04545407	(n/a)	antibiotic efflux	-	-	none	-	amvA	-	-	-	s__Acinetobacter baumannii
+SAMN04545407	(n/a)	antibiotic efflux	-	-	high	amvA	-	-	ACI0160	-	s__Acinetobacter baumannii
 SAMN04547107	(all)	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN04547107	gentamicin	aminoglycoside antibiotic	S	nonwildtype	none	-	ant(2'')-Ia	ant(3'')-IIa	ACI0158;ACI0165	-	s__Acinetobacter baumannii
 SAMN04547107	kanamycin A	aminoglycoside antibiotic	S	nonwildtype	none	-	ant(2'')-Ia;aph(3')-Ia	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
@@ -267,7 +267,7 @@ SAMN04547107	(all)	third-generation cephalosporin	R	wildtype	moderate	blaADC-84	
 SAMN04547107	cefotaxime	third-generation cephalosporin	R	wildtype	moderate	blaADC-84	-	-	ACI0152;ACI0154	-	s__Acinetobacter baumannii
 SAMN04547107	ceftazidime	third-generation cephalosporin	R	wildtype	moderate	blaADC-84	-	-	ACI0152;ACI0153	-	s__Acinetobacter baumannii
 SAMN04547107	(all)	third-generation cephalosporin 	S	nonwildtype	none	-	blaCTX-M-15	-	-	-	s__Acinetobacter baumannii
-SAMN04547107	(n/a)	antibiotic efflux	-	-	none	-	amvA;adeS:p.Gly336Ser	-	-	-	s__Acinetobacter baumannii
+SAMN04547107	(n/a)	antibiotic efflux	-	-	none	amvA	adeS:p.Gly336Ser	-	ACI0160	-	s__Acinetobacter baumannii
 SAMN04547107	-	-	-	-	-	-	aph(3')-VI:-;aph(3')-VI:-;aph(3')-VIa:-;aph(3')-VIa:-	-	none (partial hits)	-	s__Acinetobacter baumannii
 SAMN04549256	(all)	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN04549256	gentamicin	aminoglycoside antibiotic	S	nonwildtype	none	-	ant(2'')-Ia	ant(3'')-IIa	ACI0158;ACI0165	-	s__Acinetobacter baumannii
@@ -285,7 +285,7 @@ SAMN04549256	(all)	third-generation cephalosporin	R	wildtype	moderate	blaADC-76	
 SAMN04549256	cefotaxime	third-generation cephalosporin	R	wildtype	moderate	blaADC-76	-	-	ACI0152;ACI0154	-	s__Acinetobacter baumannii
 SAMN04549256	ceftazidime	third-generation cephalosporin	R	wildtype	moderate	blaADC-76	-	-	ACI0152;ACI0153	-	s__Acinetobacter baumannii
 SAMN04549256	(all)	third-generation cephalosporin 	S	nonwildtype	none	-	blaCMY-30	-	-	-	s__Acinetobacter baumannii
-SAMN04549256	(n/a)	antibiotic efflux	-	-	none	-	adeC;amvA	-	-	-	s__Acinetobacter baumannii
+SAMN04549256	(n/a)	antibiotic efflux	-	-	none	amvA	adeC	-	ACI0160	-	s__Acinetobacter baumannii
 SAMN04549271	(all)	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN04549271	gentamicin	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0158;ACI0165	-	s__Acinetobacter baumannii
 SAMN04549271	spectinomycin	aminoglycoside antibiotic	R	wildtype	high	ant(3'')-IIa	-	ant(3'')-IIa	ACI0165;ACI0166	-	s__Acinetobacter baumannii
@@ -301,7 +301,7 @@ SAMN04549271	tetracycline	tetracycline antibiotic	S	nonwildtype	none	-	tet(39)	-
 SAMN04549271	(all)	third-generation cephalosporin	R	wildtype	moderate	blaADC-116	-	-	ACI0152	-	s__Acinetobacter baumannii
 SAMN04549271	cefotaxime	third-generation cephalosporin	R	wildtype	moderate	blaADC-116	-	-	ACI0152;ACI0154	-	s__Acinetobacter baumannii
 SAMN04549271	ceftazidime	third-generation cephalosporin	R	wildtype	moderate	blaADC-116	-	-	ACI0152;ACI0153	-	s__Acinetobacter baumannii
-SAMN04549271	(n/a)	antibiotic efflux	-	-	none	-	amvA	-	-	-	s__Acinetobacter baumannii
+SAMN04549271	(n/a)	antibiotic efflux	-	-	high	amvA	-	-	ACI0160	-	s__Acinetobacter baumannii
 SAMN04549272	(all)	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN04549272	gentamicin	aminoglycoside antibiotic	S	nonwildtype	none	-	ant(2'')-Ia	ant(3'')-IIa	ACI0158;ACI0165	-	s__Acinetobacter baumannii
 SAMN04549272	kanamycin A	aminoglycoside antibiotic	S	nonwildtype	none	-	ant(2'')-Ia	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
@@ -316,7 +316,7 @@ SAMN04549272	fosfomycin	phosphonic acid antibiotic	S	nonwildtype	none	-	abaF	-	-
 SAMN04549272	(all)	third-generation cephalosporin	R	wildtype	moderate	blaADC-102	-	-	ACI0152	-	s__Acinetobacter baumannii
 SAMN04549272	cefotaxime	third-generation cephalosporin	R	wildtype	moderate	blaADC-102	-	-	ACI0152;ACI0154	-	s__Acinetobacter baumannii
 SAMN04549272	ceftazidime	third-generation cephalosporin	R	wildtype	moderate	blaADC-102	-	-	ACI0152;ACI0153	-	s__Acinetobacter baumannii
-SAMN04549272	(n/a)	antibiotic efflux	-	-	none	-	amvA	-	-	-	s__Acinetobacter baumannii
+SAMN04549272	(n/a)	antibiotic efflux	-	-	high	amvA	-	-	ACI0160	-	s__Acinetobacter baumannii
 SAMN04549511	(all)	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN04549511	gentamicin	aminoglycoside antibiotic	S	nonwildtype	none	-	ant(2'')-Ia	ant(3'')-IIa	ACI0158;ACI0165	-	s__Acinetobacter baumannii
 SAMN04549511	kanamycin A	aminoglycoside antibiotic	S	nonwildtype	none	-	ant(2'')-Ia	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
@@ -332,7 +332,7 @@ SAMN04549511	(all)	sulfonamide antibiotic	S	nonwildtype	none	-	sul2	-	-	-	s__Aci
 SAMN04549511	(all)	third-generation cephalosporin	R	wildtype	moderate	blaADC-79	-	-	ACI0152	-	s__Acinetobacter baumannii
 SAMN04549511	cefotaxime	third-generation cephalosporin	R	wildtype	moderate	blaADC-79	-	-	ACI0152;ACI0154	-	s__Acinetobacter baumannii
 SAMN04549511	ceftazidime	third-generation cephalosporin	R	wildtype	moderate	blaADC-79	-	-	ACI0152;ACI0153	-	s__Acinetobacter baumannii
-SAMN04549511	(n/a)	antibiotic efflux	-	-	none	-	amvA	-	-	-	s__Acinetobacter baumannii
+SAMN04549511	(n/a)	antibiotic efflux	-	-	high	amvA	-	-	ACI0160	-	s__Acinetobacter baumannii
 SAMN04550110	(all)	aminoglycoside antibiotic	S	wildtype	high	-	-	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
 SAMN04550110	gentamicin	aminoglycoside antibiotic	S	nonwildtype	none	-	ant(2'')-Ia	ant(3'')-IIa	ACI0158;ACI0165	-	s__Acinetobacter baumannii
 SAMN04550110	kanamycin A	aminoglycoside antibiotic	S	nonwildtype	none	-	ant(2'')-Ia	ant(3'')-IIa	ACI0165	-	s__Acinetobacter baumannii
@@ -345,4 +345,4 @@ SAMN04550110	(all)	sulfonamide antibiotic	S	nonwildtype	none	-	sul2	-	-	-	s__Aci
 SAMN04550110	(all)	third-generation cephalosporin	R	wildtype	moderate	blaADC-79	-	-	ACI0152	-	s__Acinetobacter baumannii
 SAMN04550110	cefotaxime	third-generation cephalosporin	R	wildtype	moderate	blaADC-79	-	-	ACI0152;ACI0154	-	s__Acinetobacter baumannii
 SAMN04550110	ceftazidime	third-generation cephalosporin	R	wildtype	moderate	blaADC-79	-	-	ACI0152;ACI0153	-	s__Acinetobacter baumannii
-SAMN04550110	(n/a)	antibiotic efflux	-	-	none	-	amvA	-	-	-	s__Acinetobacter baumannii
+SAMN04550110	(n/a)	antibiotic efflux	-	-	high	amvA	-	-	ACI0160	-	s__Acinetobacter baumannii

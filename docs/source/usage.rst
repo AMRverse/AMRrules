@@ -27,7 +27,7 @@ Usage
 Creating your AMRFinderPlus input
 ---------------------------------
 
-AMRFinderPlus needs to be run with the ``--print_node`` option to include the necessary fields for AMRrules to match against.
+AMRFinderPlus needs to be run with the ``--print_node`` option to include the necessary fields for AMRrules to match against. We recommend that you also provide the ``--name`` flag to ensure that AMRFinderPlus includes a column with the name of the sample you are running.
 
 Eg:
 
@@ -35,11 +35,18 @@ Eg:
 
     amrfinder -n Kpn1.fasta --plus --print_node --name Kpn1 --organism Klebsiella_pneumoniae > Kpn1_AMRfp.tsv
 
-You can then interpret this output with AMRrules, using *Klebsiella pneumoniae* rules. Note that the organism name must be provided in the format ``s__Genus species``, and should be supplied in quotes.
+Interpreting your AMRFinderPlus result
+--------------------------------------
+
+You can now interpret this output with AMRrules, using the *Klebsiella pneumoniae* rules by providing the organism name with the ``--organism`` flag. The organism name must be provided in the format ``s__Genus species``, and should be supplied in quotes. 
 
 ::
 
     amrrules --input Kpn1_AMRfp.tsv --output-prefix Kpn1_report --organism 's__Klebsiella pneumoniae'
+
+.. note::
+
+    Ensure you select the correct organism option here! We do not recommend applying rules for another organism, even if closely related to your target organism, as the rules have been curated in an organism-specific manner. 
 
 In this example the user has also specified ``--plus`` when running AMRFinderPlus, which will return additional virulence, stress, or metal resistance genes detected by AMRFinderPlus. By default, these entries **will be omitted** from the final AMRrules interpreted output. If the user wishes to include these entries in the final output, add the ``--print-non-amr`` flag to the AMRrules commmand:
 
@@ -50,7 +57,7 @@ In this example the user has also specified ``--plus`` when running AMRFinderPlu
 Naming samples in the output
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Users may also wish to run AMRFinderPlus with the ``--name`` option to specify the sample name. This is particularly useful if you plan to interpret multiple samples at once using a single ``amrrules`` command. If you forget to set ``--name`` when running AMRFinderPlus, and have a single genome to interpret, you can provide the sample name to AMRrules using the ``--sample-id`` option:
+We recommend users run AMRFinderPlus with the ``--name`` option to specify the sample name. This is particularly useful if you plan to interpret multiple samples at once using a single ``amrrules`` command. If you forget to set ``--name`` when running AMRFinderPlus, and have a single genome to interpret, you can provide the sample name to AMRrules using the ``--sample-id`` flag:
 
 ::
 
