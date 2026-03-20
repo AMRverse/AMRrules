@@ -1,0 +1,5 @@
+sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
+SAMN33434760	chloramphenicol	phenicol antibiotic	S	wildtype	high	-	-	mdsA	SAL0001	-	s__Salmonella enterica
+SAMEA104279888	tetracycline	tetracycline antibiotic	-	-	none	-	tet(A)	-	-	-	s__Salmonella enterica
+SAMN31155088	chloramphenicol	phenicol antibiotic	S	wildtype	high	-	-	mdsA	SAL0001	-	s__Salmonella enterica
+SAMEA5206645	(all)	sulfonamide antibiotic	-	-	none	-	sul2	-	-	-	s__Salmonella enterica
