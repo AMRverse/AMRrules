@@ -1,4 +1,4 @@
-import csv, gzip
+import csv, gzip, sys
 from importlib import resources
 import warnings
 
@@ -92,3 +92,10 @@ def check_sample_ids(samples_with_org, samples_in_input, skipped_samples):
     if missing_from_input:
         warnings.warn(f"The following sample IDs from the organism file are not present in the input file:\n{'\n'.join(missing_from_input)}\nAs there are no entries in the input file for these samples, they won't have interpretation results. Please check your input file if this is not what you expect.")
     return True
+
+def _simple_warning(message, category, filename, lineno, file=None, line=None):
+    msg = f"\033[1;31mWarning:\033[0m {message}\n"
+    #sys.stderr.write(msg)
+    sys.stdout.write(msg)
+
+warnings.showwarning = _simple_warning

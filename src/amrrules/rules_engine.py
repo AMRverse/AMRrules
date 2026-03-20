@@ -142,6 +142,7 @@ def run(args):
     summary_entry_dict = create_summary_dict(grouped_by_sample, rules, args.flag_core, args.no_rule_interpretation)
     
     write_genome_report(summary_entry_dict, args.output_dir, args.output_prefix)
+    print(f"{len(grouped_by_sample)} sample(s) processed.")
 
 
 def download_resources():
