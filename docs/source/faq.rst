@@ -26,16 +26,10 @@ FAQ
 
    If you think there is an error in a rule, we encourage you to first search our `GitHub issues page <https://github.com/AMRverse/AMRrules/issues>`__ to see if this rule is being discussed by others. If not, then please `post an issue <https://github.com/AMRverse/AMRrules/issues/new>`__ describing your concerns about the rule. Alternatively, you can also email us at esgem-amr [at] gmail [dot] com.
 
-.. dropdown:: There is a rule for gene X in organism A, why isn't this rule also in organism B?
-
-   First, if you are detecting an unexpected resistance mechanism in your genome, we encourage you to check the quality of your genome assembly to ensure it isn't contaminated. A good resource for genome quality that is organism specific can be found on `Qualibact <https://happykhan.github.io/qualibact/>`__.
-
-   If you think that a new rule should be defined, then we enoucrage you to `post an issue <https://github.com/AMRverse/AMRrules/issues/new>`__ describing this for our organism subgroup to consider.
-
 .. dropdown:: I don't know the species of my genome, what do I do?
 
    AMRrules interprets genotypes in an organism-specific manner, and so an organism is required for the engine to know what rules to apply. There are many methods you can use for determining the species of your genome. You could try uploading the genome to `PathogenWatch <https://pathogen.watch>`__ or using their `Speciator <https://github.com/pathogenwatch-oss/speciator>`__ tool to detect the species, or using tools provided by `GTDB <https://gtdb.ecogenomic.org/>`__.
 
 .. dropdown:: I have a lot of partial hits in my result file, what does this mean?
 
-   Whilst AMRrules is not designed to be a QC tool, the presence of lots of partial hits in your output file may suggest quality issues with your genome assembly. We recommend performing QC on your genome, you can find organism specific QC thresholds on `Qualibact <https://happykhan.github.io/qualibact/>`__.
+   AMR genotyping and interpretation will only work as expected on good quality genome assemblies. The presence of lots of partial hits in your output file may suggest quality issues with your genome assembly, resulting in fragmentation of AMR gene hits across contigs. We recommend performing QC on your genome, you can find organism specific QC thresholds on `Qualibact <https://happykhan.github.io/qualibact/>`__.
