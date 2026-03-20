@@ -1,0 +1,29 @@
+sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
+SAMEA104081167	(all)	cephalosporin	S	nonwildtype	high	-	-	penA:p.Ala516Gly	NGO0085	-	s__Neisseria gonorrhoeae
+SAMD00099498	benzylpenicillin	beta-lactamase sensitive penicillin	I	nonwildtype	low	porB1b:p.Ala121Asn	-	-	NGO0098	-	s__Neisseria gonorrhoeae
+SAMN12788901	(n/a)	antibiotic efflux	-	-	none	-	norM	-	-	-	s__Neisseria gonorrhoeae
+SAMN29485119	(all)	cephalosporin	S	nonwildtype	high	-	-	penA:p.Phe504Leu	NGO0082	-	s__Neisseria gonorrhoeae
+SAMN11454056	tetracycline	tetracycline antibiotic	R	nonwildtype	high	tet(M)	-	-	NGO0119	-	s__Neisseria gonorrhoeae
+SAMN04624472	(all)	cephalosporin	S	nonwildtype	high	-	-	penA:p.Ala510Val	NGO0083	-	s__Neisseria gonorrhoeae
+SAMEA5936545	benzylpenicillin	beta-lactamase sensitive penicillin	R	nonwildtype	high	blaTEM-135	-	-	NGO0013	-	s__Neisseria gonorrhoeae
+SAMEA1059161	tetracycline	tetracycline antibiotic	R	nonwildtype	high	rpsJ:p.Val57Met	-	-	NGO0116	-	s__Neisseria gonorrhoeae
+SAMN23566345	benzylpenicillin	beta-lactamase sensitive penicillin	I	nonwildtype	low	porB1b:p.Ala121Asn	-	-	NGO0098	-	s__Neisseria gonorrhoeae
+SAMN10354187	benzylpenicillin	beta-lactamase sensitive penicillin	S	nonwildtype	moderate	-	-	mtrR:p.Ala39Thr	NGO0039	-	s__Neisseria gonorrhoeae
+SAMN10354187	azithromycin	macrolide antibiotic	S	nonwildtype	moderate	-	-	mtrR:p.Ala39Thr	NGO0034	-	s__Neisseria gonorrhoeae
+SAMN10354187	tetracycline	tetracycline antibiotic	S	nonwildtype	moderate	-	-	mtrR:p.Ala39Thr	NGO0045	-	s__Neisseria gonorrhoeae
+SAMEA5959921	(all)	cephalosporin	S	nonwildtype	high	-	-	penA:p.Ala516Gly	NGO0085	-	s__Neisseria gonorrhoeae
+SAMEA5994591	benzylpenicillin	beta-lactamase sensitive penicillin	S	nonwildtype	moderate	-	-	mtrR:c.-53Adel	NGO0042	-	s__Neisseria gonorrhoeae
+SAMEA5994591	azithromycin	macrolide antibiotic	S	nonwildtype	moderate	-	-	mtrR:c.-53Adel	NGO0036	-	s__Neisseria gonorrhoeae
+SAMEA5994591	tetracycline	tetracycline antibiotic	S	nonwildtype	moderate	-	-	mtrR:c.-53Adel	NGO0048	-	s__Neisseria gonorrhoeae
+SAMEA5994269	benzylpenicillin	beta-lactamase sensitive penicillin	S	nonwildtype	moderate	-	-	mtrR:c.-53Adel	NGO0042	-	s__Neisseria gonorrhoeae
+SAMEA5994269	azithromycin	macrolide antibiotic	S	nonwildtype	moderate	-	-	mtrR:c.-53Adel	NGO0036	-	s__Neisseria gonorrhoeae
+SAMEA5994269	tetracycline	tetracycline antibiotic	S	nonwildtype	moderate	-	-	mtrR:c.-53Adel	NGO0048	-	s__Neisseria gonorrhoeae
+SAMEA3485697	(n/a)	antibiotic efflux	-	-	none	-	norM	-	-	-	s__Neisseria gonorrhoeae
+SAMEA14299527	tetracycline	tetracycline antibiotic	R	nonwildtype	high	rpsJ:p.Val57Met	-	-	NGO0116	-	s__Neisseria gonorrhoeae
+SAMN22824076	benzylpenicillin	beta-lactamase sensitive penicillin	S	nonwildtype	moderate	-	-	mtrR:c.-53Adel	NGO0042	-	s__Neisseria gonorrhoeae
+SAMN22824076	azithromycin	macrolide antibiotic	S	nonwildtype	moderate	-	-	mtrR:c.-53Adel	NGO0036	-	s__Neisseria gonorrhoeae
+SAMN22824076	tetracycline	tetracycline antibiotic	S	nonwildtype	moderate	-	-	mtrR:c.-53Adel	NGO0048	-	s__Neisseria gonorrhoeae
+SAMN12635976	tetracycline	tetracycline antibiotic	R	nonwildtype	high	rpsJ:p.Val57Met	-	-	NGO0116	-	s__Neisseria gonorrhoeae
+SAMN12497018	benzylpenicillin	beta-lactamase sensitive penicillin	S	nonwildtype	moderate	-	-	mtrR:p.Gly45Asp	NGO0040	-	s__Neisseria gonorrhoeae
+SAMN12497018	azithromycin	macrolide antibiotic	S	nonwildtype	moderate	-	-	mtrR:p.Gly45Asp	NGO0035	-	s__Neisseria gonorrhoeae
+SAMN12497018	tetracycline	tetracycline antibiotic	S	nonwildtype	moderate	-	-	mtrR:p.Gly45Asp	NGO0046	-	s__Neisseria gonorrhoeae

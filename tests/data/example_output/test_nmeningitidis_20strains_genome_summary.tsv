@@ -1,0 +1,19 @@
+sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
+SAMEA4493252	(n/a)	antibiotic efflux	-	-	none	-	norM	-	-	-	s__Neisseria meningitidis
+SAMEA5748890	(n/a)	antibiotic efflux	-	-	none	-	norM	-	-	-	s__Neisseria meningitidis
+SAMN14500637	(n/a)	antibiotic efflux	-	-	none	-	norM	-	-	-	s__Neisseria meningitidis
+SAMEA1522939	(n/a)	antibiotic efflux	-	-	none	-	mtrA	-	-	-	s__Neisseria meningitidis
+SAMEA3661837	(n/a)	antibiotic efflux	-	-	none	-	norM	-	-	-	s__Neisseria meningitidis
+SAMEA6227083	(n/a)	antibiotic efflux	-	-	high	farB	-	-	NMN0002	-	s__Neisseria meningitidis
+SAMEA112237019	(n/a)	antibiotic efflux	-	-	none	-	mtrA	-	-	-	s__Neisseria meningitidis
+SAMEA3927046	(n/a)	antibiotic efflux	-	-	high	mtrC	-	-	NMN0003	-	s__Neisseria meningitidis
+SAMEA104453281	(n/a)	antibiotic efflux	-	-	high	mtrC	-	-	NMN0003	-	s__Neisseria meningitidis
+SAMEA111347561	(n/a)	antibiotic efflux	-	-	high	mtrR	-	-	NMN0005	-	s__Neisseria meningitidis
+SAMEA104189025	(n/a)	antibiotic efflux	-	-	high	farB	-	-	NMN0002	-	s__Neisseria meningitidis
+SAMEA4063362	(n/a)	antibiotic efflux	-	-	none	-	mtrA	-	-	-	s__Neisseria meningitidis
+SAMEA111379186	(n/a)	antibiotic efflux	-	-	high	mtrC	-	-	NMN0003	-	s__Neisseria meningitidis
+SAMEA3925941	(n/a)	antibiotic efflux	-	-	high	mtrR	-	-	NMN0005	-	s__Neisseria meningitidis
+SAMEA104055846	(n/a)	antibiotic efflux	-	-	high	mtrR	-	-	NMN0005	-	s__Neisseria meningitidis
+SAMEA4063497	(n/a)	antibiotic efflux	-	-	none	-	norM	-	-	-	s__Neisseria meningitidis
+SAMEA8114349	(n/a)	antibiotic efflux	-	-	none	-	norM	-	-	-	s__Neisseria meningitidis
+SAMEA4948221	(n/a)	antibiotic efflux	-	-	high	mtrC	-	-	NMN0003	-	s__Neisseria meningitidis

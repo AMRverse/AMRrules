@@ -1,0 +1,30 @@
+sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
+SAMN26198586	(all)	fluoroquinolone antibiotic	S	wildtype	low	-	-	qnrA3	SHW0005	-	s__Shewanella algae
+SAMN26198625	imipenem	carbapenem	R	wildtype	high	blaOXA	-	-	SHW0002	-	s__Shewanella algae
+SAMN26198625	(all)	fluoroquinolone antibiotic	S	wildtype	low	-	-	qnrA3	SHW0005	-	s__Shewanella algae
+SAMN26198625	(all)	penicillin beta-lactam	R	wildtype	high	blaOXA	-	-	SHW0001	-	s__Shewanella algae
+SAMD00011216	(all)	fluoroquinolone antibiotic	S	wildtype	low	-	-	qnrA4	SHW0005	-	s__Shewanella algae
+SAMD00016558	tetracycline	tetracycline antibiotic	-	-	none	-	tet(59)	-	-	-	s__Shewanella algae
+SAMN18292655	imipenem	carbapenem	R	wildtype	high	blaOXA	-	-	SHW0002	-	s__Shewanella algae
+SAMN18292655	(all)	fluoroquinolone antibiotic	S	wildtype	low	-	-	qnrA3	SHW0005	-	s__Shewanella algae
+SAMN18292655	(all)	penicillin beta-lactam	R	wildtype	high	blaOXA	-	-	SHW0001	-	s__Shewanella algae
+SAMN23839832	(all)	fluoroquinolone antibiotic	S	wildtype	low	-	-	qnrA3	SHW0005	-	s__Shewanella algae
+SAMN26198718	(all)	fluoroquinolone antibiotic	S	wildtype	low	-	-	qnrA3	SHW0005	-	s__Shewanella algae
+SAMEA6490890	(all)	fluoroquinolone antibiotic	S	wildtype	low	-	-	qnrA3	SHW0005	-	s__Shewanella algae
+SAMD00284628	imipenem	carbapenem	R	wildtype	high	blaOXA	-	-	SHW0002	-	s__Shewanella algae
+SAMD00284628	(all)	fluoroquinolone antibiotic	S	wildtype	low	-	-	qnrA	SHW0005	-	s__Shewanella algae
+SAMD00284628	(all)	penicillin beta-lactam	R	wildtype	high	blaOXA	-	-	SHW0001	-	s__Shewanella algae
+SAMEA1920017	imipenem	carbapenem	R	wildtype	high	blaOXA	-	-	SHW0002	-	s__Shewanella algae
+SAMEA1920017	(all)	penicillin beta-lactam	R	wildtype	high	blaOXA	-	-	SHW0001	-	s__Shewanella algae
+SAMEA6490896	imipenem	carbapenem	R	wildtype	high	blaOXA	-	-	SHW0002	-	s__Shewanella algae
+SAMEA6490896	(all)	fluoroquinolone antibiotic	S	wildtype	low	-	-	qnrA3	SHW0005	-	s__Shewanella algae
+SAMEA6490896	(all)	penicillin beta-lactam	R	wildtype	high	blaOXA	-	-	SHW0001	-	s__Shewanella algae
+SAMEA6490891	(all)	fluoroquinolone antibiotic	S	wildtype	low	-	-	qnrA3	SHW0005	-	s__Shewanella algae
+SAMEA6490887	imipenem	carbapenem	R	wildtype	high	blaOXA	-	-	SHW0002	-	s__Shewanella algae
+SAMEA6490887	(all)	penicillin beta-lactam	R	wildtype	high	blaOXA	-	-	SHW0001	-	s__Shewanella algae
+SAMN26198585	imipenem	carbapenem	R	wildtype	high	blaOXA	-	-	SHW0002	-	s__Shewanella algae
+SAMN26198585	(all)	penicillin beta-lactam	R	wildtype	high	blaOXA	-	-	SHW0001	-	s__Shewanella algae
+SAMEA1920010	imipenem	carbapenem	R	wildtype	high	blaOXA	-	-	SHW0002	-	s__Shewanella algae
+SAMEA1920010	(all)	penicillin beta-lactam	R	wildtype	high	blaOXA	-	-	SHW0001	-	s__Shewanella algae
+SAMN05384438	imipenem	carbapenem	R	wildtype	high	blaOXA	-	-	SHW0002	-	s__Shewanella algae
+SAMN05384438	(all)	penicillin beta-lactam	R	wildtype	high	blaOXA	-	-	SHW0001	-	s__Shewanella algae

@@ -1,0 +1,15 @@
+sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
+SAMD00501075	streptomycin	aminoglycoside antibiotic	-	-	none	-	aph(6)-Id	-	-	-	s__Proteus mirabilis
+SAMN33392444	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Il	-	-	-	s__Proteus mirabilis
+SAMN33392444	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Il	-	-	-	s__Proteus mirabilis
+SAMN33392444	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Il	-	-	-	s__Proteus mirabilis
+SAMN16982505	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA2	-	-	-	s__Proteus mirabilis
+SAMN27518676	(all)	third-generation cephalosporin 	-	-	none	-	blaCTX-M-15	-	-	-	s__Proteus mirabilis
+SAMN10038486	streptomycin	aminoglycoside antibiotic	-	-	none	-	aph(3'')-Ib	-	-	-	s__Proteus mirabilis
+SAMEA7698122	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	-	s__Proteus mirabilis
+SAMN11335431	(all)	sulfonamide antibiotic	-	-	none	-	sul2	-	-	-	s__Proteus mirabilis
+SAMEA5698495	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IId	-	-	-	s__Proteus mirabilis
+SAMN11567706	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA17	-	-	-	s__Proteus mirabilis
+SAMN12342775	-	-	-	-	-	-	sul2:-	-	none (partial hits)	-	s__Proteus mirabilis
+SAMEA10742109	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	-	-	s__Proteus mirabilis
+SAMN16982514	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	-	s__Proteus mirabilis
