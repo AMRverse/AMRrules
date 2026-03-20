@@ -6,7 +6,7 @@ Organism-specific interpretation of antimicrobial susceptibility testing (AST) d
 
 Users first take their genomes and run them through an AMR genotyping tool such as [AMRFinderPlus](https://www.ncbi.nlm.nih.gov/pathogens/antimicrobial-resistance/AMRFinder/), which identifies AMR genes and mutations present in the genome. The resulting output can then interpreted using the AMRrules Python package, which applies the organism-specific rules to annotate each genotype maker and generate a final interpreted report of predicted antimicrobial susceptibility for that genome.
 
-This AMRrules repository includes the rules themselves (see `rules/` directory) as well as the Python code to apply the rules to interpret AMR genotypes (currently limited to AMRFinderPlus output), generating informative genome reports that capture expert knowledge about how core and acquired genes and mutations contribute to antimicrobial susceptibility.
+This AMRrules repository includes the rules themselves (see `rules/` directory, which you can also view interactively via the [AMRrules Browser](https://browse.amrrules.org/)) as well as the Python code to apply the rules to interpret AMR genotypes (currently limited to AMRFinderPlus output), generating informative genome reports that capture expert knowledge about how core and acquired genes and mutations contribute to antimicrobial susceptibility.
 
 **[Full docs can be found here](https://amrrules.readthedocs.io/en/latest/)**
 
