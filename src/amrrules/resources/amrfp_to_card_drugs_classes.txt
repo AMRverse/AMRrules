@@ -3,6 +3,7 @@ AMIKACIN	amikacin	ARO:0000013	aminoglycoside antibiotic
 AMINOCOUMARIN	-	ARO:3000103	aminocoumarin antibiotic
 AMINOGLYCOSIDE	-	ARO:0000016	aminoglycoside antibiotic
 AMOXICILLIN-CLAVULANIC ACID	amoxicillin-clavulanic acid	ARO:3003997	penicillin beta-lactam
+AMOXICILLIN-CLAVULANIC_ACID	amoxicillin-clavulanic acid	ARO:3003997	penicillin beta-lactam
 AMPICILLIN	ampicillin	ARO:3000637	penicillin beta-lactam
 APRAMYCIN	apramycin	ARO:0000037	aminoglycoside antibiotic
 AVIBACTAM	avibactam	ARO:3000588	beta-lactamase inhibitor
