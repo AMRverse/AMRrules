@@ -53,6 +53,7 @@ METHICILLIN	methicillin	ARO:0000015	beta-lactamase resistant penicillin
 METRONIDAZOLE	metronidazole	ARO:3000689	nitroimidazole antibiotic
 MUPIROCIN	mupirocin	ARO:3000554	mupirocin-like antibiotic
 NALIDIXIC ACID	nalidixic acid	ARO:3000661	fluoroquinolone antibiotic
+NALIDIXIC_ACID	nalidixic acid	ARO:3000661	fluoroquinolone antibiotic
 NARASIN	narasin	ARO:3007471	ionophore with antibiotic activity
 NEOMYCIN	neomycin	ARO:0000005	aminoglycoside antibiotic
 NITROFURANTOIN	nitrofurantoin	ARO:0000075	nitrofuran antibiotic
@@ -95,6 +96,7 @@ THIOSTREPTON	thiostrepton	ARO:3000686	peptide antibiotic
 TIAMULIN	tiamulin	ARO:3000671	pleuromutilin antibiotic
 TICARCILLIN	ticarcillin	ARO:3003832	penicillin beta-lactam
 TICARCILLIN-CLAVULANIC ACID	ticarcillin-clavulanic acid	ARO:3004023	penicillin beta-lactam plus beta-lactamase inhibitor
+TICARCILLIN-CLAVULANIC_ACID	ticarcillin-clavulanic acid	ARO:3004023	penicillin beta-lactam plus beta-lactamase inhibitor
 TIGECYCLINE	tigecycline	ARO:0000030	glycylcycline
 TOBRAMYCIN	tobramycin	ARO:0000052	aminoglycoside antibiotic
 TRICLOSAN	triclosan	ARO:3000870	disinfecting agents and antiseptics
