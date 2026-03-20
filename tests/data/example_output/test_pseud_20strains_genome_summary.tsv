@@ -1,59 +1,594 @@
 sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
-SAMN14523448	meropenem	carbapenem	S	wildtype	high	-	-	blaOXA-1032	PSA0064	-	s__Pseudomonas aeruginosa
-SAMD00019044	kanamycin	-	R	wildtype	high	aph(3')-IIb	-	-	PSA0060	-	s__Pseudomonas aeruginosa
-SAMD00019044	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
-SAMN02179402	kanamycin	-	R	wildtype	high	aph(3')-IIb	-	-	PSA0060	-	s__Pseudomonas aeruginosa
-SAMN02179402	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
-SAMN15599136	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
-SAMEA4078578	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	blaPDC-3	-	-	PSA0007	-	s__Pseudomonas aeruginosa
-SAMEA4078578	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	blaPDC-3	-	-	PSA0015	-	s__Pseudomonas aeruginosa
-SAMEA4078578	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-3	PSA0037	-	s__Pseudomonas aeruginosa
-SAMEA4078578	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-3	PSA0038	-	s__Pseudomonas aeruginosa
-SAMEA4078578	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	blaPDC-3	-	-	PSA0076	-	s__Pseudomonas aeruginosa
-SAMEA4078578	cefepime	fourth-generation cephalosporin	I	wildtype	high	blaPDC-3	-	-	PSA0023	-	s__Pseudomonas aeruginosa
-SAMEA4078578	aztreonam	monobactam	I	wildtype	high	blaPDC-3	-	-	PSA0019	-	s__Pseudomonas aeruginosa
-SAMEA4078578	amoxicillin	penicillin beta-lactam	R	wildtype	high	blaPDC-3	-	-	PSA0003	-	s__Pseudomonas aeruginosa
-SAMEA4078578	ampicillin	penicillin beta-lactam	R	wildtype	high	blaPDC-3	-	-	PSA0011	-	s__Pseudomonas aeruginosa
-SAMEA4078578	piperacillin	penicillin beta-lactam	I	wildtype	high	blaPDC-3	-	-	PSA0072	-	s__Pseudomonas aeruginosa
-SAMEA4078578	cefotaxime	third-generation cephalosporin	R	wildtype	high	blaPDC-3	-	-	PSA0029	-	s__Pseudomonas aeruginosa
-SAMEA4078578	ceftazidime	third-generation cephalosporin	I	wildtype	high	blaPDC-3	-	-	PSA0033	-	s__Pseudomonas aeruginosa
-SAMEA4078578	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-3	-	-	PSA0039	-	s__Pseudomonas aeruginosa
-SAMEA103924482	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexE	-	-	PSA0095	-	s__Pseudomonas aeruginosa
-SAMEA103924482	ciprofloxacin	fluoroquinolone antibiotic	I	wildtype	high	mexE	-	-	PSA0053	-	s__Pseudomonas aeruginosa
-SAMEA103924482	chloramphenicol	phenicol antibiotic	R	wildtype	low	mexE	-	-	PSA0046	-	s__Pseudomonas aeruginosa
-SAMEA12339010	kanamycin	-	R	wildtype	high	aph(3')-IIb	-	-	PSA0060	-	s__Pseudomonas aeruginosa
-SAMEA12339010	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
-SAMN30617986	kanamycin	-	R	wildtype	high	aph(3')-IIb	-	-	PSA0060	-	s__Pseudomonas aeruginosa
-SAMN30617986	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
-SAMN18266604	-	-	-	-	-	-	mexE:-	-	none (partial hits)	-	s__Pseudomonas aeruginosa
-SAMN13659106	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib3	-	-	-	s__Pseudomonas aeruginosa
-SAMN13659106	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib3	-	-	-	s__Pseudomonas aeruginosa
-SAMN13659106	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib3	-	-	-	s__Pseudomonas aeruginosa
-SAMEA6262358	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
-SAMN11606725	chloramphenicol	phenicol antibiotic	R	wildtype	low	catB7	-	-	PSA0040	-	s__Pseudomonas aeruginosa
-SAMN10436321	ciprofloxacin	fluoroquinolone antibiotic	I	wildtype	high	crpP	-	-	PSA0052	-	s__Pseudomonas aeruginosa
-SAMN10436321	levofloxacin	fluoroquinolone antibiotic	I	wildtype	high	crpP	-	-	PSA0063	-	s__Pseudomonas aeruginosa
-SAMN28905015	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexE	-	-	PSA0095	-	s__Pseudomonas aeruginosa
-SAMN28905015	ciprofloxacin	fluoroquinolone antibiotic	I	wildtype	high	mexE	-	-	PSA0053	-	s__Pseudomonas aeruginosa
-SAMN28905015	chloramphenicol	phenicol antibiotic	R	wildtype	low	mexE	-	-	PSA0046	-	s__Pseudomonas aeruginosa
-SAMEA7391803	azithromycin	macrolide antibiotic	-	-	none	-	msr(E)	-	-	-	s__Pseudomonas aeruginosa
-SAMEA7391803	erythromycin	macrolide antibiotic	-	-	none	-	msr(E)	-	-	-	s__Pseudomonas aeruginosa
-SAMEA7391803	(all)	streptogramin antibiotic	-	-	none	-	msr(E)	-	-	-	s__Pseudomonas aeruginosa
-SAMN03659240	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	mexA	-	-	PSA0008	-	s__Pseudomonas aeruginosa
-SAMN03659240	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	mexA	-	-	PSA0016	-	s__Pseudomonas aeruginosa
-SAMN03659240	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	mexA	-	-	PSA0077	-	s__Pseudomonas aeruginosa
-SAMN03659240	ertapenem	carbapenem	R	wildtype	high	mexA	-	-	PSA0056	-	s__Pseudomonas aeruginosa
-SAMN03659240	meropenem	carbapenem	S	wildtype	high	-	-	mexA	PSA0065	-	s__Pseudomonas aeruginosa
-SAMN03659240	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexA	-	-	PSA0092	-	s__Pseudomonas aeruginosa
-SAMN03659240	ciprofloxacin	fluoroquinolone antibiotic	I	wildtype	high	mexA	-	-	PSA0049	-	s__Pseudomonas aeruginosa
-SAMN03659240	norfloxacin	fluoroquinolone antibiotic	R	wildtype	high	mexA	-	-	PSA0069	-	s__Pseudomonas aeruginosa
-SAMN03659240	cefepime	fourth-generation cephalosporin	I	wildtype	high	mexA	-	-	PSA0024	-	s__Pseudomonas aeruginosa
-SAMN03659240	aztreonam	monobactam	I	wildtype	high	mexA	-	-	PSA0020	-	s__Pseudomonas aeruginosa
-SAMN03659240	amoxicillin	penicillin beta-lactam	R	wildtype	high	mexA	-	-	PSA0004	-	s__Pseudomonas aeruginosa
-SAMN03659240	ampicillin	penicillin beta-lactam	R	wildtype	high	mexA	-	-	PSA0012	-	s__Pseudomonas aeruginosa
-SAMN03659240	piperacillin	penicillin beta-lactam	I	wildtype	high	mexA	-	-	PSA0073	-	s__Pseudomonas aeruginosa
-SAMN03659240	chloramphenicol	phenicol antibiotic	R	wildtype	high	mexA	-	-	PSA0041	-	s__Pseudomonas aeruginosa
-SAMN03659240	sulfamethoxazole	sulfonamide antibiotic	R	wildtype	high	mexA	-	-	PSA0080	-	s__Pseudomonas aeruginosa
-SAMN03659240	tetracycline	tetracycline antibiotic	R	wildtype	high	mexA	-	-	PSA0084	-	s__Pseudomonas aeruginosa
-SAMN03659240	cefotaxime	third-generation cephalosporin	R	wildtype	high	mexA	-	-	PSA0030	-	s__Pseudomonas aeruginosa
-SAMN03659240	ceftazidime	third-generation cephalosporin	I	wildtype	high	mexA	-	-	PSA0034	-	s__Pseudomonas aeruginosa
+SAMEA112299795	kanamycin	-	R	wildtype	high	aph(3')-IIb	-	-	PSA0060	-	s__Pseudomonas aeruginosa
+SAMEA112299795	(all)	aminoglycoside antibiotic	-	-	none	-	aacA8	-	-	-	s__Pseudomonas aeruginosa
+SAMEA112299795	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Il;aacA8	-	-	-	s__Pseudomonas aeruginosa
+SAMEA112299795	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Il;aacA8	-	-	-	s__Pseudomonas aeruginosa
+SAMEA112299795	neomycin	aminoglycoside antibiotic	R	-	none	aph(3')-IIb	aacA8	-	PSA0068	-	s__Pseudomonas aeruginosa
+SAMEA112299795	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA6;aacA8	-	-	-	s__Pseudomonas aeruginosa
+SAMEA112299795	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Il;aacA8	-	-	-	s__Pseudomonas aeruginosa
+SAMEA112299795	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	mexA;blaPDC-35	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
+SAMEA112299795	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	mexA;blaPDC-35	-	-	PSA0015;PSA0016	-	s__Pseudomonas aeruginosa
+SAMEA112299795	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-35	PSA0037	-	s__Pseudomonas aeruginosa
+SAMEA112299795	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-35	PSA0038	-	s__Pseudomonas aeruginosa
+SAMEA112299795	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	mexA;blaPDC-35	-	-	PSA0076;PSA0077	-	s__Pseudomonas aeruginosa
+SAMEA112299795	ertapenem	carbapenem	R	wildtype	high	mexA	-	-	PSA0056	-	s__Pseudomonas aeruginosa
+SAMEA112299795	meropenem	carbapenem	S	wildtype	high	-	-	blaOXA-488;mexA	PSA0064;PSA0065	-	s__Pseudomonas aeruginosa
+SAMEA112299795	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexA	-	-	PSA0092	-	s__Pseudomonas aeruginosa
+SAMEA112299795	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Thr83Ile	-	-	-	s__Pseudomonas aeruginosa
+SAMEA112299795	ciprofloxacin	fluoroquinolone antibiotic	I	-	none	mexA	gyrA:p.Thr83Ile	-	PSA0049	-	s__Pseudomonas aeruginosa
+SAMEA112299795	norfloxacin	fluoroquinolone antibiotic	R	-	none	mexA	gyrA:p.Thr83Ile	-	PSA0069	-	s__Pseudomonas aeruginosa
+SAMEA112299795	cefepime	fourth-generation cephalosporin	I	wildtype	high	mexA;blaPDC-35	-	-	PSA0023;PSA0024	-	s__Pseudomonas aeruginosa
+SAMEA112299795	aztreonam	monobactam	I	wildtype	high	mexA;blaPDC-35	-	-	PSA0019;PSA0020	-	s__Pseudomonas aeruginosa
+SAMEA112299795	(all)	penicillin beta-lactam	-	-	none	-	blaOXA-2	-	-	-	s__Pseudomonas aeruginosa
+SAMEA112299795	amoxicillin	penicillin beta-lactam	R	-	none	mexA;blaPDC-35	blaOXA-2	-	PSA0003;PSA0004	-	s__Pseudomonas aeruginosa
+SAMEA112299795	ampicillin	penicillin beta-lactam	R	-	none	mexA;blaPDC-35	blaOXA-2	-	PSA0011;PSA0012	-	s__Pseudomonas aeruginosa
+SAMEA112299795	piperacillin	penicillin beta-lactam	I	-	none	mexA;blaPDC-35	blaOXA-2	-	PSA0072;PSA0073	-	s__Pseudomonas aeruginosa
+SAMEA112299795	chloramphenicol	phenicol antibiotic	R	wildtype	high	mexA;catB7	-	-	PSA0040;PSA0041	-	s__Pseudomonas aeruginosa
+SAMEA112299795	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	-	-	s__Pseudomonas aeruginosa
+SAMEA112299795	sulfamethoxazole	sulfonamide antibiotic	R	-	none	mexA	sul1	-	PSA0080	-	s__Pseudomonas aeruginosa
+SAMEA112299795	tetracycline	tetracycline antibiotic	R	wildtype	high	mexA	-	-	PSA0084	-	s__Pseudomonas aeruginosa
+SAMEA112299795	cefotaxime	third-generation cephalosporin	R	wildtype	high	mexA;blaPDC-35	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
+SAMEA112299795	ceftazidime	third-generation cephalosporin	I	wildtype	high	mexA;blaPDC-35	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
+SAMEA112299795	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-35	-	-	PSA0039	-	s__Pseudomonas aeruginosa
+SAMEA112299795	-	-	-	-	-	-	mexE:-;fosA:-	-	none (partial hits)	-	s__Pseudomonas aeruginosa
+SAMEA3684335	kanamycin	-	R	wildtype	high	aph(3')-IIb;mexX	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
+SAMEA3684335	amikacin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0001	-	s__Pseudomonas aeruginosa
+SAMEA3684335	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-Ia	-	-	-	s__Pseudomonas aeruginosa
+SAMEA3684335	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
+SAMEA3684335	tobramycin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0090	-	s__Pseudomonas aeruginosa
+SAMEA3684335	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	blaPDC-1;mexA	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
+SAMEA3684335	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	blaPDC-1;mexA	-	-	PSA0015;PSA0016	-	s__Pseudomonas aeruginosa
+SAMEA3684335	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-1	PSA0037	-	s__Pseudomonas aeruginosa
+SAMEA3684335	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-1	PSA0038	-	s__Pseudomonas aeruginosa
+SAMEA3684335	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	blaPDC-1;mexA	-	-	PSA0076;PSA0077	-	s__Pseudomonas aeruginosa
+SAMEA3684335	ertapenem	carbapenem	R	wildtype	high	mexA	-	-	PSA0056	-	s__Pseudomonas aeruginosa
+SAMEA3684335	meropenem	carbapenem	S	wildtype	high	-	-	mexA;blaOXA-50	PSA0064;PSA0065	-	s__Pseudomonas aeruginosa
+SAMEA3684335	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexE;mexA	-	-	PSA0092;PSA0095	-	s__Pseudomonas aeruginosa
+SAMEA3684335	ciprofloxacin	fluoroquinolone antibiotic	I	wildtype	high	mexE;mexA	-	-	PSA0049;PSA0053	-	s__Pseudomonas aeruginosa
+SAMEA3684335	norfloxacin	fluoroquinolone antibiotic	R	wildtype	high	mexA	-	-	PSA0069	-	s__Pseudomonas aeruginosa
+SAMEA3684335	cefepime	fourth-generation cephalosporin	I	wildtype	high	blaPDC-1;mexA;mexX	-	-	PSA0023;PSA0024;PSA0026	-	s__Pseudomonas aeruginosa
+SAMEA3684335	tigecycline	glycylcycline	R	wildtype	high	mexX	-	-	PSA0088	-	s__Pseudomonas aeruginosa
+SAMEA3684335	aztreonam	monobactam	I	wildtype	high	blaPDC-1;mexA	-	-	PSA0019;PSA0020	-	s__Pseudomonas aeruginosa
+SAMEA3684335	(all)	penicillin beta-lactam	-	-	none	-	blaTEM-116	-	-	-	s__Pseudomonas aeruginosa
+SAMEA3684335	amoxicillin	penicillin beta-lactam	R	-	none	blaPDC-1;mexA	blaTEM-116	-	PSA0003;PSA0004	-	s__Pseudomonas aeruginosa
+SAMEA3684335	ampicillin	penicillin beta-lactam	R	-	none	blaPDC-1;mexA	blaTEM-116	-	PSA0011;PSA0012	-	s__Pseudomonas aeruginosa
+SAMEA3684335	piperacillin	penicillin beta-lactam	I	-	none	blaPDC-1;mexA	blaTEM-116	-	PSA0072;PSA0073	-	s__Pseudomonas aeruginosa
+SAMEA3684335	chloramphenicol	phenicol antibiotic	R	wildtype	high	mexE;mexA;catB7;mexX	-	-	PSA0040;PSA0041;PSA0043;PSA0046	-	s__Pseudomonas aeruginosa
+SAMEA3684335	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
+SAMEA3684335	sulfamethoxazole	sulfonamide antibiotic	R	wildtype	high	mexA	-	-	PSA0080	-	s__Pseudomonas aeruginosa
+SAMEA3684335	tetracycline	tetracycline antibiotic	R	wildtype	high	mexA;mexX	-	-	PSA0084;PSA0086	-	s__Pseudomonas aeruginosa
+SAMEA3684335	cefotaxime	third-generation cephalosporin	R	wildtype	high	blaPDC-1;mexA	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
+SAMEA3684335	ceftazidime	third-generation cephalosporin	I	wildtype	high	blaPDC-1;mexA	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
+SAMEA3684335	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-1	-	-	PSA0039	-	s__Pseudomonas aeruginosa
+SAMEA5067577	kanamycin	-	R	wildtype	high	mexX;aph(3')-IIb	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
+SAMEA5067577	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Il	mexX	PSA0001	-	s__Pseudomonas aeruginosa
+SAMEA5067577	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-Id	-	-	-	s__Pseudomonas aeruginosa
+SAMEA5067577	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Il	-	-	-	s__Pseudomonas aeruginosa
+SAMEA5067577	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
+SAMEA5067577	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA2	-	-	-	s__Pseudomonas aeruginosa
+SAMEA5067577	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Il	mexX	PSA0090	-	s__Pseudomonas aeruginosa
+SAMEA5067577	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	mexA;blaPDC-3	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
+SAMEA5067577	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	mexA;blaPDC-3	-	-	PSA0015;PSA0016	-	s__Pseudomonas aeruginosa
+SAMEA5067577	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-3	PSA0037	-	s__Pseudomonas aeruginosa
+SAMEA5067577	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-3	PSA0038	-	s__Pseudomonas aeruginosa
+SAMEA5067577	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	mexA;blaPDC-3	-	-	PSA0076;PSA0077	-	s__Pseudomonas aeruginosa
+SAMEA5067577	(all)	carbapenem	-	-	none	-	oprD:p.Val359Leu;blaVIM-2	-	-	-	s__Pseudomonas aeruginosa
+SAMEA5067577	ertapenem	carbapenem	R	-	none	mexA	oprD:p.Val359Leu;blaVIM-2	-	PSA0056	-	s__Pseudomonas aeruginosa
+SAMEA5067577	meropenem	carbapenem	-	-	none	-	oprD:p.Val359Leu;blaVIM-2	blaOXA-486;mexA	PSA0064;PSA0065	-	s__Pseudomonas aeruginosa
+SAMEA5067577	trimethoprim	diaminopyrimidine antibiotic	R	-	none	mexE;mexA	dfrB5	-	PSA0092;PSA0095	-	s__Pseudomonas aeruginosa
+SAMEA5067577	(all)	fluoroquinolone antibiotic	-	-	none	-	parC:p.Ser87Leu;gyrA:p.Thr83Ile	-	-	-	s__Pseudomonas aeruginosa
+SAMEA5067577	ciprofloxacin	fluoroquinolone antibiotic	I	-	none	mexE;mexA;crpP	parC:p.Ser87Leu;gyrA:p.Thr83Ile	-	PSA0049;PSA0052;PSA0053	-	s__Pseudomonas aeruginosa
+SAMEA5067577	levofloxacin	fluoroquinolone antibiotic	I	-	none	crpP	parC:p.Ser87Leu;gyrA:p.Thr83Ile	-	PSA0063	-	s__Pseudomonas aeruginosa
+SAMEA5067577	norfloxacin	fluoroquinolone antibiotic	R	-	none	mexA	parC:p.Ser87Leu;gyrA:p.Thr83Ile	-	PSA0069	-	s__Pseudomonas aeruginosa
+SAMEA5067577	cefepime	fourth-generation cephalosporin	I	wildtype	high	mexX;mexA;blaPDC-3	-	-	PSA0023;PSA0024;PSA0026	-	s__Pseudomonas aeruginosa
+SAMEA5067577	tigecycline	glycylcycline	R	wildtype	high	mexX	-	-	PSA0088	-	s__Pseudomonas aeruginosa
+SAMEA5067577	aztreonam	monobactam	I	wildtype	high	mexA;blaPDC-3	-	-	PSA0019;PSA0020	-	s__Pseudomonas aeruginosa
+SAMEA5067577	(all)	penicillin beta-lactam	-	-	none	-	blaOXA-4	-	-	-	s__Pseudomonas aeruginosa
+SAMEA5067577	amoxicillin	penicillin beta-lactam	R	-	none	mexA;blaPDC-3	blaOXA-4	-	PSA0003;PSA0004	-	s__Pseudomonas aeruginosa
+SAMEA5067577	ampicillin	penicillin beta-lactam	R	-	none	mexA;blaPDC-3	blaOXA-4	-	PSA0011;PSA0012	-	s__Pseudomonas aeruginosa
+SAMEA5067577	piperacillin	penicillin beta-lactam	I	-	none	mexA;blaPDC-3	blaOXA-4	-	PSA0072;PSA0073	-	s__Pseudomonas aeruginosa
+SAMEA5067577	chloramphenicol	phenicol antibiotic	R	-	none	mexE;mexX;catB7;mexA	cmlA6;floR2	-	PSA0040;PSA0041;PSA0043;PSA0046	-	s__Pseudomonas aeruginosa
+SAMEA5067577	florfenicol	phenicol antibiotic	-	-	none	-	floR2	-	-	-	s__Pseudomonas aeruginosa
+SAMEA5067577	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
+SAMEA5067577	sulfamethoxazole	sulfonamide antibiotic	R	wildtype	high	mexA	-	-	PSA0080	-	s__Pseudomonas aeruginosa
+SAMEA5067577	tetracycline	tetracycline antibiotic	R	-	none	mexX;mexA	tet(G)	-	PSA0084;PSA0086	-	s__Pseudomonas aeruginosa
+SAMEA5067577	cefotaxime	third-generation cephalosporin	R	wildtype	high	mexA;blaPDC-3	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
+SAMEA5067577	ceftazidime	third-generation cephalosporin	I	wildtype	high	mexA;blaPDC-3	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
+SAMEA5067577	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-3	-	-	PSA0039	-	s__Pseudomonas aeruginosa
+SAMEA5067577	-	-	-	-	-	-	sul1:-;sul1:-	-	none (partial hits)	-	s__Pseudomonas aeruginosa
+SAMEA7290693	kanamycin	-	R	wildtype	high	aph(3')-IIb;mexX	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
+SAMEA7290693	amikacin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0001	-	s__Pseudomonas aeruginosa
+SAMEA7290693	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
+SAMEA7290693	tobramycin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0090	-	s__Pseudomonas aeruginosa
+SAMEA7290693	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	blaPDC-24;mexA	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
+SAMEA7290693	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	blaPDC-24;mexA	-	-	PSA0015;PSA0016	-	s__Pseudomonas aeruginosa
+SAMEA7290693	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-24	PSA0037	-	s__Pseudomonas aeruginosa
+SAMEA7290693	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-24	PSA0038	-	s__Pseudomonas aeruginosa
+SAMEA7290693	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	blaPDC-24;mexA	-	-	PSA0076;PSA0077	-	s__Pseudomonas aeruginosa
+SAMEA7290693	(all)	carbapenem	-	-	none	-	oprD:p.Val359Leu	-	-	-	s__Pseudomonas aeruginosa
+SAMEA7290693	ertapenem	carbapenem	R	-	none	mexA	oprD:p.Val359Leu	-	PSA0056	-	s__Pseudomonas aeruginosa
+SAMEA7290693	meropenem	carbapenem	-	-	none	-	oprD:p.Val359Leu	blaOXA-486;mexA	PSA0064;PSA0065	-	s__Pseudomonas aeruginosa
+SAMEA7290693	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexE;mexA	-	-	PSA0092;PSA0095	-	s__Pseudomonas aeruginosa
+SAMEA7290693	ciprofloxacin	fluoroquinolone antibiotic	I	wildtype	high	mexE;mexA	-	-	PSA0049;PSA0053	-	s__Pseudomonas aeruginosa
+SAMEA7290693	norfloxacin	fluoroquinolone antibiotic	R	wildtype	high	mexA	-	-	PSA0069	-	s__Pseudomonas aeruginosa
+SAMEA7290693	cefepime	fourth-generation cephalosporin	I	wildtype	high	blaPDC-24;mexX;mexA	-	-	PSA0023;PSA0024;PSA0026	-	s__Pseudomonas aeruginosa
+SAMEA7290693	tigecycline	glycylcycline	R	wildtype	high	mexX	-	-	PSA0088	-	s__Pseudomonas aeruginosa
+SAMEA7290693	aztreonam	monobactam	I	wildtype	high	blaPDC-24;mexA	-	-	PSA0019;PSA0020	-	s__Pseudomonas aeruginosa
+SAMEA7290693	amoxicillin	penicillin beta-lactam	R	wildtype	high	blaPDC-24;mexA	-	-	PSA0003;PSA0004	-	s__Pseudomonas aeruginosa
+SAMEA7290693	ampicillin	penicillin beta-lactam	R	wildtype	high	blaPDC-24;mexA	-	-	PSA0011;PSA0012	-	s__Pseudomonas aeruginosa
+SAMEA7290693	piperacillin	penicillin beta-lactam	I	wildtype	high	blaPDC-24;mexA	-	-	PSA0072;PSA0073	-	s__Pseudomonas aeruginosa
+SAMEA7290693	chloramphenicol	phenicol antibiotic	R	wildtype	high	mexE;catB7;mexX;mexA	-	-	PSA0040;PSA0041;PSA0043;PSA0046	-	s__Pseudomonas aeruginosa
+SAMEA7290693	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
+SAMEA7290693	sulfamethoxazole	sulfonamide antibiotic	R	wildtype	high	mexA	-	-	PSA0080	-	s__Pseudomonas aeruginosa
+SAMEA7290693	tetracycline	tetracycline antibiotic	R	wildtype	high	mexX;mexA	-	-	PSA0084;PSA0086	-	s__Pseudomonas aeruginosa
+SAMEA7290693	cefotaxime	third-generation cephalosporin	R	wildtype	high	blaPDC-24;mexA	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
+SAMEA7290693	ceftazidime	third-generation cephalosporin	I	wildtype	high	blaPDC-24;mexA	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
+SAMEA7290693	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-24	-	-	PSA0039	-	s__Pseudomonas aeruginosa
+SAMN02402435	kanamycin	-	R	wildtype	high	aph(3')-IIb;mexX	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
+SAMN02402435	amikacin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0001	-	s__Pseudomonas aeruginosa
+SAMN02402435	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
+SAMN02402435	tobramycin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0090	-	s__Pseudomonas aeruginosa
+SAMN02402435	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	mexA;blaPDC-8	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
+SAMN02402435	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	mexA;blaPDC-8	-	-	PSA0015;PSA0016	-	s__Pseudomonas aeruginosa
+SAMN02402435	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-8	PSA0037	-	s__Pseudomonas aeruginosa
+SAMN02402435	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-8	PSA0038	-	s__Pseudomonas aeruginosa
+SAMN02402435	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	mexA;blaPDC-8	-	-	PSA0076;PSA0077	-	s__Pseudomonas aeruginosa
+SAMN02402435	(all)	carbapenem	-	-	none	-	oprD:p.Val359Leu	-	-	-	s__Pseudomonas aeruginosa
+SAMN02402435	ertapenem	carbapenem	R	-	none	mexA	oprD:p.Val359Leu	-	PSA0056	-	s__Pseudomonas aeruginosa
+SAMN02402435	meropenem	carbapenem	-	-	none	-	oprD:p.Val359Leu	mexA;blaOXA-50	PSA0064;PSA0065	-	s__Pseudomonas aeruginosa
+SAMN02402435	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexE;mexA	-	-	PSA0092;PSA0095	-	s__Pseudomonas aeruginosa
+SAMN02402435	ciprofloxacin	fluoroquinolone antibiotic	I	wildtype	high	mexE;mexA;crpP	-	-	PSA0049;PSA0052;PSA0053	-	s__Pseudomonas aeruginosa
+SAMN02402435	levofloxacin	fluoroquinolone antibiotic	I	wildtype	high	crpP	-	-	PSA0063	-	s__Pseudomonas aeruginosa
+SAMN02402435	norfloxacin	fluoroquinolone antibiotic	R	wildtype	high	mexA	-	-	PSA0069	-	s__Pseudomonas aeruginosa
+SAMN02402435	cefepime	fourth-generation cephalosporin	I	wildtype	high	mexA;blaPDC-8;mexX	-	-	PSA0023;PSA0024;PSA0026	-	s__Pseudomonas aeruginosa
+SAMN02402435	tigecycline	glycylcycline	R	wildtype	high	mexX	-	-	PSA0088	-	s__Pseudomonas aeruginosa
+SAMN02402435	aztreonam	monobactam	I	wildtype	high	mexA;blaPDC-8	-	-	PSA0019;PSA0020	-	s__Pseudomonas aeruginosa
+SAMN02402435	amoxicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-8	-	-	PSA0003;PSA0004	-	s__Pseudomonas aeruginosa
+SAMN02402435	ampicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-8	-	-	PSA0011;PSA0012	-	s__Pseudomonas aeruginosa
+SAMN02402435	piperacillin	penicillin beta-lactam	I	wildtype	high	mexA;blaPDC-8	-	-	PSA0072;PSA0073	-	s__Pseudomonas aeruginosa
+SAMN02402435	chloramphenicol	phenicol antibiotic	R	wildtype	high	mexE;mexA;catB7;mexX	-	-	PSA0040;PSA0041;PSA0043;PSA0046	-	s__Pseudomonas aeruginosa
+SAMN02402435	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
+SAMN02402435	sulfamethoxazole	sulfonamide antibiotic	R	wildtype	high	mexA	-	-	PSA0080	-	s__Pseudomonas aeruginosa
+SAMN02402435	tetracycline	tetracycline antibiotic	R	wildtype	high	mexA;mexX	-	-	PSA0084;PSA0086	-	s__Pseudomonas aeruginosa
+SAMN02402435	cefotaxime	third-generation cephalosporin	R	wildtype	high	mexA;blaPDC-8	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
+SAMN02402435	ceftazidime	third-generation cephalosporin	I	wildtype	high	mexA;blaPDC-8	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
+SAMN02402435	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-8	-	-	PSA0039	-	s__Pseudomonas aeruginosa
+SAMN10619184	kanamycin	-	R	wildtype	high	mexX;aph(3')-IIb	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
+SAMN10619184	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Il	mexX	PSA0001	-	s__Pseudomonas aeruginosa
+SAMN10619184	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-Id	-	-	-	s__Pseudomonas aeruginosa
+SAMN10619184	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Il	-	-	-	s__Pseudomonas aeruginosa
+SAMN10619184	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
+SAMN10619184	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA2	-	-	-	s__Pseudomonas aeruginosa
+SAMN10619184	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Il	mexX	PSA0090	-	s__Pseudomonas aeruginosa
+SAMN10619184	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	mexA;blaPDC-3	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
+SAMN10619184	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	mexA;blaPDC-3	-	-	PSA0015;PSA0016	-	s__Pseudomonas aeruginosa
+SAMN10619184	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-3	PSA0037	-	s__Pseudomonas aeruginosa
+SAMN10619184	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-3	PSA0038	-	s__Pseudomonas aeruginosa
+SAMN10619184	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	mexA;blaPDC-3	-	-	PSA0076;PSA0077	-	s__Pseudomonas aeruginosa
+SAMN10619184	(all)	carbapenem	-	-	none	-	oprD:p.Val359Leu;blaVIM-2	-	-	-	s__Pseudomonas aeruginosa
+SAMN10619184	ertapenem	carbapenem	R	-	none	mexA	oprD:p.Val359Leu;blaVIM-2	-	PSA0056	-	s__Pseudomonas aeruginosa
+SAMN10619184	meropenem	carbapenem	-	-	none	-	oprD:p.Val359Leu;blaVIM-2	blaOXA-486;mexA	PSA0064;PSA0065	-	s__Pseudomonas aeruginosa
+SAMN10619184	trimethoprim	diaminopyrimidine antibiotic	R	-	none	mexE;mexA	dfrB5	-	PSA0092;PSA0095	-	s__Pseudomonas aeruginosa
+SAMN10619184	(all)	fluoroquinolone antibiotic	-	-	none	-	parC:p.Ser87Leu;gyrA:p.Thr83Ile	-	-	-	s__Pseudomonas aeruginosa
+SAMN10619184	ciprofloxacin	fluoroquinolone antibiotic	I	-	none	mexE;mexA;crpP	parC:p.Ser87Leu;gyrA:p.Thr83Ile	-	PSA0049;PSA0052;PSA0053	-	s__Pseudomonas aeruginosa
+SAMN10619184	levofloxacin	fluoroquinolone antibiotic	I	-	none	crpP	parC:p.Ser87Leu;gyrA:p.Thr83Ile	-	PSA0063	-	s__Pseudomonas aeruginosa
+SAMN10619184	norfloxacin	fluoroquinolone antibiotic	R	-	none	mexA	parC:p.Ser87Leu;gyrA:p.Thr83Ile	-	PSA0069	-	s__Pseudomonas aeruginosa
+SAMN10619184	cefepime	fourth-generation cephalosporin	I	wildtype	high	mexX;mexA;blaPDC-3	-	-	PSA0023;PSA0024;PSA0026	-	s__Pseudomonas aeruginosa
+SAMN10619184	tigecycline	glycylcycline	R	wildtype	high	mexX	-	-	PSA0088	-	s__Pseudomonas aeruginosa
+SAMN10619184	aztreonam	monobactam	I	wildtype	high	mexA;blaPDC-3	-	-	PSA0019;PSA0020	-	s__Pseudomonas aeruginosa
+SAMN10619184	(all)	penicillin beta-lactam	-	-	none	-	blaOXA-4	-	-	-	s__Pseudomonas aeruginosa
+SAMN10619184	amoxicillin	penicillin beta-lactam	R	-	none	mexA;blaPDC-3	blaOXA-4	-	PSA0003;PSA0004	-	s__Pseudomonas aeruginosa
+SAMN10619184	ampicillin	penicillin beta-lactam	R	-	none	mexA;blaPDC-3	blaOXA-4	-	PSA0011;PSA0012	-	s__Pseudomonas aeruginosa
+SAMN10619184	piperacillin	penicillin beta-lactam	I	-	none	mexA;blaPDC-3	blaOXA-4	-	PSA0072;PSA0073	-	s__Pseudomonas aeruginosa
+SAMN10619184	chloramphenicol	phenicol antibiotic	R	-	none	mexE;mexX;catB7;mexA	floR2;cmlA6	-	PSA0040;PSA0041;PSA0043;PSA0046	-	s__Pseudomonas aeruginosa
+SAMN10619184	florfenicol	phenicol antibiotic	-	-	none	-	floR2	-	-	-	s__Pseudomonas aeruginosa
+SAMN10619184	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
+SAMN10619184	sulfamethoxazole	sulfonamide antibiotic	R	wildtype	high	mexA	-	-	PSA0080	-	s__Pseudomonas aeruginosa
+SAMN10619184	tetracycline	tetracycline antibiotic	R	-	none	mexX;mexA	tet(G)	-	PSA0084;PSA0086	-	s__Pseudomonas aeruginosa
+SAMN10619184	cefotaxime	third-generation cephalosporin	R	wildtype	high	mexA;blaPDC-3	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
+SAMN10619184	ceftazidime	third-generation cephalosporin	I	wildtype	high	mexA;blaPDC-3	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
+SAMN10619184	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-3	-	-	PSA0039	-	s__Pseudomonas aeruginosa
+SAMN10619184	-	-	-	-	-	-	sul1:-;sul1:-	-	none (partial hits)	-	s__Pseudomonas aeruginosa
+SAMN10996005	kanamycin	-	R	wildtype	high	mexX;aph(3')-IIb	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
+SAMN10996005	amikacin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0001	-	s__Pseudomonas aeruginosa
+SAMN10996005	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
+SAMN10996005	tobramycin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0090	-	s__Pseudomonas aeruginosa
+SAMN10996005	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	mexA;blaPDC-34	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
+SAMN10996005	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	mexA;blaPDC-34	-	-	PSA0015;PSA0016	-	s__Pseudomonas aeruginosa
+SAMN10996005	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-34	PSA0037	-	s__Pseudomonas aeruginosa
+SAMN10996005	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-34	PSA0038	-	s__Pseudomonas aeruginosa
+SAMN10996005	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	mexA;blaPDC-34	-	-	PSA0076;PSA0077	-	s__Pseudomonas aeruginosa
+SAMN10996005	ertapenem	carbapenem	R	wildtype	high	mexA	-	-	PSA0056	-	s__Pseudomonas aeruginosa
+SAMN10996005	meropenem	carbapenem	S	wildtype	high	-	-	mexA;blaOXA-488	PSA0064;PSA0065	-	s__Pseudomonas aeruginosa
+SAMN10996005	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexA;mexE	-	-	PSA0092;PSA0095	-	s__Pseudomonas aeruginosa
+SAMN10996005	ciprofloxacin	fluoroquinolone antibiotic	I	wildtype	high	mexA;mexE;crpP	-	-	PSA0049;PSA0052;PSA0053	-	s__Pseudomonas aeruginosa
+SAMN10996005	levofloxacin	fluoroquinolone antibiotic	I	wildtype	high	crpP	-	-	PSA0063	-	s__Pseudomonas aeruginosa
+SAMN10996005	norfloxacin	fluoroquinolone antibiotic	R	wildtype	high	mexA	-	-	PSA0069	-	s__Pseudomonas aeruginosa
+SAMN10996005	cefepime	fourth-generation cephalosporin	I	wildtype	high	mexX;mexA;blaPDC-34	-	-	PSA0023;PSA0024;PSA0026	-	s__Pseudomonas aeruginosa
+SAMN10996005	tigecycline	glycylcycline	R	wildtype	high	mexX	-	-	PSA0088	-	s__Pseudomonas aeruginosa
+SAMN10996005	aztreonam	monobactam	I	wildtype	high	mexA;blaPDC-34	-	-	PSA0019;PSA0020	-	s__Pseudomonas aeruginosa
+SAMN10996005	amoxicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-34	-	-	PSA0003;PSA0004	-	s__Pseudomonas aeruginosa
+SAMN10996005	ampicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-34	-	-	PSA0011;PSA0012	-	s__Pseudomonas aeruginosa
+SAMN10996005	piperacillin	penicillin beta-lactam	I	wildtype	high	mexA;blaPDC-34	-	-	PSA0072;PSA0073	-	s__Pseudomonas aeruginosa
+SAMN10996005	chloramphenicol	phenicol antibiotic	R	wildtype	high	mexX;mexA;mexE	-	-	PSA0041;PSA0043;PSA0046	-	s__Pseudomonas aeruginosa
+SAMN10996005	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
+SAMN10996005	sulfamethoxazole	sulfonamide antibiotic	R	wildtype	high	mexA	-	-	PSA0080	-	s__Pseudomonas aeruginosa
+SAMN10996005	tetracycline	tetracycline antibiotic	R	wildtype	high	mexX;mexA	-	-	PSA0084;PSA0086	-	s__Pseudomonas aeruginosa
+SAMN10996005	cefotaxime	third-generation cephalosporin	R	wildtype	high	mexA;blaPDC-34	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
+SAMN10996005	ceftazidime	third-generation cephalosporin	I	wildtype	high	mexA;blaPDC-34	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
+SAMN10996005	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-34	-	-	PSA0039	-	s__Pseudomonas aeruginosa
+SAMN10996005	-	-	-	-	-	-	catB7:-	-	none (partial hits)	-	s__Pseudomonas aeruginosa
+SAMN12220654	kanamycin	-	R	wildtype	high	aph(3')-IIb;mexX	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
+SAMN12220654	amikacin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0001	-	s__Pseudomonas aeruginosa
+SAMN12220654	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
+SAMN12220654	tobramycin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0090	-	s__Pseudomonas aeruginosa
+SAMN12220654	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	blaPDC-35;mexA	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
+SAMN12220654	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	blaPDC-35;mexA	-	-	PSA0015;PSA0016	-	s__Pseudomonas aeruginosa
+SAMN12220654	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-35	PSA0037	-	s__Pseudomonas aeruginosa
+SAMN12220654	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-35	PSA0038	-	s__Pseudomonas aeruginosa
+SAMN12220654	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	blaPDC-35;mexA	-	-	PSA0076;PSA0077	-	s__Pseudomonas aeruginosa
+SAMN12220654	ertapenem	carbapenem	R	wildtype	high	mexA	-	-	PSA0056	-	s__Pseudomonas aeruginosa
+SAMN12220654	meropenem	carbapenem	S	wildtype	high	-	-	blaOXA-488;mexA	PSA0064;PSA0065	-	s__Pseudomonas aeruginosa
+SAMN12220654	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexE;mexA	-	-	PSA0092;PSA0095	-	s__Pseudomonas aeruginosa
+SAMN12220654	ciprofloxacin	fluoroquinolone antibiotic	I	wildtype	high	mexE;mexA	-	-	PSA0049;PSA0053	-	s__Pseudomonas aeruginosa
+SAMN12220654	norfloxacin	fluoroquinolone antibiotic	R	wildtype	high	mexA	-	-	PSA0069	-	s__Pseudomonas aeruginosa
+SAMN12220654	cefepime	fourth-generation cephalosporin	I	wildtype	high	blaPDC-35;mexX;mexA	-	-	PSA0023;PSA0024;PSA0026	-	s__Pseudomonas aeruginosa
+SAMN12220654	tigecycline	glycylcycline	R	wildtype	high	mexX	-	-	PSA0088	-	s__Pseudomonas aeruginosa
+SAMN12220654	aztreonam	monobactam	I	wildtype	high	blaPDC-35;mexA	-	-	PSA0019;PSA0020	-	s__Pseudomonas aeruginosa
+SAMN12220654	amoxicillin	penicillin beta-lactam	R	wildtype	high	blaPDC-35;mexA	-	-	PSA0003;PSA0004	-	s__Pseudomonas aeruginosa
+SAMN12220654	ampicillin	penicillin beta-lactam	R	wildtype	high	blaPDC-35;mexA	-	-	PSA0011;PSA0012	-	s__Pseudomonas aeruginosa
+SAMN12220654	piperacillin	penicillin beta-lactam	I	wildtype	high	blaPDC-35;mexA	-	-	PSA0072;PSA0073	-	s__Pseudomonas aeruginosa
+SAMN12220654	chloramphenicol	phenicol antibiotic	R	wildtype	high	mexX;catB7;mexE;mexA	-	-	PSA0040;PSA0041;PSA0043;PSA0046	-	s__Pseudomonas aeruginosa
+SAMN12220654	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
+SAMN12220654	sulfamethoxazole	sulfonamide antibiotic	R	wildtype	high	mexA	-	-	PSA0080	-	s__Pseudomonas aeruginosa
+SAMN12220654	tetracycline	tetracycline antibiotic	R	wildtype	high	mexX;mexA	-	-	PSA0084;PSA0086	-	s__Pseudomonas aeruginosa
+SAMN12220654	cefotaxime	third-generation cephalosporin	R	wildtype	high	blaPDC-35;mexA	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
+SAMN12220654	ceftazidime	third-generation cephalosporin	I	wildtype	high	blaPDC-35;mexA	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
+SAMN12220654	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-35	-	-	PSA0039	-	s__Pseudomonas aeruginosa
+SAMN12350594	kanamycin	-	R	wildtype	high	mexX;aph(3')-IIb	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
+SAMN12350594	amikacin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0001	-	s__Pseudomonas aeruginosa
+SAMN12350594	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
+SAMN12350594	tobramycin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0090	-	s__Pseudomonas aeruginosa
+SAMN12350594	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	mexA;blaPDC-3	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
+SAMN12350594	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	mexA;blaPDC-3	-	-	PSA0015;PSA0016	-	s__Pseudomonas aeruginosa
+SAMN12350594	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-3	PSA0037	-	s__Pseudomonas aeruginosa
+SAMN12350594	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-3	PSA0038	-	s__Pseudomonas aeruginosa
+SAMN12350594	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	mexA;blaPDC-3	-	-	PSA0076;PSA0077	-	s__Pseudomonas aeruginosa
+SAMN12350594	ertapenem	carbapenem	R	wildtype	high	mexA	-	-	PSA0056	-	s__Pseudomonas aeruginosa
+SAMN12350594	meropenem	carbapenem	S	wildtype	high	-	-	mexA;blaOXA-904	PSA0064;PSA0065	-	s__Pseudomonas aeruginosa
+SAMN12350594	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexA;mexE	-	-	PSA0092;PSA0095	-	s__Pseudomonas aeruginosa
+SAMN12350594	ciprofloxacin	fluoroquinolone antibiotic	I	wildtype	high	mexA;mexE;crpP	-	-	PSA0049;PSA0052;PSA0053	-	s__Pseudomonas aeruginosa
+SAMN12350594	levofloxacin	fluoroquinolone antibiotic	I	wildtype	high	crpP	-	-	PSA0063	-	s__Pseudomonas aeruginosa
+SAMN12350594	norfloxacin	fluoroquinolone antibiotic	R	wildtype	high	mexA	-	-	PSA0069	-	s__Pseudomonas aeruginosa
+SAMN12350594	cefepime	fourth-generation cephalosporin	I	wildtype	high	mexX;mexA;blaPDC-3	-	-	PSA0023;PSA0024;PSA0026	-	s__Pseudomonas aeruginosa
+SAMN12350594	tigecycline	glycylcycline	R	wildtype	high	mexX	-	-	PSA0088	-	s__Pseudomonas aeruginosa
+SAMN12350594	aztreonam	monobactam	I	wildtype	high	mexA;blaPDC-3	-	-	PSA0019;PSA0020	-	s__Pseudomonas aeruginosa
+SAMN12350594	amoxicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-3	-	-	PSA0003;PSA0004	-	s__Pseudomonas aeruginosa
+SAMN12350594	ampicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-3	-	-	PSA0011;PSA0012	-	s__Pseudomonas aeruginosa
+SAMN12350594	piperacillin	penicillin beta-lactam	I	wildtype	high	mexA;blaPDC-3	-	-	PSA0072;PSA0073	-	s__Pseudomonas aeruginosa
+SAMN12350594	chloramphenicol	phenicol antibiotic	R	wildtype	high	mexX;mexA;catB7;mexE	-	-	PSA0040;PSA0041;PSA0043;PSA0046	-	s__Pseudomonas aeruginosa
+SAMN12350594	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
+SAMN12350594	sulfamethoxazole	sulfonamide antibiotic	R	wildtype	high	mexA	-	-	PSA0080	-	s__Pseudomonas aeruginosa
+SAMN12350594	tetracycline	tetracycline antibiotic	R	wildtype	high	mexX;mexA	-	-	PSA0084;PSA0086	-	s__Pseudomonas aeruginosa
+SAMN12350594	cefotaxime	third-generation cephalosporin	R	wildtype	high	mexA;blaPDC-3	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
+SAMN12350594	ceftazidime	third-generation cephalosporin	I	wildtype	high	mexA;blaPDC-3	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
+SAMN12350594	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-3	-	-	PSA0039	-	s__Pseudomonas aeruginosa
+SAMN14160340	kanamycin	-	R	wildtype	high	aph(3')-IIb;mexX	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
+SAMN14160340	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib	mexX	PSA0001	-	s__Pseudomonas aeruginosa
+SAMN14160340	gentamicin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	-	-	s__Pseudomonas aeruginosa
+SAMN14160340	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib;ant(2'')-Ia	-	-	-	s__Pseudomonas aeruginosa
+SAMN14160340	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
+SAMN14160340	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib;ant(2'')-Ia	mexX	PSA0090	-	s__Pseudomonas aeruginosa
+SAMN14160340	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	mexA;blaPDC-20	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
+SAMN14160340	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	mexA;blaPDC-20	-	-	PSA0015;PSA0016	-	s__Pseudomonas aeruginosa
+SAMN14160340	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-20	PSA0037	-	s__Pseudomonas aeruginosa
+SAMN14160340	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-20	PSA0038	-	s__Pseudomonas aeruginosa
+SAMN14160340	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	mexA;blaPDC-20	-	-	PSA0076;PSA0077	-	s__Pseudomonas aeruginosa
+SAMN14160340	(all)	carbapenem	-	-	none	-	oprD:p.Val359Leu	-	-	-	s__Pseudomonas aeruginosa
+SAMN14160340	ertapenem	carbapenem	R	-	none	mexA	oprD:p.Val359Leu	-	PSA0056	-	s__Pseudomonas aeruginosa
+SAMN14160340	meropenem	carbapenem	-	-	none	-	oprD:p.Val359Leu	mexA;blaOXA-50	PSA0064;PSA0065	-	s__Pseudomonas aeruginosa
+SAMN14160340	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexE;mexA	-	-	PSA0092;PSA0095	-	s__Pseudomonas aeruginosa
+SAMN14160340	ciprofloxacin	fluoroquinolone antibiotic	I	wildtype	high	mexE;crpP;mexA	-	-	PSA0049;PSA0052;PSA0053	-	s__Pseudomonas aeruginosa
+SAMN14160340	levofloxacin	fluoroquinolone antibiotic	I	wildtype	high	crpP	-	-	PSA0063	-	s__Pseudomonas aeruginosa
+SAMN14160340	norfloxacin	fluoroquinolone antibiotic	R	wildtype	high	mexA	-	-	PSA0069	-	s__Pseudomonas aeruginosa
+SAMN14160340	cefepime	fourth-generation cephalosporin	I	wildtype	high	mexA;blaPDC-20;mexX	-	-	PSA0023;PSA0024;PSA0026	-	s__Pseudomonas aeruginosa
+SAMN14160340	tigecycline	glycylcycline	R	wildtype	high	mexX	-	-	PSA0088	-	s__Pseudomonas aeruginosa
+SAMN14160340	aztreonam	monobactam	I	wildtype	high	mexA;blaPDC-20	-	-	PSA0019;PSA0020	-	s__Pseudomonas aeruginosa
+SAMN14160340	amoxicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-20	-	-	PSA0003;PSA0004	-	s__Pseudomonas aeruginosa
+SAMN14160340	ampicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-20	-	-	PSA0011;PSA0012	-	s__Pseudomonas aeruginosa
+SAMN14160340	piperacillin	penicillin beta-lactam	I	wildtype	high	mexA;blaPDC-20	-	-	PSA0072;PSA0073	-	s__Pseudomonas aeruginosa
+SAMN14160340	chloramphenicol	phenicol antibiotic	R	wildtype	high	mexE;mexA;mexX;catB7	-	-	PSA0040;PSA0041;PSA0043;PSA0046	-	s__Pseudomonas aeruginosa
+SAMN14160340	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
+SAMN14160340	sulfamethoxazole	sulfonamide antibiotic	R	wildtype	high	mexA	-	-	PSA0080	-	s__Pseudomonas aeruginosa
+SAMN14160340	tetracycline	tetracycline antibiotic	R	-	none	mexA;mexX	tet(C)	-	PSA0084;PSA0086	-	s__Pseudomonas aeruginosa
+SAMN14160340	cefotaxime	third-generation cephalosporin	R	wildtype	high	mexA;blaPDC-20	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
+SAMN14160340	ceftazidime	third-generation cephalosporin	I	wildtype	high	mexA;blaPDC-20	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
+SAMN14160340	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-20	-	-	PSA0039	-	s__Pseudomonas aeruginosa
+SAMN14160340	(all)	third-generation cephalosporin 	-	-	none	-	blaGES-11	-	-	-	s__Pseudomonas aeruginosa
+SAMN14523457	kanamycin	-	R	wildtype	high	mexX;aph(3')-IIb	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
+SAMN14523457	amikacin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0001	-	s__Pseudomonas aeruginosa
+SAMN14523457	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
+SAMN14523457	tobramycin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0090	-	s__Pseudomonas aeruginosa
+SAMN14523457	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	mexA;blaPDC-22	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
+SAMN14523457	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	mexA;blaPDC-22	-	-	PSA0015;PSA0016	-	s__Pseudomonas aeruginosa
+SAMN14523457	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-22	PSA0037	-	s__Pseudomonas aeruginosa
+SAMN14523457	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-22	PSA0038	-	s__Pseudomonas aeruginosa
+SAMN14523457	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	mexA;blaPDC-22	-	-	PSA0076;PSA0077	-	s__Pseudomonas aeruginosa
+SAMN14523457	ertapenem	carbapenem	R	wildtype	high	mexA	-	-	PSA0056	-	s__Pseudomonas aeruginosa
+SAMN14523457	meropenem	carbapenem	S	wildtype	high	-	-	mexA;blaOXA-1032	PSA0064;PSA0065	-	s__Pseudomonas aeruginosa
+SAMN14523457	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexA;mexE	-	-	PSA0092;PSA0095	-	s__Pseudomonas aeruginosa
+SAMN14523457	ciprofloxacin	fluoroquinolone antibiotic	I	wildtype	high	mexA;mexE	-	-	PSA0049;PSA0053	-	s__Pseudomonas aeruginosa
+SAMN14523457	norfloxacin	fluoroquinolone antibiotic	R	wildtype	high	mexA	-	-	PSA0069	-	s__Pseudomonas aeruginosa
+SAMN14523457	cefepime	fourth-generation cephalosporin	I	wildtype	high	mexA;mexX;blaPDC-22	-	-	PSA0023;PSA0024;PSA0026	-	s__Pseudomonas aeruginosa
+SAMN14523457	tigecycline	glycylcycline	R	wildtype	high	mexX	-	-	PSA0088	-	s__Pseudomonas aeruginosa
+SAMN14523457	aztreonam	monobactam	I	wildtype	high	mexA;blaPDC-22	-	-	PSA0019;PSA0020	-	s__Pseudomonas aeruginosa
+SAMN14523457	amoxicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-22	-	-	PSA0003;PSA0004	-	s__Pseudomonas aeruginosa
+SAMN14523457	ampicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-22	-	-	PSA0011;PSA0012	-	s__Pseudomonas aeruginosa
+SAMN14523457	piperacillin	penicillin beta-lactam	I	wildtype	high	mexA;blaPDC-22	-	-	PSA0072;PSA0073	-	s__Pseudomonas aeruginosa
+SAMN14523457	chloramphenicol	phenicol antibiotic	R	wildtype	high	mexA;mexX;catB7;mexE	-	-	PSA0040;PSA0041;PSA0043;PSA0046	-	s__Pseudomonas aeruginosa
+SAMN14523457	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
+SAMN14523457	sulfamethoxazole	sulfonamide antibiotic	R	wildtype	high	mexA	-	-	PSA0080	-	s__Pseudomonas aeruginosa
+SAMN14523457	tetracycline	tetracycline antibiotic	R	wildtype	high	mexA;mexX	-	-	PSA0084;PSA0086	-	s__Pseudomonas aeruginosa
+SAMN14523457	cefotaxime	third-generation cephalosporin	R	wildtype	high	mexA;blaPDC-22	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
+SAMN14523457	ceftazidime	third-generation cephalosporin	I	wildtype	high	mexA;blaPDC-22	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
+SAMN14523457	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-22	-	-	PSA0039	-	s__Pseudomonas aeruginosa
+SAMN15716686	kanamycin	-	R	wildtype	high	aph(3')-IIb;mexX	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
+SAMN15716686	amikacin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0001	-	s__Pseudomonas aeruginosa
+SAMN15716686	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
+SAMN15716686	tobramycin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0090	-	s__Pseudomonas aeruginosa
+SAMN15716686	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	blaPDC-3;mexA	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
+SAMN15716686	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	blaPDC-3;mexA	-	-	PSA0015;PSA0016	-	s__Pseudomonas aeruginosa
+SAMN15716686	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-3	PSA0037	-	s__Pseudomonas aeruginosa
+SAMN15716686	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-3	PSA0038	-	s__Pseudomonas aeruginosa
+SAMN15716686	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	blaPDC-3;mexA	-	-	PSA0076;PSA0077	-	s__Pseudomonas aeruginosa
+SAMN15716686	(all)	carbapenem	-	-	none	-	oprD:p.Val359Leu	-	-	-	s__Pseudomonas aeruginosa
+SAMN15716686	ertapenem	carbapenem	R	-	none	mexA	oprD:p.Val359Leu	-	PSA0056	-	s__Pseudomonas aeruginosa
+SAMN15716686	meropenem	carbapenem	-	-	none	-	oprD:p.Val359Leu	blaOXA-50;mexA	PSA0064;PSA0065	-	s__Pseudomonas aeruginosa
+SAMN15716686	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexE;mexA	-	-	PSA0092;PSA0095	-	s__Pseudomonas aeruginosa
+SAMN15716686	ciprofloxacin	fluoroquinolone antibiotic	I	wildtype	high	mexE;mexA	-	-	PSA0049;PSA0053	-	s__Pseudomonas aeruginosa
+SAMN15716686	norfloxacin	fluoroquinolone antibiotic	R	wildtype	high	mexA	-	-	PSA0069	-	s__Pseudomonas aeruginosa
+SAMN15716686	cefepime	fourth-generation cephalosporin	I	wildtype	high	blaPDC-3;mexA;mexX	-	-	PSA0023;PSA0024;PSA0026	-	s__Pseudomonas aeruginosa
+SAMN15716686	tigecycline	glycylcycline	R	wildtype	high	mexX	-	-	PSA0088	-	s__Pseudomonas aeruginosa
+SAMN15716686	aztreonam	monobactam	I	wildtype	high	blaPDC-3;mexA	-	-	PSA0019;PSA0020	-	s__Pseudomonas aeruginosa
+SAMN15716686	amoxicillin	penicillin beta-lactam	R	wildtype	high	blaPDC-3;mexA	-	-	PSA0003;PSA0004	-	s__Pseudomonas aeruginosa
+SAMN15716686	ampicillin	penicillin beta-lactam	R	wildtype	high	blaPDC-3;mexA	-	-	PSA0011;PSA0012	-	s__Pseudomonas aeruginosa
+SAMN15716686	piperacillin	penicillin beta-lactam	I	wildtype	high	blaPDC-3;mexA	-	-	PSA0072;PSA0073	-	s__Pseudomonas aeruginosa
+SAMN15716686	chloramphenicol	phenicol antibiotic	R	wildtype	high	mexE;mexA;catB7;mexX	-	-	PSA0040;PSA0041;PSA0043;PSA0046	-	s__Pseudomonas aeruginosa
+SAMN15716686	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
+SAMN15716686	sulfamethoxazole	sulfonamide antibiotic	R	wildtype	high	mexA	-	-	PSA0080	-	s__Pseudomonas aeruginosa
+SAMN15716686	tetracycline	tetracycline antibiotic	R	wildtype	high	mexA;mexX	-	-	PSA0084;PSA0086	-	s__Pseudomonas aeruginosa
+SAMN15716686	cefotaxime	third-generation cephalosporin	R	wildtype	high	blaPDC-3;mexA	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
+SAMN15716686	ceftazidime	third-generation cephalosporin	I	wildtype	high	blaPDC-3;mexA	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
+SAMN15716686	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-3	-	-	PSA0039	-	s__Pseudomonas aeruginosa
+SAMN20695880	kanamycin	-	R	wildtype	high	aph(3')-IIb;mexX	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
+SAMN20695880	amikacin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0001	-	s__Pseudomonas aeruginosa
+SAMN20695880	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
+SAMN20695880	tobramycin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0090	-	s__Pseudomonas aeruginosa
+SAMN20695880	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	mexA;blaPDC-127	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
+SAMN20695880	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	mexA;blaPDC-127	-	-	PSA0015;PSA0016	-	s__Pseudomonas aeruginosa
+SAMN20695880	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-127	PSA0037	-	s__Pseudomonas aeruginosa
+SAMN20695880	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-127	PSA0038	-	s__Pseudomonas aeruginosa
+SAMN20695880	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	mexA;blaPDC-127	-	-	PSA0076;PSA0077	-	s__Pseudomonas aeruginosa
+SAMN20695880	(all)	carbapenem	-	-	none	-	ftsI:p.Arg504Cys	-	-	-	s__Pseudomonas aeruginosa
+SAMN20695880	ertapenem	carbapenem	R	-	none	mexA	ftsI:p.Arg504Cys	-	PSA0056	-	s__Pseudomonas aeruginosa
+SAMN20695880	meropenem	carbapenem	-	-	none	-	ftsI:p.Arg504Cys	mexA;blaOXA-488	PSA0064;PSA0065	-	s__Pseudomonas aeruginosa
+SAMN20695880	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexA;mexE	-	-	PSA0092;PSA0095	-	s__Pseudomonas aeruginosa
+SAMN20695880	ciprofloxacin	fluoroquinolone antibiotic	I	wildtype	high	mexA;crpP;mexE	-	-	PSA0049;PSA0052;PSA0053	-	s__Pseudomonas aeruginosa
+SAMN20695880	levofloxacin	fluoroquinolone antibiotic	I	wildtype	high	crpP	-	-	PSA0063	-	s__Pseudomonas aeruginosa
+SAMN20695880	norfloxacin	fluoroquinolone antibiotic	R	wildtype	high	mexA	-	-	PSA0069	-	s__Pseudomonas aeruginosa
+SAMN20695880	cefepime	fourth-generation cephalosporin	I	wildtype	high	mexA;blaPDC-127;mexX	-	-	PSA0023;PSA0024;PSA0026	-	s__Pseudomonas aeruginosa
+SAMN20695880	tigecycline	glycylcycline	R	wildtype	high	mexX	-	-	PSA0088	-	s__Pseudomonas aeruginosa
+SAMN20695880	aztreonam	monobactam	I	wildtype	high	mexA;blaPDC-127	-	-	PSA0019;PSA0020	-	s__Pseudomonas aeruginosa
+SAMN20695880	amoxicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-127	-	-	PSA0003;PSA0004	-	s__Pseudomonas aeruginosa
+SAMN20695880	ampicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-127	-	-	PSA0011;PSA0012	-	s__Pseudomonas aeruginosa
+SAMN20695880	piperacillin	penicillin beta-lactam	I	wildtype	high	mexA;blaPDC-127	-	-	PSA0072;PSA0073	-	s__Pseudomonas aeruginosa
+SAMN20695880	chloramphenicol	phenicol antibiotic	R	wildtype	high	mexA;mexE;mexX	-	-	PSA0041;PSA0043;PSA0046	-	s__Pseudomonas aeruginosa
+SAMN20695880	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
+SAMN20695880	colistin	polymyxin antibiotic	-	-	none	-	pmrB:p.Val15Ile	-	-	-	s__Pseudomonas aeruginosa
+SAMN20695880	sulfamethoxazole	sulfonamide antibiotic	R	wildtype	high	mexA	-	-	PSA0080	-	s__Pseudomonas aeruginosa
+SAMN20695880	tetracycline	tetracycline antibiotic	R	wildtype	high	mexA;mexX	-	-	PSA0084;PSA0086	-	s__Pseudomonas aeruginosa
+SAMN20695880	cefotaxime	third-generation cephalosporin	R	wildtype	high	mexA;blaPDC-127	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
+SAMN20695880	ceftazidime	third-generation cephalosporin	I	wildtype	high	mexA;blaPDC-127	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
+SAMN20695880	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-127	-	-	PSA0039	-	s__Pseudomonas aeruginosa
+SAMN20695880	-	-	-	-	-	-	catB7:-	-	none (partial hits)	-	s__Pseudomonas aeruginosa
+SAMN24018299	kanamycin	-	R	wildtype	high	aph(3')-IIb;mexX	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
+SAMN24018299	amikacin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0001	-	s__Pseudomonas aeruginosa
+SAMN24018299	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
+SAMN24018299	tobramycin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0090	-	s__Pseudomonas aeruginosa
+SAMN24018299	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	mexA;blaPDC-433	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
+SAMN24018299	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	mexA;blaPDC-433	-	-	PSA0015;PSA0016	-	s__Pseudomonas aeruginosa
+SAMN24018299	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-433	PSA0037	-	s__Pseudomonas aeruginosa
+SAMN24018299	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-433	PSA0038	-	s__Pseudomonas aeruginosa
+SAMN24018299	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	mexA;blaPDC-433	-	-	PSA0076;PSA0077	-	s__Pseudomonas aeruginosa
+SAMN24018299	ertapenem	carbapenem	R	wildtype	high	mexA	-	-	PSA0056	-	s__Pseudomonas aeruginosa
+SAMN24018299	meropenem	carbapenem	S	wildtype	high	-	-	mexA;blaOXA-494	PSA0064;PSA0065	-	s__Pseudomonas aeruginosa
+SAMN24018299	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexA;mexE	-	-	PSA0092;PSA0095	-	s__Pseudomonas aeruginosa
+SAMN24018299	ciprofloxacin	fluoroquinolone antibiotic	I	wildtype	high	mexA;mexE	-	-	PSA0049;PSA0053	-	s__Pseudomonas aeruginosa
+SAMN24018299	norfloxacin	fluoroquinolone antibiotic	R	wildtype	high	mexA	-	-	PSA0069	-	s__Pseudomonas aeruginosa
+SAMN24018299	cefepime	fourth-generation cephalosporin	I	wildtype	high	mexA;blaPDC-433;mexX	-	-	PSA0023;PSA0024;PSA0026	-	s__Pseudomonas aeruginosa
+SAMN24018299	tigecycline	glycylcycline	R	wildtype	high	mexX	-	-	PSA0088	-	s__Pseudomonas aeruginosa
+SAMN24018299	aztreonam	monobactam	I	wildtype	high	mexA;blaPDC-433	-	-	PSA0019;PSA0020	-	s__Pseudomonas aeruginosa
+SAMN24018299	amoxicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-433	-	-	PSA0003;PSA0004	-	s__Pseudomonas aeruginosa
+SAMN24018299	ampicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-433	-	-	PSA0011;PSA0012	-	s__Pseudomonas aeruginosa
+SAMN24018299	piperacillin	penicillin beta-lactam	I	wildtype	high	mexA;blaPDC-433	-	-	PSA0072;PSA0073	-	s__Pseudomonas aeruginosa
+SAMN24018299	chloramphenicol	phenicol antibiotic	R	wildtype	high	mexA;catB7;mexX;mexE	-	-	PSA0040;PSA0041;PSA0043;PSA0046	-	s__Pseudomonas aeruginosa
+SAMN24018299	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
+SAMN24018299	sulfamethoxazole	sulfonamide antibiotic	R	wildtype	high	mexA	-	-	PSA0080	-	s__Pseudomonas aeruginosa
+SAMN24018299	tetracycline	tetracycline antibiotic	R	wildtype	high	mexA;mexX	-	-	PSA0084;PSA0086	-	s__Pseudomonas aeruginosa
+SAMN24018299	cefotaxime	third-generation cephalosporin	R	wildtype	high	mexA;blaPDC-433	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
+SAMN24018299	ceftazidime	third-generation cephalosporin	I	wildtype	high	mexA;blaPDC-433	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
+SAMN24018299	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-433	-	-	PSA0039	-	s__Pseudomonas aeruginosa
+SAMN25231166	kanamycin	-	R	wildtype	high	aph(3')-IIb;mexX	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
+SAMN25231166	amikacin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0001	-	s__Pseudomonas aeruginosa
+SAMN25231166	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
+SAMN25231166	tobramycin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0090	-	s__Pseudomonas aeruginosa
+SAMN25231166	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	mexA;blaPDC-3	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
+SAMN25231166	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	mexA;blaPDC-3	-	-	PSA0015;PSA0016	-	s__Pseudomonas aeruginosa
+SAMN25231166	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-3	PSA0037	-	s__Pseudomonas aeruginosa
+SAMN25231166	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-3	PSA0038	-	s__Pseudomonas aeruginosa
+SAMN25231166	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	mexA;blaPDC-3	-	-	PSA0076;PSA0077	-	s__Pseudomonas aeruginosa
+SAMN25231166	(all)	carbapenem	-	-	none	-	oprD:p.Val359Leu	-	-	-	s__Pseudomonas aeruginosa
+SAMN25231166	ertapenem	carbapenem	R	-	none	mexA	oprD:p.Val359Leu	-	PSA0056	-	s__Pseudomonas aeruginosa
+SAMN25231166	meropenem	carbapenem	-	-	none	-	oprD:p.Val359Leu	mexA;blaOXA-50	PSA0064;PSA0065	-	s__Pseudomonas aeruginosa
+SAMN25231166	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexE;mexA	-	-	PSA0092;PSA0095	-	s__Pseudomonas aeruginosa
+SAMN25231166	ciprofloxacin	fluoroquinolone antibiotic	I	wildtype	high	mexE;mexA	-	-	PSA0049;PSA0053	-	s__Pseudomonas aeruginosa
+SAMN25231166	norfloxacin	fluoroquinolone antibiotic	R	wildtype	high	mexA	-	-	PSA0069	-	s__Pseudomonas aeruginosa
+SAMN25231166	cefepime	fourth-generation cephalosporin	I	wildtype	high	mexA;blaPDC-3;mexX	-	-	PSA0023;PSA0024;PSA0026	-	s__Pseudomonas aeruginosa
+SAMN25231166	tigecycline	glycylcycline	R	wildtype	high	mexX	-	-	PSA0088	-	s__Pseudomonas aeruginosa
+SAMN25231166	aztreonam	monobactam	I	wildtype	high	mexA;blaPDC-3	-	-	PSA0019;PSA0020	-	s__Pseudomonas aeruginosa
+SAMN25231166	amoxicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-3	-	-	PSA0003;PSA0004	-	s__Pseudomonas aeruginosa
+SAMN25231166	ampicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-3	-	-	PSA0011;PSA0012	-	s__Pseudomonas aeruginosa
+SAMN25231166	piperacillin	penicillin beta-lactam	I	wildtype	high	mexA;blaPDC-3	-	-	PSA0072;PSA0073	-	s__Pseudomonas aeruginosa
+SAMN25231166	chloramphenicol	phenicol antibiotic	R	wildtype	high	mexE;mexA;catB7;mexX	-	-	PSA0040;PSA0041;PSA0043;PSA0046	-	s__Pseudomonas aeruginosa
+SAMN25231166	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
+SAMN25231166	colistin	polymyxin antibiotic	-	-	none	-	phoQ:p.Val260Gly	-	-	-	s__Pseudomonas aeruginosa
+SAMN25231166	sulfamethoxazole	sulfonamide antibiotic	R	wildtype	high	mexA	-	-	PSA0080	-	s__Pseudomonas aeruginosa
+SAMN25231166	tetracycline	tetracycline antibiotic	R	wildtype	high	mexA;mexX	-	-	PSA0084;PSA0086	-	s__Pseudomonas aeruginosa
+SAMN25231166	cefotaxime	third-generation cephalosporin	R	wildtype	high	mexA;blaPDC-3	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
+SAMN25231166	ceftazidime	third-generation cephalosporin	I	wildtype	high	mexA;blaPDC-3	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
+SAMN25231166	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-3	-	-	PSA0039	-	s__Pseudomonas aeruginosa
+SAMN27565483	kanamycin	-	R	wildtype	high	aph(3')-IIb;mexX	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
+SAMN27565483	amikacin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0001	-	s__Pseudomonas aeruginosa
+SAMN27565483	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
+SAMN27565483	tobramycin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0090	-	s__Pseudomonas aeruginosa
+SAMN27565483	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	mexA;blaPDC-15	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
+SAMN27565483	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	mexA;blaPDC-15	-	-	PSA0015;PSA0016	-	s__Pseudomonas aeruginosa
+SAMN27565483	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-15	PSA0037	-	s__Pseudomonas aeruginosa
+SAMN27565483	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-15	PSA0038	-	s__Pseudomonas aeruginosa
+SAMN27565483	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	mexA;blaPDC-15	-	-	PSA0076;PSA0077	-	s__Pseudomonas aeruginosa
+SAMN27565483	(all)	carbapenem	-	-	none	-	oprD:p.Val359Leu	-	-	-	s__Pseudomonas aeruginosa
+SAMN27565483	ertapenem	carbapenem	R	-	none	mexA	oprD:p.Val359Leu	-	PSA0056	-	s__Pseudomonas aeruginosa
+SAMN27565483	meropenem	carbapenem	-	-	none	-	oprD:p.Val359Leu	mexA;blaOXA-494	PSA0064;PSA0065	-	s__Pseudomonas aeruginosa
+SAMN27565483	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexA;mexE	-	-	PSA0092;PSA0095	-	s__Pseudomonas aeruginosa
+SAMN27565483	(all)	fluoroquinolone antibiotic	-	-	none	-	parC:p.Ser87Leu;gyrA:p.Thr83Ile	-	-	-	s__Pseudomonas aeruginosa
+SAMN27565483	ciprofloxacin	fluoroquinolone antibiotic	I	-	none	mexA;mexE;crpP	parC:p.Ser87Leu;gyrA:p.Thr83Ile	-	PSA0049;PSA0052;PSA0053	-	s__Pseudomonas aeruginosa
+SAMN27565483	levofloxacin	fluoroquinolone antibiotic	I	-	none	crpP	parC:p.Ser87Leu;gyrA:p.Thr83Ile	-	PSA0063	-	s__Pseudomonas aeruginosa
+SAMN27565483	norfloxacin	fluoroquinolone antibiotic	R	-	none	mexA	parC:p.Ser87Leu;gyrA:p.Thr83Ile	-	PSA0069	-	s__Pseudomonas aeruginosa
+SAMN27565483	cefepime	fourth-generation cephalosporin	I	wildtype	high	mexA;blaPDC-15;mexX	-	-	PSA0023;PSA0024;PSA0026	-	s__Pseudomonas aeruginosa
+SAMN27565483	tigecycline	glycylcycline	R	wildtype	high	mexX	-	-	PSA0088	-	s__Pseudomonas aeruginosa
+SAMN27565483	aztreonam	monobactam	I	wildtype	high	mexA;blaPDC-15	-	-	PSA0019;PSA0020	-	s__Pseudomonas aeruginosa
+SAMN27565483	amoxicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-15	-	-	PSA0003;PSA0004	-	s__Pseudomonas aeruginosa
+SAMN27565483	ampicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-15	-	-	PSA0011;PSA0012	-	s__Pseudomonas aeruginosa
+SAMN27565483	piperacillin	penicillin beta-lactam	I	wildtype	high	mexA;blaPDC-15	-	-	PSA0072;PSA0073	-	s__Pseudomonas aeruginosa
+SAMN27565483	chloramphenicol	phenicol antibiotic	R	wildtype	high	catB7;mexA;mexE;mexX	-	-	PSA0040;PSA0041;PSA0043;PSA0046	-	s__Pseudomonas aeruginosa
+SAMN27565483	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
+SAMN27565483	sulfamethoxazole	sulfonamide antibiotic	R	wildtype	high	mexA	-	-	PSA0080	-	s__Pseudomonas aeruginosa
+SAMN27565483	tetracycline	tetracycline antibiotic	R	wildtype	high	mexA;mexX	-	-	PSA0084;PSA0086	-	s__Pseudomonas aeruginosa
+SAMN27565483	cefotaxime	third-generation cephalosporin	R	wildtype	high	mexA;blaPDC-15	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
+SAMN27565483	ceftazidime	third-generation cephalosporin	I	wildtype	high	mexA;blaPDC-15	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
+SAMN27565483	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-15	-	-	PSA0039	-	s__Pseudomonas aeruginosa
+SAMN27565558	kanamycin	-	R	wildtype	high	mexX;aph(3')-IIb	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
+SAMN27565558	amikacin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0001	-	s__Pseudomonas aeruginosa
+SAMN27565558	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aph(3')-IIa	-	-	-	s__Pseudomonas aeruginosa
+SAMN27565558	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
+SAMN27565558	streptomycin	aminoglycoside antibiotic	-	-	none	-	aph(6)-Ic;aadA6	-	-	-	s__Pseudomonas aeruginosa
+SAMN27565558	tobramycin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0090	-	s__Pseudomonas aeruginosa
+SAMN27565558	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	blaPDC-35	-	-	PSA0007	-	s__Pseudomonas aeruginosa
+SAMN27565558	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	blaPDC-35	-	-	PSA0015	-	s__Pseudomonas aeruginosa
+SAMN27565558	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-35	PSA0037	-	s__Pseudomonas aeruginosa
+SAMN27565558	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-35	PSA0038	-	s__Pseudomonas aeruginosa
+SAMN27565558	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	blaPDC-35	-	-	PSA0076	-	s__Pseudomonas aeruginosa
+SAMN27565558	meropenem	carbapenem	S	wildtype	high	-	-	blaOXA-488	PSA0064	-	s__Pseudomonas aeruginosa
+SAMN27565558	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexE	-	-	PSA0095	-	s__Pseudomonas aeruginosa
+SAMN27565558	(all)	fluoroquinolone antibiotic	-	-	none	-	parC:p.Ser87Leu;gyrB:p.Ser466Phe;gyrA:p.Thr83Ile	-	-	-	s__Pseudomonas aeruginosa
+SAMN27565558	ciprofloxacin	fluoroquinolone antibiotic	I	-	none	mexE	parC:p.Ser87Leu;gyrB:p.Ser466Phe;gyrA:p.Thr83Ile	-	PSA0053	-	s__Pseudomonas aeruginosa
+SAMN27565558	cefepime	fourth-generation cephalosporin	I	wildtype	high	mexX;blaPDC-35	-	-	PSA0023;PSA0026	-	s__Pseudomonas aeruginosa
+SAMN27565558	bleomycin	glycopeptide antibiotic	-	-	none	-	ble	-	-	-	s__Pseudomonas aeruginosa
+SAMN27565558	tigecycline	glycylcycline	R	wildtype	high	mexX	-	-	PSA0088	-	s__Pseudomonas aeruginosa
+SAMN27565558	aztreonam	monobactam	I	wildtype	high	blaPDC-35	-	-	PSA0019	-	s__Pseudomonas aeruginosa
+SAMN27565558	amoxicillin	penicillin beta-lactam	R	wildtype	high	blaPDC-35	-	-	PSA0003	-	s__Pseudomonas aeruginosa
+SAMN27565558	ampicillin	penicillin beta-lactam	R	wildtype	high	blaPDC-35	-	-	PSA0011	-	s__Pseudomonas aeruginosa
+SAMN27565558	piperacillin	penicillin beta-lactam	I	wildtype	high	blaPDC-35	-	-	PSA0072	-	s__Pseudomonas aeruginosa
+SAMN27565558	chloramphenicol	phenicol antibiotic	R	wildtype	low	mexX;catB7;mexE	-	-	PSA0040;PSA0043;PSA0046	-	s__Pseudomonas aeruginosa
+SAMN27565558	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
+SAMN27565558	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	-	-	s__Pseudomonas aeruginosa
+SAMN27565558	tetracycline	tetracycline antibiotic	R	wildtype	high	mexX	-	-	PSA0086	-	s__Pseudomonas aeruginosa
+SAMN27565558	cefotaxime	third-generation cephalosporin	R	wildtype	high	blaPDC-35	-	-	PSA0029	-	s__Pseudomonas aeruginosa
+SAMN27565558	ceftazidime	third-generation cephalosporin	I	wildtype	high	blaPDC-35	-	-	PSA0033	-	s__Pseudomonas aeruginosa
+SAMN27565558	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-35	-	-	PSA0039	-	s__Pseudomonas aeruginosa
+SAMN27565558	-	-	-	-	-	-	mexA:-	-	none (partial hits)	-	s__Pseudomonas aeruginosa
+SAMN27565698	kanamycin	-	R	wildtype	high	mexX;aph(3')-IIb	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
+SAMN27565698	amikacin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0001	-	s__Pseudomonas aeruginosa
+SAMN27565698	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
+SAMN27565698	tobramycin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0090	-	s__Pseudomonas aeruginosa
+SAMN27565698	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	mexA;blaPDC	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
+SAMN27565698	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	mexA;blaPDC	-	-	PSA0015;PSA0016	-	s__Pseudomonas aeruginosa
+SAMN27565698	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC	PSA0037	-	s__Pseudomonas aeruginosa
+SAMN27565698	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC	PSA0038	-	s__Pseudomonas aeruginosa
+SAMN27565698	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	mexA;blaPDC	-	-	PSA0076;PSA0077	-	s__Pseudomonas aeruginosa
+SAMN27565698	ertapenem	carbapenem	R	wildtype	high	mexA	-	-	PSA0056	-	s__Pseudomonas aeruginosa
+SAMN27565698	meropenem	carbapenem	S	wildtype	high	-	-	mexA;blaOXA-395	PSA0064;PSA0065	-	s__Pseudomonas aeruginosa
+SAMN27565698	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexA;mexE	-	-	PSA0092;PSA0095	-	s__Pseudomonas aeruginosa
+SAMN27565698	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Thr83Ile	-	-	-	s__Pseudomonas aeruginosa
+SAMN27565698	ciprofloxacin	fluoroquinolone antibiotic	I	-	none	mexA;mexE	gyrA:p.Thr83Ile	-	PSA0049;PSA0053	-	s__Pseudomonas aeruginosa
+SAMN27565698	norfloxacin	fluoroquinolone antibiotic	R	-	none	mexA	gyrA:p.Thr83Ile	-	PSA0069	-	s__Pseudomonas aeruginosa
+SAMN27565698	cefepime	fourth-generation cephalosporin	I	wildtype	high	mexA;mexX;blaPDC	-	-	PSA0023;PSA0024;PSA0026	-	s__Pseudomonas aeruginosa
+SAMN27565698	tigecycline	glycylcycline	R	wildtype	high	mexX	-	-	PSA0088	-	s__Pseudomonas aeruginosa
+SAMN27565698	aztreonam	monobactam	I	wildtype	high	mexA;blaPDC	-	-	PSA0019;PSA0020	-	s__Pseudomonas aeruginosa
+SAMN27565698	amoxicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC	-	-	PSA0003;PSA0004	-	s__Pseudomonas aeruginosa
+SAMN27565698	ampicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC	-	-	PSA0011;PSA0012	-	s__Pseudomonas aeruginosa
+SAMN27565698	piperacillin	penicillin beta-lactam	I	wildtype	high	mexA;blaPDC	-	-	PSA0072;PSA0073	-	s__Pseudomonas aeruginosa
+SAMN27565698	chloramphenicol	phenicol antibiotic	R	wildtype	high	catB7;mexA;mexE;mexX	-	-	PSA0040;PSA0041;PSA0043;PSA0046	-	s__Pseudomonas aeruginosa
+SAMN27565698	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
+SAMN27565698	sulfamethoxazole	sulfonamide antibiotic	R	wildtype	high	mexA	-	-	PSA0080	-	s__Pseudomonas aeruginosa
+SAMN27565698	tetracycline	tetracycline antibiotic	R	wildtype	high	mexA;mexX	-	-	PSA0084;PSA0086	-	s__Pseudomonas aeruginosa
+SAMN27565698	cefotaxime	third-generation cephalosporin	R	wildtype	high	mexA;blaPDC	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
+SAMN27565698	ceftazidime	third-generation cephalosporin	I	wildtype	high	mexA;blaPDC	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
+SAMN27565698	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC	-	-	PSA0039	-	s__Pseudomonas aeruginosa
+SAMN30618011	kanamycin	-	R	wildtype	high	aph(3')-IIb;mexX	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
+SAMN30618011	amikacin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0001	-	s__Pseudomonas aeruginosa
+SAMN30618011	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
+SAMN30618011	tobramycin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0090	-	s__Pseudomonas aeruginosa
+SAMN30618011	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	mexA;blaPDC-19a	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
+SAMN30618011	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	mexA;blaPDC-19a	-	-	PSA0015;PSA0016	-	s__Pseudomonas aeruginosa
+SAMN30618011	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-19a	PSA0037	-	s__Pseudomonas aeruginosa
+SAMN30618011	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-19a	PSA0038	-	s__Pseudomonas aeruginosa
+SAMN30618011	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	mexA;blaPDC-19a	-	-	PSA0076;PSA0077	-	s__Pseudomonas aeruginosa
+SAMN30618011	ertapenem	carbapenem	R	wildtype	high	mexA	-	-	PSA0056	-	s__Pseudomonas aeruginosa
+SAMN30618011	meropenem	carbapenem	S	wildtype	high	-	-	mexA;blaOXA-488	PSA0064;PSA0065	-	s__Pseudomonas aeruginosa
+SAMN30618011	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexA;mexE	-	-	PSA0092;PSA0095	-	s__Pseudomonas aeruginosa
+SAMN30618011	ciprofloxacin	fluoroquinolone antibiotic	I	wildtype	high	mexA;crpP;mexE	-	-	PSA0049;PSA0052;PSA0053	-	s__Pseudomonas aeruginosa
+SAMN30618011	levofloxacin	fluoroquinolone antibiotic	I	wildtype	high	crpP	-	-	PSA0063	-	s__Pseudomonas aeruginosa
+SAMN30618011	norfloxacin	fluoroquinolone antibiotic	R	wildtype	high	mexA	-	-	PSA0069	-	s__Pseudomonas aeruginosa
+SAMN30618011	cefepime	fourth-generation cephalosporin	I	wildtype	high	mexA;blaPDC-19a;mexX	-	-	PSA0023;PSA0024;PSA0026	-	s__Pseudomonas aeruginosa
+SAMN30618011	tigecycline	glycylcycline	R	wildtype	high	mexX	-	-	PSA0088	-	s__Pseudomonas aeruginosa
+SAMN30618011	aztreonam	monobactam	I	wildtype	high	mexA;blaPDC-19a	-	-	PSA0019;PSA0020	-	s__Pseudomonas aeruginosa
+SAMN30618011	amoxicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-19a	-	-	PSA0003;PSA0004	-	s__Pseudomonas aeruginosa
+SAMN30618011	ampicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-19a	-	-	PSA0011;PSA0012	-	s__Pseudomonas aeruginosa
+SAMN30618011	piperacillin	penicillin beta-lactam	I	wildtype	high	mexA;blaPDC-19a	-	-	PSA0072;PSA0073	-	s__Pseudomonas aeruginosa
+SAMN30618011	chloramphenicol	phenicol antibiotic	R	wildtype	high	mexA;mexE;catB7;mexX	-	-	PSA0040;PSA0041;PSA0043;PSA0046	-	s__Pseudomonas aeruginosa
+SAMN30618011	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
+SAMN30618011	colistin	polymyxin antibiotic	-	-	none	-	pmrB:p.Val15Ile	-	-	-	s__Pseudomonas aeruginosa
+SAMN30618011	sulfamethoxazole	sulfonamide antibiotic	R	wildtype	high	mexA	-	-	PSA0080	-	s__Pseudomonas aeruginosa
+SAMN30618011	tetracycline	tetracycline antibiotic	R	wildtype	high	mexA;mexX	-	-	PSA0084;PSA0086	-	s__Pseudomonas aeruginosa
+SAMN30618011	cefotaxime	third-generation cephalosporin	R	wildtype	high	mexA;blaPDC-19a	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
+SAMN30618011	ceftazidime	third-generation cephalosporin	I	wildtype	high	mexA;blaPDC-19a	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
+SAMN30618011	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-19a	-	-	PSA0039	-	s__Pseudomonas aeruginosa
+SAMN31427853	kanamycin	-	R	wildtype	high	aph(3')-IIb;mexX	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
+SAMN31427853	amikacin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0001	-	s__Pseudomonas aeruginosa
+SAMN31427853	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
+SAMN31427853	tobramycin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0090	-	s__Pseudomonas aeruginosa
+SAMN31427853	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	mexA;blaPDC-31	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
+SAMN31427853	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	mexA;blaPDC-31	-	-	PSA0015;PSA0016	-	s__Pseudomonas aeruginosa
+SAMN31427853	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-31	PSA0037	-	s__Pseudomonas aeruginosa
+SAMN31427853	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-31	PSA0038	-	s__Pseudomonas aeruginosa
+SAMN31427853	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	mexA;blaPDC-31	-	-	PSA0076;PSA0077	-	s__Pseudomonas aeruginosa
+SAMN31427853	(all)	carbapenem	-	-	none	-	oprD:p.Val359Leu	-	-	-	s__Pseudomonas aeruginosa
+SAMN31427853	ertapenem	carbapenem	R	-	none	mexA	oprD:p.Val359Leu	-	PSA0056	-	s__Pseudomonas aeruginosa
+SAMN31427853	meropenem	carbapenem	-	-	none	-	oprD:p.Val359Leu	mexA;blaOXA-50	PSA0064;PSA0065	-	s__Pseudomonas aeruginosa
+SAMN31427853	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexA;mexE	-	-	PSA0092;PSA0095	-	s__Pseudomonas aeruginosa
+SAMN31427853	ciprofloxacin	fluoroquinolone antibiotic	I	wildtype	high	mexA;mexE	-	-	PSA0049;PSA0053	-	s__Pseudomonas aeruginosa
+SAMN31427853	norfloxacin	fluoroquinolone antibiotic	R	wildtype	high	mexA	-	-	PSA0069	-	s__Pseudomonas aeruginosa
+SAMN31427853	cefepime	fourth-generation cephalosporin	I	wildtype	high	mexA;blaPDC-31;mexX	-	-	PSA0023;PSA0024;PSA0026	-	s__Pseudomonas aeruginosa
+SAMN31427853	tigecycline	glycylcycline	R	wildtype	high	mexX	-	-	PSA0088	-	s__Pseudomonas aeruginosa
+SAMN31427853	aztreonam	monobactam	I	wildtype	high	mexA;blaPDC-31	-	-	PSA0019;PSA0020	-	s__Pseudomonas aeruginosa
+SAMN31427853	amoxicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-31	-	-	PSA0003;PSA0004	-	s__Pseudomonas aeruginosa
+SAMN31427853	ampicillin	penicillin beta-lactam	R	wildtype	high	mexA;blaPDC-31	-	-	PSA0011;PSA0012	-	s__Pseudomonas aeruginosa
+SAMN31427853	piperacillin	penicillin beta-lactam	I	wildtype	high	mexA;blaPDC-31	-	-	PSA0072;PSA0073	-	s__Pseudomonas aeruginosa
+SAMN31427853	chloramphenicol	phenicol antibiotic	R	wildtype	high	catB7;mexA;mexE;mexX	-	-	PSA0040;PSA0041;PSA0043;PSA0046	-	s__Pseudomonas aeruginosa
+SAMN31427853	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA	PSA0059	-	s__Pseudomonas aeruginosa
+SAMN31427853	sulfamethoxazole	sulfonamide antibiotic	R	wildtype	high	mexA	-	-	PSA0080	-	s__Pseudomonas aeruginosa
+SAMN31427853	tetracycline	tetracycline antibiotic	R	wildtype	high	mexA;mexX	-	-	PSA0084;PSA0086	-	s__Pseudomonas aeruginosa
+SAMN31427853	cefotaxime	third-generation cephalosporin	R	wildtype	high	mexA;blaPDC-31	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
+SAMN31427853	ceftazidime	third-generation cephalosporin	I	wildtype	high	mexA;blaPDC-31	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
+SAMN31427853	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-31	-	-	PSA0039	-	s__Pseudomonas aeruginosa

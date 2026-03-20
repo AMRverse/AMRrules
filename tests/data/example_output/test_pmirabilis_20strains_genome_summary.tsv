@@ -1,15 +1,108 @@
 sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
-SAMD00501075	streptomycin	aminoglycoside antibiotic	-	-	none	-	aph(6)-Id	-	-	-	s__Proteus mirabilis
-SAMN33392444	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Il	-	-	-	s__Proteus mirabilis
-SAMN33392444	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Il	-	-	-	s__Proteus mirabilis
-SAMN33392444	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Il	-	-	-	s__Proteus mirabilis
-SAMN16982505	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA2	-	-	-	s__Proteus mirabilis
-SAMN27518676	(all)	third-generation cephalosporin 	-	-	none	-	blaCTX-M-15	-	-	-	s__Proteus mirabilis
-SAMN10038486	streptomycin	aminoglycoside antibiotic	-	-	none	-	aph(3'')-Ib	-	-	-	s__Proteus mirabilis
-SAMEA7698122	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	-	s__Proteus mirabilis
-SAMN11335431	(all)	sulfonamide antibiotic	-	-	none	-	sul2	-	-	-	s__Proteus mirabilis
-SAMEA5698495	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IId	-	-	-	s__Proteus mirabilis
-SAMN11567706	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA17	-	-	-	s__Proteus mirabilis
-SAMN12342775	-	-	-	-	-	-	sul2:-	-	none (partial hits)	-	s__Proteus mirabilis
-SAMEA10742109	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	-	-	s__Proteus mirabilis
-SAMN16982514	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	-	s__Proteus mirabilis
+SAMEA3107662	gentamicin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	-	-	s__Proteus mirabilis
+SAMEA3107662	kanamycin A	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia;aph(3')-Ia	-	-	-	s__Proteus mirabilis
+SAMEA3107662	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA3;aadA1	-	-	-	s__Proteus mirabilis
+SAMEA3107662	tobramycin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	-	-	s__Proteus mirabilis
+SAMEA3107662	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	-	-	s__Proteus mirabilis
+SAMEA3107662	(all)	penicillin beta-lactam	-	-	none	-	blaTEM-1	-	-	-	s__Proteus mirabilis
+SAMEA3107662	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	-	s__Proteus mirabilis
+SAMEA3107662	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	-	-	s__Proteus mirabilis
+SAMEA3107662	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	-	s__Proteus mirabilis
+SAMEA3107662	(all)	third-generation cephalosporin 	-	-	none	-	blaCMY-2	-	-	-	s__Proteus mirabilis
+SAMEA3107662	-	-	-	-	-	-	sat2:-	-	none (partial hits)	-	s__Proteus mirabilis
+SAMEA3319395	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	-	s__Proteus mirabilis
+SAMEA3319395	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	-	s__Proteus mirabilis
+SAMEA5206468	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	-	s__Proteus mirabilis
+SAMEA5206468	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	-	s__Proteus mirabilis
+SAMEA5206485	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Proteus mirabilis
+SAMEA5206485	apramycin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IVa	-	-	-	s__Proteus mirabilis
+SAMEA5206485	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IVa;aac(3)-IId	-	-	-	s__Proteus mirabilis
+SAMEA5206485	hygromycin B	aminoglycoside antibiotic	-	-	none	-	aph(4)-Ia	-	-	-	s__Proteus mirabilis
+SAMEA5206485	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Proteus mirabilis
+SAMEA5206485	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA2;aph(3'')-Ib;aph(6)-Id	-	-	-	s__Proteus mirabilis
+SAMEA5206485	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IVa;aac(6')-Ib-cr5	-	-	-	s__Proteus mirabilis
+SAMEA5206485	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA12	-	-	-	s__Proteus mirabilis
+SAMEA5206485	(all)	fluoroquinolone antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	-	-	s__Proteus mirabilis
+SAMEA5206485	azithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Proteus mirabilis
+SAMEA5206485	erythromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Proteus mirabilis
+SAMEA5206485	spiramycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Proteus mirabilis
+SAMEA5206485	telithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	-	-	s__Proteus mirabilis
+SAMEA5206485	(all)	penicillin beta-lactam	-	-	none	-	blaTEM-1	-	-	-	s__Proteus mirabilis
+SAMEA5206485	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA;catA1	PRM0002	-	s__Proteus mirabilis
+SAMEA5206485	(all)	rifamycin antibiotic	-	-	none	-	arr-3	-	-	-	s__Proteus mirabilis
+SAMEA5206485	(all)	sulfonamide antibiotic	-	-	none	-	sul2;sul1	-	-	-	s__Proteus mirabilis
+SAMEA5206485	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	-	s__Proteus mirabilis
+SAMEA6657461	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IIe	-	-	-	s__Proteus mirabilis
+SAMEA6657461	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1;aph(6)-Id;aph(3'')-Ib	-	-	-	s__Proteus mirabilis
+SAMEA6657461	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	-	-	s__Proteus mirabilis
+SAMEA6657461	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	-	-	s__Proteus mirabilis
+SAMEA6657461	(all)	penicillin beta-lactam	-	-	none	-	blaSCO-1;blaTEM-1	-	-	-	s__Proteus mirabilis
+SAMEA6657461	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA;catA1	PRM0002	-	s__Proteus mirabilis
+SAMEA6657461	(all)	sulfonamide antibiotic	-	-	none	-	sul2	-	-	-	s__Proteus mirabilis
+SAMEA6657461	tetracycline	tetracycline antibiotic	R	-	none	tet(J)	tet(A)	-	PRM0001	-	s__Proteus mirabilis
+SAMEA7609566	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	-	s__Proteus mirabilis
+SAMN02846829	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	-	s__Proteus mirabilis
+SAMN02846829	tetracycline	tetracycline antibiotic	-	-	none	-	tet(B)	-	-	-	s__Proteus mirabilis
+SAMN04014900	gentamicin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	-	-	s__Proteus mirabilis
+SAMN04014900	kanamycin A	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia;aph(3')-Ia	-	-	-	s__Proteus mirabilis
+SAMN04014900	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA2;aadA1	-	-	-	s__Proteus mirabilis
+SAMN04014900	tobramycin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	-	-	s__Proteus mirabilis
+SAMN04014900	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	-	-	s__Proteus mirabilis
+SAMN04014900	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	-	-	s__Proteus mirabilis
+SAMN04014900	(all)	penicillin beta-lactam	-	-	none	-	blaTEM-1	-	-	-	s__Proteus mirabilis
+SAMN04014900	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	-	s__Proteus mirabilis
+SAMN04014900	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	-	-	s__Proteus mirabilis
+SAMN04014900	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	-	s__Proteus mirabilis
+SAMN06220531	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	-	s__Proteus mirabilis
+SAMN06220531	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	-	s__Proteus mirabilis
+SAMN10038488	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1;aph(6)-Id;aph(3'')-Ib	-	-	-	s__Proteus mirabilis
+SAMN10038488	(all)	carbapenem	-	-	none	-	blaOXA-23	-	-	-	s__Proteus mirabilis
+SAMN10038488	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	-	-	s__Proteus mirabilis
+SAMN10038488	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	-	-	s__Proteus mirabilis
+SAMN10038488	chloramphenicol	phenicol antibiotic	-	-	none	-	floR	catA	PRM0002	-	s__Proteus mirabilis
+SAMN10038488	florfenicol	phenicol antibiotic	-	-	none	-	floR	-	-	-	s__Proteus mirabilis
+SAMN10038488	(all)	sulfonamide antibiotic	-	-	none	-	sul2	-	-	-	s__Proteus mirabilis
+SAMN10038488	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	-	s__Proteus mirabilis
+SAMN10435814	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1	-	-	-	s__Proteus mirabilis
+SAMN10435814	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	-	-	s__Proteus mirabilis
+SAMN10435814	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	-	-	s__Proteus mirabilis
+SAMN10435814	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	-	s__Proteus mirabilis
+SAMN10435814	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	-	s__Proteus mirabilis
+SAMN11285125	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	-	s__Proteus mirabilis
+SAMN11285125	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	-	s__Proteus mirabilis
+SAMN12220730	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	-	s__Proteus mirabilis
+SAMN12220730	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	-	s__Proteus mirabilis
+SAMN13936255	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1	-	-	-	s__Proteus mirabilis
+SAMN13936255	(all)	carbapenem	-	-	none	-	blaIMP-27	-	-	-	s__Proteus mirabilis
+SAMN13936255	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	-	-	s__Proteus mirabilis
+SAMN13936255	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	-	s__Proteus mirabilis
+SAMN13936255	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	-	s__Proteus mirabilis
+SAMN14589628	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib	-	-	-	s__Proteus mirabilis
+SAMN14589628	gentamicin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	-	-	s__Proteus mirabilis
+SAMN14589628	kanamycin A	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia;aac(6')-Ib;aph(3')-Ia	-	-	-	s__Proteus mirabilis
+SAMN14589628	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1	-	-	-	s__Proteus mirabilis
+SAMN14589628	tobramycin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia;aac(6')-Ib	-	-	-	s__Proteus mirabilis
+SAMN14589628	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	-	-	s__Proteus mirabilis
+SAMN14589628	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	-	-	s__Proteus mirabilis
+SAMN14589628	(all)	penicillin beta-lactam	-	-	none	-	blaTEM-1	-	-	-	s__Proteus mirabilis
+SAMN14589628	chloramphenicol	phenicol antibiotic	-	-	none	-	cmlA5	catA;catA1	PRM0002	-	s__Proteus mirabilis
+SAMN14589628	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	-	s__Proteus mirabilis
+SAMN16088468	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1;aph(3'')-Ib;aph(6)-Id	-	-	-	s__Proteus mirabilis
+SAMN16088468	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	-	-	s__Proteus mirabilis
+SAMN16088468	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	-	-	s__Proteus mirabilis
+SAMN16088468	chloramphenicol	phenicol antibiotic	-	-	none	-	floR	catA	PRM0002	-	s__Proteus mirabilis
+SAMN16088468	florfenicol	phenicol antibiotic	-	-	none	-	floR	-	-	-	s__Proteus mirabilis
+SAMN16088468	(all)	sulfonamide antibiotic	-	-	none	-	sul2	-	-	-	s__Proteus mirabilis
+SAMN16088468	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	-	s__Proteus mirabilis
+SAMN16982445	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	-	s__Proteus mirabilis
+SAMN16982445	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	-	s__Proteus mirabilis
+SAMN16982504	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	-	s__Proteus mirabilis
+SAMN16982504	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	-	s__Proteus mirabilis
+SAMN27518689	(all)	carbapenem	-	-	none	-	blaOXA-48	-	-	-	s__Proteus mirabilis
+SAMN27518689	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	-	s__Proteus mirabilis
+SAMN27518689	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	-	s__Proteus mirabilis
+SAMN27518689	(all)	third-generation cephalosporin 	-	-	none	-	blaCTX-M-15	-	-	-	s__Proteus mirabilis
+SAMN27518699	(all)	carbapenem	-	-	none	-	blaOXA-48	-	-	-	s__Proteus mirabilis
+SAMN27518699	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	-	s__Proteus mirabilis
+SAMN27518699	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	-	s__Proteus mirabilis
+SAMN27518699	(all)	third-generation cephalosporin 	-	-	none	-	blaCTX-M-15	-	-	-	s__Proteus mirabilis

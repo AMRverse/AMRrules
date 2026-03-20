@@ -1,5 +1,43 @@
 sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
-SAMN33434760	chloramphenicol	phenicol antibiotic	S	wildtype	high	-	-	mdsA	SAL0001	-	s__Salmonella enterica
-SAMEA104279888	tetracycline	tetracycline antibiotic	-	-	none	-	tet(A)	-	-	-	s__Salmonella enterica
-SAMN31155088	chloramphenicol	phenicol antibiotic	S	wildtype	high	-	-	mdsA	SAL0001	-	s__Salmonella enterica
-SAMEA5206645	(all)	sulfonamide antibiotic	-	-	none	-	sul2	-	-	-	s__Salmonella enterica
+SAMEA9404266	streptomycin	aminoglycoside antibiotic	-	-	none	-	aph(3'')-Ib;aph(6)-Id	-	-	-	s__Salmonella enterica
+SAMEA9404266	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA7	-	-	-	s__Salmonella enterica
+SAMEA9404266	triclosan	disinfecting agents and antiseptics	-	-	none	-	gyrA:p.Ser83Phe	-	-	-	s__Salmonella enterica
+SAMEA9404266	(all)	fluoroquinolone antibiotic	-	-	none	-	gyrA:p.Ser83Phe	-	-	-	s__Salmonella enterica
+SAMEA9404266	(all)	penicillin beta-lactam	-	-	none	-	blaTEM-1	-	-	-	s__Salmonella enterica
+SAMEA9404266	chloramphenicol	phenicol antibiotic	-	-	none	-	catA1	-	-	-	s__Salmonella enterica
+SAMEA9404266	(all)	sulfonamide antibiotic	-	-	none	-	sul1;sul2	-	-	-	s__Salmonella enterica
+SAMN02847134	chloramphenicol	phenicol antibiotic	S	wildtype	high	-	-	mdsA;mdsB	SAL0001;SAL0002	-	s__Salmonella enterica
+SAMN02847134	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosA7.8	-	-	-	s__Salmonella enterica
+SAMEA104400015	streptomycin	aminoglycoside antibiotic	-	-	none	-	aph(3'')-Ib;aph(6)-Id	-	-	-	s__Salmonella enterica
+SAMEA104400015	(all)	fluoroquinolone antibiotic	-	-	none	-	qnrS1	-	-	-	s__Salmonella enterica
+SAMEA104400015	(all)	penicillin beta-lactam	-	-	none	-	blaTEM-1	-	-	-	s__Salmonella enterica
+SAMEA104400015	chloramphenicol	phenicol antibiotic	-	-	none	-	floR	mdsB;mdsA	SAL0001;SAL0002	-	s__Salmonella enterica
+SAMEA104400015	florfenicol	phenicol antibiotic	-	-	none	-	floR	-	-	-	s__Salmonella enterica
+SAMEA104400015	(all)	sulfonamide antibiotic	-	-	none	-	sul2	-	-	-	s__Salmonella enterica
+SAMEA104400015	tetracycline	tetracycline antibiotic	-	-	none	-	tet(A)	-	-	-	s__Salmonella enterica
+SAMN06434369	chloramphenicol	phenicol antibiotic	S	wildtype	high	-	-	mdsA;mdsB	SAL0001;SAL0002	-	s__Salmonella enterica
+SAMN06434369	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosA7.2	-	-	-	s__Salmonella enterica
+SAMN06678393	chloramphenicol	phenicol antibiotic	S	wildtype	high	-	-	mdsB;mdsA	SAL0001;SAL0002	-	s__Salmonella enterica
+SAMN07245526	chloramphenicol	phenicol antibiotic	S	wildtype	high	-	-	mdsA;mdsB	SAL0001;SAL0002	-	s__Salmonella enterica
+SAMN10276834	streptomycin	aminoglycoside antibiotic	-	-	none	-	aph(3'')-Ib;aph(6)-Id	-	-	-	s__Salmonella enterica
+SAMN10276834	chloramphenicol	phenicol antibiotic	-	-	none	-	floR	mdsB;mdsA	SAL0001;SAL0002	-	s__Salmonella enterica
+SAMN10276834	florfenicol	phenicol antibiotic	-	-	none	-	floR	-	-	-	s__Salmonella enterica
+SAMN10276834	(all)	sulfonamide antibiotic	-	-	none	-	sul2	-	-	-	s__Salmonella enterica
+SAMN10276834	tetracycline	tetracycline antibiotic	-	-	none	-	tet(A)	-	-	-	s__Salmonella enterica
+SAMN10276834	(all)	third-generation cephalosporin 	-	-	none	-	blaCMY-2	-	-	-	s__Salmonella enterica
+SAMN10424721	chloramphenicol	phenicol antibiotic	S	wildtype	high	-	-	mdsB	SAL0002	-	s__Salmonella enterica
+SAMN10424721	-	-	-	-	-	-	mdsA:-	-	none (partial hits)	-	s__Salmonella enterica
+SAMN10460661	chloramphenicol	phenicol antibiotic	S	wildtype	high	-	-	mdsA;mdsB	SAL0001;SAL0002	-	s__Salmonella enterica
+SAMN13900535	chloramphenicol	phenicol antibiotic	S	wildtype	high	-	-	mdsA;mdsB	SAL0001;SAL0002	-	s__Salmonella enterica
+SAMN13900535	-	-	-	-	-	-	fosA7:-	-	none (partial hits)	-	s__Salmonella enterica
+SAMN14271529	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1	-	-	-	s__Salmonella enterica
+SAMN14271529	chloramphenicol	phenicol antibiotic	S	wildtype	high	-	-	mdsA;mdsB	SAL0001;SAL0002	-	s__Salmonella enterica
+SAMN14271529	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	-	-	s__Salmonella enterica
+SAMN15340037	chloramphenicol	phenicol antibiotic	S	wildtype	high	-	-	mdsA;mdsB	SAL0001;SAL0002	-	s__Salmonella enterica
+SAMN15520905	chloramphenicol	phenicol antibiotic	S	wildtype	high	-	-	mdsB;mdsA	SAL0001;SAL0002	-	s__Salmonella enterica
+SAMN15520905	-	-	-	-	-	-	fosA7:-	-	none (partial hits)	-	s__Salmonella enterica
+SAMN16729434	chloramphenicol	phenicol antibiotic	S	wildtype	high	-	-	mdsA;mdsB	SAL0001;SAL0002	-	s__Salmonella enterica
+SAMN20084449	chloramphenicol	phenicol antibiotic	S	wildtype	high	-	-	mdsB;mdsA	SAL0001;SAL0002	-	s__Salmonella enterica
+SAMN21850625	chloramphenicol	phenicol antibiotic	S	wildtype	high	-	-	mdsA;mdsB	SAL0001;SAL0002	-	s__Salmonella enterica
+SAMN22243449	chloramphenicol	phenicol antibiotic	S	wildtype	high	-	-	mdsA;mdsB	SAL0001;SAL0002	-	s__Salmonella enterica
+SAMN30809923	chloramphenicol	phenicol antibiotic	S	wildtype	high	-	-	mdsA;mdsB	SAL0001;SAL0002	-	s__Salmonella enterica
