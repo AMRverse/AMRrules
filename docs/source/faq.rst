@@ -26,6 +26,14 @@ FAQ
 
    If you think there is an error in a rule, we encourage you to first search our `GitHub issues page <https://github.com/AMRverse/AMRrules/issues>`__ to see if this rule is being discussed by others. If not, then please `post an issue <https://github.com/AMRverse/AMRrules/issues/new>`__ describing your concerns about the rule. Alternatively, you can also email us at esgem-amr [at] gmail [dot] com.
 
+.. dropdown:: Why are there so few rules for species X? Most of the genes in my genomes do not seem to have rules.
+
+   AMRrules v1.0 prioritised defining rules for interpreting the presence of core genes, because these are a source of much confusion as AMRFinderplus reports their presence but only ~half the time is this indicative of resistance, and it is challenging for those not familiar with the organism to know the relevance of such genes. Also, rules for these can be reasonably well defined based on evidence from existing literature, without the need for large-scale geno-pheno datasets.
+
+For some organisms, AMRrules v1.0 also contains rules for interpreting acquired genes and mutations, which the ESGEM-AMR working group was confident to define from evidence in the literature. With the exception of N. gonorrhoeae, these are generally not complete rule sets, and will be expanded in AMRrules v2.0 (which is under active development by ESGEM-AMR).
+
+AMRrules v2.0 will aim to include rules for all markers reported by AMRFinderPlus, in all supported organisms. This will be based on large-scale geno-pheno datasets as well as expert curation of evidence from the literature.
+
 .. dropdown:: I don't know the species of my genome, what do I do?
 
    AMRrules interprets genotypes in an organism-specific manner, and so an organism is required for the engine to know what rules to apply. There are many methods you can use for determining the species of your genome. You could try uploading the genome to `PathogenWatch <https://pathogen.watch>`__ or using their `Speciator <https://github.com/pathogenwatch-oss/speciator>`__ tool to detect the species, or using tools provided by `GTDB <https://gtdb.ecogenomic.org/>`__.
