@@ -34,7 +34,7 @@ FAQ
 
 .. dropdown:: I don't know the species of my genome, what do I do?
 
-   AMRrules interprets genotypes in an organism-specific manner, and so an organism is required for the engine to know what rules to apply. There are many methods you can use for determining the species of your genome. You could try uploading the genome to `PathogenWatch <https://pathogen.watch>`__ to detect the species, or using tools provided by `GTDB <https://gtdb.ecogenomic.org/>`__.
+   AMRrules interprets genotypes in an organism-specific manner, and so an organism is required for the engine to know what rules to apply. There are many methods you can use for determining the species of your genome. You could try uploading the genome to `PathogenWatch <https://pathogen.watch>`__ or using their `Speciator <https://github.com/pathogenwatch-oss/speciator>`__ tool to detect the species, or using tools provided by `GTDB <https://gtdb.ecogenomic.org/>`__.
 
 .. dropdown:: I have a lot of partial hits in my result file, what does this mean?
 
