@@ -85,7 +85,7 @@ jobs:
           amrrules --input tests/data/input/test_koxycomplex_20strains.tsv --output-prefix test_koxy_complex_20strains --organism-file tests/data/input/test_koxycomplex_20strains_species.tsv --output-dir tests/data/example_output
 
           # 20 Mycobacterium TB strains
-          amrrules --input tests/data/input/test_mtb_20strains.tsv --output-prefix test_mtb_20strains --organism 's__Mycobacterium tuberculosis' --output-dir tests/data/example_output
+          amrrules --input tests/data/input/test_mycotb_20strains.tsv --output-prefix test_mycotb_20strains --organism 's__Mycobacterium tuberculosis' --output-dir tests/data/example_output
 
           # 20 Neisseria gonorrhoeae strains
           amrrules --input tests/data/input/test_ngono_20strains.tsv --output-prefix test_ngono_20strains --organism 's__Neisseria gonorrhoeae' --output-dir tests/data/example_output
