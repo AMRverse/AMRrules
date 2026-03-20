@@ -12,6 +12,7 @@ def run(args):
 
     # extract all the rules relevant to the organisms we're processing
     if args.organism_file:
+        print("\nLoading organism assignments...")
         organism_dict, skipped_samples = get_organisms(args.organism_file)
         samples_with_org = set(organism_dict.keys())
     else:
@@ -23,6 +24,7 @@ def run(args):
         try:
             # then we need to grab the refgene heirarchy direct from the ncbi website (get latest for now)
             #TODO: user specifies version of amrfp database they used, or we extract this from hamronized file
+            print("\nLoading AMRFinderPlus reference data...")
             amrfp_nodes = rm().refseq_nodes()
             # check the input file has the Hierarchy node column, and if an organism file is included, that the first column is Name
             samples_to_parse = validate_amrfp_file(args.input, multi_entry=bool(args.organism_file))
@@ -60,6 +62,7 @@ def run(args):
                 rule_files.add(rules_filename)
 
     # parse the rule files
+    print("\nParsing rule files...")
     rules = parse_rules_file(rule_files)
 
     matched_hits = {}
@@ -67,6 +70,7 @@ def run(args):
     genotype_rows = []
     # now it's time to parse the input file, which we have validated to check that it has
     # the columns we need. Each row will be parsed into an InputRow object
+    print("\nMatching markers to rules...")
     with open_input(args.input) as f:
         reader = csv.DictReader(f, delimiter='\t')
         base_fieldnames = reader.fieldnames.copy()
@@ -110,7 +114,7 @@ def run(args):
             genotype_output_rows.extend(g.annotated_row)
 
     # now write out the interpreted genotype report, which annotates each row with the rule info
-    write_genotype_report(args, genotype_output_rows, unmatched_hits, matched_hits, base_fieldnames)
+    genotype_output_file = write_genotype_report(args, genotype_output_rows, unmatched_hits, matched_hits, base_fieldnames)
 
     # we now want to create one object per rule/AMRFP subclass, so that we can summarise by drug or drug class.
     genotype_objects = []
@@ -141,8 +145,24 @@ def run(args):
 
     summary_entry_dict = create_summary_dict(grouped_by_sample, rules, args.flag_core, args.no_rule_interpretation)
     
-    write_genome_report(summary_entry_dict, args.output_dir, args.output_prefix)
-    print(f"{len(grouped_by_sample)} sample(s) processed.")
+    summary_output_file = write_genome_report(summary_entry_dict, args.output_dir, args.output_prefix)
+
+    # print summary stats block
+    print("\nAMRrules complete.")
+    num_skipped = len(skipped_samples) if skipped_samples is not None else 0
+    ruler = "\u2500" * 52
+    print()
+    print(ruler)
+    print(f"  \033[1;38;2;255;140;0mRun summary\033[0m")
+    print(f"  Samples processed : {len(grouped_by_sample)}")
+    print(f"  Samples skipped   : {num_skipped}")
+    print(f"  Markers matched   : {len(matched_hits)}")
+    print(f"  Markers unmatched : {len(unmatched_hits)}")
+    print()
+    print(f"  \033[1;32mOutput files\033[0m")
+    print(f"  Interpreted genotype report   : {genotype_output_file}")
+    print(f"  Genome summary report         : {summary_output_file}")
+    print(ruler)
 
 
 def download_resources():

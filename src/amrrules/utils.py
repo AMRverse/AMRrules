@@ -94,7 +94,7 @@ def check_sample_ids(samples_with_org, samples_in_input, skipped_samples):
     return True
 
 def _simple_warning(message, category, filename, lineno, file=None, line=None):
-    msg = f"\033[1;31mWarning:\033[0m {message}\n"
+    msg = f"\n\033[1;31mWarning:\033[0m {message}\n"
     #sys.stderr.write(msg)
     sys.stdout.write(msg)
 

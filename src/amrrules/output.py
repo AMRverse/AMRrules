@@ -17,10 +17,7 @@ def write_genotype_report(args, output_rows, unmatched_hits, matched_hits, base_
         writer = csv.DictWriter(f, fieldnames=base_fieldnames + interpreted_output_cols, delimiter='\t')
         writer.writeheader()
         writer.writerows(output_rows)
-    print()
-    print(f"{len(matched_hits)} markers matched to rules.")
-    print(f"{len(unmatched_hits)} markers did not match to a rule.")
-    print(f"\033[1;32mInterpreted output:\033[0m {interpreted_output_file}.")
+    return interpreted_output_file
 
 
 def write_genome_report(summary_entry_dict, out_dir, out_prefix):
@@ -53,4 +50,4 @@ def write_genome_report(summary_entry_dict, out_dir, out_prefix):
             rows = [{csv_header[i]: getattr(o, attr, '-') for i, attr in enumerate(summary_output_header)} for o in objs]
             writer.writerows(rows)
     
-    print(f"\033[1;32mSummary output:\033[0m {summary_output_file}.")
+    return summary_output_file
