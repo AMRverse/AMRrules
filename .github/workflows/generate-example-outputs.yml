@@ -84,6 +84,27 @@ jobs:
           # 20 K oxytoca complex strains
           amrrules --input tests/data/input/test_koxycomplex_20strains.tsv --output-prefix test_koxy_complex_20strains --organism-file tests/data/input/test_koxycomplex_20strains_species.tsv --output-dir tests/data/example_output
 
+          # 20 Mycobacterium TB strains
+          amrrules --input tests/data/input/test_mtb_20strains.tsv --output-prefix test_mtb_20strains --organism 's__Mycobacterium tuberculosis' --output-dir tests/data/example_output
+
+          # 20 Neisseria gonorrhoeae strains
+          amrrules --input tests/data/input/test_ngono_20strains.tsv --output-prefix test_ngono_20strains --organism 's__Neisseria gonorrhoeae' --output-dir tests/data/example_output
+
+          # 20 Neisseria meningitidis strains
+          amrrules --input tests/data/input/test_nmeningitidis_20strains.tsv --output-prefix test_nmeningitidis_20strains --organism 's__Neisseria meningitidis' --output-dir tests/data/example_output
+
+          # 20 P aeruginosa strains
+          amrrules --input tests/data/input/test_pseud_20strains.tsv --output-prefix test_pseud_20strains --organism 's__Pseudomonas aeruginosa' --output-dir tests/data/example_output
+
+          # 20 Proteus mirabilis strains
+          amrrules --input tests/data/input/test_pmirabilis_20strains.tsv --output-prefix test_pmirabilis_20strains --organism 's__Proteus mirabilis' --output-dir tests/data/example_output
+
+          # 20 Salmonella enterica strains
+          amrrules --input tests/data/input/test_senterica_20strains.tsv --output-prefix test_senterica_20strains --organism 's__Salmonella enterica' --output-dir tests/data/example_output
+
+          # 20 Shewanella strains
+          amrrules --input tests/data/input/test_shewanella_20strains.tsv --output-prefix test_shewanella_20strains --organism 's__Shewanella algae' --output-dir tests/data/example_output
+
           # 20 Acinetobacter strains
           amrrules --input tests/data/input/test_abaumannii_20strains.tsv --output-prefix test_abaumannii_20strains_none --organism 's__Acinetobacter baumannii' --output-dir tests/data/example_output -nr none
 
