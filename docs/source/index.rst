@@ -9,6 +9,7 @@
    specification
    faq
    tests
+   planned
 
 
 **************************
