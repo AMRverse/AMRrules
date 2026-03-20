@@ -148,7 +148,6 @@ def run(args):
     summary_output_file = write_genome_report(summary_entry_dict, args.output_dir, args.output_prefix)
 
     # print summary stats block
-    print("\nAMRrules complete.")
     num_skipped = len(skipped_samples) if skipped_samples is not None else 0
     ruler = "\u2500" * 52
     print()
@@ -163,6 +162,7 @@ def run(args):
     print(f"  Interpreted genotype report   : {genotype_output_file}")
     print(f"  Genome summary report         : {summary_output_file}")
     print(ruler)
+    print("\nAMRrules complete.")
 
 
 def download_resources():
