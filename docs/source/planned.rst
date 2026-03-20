@@ -11,10 +11,9 @@ Rules
 
 * Expand rules to include all markers reported by `AMRFinderPlus <https://www.ncbi.nlm.nih.gov/pathogens/antimicrobial-resistance/AMRFinder/>`_ for each supported organism. 
   
-  * Where needed, we will proposed new markers for inclusion in the AMRFinderPlus database
+  * Where needed, we will propose new markers for inclusion in the AMRFinderPlus database
 
 * Rules will be developed to support both `EUCAST <https://www.eucast.org/>`_ and `CLSI <https://clsi.org/>`_ definitions of phenotypes, enabling organism-specific interpretation that aligns with established clinical breakpoint standards from both major guideline bodies.
- 
 
 Specification 
 ~~~~~~~~~~~~~
@@ -29,6 +28,8 @@ Engine
 
   * `CARD <https://card.mcmaster.ca/>`_ (Comprehensive Antibiotic Resistance Database)
   * `ResFinder <https://cge.food.dtu.dk/services/ResFinder/>`_
+
+* Extend guideline support, so users can select which guideline (e.g EUCAST or CLSI) they wish to prioritise for interpretation.
 
 * Some variation types are currently not by the AMRrules interpretation engine, as there are insufficient rules available for thorough testing. Support for the following variant types is planned for future development:
 
