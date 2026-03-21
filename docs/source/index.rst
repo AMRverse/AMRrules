@@ -27,15 +27,15 @@ AMRrules encode organism-specific rules for the interpretation of AMR genotype d
    :alt: Workflow for interpreting AMR genotypes using AMRrules
    :align: center
 
-The AMRrules Python package includes the rules themselves (see `rules/` directory) as well as code to apply the rules to interpret AMR genotypes (currently limited to AMRFinderPlus output), generating informative genome reports that capture expert knowledge about how core and acquired genes and mutations contribute to phenotypic antimicrobial susceptibility. 
+The AMRrules Python package includes the rules themselves as well as code to apply the rules to interpret AMR genotypes (currently limited to AMRFinderPlus output), generating informative genome reports that capture expert knowledge about how core and acquired genes and mutations contribute to phenotypic antimicrobial susceptibility. 
 
 
 Rule curation and development status
 ====================================
 
-Rules are curated by organism experts belonging to `ESGEM-AMR <https://esgem-amr.amrrules.org/>`__, a working group of `ESGEM, the ESCMID Study Group on Epidemiological Markers <https://www.escmid.org/esgem/>`__. Initial rule curation has focused on defining rules for the interpretation of core genes and expected resistances, but acquired genes and mutations are included for some organisms already and will be added to others as the necessary data to define them accurately is accumulated and curated by the ESGEM-AMR working group.
+Rules are curated by organism experts belonging to `ESGEM-AMR <https://esgem-amr.amrrules.org/>`__, a working group of `ESGEM, the ESCMID Study Group on Epidemiological Markers <https://www.escmid.org/esgem/>`__. Initial rule curation has focused on defining rules for the interpretation of core genes and expected resistances, but acquired genes and mutations are included for some organisms already and will be added to others as the necessary data to define them accurately is accumulated and curated by the `ESGEM-AMR <https://esgem-amr.amrrules.org/>`__ working group.
 
-Current rulesets and supported organisms can be found :ref:`here <rules>`.
+Current rulesets and supported organisms can be found :ref:`here <rules>` or can be explored interactively in the `AMRrules Browser <https://browse.amrrules.org/>`__.
 
 The rule specification is available :ref:`here <specification>`.
 
@@ -45,7 +45,7 @@ We are focusing early development on compatibility with NCBI resources (i.e. the
 Citation
 ========
 
-If you use the software, please cite "AMRrules v1.0, URL: `https://github.com/AMRverse/AMRrules <https://github.com/AMRverse/AMRrules>`__ (DOI: 10.5281/zenodo.12724317)".
+If you use the software, please cite "AMRrules v1.0, URL: `https://github.com/AMRverse/AMRrules <https://github.com/AMRverse/AMRrules>`__ (DOI: `https://doi.org/10.5281/zenodo.12724317 <10.5281/zenodo.12724317>`__)".
 
 Contributors
 ============
