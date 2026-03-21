@@ -88,6 +88,8 @@ Genome summary report
 
 In addition to the interpreted AMRFinderPlus output file, AMRrules will also generate a genome summary report, stored as ``<output_prefix>_summary.tsv``. This file summarises the resistance per drug/drug class, based on the matched rules.
 
+Some example output files are shown on the :ref:`installation <check-the-installation>` page.
+
 The following columns are included:
 
 =================== ====================================================================================================
