@@ -30,8 +30,8 @@ AMRrules encode organism-specific rules for the interpretation of AMR genotype d
 The AMRrules Python package includes the rules themselves as well as code to apply the rules to interpret AMR genotypes (currently limited to AMRFinderPlus output), generating informative genome reports that capture expert knowledge about how core and acquired genes and mutations contribute to phenotypic antimicrobial susceptibility. 
 
 
-Rule curation and development status
-====================================
+Rule curation and development
+=============================
 
 Rules are curated by organism experts belonging to `ESGEM-AMR <https://esgem-amr.amrrules.org/>`__, a working group of `ESGEM, the ESCMID Study Group on Epidemiological Markers <https://www.escmid.org/esgem/>`__. Initial rule curation has focused on defining rules for the interpretation of core genes and expected resistances, but acquired genes and mutations are included for some organisms already and will be added to others as the necessary data to define them accurately is accumulated and curated by the `ESGEM-AMR <https://esgem-amr.amrrules.org/>`__ working group.
 
