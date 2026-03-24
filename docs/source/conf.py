@@ -30,7 +30,7 @@ html_theme_options = {
     "navigation_depth": 4,
     "repository_url": "https://github.com/AMRverse/AMRrules/",
     "use_repository_button": True,
-    "use_issues_button": True,
+    "use_issues_button": False,
     "use_edit_page_button": False,
     "path_to_docs": "docs", # Change this if your folder is named 'doc' or similar
     "repository_branch": "main",
