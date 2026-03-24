@@ -46,16 +46,22 @@ More information
 
 An overview of the AMRrules initiative, including aims as well as completed and planned implementation phases, is available in `these slides <https://esgem-amr.amrrules.org/slides/AMRrules_WellcomeAMRConf2026.pdf>`__ presented at the Wellcome AMR Big Data conference in March 2026 .
 
+Citation
+========
+
+If you use the AMRrules software or rules, please cite "AMRrules v1.0, URL: `https://github.com/AMRverse/AMRrules <https://github.com/AMRverse/AMRrules>`__ (DOI: `https://doi.org/10.5281/zenodo.12724317 <10.5281/zenodo.12724317>`__)".
 
 Source code
 ========
 
 Source code is available in the GitHub repository `https://github.com/AMRverse/AMRrules <https://github.com/AMRverse/AMRrules>`__.
 
-Citation
+
+Issues
 ========
 
-If you use the AMRrules software or rules, please cite "AMRrules v1.0, URL: `https://github.com/AMRverse/AMRrules <https://github.com/AMRverse/AMRrules>`__ (DOI: `https://doi.org/10.5281/zenodo.12724317 <10.5281/zenodo.12724317>`__)".
+Bugs? Requests? Feedback? Please check the :ref:`FAQs <faq>` first, and if your issue is not covered then please post an `issue in GitHub <https://github.com/AMRverse/AMRrules/issues>`__.
+
 
 Contributors
 ============
