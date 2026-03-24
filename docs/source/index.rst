@@ -44,7 +44,7 @@ We are focusing early development on compatibility with NCBI resources (i.e. the
 More information
 ========
 
-An overview of the AMRrules initiative, including aims as well as completed and planned implementation phases, is available in `these slides <https://github.com/AMRverse/ESGEM-AMR/blob/main/slides/AMRrules_WellcomeAMRConf2026.pdf>`__ presented at the Wellcome AMR Big Data conference in March 2026 .
+An overview of the AMRrules initiative, including aims as well as completed and planned implementation phases, is available in `these slides <https://esgem-amr.amrrules.org/slides/AMRrules_WellcomeAMRConf2026.pdf>`__ presented at the Wellcome AMR Big Data conference in March 2026 .
 
 
 Source code
