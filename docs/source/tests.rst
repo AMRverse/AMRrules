@@ -6,7 +6,7 @@ Test Data
 Test installation
 =================
 
-To test that AMRrules is installed and working correctly, test data is included inside ``tests/data/input/``. This includes examples of AMRFinderPlus output files for *Escherichia coli* and *Klebsiella pneumoniae* genomes, as well as a multi-species example file.
+To test that AMRrules is installed and working correctly, test data is included inside ``tests/data/input/``. This includes examples of AMRFinderPlus output files for wild-type *Escherichia coli*, *Klebsiella pneumoniae*, and *Pseudomonas aeruginosa* genomes, as well as a multi-species example file.
 
 To run the AMRrules test data, use the following commands:
 
@@ -17,6 +17,9 @@ To run the AMRrules test data, use the following commands:
     
     # test a single wild-type K. pneumoniae genome, and flag core genes in the summary output
     amrrules --input tests/data/input/test_kpneumo_wildtype.tsv --output-prefix test_kpneumo_wildtype --organism 's__Klebsiella pneumoniae' --flag-core
+
+    # test a single wild-type P. aeuruginosa genome, and flag core genes in the summary output
+    amrrules --input tests/data/input/test_paeuriginosa_PAO1_wildtype.tsv --output-prefix test_paeuriginosa_PAO1_wildtype --organism 's__Pseudomonas aeruginosa' --flag-core
 
     # test a multi-genome, multi-species example
     amrrules  --input tests/data/input/test_multispp_amrfp.tsv --output-prefix test_multispp --organism-file tests/data/input/test_multispp_species.tsv

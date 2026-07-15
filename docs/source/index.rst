@@ -30,8 +30,8 @@ AMRrules encode organism-specific rules for the interpretation of AMR genotype d
 The AMRrules Python package includes the rules themselves as well as code to apply the rules to interpret AMR genotypes (currently limited to AMRFinderPlus output), generating informative genome reports that capture expert knowledge about how core and acquired genes and mutations contribute to phenotypic antimicrobial susceptibility. 
 
 
-Rule curation and development status
-====================================
+Rule curation and development
+=============================
 
 Rules are curated by organism experts belonging to `ESGEM-AMR <https://esgem-amr.amrrules.org/>`__, a working group of `ESGEM, the ESCMID Study Group on Epidemiological Markers <https://www.escmid.org/esgem/>`__. Initial rule curation has focused on defining rules for the interpretation of core genes and expected resistances, but acquired genes and mutations are included for some organisms already and will be added to others as the necessary data to define them accurately is accumulated and curated by the `ESGEM-AMR <https://esgem-amr.amrrules.org/>`__ working group.
 
@@ -41,11 +41,27 @@ The rule specification is available :ref:`here <specification>`.
 
 We are focusing early development on compatibility with NCBI resources (i.e. the `AMRFinderPlus <https://www.ncbi.nlm.nih.gov/pathogens/antimicrobial-resistance/AMRFinder/>`__ genotyping tool, and the associated NCBI databases including `AMR refgene <https://www.ncbi.nlm.nih.gov/pathogens/refgene/>`__, `AMR Reference Gene Hierarchy <https://www.ncbi.nlm.nih.gov/pathogens/genehierarchy>`__, and the `Reference HMM Catalog <https://www.ncbi.nlm.nih.gov/pathogens/hmm/>`__). In future we plan for interoperability with `CARD <https://card.mcmaster.ca/>`__ and `ResFinder <http://genepi.food.dtu.dk/resfinder>`__ (and other tools based on these), using `hAMRonization <https://github.com/pha4ge/hAMRonization>`__.
 
+More information
+========
+
+An overview of the AMRrules initiative, including aims as well as completed and planned implementation phases, is available in `these slides <https://esgem-amr.amrrules.org/slides/AMRrules_WellcomeAMRConf2026.pdf>`__ presented at the Wellcome AMR Big Data conference in March 2026 .
 
 Citation
 ========
 
-If you use the software, please cite "AMRrules v1.0, URL: `https://github.com/AMRverse/AMRrules <https://github.com/AMRverse/AMRrules>`__ (DOI: `https://doi.org/10.5281/zenodo.12724317 <10.5281/zenodo.12724317>`__)".
+If you use the AMRrules software or rules, please cite "AMRrules v1.0, URL: `https://github.com/AMRverse/AMRrules <https://github.com/AMRverse/AMRrules>`__ (DOI: `https://doi.org/10.5281/zenodo.12724317 <10.5281/zenodo.12724317>`__)".
+
+Source code
+========
+
+Source code is available in the GitHub repository `https://github.com/AMRverse/AMRrules <https://github.com/AMRverse/AMRrules>`__.
+
+
+Issues
+========
+
+Bugs? Requests? Feedback? Please check the :ref:`FAQs <faq>` first, and if your issue is not covered then please post an `issue in GitHub <https://github.com/AMRverse/AMRrules/issues>`__.
+
 
 Contributors
 ============

@@ -14,10 +14,10 @@ Download and install AMRrules
 Currently, AMRrules is only available for installation via source. We recommend you set up a new conda environment. ::
 
     # create your conda environment
-    conda create -n amrrules_beta -c bioconda python=3.12 pip
-    conda activate amrrules_beta
+    conda create -n amrrules -c bioconda python=3.12 pip
+    conda activate amrrules
 
-    # clone the repository, switch to the development branch
+    # clone the repository
     git clone https://github.com/AMRverse/AMRrules
     cd AMRrules
 

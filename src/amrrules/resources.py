@@ -4,6 +4,7 @@ import csv
 import urllib.request
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
+import re
 import obonet
 import tempfile
 import tarfile
@@ -255,6 +256,15 @@ class ResourceManager:
     
     def _extract_card_drugs(self, obo_file_path: str, categories_file_path: str) -> List[Tuple[str, str, str]]:
         """Extract drug names and classes from CARD ontology files."""
+        def _extract_quoted_synonyms(synonym_entries: List[str]) -> List[str]:
+            """Extract synonym text from OBO synonym entries."""
+            extracted = []
+            for entry in synonym_entries:
+                match = re.search(r'"([^"]+)"', entry)
+                if match:
+                    extracted.append(match.group(1))
+            return extracted
+
         # Load the OBO file
         card_ontology = obonet.read_obo(obo_file_path)
         
@@ -270,6 +280,12 @@ class ResourceManager:
         
         # Get term names
         id_to_name = {id_: data.get("name") for id_, data in card_ontology.nodes(data=True)}
+
+        # Get term synonyms. We currently use this only for a targeted alias mapping.
+        id_to_synonyms = {
+            id_: _extract_quoted_synonyms(data.get("synonym", []))
+            for id_, data in card_ontology.nodes(data=True)
+        }
         
         # Collect results
         output_dict = {}
@@ -282,6 +298,12 @@ class ResourceManager:
                     if child in id_to_name:
                         child_name = id_to_name[child]
                         output_dict[child_name] = drug_class
+
+                        # Add a targeted alias so rule drug "kanamycin" resolves to CARD term "kanamycin A".
+                        if child_name == "kanamycin A":
+                            for synonym in id_to_synonyms.get(child, []):
+                                if synonym == "kanamycin":
+                                    output_dict[synonym] = drug_class
             except Exception as e:
                 print(f"Error processing {aro_accession} for {drug_class}: {e}")
                 continue
