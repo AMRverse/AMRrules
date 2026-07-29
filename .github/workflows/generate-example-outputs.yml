@@ -28,95 +28,11 @@ jobs:
         run: amrrules --download-resources
 
       # -----------------------------------------------------------------------
-      # Run example commands from:
-      # https://amrrules.readthedocs.io/en/genome_summary_report_dev/tests.html
+      # All example cases are defined in tests/example_commands.yaml - edit
+      # that file to add/remove/change a case, not this workflow.
       # -----------------------------------------------------------------------
       - name: Run example commands
-        run: |
-          # wildtype E coli
-          amrrules --input tests/data/input/test_ecoli_wildtype.tsv --output-prefix test_ecoli_wildtype --organism 's__Escherichia coli' --output-dir tests/data/example_output
-
-          # wildtype K pneumoniae with core genes flagged
-          amrrules --input tests/data/input/test_kpneumo_wildtype.tsv --output-prefix test_kpneumo_wildtype --organism 's__Klebsiella pneumoniae' --flag-core --output-dir tests/data/example_output
-
-          # test a single wild-type P. aeuruginosa genome, and flag core genes in the summary output
-          amrrules --input tests/data/input/test_paeuriginosa_PAO1_wildtype.tsv --output-prefix test_paeuriginosa_PAO1_wildtype --organism 's__Pseudomonas aeruginosa' --flag-core --output-dir tests/data/example_output
-
-          # multispecies example
-          amrrules  --input tests/data/input/test_multispp_amrfp.tsv --output-prefix test_multispp --organism-file tests/data/input/test_multispp_species.tsv --output-dir tests/data/example_output
-
-          # Kleb MDR example with all four options of no rule interpretation, for docs
-          amrrules --input tests/data/input/test_kpneumo_MDR.tsv --output-prefix test_kpneumo_MDR_none --organism 's__Klebsiella pneumoniae' --output-dir tests/data/example_output -nr none
-
-          amrrules --input tests/data/input/test_kpneumo_MDR.tsv --output-prefix test_kpneumo_MDR_nwt --organism 's__Klebsiella pneumoniae' --output-dir tests/data/example_output -nr nwt
-
-          amrrules --input tests/data/input/test_kpneumo_MDR.tsv --output-prefix test_kpneumo_MDR_nwtS --organism 's__Klebsiella pneumoniae' --output-dir tests/data/example_output -nr nwtS
-
-          amrrules --input tests/data/input/test_kpneumo_MDR.tsv --output-prefix test_kpneumo_MDR_nwtR --organism 's__Klebsiella pneumoniae' --output-dir tests/data/example_output -nr nwtR
-
-          # Kleb point disrupt examples
-          amrrules --input tests/data/input/test_kpneumo_disrupt.tsv --output-prefix test_kpneumo_disrupt --organism 's__Klebsiella pneumoniae' --output-dir tests/data/example_output
-
-          # 20 E coli strains with matched AST
-          amrrules --input tests/data/input/test_ecoli_20strains.tsv --output-prefix test_ecoli_20strains --organism 's__Escherichia coli' --output-dir tests/data/example_output -nr none
-
-          amrrules --input tests/data/input/test_ecoli_20strains.tsv --output-prefix test_ecoli_20strains_nwt --organism 's__Escherichia coli' --output-dir tests/data/example_output -nr nwt
-
-          amrrules --input tests/data/input/test_ecoli_20strains.tsv --output-prefix test_ecoli_20strains_nwtS --organism 's__Escherichia coli' --output-dir tests/data/example_output -nr nwtS
-
-          amrrules --input tests/data/input/test_ecoli_20strains.tsv --output-prefix test_ecoli_20strains_nwtR  --organism 's__Escherichia coli' --output-dir tests/data/example_output -nr nwtR
-
-          # 20 Kp strains with matched AST
-          amrrules --input tests/data/input/test_kpneumo_20strains.tsv --output-prefix test_kpneumo_20strains --organism 's__Klebsiella pneumoniae' --output-dir tests/data/example_output
-
-          # 20 S aureus strains with matched AST
-          amrrules --input tests/data/input/test_saureus_20strains.tsv --output-prefix test_saureus_20strains --organism 's__Staphylococcus aureus' --output-dir tests/data/example_output
-
-          # 20 C jejuni strains with matched AST
-          amrrules --input tests/data/input/test_cjejuni_20strains.tsv --output-prefix test_cjejuni_20strains --organism 's__Campylobacter jejuni' --output-dir tests/data/example_output
-
-          # 20 E faecium strains with matched AST
-          amrrules --input tests/data/input/test_efaecium_20strains.tsv --output-prefix test_efaecium_20strains --organism 's__Enterococcus faecium' --output-dir tests/data/example_output
-
-          # 20 L pneumohila strains
-          amrrules --input tests/data/input/test_legionella_20strains.tsv --output-prefix test_legionella_20strains --organism 's__Legionella pneumophila' --output-dir tests/data/example_output
-
-          # 20 Bordetella strains
-          amrrules --input tests/data/input/test_bordetella_20strains.tsv --output-prefix test_bordetella_20strains --organism-file tests/data/input/test_bordetella_species.tsv --output-dir tests/data/example_output
-
-          # 20 K oxytoca complex strains
-          amrrules --input tests/data/input/test_koxycomplex_20strains.tsv --output-prefix test_koxy_complex_20strains --organism-file tests/data/input/test_koxycomplex_20strains_species.tsv --output-dir tests/data/example_output
-
-          # 20 Mycobacterium TB strains
-          amrrules --input tests/data/input/test_mycotb_20strains.tsv --output-prefix test_mycotb_20strains --organism 's__Mycobacterium tuberculosis' --output-dir tests/data/example_output
-
-          # 20 Neisseria gonorrhoeae strains
-          amrrules --input tests/data/input/test_ngono_20strains.tsv --output-prefix test_ngono_20strains --organism 's__Neisseria gonorrhoeae' --output-dir tests/data/example_output
-
-          # 20 Neisseria meningitidis strains
-          amrrules --input tests/data/input/test_nmeningitidis_20strains.tsv --output-prefix test_nmeningitidis_20strains --organism 's__Neisseria meningitidis' --output-dir tests/data/example_output
-
-          # 20 P aeruginosa strains
-          amrrules --input tests/data/input/test_pseud_20strains.tsv --output-prefix test_pseud_20strains --organism 's__Pseudomonas aeruginosa' --output-dir tests/data/example_output
-
-          # 20 Proteus mirabilis strains
-          amrrules --input tests/data/input/test_pmirabilis_20strains.tsv --output-prefix test_pmirabilis_20strains --organism 's__Proteus mirabilis' --output-dir tests/data/example_output
-
-          # 20 Salmonella enterica strains
-          amrrules --input tests/data/input/test_senterica_20strains.tsv --output-prefix test_senterica_20strains --organism 's__Salmonella enterica' --output-dir tests/data/example_output
-
-          # 20 Shewanella strains
-          amrrules --input tests/data/input/test_shewanella_20strains.tsv --output-prefix test_shewanella_20strains --organism 's__Shewanella algae' --output-dir tests/data/example_output
-
-          # 20 Acinetobacter strains
-          amrrules --input tests/data/input/test_abaumannii_20strains.tsv --output-prefix test_abaumannii_20strains_none --organism 's__Acinetobacter baumannii' --output-dir tests/data/example_output -nr none
-
-          amrrules --input tests/data/input/test_abaumannii_20strains.tsv --output-prefix test_abaumannii_20strains_nwt --organism 's__Acinetobacter baumannii' --output-dir tests/data/example_output -nr nwt
-
-          amrrules --input tests/data/input/test_abaumannii_20strains.tsv --output-prefix test_abaumannii_20strains_nwtS --organism 's__Acinetobacter baumannii' --output-dir tests/data/example_output -nr nwtS
-
-          amrrules --input tests/data/input/test_abaumannii_20strains.tsv --output-prefix test_abaumannii_20strains_nwtR --organism 's__Acinetobacter baumannii' --output-dir tests/data/example_output -nr nwtR
-
+        run: python tests/scripts/run_examples.py --output-dir tests/data/example_output
 
       # -----------------------------------------------------------------------
       # Commit and push any new or changed output files back to the branch.
