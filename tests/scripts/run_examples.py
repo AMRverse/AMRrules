@@ -36,7 +36,7 @@ from pathlib import Path
 import yaml
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
-MANIFEST_PATH = REPO_ROOT / "tests" / "example_commands.yaml"
+MANIFEST_PATH = REPO_ROOT / "tests" / "scripts" / "example_commands.yaml"
 
 
 def load_cases(include_debug_cases=False):

@@ -26,3 +26,37 @@ amrrules = ["rules/*"]
 
 [project.scripts]
 amrrules = "amrrules.cli:main"
+
+# -----------------------------------------------------------------------
+# Pixi environment for local development. This is deliberately separate
+# from [project.dependencies] above: those are amrrules' actual runtime
+# deps (just obonet). pandas/pyyaml below are ONLY needed for the
+# tests/scripts/ regression-checking tooling, not for amrrules itself.
+#
+# Setup (one-time):
+#   pixi install
+# Then either point VSCode's Python interpreter at .pixi/envs/default/bin/python,
+# or run everything via `pixi run ...` (see tasks below) without activating
+# anything.
+# -----------------------------------------------------------------------
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["osx-arm64"]
+
+[tool.pixi.dependencies]
+python = "3.12.*"
+pandas = "*"
+pyyaml = "*"
+
+# Installs amrrules itself (editable) into the pixi environment, which also
+# pulls in obonet from [project.dependencies] above via pip - so obonet
+# doesn't need to be listed again here.
+[tool.pixi.pypi-dependencies]
+amrrules = { path = ".", editable = true }
+
+# Convenience shortcuts - run with `pixi run <task-name>`, no shell
+# activation needed.
+[tool.pixi.tasks]
+check-regressions = "python tests/scripts/check_regressions.py"
+run-examples = "python tests/scripts/run_examples.py --output-dir tests/data/local_output"
+generate-launch-json = "python tests/scripts/generate_launch_json.py"
