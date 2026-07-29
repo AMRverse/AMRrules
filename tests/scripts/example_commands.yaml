@@ -1,0 +1,182 @@
+# Single source of truth for every "example" / regression-test amrrules run.
+#
+# This file drives:
+#   - the GitHub Actions workflow (generate-example-outputs.yml), which
+#     regenerates tests/data/example_output on every push to main
+#   - your local regression check (tests/scripts/check_regressions.py), which
+#     regenerates outputs from your *current* working code into a scratch
+#     dir and diffs them against tests/data/example_output using
+#     compare_outputs.py
+#   - (optionally) .vscode/launch.json, via tests/scripts/generate_launch_json.py,
+#     so your debug configs can never silently drift from the CI cases again
+#
+# Edit THIS FILE when you add/remove a test case. Don't hand-edit the yml
+# workflow's run list or launch.json's configurations list directly - they
+# should be regenerated / driven from here so there's only one place to keep
+# up to date.
+#
+# Fields:
+#   name         - unique id, used as --output-prefix and as the diff report
+#                  filename. Keep it stable across time (it's the join key
+#                  between old and new outputs).
+#   input        - path to input file, relative to repo root
+#   organism     - use this OR organism_file, not both
+#   organism_file
+#   flag_core    - true to pass --flag-core
+#   nr           - value for -nr (none / nwt / nwtS / nwtR), omit for default
+#   sample_id    - value for --sample-id, only needed if it's expected to
+#                  differ from the default derived from the input filename
+#   extra_args   - list of any other flags not covered above
+
+cases:
+  - name: test_ecoli_wildtype
+    input: tests/data/input/test_ecoli_wildtype.tsv
+    organism: s__Escherichia coli
+
+  - name: test_kpneumo_wildtype
+    input: tests/data/input/test_kpneumo_wildtype.tsv
+    organism: s__Klebsiella pneumoniae
+    flag_core: true
+
+  - name: test_paeuriginosa_PAO1_wildtype
+    input: tests/data/input/test_paeuriginosa_PAO1_wildtype.tsv
+    organism: s__Pseudomonas aeruginosa
+    flag_core: true
+
+  - name: test_multispp
+    input: tests/data/input/test_multispp_amrfp.tsv
+    organism_file: tests/data/input/test_multispp_species.tsv
+
+  - name: test_kpneumo_MDR_none
+    input: tests/data/input/test_kpneumo_MDR.tsv
+    organism: s__Klebsiella pneumoniae
+    nr: none
+
+  - name: test_kpneumo_MDR_nwt
+    input: tests/data/input/test_kpneumo_MDR.tsv
+    organism: s__Klebsiella pneumoniae
+    nr: nwt
+
+  - name: test_kpneumo_MDR_nwtS
+    input: tests/data/input/test_kpneumo_MDR.tsv
+    organism: s__Klebsiella pneumoniae
+    nr: nwtS
+
+  - name: test_kpneumo_MDR_nwtR
+    input: tests/data/input/test_kpneumo_MDR.tsv
+    organism: s__Klebsiella pneumoniae
+    nr: nwtR
+
+  - name: test_kpneumo_disrupt
+    input: tests/data/input/test_kpneumo_disrupt.tsv
+    organism: s__Klebsiella pneumoniae
+
+  - name: test_ecoli_20strains
+    input: tests/data/input/test_ecoli_20strains.tsv
+    organism: s__Escherichia coli
+    nr: none
+
+  - name: test_ecoli_20strains_nwt
+    input: tests/data/input/test_ecoli_20strains.tsv
+    organism: s__Escherichia coli
+    nr: nwt
+
+  - name: test_ecoli_20strains_nwtS
+    input: tests/data/input/test_ecoli_20strains.tsv
+    organism: s__Escherichia coli
+    nr: nwtS
+
+  - name: test_ecoli_20strains_nwtR
+    input: tests/data/input/test_ecoli_20strains.tsv
+    organism: s__Escherichia coli
+    nr: nwtR
+
+  - name: test_kpneumo_20strains
+    input: tests/data/input/test_kpneumo_20strains.tsv
+    organism: s__Klebsiella pneumoniae
+
+  - name: test_saureus_20strains
+    input: tests/data/input/test_saureus_20strains.tsv
+    organism: s__Staphylococcus aureus
+
+  - name: test_cjejuni_20strains
+    input: tests/data/input/test_cjejuni_20strains.tsv
+    organism: s__Campylobacter jejuni
+
+  - name: test_efaecium_20strains
+    input: tests/data/input/test_efaecium_20strains.tsv
+    organism: s__Enterococcus faecium
+
+  - name: test_legionella_20strains
+    input: tests/data/input/test_legionella_20strains.tsv
+    organism: s__Legionella pneumophila
+
+  - name: test_bordetella_20strains
+    input: tests/data/input/test_bordetella_20strains.tsv
+    organism_file: tests/data/input/test_bordetella_species.tsv
+
+  - name: test_koxy_complex_20strains
+    input: tests/data/input/test_koxycomplex_20strains.tsv
+    organism_file: tests/data/input/test_koxycomplex_20strains_species.tsv
+
+  - name: test_mycotb_20strains
+    input: tests/data/input/test_mycotb_20strains.tsv
+    organism: s__Mycobacterium tuberculosis
+
+  - name: test_ngono_20strains
+    input: tests/data/input/test_ngono_20strains.tsv
+    organism: s__Neisseria gonorrhoeae
+
+  - name: test_nmeningitidis_20strains
+    input: tests/data/input/test_nmeningitidis_20strains.tsv
+    organism: s__Neisseria meningitidis
+
+  - name: test_pseud_20strains
+    input: tests/data/input/test_pseud_20strains.tsv
+    organism: s__Pseudomonas aeruginosa
+
+  - name: test_pmirabilis_20strains
+    input: tests/data/input/test_pmirabilis_20strains.tsv
+    organism: s__Proteus mirabilis
+
+  - name: test_senterica_20strains
+    input: tests/data/input/test_senterica_20strains.tsv
+    organism: s__Salmonella enterica
+
+  - name: test_shewanella_20strains
+    input: tests/data/input/test_shewanella_20strains.tsv
+    organism: s__Shewanella algae
+
+  - name: test_abaumannii_20strains_none
+    input: tests/data/input/test_abaumannii_20strains.tsv
+    organism: s__Acinetobacter baumannii
+    nr: none
+
+  - name: test_abaumannii_20strains_nwt
+    input: tests/data/input/test_abaumannii_20strains.tsv
+    organism: s__Acinetobacter baumannii
+    nr: nwt
+
+  - name: test_abaumannii_20strains_nwtS
+    input: tests/data/input/test_abaumannii_20strains.tsv
+    organism: s__Acinetobacter baumannii
+    nr: nwtS
+
+  - name: test_abaumannii_20strains_nwtR
+    input: tests/data/input/test_abaumannii_20strains.tsv
+    organism: s__Acinetobacter baumannii
+    nr: nwtR
+
+# -----------------------------------------------------------------------
+# Debug-only cases: NOT run by CI and NOT included in the regression check
+# by default (see tests/scripts/check_regressions.py --include-debug-cases).
+# These use inputs that live outside tests/data/input (a debug/ folder, or
+# large gzipped ATB downloads) so they may not be reproducible in CI or on
+# a fresh checkout. Kept here so they're still tracked in ONE place and
+# available for ad-hoc local debugging, instead of only living in
+# launch.json where they're easy to lose track of.
+# -----------------------------------------------------------------------
+debug_cases:
+  - name: test_gono_WHO_alpha
+    input: tests/data/debug/WHO_alpha_2024_amrf.tsv
+    organism: s__Neisseria gonorrhoeae
