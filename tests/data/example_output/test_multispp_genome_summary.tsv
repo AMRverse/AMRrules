@@ -93,9 +93,9 @@ SAMD00009488	tigecycline	glycylcycline	S	wildtype	high	-	-	mepA	STA0004	-	s__Sta
 SAMD00009488	(all)	penicillin beta-lactam	-	-	none	-	blaI;blaR1;blaZ	-	-	-	s__Staphylococcus aureus
 SAMD00009488	tetracycline	tetracycline antibiotic	S	wildtype	high	-	-	tet(38);tet(38);mepA;mepA	STA0002;STA0003;STA0005;STA0006	-	s__Staphylococcus aureus
 SAMD00009488	-	-	-	-	-	-	fosB:-	-	none (partial hits)	-	s__Staphylococcus aureus
-SAMD00019033	kanamycin	-	R	wildtype	high	aph(3')-IIb;mexX	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
 SAMD00019033	amikacin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0001	-	s__Pseudomonas aeruginosa
 SAMD00019033	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib	-	-	-	s__Pseudomonas aeruginosa
+SAMD00019033	kanamycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb;mexX	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
 SAMD00019033	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
 SAMD00019033	tobramycin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0090	-	s__Pseudomonas aeruginosa
 SAMD00019033	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	mexA;blaPDC-11	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
@@ -126,8 +126,8 @@ SAMD00019033	tetracycline	tetracycline antibiotic	R	wildtype	high	mexA;mexX	-	-	
 SAMD00019033	cefotaxime	third-generation cephalosporin	R	wildtype	high	mexA;blaPDC-11	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
 SAMD00019033	ceftazidime	third-generation cephalosporin	I	wildtype	high	mexA;blaPDC-11	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
 SAMD00019033	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-11	-	-	PSA0039	-	s__Pseudomonas aeruginosa
-SAMD00019038	kanamycin	-	R	wildtype	high	aph(3')-IIb;mexX	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
 SAMD00019038	amikacin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0001	-	s__Pseudomonas aeruginosa
+SAMD00019038	kanamycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb;mexX	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
 SAMD00019038	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb	-	-	PSA0068	-	s__Pseudomonas aeruginosa
 SAMD00019038	tobramycin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX	PSA0090	-	s__Pseudomonas aeruginosa
 SAMD00019038	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	mexA;blaPDC-35	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa

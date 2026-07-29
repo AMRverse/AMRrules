@@ -1,0 +1,28 @@
+sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	ruleIDs	combo rules	organism
+PAO1	amikacin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX (core)	PSA0001	-	s__Pseudomonas aeruginosa
+PAO1	kanamycin	aminoglycoside antibiotic	R	wildtype	high	mexX (core);aph(3')-IIb (core)	-	-	PSA0060;PSA0061	-	s__Pseudomonas aeruginosa
+PAO1	neomycin	aminoglycoside antibiotic	R	wildtype	high	aph(3')-IIb (core)	-	-	PSA0068	-	s__Pseudomonas aeruginosa
+PAO1	tobramycin	aminoglycoside antibiotic	S	wildtype	high	-	-	mexX (core)	PSA0090	-	s__Pseudomonas aeruginosa
+PAO1	amoxicillin-clavulanic acid	antibiotic mixture	R	wildtype	high	mexA (core);blaPDC-1 (core)	-	-	PSA0007;PSA0008	-	s__Pseudomonas aeruginosa
+PAO1	ampicillin-sulbactam	antibiotic mixture	R	wildtype	high	mexA (core);blaPDC-1 (core)	-	-	PSA0015;PSA0016	-	s__Pseudomonas aeruginosa
+PAO1	ceftazidime-avibactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-1 (core)	PSA0037	-	s__Pseudomonas aeruginosa
+PAO1	ceftolozane-tazobactam	antibiotic mixture	S	wildtype	high	-	-	blaPDC-1 (core)	PSA0038	-	s__Pseudomonas aeruginosa
+PAO1	piperacillin-tazobactam	antibiotic mixture	I	wildtype	high	mexA (core);blaPDC-1 (core)	-	-	PSA0076;PSA0077	-	s__Pseudomonas aeruginosa
+PAO1	ertapenem	carbapenem	R	wildtype	high	mexA (core)	-	-	PSA0056	-	s__Pseudomonas aeruginosa
+PAO1	meropenem	carbapenem	S	wildtype	high	-	-	mexA (core);blaOXA-50 (core)	PSA0064;PSA0065	-	s__Pseudomonas aeruginosa
+PAO1	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	mexA (core);mexE (core)	-	-	PSA0092;PSA0095	-	s__Pseudomonas aeruginosa
+PAO1	ciprofloxacin	fluoroquinolone antibiotic	I	wildtype	high	mexA (core);mexE (core)	-	-	PSA0049;PSA0053	-	s__Pseudomonas aeruginosa
+PAO1	norfloxacin	fluoroquinolone antibiotic	R	wildtype	high	mexA (core)	-	-	PSA0069	-	s__Pseudomonas aeruginosa
+PAO1	cefepime	fourth-generation cephalosporin	I	wildtype	high	mexA (core);mexX (core);blaPDC-1 (core)	-	-	PSA0023;PSA0024;PSA0026	-	s__Pseudomonas aeruginosa
+PAO1	tigecycline	glycylcycline	R	wildtype	high	mexX (core)	-	-	PSA0088	-	s__Pseudomonas aeruginosa
+PAO1	aztreonam	monobactam	I	wildtype	high	mexA (core);blaPDC-1 (core)	-	-	PSA0019;PSA0020	-	s__Pseudomonas aeruginosa
+PAO1	amoxicillin	penicillin beta-lactam	R	wildtype	high	mexA (core);blaPDC-1 (core)	-	-	PSA0003;PSA0004	-	s__Pseudomonas aeruginosa
+PAO1	ampicillin	penicillin beta-lactam	R	wildtype	high	mexA (core);blaPDC-1 (core)	-	-	PSA0011;PSA0012	-	s__Pseudomonas aeruginosa
+PAO1	piperacillin	penicillin beta-lactam	I	wildtype	high	mexA (core);blaPDC-1 (core)	-	-	PSA0072;PSA0073	-	s__Pseudomonas aeruginosa
+PAO1	chloramphenicol	phenicol antibiotic	R	wildtype	high	mexA (core);catB7 (core);mexX (core);mexE (core)	-	-	PSA0040;PSA0041;PSA0043;PSA0046	-	s__Pseudomonas aeruginosa
+PAO1	fosfomycin	phosphonic acid antibiotic	S	wildtype	high	-	-	fosA (core)	PSA0059	-	s__Pseudomonas aeruginosa
+PAO1	sulfamethoxazole	sulfonamide antibiotic	R	wildtype	high	mexA (core)	-	-	PSA0080	-	s__Pseudomonas aeruginosa
+PAO1	tetracycline	tetracycline antibiotic	R	wildtype	high	mexA (core);mexX (core)	-	-	PSA0084;PSA0086	-	s__Pseudomonas aeruginosa
+PAO1	cefotaxime	third-generation cephalosporin	R	wildtype	high	mexA (core);blaPDC-1 (core)	-	-	PSA0029;PSA0030	-	s__Pseudomonas aeruginosa
+PAO1	ceftazidime	third-generation cephalosporin	I	wildtype	high	mexA (core);blaPDC-1 (core)	-	-	PSA0033;PSA0034	-	s__Pseudomonas aeruginosa
+PAO1	ceftriaxone	third-generation cephalosporin	R	wildtype	high	blaPDC-1 (core)	-	-	PSA0039	-	s__Pseudomonas aeruginosa

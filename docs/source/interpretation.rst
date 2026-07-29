@@ -100,7 +100,7 @@ The following columns are included:
   drug class          Drug class, as per CARD ARO. AMRFinderPlus drugs will be converted to CARD ARO format by AMRrules                       
   clinical category   S/I/R. Highest level of resistance based on markers that match this drug/drug class                                  
   phenotype           Wildtype or nonwildtype. Highest level based on markers that match this drug/drug class                                  
-  evidence grade      None/very low/low/moderate/high. Highest grade of evidence for markers that match this drug/drug class. None is used when we have no evidence for the call, as is the case of rule-less markers.                       
+  evidence grade      None/very low/low/moderate/high. Highest grade of evidence for markers that match to the highest interpretation level (nwt > wt, R > I > S) for this drug/drug class. None is used when we have no evidence for the call, as is the case of rule-less markers.                       
   markers (non-S)     Markers with rules specifying clinical category I or R, separated by ``;``
   markers (no rule)   Markers with no rule, separated by ``;``                                                                 
   markers (S)         Markers with rules specifying clinical category S, separated by ``;``                      
@@ -124,6 +124,7 @@ Combination Rules
 ^^^^^^^^^^^^^^^^^
 
 The genome summary report is where combination rules are applied. For each drug or drug class, the engine extracts all individual rules that have been applied. It then searches the combination rules for this organism and evaluates the logic strings (e.g. "rule1 & rule2 | rule3") to determine if any apply. If they do, and application of the combination rule would change the interpretation (e.g. from ``wildtype`` to ``nonwildtype``, or from ``S`` to ``R``), the engine then applies the logic of the combination rule to the call for this drug or drug class. 
+origin/main
 
 :ref:`See details <combo_rules_spec>` about the rules specification for more information on combination rules and how they are used.
 
