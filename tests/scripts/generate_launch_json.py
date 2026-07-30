@@ -23,9 +23,9 @@ from pathlib import Path
 import yaml
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
-MANIFEST_PATH = REPO_ROOT / "tests" / "example_commands.yaml"
+MANIFEST_PATH = REPO_ROOT / "tests" / "scripts" / "example_commands.yaml"
 LAUNCH_JSON_PATH = REPO_ROOT / ".vscode" / "launch.json"
-DEBUG_OUTPUT_DIR = "tests/data/output"
+DEBUG_OUTPUT_DIR = "tests/data/local_output"
 
 
 def case_to_config(case):

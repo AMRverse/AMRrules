@@ -49,27 +49,57 @@ class SummaryEntry:
             self.category = '-'
             self.phenotype = '-'
             self.evidence_grade = '-'
+            self.ruleIDs = '-'
+            self.combo_rules = '-'
             # move the partial call to the ruleID col and set drug and class to '-' to avoid confusion
             if self.drug_class == 'partial':
                 self.ruleIDs = 'none (partial hits)'
                 self.drug_class = '-'
                 self.drug = '-'
             return
-        if self.drug_class == 'antibiotic efflux':
-            self.drug = '(n/a)'
+
+        # if we have no rules to apply, then we can't interpret
+        # so set the values to match the no_rule_interpretation setting, and exit
+        if not any(g.has_rule for g in geno_objs):
+            # no rules to apply, therefore these values are '-'
+            self.ruleIDs = '-'
+            self.combo_rules = '-'
+            if no_rule_interpretation == 'none':
+                self.category = '-'
+                self.phenotype = '-'
+                self.evidence_grade = 'none'
+            elif no_rule_interpretation == 'nwt':
+                self.category = '-'
+                self.phenotype = 'nonwildtype'
+                self.evidence_grade = 'none'
+            elif no_rule_interpretation == 'nwtS':
+                self.category = 'S'
+                self.phenotype = 'nonwildtype'
+                self.evidence_grade = 'none'
+            elif no_rule_interpretation == 'nwtR':
+                self.category = 'R'
+                self.phenotype = 'nonwildtype'
+                self.evidence_grade = 'none'
+            if self.drug_class == 'antibiotic efflux':
+                #override as we can't say anything meaningful for efflux
+                self.category = '-'
+                self.phenotype = '-'
+                self.evidence_grade = '-'
+                self.drug = '(n/a)'
+            return
         
         # otherwise, continue on
 
         # first, grab all the individual ruleIDs that have been applied to this drug or drug class
-        solo_rule_ids = [g.ruleID for g in geno_objs
-                    if getattr(g, "ruleID", None) not in (None, "-")]
+        solo_rule_ids = set(g.ruleID for g in geno_objs
+                    if getattr(g, "ruleID", None) not in (None, "-"))
         # Set the rule IDs in the output, or '-' if none were found
         self.ruleIDs = ";".join(sorted(solo_rule_ids)) if solo_rule_ids else "-"
 
         # If we have combination rules, we need to evaluate them to see if any apply.
         # But this should only be evaluated if we have rules that are being applied
         rules_overriden_by_combo = set()
-        combo_rule_id_matches = []
+        combo_rule_id_matches = set()
         rules_to_assess = []
         if solo_rule_ids and combo_rules:
             for rule in combo_rules:
@@ -83,7 +113,7 @@ class SummaryEntry:
                     rules_in_logic = set(re.findall(r'\b\w+\b', ruleID_logic))
                     rules_overriden_by_combo.update(rules_in_logic)
                     # add to the list of applied combo rules for printing to output
-                    combo_rule_id_matches.append(rule.get('ruleID'))
+                    combo_rule_id_matches.add(rule.get('ruleID'))
                     # add this rule to the list of rules to assess for interpretation
                     rules_to_assess.append(rule)
 
@@ -98,47 +128,68 @@ class SummaryEntry:
             if g.ruleID not in rules_overriden_by_combo and g.ruleID not in (None, "-"):
                 rules_to_assess.append(g.rule)
 
-        # First, set overall WT/NWT status based on the rules we need to assess
+        # FIRST, for each phenotype/category/evidence, assess what the rules say. This may then change depending on the no_rule_interpretation setting, if we have markers without rules.
+        # Extract what the rules say for phenotype
         phenotypes = [r['phenotype'] for r in rules_to_assess if 'phenotype' in r]
-        self.phenotype = self._get_max_value(phenotypes, PHENOTYPE_ORDER)
-
-        # Determine the overall clinical category based on the rules we need to assess
-        clinical_categories = [r['clinical category'] for r in rules_to_assess if 'clinical category' in r]
-        self.category = self._get_max_value(clinical_categories, CATEGORY_ORDER)
-
-        # Finally, set the overall evidence grade. This is highest evidence grade linked to any rules matching our highest clinical category.
-        evidence_grades = [r['evidence grade'] for r in rules_to_assess if 'evidence grade' in r and r['clinical category'] == self.category]
-        self.evidence_grade = self._get_max_value(evidence_grades, EVIDENCE_GRADE_ORDER)
-
-        # alright, but depending on our no_rule_interpretation setting, we may need to override the category and phenotype values
-        # only matters if we have markers with no rules
+        # if we have markers with no rules, and our no_rule_interpretation setting is nwt, nwtS, or nwtR, then we add nonwildtype to the list
         if self.markers_with_norule != '-':
-            if no_rule_interpretation == 'none' or no_rule_interpretation == 'nwt':
-                # for the category, if we have any nwt markers without rules, then we can't interpret
-                # what this means in combination with an S marker, so set to '-'
-                # however if the rule says 'R', then we can keep the R
-                if self.category == 'S':
-                    self.category = '-'
-                # evidence grade also gets switched to 'none' regardless
-                self.evidence_grade = 'none'
-                # we change the phenotype based on whether its none or nwt
-                if no_rule_interpretation == 'none':
-                # for the phenotype, if we have any nwt markers without rules, then we can't interpret, so set to '-'
-                    self.phenotype = '-'
-                elif no_rule_interpretation == 'nwt':
-                    # in this case, if our rule markers state we have a wt phenotype, but we have nwt markers with no rule
-                    # we override the penotype to be nwt
-                    # if we had markers with rules that were nwt R, we stay nwt anyway
-                    self.phenotype = 'nonwildtype'
-            if no_rule_interpretation == 'nwtS':
-                # if we have any nwt markers without rules, we're calling nwt and S
-                # but we want the evidence grade to be 'none' to reflect the fact
-                # that the call is being made using markers with no rules
-                self.evidence_grade = 'none'
+            if no_rule_interpretation in ['nwt', 'nwtS', 'nwtR']:
+                # this will ensure that nwt wins over wt, if we have only wt markers with rules
+                phenotypes.append('nonwildtype')
+                # now assess phenotype
+                self.phenotype = self._get_max_value(phenotypes, PHENOTYPE_ORDER)
+            # however, if no_rule_interpretation is 'none', then we don't want to interpret phenotype at all if we have rule-less markers
+            elif no_rule_interpretation == 'none':
+                # override phenotype to make it '-'
+                self.phenotype = '-'
+        # otherwise determine best phenotype
+        else:
+            self.phenotype = self._get_max_value(phenotypes, PHENOTYPE_ORDER)
 
-        # if efflux, then set clinical category to '-'
+        # Extract all clinical categories based on the rules we need to assess
+        clinical_categories = [r['clinical category'] for r in rules_to_assess if 'clinical category' in r]
+        # determine the best clinical category based on the rules
+        best_category = self._get_max_value(clinical_categories, CATEGORY_ORDER)
+        # now, this category MAY CHANGE, depending on the impact of markers with no rules and the no_rule_interpretation setting.
+        if self.markers_with_norule != '-':
+            if no_rule_interpretation in ['none', 'nwt']:
+                if best_category != 'R':
+                # for this category, if we have any markers without rules, then we can't interpret
+                # what the category should be, so we set to '-'
+                # an R call stays an R call
+                    self.category = '-'
+                else:
+                    self.category = best_category
+            elif no_rule_interpretation == 'nwtS':
+                # if we have any rule-less markers, then we need to add S to the list of categories to assess
+                clinical_categories.append('S')
+                self.category = self._get_max_value(clinical_categories, CATEGORY_ORDER)
+            elif no_rule_interpretation == 'nwtR':
+                # if we have any rule-less markers, then we need to add R to the list of categories to assess
+                clinical_categories.append('R')
+                self.category = self._get_max_value(clinical_categories, CATEGORY_ORDER)
+        # otherwise we just apply the best category that we found
+        else:
+            self.category = best_category
+
+        # Finally, set the overall evidence grade. 
+        # Extract all evidence grades linked to our selected clinical category.
+        evidence_grades = [r['evidence grade'] for r in rules_to_assess if 'evidence grade' in r and r['clinical category'] == self.category]
+        if self.markers_with_norule != '-':
+            # if we have none or nwt when we have rule-less markers, by default we can't interpret the evidence, so set to none
+            if no_rule_interpretation in ['none', 'nwt', 'nwtS', 'nwtR']:
+                # for this category, if we have any markers without rules, then we can't interpret what this means
+                # so all evidence grades are set to 'none'
+                self.evidence_grade = 'none'
+        else:
+            self.evidence_grade = self._get_max_value(evidence_grades, EVIDENCE_GRADE_ORDER)
+
         if self.drug_class == 'antibiotic efflux':
+            #override as we can't say anything meaningful for efflux
             self.category = '-'
+            self.phenotype = '-'
+            self.evidence_grade = '-'
+            self.drug = '(n/a)'
 
     def set_markers(self, flag_core, class_summary=None):
         
