@@ -294,14 +294,6 @@ class SummaryEntry:
         except Exception as e:
             raise ValueError(f"Error evaluating logic string: {logic_string}") from e
 
-    # Helper to get max by order list
-    @staticmethod
-    def _get_max_value(values, order):
-        valid_values = [v for v in values if v in order]
-        if not valid_values:
-            return None
-        return max(valid_values, key=lambda v: order.index(v))
-
 def order_summary_objs(objs):
     """
     Sort a list of summaryEntry objects first by drug_class (alphabetically, with 'antibiotic efflux', followed by 'unassigned markers', with 'partial' last),
