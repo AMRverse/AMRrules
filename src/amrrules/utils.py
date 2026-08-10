@@ -2,6 +2,8 @@ import csv, gzip, sys
 from importlib import resources
 import warnings
 
+IMPOSSIBLE = object()  # sentinel for not possible combinations in PAIRWISE_TABLE
+
 aa_conversion = {'G': 'Gly', 'A': 'Ala', 'S': 'Ser', 'P': 'Pro', 'T': 'Thr', 'C': 'Cys', 'V': 'Val', 'L': 'Leu', 'I': 'Ile', 
                  'M': 'Met', 'N': 'Asn', 'Q': 'Gln', 'K': 'Lys', 'R': 'Arg', 'H': 'His', 'D': 'Asp', 'E': 'Glu', 'W': 'Trp', 
                  'Y': 'Tyr', 'F': 'Phe', 'STOP': 'Ter', '*': 'Ter'}
@@ -10,8 +12,96 @@ required_cols = ['variation type', 'gene', 'mutation']
 minimal_columns = ['ruleID', 'gene context', 'drug', 'drug class', 'phenotype', 'clinical category', 'evidence grade', 'version', 'organism']
 full_columns = ['breakpoint', 'breakpoint standard', 'breakpoint condition', 'evidence code', 'evidence limitations', 'PMID', 'rule curation note']
 
-CATEGORY_ORDER = ['-', 'not available', 'S', 'I', 'R']
-PHENOTYPE_ORDER = ['-', 'wildtype', 'nonwildtype']
+PAIRWISE_TABLE = {
+    ('nonwildtype', 'R'): {
+        ('nonwildtype', 'R'): ('nonwildtype', 'R'), ('nonwildtype', 'I'): ('nonwildtype', 'R'),
+        ('nonwildtype', 'S'): ('nonwildtype', 'R'), ('nonwildtype', '-'): ('nonwildtype', 'R'),
+        ('wildtype', 'R'): IMPOSSIBLE,               ('wildtype', 'I'): ('nonwildtype', 'R'),
+        ('wildtype', 'S'): ('nonwildtype', 'R'),      ('-', '-'): ('nonwildtype', 'R'),
+    },
+    ('nonwildtype', 'I'): {
+        ('nonwildtype', 'R'): ('nonwildtype', 'R'), ('nonwildtype', 'I'): ('nonwildtype', 'I'),
+        ('nonwildtype', 'S'): ('nonwildtype', 'I'), ('nonwildtype', '-'): ('nonwildtype', '-'),
+        ('wildtype', 'R'): IMPOSSIBLE,               ('wildtype', 'I'): IMPOSSIBLE,
+        ('wildtype', 'S'): ('nonwildtype', 'I'),      ('-', '-'): ('nonwildtype', 'I'),
+    },
+    ('nonwildtype', 'S'): {
+        ('nonwildtype', 'R'): ('nonwildtype', 'R'), ('nonwildtype', 'I'): ('nonwildtype', 'I'),
+        ('nonwildtype', 'S'): ('nonwildtype', 'S'), ('nonwildtype', '-'): ('nonwildtype', '-'),
+        ('wildtype', 'R'): IMPOSSIBLE,               ('wildtype', 'I'): IMPOSSIBLE,
+        ('wildtype', 'S'): ('nonwildtype', 'S'),      ('-', '-'): ('nonwildtype', 'S'),
+    },
+    ('nonwildtype', '-'): {
+        ('nonwildtype', 'R'): ('nonwildtype', 'R'), ('nonwildtype', 'I'): ('nonwildtype', '-'),
+        ('nonwildtype', 'S'): ('nonwildtype', '-'), ('nonwildtype', '-'): ('nonwildtype', '-'),
+        ('wildtype', 'R'): ('wildtype', 'R'),        ('wildtype', 'I'): ('nonwildtype', '-'),
+        ('wildtype', 'S'): ('nonwildtype', '-'),      ('-', '-'): ('nonwildtype', '-'),
+    },
+    ('wildtype', 'R'): {
+        ('nonwildtype', 'R'): IMPOSSIBLE, ('nonwildtype', 'I'): IMPOSSIBLE,
+        ('nonwildtype', 'S'): IMPOSSIBLE, ('nonwildtype', '-'): ('wildtype', 'R'),
+        ('wildtype', 'R'): ('wildtype', 'R'), ('wildtype', 'I'): ('wildtype', 'R'),
+        ('wildtype', 'S'): ('wildtype', 'R'),  ('-', '-'): ('wildtype', 'R'),
+    },
+    ('wildtype', 'I'): {
+        ('nonwildtype', 'R'): ('nonwildtype', 'R'), ('nonwildtype', 'I'): IMPOSSIBLE,
+        ('nonwildtype', 'S'): IMPOSSIBLE,             ('nonwildtype', '-'): ('nonwildtype', '-'),
+        ('wildtype', 'R'): ('wildtype', 'R'),          ('wildtype', 'I'): ('wildtype', 'I'),
+        ('wildtype', 'S'): ('wildtype', 'I'),            ('-', '-'): ('wildtype', 'I'),
+    },
+    ('wildtype', 'S'): {
+        ('nonwildtype', 'R'): ('nonwildtype', 'R'), ('nonwildtype', 'I'): ('nonwildtype', 'I'),
+        ('nonwildtype', 'S'): ('nonwildtype', 'S'), ('nonwildtype', '-'): ('nonwildtype', '-'),
+        ('wildtype', 'R'): ('wildtype', 'R'),          ('wildtype', 'I'): ('wildtype', 'I'),
+        ('wildtype', 'S'): ('wildtype', 'S'),            ('-', '-'): ('wildtype', 'S'),
+    },
+    ('-', '-'): {
+        ('nonwildtype', 'R'): ('nonwildtype', 'R'), ('nonwildtype', 'I'): ('nonwildtype', 'I'),
+        ('nonwildtype', 'S'): ('nonwildtype', 'S'), ('nonwildtype', '-'): ('nonwildtype', '-'),
+        ('wildtype', 'R'): ('wildtype', 'R'),          ('wildtype', 'I'): ('wildtype', 'I'),
+        ('wildtype', 'S'): ('wildtype', 'S'),            ('-', '-'): ('-', '-'),
+    },
+}
+
+DEFAULT_COMBINE_TABLE = {
+    'nwtR': {
+        ('nonwildtype', 'R'): ('nonwildtype', 'R'), ('nonwildtype', 'I'): ('nonwildtype', 'R'),
+        ('nonwildtype', 'S'): ('nonwildtype', 'R'), ('nonwildtype', '-'): ('nonwildtype', 'R'),
+        ('wildtype', 'R'): ('wildtype', 'R'),         ('wildtype', 'I'): ('wildtype', 'I'),
+        ('wildtype', 'S'): ('nonwildtype', 'R'),        ('-', '-'): ('nonwildtype', 'R'),
+    },
+    'nwtS': {
+        ('nonwildtype', 'R'): ('nonwildtype', 'R'), ('nonwildtype', 'I'): ('nonwildtype', 'I'),
+        ('nonwildtype', 'S'): ('nonwildtype', 'S'), ('nonwildtype', '-'): ('nonwildtype', '-'),
+        ('wildtype', 'R'): ('wildtype', 'R'),         ('wildtype', 'I'): ('wildtype', 'I'),
+        ('wildtype', 'S'): ('nonwildtype', 'S'),        ('-', '-'): ('nonwildtype', 'S'),
+    },
+    'nwt': {
+        ('nonwildtype', 'R'): ('nonwildtype', 'R'), ('nonwildtype', 'I'): ('nonwildtype', 'I'),
+        ('nonwildtype', 'S'): ('nonwildtype', 'S'), ('nonwildtype', '-'): ('nonwildtype', '-'),
+        ('wildtype', 'R'): ('wildtype', 'R'),         ('wildtype', 'I'): ('wildtype', 'I'),
+        ('wildtype', 'S'): ('nonwildtype', '-'),        ('-', '-'): ('nonwildtype', '-'),
+    },
+    'none': {
+        ('nonwildtype', 'R'): ('nonwildtype', '-'), ('nonwildtype', 'I'): ('nonwildtype', '-'),
+        ('nonwildtype', 'S'): ('nonwildtype', '-'), ('nonwildtype', '-'): ('nonwildtype', '-'),
+        ('wildtype', 'R'): ('wildtype', 'R'),         ('wildtype', 'I'): ('-', '-'),
+        ('wildtype', 'S'): ('-', '-'),                  ('-', '-'): ('-', '-'),
+    },
+}
+
+class ImpossibleCombination(Exception):
+    """Raised when two calls combine to an overall call marked IMPOSSIBLE in PAIRWISE_TABLE."""
+    pass
+
+# 'not available' and '-' are treated as identical for these comparisons.
+def _normalize_category(category):
+    return '-' if category in ('-', 'not available') else category
+
+def _normalize_call(call):
+    phenotype, category = call
+    return phenotype, _normalize_category(category)
+
 EVIDENCE_GRADE_ORDER = ['-', 'none', 'very low', 'low', 'moderate', 'high']
 
 def open_input(path):

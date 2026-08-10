@@ -1,5 +1,7 @@
+from typing import final
+
 from amrrules.resources import ResourceManager as rm
-from amrrules.utils import CATEGORY_ORDER, PHENOTYPE_ORDER, EVIDENCE_GRADE_ORDER
+from amrrules.utils import PAIRWISE_TABLE, DEFAULT_COMBINE_TABLE, IMPOSSIBLE, ImpossibleCombination, _normalize_call, EVIDENCE_GRADE_ORDER
 from collections import defaultdict
 import re
 
@@ -97,7 +99,6 @@ class SummaryEntry:
         self.ruleIDs = ";".join(sorted(solo_rule_ids)) if solo_rule_ids else "-"
 
         # If we have combination rules, we need to evaluate them to see if any apply.
-        # But this should only be evaluated if we have rules that are being applied
         rules_overriden_by_combo = set()
         combo_rule_id_matches = set()
         rules_to_assess = []
@@ -128,68 +129,86 @@ class SummaryEntry:
             if g.ruleID not in rules_overriden_by_combo and g.ruleID not in (None, "-"):
                 rules_to_assess.append(g.rule)
 
-        # FIRST, for each phenotype/category/evidence, assess what the rules say. This may then change depending on the no_rule_interpretation setting, if we have markers without rules.
-        # Extract what the rules say for phenotype
-        phenotypes = [r['phenotype'] for r in rules_to_assess if 'phenotype' in r]
-        # if we have markers with no rules, and our no_rule_interpretation setting is nwt, nwtS, or nwtR, then we add nonwildtype to the list
-        if self.markers_with_norule != '-':
-            if no_rule_interpretation in ['nwt', 'nwtS', 'nwtR']:
-                # this will ensure that nwt wins over wt, if we have only wt markers with rules
-                phenotypes.append('nonwildtype')
-                # now assess phenotype
-                self.phenotype = self._get_max_value(phenotypes, PHENOTYPE_ORDER)
-            # however, if no_rule_interpretation is 'none', then we don't want to interpret phenotype at all if we have rule-less markers
-            elif no_rule_interpretation == 'none':
-                # override phenotype to make it '-'
-                self.phenotype = '-'
-        # otherwise determine best phenotype
-        else:
-            self.phenotype = self._get_max_value(phenotypes, PHENOTYPE_ORDER)
+        # extract all the calls for the rules we need to assess
+        calls = [(r['phenotype'], r['clinical category']) for r in rules_to_assess]
+        # determine the overall call for this set of rules
+        rule_call = self.combine_many(calls)
 
-        # Extract all clinical categories based on the rules we need to assess
-        clinical_categories = [r['clinical category'] for r in rules_to_assess if 'clinical category' in r]
-        # determine the best clinical category based on the rules
-        best_category = self._get_max_value(clinical_categories, CATEGORY_ORDER)
-        # now, this category MAY CHANGE, depending on the impact of markers with no rules and the no_rule_interpretation setting.
+        # if we have markers with no rule, then update the rule call based on our default setting
         if self.markers_with_norule != '-':
-            if no_rule_interpretation in ['none', 'nwt']:
-                if best_category != 'R':
-                # for this category, if we have any markers without rules, then we can't interpret
-                # what the category should be, so we set to '-'
-                # an R call stays an R call
-                    self.category = '-'
-                else:
-                    self.category = best_category
-            elif no_rule_interpretation == 'nwtS':
-                # if we have any rule-less markers, then we need to add S to the list of categories to assess
-                clinical_categories.append('S')
-                self.category = self._get_max_value(clinical_categories, CATEGORY_ORDER)
-            elif no_rule_interpretation == 'nwtR':
-                # if we have any rule-less markers, then we need to add R to the list of categories to assess
-                clinical_categories.append('R')
-                self.category = self._get_max_value(clinical_categories, CATEGORY_ORDER)
-        # otherwise we just apply the best category that we found
-        else:
-            self.category = best_category
+            rule_call = self.apply_norule_default(rule_call, no_rule_interpretation)
 
-        # Finally, set the overall evidence grade. 
-        # Extract all evidence grades linked to our selected clinical category.
-        evidence_grades = [r['evidence grade'] for r in rules_to_assess if 'evidence grade' in r and r['clinical category'] == self.category]
-        if self.markers_with_norule != '-':
-            # if we have none or nwt when we have rule-less markers, by default we can't interpret the evidence, so set to none
-            if no_rule_interpretation in ['none', 'nwt', 'nwtS', 'nwtR']:
-                # for this category, if we have any markers without rules, then we can't interpret what this means
-                # so all evidence grades are set to 'none'
-                self.evidence_grade = 'none'
+        self.phenotype, self.category = rule_call
+
+        # now get the evidence grade for the final call, based only on the rules
+        # that match our final clinical category
+        evidence_grades = [
+        r['evidence grade'] for r in rules_to_assess
+        if 'evidence grade' in r and r.get('clinical category') == self.category]
+
+        # if there are no evidence grades, then we had no rules that match the final category
+        if not evidence_grades:
+            self.evidence_grade = 'none'
         else:
-            self.evidence_grade = self._get_max_value(evidence_grades, EVIDENCE_GRADE_ORDER)
+            self.evidence_grade = max(evidence_grades, key=lambda v: EVIDENCE_GRADE_ORDER.index(v))
 
         if self.drug_class == 'antibiotic efflux':
-            #override as we can't say anything meaningful for efflux
-            self.category = '-'
-            self.phenotype = '-'
-            self.evidence_grade = '-'
-            self.drug = '(n/a)'
+                    #override as we can't say anything meaningful for efflux
+                    self.category = '-'
+                    self.phenotype = '-'
+                    self.evidence_grade = '-'
+                    self.drug = '(n/a)'
+
+        return
+
+    def combine_calls(self, call1, call2):
+        """Look up two (phenotype, category) calls in PAIRWISE_TABLE."""
+        call1 = _normalize_call(call1)
+        call2 = _normalize_call(call2)
+        result = PAIRWISE_TABLE[call1][call2]
+        if result is IMPOSSIBLE:
+            raise ImpossibleCombination(f"{call1} + {call2} is not a valid combination")
+        return result
+ 
+    def combine_many(self, calls):
+        """
+        Combine a list of (phenotype, category) calls into one, folding all
+        category == 'S' calls together first, then folding the remaining
+        (non-S) calls in one at a time against the running result.
+    
+        This ordering should never hit an *np cell by design. If it does, a
+        warning is printed and that call is skipped (running result kept
+        unchanged) rather than crashing - so the source rules can be fixed.
+        """
+        if not calls:
+            return None
+        calls = [_normalize_call(c) for c in calls]
+    
+        s_calls = [c for c in calls if c[1] == 'S']
+        non_s_calls = [c for c in calls if c[1] != 'S']
+        ordered_calls = s_calls + non_s_calls
+    
+        result = ordered_calls[0]
+        for call in ordered_calls[1:]:
+            try:
+                result = self.combine_calls(result, call)
+            except ImpossibleCombination as e:
+                print(
+                    f"WARNING: impossible combination hit while combining rules "
+                    f"({e}). This should not happen by design - check the source "
+                    f"rules. Skipping this call and keeping the current result."
+                )
+        return result
+
+    def apply_norule_default(self, rule_call, no_rule_interpretation):
+        """
+        Combine the winning rule-based call with the no_rule_interpretation
+        default, but ONLY if the sample actually has markers with no matching
+        rule. If there are none, the rule-based call passes through unchanged.
+        """
+        
+        default_row = DEFAULT_COMBINE_TABLE[no_rule_interpretation]
+        return default_row[_normalize_call(rule_call)]
 
     def set_markers(self, flag_core, class_summary=None):
         
@@ -282,7 +301,6 @@ class SummaryEntry:
         if not valid_values:
             return None
         return max(valid_values, key=lambda v: order.index(v))
-
 
 def order_summary_objs(objs):
     """
