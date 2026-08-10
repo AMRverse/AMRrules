@@ -18,6 +18,8 @@ pixi run check-regressions
 
 New output files are written to `tests/data/local_output` and `tests/data/regression_diffs` contains a summary of differences between files. If a diff file is empty, this indicates that no changes have occurred.
 
+IF YOU WANT TO COMPARE DIFFERENT FOLDERS: update the directories in `tests/scripts/check_regressions.py`, there are two baseline dir settings - one is for when you're comparing with the main branch (example_output), and one is a changeable version when you're doing local development of a new feature
+
 ## Updating test commands
 
 All test commands are defined in `tests/scripts/example_commands.yaml`. This is the master list of commands that should be changed when new example data is being added. Also contains a section at the bottom of debug specific cases (for local debugging, not meant to be propogated into the main repo) - only relevant if generating the `launch.json` file for VSCode for this repo.
