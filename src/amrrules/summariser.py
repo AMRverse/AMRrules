@@ -1,5 +1,3 @@
-from typing import final
-
 from amrrules.resources import ResourceManager as rm
 from amrrules.utils import PAIRWISE_TABLE, DEFAULT_COMBINE_TABLE, IMPOSSIBLE, ImpossibleCombination, _normalize_call, EVIDENCE_GRADE_ORDER
 from collections import defaultdict
