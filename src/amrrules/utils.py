@@ -55,6 +55,12 @@ PAIRWISE_TABLE = {
         ('wildtype', 'R'): ('wildtype', 'R'),          ('wildtype', 'I'): ('wildtype', 'I'),
         ('wildtype', 'S'): ('wildtype', 'S'),            ('-', '-'): ('wildtype', 'S'),
     },
+    ('wildtype', '-'): {
+        ('nonwildtype', 'R'): ('nonwildtype', 'R'), ('nonwildtype', 'I'): ('nonwildtype', '-'),
+        ('nonwildtype', 'S'): ('nonwildtype', '-'), ('nonwildtype', '-'): ('nonwildtype', '-'),
+        ('wildtype', 'R'): ('wildtype', 'R'),          ('wildtype', 'I'): ('wildtype', 'I'),
+        ('wildtype', 'S'): ('wildtype', '-'),            ('-', '-'): ('wildtype', '-'),
+    },
     ('-', '-'): {
         ('nonwildtype', 'R'): ('nonwildtype', 'R'), ('nonwildtype', 'I'): ('nonwildtype', 'I'),
         ('nonwildtype', 'S'): ('nonwildtype', 'S'), ('nonwildtype', '-'): ('nonwildtype', '-'),
@@ -68,25 +74,28 @@ DEFAULT_COMBINE_TABLE = {
         ('nonwildtype', 'R'): ('nonwildtype', 'R'), ('nonwildtype', 'I'): ('nonwildtype', 'R'),
         ('nonwildtype', 'S'): ('nonwildtype', 'R'), ('nonwildtype', '-'): ('nonwildtype', 'R'),
         ('wildtype', 'R'): ('wildtype', 'R'),         ('wildtype', 'I'): ('wildtype', 'I'),
-        ('wildtype', 'S'): ('nonwildtype', 'R'),        ('-', '-'): ('nonwildtype', 'R'),
+        ('wildtype', 'S'): ('nonwildtype', 'R'), ('wildtype', '-'): ('nonwildtype', 'R'),
+        ('-', '-'): ('nonwildtype', 'R'),
     },
     'nwtS': {
         ('nonwildtype', 'R'): ('nonwildtype', 'R'), ('nonwildtype', 'I'): ('nonwildtype', 'I'),
         ('nonwildtype', 'S'): ('nonwildtype', 'S'), ('nonwildtype', '-'): ('nonwildtype', '-'),
         ('wildtype', 'R'): ('wildtype', 'R'),         ('wildtype', 'I'): ('wildtype', 'I'),
-        ('wildtype', 'S'): ('nonwildtype', 'S'),        ('-', '-'): ('nonwildtype', 'S'),
+        ('wildtype', 'S'): ('nonwildtype', 'S'), ('wildtype', '-'): ('nonwildtype', 'S'),
+        ('-', '-'): ('nonwildtype', 'S'),
     },
     'nwt': {
         ('nonwildtype', 'R'): ('nonwildtype', 'R'), ('nonwildtype', 'I'): ('nonwildtype', 'I'),
         ('nonwildtype', 'S'): ('nonwildtype', 'S'), ('nonwildtype', '-'): ('nonwildtype', '-'),
         ('wildtype', 'R'): ('wildtype', 'R'),         ('wildtype', 'I'): ('wildtype', 'I'),
-        ('wildtype', 'S'): ('nonwildtype', '-'),        ('-', '-'): ('nonwildtype', '-'),
+        ('wildtype', 'S'): ('nonwildtype', '-'),('wildtype', '-'): ('nonwildtype', '-'), 
+        ('-', '-'): ('nonwildtype', '-'),
     },
     'none': {
         ('nonwildtype', 'R'): ('nonwildtype', '-'), ('nonwildtype', 'I'): ('nonwildtype', '-'),
         ('nonwildtype', 'S'): ('nonwildtype', '-'), ('nonwildtype', '-'): ('nonwildtype', '-'),
         ('wildtype', 'R'): ('wildtype', 'R'),         ('wildtype', 'I'): ('-', '-'),
-        ('wildtype', 'S'): ('-', '-'),                  ('-', '-'): ('-', '-'),
+        ('wildtype', 'S'): ('-', '-'), ('wildtype', '-'): ('-', '-'), ('-', '-'): ('-', '-'),
     },
 }
 
