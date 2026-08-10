@@ -177,6 +177,6 @@ cases:
 # launch.json where they're easy to lose track of.
 # -----------------------------------------------------------------------
 debug_cases:
-  - name: test_gono_WHO_alpha
-    input: tests/data/debug/WHO_alpha_2024_amrf.tsv
+  - name: test_gono_four23S
+    input: tests/data/debug/ngono_4copies23S.tsv
     organism: s__Neisseria gonorrhoeae
