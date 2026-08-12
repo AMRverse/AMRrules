@@ -1,5 +1,6 @@
 from amrrules.resources import ResourceManager as rm
 from amrrules.utils import PAIRWISE_TABLE, DEFAULT_COMBINE_TABLE, IMPOSSIBLE, ImpossibleCombination, _normalize_call, EVIDENCE_GRADE_ORDER
+from amrrules.rules_io import parse_multicopy_rule_mutation
 from collections import defaultdict
 import re
 
@@ -34,7 +35,7 @@ class SummaryEntry:
         self.ruleIDs = None
         self.combo_rules = None
     
-    def summarise_rules(self, no_rule_interpretation, combo_rules, class_summary=None):
+    def summarise_rules(self, no_rule_interpretation, combo_rules, multi_copy_rules, class_summary=None):
         """Compute summary values based on geno_objs."""
 
         # full object list creation, if we've got a drug class of objs also to consider
@@ -89,17 +90,44 @@ class SummaryEntry:
             return
         
         # otherwise, continue on
-
         # first, grab all the individual ruleIDs that have been applied to this drug or drug class
         solo_rule_ids = set(g.ruleID for g in geno_objs
                     if getattr(g, "ruleID", None) not in (None, "-"))
+        # use this to keep track of any rules that are going to be overridden by a combination or multi-copy gene rule
+        rules_to_be_overriden = set()
+        # use this to keep track of rules that need to be assessed for the final interpretation. This will be a combination of solo rules, combination rules, and any multi-copy rules that apply
+        rules_to_assess = []
+
+        # now, check to see if we have any multi-copy rules for this organism + drug/drug class combination
+        if multi_copy_rules:
+            # if we have multi copy rules for this drug, check to see if any of our geno_objects would match any of the multi-copy rules
+            # store the geno objects together in a dict by their marker_amrrules value, so we can check what the total length of this dict is
+            nucl_variant_multicopy_genos = {}
+            for g in geno_objs:
+                # first lets look at geno objects that have rules, and are multi-copy nucleotide variants
+                if g.has_rule and g.rule.get('variation type') == 'Nucleotide variant detected in multi-copy gene':
+                    nucl_variant_multicopy_genos.setdefault(g.marker_amrrules, []).append(g)
+            #now go through each marker in the dict, and count the number of objects that exist for that marker
+            for marker, marker_genos in nucl_variant_multicopy_genos.items():
+                # this is the total number of copies we've observed
+                observed_copy_count = len(marker_genos)
+                # now go through the multi-copy rules and find any that match this marker and have a threshold <= observed_copy_count
+                matching_rules = [r for r in multi_copy_rules if r.get('marker_amrrules') == marker and r.get('threshold') <= observed_copy_count]
+                # if we have any matching rules, then we need to find the one with the highest threshold
+                if matching_rules:
+                    # sort the matching rules by threshold, and take the last one (highest threshold)
+                    best_rule = sorted(matching_rules, key=lambda r: r.get('threshold'))[-1]
+                    # this is now the best rule for this set of objects. We want to add this rule to the list of ruleIDs for us to assess
+                    rules_to_assess.append(best_rule)
+                    # add the individual rules for these markers to the list of rules to be overridden, as the multi-copy rule overrides the individual rules
+                    for g in marker_genos:
+                        rules_to_be_overriden.add(g.ruleID)
+
         # Set the rule IDs in the output, or '-' if none were found
         self.ruleIDs = ";".join(sorted(solo_rule_ids)) if solo_rule_ids else "-"
 
         # If we have combination rules, we need to evaluate them to see if any apply.
-        rules_overriden_by_combo = set()
         combo_rule_id_matches = set()
-        rules_to_assess = []
         if solo_rule_ids and combo_rules:
             for rule in combo_rules:
                 ruleID_logic = rule.get('gene')
@@ -110,7 +138,7 @@ class SummaryEntry:
                     # extract the individual rule IDs so we can exclude these rules from our
                     #interpretation logic later, as the combo rule overrides the individual rules
                     rules_in_logic = set(re.findall(r'\b\w+\b', ruleID_logic))
-                    rules_overriden_by_combo.update(rules_in_logic)
+                    rules_to_be_overriden.update(rules_in_logic)
                     # add to the list of applied combo rules for printing to output
                     combo_rule_id_matches.add(rule.get('ruleID'))
                     # add this rule to the list of rules to assess for interpretation
@@ -124,7 +152,7 @@ class SummaryEntry:
 
         # Update our rules to assess by only including solo individual rules that were not overridden by a combo rule
         for g in geno_objs:
-            if g.ruleID not in rules_overriden_by_combo and g.ruleID not in (None, "-"):
+            if g.ruleID not in rules_to_be_overriden and g.ruleID not in (None, "-"):
                 rules_to_assess.append(g.rule)
 
         # extract all the calls for the rules we need to assess
@@ -320,6 +348,41 @@ def order_summary_objs(objs):
 
     return sorted_list
 
+def get_combination_rules(rules, organism, drug_class, drug=None):
+    """
+    Extracts combination rules or multi-copy rules for a given organism and drug/drug class.
+    Always filters first for drug class as this will always be provided.
+    Drug then needs to be added on if a specific drug is provided, in case there are specific rules for the drug
+
+    Returns a tuple of (combo_rules, multi_copy_rules) where each is a list of rules that match the organism and drug/drug class.
+    """
+    base_rules = [
+        r for r in rules
+        if r.get('organism') == organism
+        and r.get('variation type') in (
+            'Combination',
+            'Nucleotide variant detected in multi-copy gene',
+            'Gene copy number variant detected',
+        )
+    ]
+    matching_rules = [r for r in base_rules if r.get('drug class') == drug_class]
+    if drug is not None:
+        matching_rules.extend([r for r in base_rules if drug in r.get('drug', '')])
+
+    combo_rules = [r for r in matching_rules if r.get('variation type') == 'Combination']
+    multi_copy_rules = [r for r in matching_rules if r.get('variation type') != 'Combination']
+
+    # for the multi-copy rules, we need to parse each rule's mutation to extract the base mutation and threshold, and add these as new keys in the rule dict
+    for rule in multi_copy_rules:
+        mutation = rule.get('mutation')
+        if mutation:
+            marker, threshold = parse_multicopy_rule_mutation(mutation, get_marker=True, gene=rule.get('gene'))
+            rule['threshold'] = threshold
+            # this is the key we're going to use to match
+            rule['marker_amrrules'] = marker
+
+    return combo_rules, multi_copy_rules
+
 def create_summary_dict(grouped_by_sample, rules, flag_core, no_rule_interpretation):
 
     summary_entry_dict = {} # key: sample name, value: list of summary entry objs
@@ -340,13 +403,8 @@ def create_summary_dict(grouped_by_sample, rules, flag_core, no_rule_interpretat
                 summary_entry = SummaryEntry(sample_name, class_level_hits)
                 # assign markers with, without rules, and wt markers
                 summary_entry.set_markers(flag_core)
-                # extract combo rules for this drug_class
-                # to get the list of possible combo rules to evaluate, we need to extract all 'Combination' rules for this organism
-                combo_rules = [r for r in rules if r.get('organism') == summary_entry.organism and r.get('variation type') == 'Combination']
-                # then need to further filter to include only combo rules that apply to the drug class we're assessing
-                combo_rules = [r for r in combo_rules if summary_entry.drug_class in r.get('drug class', '')]
-                # determine the highest category/pheno/evidence grade for this drug_class
-                summary_entry.summarise_rules(no_rule_interpretation, combo_rules)
+                combo_rules, multi_copy_rules = get_combination_rules(rules, summary_entry.organism, summary_entry.drug_class)
+                summary_entry.summarise_rules(no_rule_interpretation, combo_rules, multi_copy_rules)
                 # this is our master entry for this drug_class, so save it
                 master_class_entry = summary_entry
                 # add it to our list
@@ -363,11 +421,9 @@ def create_summary_dict(grouped_by_sample, rules, flag_core, no_rule_interpretat
                     # assign markers
                     summary_entry.set_markers(flag_core, class_summary=master_class_entry)
                     # determine highest category/pheno/evidence grade for this drug, including combo rules (if any)
-                    # but take into account the rules for the drug class
-                    combo_rules = [r for r in rules if r.get('organism') == summary_entry.organism and r.get('variation type') == 'Combination']
-                    # then need to further filter to include only combo rules that apply to either the drug or class we're assessing
-                    combo_rules = [r for r in combo_rules if summary_entry.drug in r.get('drug', '') or summary_entry.drug_class in r.get('drug class', '')]
-                    summary_entry.summarise_rules(no_rule_interpretation, combo_rules, class_summary=master_class_entry)
+                    # but take into account any combination or multi copy rules for the drug class or drug
+                    combo_rules, multi_copy_rules = get_combination_rules(rules, summary_entry.organism, summary_entry.drug_class, summary_entry.drug)
+                    summary_entry.summarise_rules(no_rule_interpretation, combo_rules, multi_copy_rules, class_summary=master_class_entry)
                     # add it to our list
                     summary_entry_list.append(summary_entry)
             summary_entry_dict[sample_name] = order_summary_objs(summary_entry_list)

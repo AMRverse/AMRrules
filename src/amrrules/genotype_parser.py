@@ -2,6 +2,7 @@ from typing import Any, Optional
 import re
 from amrrules import __version__
 from amrrules.utils import aa_conversion, minimal_columns, full_columns
+from amrrules.rules_io import parse_multicopy_rule_mutation
 
 
 class GenoResult:
@@ -103,18 +104,6 @@ class GenoResult:
         
         # create the AMRrules compliant marker
         self.marker_amrrules = self._create_amrrules_marker(full_disrupt)
-
-    @staticmethod
-    def parse_multicopy_rule_mutation(mutation):
-        """
-        Parse multi-copy rule mutation strings of the form c.[mutation][copy_count], Eg: c.[2611C>T][4]
-        Returns a tuple of (base_mutation, copy_count) 
-        """
-
-        mutation = mutation.strip()
-        mutation_plus_copy = re.match(r"^c\.\[([^\]]+)\]\[(\d+)\]$", mutation)
-        if mutation_plus_copy:
-            return f"c.{mutation_plus_copy.group(1)}", int(mutation_plus_copy.group(2))
 
     def _parse_mutation(self):
 
@@ -246,7 +235,7 @@ class GenoResult:
                 multicopy_candidates = []
                 for rule in matching_rules:
                     if rule.get('variation type') == 'Nucleotide variant detected in multi-copy gene':
-                        base_mutation, copy_threshold = self.parse_multicopy_rule_mutation(rule.get('mutation'))
+                        base_mutation, copy_threshold = parse_multicopy_rule_mutation(rule.get('mutation'))
                     if base_mutation == self.mutation:
                         multicopy_candidates.append((copy_threshold, rule))
 
