@@ -104,6 +104,18 @@ class GenoResult:
         # create the AMRrules compliant marker
         self.marker_amrrules = self._create_amrrules_marker(full_disrupt)
 
+    @staticmethod
+    def parse_multicopy_rule_mutation(mutation):
+        """
+        Parse multi-copy rule mutation strings of the form c.[mutation][copy_count], Eg: c.[2611C>T][4]
+        Returns a tuple of (base_mutation, copy_count) 
+        """
+
+        mutation = mutation.strip()
+        mutation_plus_copy = re.match(r"^c\.\[([^\]]+)\]\[(\d+)\]$", mutation)
+        if mutation_plus_copy:
+            return f"c.{mutation_plus_copy.group(1)}", int(mutation_plus_copy.group(2))
+
     def _parse_mutation(self):
 
         gene_symbol, mutation = self.gene_symbol.rsplit("_", 1)
@@ -229,6 +241,25 @@ class GenoResult:
             for rule in matching_rules:
                 if rule['mutation'] == self.mutation:
                     final_matching_rules.append(rule)
+            # we may not have a rule that matches the mutation because the rule is a multi-copy variant rule
+            if self.variation_type == 'Nucleotide variant detected':
+                multicopy_candidates = []
+                for rule in matching_rules:
+                    if rule.get('variation type') == 'Nucleotide variant detected in multi-copy gene':
+                        base_mutation, copy_threshold = self.parse_multicopy_rule_mutation(rule.get('mutation'))
+                    if base_mutation == self.mutation:
+                        multicopy_candidates.append((copy_threshold, rule))
+
+                if multicopy_candidates:
+                    one_copy_rules = [rule for copies, rule in multicopy_candidates if copies == 1]
+                    if one_copy_rules:
+                        final_matching_rules.extend(one_copy_rules)
+                    else:
+                        min_threshold = min(copies for copies, _ in multicopy_candidates)
+                        final_matching_rules.extend([rule for copies, rule in multicopy_candidates if copies == min_threshold])
+                    # update the variation type
+                    self.variation_type = 'Nucleotide variant detected in multi-copy gene'
+
             return final_matching_rules
 
     def find_matching_rules(self, rules, amrfp_nodes, guideline_pref = None):
@@ -237,6 +268,8 @@ class GenoResult:
         rules_to_check = []
         for rule in rules:
                 if rule['variation type'] == self.variation_type:
+                    rules_to_check.append(rule)
+                elif self.variation_type == 'Nucleotide variant detected' and rule['variation type'] == 'Nucleotide variant detected in multi-copy gene':
                     rules_to_check.append(rule)
 
         # First we're going to check for the nodeID, and if we have one or matches, we we return that
