@@ -12,6 +12,10 @@ required_cols = ['variation type', 'gene', 'mutation']
 minimal_columns = ['ruleID', 'gene context', 'drug', 'drug class', 'phenotype', 'clinical category', 'evidence grade', 'version', 'organism']
 full_columns = ['breakpoint', 'breakpoint standard', 'breakpoint condition', 'evidence code', 'evidence limitations', 'PMID', 'rule curation note']
 
+# ordering for evidence grades, from lowest to highest
+EVIDENCE_GRADE_ORDER = ['-', 'none', 'very low', 'low', 'moderate', 'high']
+
+# This table is used to determine the call between two rule-based markers for the same drug or drug class. The first key in the dictionary is the call for rule 1. The second key for the dictionary is the call for rule 2, and the value in this second dictionary is the resulting call after comparing the two rules. If the value is IMPOSSIBLE, then the two calls cannot be combined and an error is raised. 
 PAIRWISE_TABLE = {
     ('nonwildtype', 'R'): {
         ('nonwildtype', 'R'): ('nonwildtype', 'R'), ('nonwildtype', 'I'): ('nonwildtype', 'R'),
@@ -69,6 +73,7 @@ PAIRWISE_TABLE = {
     },
 }
 
+# This table is used to determine the call between the default value for interpreting rule-less markers with a rule based call. The first key in the dictionary is the default setting for interpretation of a rule-less marker. The second key for the dictionary is the final call for markers with rules, and the value in this second dictionary is the resulting call after comparing the ruled call and the default interpretation.
 DEFAULT_COMBINE_TABLE = {
     'nwtR': {
         ('nonwildtype', 'R'): ('nonwildtype', 'R'), ('nonwildtype', 'I'): ('nonwildtype', 'R'),
@@ -110,8 +115,6 @@ def _normalize_category(category):
 def _normalize_call(call):
     phenotype, category = call
     return phenotype, _normalize_category(category)
-
-EVIDENCE_GRADE_ORDER = ['-', 'none', 'very low', 'low', 'moderate', 'high']
 
 def open_input(path):
     """Open a file for reading, handling gzip transparently."""
