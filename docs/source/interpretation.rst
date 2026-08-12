@@ -106,7 +106,8 @@ The following columns are included:
   markers (S)         Markers with rules specifying clinical category S, separated by ``;``                      
   ruleIDs             List of IDs for single-marker rules that apply to this drug/drug class, separated by ``;``                                                     
   combo rules         List of IDs multi-marker (combination) rules that apply to this drug/drug class, separated by ``;``
-  organism            Organism whose rules were applied                                                                                  
+  organism            Organism whose rules were applied  
+  version             AMRrules version                                                                                      
 =================== ====================================================================================================
 
 **Marker labels** 
