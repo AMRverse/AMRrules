@@ -25,7 +25,7 @@ def write_genome_report(summary_entry_dict, out_dir, out_prefix):
     # now we want to write out the summary entry report
     # we have all the values we need in each row, under each sample
     summary_output_file = os.path.join(out_dir, out_prefix + '_genome_summary.tsv')
-    summary_output_header = ['sample_name', 'drug', 'drug_class', 'category', 'phenotype', 'evidence_grade', 'markers_rule_nonS', 'markers_with_norule', 'markers_S', 'ruleIDs', 'combo_rules', 'organism']
+    summary_output_header = ['sample_name', 'drug', 'drug_class', 'category', 'phenotype', 'evidence_grade', 'markers_rule_nonS', 'markers_with_norule', 'markers_S', 'ruleIDs', 'combo_rules', 'organism', 'version']
     header_mapping = {
     'sample_name': 'sample',
     'drug': 'drug',
@@ -38,7 +38,8 @@ def write_genome_report(summary_entry_dict, out_dir, out_prefix):
     'markers_S': 'markers (S)',
     'ruleIDs': 'ruleIDs',
     'combo_rules': 'combo rules',
-    'organism': 'organism'   
+    'organism': 'organism',  
+    'version': 'version' 
     }
     csv_header = [header_mapping.get(attr, attr.replace("_", " ").title()) for attr in summary_output_header]
 
@@ -46,6 +47,8 @@ def write_genome_report(summary_entry_dict, out_dir, out_prefix):
         writer = csv.DictWriter(out, fieldnames=csv_header, delimiter='\t')
         writer.writeheader()
         for sample, objs in summary_entry_dict.items():
+            for o in objs:
+                o.version = __version__
         # Build each row using a dict comprehension, mapping attribute -> CSV header
             rows = [{csv_header[i]: getattr(o, attr, '-') for i, attr in enumerate(summary_output_header)} for o in objs]
             writer.writerows(rows)
