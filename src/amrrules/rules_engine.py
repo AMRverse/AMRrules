@@ -115,7 +115,7 @@ def run(args):
             genotype_output_rows.extend(g.annotated_row)
 
     # now write out the interpreted genotype report, which annotates each row with the rule info
-    genotype_output_file = write_genotype_report(args, genotype_output_rows, unmatched_hits, matched_hits, base_fieldnames)
+    genotype_output_file = write_genotype_report(args, genotype_output_rows, base_fieldnames)
 
     # we now want to create one object per rule/AMRFP subclass, so that we can summarise by drug or drug class.
     genotype_objects = []
@@ -144,10 +144,10 @@ def run(args):
     for geno_obj in genotype_objects:
         grouped_by_sample[geno_obj.sample_name].append(geno_obj)
 
-    # NEW: detect gene copy-number scenarios per sample, BEFORE drug-level
-    # grouping. Runs against the full `rules` list (not pre-filtered by
+    # look for gene copy-number scenarios by sample, BEFORE drug-level
+    # grouping. Runs against the full set of rules (not pre-filtered by
     # drug), since a copy-number rule's drug may have no other matched
-    # rule at all for this sample - see copy_number.py docstring.
+    # rule at all for this sample
     for sample_name in grouped_by_sample:
         grouped_by_sample[sample_name] = apply_copy_number_rules(grouped_by_sample[sample_name], rules, card_drug_map)
 

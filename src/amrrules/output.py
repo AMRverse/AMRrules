@@ -3,7 +3,7 @@ import csv
 from amrrules import __version__
 from amrrules.utils import required_cols, minimal_columns, full_columns
 
-def write_genotype_report(args, output_rows, unmatched_hits, matched_hits, base_fieldnames):
+def write_genotype_report(args, output_rows, base_fieldnames):
      # write the output files
     interpreted_output_file = os.path.join(args.output_dir, args.output_prefix + '_interpreted.tsv')
     #summary_output_file = os.path.join(args.output_dir, args.output_prefix + '_summary.tsv')
