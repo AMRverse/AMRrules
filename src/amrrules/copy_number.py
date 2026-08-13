@@ -1,5 +1,6 @@
 from collections import defaultdict
-from amrrules.rules_io import parse_multicopy_rule_mutation
+import re
+from amrrules.rules_io import parse_multicopy_rule_mutation, get_combination_rules, evaluate_logic_string
 from amrrules.genotype_parser import Genotype
 
 
@@ -111,5 +112,45 @@ def apply_copy_number_rules(geno_objs, rules, card_drug_map):
                     count += 1
                     new_geno.marker_amrrules += f';{gene}'
                 result.append(new_geno)
+
+    return result
+
+def apply_combination_rules(geno_objs, rules, card_drug_map):
+    if not geno_objs:
+        return geno_objs
+    organism = geno_objs[0].organism
+    result = list(geno_objs)
+
+    for g in geno_objs:
+        # get all the solo rule ids to compare against
+        solo_rule_ids = [g.ruleID for g in geno_objs if g.has_rule and not g.duplicated_row]
+        if not solo_rule_ids:
+            continue
+    # extract all the combination rules for this organism
+    combo_rules = get_combination_rules(rules, organism)
+    for rule in combo_rules:
+        ruleID_logic = rule.get('gene')
+        # for each combo rule, check if we have all the solo rules required to satisfy the logic string
+        if evaluate_logic_string(ruleID_logic, solo_rule_ids):
+            rules_in_logic = set(re.findall(r'\b\w+\b', ruleID_logic))
+            # extract the relevant rules
+            matching_objs = [g for g in geno_objs if g.ruleID in rules_in_logic]
+
+            # build the combo's marker string by substituting each ruleID in the logic string with 
+            # its marker, preserving the logic structure
+            combo_marker = ruleID_logic
+            for g in matching_objs:
+                combo_marker = re.sub(rf'\b{re.escape(g.ruleID)}\b', g.marker_amrrules, combo_marker)
+            # now we need to create a new genotype object for this combination rule
+            new_geno = Genotype.from_result_row(matching_objs[0], card_map=card_drug_map, rule=rule)
+            new_geno.combo_rule_row = True
+            new_geno.marker_amrrules = combo_marker
+            # store the list of ruleIDs that make up the combination rule
+            new_geno.combo_rule_components = rules_in_logic
+            # add it to the list of results to return
+            result.append(new_geno)
+            # update the subcomponent parts to indicate they are part of a combo rule
+            #for g in matching_objs:
+            #    result.remove(g)
 
     return result

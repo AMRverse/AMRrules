@@ -2,7 +2,7 @@ from amrrules.rules_io import parse_rules_file, extract_relevant_rules
 from amrrules.summariser import create_summary_dict
 from amrrules.utils import check_sample_ids, validate_amrfp_file, get_organisms, open_input
 from amrrules.output import write_genotype_report, write_genome_report
-from amrrules.copy_number import apply_copy_number_rules
+from amrrules.copy_number import apply_copy_number_rules, apply_combination_rules
 from amrrules.resources import ResourceManager as rm
 from amrrules.genotype_parser import GenoResult, Genotype
 import csv
@@ -114,9 +114,6 @@ def run(args):
         if g.print_row:
             genotype_output_rows.extend(g.annotated_row)
 
-    # now write out the interpreted genotype report, which annotates each row with the rule info
-    genotype_output_file = write_genotype_report(args, genotype_output_rows, base_fieldnames)
-
     # we now want to create one object per rule/AMRFP subclass, so that we can summarise by drug or drug class.
     genotype_objects = []
     for g in genotype_rows:
@@ -138,8 +135,8 @@ def run(args):
                     genotype_objects.append(geno_obj)
 
     # now we want to group all of these objects by sample ID (if we have multiple samples)
-    # because we need to summarise per genome
-    # then we want to group by drug, or drug class if drug is '-', in each sample
+    # because we need to apply copy number and combo rules by genome
+    # and summarise by genome
     grouped_by_sample = defaultdict(list)
     for geno_obj in genotype_objects:
         grouped_by_sample[geno_obj.sample_name].append(geno_obj)
@@ -150,6 +147,24 @@ def run(args):
     # rule at all for this sample
     for sample_name in grouped_by_sample:
         grouped_by_sample[sample_name] = apply_copy_number_rules(grouped_by_sample[sample_name], rules, card_drug_map)
+        grouped_by_sample[sample_name] = apply_combination_rules(grouped_by_sample[sample_name], rules, card_drug_map)
+        # sort AFTER both passes, so newly-appended rows are included
+        #grouped_by_sample[sample_name].sort(key=lambda g: g.gene_symbol or '')
+
+    # reorder the dict itself by sample_name, now that every sample's list is final
+    #grouped_by_sample = dict(sorted(grouped_by_sample.items()))
+
+    # Add new rows to the interpreted output, now that both copy number and combo
+    # rules have been applied
+    for sample_name, geno_objs in grouped_by_sample.items():
+        for g in geno_objs:
+            if getattr(g, 'copy_number_row', False) or getattr(g, 'combo_rule_row', False):
+                genotype_output_rows.append(g.build_rule_only_row(args.annot_opts))
+
+    genotype_output_rows.sort(key=lambda row: (row.get("Name", ""), row.get("gene", "")))
+
+    # now write out the interpreted genotype report, which annotates each row with the rule info
+    genotype_output_file = write_genotype_report(args, genotype_output_rows, base_fieldnames)
 
     summary_entry_dict = create_summary_dict(grouped_by_sample, rules, args.flag_core, args.no_rule_interpretation)
     

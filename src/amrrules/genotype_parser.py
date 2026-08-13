@@ -354,6 +354,39 @@ class GenoResult:
         self.annotated_row = annotated_rows
         return annotated_rows
 
+    def build_rule_only_row(self, annot_opts):
+        """
+        Build an interpreted-output row for a rule-only Genotype object (a
+        copy-number or combination rule hit) which doesn't match to
+        a single input row. 
+        
+        Populates sample name, AMRFP class/subclass (for
+        copy-number rows only), and rule-derived columns, 
+        everything else is left blank.
+        """
+        row = {'Name': self.sample_name}
+        if getattr(self, 'copy_number_row', False):
+            row['Class'] = self.amrfp_class
+            row['Subclass'] = self.amrfp_subclass
+        # combo rows span multiple genes, so class/subclass don't apply -
+        # confirm this is what you want; easy to add if not
+
+        cols = minimal_columns if annot_opts == 'minimal' else minimal_columns + full_columns
+        row['variation type'] = self.rule.get('variation type', '-')
+        # if it's a combo rule, show the combined marker string, leave mutation blank
+        if self.rule.get('variation type') == 'Combination':
+            row['gene'] = self.marker_amrrules
+            row['mutation'] = '-'
+        # if it's copy number rule, show the gene and mutation as per the rule
+        else:
+            row['gene'] = self.rule.get('gene', '-')
+            row['mutation'] = self.rule.get('mutation', '-')
+        for col in cols:
+            row[col] = self.rule.get(col, '-')
+        row['version'] = __version__
+        row['organism'] = self.organism
+        return row
+
 # we now need to take our genotype objects, and instead group them by drug (or class if no drug specified)
 # so each genotype object may have multiple drugs associated with it, regardless of whether it has a matched rule or not
 

@@ -59,3 +59,52 @@ def parse_multicopy_rule_mutation(mutation, get_marker=False, gene=None):
 
     # not a multicopy-format mutation string at all
     return None, None
+
+def get_combination_rules(rules, organism):
+    """
+    Extracts combination rules for a given organism.
+    """
+    combo_rules = [
+        r for r in rules
+        if r.get('organism') == organism
+        and r.get('variation type') in ('Combination')
+    ]
+    return combo_rules
+
+def evaluate_logic_string(logic_string, id_list):
+    """
+    Evaluates a logic string against a list of IDs using strict word boundaries.
+
+    Args:
+        logic_string (str): A string containing logical expressions (e.g., "ECO1016 & ECO1026").
+        id_list (list/set): A collection of IDs to compare against.
+
+    Returns:
+        bool: True if the logic evaluates to True, False otherwise.
+    """
+    id_set = set(id_list)
+
+    # 1. Convert logical operators to Python equivalents
+    # Use word boundaries for 'AND'/'OR' to avoid messing up IDs containing 'AND' or 'OR'
+    python_logic = logic_string.replace('&', ' and ').replace('|', ' or ')
+
+    # 2. Extract all distinct alphanumeric tokens (IDs) from the logic string
+    # This automatically ignores parentheses, spaces, and operators
+    tokens_in_logic = set(re.findall(r'\b\w+\b', logic_string))
+
+    # 3. Safely substitute each ID with its membership check
+    for id_ in tokens_in_logic:
+        # Skip Python keywords generated from operators
+        if id_ in ('and', 'or', 'not'):
+            continue
+            
+        # \b ensures exact match (e.g., matches "NGO006" but NOT "NGO0065")
+        pattern = r'\b' + re.escape(id_) + r'\b'
+        replacement = f"('{id_}' in id_set)"
+        python_logic = re.sub(pattern, replacement, python_logic)
+
+    # 4. Safely evaluate the expression
+    try:
+        return eval(python_logic, {"__builtins__": None}, {"id_set": id_set})
+    except Exception as e:
+        raise ValueError(f"Error evaluating logic string: {logic_string}") from e

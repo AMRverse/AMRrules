@@ -6,17 +6,22 @@ from amrrules.utils import required_cols, minimal_columns, full_columns
 def write_genotype_report(args, output_rows, base_fieldnames):
      # write the output files
     interpreted_output_file = os.path.join(args.output_dir, args.output_prefix + '_interpreted.tsv')
-    #summary_output_file = os.path.join(args.output_dir, args.output_prefix + '_summary.tsv')
 
     if args.annot_opts == 'minimal':
         interpreted_output_cols = required_cols + minimal_columns
     elif args.annot_opts == 'full':
         interpreted_output_cols = required_cols + minimal_columns + full_columns
 
+    fieldnames = base_fieldnames + interpreted_output_cols
+    normalised_rows = [
+        {field: ('-' if row.get(field) is None or str(row.get(field)).strip() == '' else row.get(field)) for field in fieldnames}
+        for row in output_rows
+    ]
+
     with open(interpreted_output_file, 'w', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=base_fieldnames + interpreted_output_cols, delimiter='\t')
         writer.writeheader()
-        writer.writerows(output_rows)
+        writer.writerows(normalised_rows)
     return interpreted_output_file
 
 
