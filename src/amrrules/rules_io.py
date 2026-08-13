@@ -27,11 +27,19 @@ def extract_relevant_rules(rules, organism):
 
 def parse_multicopy_rule_mutation(mutation, get_marker=False, gene=None):
     """
-    Parse multi-copy rule mutation strings of the form c.[mutation][copy_count], Eg: c.[2611C>T][4]
-    Returns a tuple of (base_mutation, copy_count) 
+    Parse multi-copy rule mutation strings. Two formats are supported:
+      - c.[mutation][copy_count]  e.g. c.[2611C>T][4]
+        -> a specific point mutation, required for "Nucleotide variant detected in multi-copy gene"
+      - c.[copy_count]            e.g. c.[2]
+        -> the gene itself present in >= copy_count copies, independent of
+           any specific mutation ("Gene copy number variant detected")
+    Returns a tuple of (base_mutation_or_marker, copy_count), or
+    (None, None) if the string doesn't match either format.
     """
 
     mutation = mutation.strip()
+
+    # mutation variant form: c.[mutation][copy_count]
     mutation_plus_copy = re.match(r"^c\.\[([^\]]+)\]\[(\d+)\]$", mutation)
     if mutation_plus_copy:
         if get_marker:
@@ -40,3 +48,14 @@ def parse_multicopy_rule_mutation(mutation, get_marker=False, gene=None):
             return marker, int(mutation_plus_copy.group(2))
         # otherwise return the base mutation as str and the threshold as an int
         return f"c.{mutation_plus_copy.group(1)}", int(mutation_plus_copy.group(2))
+
+    # gene presence form: c.[copy_count]
+    copy_only = re.match(r"^c\.\[(\d+)\]$", mutation)
+    if copy_only:
+        if get_marker:
+            # the marker for a whole-gene copy-number rule is just the gene itself
+            return gene, int(copy_only.group(1))
+        return None, int(copy_only.group(1))
+
+    # not a multicopy-format mutation string at all
+    return None, None

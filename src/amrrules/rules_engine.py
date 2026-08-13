@@ -2,6 +2,7 @@ from amrrules.rules_io import parse_rules_file, extract_relevant_rules
 from amrrules.summariser import create_summary_dict
 from amrrules.utils import check_sample_ids, validate_amrfp_file, get_organisms, open_input
 from amrrules.output import write_genotype_report, write_genome_report
+from amrrules.copy_number import apply_copy_number_rules
 from amrrules.resources import ResourceManager as rm
 from amrrules.genotype_parser import GenoResult, Genotype
 import csv
@@ -121,15 +122,16 @@ def run(args):
     for g in genotype_rows:
         if g.to_process:
             if g.matched_rules:
-                duplicated_row = False
-                if len(g.matched_rules) > 0:
-                        # switch on duplicated
-                        duplicated_row = True
+                # go through each rule and create a duplicated Genotype object
+                # however, only switch on duplicated for the second and subsequent rules, not the first one
                 for rule in g.matched_rules:
-                    geno_obj = Genotype.from_result_row(g, card_map=card_drug_map, rule=rule, duplicated = duplicated_row)
+                    if rule == g.matched_rules[0]:
+                        geno_obj = Genotype.from_result_row(g, card_map=card_drug_map, rule=rule, duplicated = False)
+                    else:
+                        geno_obj = Genotype.from_result_row(g, card_map=card_drug_map, rule=rule, duplicated = True)
                     genotype_objects.append(geno_obj)
             else:
-                # extract the subclasses and split as needed
+                # extract the subclasses and split as needed, assign drugs and classes that way
                 g_subclasses = g.amrfp_subclass.split('/')
                 for subclass in g_subclasses:
                     geno_obj = Genotype.from_result_row(g, card_amrfp=card_amrfp_conversion, amrfp_subclass=subclass, no_rule_interp=args.no_rule_interpretation)
@@ -142,6 +144,12 @@ def run(args):
     for geno_obj in genotype_objects:
         grouped_by_sample[geno_obj.sample_name].append(geno_obj)
 
+    # NEW: detect gene copy-number scenarios per sample, BEFORE drug-level
+    # grouping. Runs against the full `rules` list (not pre-filtered by
+    # drug), since a copy-number rule's drug may have no other matched
+    # rule at all for this sample - see copy_number.py docstring.
+    for sample_name in grouped_by_sample:
+        grouped_by_sample[sample_name] = apply_copy_number_rules(grouped_by_sample[sample_name], rules, card_drug_map)
 
     summary_entry_dict = create_summary_dict(grouped_by_sample, rules, args.flag_core, args.no_rule_interpretation)
     

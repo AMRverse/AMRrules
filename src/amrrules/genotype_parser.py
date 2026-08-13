@@ -26,6 +26,8 @@ class GenoResult:
         self.print_row: bool = False
         # whether this gene is a partial hit or not
         self.partial: bool = False
+        # whether this object is now a record of a multi-copy gene rule
+        self.copy_number_row: bool = False
 
         # amrfp relevant fields(filled by parser)
         self.nodeID: Optional[str] = None
@@ -236,8 +238,8 @@ class GenoResult:
                 for rule in matching_rules:
                     if rule.get('variation type') == 'Nucleotide variant detected in multi-copy gene':
                         base_mutation, copy_threshold = parse_multicopy_rule_mutation(rule.get('mutation'))
-                    if base_mutation == self.mutation:
-                        multicopy_candidates.append((copy_threshold, rule))
+                        if base_mutation == self.mutation:
+                            multicopy_candidates.append((copy_threshold, rule))
 
                 if multicopy_candidates:
                     one_copy_rules = [rule for copies, rule in multicopy_candidates if copies == 1]
