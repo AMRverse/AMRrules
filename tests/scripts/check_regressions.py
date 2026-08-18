@@ -31,7 +31,10 @@ import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
-BASELINE_DIR = REPO_ROOT / "tests" / "data" / "example_output"
+# use this baseline output if you're comparing back to main
+#BASELINE_DIR = REPO_ROOT / "tests" / "data" / "example_output"
+# use this baseline dir when you want to freeze the baseline for your own local development, e.g. if you are iterating on a new feature and don't want to be constantly updating the baseline
+BASELINE_DIR = REPO_ROOT / "tests" / "data" / "local_output_frozen"
 LOCAL_DIR = REPO_ROOT / "tests" / "data" / "local_output"
 DIFF_DIR = REPO_ROOT / "tests" / "data" / "regression_diffs"
 

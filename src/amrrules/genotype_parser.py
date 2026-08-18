@@ -430,6 +430,37 @@ class Genotype(GenoResult):
 
         return new_obj
 
+    @classmethod
+    def create_unknown_mechanism_obj(cls, sample_name, organism, rule):
+        """
+        Placeholder Genotype object for a core, intrinsic resistance
+        mechanism with no specific gene to detect (rule['gene'] is 'unknown'
+        or 'none'). No underlying input row exists, so bypass __init__
+        entirely - same approach from_result_row uses, just with nothing to
+        copy attributes from.
+        """
+        dummy_obj = cls.__new__(cls)
+        dummy_obj.sample_name = sample_name
+        dummy_obj.organism = organism
+        dummy_obj.rule = rule
+        dummy_obj.ruleID = rule.get('ruleID')
+        dummy_obj.has_rule = True
+        dummy_obj.gene_context = rule.get('gene context')
+        dummy_obj.phenotype = rule.get('phenotype')
+        dummy_obj.clinical_category = rule.get('clinical category')
+        dummy_obj.evidence_grade = rule.get('evidence grade')
+        dummy_obj.variation_type = rule.get('variation type')
+        dummy_obj.marker_amrrules = '-'
+        dummy_obj.duplicated_row = False
+        dummy_obj.copy_number_row = False
+        dummy_obj.combo_rule_row = False
+        dummy_obj.unknown_mechanism_row = True 
+        # drug class is already resolved via card_drug_map by
+        # extract_unknown_core_rules, so no need to re-resolve it here
+        dummy_obj.drug = rule.get('drug', '-')
+        dummy_obj.drug_class = rule.get('drug class', '-')
+        return dummy_obj
+
     def _assign_drug_from_rule(self, card_drug_map):
         self.drug = self.rule.get('drug', '-')
         if self.drug != '-':

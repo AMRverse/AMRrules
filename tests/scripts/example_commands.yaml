@@ -167,6 +167,14 @@ cases:
     organism: s__Acinetobacter baumannii
     nr: nwtR
 
+  - name: test_gono_four23S
+    input: tests/data/input/ngono_4copies23S.tsv
+    organism: s__Neisseria gonorrhoeae
+
+  - name: test_burkpseud_multiPenA
+    input: tests/data/input/burk_pseudomallei_fakePenA_2copies.tsv
+    organism: s__Burkholderia pseudomallei
+
 # -----------------------------------------------------------------------
 # Debug-only cases: NOT run by CI and NOT included in the regression check
 # by default (see tests/scripts/check_regressions.py --include-debug-cases).
@@ -180,3 +188,7 @@ debug_cases:
   - name: test_gono_four23S
     input: tests/data/debug/ngono_4copies23S.tsv
     organism: s__Neisseria gonorrhoeae
+
+  - name: test_burkpseud_multiPenA
+    input: tests/data/debug/burk_pseudomallei_fakePenA_2copies.tsv
+    organism: s__Burkholderia pseudomallei

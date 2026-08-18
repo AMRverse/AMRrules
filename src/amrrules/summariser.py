@@ -1,3 +1,4 @@
+from amrrules.genotype_parser import Genotype
 from amrrules.resources import ResourceManager as rm
 from amrrules.utils import PAIRWISE_TABLE, DEFAULT_COMBINE_TABLE, IMPOSSIBLE, ImpossibleCombination, _normalize_call, EVIDENCE_GRADE_ORDER
 from amrrules.rules_io import parse_multicopy_rule_mutation
@@ -31,12 +32,12 @@ class SummaryEntry:
         self.evidence_grade = None
         self.markers_rule_nonS = None
         self.markers_with_norule = None
-        self.markers_s = None
+        self.markers_S = None
         self.ruleIDs = None
         self.combo_rules = None
     
     #def summarise_rules(self, no_rule_interpretation, combo_rules, class_summary=None, flag_core=False):
-    def summarise_rules(self, no_rule_interpretation, class_summary=None, flag_core=False):
+    def summarise_rules(self, no_rule_interpretation, unknown_rules=None, class_summary=None, flag_core=False):
 
         """Compute summary values based on geno_objs."""
 
@@ -150,33 +151,6 @@ class SummaryEntry:
             else:
                 to_keep.append(g)
         geno_objs = to_keep
-
-
-        # If we have combination rules, we need to evaluate them to see if any apply.
-        """
-        combo_rule_id_matches = set()
-        if solo_rule_ids and combo_rules:
-            for rule in combo_rules:
-                ruleID_logic = rule.get('gene')
-                # ruleID logic is a string of the form "gene1 & gene2 | gene3"
-                # we need to replace the & with a python 'and' and the | with a python 'or'
-                matched_combo = self._evaluate_logic_string(ruleID_logic, solo_rule_ids)
-                if matched_combo:
-                    # extract the individual rule IDs so we can exclude these rules from our
-                    #interpretation logic later, as the combo rule overrides the individual rules
-                    rules_in_logic = set(re.findall(r'\b\w+\b', ruleID_logic))
-                    rules_to_be_overriden.update(rules_in_logic)
-                    # add to the list of applied combo rules for printing to output
-                    combo_rule_id_matches.add(rule.get('ruleID'))
-                    # add this rule to the list of rules to assess for interpretation
-                    rules_to_assess.append(rule)
-
-        # Set combo rule IDs in the output, or '-' if none were found
-        if len(combo_rule_id_matches) == 0:
-            self.combo_rules = '-'
-        else:
-            self.combo_rules = ";".join(combo_rule_id_matches)
-        """
 
         # now set all the markers
         # only assess the genotype objects that aren't being overridden
@@ -297,6 +271,9 @@ class SummaryEntry:
                 # markers will be included in the correct marker string already
                 if getattr(g, "combo_rule_row", False):
                     continue
+                # if it's an unknown rule, there are no markers to add
+                if getattr(g, "unknown_mechanism_row", False):
+                    continue
                 # only label core genes if it's a core context with gene presence variation type
                 if g.gene_context == 'core' and g.variation_type == 'Gene presence detected' and flag_core:
                     marker = marker + " (core)"
@@ -411,16 +388,26 @@ def get_combination_rules(rules, organism, drug_class, drug=None):
 
     return combo_rules
 
-def create_summary_dict(grouped_by_sample, rules, flag_core, no_rule_interpretation):
+def create_summary_dict(grouped_by_sample, unknown_rules, flag_core, no_rule_interpretation):
 
     summary_entry_dict = {} # key: sample name, value: list of summary entry objs
     for sample_name, genotypes in grouped_by_sample.items():
         summary_entry_list = []
         # for the sample, we need to group by drug class, and then by drug within that
-
         sample_groups = defaultdict(lambda: defaultdict(list))
         for g in genotypes:
             sample_groups[g.drug_class][g.drug].append(g)
+        # added the unknown rule markers here, into the same buckets that
+        # we've already made for the sample. Will be assessed with any existing
+        # markers and rules if applicable, otherwise will be filled as their own entry
+        organism = genotypes[0].organism
+        for drug_class, drugs in unknown_rules.items():
+            for drug, rules in drugs.items():
+                for rule in rules:
+                    if rule.get('organism') != organism:
+                        continue
+                    dummy_obj = Genotype.create_unknown_mechanism_obj(sample_name, organism, rule)
+                    sample_groups[dummy_obj.drug_class][dummy_obj.drug].append(dummy_obj)
         for drug_class in sample_groups.keys():
             # for each drug_class, we first need to apply a summary entry at the class level
             # if the class level exists
@@ -429,13 +416,12 @@ def create_summary_dict(grouped_by_sample, rules, flag_core, no_rule_interpretat
             master_class_entry = None
             if class_level_hits:
                 summary_entry = SummaryEntry(sample_name, class_level_hits)
-                #combo_rules = get_combination_rules(rules, summary_entry.organism, summary_entry.drug_class)
-                #summary_entry.summarise_rules(no_rule_interpretation, combo_rules, flag_core=flag_core)
                 summary_entry.summarise_rules(no_rule_interpretation, flag_core=flag_core)
                 # this is our master entry for this drug_class, so save it
                 master_class_entry = summary_entry
                 # add it to our list
                 summary_entry_list.append(summary_entry)
+
             
             # otherwise now we're in a specific drug for the class
             # we need to make sure that the interpretation of this drug doesn't conflict with the class level rules
@@ -444,12 +430,9 @@ def create_summary_dict(grouped_by_sample, rules, flag_core, no_rule_interpretat
                     # create our summary entry
                     summary_entry = SummaryEntry(sample_name, sample_groups[drug_class][drug])
                     # determine highest category/pheno/evidence grade for this drug, including combo rules (if any)
-                    # but take into account any combination rules for the drug class or drug
-                    #combo_rules = get_combination_rules(rules, summary_entry.organism, summary_entry.drug_class, summary_entry.drug)
-                    #summary_entry.summarise_rules(no_rule_interpretation, combo_rules, class_summary=master_class_entry, flag_core=flag_core)
                     summary_entry.summarise_rules(no_rule_interpretation, class_summary=master_class_entry, flag_core=flag_core)
                     # add it to our list
                     summary_entry_list.append(summary_entry)
-            summary_entry_dict[sample_name] = order_summary_objs(summary_entry_list)
+        summary_entry_dict[sample_name] = order_summary_objs(summary_entry_list)
     
     return(summary_entry_dict)

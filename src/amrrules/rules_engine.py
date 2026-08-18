@@ -1,4 +1,4 @@
-from amrrules.rules_io import parse_rules_file, extract_relevant_rules
+from amrrules.rules_io import extract_unknown_core_rules, parse_rules_file, extract_relevant_rules
 from amrrules.summariser import create_summary_dict
 from amrrules.utils import check_sample_ids, validate_amrfp_file, get_organisms, open_input
 from amrrules.output import write_genotype_report, write_genome_report
@@ -166,8 +166,12 @@ def run(args):
     # now write out the interpreted genotype report, which annotates each row with the rule info
     genotype_output_file = write_genotype_report(args, genotype_output_rows, base_fieldnames)
 
-    summary_entry_dict = create_summary_dict(grouped_by_sample, rules, args.flag_core, args.no_rule_interpretation)
-    
+    # get the unknown rules, if there are any for this organism
+    unknown_rules = extract_unknown_core_rules(rules, card_drug_map)
+
+    # create the summary report
+    summary_entry_dict = create_summary_dict(grouped_by_sample, unknown_rules, args.flag_core, args.no_rule_interpretation)
+    # write out the summary report
     summary_output_file = write_genome_report(summary_entry_dict, args.output_dir, args.output_prefix)
 
     # print summary stats block

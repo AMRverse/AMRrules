@@ -1,3 +1,4 @@
+from collections import defaultdict
 import csv, re
 from importlib import resources
 
@@ -24,6 +25,19 @@ def extract_relevant_rules(rules, organism):
         if rule.get('organism') == organism:
             relevant_rules.append(rule)
     return relevant_rules
+
+def extract_unknown_core_rules(rules, card_drug_map):
+    """
+    Extract rules that are for core resistance mechanisms that have unknown genes.
+    Group the rules by drug class, then drug, as we have done within each sample.
+    """
+    unknown_rules = defaultdict(lambda: defaultdict(list))
+    for rule in rules:
+        if rule.get('gene') in ('unknown', 'none') and rule.get('phenotype') == 'wildtype':
+            if rule.get('drug class') == '-':
+                rule['drug class'] = card_drug_map.get(rule.get('drug'))
+            unknown_rules[rule.get('drug class')][rule.get('drug')].append(rule)
+    return unknown_rules
 
 def parse_multicopy_rule_mutation(mutation, get_marker=False, gene=None):
     """

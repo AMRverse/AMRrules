@@ -49,7 +49,7 @@ KEY_RECIPES = [
     ["sample", "drug", "drug class"],
     # "interpreted" style files: one row per genomic feature, exploded per
     # associated drug (so position alone isn't unique)
-    ["Name", "Contig id", "Start", "Stop", "ruleID", "drug", "drug class"],
+    ["Name", "variation type", "gene", "mutation", "ruleID", "drug", "drug class"],
 ]
 
 
