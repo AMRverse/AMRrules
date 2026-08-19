@@ -2,7 +2,7 @@ from amrrules.rules_io import extract_unknown_core_rules, parse_rules_file, extr
 from amrrules.summariser import create_summary_dict
 from amrrules.utils import check_sample_ids, validate_amrfp_file, get_organisms, open_input
 from amrrules.output import write_genotype_report, write_genome_report
-from amrrules.copy_number import apply_copy_number_rules, apply_combination_rules
+from amrrules.copy_combo_logic import apply_copy_number_rules, apply_combination_rules
 from amrrules.resources import ResourceManager as rm
 from amrrules.genotype_parser import GenoResult, Genotype
 import csv

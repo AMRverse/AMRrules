@@ -1,7 +1,56 @@
 from collections import defaultdict
+import ast
 import re
 from amrrules.rules_io import parse_multicopy_rule_mutation, get_combination_rules, evaluate_logic_string
 from amrrules.genotype_parser import Genotype
+
+
+def _simplify_logic_expression(node, marker_by_ruleid):
+    """
+    Recursively simplify a combo rule's ruleID_logic string, parsed with 
+    `and`/`or` in place of &/|) down to a marker string, keeping only 
+    branches whose ruleID was actually detected. 
+    Returns None if this node has no detected component at all.
+    """
+    if isinstance(node, ast.Name):
+        return marker_by_ruleid.get(node.id)
+
+    if isinstance(node, ast.BoolOp):
+        simplified_children = [_simplify_logic_expression(v, marker_by_ruleid) for v in node.values]
+        present = [c for c in simplified_children if c is not None]
+
+        if isinstance(node.op, ast.And):
+            # AND requires every operand to be present for the overall
+            # expression to have evaluated True - if one's missing, this
+            # rule shouldn't have matched at all
+            if len(present) != len(simplified_children):
+                raise ValueError("AND branch missing a detected marker - rule shouldn't have matched")
+            return " & ".join(present)
+
+        if isinstance(node.op, ast.Or):
+            if not present:
+                return None
+            if len(present) == 1:
+                return present[0]
+            return "(" + " | ".join(present) + ")"
+
+    raise ValueError(f"Unsupported logic expression node: {ast.dump(node)}")
+
+
+def simplify_combo_marker(ruleID_logic, matching_objs):
+    """
+    Given a combo rule's ruleID_logic string (e.g. 'A & B & (C | D) & E')
+    and the Genotype objects actually detected/matched, return a marker
+    string with undetected OR-branches dropped entirely - e.g.
+    'A_marker & B_marker & C_marker & E_marker' if D wasn't detected.
+    """
+    marker_by_ruleid = {g.ruleID: g.marker_amrrules for g in matching_objs}
+    python_logic = ruleID_logic.replace('&', ' and ').replace('|', ' or ')
+    tree = ast.parse(python_logic, mode='eval').body
+    result = _simplify_logic_expression(tree, marker_by_ruleid)
+    if result is None:
+        raise ValueError(f"No detected markers satisfy logic string: {ruleID_logic}")
+    return result
 
 
 def _best_tier_rule(candidates, observed_copies):
@@ -121,11 +170,10 @@ def apply_combination_rules(geno_objs, rules, card_drug_map):
     organism = geno_objs[0].organism
     result = list(geno_objs)
 
-    for g in geno_objs:
-        # get all the solo rule ids to compare against
-        solo_rule_ids = [g.ruleID for g in geno_objs if g.has_rule and not g.duplicated_row]
-        if not solo_rule_ids:
-            continue
+    # get all the solo rule ids to compare against
+    solo_rule_ids = [g.ruleID for g in geno_objs if g.has_rule and not g.duplicated_row]
+    if not solo_rule_ids:
+        return result
     # extract all the combination rules for this organism
     combo_rules = get_combination_rules(rules, organism)
     for rule in combo_rules:
@@ -135,12 +183,9 @@ def apply_combination_rules(geno_objs, rules, card_drug_map):
             rules_in_logic = set(re.findall(r'\b\w+\b', ruleID_logic))
             # extract the relevant rules
             matching_objs = [g for g in geno_objs if g.ruleID in rules_in_logic]
-
-            # build the combo's marker string by substituting each ruleID in the logic string with 
-            # its marker, preserving the logic structure
-            combo_marker = ruleID_logic
-            for g in matching_objs:
-                combo_marker = re.sub(rf'\b{re.escape(g.ruleID)}\b', g.marker_amrrules, combo_marker)
+            # build the combo's marker string, dropping any undetected
+            # OR-branches entirely rather than leaving their ruleIDs in place
+            combo_marker = simplify_combo_marker(ruleID_logic, matching_objs)
             # now we need to create a new genotype object for this combination rule
             new_geno = Genotype.from_result_row(matching_objs[0], card_map=card_drug_map, rule=rule)
             new_geno.combo_rule_row = True
@@ -149,8 +194,5 @@ def apply_combination_rules(geno_objs, rules, card_drug_map):
             new_geno.combo_rule_components = rules_in_logic
             # add it to the list of results to return
             result.append(new_geno)
-            # update the subcomponent parts to indicate they are part of a combo rule
-            #for g in matching_objs:
-            #    result.remove(g)
 
     return result
