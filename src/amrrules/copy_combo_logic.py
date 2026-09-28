@@ -119,12 +119,11 @@ def apply_copy_number_rules(geno_objs, rules, card_drug_map):
                 new_geno.copy_number_row = True
                 # store the original marker so we can match on it later
                 new_geno.original_amrrules_marker = new_geno.marker_amrrules
-                # update the marker to be a list of the markers, that is the length of the gene copies detected
-                count = 1
-                new_geno.marker_amrrules = marker
-                while count < observed_copies:
-                    count += 1
-                    new_geno.marker_amrrules += f';{marker}'
+                # update the marker to be the mutation and the number of copies observed
+                gene_name, base_mutation = marker.split(':c.', 1)
+                new_geno.mutation = f"c.[{base_mutation}][{observed_copies}]"
+                # the marker for the summary report should be formatted as gene:c.[mutation][observed copies]
+                new_geno.marker_amrrules = f"{gene_name}:c.[{base_mutation}][{observed_copies}]"
                 result.append(new_geno)
 
     # now look for gene copy number variants
@@ -154,12 +153,10 @@ def apply_copy_number_rules(geno_objs, rules, card_drug_map):
                 new_geno.copy_number_row = True
                 # store the original marker so we can match on it later
                 new_geno.original_amrrules_marker = new_geno.marker_amrrules
-                # update the marker to be a list of the markers, that is the length of the gene copies detected
-                count = 1
-                new_geno.marker_amrrules = gene
-                while count < observed_copies:
-                    count += 1
-                    new_geno.marker_amrrules += f';{gene}'
+                # update the marker to give the gene and number of copies
+                new_geno.mutation = f"c.[{observed_copies}]"
+                # the marker for the summary report should be formatted as gene:c.[observed copies]
+                new_geno.marker_amrrules = f"{gene}:c.[{observed_copies}]"
                 result.append(new_geno)
 
     return result

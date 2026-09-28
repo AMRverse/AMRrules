@@ -377,10 +377,11 @@ class GenoResult:
         if self.rule.get('variation type') == 'Combination':
             row['gene'] = self.marker_amrrules
             row['mutation'] = '-'
-        # if it's copy number rule, show the gene and mutation as per the rule
+        # if it's copy number rule, show the gene and mutation in its summarised form
+        # this will only match the rule if that's the total number of copies, it could be higher than the rule
         else:
             row['gene'] = self.rule.get('gene', '-')
-            row['mutation'] = self.rule.get('mutation', '-')
+            row['mutation'] = getattr(self, "mutation", "-")
         for col in cols:
             row[col] = self.rule.get(col, '-')
         row['version'] = __version__
