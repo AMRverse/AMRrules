@@ -271,8 +271,18 @@ class SummaryEntry:
                 # markers will be included in the correct marker string already
                 if getattr(g, "combo_rule_row", False):
                     continue
-                # if it's an unknown rule, there are no markers to add
+                # if it's an unknown rule, add a marker to either S or non-S list, based on the clinical category of the unknown rule
                 if getattr(g, "unknown_mechanism_row", False):
+                    if g.rule.get('gene') == 'none':
+                        marker = '(no target)'
+                    else:
+                        marker = '(unknown mechanism)'
+                    # only append the markers if the list is empty
+                    # if there are other markers (eg nwt acquired) then we don't need to add the unknown or none markers
+                    if g.clinical_category == 'S' and markers_s == []:
+                        markers_s.append(marker)
+                    elif markers_rule_nonS == []:
+                        markers_rule_nonS.append(marker)
                     continue
                 # only label core genes if it's a core context with gene presence variation type
                 if g.gene_context == 'core' and g.variation_type == 'Gene presence detected' and flag_core:
