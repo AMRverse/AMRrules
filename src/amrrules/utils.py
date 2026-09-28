@@ -60,9 +60,9 @@ PAIRWISE_TABLE = {
         ('wildtype', 'S'): ('wildtype', 'S'),            ('-', '-'): ('wildtype', 'S'),
     },
     ('wildtype', '-'): {
-        ('nonwildtype', 'R'): ('nonwildtype', 'R'), ('nonwildtype', 'I'): ('nonwildtype', '-'),
-        ('nonwildtype', 'S'): ('nonwildtype', '-'), ('nonwildtype', '-'): ('nonwildtype', '-'),
-        ('wildtype', 'R'): ('wildtype', 'R'),          ('wildtype', 'I'): ('wildtype', 'I'),
+        ('nonwildtype', 'R'): ('nonwildtype', 'R'), ('nonwildtype', 'I'): ('nonwildtype', 'I'),
+        ('nonwildtype', 'S'): ('nonwildtype', 'S'), ('nonwildtype', '-'): ('nonwildtype', '-'),
+        ('wildtype', 'R'): ('wildtype', 'R'),          ('wildtype', 'I'): ('wildtype', '-'),
         ('wildtype', 'S'): ('wildtype', '-'),            ('-', '-'): ('wildtype', '-'),
     },
     ('-', '-'): {
