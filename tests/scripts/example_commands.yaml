@@ -189,10 +189,14 @@ cases:
 # launch.json where they're easy to lose track of.
 # -----------------------------------------------------------------------
 debug_cases:
-  - name: test_gono_four23S
+  - name: test_gono_four23S_debug
     input: tests/data/debug/ngono_4copies23S.tsv
     organism: s__Neisseria gonorrhoeae
 
-  - name: test_burkpseud_multiPenA
+  - name: test_burkpseud_multiPenA_debug
     input: tests/data/debug/burk_pseudomallei_fakePenA_2copies.tsv
     organism: s__Burkholderia pseudomallei
+
+  - name: test_ngono_tenk
+    input: tests/data/debug/ng_tenk.tsv
+    organism: s__Neisseria gonorrhoeae
