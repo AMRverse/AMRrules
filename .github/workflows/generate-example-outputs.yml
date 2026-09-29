@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - v1.0.2-combo-compy-num
 
 jobs:
   generate-outputs:
