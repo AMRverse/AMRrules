@@ -69,6 +69,8 @@ def build_command(case, output_dir):
         cmd.append("--flag-core")
     if case.get("nr"):
         cmd += ["-nr", case["nr"]]
+    if case.get("list_all_rules"):
+        cmd.append("--list-all-rules")
     cmd += case.get("extra_args", [])
     return cmd
 

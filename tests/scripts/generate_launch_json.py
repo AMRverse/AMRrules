@@ -44,6 +44,8 @@ def case_to_config(case):
         args.append("--flag-core")
     if case.get("nr"):
         args += ["-nr", case["nr"]]
+    if case.get("list_all_rules"):
+        args.append("--list-all-rules")
     args += case.get("extra_args", [])
 
     return {

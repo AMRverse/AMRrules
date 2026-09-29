@@ -32,6 +32,7 @@ cases:
   - name: test_ecoli_wildtype
     input: tests/data/input/test_ecoli_wildtype.tsv
     organism: s__Escherichia coli
+    list_all_rules: true
 
   - name: test_kpneumo_wildtype
     input: tests/data/input/test_kpneumo_wildtype.tsv
@@ -66,6 +67,7 @@ cases:
     input: tests/data/input/test_kpneumo_MDR.tsv
     organism: s__Klebsiella pneumoniae
     nr: nwtR
+    list_all_rules: true
 
   - name: test_kpneumo_disrupt
     input: tests/data/input/test_kpneumo_disrupt.tsv
@@ -126,6 +128,7 @@ cases:
   - name: test_ngono_20strains
     input: tests/data/input/test_ngono_20strains.tsv
     organism: s__Neisseria gonorrhoeae
+    list_all_rules: true
 
   - name: test_nmeningitidis_20strains
     input: tests/data/input/test_nmeningitidis_20strains.tsv
@@ -161,6 +164,7 @@ cases:
     input: tests/data/input/test_abaumannii_20strains.tsv
     organism: s__Acinetobacter baumannii
     nr: nwtS
+    list_all_rules: true
 
   - name: test_abaumannii_20strains_nwtR
     input: tests/data/input/test_abaumannii_20strains.tsv
