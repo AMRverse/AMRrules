@@ -25,12 +25,15 @@ def write_genotype_report(args, output_rows, base_fieldnames):
     return interpreted_output_file
 
 
-def write_genome_report(summary_entry_dict, out_dir, out_prefix):
+def write_genome_report(summary_entry_dict, out_dir, out_prefix, list_all_rules):
 
     # now we want to write out the summary entry report
     # we have all the values we need in each row, under each sample
     summary_output_file = os.path.join(out_dir, out_prefix + '_genome_summary.tsv')
-    summary_output_header = ['sample_name', 'drug', 'drug_class', 'category', 'phenotype', 'evidence_grade', 'markers_rule_nonS', 'markers_with_norule', 'markers_S', 'ruleIDs', 'combo_rules', 'organism', 'version']
+    summary_output_header = ['sample_name', 'drug', 'drug_class', 'category', 'phenotype', 'evidence_grade', 'markers_rule_nonS', 'markers_with_norule', 'markers_S', 'supporting_rules']
+    if list_all_rules:
+        summary_output_header.append('other_rules')
+    summary_output_header += ['organism', 'version']
     header_mapping = {
     'sample_name': 'sample',
     'drug': 'drug',
@@ -41,8 +44,8 @@ def write_genome_report(summary_entry_dict, out_dir, out_prefix):
     'markers_rule_nonS': 'markers (non-S)',
     'markers_with_norule': 'markers (no rule)',
     'markers_S': 'markers (S)',
-    'ruleIDs': 'ruleIDs',
-    'combo_rules': 'combo rules',
+    'supporting_rules': 'supporting rules',
+    'other_rules': 'other rules',
     'organism': 'organism',  
     'version': 'version' 
     }
