@@ -159,7 +159,8 @@ def run(args):
     for sample_name, geno_objs in grouped_by_sample.items():
         for g in geno_objs:
             if getattr(g, 'copy_number_row', False) or getattr(g, 'combo_rule_row', False):
-                genotype_output_rows.append(g.build_rule_only_row(args.annot_opts))
+                if getattr(g, 'show_in_interpreted', True):
+                    genotype_output_rows.append(g.build_rule_only_row(args.annot_opts))
 
     genotype_output_rows.sort(key=lambda row: (row.get("Name", ""), row.get("gene", "")))
 

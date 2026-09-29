@@ -125,12 +125,18 @@ class SummaryEntry:
         # a multi-copy gene object overrides any individual objects that are part of the multi-copy rule
         marker_for_objs_to_remove = None
         copy_number_override = False
+        # ruleIDs carried by the surviving copy-number row(s). If a copy-number
+        # row shares its ruleID with the individual object(s) it's replacing
+        # (e.g. a single copy matching a multi-copy family's lowest tier - no
+        # real escalation happened), that ruleID must NOT be treated as
+        # overridden, or the only rule call available gets excluded entirely.
+        copy_number_survivor_ruleids = set()
         combo_markers_to_add = defaultdict(list)
         for g in geno_objs:
             if g.copy_number_row:
                 copy_number_override = True
-                # this is the master row, so remove any other geno objects that have the same marker
                 marker_for_objs_to_remove = g.original_amrrules_marker
+                copy_number_survivor_ruleids.add(g.ruleID)
             if getattr(g, "combo_rule_row", False):
                 # this is a combination rule, so add the individual rules that make up the combination
                 # to the list of rules to be overriden (excluded) when generating the final call
@@ -144,21 +150,19 @@ class SummaryEntry:
                     solo_rule_ids.update(g.combo_rule_components)
                     combo_markers_to_add.setdefault(g.clinical_category, set()).update(re.findall(r"[^&|()\s]+", g.marker_amrrules))
 
-                #if set(g.combo_rule_components).issubset(solo_rule_ids):
-                #    rules_to_be_overriden.update(g.combo_rule_components)
-                # if this is the case, then not only do we want to add the rule IDs, we want 
-                # to add the individual markers to a dict of markers to add to the final marker strings
-                #else:
-                #    solo_rule_ids.update(g.combo_rule_components)
-                #    combo_markers_to_add.setdefault(g.clinical_category, set()).update(re.findall(r"[^&|()\s]+", g.marker_amrrules))
-
         # now remove any geno objects that have the same marker as the multi-copy row, 
         # and are not the multi-copy row itself
         to_keep = []
         for g in geno_objs:
             if copy_number_override and (g.marker_amrrules == marker_for_objs_to_remove and not g.copy_number_row):
-                rules_to_be_overriden.add(g.ruleID)
-                solo_rule_ids.discard(g.ruleID)
+                # only mark the ruleID as overridden if the survivor is
+                # actually a DIFFERENT rule - otherwise there's no real
+                # escalation, and excluding it leaves nothing to assess
+                if g.ruleID not in copy_number_survivor_ruleids:
+                    rules_to_be_overriden.add(g.ruleID)
+                    solo_rule_ids.discard(g.ruleID)
+                # either way, drop this duplicate object - the copy_number_row's
+                # (correctly formatted) marker represents it in set_markers
             else:
                 to_keep.append(g)
         geno_objs = to_keep

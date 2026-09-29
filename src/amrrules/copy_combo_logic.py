@@ -124,6 +124,10 @@ def apply_copy_number_rules(geno_objs, rules, card_drug_map):
                 new_geno.mutation = f"c.[{base_mutation}][{observed_copies}]"
                 # the marker for the summary report should be formatted as gene:c.[mutation][observed copies]
                 new_geno.marker_amrrules = f"{gene_name}:c.[{base_mutation}][{observed_copies}]"
+                # if the winning tier is literally the same rule that was  already individually matched,
+                # this object exists only to give the summary report the correct marker format - it shouldn't also appear as
+                # a redundant duplicate row in the interpreted report
+                new_geno.show_in_interpreted = best_rule.get('ruleID') != genos[0].ruleID
                 result.append(new_geno)
 
     # now look for gene copy number variants
