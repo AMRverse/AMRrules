@@ -61,12 +61,10 @@ class SummaryEntry:
             self.category = '-'
             self.phenotype = '-'
             self.evidence_grade = '-'
-            self.supporting_rules = '-'
+            self.supporting_rules = 'none (unassigned)' if self.drug_class == 'unassigned markers' else 'none (partial hits)'
             self.other_rules = '-'
             # move the partial call to the ruleID col and set drug and class to '-' to avoid confusion
             if self.drug_class == 'partial':
-                self.supporting_rules = 'none (partial hits)'
-                self.other_rules = '-'
                 self.drug_class = '-'
                 self.drug = '-'
             self.set_markers(geno_objs, {}, flag_core=flag_core)
@@ -75,23 +73,25 @@ class SummaryEntry:
         # if we have no rules to apply, then we can't interpret
         # so set the values to match the no_rule_interpretation setting, and exit
         if not any(g.has_rule for g in geno_objs):
-            # no rules to apply, therefore these values are '-'
-            self.supporting_rules = '-'
+            # no rules to apply, so there will be no other rules encountered
             self.other_rules = '-'
-            # self.combo_rules = '-'
             if no_rule_interpretation == 'none':
+                self.supporting_rules = 'none (default none)'
                 self.category = '-'
                 self.phenotype = '-'
                 self.evidence_grade = 'none'
             elif no_rule_interpretation == 'nwt':
+                self.supporting_rules = 'none (default nwt)'
                 self.category = '-'
                 self.phenotype = 'nonwildtype'
                 self.evidence_grade = 'none'
             elif no_rule_interpretation == 'nwtS':
+                self.supporting_rules = 'none (default nwtS)'
                 self.category = 'S'
                 self.phenotype = 'nonwildtype'
                 self.evidence_grade = 'none'
             elif no_rule_interpretation == 'nwtR':
+                self.supporting_rules = 'none (default nwtR)'
                 self.category = 'R'
                 self.phenotype = 'nonwildtype'
                 self.evidence_grade = 'none'
