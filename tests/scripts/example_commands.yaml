@@ -207,10 +207,40 @@ cases:
   - name: test_gono_four23S
     input: tests/data/input/ngono_4copies23S.tsv
     organism: s__Neisseria gonorrhoeae
-  
+
+  - name: test_gono_four23S_nwt
+    input: tests/data/input/ngono_4copies23S.tsv
+    organism: s__Neisseria gonorrhoeae
+    nr: nwt
+
+  - name: test_gono_four23S_nwtS
+    input: tests/data/input/ngono_4copies23S.tsv
+    organism: s__Neisseria gonorrhoeae
+    nr: nwtS
+
+  - name: test_gono_four23S_nwtR
+    input: tests/data/input/ngono_4copies23S.tsv
+    organism: s__Neisseria gonorrhoeae
+    nr: nwtR
+    
   - name: test_ngono_single23S_copy
     input: tests/data/input/ngono_single23S_copy.tsv
     organism: s__Neisseria gonorrhoeae
+
+  - name: test_ngono_single23S_copy_nwt
+    input: tests/data/input/ngono_single23S_copy.tsv
+    organism: s__Neisseria gonorrhoeae
+    nr: nwt
+
+  - name: test_ngono_single23S_copy_nwtS
+    input: tests/data/input/ngono_single23S_copy.tsv
+    organism: s__Neisseria gonorrhoeae
+    nr: nwtS
+
+  - name: test_ngono_single23S_copy_nwtR
+    input: tests/data/input/ngono_single23S_copy.tsv
+    organism: s__Neisseria gonorrhoeae
+    nr: nwtR
 
 # -----------------------------------------------------------------------
 # Debug-only cases: NOT run by CI and NOT included in the regression check
