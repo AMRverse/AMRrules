@@ -142,17 +142,21 @@ class GenoResult:
                 # our coordinates are the original pos, and original - 1
                 pos_coords = str(int(pos) - 1) + "_" + str(pos)
                 return(f"p.{pos_coords}ins{alt_string}", variation_type)
+
             if len(alt) > 1 and 'Ter' in alt:
-                # then we have a frameshift leading to a stop codon
-                # if the start of alt is Ter, then it's simply ref pos *
+                # nonsense substitution, e.g. ompK35_Y36Ter -> alt is 'Ter'
                 if alt.startswith('Ter'):
                     return(f"p.{aa_conversion.get(ref)}{pos}Ter", variation_type)
+                # no 'fs' in alt means the residue is kept and a stop codon is inserted after it,
+                # e.g. ompK35_Y317YTer -> p.Tyr317insTer
+                elif 'fs' not in alt:
+                    return(f"p.{aa_conversion.get(ref)}{pos}insTer", variation_type)
+                # otherwise it's a frameshift ending in a stop, e.g. ompK35_E42RfsTer47
                 else:
-                    # otherwise we need to get the first aa and convert it
                     alt = aa_conversion.get(alt[0])
-                    # then grab the number after Ter
                     fs_pos = re.search(r'Ter(\d+)', mutation).group(1)
                     return(f"p.{aa_conversion.get(ref)}{pos}{alt}fsTer{fs_pos}", variation_type)
+            
             if len(ref) >= 1 and 'del' in alt:
                 # then this is an in-frame deletion, therefore not an inactivating mutation
                 # we need to convert the single letter to 3-letter aa codes
