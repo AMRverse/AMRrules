@@ -44,6 +44,24 @@ cases:
     organism: s__Pseudomonas aeruginosa
     flag_core: true
 
+  - name: test_paeuriginosa_PAO1_wildtype_nwt
+    input: tests/data/input/test_paeuriginosa_PAO1_wildtype.tsv
+    organism: s__Pseudomonas aeruginosa
+    flag_core: true
+    nr: nwt
+
+  - name: test_paeuriginosa_PAO1_wildtype_nwtS
+    input: tests/data/input/test_paeuriginosa_PAO1_wildtype.tsv
+    organism: s__Pseudomonas aeruginosa
+    flag_core: true
+    nr: nwtS
+
+  - name: test_paeuriginosa_PAO1_wildtype_nwtR
+    input: tests/data/input/test_paeuriginosa_PAO1_wildtype.tsv
+    organism: s__Pseudomonas aeruginosa
+    flag_core: true
+    nr: nwtR
+
   - name: test_multispp
     input: tests/data/input/test_multispp_amrfp.tsv
     organism_file: tests/data/input/test_multispp_species.tsv
@@ -97,6 +115,21 @@ cases:
     input: tests/data/input/test_kpneumo_20strains.tsv
     organism: s__Klebsiella pneumoniae
 
+  - name: test_saureus_20strains_nwt
+    input: tests/data/input/test_saureus_20strains.tsv
+    organism: s__Staphylococcus aureus
+    nr: nwt
+
+  - name: test_saureus_20strains_nwtS
+    input: tests/data/input/test_saureus_20strains.tsv
+    organism: s__Staphylococcus aureus
+    nr: nwtS
+
+  - name: test_saureus_20strains_nwtR
+    input: tests/data/input/test_saureus_20strains.tsv
+    organism: s__Staphylococcus aureus
+    nr: nwtR
+  
   - name: test_saureus_20strains
     input: tests/data/input/test_saureus_20strains.tsv
     organism: s__Staphylococcus aureus
