@@ -46,6 +46,12 @@ def case_to_config(case):
         args += ["-nr", case["nr"]]
     if case.get("list_all_rules"):
         args.append("--list-all-rules")
+    if case.get("trust_multi_copy"):
+        args.append("--trust-multi-copy")
+    if case.get("full_disrupt"):
+        args.append("--full-disrupt")
+    if case.get("print_non_amr"):
+        args.append("--print-non-amr")
     args += case.get("extra_args", [])
 
     return {

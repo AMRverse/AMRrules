@@ -71,6 +71,12 @@ def build_command(case, output_dir):
         cmd += ["-nr", case["nr"]]
     if case.get("list_all_rules"):
         cmd.append("--list-all-rules")
+    if case.get("trust_multi_copy"):
+        cmd.append("--trust-multi-copy")
+    if case.get("full_disrupt"):
+        cmd.append("--full-disrupt")
+    if case.get("print_non_amr"):
+        cmd.append("--print-non-amr")
     cmd += case.get("extra_args", [])
     return cmd
 
