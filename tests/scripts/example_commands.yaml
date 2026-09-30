@@ -176,7 +176,7 @@ cases:
     organism: s__Neisseria gonorrhoeae
   
   - name: test_ngono_single23S_copy
-    input: tests/data/debug/ngono_single23S_copy.tsv
+    input: tests/data/input/ngono_single23S_copy.tsv
     organism: s__Neisseria gonorrhoeae
 
 # -----------------------------------------------------------------------
