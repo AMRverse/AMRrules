@@ -175,7 +175,7 @@ cases:
     input: tests/data/input/ngono_4copies23S.tsv
     organism: s__Neisseria gonorrhoeae
   
-  - name: debug_ngono_single23S_copy
+  - name: test_ngono_single23S_copy
     input: tests/data/debug/ngono_single23S_copy.tsv
     organism: s__Neisseria gonorrhoeae
 
@@ -204,3 +204,7 @@ debug_cases:
   - name: debug_ngono_single23S_copy
     input: tests/data/debug/ngono_single23S_copy.tsv
     organism: s__Neisseria gonorrhoeae
+  
+  - name: debug_burk_singlepenA_copy
+    input: tests/data/debug/burk_pseudomallei_fakePenA_singleCopy.tsv
+    organism: s__Burkholderia pseudomallei
