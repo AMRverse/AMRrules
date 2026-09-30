@@ -42,6 +42,15 @@ jobs:
           # test a single wild-type P. aeuruginosa genome, and flag core genes in the summary output
           amrrules --input tests/data/input/test_paeuriginosa_PAO1_wildtype.tsv --output-prefix test_paeuriginosa_PAO1_wildtype --organism 's__Pseudomonas aeruginosa' --flag-core --output-dir tests/data/example_output
 
+          # test a single wild-type P. aeuruginosa genome, with default nwtS
+          amrrules --input tests/data/input/test_paeuriginosa_PAO1_wildtype.tsv --output-prefix test_paeuriginosa_PAO1_wildtype_nwtS --organism 's__Pseudomonas aeruginosa' --flag-core --output-dir tests/data/example_output -nr nwtS
+
+          # test a single wild-type P. aeuruginosa genome, with default nwtR
+          amrrules --input tests/data/input/test_paeuriginosa_PAO1_wildtype.tsv --output-prefix test_paeuriginosa_PAO1_wildtype_nwtR --organism 's__Pseudomonas aeruginosa' --flag-core --output-dir tests/data/example_output -nr nwtR
+
+          # test a single wild-type P. aeuruginosa genome, with default nwt
+          amrrules --input tests/data/input/test_paeuriginosa_PAO1_wildtype.tsv --output-prefix test_paeuriginosa_PAO1_wildtype_nwt --organism 's__Pseudomonas aeruginosa' --flag-core --output-dir tests/data/example_output -nr nwt
+
           # multispecies example
           amrrules  --input tests/data/input/test_multispp_amrfp.tsv --output-prefix test_multispp --organism-file tests/data/input/test_multispp_species.tsv --output-dir tests/data/example_output
 
