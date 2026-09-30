@@ -171,7 +171,7 @@ def run(args):
     unknown_rules = extract_unknown_core_rules(rules, card_drug_map)
 
     # create the summary report
-    summary_entry_dict = create_summary_dict(grouped_by_sample, unknown_rules, args.flag_core, args.no_rule_interpretation, args.list_all_rules)
+    summary_entry_dict = create_summary_dict(grouped_by_sample, unknown_rules, args.flag_core, args.no_rule_interpretation, args.list_all_rules, args.trust_multi_copy)
     # write out the summary report
     summary_output_file = write_genome_report(summary_entry_dict, args.output_dir, args.output_prefix, args.list_all_rules)
 

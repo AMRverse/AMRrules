@@ -26,6 +26,7 @@ def main():
     parser.add_argument('--annot-opts', '-a', type=str, default='minimal', choices=['minimal', 'full'], help='Annotation options: minimal (context, drug, phenotype, category, evidence grade), full (everything including breakpoints, standards, etc)')
     parser.add_argument('--flag-core', action='store_true', help='Turn on flagging core genes in the summary output')
     parser.add_argument('--list-all-rules', action='store_true', help='List all rules encountered for a drug/drug class in the genome summary output file, regardless of whether the rule supports the final interpretation.')
+    parser.add_argument('--trust-multi-copy', action='store_true', help='If turned on, trust that multi-copy gene calls are correct, and do not flag them as potentially incorrect due to genotyping a draft, rather than complete, genome assembly.')
     parser.add_argument('--full-disrupt', action='store_true', help='Show the full mutation detected by AMRFinderPlus for POINT_DISRUPT calls in the summary report, rather than just labelling them as gene:-')
     parser.add_argument('--print-non-amr', action='store_true', help='Include non-AMR rows (eg VIRULENCE, STRESS) from the input file in the interpreted output. By default, these rows are skipped.')
     parser.add_argument('--download-resources', action='store_true', help='Download AMRFinderPlus resource files and exit.')

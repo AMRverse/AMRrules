@@ -37,7 +37,7 @@ class SummaryEntry:
         self.other_rules = None
     
     #def summarise_rules(self, no_rule_interpretation, combo_rules, class_summary=None, flag_core=False):
-    def summarise_rules(self, no_rule_interpretation, unknown_rules=None, class_summary=None, flag_core=False, list_all_rules=False):
+    def summarise_rules(self, no_rule_interpretation, unknown_rules=None, class_summary=None, flag_core=False, list_all_rules=False, trust_multi_copy=False):
 
         """Compute summary values based on geno_objs."""
 
@@ -131,12 +131,15 @@ class SummaryEntry:
         # real escalation happened), that ruleID must NOT be treated as
         # overridden, or the only rule call available gets excluded entirely.
         copy_number_survivor_ruleids = set()
+        copy_number_sensitive_ruleids = set()
         combo_markers_to_add = defaultdict(list)
         for g in geno_objs:
             if g.copy_number_row:
                 copy_number_override = True
                 marker_for_objs_to_remove = g.original_amrrules_marker
                 copy_number_survivor_ruleids.add(g.ruleID)
+                if getattr(g, "copy_number_sensitive", False):
+                    copy_number_sensitive_ruleids.add(g.ruleID)
             if getattr(g, "combo_rule_row", False):
                 # this is a combination rule, so add the individual rules that make up the combination
                 # to the list of rules to be overriden (excluded) when generating the final call
@@ -219,6 +222,17 @@ class SummaryEntry:
         if list_all_rules:
             other_ids |= (all_encountered_ids - supporting_ids)
         self.other_rules = ";".join(sorted(other_ids)) if other_ids else '-'
+
+        # An S or I interpretation based on a copy-number-sensitive rule is only
+        # reliable if the copy number call itself is correct (e.g. a collapsed repeat
+        # in the assembly would look like fewer copies than really exist).
+        # Here we flag to the user that the evidence for this interpretation may be lower
+        # due to the uncertainty in the copy number call. This is only relevant for S or I calls, 
+        # as R calls are always actionable regardless of the copy number.
+        if (not trust_multi_copy
+                and self.category in ('S', 'I')
+                and supporting_ids & copy_number_sensitive_ruleids):
+            self.evidence_grade = 'low (copy number variant)'
 
         if self.drug_class == 'antibiotic efflux':
                     #override as we can't say anything meaningful for efflux
@@ -430,7 +444,7 @@ def get_combination_rules(rules, organism, drug_class, drug=None):
 
     return combo_rules
 
-def create_summary_dict(grouped_by_sample, unknown_rules, flag_core, no_rule_interpretation, list_all_rules):
+def create_summary_dict(grouped_by_sample, unknown_rules, flag_core, no_rule_interpretation, list_all_rules, trust_multi_copy):
 
     summary_entry_dict = {} # key: sample name, value: list of summary entry objs
     for sample_name, genotypes in grouped_by_sample.items():
@@ -458,7 +472,7 @@ def create_summary_dict(grouped_by_sample, unknown_rules, flag_core, no_rule_int
             master_class_entry = None
             if class_level_hits:
                 summary_entry = SummaryEntry(sample_name, class_level_hits)
-                summary_entry.summarise_rules(no_rule_interpretation, flag_core=flag_core, list_all_rules=list_all_rules)
+                summary_entry.summarise_rules(no_rule_interpretation, flag_core=flag_core, list_all_rules=list_all_rules, trust_multi_copy=trust_multi_copy)
                 # this is our master entry for this drug_class, so save it
                 master_class_entry = summary_entry
                 # add it to our list
@@ -472,7 +486,7 @@ def create_summary_dict(grouped_by_sample, unknown_rules, flag_core, no_rule_int
                     # create our summary entry
                     summary_entry = SummaryEntry(sample_name, sample_groups[drug_class][drug])
                     # determine highest category/pheno/evidence grade for this drug, including combo rules (if any)
-                    summary_entry.summarise_rules(no_rule_interpretation, class_summary=master_class_entry, flag_core=flag_core, list_all_rules=list_all_rules)
+                    summary_entry.summarise_rules(no_rule_interpretation, class_summary=master_class_entry, flag_core=flag_core, list_all_rules=list_all_rules, trust_multi_copy=trust_multi_copy)
                     # add it to our list
                     summary_entry_list.append(summary_entry)
         summary_entry_dict[sample_name] = order_summary_objs(summary_entry_list)

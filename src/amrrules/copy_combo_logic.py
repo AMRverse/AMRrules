@@ -65,6 +65,18 @@ def _best_tier_rule(candidates, observed_copies):
         return None
     return max(qualifying, key=lambda tr: tr[0])[1]
 
+def _higher_tier_changes_call(candidates, observed_copies, best_rule):
+    """
+    True if a tier requiring MORE copies than observed exists with a
+    different clinical category to the rule that was applied. i.e. the call
+    would change if the copy number had been under-called.
+    """
+    return any(
+        t is not None and t > observed_copies
+        and r.get('clinical category') != best_rule.get('clinical category')
+        for t, r in candidates
+    )
+
 
 def apply_copy_number_rules(geno_objs, rules, card_drug_map):
     """
@@ -109,26 +121,32 @@ def apply_copy_number_rules(geno_objs, rules, card_drug_map):
 
         for marker, genos in nucl_groups.items():
             observed_copies = len(genos)
-            possible_rules = [(threshold, r) for m, threshold, r in parsed_nucl_rules if m == marker]
-            best_rule = _best_tier_rule(possible_rules, observed_copies)
-            if best_rule:
-                # duplicate the genotype object for the best rule, and add it to the result list
-                new_geno = Genotype.from_result_row(genos[0], card_map=card_drug_map, rule=best_rule)
-                # mark the row as a copy number row, so when we print to interpreted output
-                # we can remove all the AMRFP info and just present the rule information
-                new_geno.copy_number_row = True
-                # store the original marker so we can match on it later
-                new_geno.original_amrrules_marker = new_geno.marker_amrrules
-                # update the marker to be the mutation and the number of copies observed
-                gene_name, base_mutation = marker.split(':c.', 1)
-                new_geno.mutation = f"c.[{base_mutation}][{observed_copies}]"
-                # the marker for the summary report should be formatted as gene:c.[mutation][observed copies]
-                new_geno.marker_amrrules = f"{gene_name}:c.[{base_mutation}][{observed_copies}]"
-                # if the winning tier is literally the same rule that was  already individually matched,
-                # this object exists only to give the summary report the correct marker format - it shouldn't also appear as
-                # a redundant duplicate row in the interpreted report
-                new_geno.show_in_interpreted = best_rule.get('ruleID') != genos[0].ruleID
-                result.append(new_geno)
+            families = defaultdict(list)
+            for m, threshold, r in parsed_nucl_rules:
+                if m == marker:
+                    families[(r.get('drug'), r.get('drug class'))].append((threshold, r))
+            matched_ids = {g.ruleID for g in geno_objs if g.has_rule and g.marker_amrrules == marker}
+            for possible_rules in families.values():
+                best_rule = _best_tier_rule(possible_rules, observed_copies)
+                if best_rule:
+                    # duplicate the genotype object for the best rule, and add it to the result list
+                    new_geno = Genotype.from_result_row(genos[0], card_map=card_drug_map, rule=best_rule)
+                    # mark the row as a copy number row, so when we print to interpreted output
+                    # we can remove all the AMRFP info and just present the rule information
+                    new_geno.copy_number_row = True
+                    new_geno.copy_number_sensitive = _higher_tier_changes_call(possible_rules, observed_copies, best_rule)
+                    # store the original marker so we can match on it later
+                    new_geno.original_amrrules_marker = new_geno.marker_amrrules
+                    # update the marker to be the mutation and the number of copies observed
+                    gene_name, base_mutation = marker.split(':c.', 1)
+                    new_geno.mutation = f"c.[{base_mutation}][{observed_copies}]"
+                    # the marker for the summary report should be formatted as gene:c.[mutation][observed copies]
+                    new_geno.marker_amrrules = f"{gene_name}:c.[{base_mutation}][{observed_copies}]"
+                    # if the winning tier is literally the same rule that was  already individually matched,
+                    # this object exists only to give the summary report the correct marker format - it shouldn't also appear as
+                    # a redundant duplicate row in the interpreted report
+                    new_geno.show_in_interpreted = best_rule.get('ruleID') not in matched_ids
+                    result.append(new_geno)
 
     # now look for gene copy number variants
     if gene_groups:
@@ -144,24 +162,31 @@ def apply_copy_number_rules(geno_objs, rules, card_drug_map):
 
         for gene, members in gene_groups.items():
             observed_copies = len(members)
-            possible_rules = [(threshold, r) for m, threshold, r in parsed_gene_copy_rules if m == gene]
-            best_rule = _best_tier_rule(possible_rules, observed_copies)
-            if best_rule:
-                new_geno = Genotype.from_result_row(members[0], card_map=card_drug_map, rule=best_rule)
-                # members[0].variation_type was 'Gene presence detected' (copied
-                # from the original item) - this new object represents a different
-                # variation type entirely
-                new_geno.variation_type = 'Gene copy number variant detected'
-                # mark the row as a copy number row, so when we print to interpreted output
-                # we can remove all the AMRFP info and just present the rule information
-                new_geno.copy_number_row = True
-                # store the original marker so we can match on it later
-                new_geno.original_amrrules_marker = new_geno.marker_amrrules
-                # update the marker to give the gene and number of copies
-                new_geno.mutation = f"c.[{observed_copies}]"
-                # the marker for the summary report should be formatted as gene:c.[observed copies]
-                new_geno.marker_amrrules = f"{gene}:c.[{observed_copies}]"
-                result.append(new_geno)
+            # a family is the same gene AND the same drug: tiers for
+            # different drugs must never be compared against each other
+            families = defaultdict(list)
+            for m, threshold, r in parsed_gene_copy_rules:
+                if m == gene:
+                    families[(r.get('drug'), r.get('drug class'))].append((threshold, r))
+            for possible_rules in families.values():
+                best_rule = _best_tier_rule(possible_rules, observed_copies)
+                if best_rule:
+                    new_geno = Genotype.from_result_row(members[0], card_map=card_drug_map, rule=best_rule)
+                    # members[0].variation_type was 'Gene presence detected' (copied
+                    # from the original item) - this new object represents a different
+                    # variation type entirely
+                    new_geno.variation_type = 'Gene copy number variant detected'
+                    # mark the row as a copy number row, so when we print to interpreted output
+                    # we can remove all the AMRFP info and just present the rule information
+                    new_geno.copy_number_row = True
+                    new_geno.copy_number_sensitive = _higher_tier_changes_call(possible_rules, observed_copies, best_rule)
+                    # store the original marker so we can match on it later
+                    new_geno.original_amrrules_marker = new_geno.marker_amrrules
+                    # update the marker to give the gene and number of copies
+                    new_geno.mutation = f"c.[{observed_copies}]"
+                    # the marker for the summary report should be formatted as gene:c.[observed copies]
+                    new_geno.marker_amrrules = f"{gene}:c.[{observed_copies}]"
+                    result.append(new_geno)
 
     return result
 
