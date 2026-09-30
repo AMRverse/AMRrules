@@ -21,9 +21,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
+         
+      # need pyyaml for reading example_commands file
       - name: Install package and dependencies
-        run: make dev
+        run: | 
+          pip install pyyaml
+          make dev
 
       - name: Download required resources
         run: amrrules --download-resources
