@@ -76,7 +76,7 @@ class SummaryEntry:
             # no rules to apply, so there will be no other rules encountered
             self.other_rules = '-'
             if no_rule_interpretation == 'none':
-                self.supporting_rules = 'none (default none)'
+                self.supporting_rules = 'none'
                 self.category = '-'
                 self.phenotype = '-'
                 self.evidence_grade = 'none'
@@ -214,7 +214,10 @@ class SummaryEntry:
         elif self.markers_with_norule != '-':
             # final interpretation came entirely from the no_rule_interpretation default -
             # no actual matched rule agrees with it, so none are supporting
-            self.supporting_rules = f"none (default {no_rule_interpretation})"
+            if no_rule_interpretation == 'none':
+                self.supporting_rules = 'none'
+            else:
+                self.supporting_rules = f"none (default {no_rule_interpretation})"
         else:
             self.supporting_rules = '-'
 
@@ -240,7 +243,7 @@ class SummaryEntry:
                     self.phenotype = '-'
                     self.evidence_grade = '-'
                     self.drug = '(n/a)'
-                    self.supporting_rules = '-'
+                    self.supporting_rules = 'none'
                     self.other_rules = '-'
 
         return
