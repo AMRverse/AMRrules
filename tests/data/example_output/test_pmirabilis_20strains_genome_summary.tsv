@@ -1,19 +1,19 @@
 sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	supporting rules	organism	version
 SAMEA3107662	-	-	-	-	-	-	sat2:-	-	none (partial hits)	s__Proteus mirabilis	1.1.0
-SAMEA3107662	gentamicin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMEA3107662	kanamycin A	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia;aph(3')-Ia	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMEA3107662	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA3;aadA1	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMEA3107662	tobramycin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMEA3107662	gentamicin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	none	s__Proteus mirabilis	1.1.0
+SAMEA3107662	kanamycin A	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia;aph(3')-Ia	-	none	s__Proteus mirabilis	1.1.0
+SAMEA3107662	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA3;aadA1	-	none	s__Proteus mirabilis	1.1.0
+SAMEA3107662	tobramycin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	none	s__Proteus mirabilis	1.1.0
 SAMEA3107662	polymyxin B	antibiotic mixture	R	wildtype	high	(unknown mechanism)	-	-	PRM0003	s__Proteus mirabilis	1.1.0
 SAMEA3107662	imipenem	carbapenem	I	wildtype	high	(unknown mechanism)	-	-	PRM0006	s__Proteus mirabilis	1.1.0
-SAMEA3107662	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMEA3107662	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	none	s__Proteus mirabilis	1.1.0
 SAMEA3107662	nitrofurantoin	nitrofuran antibiotic	R	wildtype	high	(no target)	-	-	PRM0005	s__Proteus mirabilis	1.1.0
-SAMEA3107662	(all)	penicillin beta-lactam	-	-	none	-	blaTEM-1	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMEA3107662	(all)	penicillin beta-lactam	-	-	none	-	blaTEM-1	-	none	s__Proteus mirabilis	1.1.0
 SAMEA3107662	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	s__Proteus mirabilis	1.1.0
 SAMEA3107662	colistin	polymyxin antibiotic	R	wildtype	high	(unknown mechanism)	-	-	PRM0004	s__Proteus mirabilis	1.1.0
-SAMEA3107662	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMEA3107662	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	none	s__Proteus mirabilis	1.1.0
 SAMEA3107662	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	s__Proteus mirabilis	1.1.0
-SAMEA3107662	(all)	third-generation cephalosporin 	-	-	none	-	blaCMY-2	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMEA3107662	(all)	third-generation cephalosporin 	-	-	none	-	blaCMY-2	-	none	s__Proteus mirabilis	1.1.0
 SAMEA3319395	polymyxin B	antibiotic mixture	R	wildtype	high	(unknown mechanism)	-	-	PRM0003	s__Proteus mirabilis	1.1.0
 SAMEA3319395	imipenem	carbapenem	I	wildtype	high	(unknown mechanism)	-	-	PRM0006	s__Proteus mirabilis	1.1.0
 SAMEA3319395	nitrofurantoin	nitrofuran antibiotic	R	wildtype	high	(no target)	-	-	PRM0005	s__Proteus mirabilis	1.1.0
@@ -26,39 +26,39 @@ SAMEA5206468	nitrofurantoin	nitrofuran antibiotic	R	wildtype	high	(no target)	-	
 SAMEA5206468	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	s__Proteus mirabilis	1.1.0
 SAMEA5206468	colistin	polymyxin antibiotic	R	wildtype	high	(unknown mechanism)	-	-	PRM0004	s__Proteus mirabilis	1.1.0
 SAMEA5206468	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	s__Proteus mirabilis	1.1.0
-SAMEA5206485	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMEA5206485	apramycin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IVa	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMEA5206485	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IVa;aac(3)-IId	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMEA5206485	hygromycin B	aminoglycoside antibiotic	-	-	none	-	aph(4)-Ia	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMEA5206485	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMEA5206485	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA2;aph(3'')-Ib;aph(6)-Id	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMEA5206485	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IVa;aac(6')-Ib-cr5	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMEA5206485	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	none	s__Proteus mirabilis	1.1.0
+SAMEA5206485	apramycin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IVa	-	none	s__Proteus mirabilis	1.1.0
+SAMEA5206485	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IVa;aac(3)-IId	-	none	s__Proteus mirabilis	1.1.0
+SAMEA5206485	hygromycin B	aminoglycoside antibiotic	-	-	none	-	aph(4)-Ia	-	none	s__Proteus mirabilis	1.1.0
+SAMEA5206485	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	none	s__Proteus mirabilis	1.1.0
+SAMEA5206485	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA2;aph(3'')-Ib;aph(6)-Id	-	none	s__Proteus mirabilis	1.1.0
+SAMEA5206485	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IVa;aac(6')-Ib-cr5	-	none	s__Proteus mirabilis	1.1.0
 SAMEA5206485	polymyxin B	antibiotic mixture	R	wildtype	high	(unknown mechanism)	-	-	PRM0003	s__Proteus mirabilis	1.1.0
 SAMEA5206485	imipenem	carbapenem	I	wildtype	high	(unknown mechanism)	-	-	PRM0006	s__Proteus mirabilis	1.1.0
-SAMEA5206485	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA12	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMEA5206485	(all)	fluoroquinolone antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMEA5206485	azithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMEA5206485	erythromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMEA5206485	spiramycin	macrolide antibiotic	-	-	none	-	mph(A)	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMEA5206485	telithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMEA5206485	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA12	-	none	s__Proteus mirabilis	1.1.0
+SAMEA5206485	(all)	fluoroquinolone antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	none	s__Proteus mirabilis	1.1.0
+SAMEA5206485	azithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	none	s__Proteus mirabilis	1.1.0
+SAMEA5206485	erythromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	none	s__Proteus mirabilis	1.1.0
+SAMEA5206485	spiramycin	macrolide antibiotic	-	-	none	-	mph(A)	-	none	s__Proteus mirabilis	1.1.0
+SAMEA5206485	telithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	none	s__Proteus mirabilis	1.1.0
 SAMEA5206485	nitrofurantoin	nitrofuran antibiotic	R	wildtype	high	(no target)	-	-	PRM0005	s__Proteus mirabilis	1.1.0
-SAMEA5206485	(all)	penicillin beta-lactam	-	-	none	-	blaTEM-1	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMEA5206485	(all)	penicillin beta-lactam	-	-	none	-	blaTEM-1	-	none	s__Proteus mirabilis	1.1.0
 SAMEA5206485	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA;catA1	PRM0002	s__Proteus mirabilis	1.1.0
 SAMEA5206485	colistin	polymyxin antibiotic	R	wildtype	high	(unknown mechanism)	-	-	PRM0004	s__Proteus mirabilis	1.1.0
-SAMEA5206485	(all)	rifamycin antibiotic	-	-	none	-	arr-3	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMEA5206485	(all)	sulfonamide antibiotic	-	-	none	-	sul2;sul1	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMEA5206485	(all)	rifamycin antibiotic	-	-	none	-	arr-3	-	none	s__Proteus mirabilis	1.1.0
+SAMEA5206485	(all)	sulfonamide antibiotic	-	-	none	-	sul2;sul1	-	none	s__Proteus mirabilis	1.1.0
 SAMEA5206485	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	s__Proteus mirabilis	1.1.0
-SAMEA6657461	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IIe	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMEA6657461	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1;aph(6)-Id;aph(3'')-Ib	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMEA6657461	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IIe	-	none	s__Proteus mirabilis	1.1.0
+SAMEA6657461	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1;aph(6)-Id;aph(3'')-Ib	-	none	s__Proteus mirabilis	1.1.0
 SAMEA6657461	polymyxin B	antibiotic mixture	R	wildtype	high	(unknown mechanism)	-	-	PRM0003	s__Proteus mirabilis	1.1.0
 SAMEA6657461	imipenem	carbapenem	I	wildtype	high	(unknown mechanism)	-	-	PRM0006	s__Proteus mirabilis	1.1.0
-SAMEA6657461	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMEA6657461	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	none	s__Proteus mirabilis	1.1.0
 SAMEA6657461	nitrofurantoin	nitrofuran antibiotic	R	wildtype	high	(no target)	-	-	PRM0005	s__Proteus mirabilis	1.1.0
-SAMEA6657461	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMEA6657461	(all)	penicillin beta-lactam	-	-	none	-	blaSCO-1;blaTEM-1	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMEA6657461	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	none	s__Proteus mirabilis	1.1.0
+SAMEA6657461	(all)	penicillin beta-lactam	-	-	none	-	blaSCO-1;blaTEM-1	-	none	s__Proteus mirabilis	1.1.0
 SAMEA6657461	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA;catA1	PRM0002	s__Proteus mirabilis	1.1.0
 SAMEA6657461	colistin	polymyxin antibiotic	R	wildtype	high	(unknown mechanism)	-	-	PRM0004	s__Proteus mirabilis	1.1.0
-SAMEA6657461	(all)	sulfonamide antibiotic	-	-	none	-	sul2	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMEA6657461	(all)	sulfonamide antibiotic	-	-	none	-	sul2	-	none	s__Proteus mirabilis	1.1.0
 SAMEA6657461	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	tet(A)	-	PRM0001	s__Proteus mirabilis	1.1.0
 SAMEA7609566	polymyxin B	antibiotic mixture	R	wildtype	high	(unknown mechanism)	-	-	PRM0003	s__Proteus mirabilis	1.1.0
 SAMEA7609566	imipenem	carbapenem	I	wildtype	high	(unknown mechanism)	-	-	PRM0006	s__Proteus mirabilis	1.1.0
@@ -70,20 +70,20 @@ SAMN02846829	imipenem	carbapenem	I	wildtype	high	(unknown mechanism)	-	-	PRM0006
 SAMN02846829	nitrofurantoin	nitrofuran antibiotic	R	wildtype	high	(no target)	-	-	PRM0005	s__Proteus mirabilis	1.1.0
 SAMN02846829	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	s__Proteus mirabilis	1.1.0
 SAMN02846829	colistin	polymyxin antibiotic	R	wildtype	high	(unknown mechanism)	-	-	PRM0004	s__Proteus mirabilis	1.1.0
-SAMN02846829	tetracycline	tetracycline antibiotic	-	-	none	-	tet(B)	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMN04014900	gentamicin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMN04014900	kanamycin A	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia;aph(3')-Ia	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMN04014900	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA2;aadA1	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMN04014900	tobramycin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN02846829	tetracycline	tetracycline antibiotic	-	-	none	-	tet(B)	-	none	s__Proteus mirabilis	1.1.0
+SAMN04014900	gentamicin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	none	s__Proteus mirabilis	1.1.0
+SAMN04014900	kanamycin A	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia;aph(3')-Ia	-	none	s__Proteus mirabilis	1.1.0
+SAMN04014900	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA2;aadA1	-	none	s__Proteus mirabilis	1.1.0
+SAMN04014900	tobramycin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	none	s__Proteus mirabilis	1.1.0
 SAMN04014900	polymyxin B	antibiotic mixture	R	wildtype	high	(unknown mechanism)	-	-	PRM0003	s__Proteus mirabilis	1.1.0
 SAMN04014900	imipenem	carbapenem	I	wildtype	high	(unknown mechanism)	-	-	PRM0006	s__Proteus mirabilis	1.1.0
-SAMN04014900	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN04014900	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	none	s__Proteus mirabilis	1.1.0
 SAMN04014900	nitrofurantoin	nitrofuran antibiotic	R	wildtype	high	(no target)	-	-	PRM0005	s__Proteus mirabilis	1.1.0
-SAMN04014900	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMN04014900	(all)	penicillin beta-lactam	-	-	none	-	blaTEM-1	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN04014900	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	none	s__Proteus mirabilis	1.1.0
+SAMN04014900	(all)	penicillin beta-lactam	-	-	none	-	blaTEM-1	-	none	s__Proteus mirabilis	1.1.0
 SAMN04014900	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	s__Proteus mirabilis	1.1.0
 SAMN04014900	colistin	polymyxin antibiotic	R	wildtype	high	(unknown mechanism)	-	-	PRM0004	s__Proteus mirabilis	1.1.0
-SAMN04014900	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN04014900	(all)	sulfonamide antibiotic	-	-	none	-	sul1	-	none	s__Proteus mirabilis	1.1.0
 SAMN04014900	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	s__Proteus mirabilis	1.1.0
 SAMN06220531	polymyxin B	antibiotic mixture	R	wildtype	high	(unknown mechanism)	-	-	PRM0003	s__Proteus mirabilis	1.1.0
 SAMN06220531	imipenem	carbapenem	I	wildtype	high	(unknown mechanism)	-	-	PRM0006	s__Proteus mirabilis	1.1.0
@@ -91,24 +91,24 @@ SAMN06220531	nitrofurantoin	nitrofuran antibiotic	R	wildtype	high	(no target)	-	
 SAMN06220531	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	s__Proteus mirabilis	1.1.0
 SAMN06220531	colistin	polymyxin antibiotic	R	wildtype	high	(unknown mechanism)	-	-	PRM0004	s__Proteus mirabilis	1.1.0
 SAMN06220531	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	s__Proteus mirabilis	1.1.0
-SAMN10038488	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1;aph(6)-Id;aph(3'')-Ib	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN10038488	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1;aph(6)-Id;aph(3'')-Ib	-	none	s__Proteus mirabilis	1.1.0
 SAMN10038488	polymyxin B	antibiotic mixture	R	wildtype	high	(unknown mechanism)	-	-	PRM0003	s__Proteus mirabilis	1.1.0
-SAMN10038488	(all)	carbapenem	-	-	none	-	blaOXA-23	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMN10038488	imipenem	carbapenem	-	-	none	(unknown mechanism)	blaOXA-23	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMN10038488	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN10038488	(all)	carbapenem	-	-	none	-	blaOXA-23	-	none	s__Proteus mirabilis	1.1.0
+SAMN10038488	imipenem	carbapenem	-	-	none	(unknown mechanism)	blaOXA-23	-	none	s__Proteus mirabilis	1.1.0
+SAMN10038488	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	none	s__Proteus mirabilis	1.1.0
 SAMN10038488	nitrofurantoin	nitrofuran antibiotic	R	wildtype	high	(no target)	-	-	PRM0005	s__Proteus mirabilis	1.1.0
-SAMN10038488	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMN10038488	chloramphenicol	phenicol antibiotic	-	-	none	-	floR	catA	none (default none)	s__Proteus mirabilis	1.1.0
-SAMN10038488	florfenicol	phenicol antibiotic	-	-	none	-	floR	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN10038488	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	none	s__Proteus mirabilis	1.1.0
+SAMN10038488	chloramphenicol	phenicol antibiotic	-	-	none	-	floR	catA	none	s__Proteus mirabilis	1.1.0
+SAMN10038488	florfenicol	phenicol antibiotic	-	-	none	-	floR	-	none	s__Proteus mirabilis	1.1.0
 SAMN10038488	colistin	polymyxin antibiotic	R	wildtype	high	(unknown mechanism)	-	-	PRM0004	s__Proteus mirabilis	1.1.0
-SAMN10038488	(all)	sulfonamide antibiotic	-	-	none	-	sul2	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN10038488	(all)	sulfonamide antibiotic	-	-	none	-	sul2	-	none	s__Proteus mirabilis	1.1.0
 SAMN10038488	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	s__Proteus mirabilis	1.1.0
-SAMN10435814	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN10435814	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1	-	none	s__Proteus mirabilis	1.1.0
 SAMN10435814	polymyxin B	antibiotic mixture	R	wildtype	high	(unknown mechanism)	-	-	PRM0003	s__Proteus mirabilis	1.1.0
 SAMN10435814	imipenem	carbapenem	I	wildtype	high	(unknown mechanism)	-	-	PRM0006	s__Proteus mirabilis	1.1.0
-SAMN10435814	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN10435814	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	none	s__Proteus mirabilis	1.1.0
 SAMN10435814	nitrofurantoin	nitrofuran antibiotic	R	wildtype	high	(no target)	-	-	PRM0005	s__Proteus mirabilis	1.1.0
-SAMN10435814	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN10435814	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	none	s__Proteus mirabilis	1.1.0
 SAMN10435814	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	s__Proteus mirabilis	1.1.0
 SAMN10435814	colistin	polymyxin antibiotic	R	wildtype	high	(unknown mechanism)	-	-	PRM0004	s__Proteus mirabilis	1.1.0
 SAMN10435814	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	s__Proteus mirabilis	1.1.0
@@ -124,39 +124,39 @@ SAMN12220730	nitrofurantoin	nitrofuran antibiotic	R	wildtype	high	(no target)	-	
 SAMN12220730	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	s__Proteus mirabilis	1.1.0
 SAMN12220730	colistin	polymyxin antibiotic	R	wildtype	high	(unknown mechanism)	-	-	PRM0004	s__Proteus mirabilis	1.1.0
 SAMN12220730	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	s__Proteus mirabilis	1.1.0
-SAMN13936255	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN13936255	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1	-	none	s__Proteus mirabilis	1.1.0
 SAMN13936255	polymyxin B	antibiotic mixture	R	wildtype	high	(unknown mechanism)	-	-	PRM0003	s__Proteus mirabilis	1.1.0
-SAMN13936255	(all)	carbapenem	-	-	none	-	blaIMP-27	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMN13936255	imipenem	carbapenem	-	-	none	(unknown mechanism)	blaIMP-27	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN13936255	(all)	carbapenem	-	-	none	-	blaIMP-27	-	none	s__Proteus mirabilis	1.1.0
+SAMN13936255	imipenem	carbapenem	-	-	none	(unknown mechanism)	blaIMP-27	-	none	s__Proteus mirabilis	1.1.0
 SAMN13936255	nitrofurantoin	nitrofuran antibiotic	R	wildtype	high	(no target)	-	-	PRM0005	s__Proteus mirabilis	1.1.0
-SAMN13936255	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN13936255	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	none	s__Proteus mirabilis	1.1.0
 SAMN13936255	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	s__Proteus mirabilis	1.1.0
 SAMN13936255	colistin	polymyxin antibiotic	R	wildtype	high	(unknown mechanism)	-	-	PRM0004	s__Proteus mirabilis	1.1.0
 SAMN13936255	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	s__Proteus mirabilis	1.1.0
-SAMN14589628	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMN14589628	gentamicin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMN14589628	kanamycin A	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia;aac(6')-Ib;aph(3')-Ia	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMN14589628	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMN14589628	tobramycin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia;aac(6')-Ib	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN14589628	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib	-	none	s__Proteus mirabilis	1.1.0
+SAMN14589628	gentamicin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia	-	none	s__Proteus mirabilis	1.1.0
+SAMN14589628	kanamycin A	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia;aac(6')-Ib;aph(3')-Ia	-	none	s__Proteus mirabilis	1.1.0
+SAMN14589628	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1	-	none	s__Proteus mirabilis	1.1.0
+SAMN14589628	tobramycin	aminoglycoside antibiotic	-	-	none	-	ant(2'')-Ia;aac(6')-Ib	-	none	s__Proteus mirabilis	1.1.0
 SAMN14589628	polymyxin B	antibiotic mixture	R	wildtype	high	(unknown mechanism)	-	-	PRM0003	s__Proteus mirabilis	1.1.0
 SAMN14589628	imipenem	carbapenem	I	wildtype	high	(unknown mechanism)	-	-	PRM0006	s__Proteus mirabilis	1.1.0
-SAMN14589628	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN14589628	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	none	s__Proteus mirabilis	1.1.0
 SAMN14589628	nitrofurantoin	nitrofuran antibiotic	R	wildtype	high	(no target)	-	-	PRM0005	s__Proteus mirabilis	1.1.0
-SAMN14589628	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMN14589628	(all)	penicillin beta-lactam	-	-	none	-	blaTEM-1	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMN14589628	chloramphenicol	phenicol antibiotic	-	-	none	-	cmlA5	catA;catA1	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN14589628	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	none	s__Proteus mirabilis	1.1.0
+SAMN14589628	(all)	penicillin beta-lactam	-	-	none	-	blaTEM-1	-	none	s__Proteus mirabilis	1.1.0
+SAMN14589628	chloramphenicol	phenicol antibiotic	-	-	none	-	cmlA5	catA;catA1	none	s__Proteus mirabilis	1.1.0
 SAMN14589628	colistin	polymyxin antibiotic	R	wildtype	high	(unknown mechanism)	-	-	PRM0004	s__Proteus mirabilis	1.1.0
 SAMN14589628	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	s__Proteus mirabilis	1.1.0
-SAMN16088468	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1;aph(3'')-Ib;aph(6)-Id	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN16088468	streptomycin	aminoglycoside antibiotic	-	-	none	-	aadA1;aph(3'')-Ib;aph(6)-Id	-	none	s__Proteus mirabilis	1.1.0
 SAMN16088468	polymyxin B	antibiotic mixture	R	wildtype	high	(unknown mechanism)	-	-	PRM0003	s__Proteus mirabilis	1.1.0
 SAMN16088468	imipenem	carbapenem	I	wildtype	high	(unknown mechanism)	-	-	PRM0006	s__Proteus mirabilis	1.1.0
-SAMN16088468	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN16088468	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA1	-	none	s__Proteus mirabilis	1.1.0
 SAMN16088468	nitrofurantoin	nitrofuran antibiotic	R	wildtype	high	(no target)	-	-	PRM0005	s__Proteus mirabilis	1.1.0
-SAMN16088468	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMN16088468	chloramphenicol	phenicol antibiotic	-	-	none	-	floR	catA	none (default none)	s__Proteus mirabilis	1.1.0
-SAMN16088468	florfenicol	phenicol antibiotic	-	-	none	-	floR	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN16088468	streptothricin	nucleoside antibiotic	-	-	none	-	sat2	-	none	s__Proteus mirabilis	1.1.0
+SAMN16088468	chloramphenicol	phenicol antibiotic	-	-	none	-	floR	catA	none	s__Proteus mirabilis	1.1.0
+SAMN16088468	florfenicol	phenicol antibiotic	-	-	none	-	floR	-	none	s__Proteus mirabilis	1.1.0
 SAMN16088468	colistin	polymyxin antibiotic	R	wildtype	high	(unknown mechanism)	-	-	PRM0004	s__Proteus mirabilis	1.1.0
-SAMN16088468	(all)	sulfonamide antibiotic	-	-	none	-	sul2	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN16088468	(all)	sulfonamide antibiotic	-	-	none	-	sul2	-	none	s__Proteus mirabilis	1.1.0
 SAMN16088468	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	s__Proteus mirabilis	1.1.0
 SAMN16982445	polymyxin B	antibiotic mixture	R	wildtype	high	(unknown mechanism)	-	-	PRM0003	s__Proteus mirabilis	1.1.0
 SAMN16982445	imipenem	carbapenem	I	wildtype	high	(unknown mechanism)	-	-	PRM0006	s__Proteus mirabilis	1.1.0
@@ -171,18 +171,18 @@ SAMN16982504	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PR
 SAMN16982504	colistin	polymyxin antibiotic	R	wildtype	high	(unknown mechanism)	-	-	PRM0004	s__Proteus mirabilis	1.1.0
 SAMN16982504	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	s__Proteus mirabilis	1.1.0
 SAMN27518689	polymyxin B	antibiotic mixture	R	wildtype	high	(unknown mechanism)	-	-	PRM0003	s__Proteus mirabilis	1.1.0
-SAMN27518689	(all)	carbapenem	-	-	none	-	blaOXA-48	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMN27518689	imipenem	carbapenem	-	-	none	(unknown mechanism)	blaOXA-48	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN27518689	(all)	carbapenem	-	-	none	-	blaOXA-48	-	none	s__Proteus mirabilis	1.1.0
+SAMN27518689	imipenem	carbapenem	-	-	none	(unknown mechanism)	blaOXA-48	-	none	s__Proteus mirabilis	1.1.0
 SAMN27518689	nitrofurantoin	nitrofuran antibiotic	R	wildtype	high	(no target)	-	-	PRM0005	s__Proteus mirabilis	1.1.0
 SAMN27518689	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	s__Proteus mirabilis	1.1.0
 SAMN27518689	colistin	polymyxin antibiotic	R	wildtype	high	(unknown mechanism)	-	-	PRM0004	s__Proteus mirabilis	1.1.0
 SAMN27518689	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	s__Proteus mirabilis	1.1.0
-SAMN27518689	(all)	third-generation cephalosporin 	-	-	none	-	blaCTX-M-15	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN27518689	(all)	third-generation cephalosporin 	-	-	none	-	blaCTX-M-15	-	none	s__Proteus mirabilis	1.1.0
 SAMN27518699	polymyxin B	antibiotic mixture	R	wildtype	high	(unknown mechanism)	-	-	PRM0003	s__Proteus mirabilis	1.1.0
-SAMN27518699	(all)	carbapenem	-	-	none	-	blaOXA-48	-	none (default none)	s__Proteus mirabilis	1.1.0
-SAMN27518699	imipenem	carbapenem	-	-	none	(unknown mechanism)	blaOXA-48	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN27518699	(all)	carbapenem	-	-	none	-	blaOXA-48	-	none	s__Proteus mirabilis	1.1.0
+SAMN27518699	imipenem	carbapenem	-	-	none	(unknown mechanism)	blaOXA-48	-	none	s__Proteus mirabilis	1.1.0
 SAMN27518699	nitrofurantoin	nitrofuran antibiotic	R	wildtype	high	(no target)	-	-	PRM0005	s__Proteus mirabilis	1.1.0
 SAMN27518699	chloramphenicol	phenicol antibiotic	S	wildtype	moderate	-	-	catA	PRM0002	s__Proteus mirabilis	1.1.0
 SAMN27518699	colistin	polymyxin antibiotic	R	wildtype	high	(unknown mechanism)	-	-	PRM0004	s__Proteus mirabilis	1.1.0
 SAMN27518699	tetracycline	tetracycline antibiotic	R	wildtype	high	tet(J)	-	-	PRM0001	s__Proteus mirabilis	1.1.0
-SAMN27518699	(all)	third-generation cephalosporin 	-	-	none	-	blaCTX-M-15	-	none (default none)	s__Proteus mirabilis	1.1.0
+SAMN27518699	(all)	third-generation cephalosporin 	-	-	none	-	blaCTX-M-15	-	none	s__Proteus mirabilis	1.1.0
