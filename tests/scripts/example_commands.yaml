@@ -208,3 +208,7 @@ debug_cases:
   - name: debug_burk_singlepenA_copy
     input: tests/data/debug/burk_pseudomallei_fakePenA_singleCopy.tsv
     organism: s__Burkholderia pseudomallei
+
+  - name: debug_Kp_10k
+    input: tests/data/debug/Kpneumoniae_10k.tsv
+    organism: s__Klebsiella pneumoniae
