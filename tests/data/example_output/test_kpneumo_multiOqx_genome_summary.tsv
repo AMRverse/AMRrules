@@ -1,0 +1,24 @@
+sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	supporting rules	organism	version
+SAMEA4781346	-	-	-	-	-	-	oqxB:-;oqxB:-	-	none (partial hits)	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	amikacin	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	apramycin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IVa	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IVa	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	hygromycin B	aminoglycoside antibiotic	-	-	none	-	aph(4)-Ia	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	kanamycin A	aminoglycoside antibiotic	-	-	none	-	aac(6')-Ib-cr5;aph(3')-Ia	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	tobramycin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IVa;aac(6')-Ib-cr5	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	(all)	fluoroquinolone antibiotic	-	-	none	-	parC:p.Ser80Ile;gyrA:p.Ser83Ile;qnrB4;aac(6')-Ib-cr5	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	parC:p.Ser80Ile;gyrA:p.Ser83Ile;qnrB4;aac(6')-Ib-cr5	oqxA	none	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	azithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	erythromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	spiramycin	macrolide antibiotic	-	-	none	-	mph(A)	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	telithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-11	-	-	KPN0001	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	chloramphenicol	phenicol antibiotic	-	-	none	-	catB3;floR	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	florfenicol	phenicol antibiotic	-	-	none	-	floR	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	fosfomycin	phosphonic acid antibiotic	-	-	none	-	fosA3	fosA	none	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	colistin	polymyxin antibiotic	-	-	none	-	pmrB:p.Arg256Gly	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	(all)	rifamycin antibiotic	-	-	none	-	arr-3	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	(all)	sulfonamide antibiotic	-	-	none	-	sul2;sul1	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	tetracycline	tetracycline antibiotic	-	-	none	-	tet(A)	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	(all)	third-generation cephalosporin 	-	-	none	-	blaDHA-1;blaOXA-1;blaCTX-M-65	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMEA4781346	(n/a)	antibiotic efflux	-	-	-	-	emrD	-	none	s__Klebsiella pneumoniae	1.1.0
