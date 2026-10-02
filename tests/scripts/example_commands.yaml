@@ -91,6 +91,10 @@ cases:
     input: tests/data/input/test_kpneumo_disrupt.tsv
     organism: s__Klebsiella pneumoniae
 
+  - name: test_kpneumo_multiOqx
+    input: tests/data/input/test_kpneumo_multiOqx.tsv
+    organism: s__Klebsiella pneumoniae
+
   - name: test_ecoli_20strains
     input: tests/data/input/test_ecoli_20strains.tsv
     organism: s__Escherichia coli
