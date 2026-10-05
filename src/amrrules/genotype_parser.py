@@ -1,5 +1,6 @@
 from typing import Any, Optional
 import re
+import warnings
 from amrrules import __version__
 from amrrules.utils import aa_conversion, minimal_columns, full_columns
 
@@ -397,8 +398,15 @@ class Genotype(GenoResult):
             self.drug_class = 'penicillin beta-lactam'
     
     def _assign_drug_from_amrfp(self, card_amrfp_conversion):
-        self.drug = card_amrfp_conversion.get(self.amrfp_subclass).get('drug', '-')
-        self.drug_class = card_amrfp_conversion.get(self.amrfp_subclass).get('class', '-')
+        conversion = card_amrfp_conversion.get(self.amrfp_subclass)
+        if conversion is None:
+            # the amrfp_to_card_drugs_classes.txt lookup table is maintained by hand and can
+            # lag behind the AMRFinderPlus/NCBI database, so an unmapped subclass shouldn't crash the run
+            warnings.warn(f"AMRFinderPlus subclass '{self.amrfp_subclass}' was not found in the AMRFP-to-CARD "
+                           f"conversion table. Falling back to 'unassigned markers' for this marker.")
+            conversion = {}
+        self.drug = conversion.get('drug', '-')
+        self.drug_class = conversion.get('class', '-')
         # if the drug_class is '-', set to 'unassigned markers'
         if self.drug_class == '-':
             self.drug_class = 'unassigned markers'
