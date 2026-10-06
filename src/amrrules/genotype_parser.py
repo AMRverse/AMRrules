@@ -490,8 +490,8 @@ class Genotype(GenoResult):
             self.drug_class = 'penicillin beta-lactam'
     
     def _assign_drug_from_amrfp(self, card_amrfp_conversion):
-        self.drug = card_amrfp_conversion.get(self.amrfp_subclass).get('drug', '-')
-        self.drug_class = card_amrfp_conversion.get(self.amrfp_subclass).get('class', '-')
+        self.drug = card_amrfp_conversion.get(self.amrfp_subclass, {}).get('drug', '-')
+        self.drug_class = card_amrfp_conversion.get(self.amrfp_subclass, {}).get('class', '-')
         # if the drug_class is '-', set to 'unassigned markers'
         if self.drug_class == '-':
             self.drug_class = 'unassigned markers'
