@@ -1,17 +1,17 @@
 sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	supporting rules	organism	version
 SAMD00055732	-	-	-	-	-	-	catB3:-;aac(3)-IIe:-	-	none (partial hits)	s__Klebsiella pneumoniae	1.1.0
-SAMD00055732	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IId;aac(6')-Ib4	-	none (default none)	s__Klebsiella pneumoniae	1.1.0
-SAMD00055732	streptomycin	aminoglycoside antibiotic	-	-	none	-	aph(3'')-Ib;aph(6)-Id	-	none (default none)	s__Klebsiella pneumoniae	1.1.0
-SAMD00055732	(all)	carbapenem	-	-	none	-	blaIMP-4	-	none (default none)	s__Klebsiella pneumoniae	1.1.0
-SAMD00055732	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA14	-	none (default none)	s__Klebsiella pneumoniae	1.1.0
-SAMD00055732	(all)	fluoroquinolone antibiotic	-	-	none	-	qnrB1	-	none (default none)	s__Klebsiella pneumoniae	1.1.0
-SAMD00055732	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	qnrB1	oqxA;oqxB	none (default none)	s__Klebsiella pneumoniae	1.1.0
-SAMD00055732	azithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	none (default none)	s__Klebsiella pneumoniae	1.1.0
-SAMD00055732	erythromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	none (default none)	s__Klebsiella pneumoniae	1.1.0
-SAMD00055732	spiramycin	macrolide antibiotic	-	-	none	-	mph(A)	-	none (default none)	s__Klebsiella pneumoniae	1.1.0
-SAMD00055732	telithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	none (default none)	s__Klebsiella pneumoniae	1.1.0
+SAMD00055732	gentamicin	aminoglycoside antibiotic	-	-	none	-	aac(3)-IId;aac(6')-Ib4	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMD00055732	streptomycin	aminoglycoside antibiotic	-	-	none	-	aph(3'')-Ib;aph(6)-Id	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMD00055732	(all)	carbapenem	-	-	none	-	blaIMP-4	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMD00055732	trimethoprim	diaminopyrimidine antibiotic	-	-	none	-	dfrA14	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMD00055732	(all)	fluoroquinolone antibiotic	-	-	none	-	qnrB1	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMD00055732	ciprofloxacin	fluoroquinolone antibiotic	-	-	none	-	qnrB1	oqxA;oqxB	none	s__Klebsiella pneumoniae	1.1.0
+SAMD00055732	azithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMD00055732	erythromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMD00055732	spiramycin	macrolide antibiotic	-	-	none	-	mph(A)	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMD00055732	telithromycin	macrolide antibiotic	-	-	none	-	mph(A)	-	none	s__Klebsiella pneumoniae	1.1.0
 SAMD00055732	(all)	penicillin beta-lactam	R	wildtype	high	blaSHV-1	blaTEM-1	-	KPN0001	s__Klebsiella pneumoniae	1.1.0
 SAMD00055732	fosfomycin	phosphonic acid antibiotic	S	wildtype	moderate	-	-	fosA	KPN0004	s__Klebsiella pneumoniae	1.1.0
-SAMD00055732	(all)	sulfonamide antibiotic	-	-	none	-	sul2;sul1	-	none (default none)	s__Klebsiella pneumoniae	1.1.0
-SAMD00055732	(all)	third-generation cephalosporin 	-	-	none	-	blaCTX-M-15;blaOXA-1	-	none (default none)	s__Klebsiella pneumoniae	1.1.0
-SAMD00055732	(n/a)	antibiotic efflux	-	-	-	-	emrD	-	none (default none)	s__Klebsiella pneumoniae	1.1.0
+SAMD00055732	(all)	sulfonamide antibiotic	-	-	none	-	sul2;sul1	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMD00055732	(all)	third-generation cephalosporin 	-	-	none	-	blaCTX-M-15;blaOXA-1	-	none	s__Klebsiella pneumoniae	1.1.0
+SAMD00055732	(n/a)	antibiotic efflux	-	-	-	-	emrD	-	none	s__Klebsiella pneumoniae	1.1.0

@@ -1,17 +1,17 @@
 sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	supporting rules	organism	version
 SAMEA112373233	spectinomycin	aminoglycoside antibiotic	S	wildtype	moderate	-	-	aph(9)-Ia	LEG0001	s__Legionella pneumophila	1.1.0
-SAMEA3463532	(all)	penicillin beta-lactam	-	-	none	-	blaOXA-29	-	none (default none)	s__Legionella pneumophila	1.1.0
-SAMEA3463541	(all)	penicillin beta-lactam	-	-	none	-	blaOXA-29	-	none (default none)	s__Legionella pneumophila	1.1.0
+SAMEA3463532	(all)	penicillin beta-lactam	-	-	none	-	blaOXA-29	-	none	s__Legionella pneumophila	1.1.0
+SAMEA3463541	(all)	penicillin beta-lactam	-	-	none	-	blaOXA-29	-	none	s__Legionella pneumophila	1.1.0
 SAMEA5415452	spectinomycin	aminoglycoside antibiotic	S	wildtype	moderate	-	-	aph(9)-Ia	LEG0001	s__Legionella pneumophila	1.1.0
 SAMEA7428384	spectinomycin	aminoglycoside antibiotic	S	wildtype	moderate	-	-	aph(9)-Ia	LEG0001	s__Legionella pneumophila	1.1.0
-SAMEA7428388	(all)	penicillin beta-lactam	-	-	none	-	blaOXA-29	-	none (default none)	s__Legionella pneumophila	1.1.0
-SAMEA7428393	(all)	penicillin beta-lactam	-	-	none	-	blaOXA-29	-	none (default none)	s__Legionella pneumophila	1.1.0
-SAMN01994705	chloramphenicol	phenicol antibiotic	-	-	none	-	catA1	-	none (default none)	s__Legionella pneumophila	1.1.0
+SAMEA7428388	(all)	penicillin beta-lactam	-	-	none	-	blaOXA-29	-	none	s__Legionella pneumophila	1.1.0
+SAMEA7428393	(all)	penicillin beta-lactam	-	-	none	-	blaOXA-29	-	none	s__Legionella pneumophila	1.1.0
+SAMN01994705	chloramphenicol	phenicol antibiotic	-	-	none	-	catA1	-	none	s__Legionella pneumophila	1.1.0
 SAMN04901449	spectinomycin	aminoglycoside antibiotic	S	wildtype	moderate	-	-	aph(9)-Ia	LEG0001	s__Legionella pneumophila	1.1.0
 SAMN11930367	spectinomycin	aminoglycoside antibiotic	S	wildtype	moderate	-	-	aph(9)-Ia	LEG0001	s__Legionella pneumophila	1.1.0
 SAMN19024179	spectinomycin	aminoglycoside antibiotic	S	wildtype	moderate	-	-	aph(9)-Ia;aph(9)-Ia	LEG0001	s__Legionella pneumophila	1.1.0
 SAMN29911148	spectinomycin	aminoglycoside antibiotic	S	wildtype	moderate	-	-	aph(9)-Ia	LEG0001	s__Legionella pneumophila	1.1.0
-SAMN29911148	(all)	penicillin beta-lactam	-	-	none	-	blaOXA-29	-	none (default none)	s__Legionella pneumophila	1.1.0
+SAMN29911148	(all)	penicillin beta-lactam	-	-	none	-	blaOXA-29	-	none	s__Legionella pneumophila	1.1.0
 SAMN29911186	spectinomycin	aminoglycoside antibiotic	S	wildtype	moderate	-	-	aph(9)-Ia	LEG0001	s__Legionella pneumophila	1.1.0
 SAMN29911187	spectinomycin	aminoglycoside antibiotic	S	wildtype	moderate	-	-	aph(9)-Ia	LEG0001	s__Legionella pneumophila	1.1.0
 SAMN29911214	spectinomycin	aminoglycoside antibiotic	S	wildtype	moderate	-	-	aph(9)-Ia	LEG0001	s__Legionella pneumophila	1.1.0

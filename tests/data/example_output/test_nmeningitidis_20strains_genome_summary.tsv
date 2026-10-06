@@ -1,42 +1,42 @@
 sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	supporting rules	organism	version
 SAMEA2047517	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	(unknown mechanism)	-	-	NMN0001	s__Neisseria meningitidis	1.1.0
-SAMEA2047517	(n/a)	antibiotic efflux	-	-	-	farB;mtrR;mtrC	norM;mtrA	-	-	s__Neisseria meningitidis	1.1.0
+SAMEA2047517	(n/a)	antibiotic efflux	-	-	-	farB;mtrR;mtrC	norM;mtrA	-	none	s__Neisseria meningitidis	1.1.0
 SAMEA2047524	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	(unknown mechanism)	-	-	NMN0001	s__Neisseria meningitidis	1.1.0
-SAMEA2047524	(n/a)	antibiotic efflux	-	-	-	farB;mtrR;mtrC	norM;mtrA	-	-	s__Neisseria meningitidis	1.1.0
+SAMEA2047524	(n/a)	antibiotic efflux	-	-	-	farB;mtrR;mtrC	norM;mtrA	-	none	s__Neisseria meningitidis	1.1.0
 SAMEA2073859	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	(unknown mechanism)	-	-	NMN0001	s__Neisseria meningitidis	1.1.0
-SAMEA2073859	(n/a)	antibiotic efflux	-	-	-	farB;mtrC;mtrR	norM;mtrA	-	-	s__Neisseria meningitidis	1.1.0
+SAMEA2073859	(n/a)	antibiotic efflux	-	-	-	farB;mtrC;mtrR	norM;mtrA	-	none	s__Neisseria meningitidis	1.1.0
 SAMEA2629014	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	(unknown mechanism)	-	-	NMN0001	s__Neisseria meningitidis	1.1.0
-SAMEA2629014	(n/a)	antibiotic efflux	-	-	-	mtrC;mtrR;farB	norM;mtrA	-	-	s__Neisseria meningitidis	1.1.0
+SAMEA2629014	(n/a)	antibiotic efflux	-	-	-	mtrC;mtrR;farB	norM;mtrA	-	none	s__Neisseria meningitidis	1.1.0
 SAMEA3432199	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	(unknown mechanism)	-	-	NMN0001	s__Neisseria meningitidis	1.1.0
-SAMEA3432199	(n/a)	antibiotic efflux	-	-	-	mtrR;farB;mtrC	norM;mtrA	-	-	s__Neisseria meningitidis	1.1.0
+SAMEA3432199	(n/a)	antibiotic efflux	-	-	-	mtrR;farB;mtrC	norM;mtrA	-	none	s__Neisseria meningitidis	1.1.0
 SAMEA3926281	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	(unknown mechanism)	-	-	NMN0001	s__Neisseria meningitidis	1.1.0
-SAMEA3926281	(n/a)	antibiotic efflux	-	-	-	mtrR;mtrC;farB	norM;mtrA	-	-	s__Neisseria meningitidis	1.1.0
+SAMEA3926281	(n/a)	antibiotic efflux	-	-	-	mtrR;mtrC;farB	norM;mtrA	-	none	s__Neisseria meningitidis	1.1.0
 SAMEA4386615	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	(unknown mechanism)	-	-	NMN0001	s__Neisseria meningitidis	1.1.0
-SAMEA4386615	(n/a)	antibiotic efflux	-	-	-	mtrR;mtrC;farB	norM;mtrA	-	-	s__Neisseria meningitidis	1.1.0
+SAMEA4386615	(n/a)	antibiotic efflux	-	-	-	mtrR;mtrC;farB	norM;mtrA	-	none	s__Neisseria meningitidis	1.1.0
 SAMEA4948812	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	(unknown mechanism)	-	-	NMN0001	s__Neisseria meningitidis	1.1.0
-SAMEA4948812	(n/a)	antibiotic efflux	-	-	-	mtrR;mtrC;farB	norM	-	-	s__Neisseria meningitidis	1.1.0
+SAMEA4948812	(n/a)	antibiotic efflux	-	-	-	mtrR;mtrC;farB	norM	-	none	s__Neisseria meningitidis	1.1.0
 SAMEA5661289	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	(unknown mechanism)	-	-	NMN0001	s__Neisseria meningitidis	1.1.0
-SAMEA5661289	(n/a)	antibiotic efflux	-	-	-	farB;mtrC;mtrR	norM;mtrA	-	-	s__Neisseria meningitidis	1.1.0
+SAMEA5661289	(n/a)	antibiotic efflux	-	-	-	farB;mtrC;mtrR	norM;mtrA	-	none	s__Neisseria meningitidis	1.1.0
 SAMEA5748879	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	(unknown mechanism)	-	-	NMN0001	s__Neisseria meningitidis	1.1.0
-SAMEA5748879	(n/a)	antibiotic efflux	-	-	-	farB;mtrR;mtrC	norM;mtrA	-	-	s__Neisseria meningitidis	1.1.0
+SAMEA5748879	(n/a)	antibiotic efflux	-	-	-	farB;mtrR;mtrC	norM;mtrA	-	none	s__Neisseria meningitidis	1.1.0
 SAMEA104060973	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	(unknown mechanism)	-	-	NMN0001	s__Neisseria meningitidis	1.1.0
-SAMEA104060973	(n/a)	antibiotic efflux	-	-	-	mtrC;mtrR;farB	norM	-	-	s__Neisseria meningitidis	1.1.0
+SAMEA104060973	(n/a)	antibiotic efflux	-	-	-	mtrC;mtrR;farB	norM	-	none	s__Neisseria meningitidis	1.1.0
 SAMEA6240220	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	(unknown mechanism)	-	-	NMN0001	s__Neisseria meningitidis	1.1.0
-SAMEA6240220	(n/a)	antibiotic efflux	-	-	-	mtrC;mtrR;farB	norM;mtrA	-	-	s__Neisseria meningitidis	1.1.0
+SAMEA6240220	(n/a)	antibiotic efflux	-	-	-	mtrC;mtrR;farB	norM;mtrA	-	none	s__Neisseria meningitidis	1.1.0
 SAMEA6634671	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	(unknown mechanism)	-	-	NMN0001	s__Neisseria meningitidis	1.1.0
-SAMEA6634671	(n/a)	antibiotic efflux	-	-	-	mtrR;mtrC;farB	norM;mtrA	-	-	s__Neisseria meningitidis	1.1.0
+SAMEA6634671	(n/a)	antibiotic efflux	-	-	-	mtrR;mtrC;farB	norM;mtrA	-	none	s__Neisseria meningitidis	1.1.0
 SAMEA6908213	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	(unknown mechanism)	-	-	NMN0001	s__Neisseria meningitidis	1.1.0
-SAMEA6908213	(n/a)	antibiotic efflux	-	-	-	mtrC;mtrR;farB	mtrA;norM	-	-	s__Neisseria meningitidis	1.1.0
+SAMEA6908213	(n/a)	antibiotic efflux	-	-	-	mtrC;mtrR;farB	mtrA;norM	-	none	s__Neisseria meningitidis	1.1.0
 SAMEA8114092	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	(unknown mechanism)	-	-	NMN0001	s__Neisseria meningitidis	1.1.0
-SAMEA8114092	(n/a)	antibiotic efflux	-	-	-	mtrR;mtrC;farB	norM	-	-	s__Neisseria meningitidis	1.1.0
+SAMEA8114092	(n/a)	antibiotic efflux	-	-	-	mtrR;mtrC;farB	norM	-	none	s__Neisseria meningitidis	1.1.0
 SAMEA104284006	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	(unknown mechanism)	-	-	NMN0001	s__Neisseria meningitidis	1.1.0
-SAMEA104284006	(n/a)	antibiotic efflux	-	-	-	mtrR;mtrC;farB	norM;mtrA	-	-	s__Neisseria meningitidis	1.1.0
+SAMEA104284006	(n/a)	antibiotic efflux	-	-	-	mtrR;mtrC;farB	norM;mtrA	-	none	s__Neisseria meningitidis	1.1.0
 SAMN05560627	-	-	-	-	-	-	mtrC:-	-	none (partial hits)	s__Neisseria meningitidis	1.1.0
 SAMN05560627	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	(unknown mechanism)	-	-	NMN0001	s__Neisseria meningitidis	1.1.0
-SAMN05560627	(n/a)	antibiotic efflux	-	-	-	mtrR;farB	norM;mtrA	-	-	s__Neisseria meningitidis	1.1.0
+SAMN05560627	(n/a)	antibiotic efflux	-	-	-	mtrR;farB	norM;mtrA	-	none	s__Neisseria meningitidis	1.1.0
 SAMEA104416953	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	(unknown mechanism)	-	-	NMN0001	s__Neisseria meningitidis	1.1.0
-SAMEA104416953	(n/a)	antibiotic efflux	-	-	-	farB;mtrR;mtrC	norM	-	-	s__Neisseria meningitidis	1.1.0
+SAMEA104416953	(n/a)	antibiotic efflux	-	-	-	farB;mtrR;mtrC	norM	-	none	s__Neisseria meningitidis	1.1.0
 SAMEA1401960	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	(unknown mechanism)	-	-	NMN0001	s__Neisseria meningitidis	1.1.0
-SAMEA1401960	(n/a)	antibiotic efflux	-	-	-	farB;mtrC;mtrR	norM;mtrA	-	-	s__Neisseria meningitidis	1.1.0
+SAMEA1401960	(n/a)	antibiotic efflux	-	-	-	farB;mtrC;mtrR	norM;mtrA	-	none	s__Neisseria meningitidis	1.1.0
 SAMN32984794	trimethoprim	diaminopyrimidine antibiotic	R	wildtype	high	(unknown mechanism)	-	-	NMN0001	s__Neisseria meningitidis	1.1.0
-SAMN32984794	(n/a)	antibiotic efflux	-	-	-	mtrC;mtrR;farB	norM;mtrA	-	-	s__Neisseria meningitidis	1.1.0
+SAMN32984794	(n/a)	antibiotic efflux	-	-	-	mtrC;mtrR;farB	norM;mtrA	-	none	s__Neisseria meningitidis	1.1.0

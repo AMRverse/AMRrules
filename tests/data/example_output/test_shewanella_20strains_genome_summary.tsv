@@ -41,8 +41,8 @@ SAMN02584982	(all)	penicillin beta-lactam	R	wildtype	high	blaOXA	-	-	SHW0001	s__
 SAMD00016558	imipenem	carbapenem	R	wildtype	high	blaOXA	-	-	SHW0002	s__Shewanella algae	1.1.0
 SAMD00016558	(all)	fluoroquinolone antibiotic	S	wildtype	low	-	-	qnrA3	SHW0005	s__Shewanella algae	1.1.0
 SAMD00016558	(all)	penicillin beta-lactam	R	wildtype	high	blaOXA	-	-	SHW0001	s__Shewanella algae	1.1.0
-SAMD00016558	(all)	sulfonamide antibiotic	-	-	none	-	sul2	-	none (default none)	s__Shewanella algae	1.1.0
-SAMD00016558	tetracycline	tetracycline antibiotic	-	-	none	-	tet(59)	-	none (default none)	s__Shewanella algae	1.1.0
+SAMD00016558	(all)	sulfonamide antibiotic	-	-	none	-	sul2	-	none	s__Shewanella algae	1.1.0
+SAMD00016558	tetracycline	tetracycline antibiotic	-	-	none	-	tet(59)	-	none	s__Shewanella algae	1.1.0
 SAMN05384438	imipenem	carbapenem	R	wildtype	high	blaOXA	-	-	SHW0002	s__Shewanella algae	1.1.0
 SAMN05384438	(all)	fluoroquinolone antibiotic	S	wildtype	low	-	-	qnrA2	SHW0005	s__Shewanella algae	1.1.0
 SAMN05384438	(all)	penicillin beta-lactam	R	wildtype	high	blaOXA	-	-	SHW0001	s__Shewanella algae	1.1.0

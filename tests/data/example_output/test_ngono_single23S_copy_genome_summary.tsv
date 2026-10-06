@@ -5,4 +5,4 @@ SAMD00099455	ciprofloxacin	fluoroquinolone antibiotic	R	nonwildtype	high	gyrA:p.
 SAMD00099455	azithromycin	macrolide antibiotic	S	nonwildtype	low (copy number variant)	-	-	rplD:p.Gly70Asp;mtrR:c.-53Adel;23S:c.[2611C>T][1]	NGO0011;NGO0036;NGO0104	s__Neisseria gonorrhoeae	1.1.0
 SAMD00099455	(all)	sulfonamide antibiotic	R	nonwildtype	moderate	folP:p.Arg228Ser	-	-	NGO0014	s__Neisseria gonorrhoeae	1.1.0
 SAMD00099455	tetracycline	tetracycline antibiotic	R	nonwildtype	high	rpsJ:p.Val57Met	-	mtrR:c.-53Adel	NGO0116	s__Neisseria gonorrhoeae	1.1.0
-SAMD00099455	(n/a)	antibiotic efflux	-	-	-	-	norM;mtrR;mtrC;mtrA;farB	-	none (default none)	s__Neisseria gonorrhoeae	1.1.0
+SAMD00099455	(n/a)	antibiotic efflux	-	-	-	-	norM;mtrR;mtrC;mtrA;farB	-	none	s__Neisseria gonorrhoeae	1.1.0
