@@ -46,7 +46,7 @@ def main():
 
     # Require input/output/organism for normal run
     if not args.input or not args.output_prefix or (not args.organism and not args.organism_file):
-        parser.error('You must specify --input, --output-prefix, and --organism (or --organism_file) unless using --download-resources.')
+        parser.error('You must specify --input, --output-prefix, and --organism (or --organism-file) unless using --download-resources.')
 
     if args.amr_tool != 'amrfp':
         raise NotImplementedError("Currently only amrfp is supported. Please use amrfp as the AMR tool.")
