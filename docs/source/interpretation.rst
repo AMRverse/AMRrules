@@ -154,20 +154,13 @@ Determining final interpretation for a drug/drug class
 The final interepretation for a drug or drug class is determined by comparing the clincial category and phenotype of all matching rules, and determining the highest level. Rules are assessed in a pairwise fashion, where the winning interpretation is determined as per the below table:
 
 **Combining Two Rules**
+
+.. image:: images/combining_two_rules.png
+   :alt: Table showing how interpretations for two rules are combined
+   :align: center
+
+
 *(Note: `*np` denotes “not possible” rule combinations that are logically incompatible within a rule set for a given drug)*
-
-.. csv-table:: 
-   :header: "Rule 1 \ Rule 2", "NWT R", "NWT I", "NWT S", "NWT -", "WT R", "WT I", "WT S", "WT -", "-"
-
-   "**NWT R**", "NWT R", "NWT R", "NWT R", "NWT R", "NWT R", "NWT R", "NWT R", "NWT R", "NWT R"
-   "**NWT I**", "NWT R", "NWT I", "NWT I", "NWT I", "NWT R", "NWT I", "NWT I", "NWT I", "NWT I"
-   "**NWT S**", "NWT R", "NWT I", "NWT S", "NWT S", "NWT R", "NWT I", "NWT S", "NWT S", "NWT S"
-   "**NWT -**", "NWT R", "NWT I", "NWT S", "NWT -", "NWT R", "NWT I", "NWT S", "NWT -", "NWT -"
-   "**WT R**", "NWT R", "NWT R", "NWT R", "NWT R", "*np", "*np", "*np", "*np", "WT R"
-   "**WT I**", "NWT R", "NWT I", "NWT I", "NWT I", "*np", "*np", "*np", "*np", "WT I"
-   "**WT S**", "NWT R", "NWT I", "NWT S", "NWT S", "*np", "*np", "*np", "*np", "WT S"
-   "**WT -**", "NWT R", "NWT I", "NWT S", "NWT -", "*np", "*np", "*np", "*np", "WT -"
-   "**-**", "NWT R", "NWT I", "NWT S", "NWT -", "WT R", "WT I", "WT S", "WT -", "-"
 
 If rule-less markers are present for this particular drug/drug class, then the highest interpretation from the rules is then combined with the selected interpretation for rule-less markers (default ``none``, see :ref:`handling_ruleless_calls` for details). 
 
@@ -175,18 +168,9 @@ This table below demonstrates which interpretation "wins" when combining with ru
 
 **Combining a rule interpretation with rule-less markers**
 
-.. csv-table::
-   :header: "Rule 1 \ Default", "none", "nwt", "nwtS", "nwtR"
-   
-   "**NWT R**", "NWT R", "NWT R", "NWT R", "NWT R"
-   "**NWT I**", "NWT I", "NWT I", "NWT I", "NWT R"
-   "**NWT S**", "NWT S", "NWT S", "NWT S", "NWT R"
-   "**NWT -**", "NWT -", "NWT -", "NWT S", "NWT R"
-   "**WT R**", "WT R", "NWT R", "NWT R", "NWT R"
-   "**WT I**", "WT I", "NWT I", "NWT I", "NWT R"
-   "**WT S**", "WT S", "NWT S", "NWT S", "NWT R"
-   "**WT -**", "WT -", "NWT -", "NWT S", "NWT R"
-   "**-**", "none", "NWT -", "NWT S", "NWT R"
+.. image:: images/combining_rule_ruleless.png
+   :alt: Table showing how interpretations for a rule and rule-less marker are combined
+   :align: center
 
 .. _handling_ruleless_calls:
 
