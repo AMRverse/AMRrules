@@ -155,6 +155,7 @@ The final interepretation for a drug or drug class is determined by comparing th
 
 **Combining Two Rules**
 *(Note: `*np` denotes “not possible” rule combinations that are logically incompatible within a rule set for a given drug)*
+
 .. csv-table:: 
    :header: "Rule 1 \ Rule 2", "NWT R", "NWT I", "NWT S", "NWT -", "WT R", "WT I", "WT S", "WT -", "-"
 
@@ -173,6 +174,7 @@ If rule-less markers are present for this particular drug/drug class, then the h
 This table below demonstrates which interpretation "wins" when combining with rule-less markers:
 
 **Combining a rule interpretation with rule-less markers**
+
 .. csv-table::
    :header: "Rule 1 \ Default", "none", "nwt", "nwtS", "nwtR"
    
