@@ -8,6 +8,8 @@ Users first take their genomes and run them through an AMR genotyping tool such 
 
 This AMRrules repository includes the rules themselves (see `rules/` directory, which you can also view interactively via the [AMRrules Browser](https://browse.amrrules.org/)) as well as the Python code to apply the rules to interpret AMR genotypes (currently limited to AMRFinderPlus output), generating informative genome reports that capture expert knowledge about how core and acquired genes and mutations contribute to antimicrobial susceptibility.
 
+To propose new rules, consider joining the [ESGEM-AMR Working Group](https://esgem-amr.amrrules.org) or use the GitHub [issues tracker](https://github.com/AMRverse/AMRrules/issues).
+
 **[Full docs can be found here](https://amrrules.readthedocs.io/en/latest/)**
 
 [DOI: 10.5281/zenodo.12724317](https://doi.org/10.5281/zenodo.12724317)
