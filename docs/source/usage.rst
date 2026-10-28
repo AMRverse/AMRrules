@@ -93,6 +93,8 @@ Detailed options
   --annot-opts, -a {minimal,full}
                         Annotation options: minimal (context, drug, phenotype, category, evidence grade), full (everything including breakpoints, standards, etc)
   --flag-core           Turn on flagging core genes in the summary output
+  --list-all-rules      List all rules encountered for a drug/drug class in the genome summary output file, regardless of whether the rule supports the final interpretation.
+  --trust-multi-copy    If turned on, trust that multi-copy gene calls are correct, and do not flag them as potentially incorrect due to genotyping a draft, rather than complete, genome assembly.
   --full-disrupt        Show the full mutation detected by AMRFinderPlus for POINT_DISRUPT calls in the summary report, rather than just labelling them as gene:-
   --print-non-amr       Include non-AMR rows (eg VIRULENCE, STRESS) from the input file in the interpreted output. By default, these rows are skipped.
   --download-resources  Download AMRFinderPlus resource files and exit.

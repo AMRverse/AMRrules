@@ -1,0 +1,9 @@
+sample	drug	drug class	clinical category	phenotype	evidence grade	markers (non-S)	markers (no rule)	markers (S)	supporting rules	organism	version
+GCA_001661085.1_ASM166108v1_genomic.fna	benzylpenicillin	beta-lactamase sensitive penicillin	I	nonwildtype	high	ponA:p.Leu421Pro;porB1b:p.Ala121Asp;porB1b:p.Gly120Lys	-	mtrR:c.-53Adel;penA:p.345_346insAsp;penA:p.Pro551Ser	NGO0093;NGO0094;NGO0099	s__Neisseria gonorrhoeae	1.1.0
+GCA_001661085.1_ASM166108v1_genomic.fna	(all)	cephalosporin	S	nonwildtype	high	-	-	penA:p.Ala510Val;penA:p.Ala516Gly;penA:p.345_346insAsp;penA:p.Phe504Leu;penA:p.Pro551Ser	NGO0069;NGO0082;NGO0083;NGO0085;NGO0091	s__Neisseria gonorrhoeae	1.1.0
+GCA_001661085.1_ASM166108v1_genomic.fna	ciprofloxacin	fluoroquinolone antibiotic	R	nonwildtype	high	gyrA:p.Ser91Phe	-	gyrA:p.Asp95Gly;parC:p.Ser87Arg	NGO0018	s__Neisseria gonorrhoeae	1.1.0
+GCA_001661085.1_ASM166108v1_genomic.fna	azithromycin	macrolide antibiotic	R	nonwildtype	high	23S:c.[2059A>G][4]	-	mtrR:c.-53Adel	NGO0002	s__Neisseria gonorrhoeae	1.1.0
+GCA_001661085.1_ASM166108v1_genomic.fna	rifampin	rifamycin antibiotic	R	nonwildtype	none	-	rpoB:p.His553Asn	-	none (default nwtR)	s__Neisseria gonorrhoeae	1.1.0
+GCA_001661085.1_ASM166108v1_genomic.fna	(all)	sulfonamide antibiotic	R	nonwildtype	moderate	folP:p.Arg228Ser	-	-	NGO0014	s__Neisseria gonorrhoeae	1.1.0
+GCA_001661085.1_ASM166108v1_genomic.fna	tetracycline	tetracycline antibiotic	R	nonwildtype	high	rpsJ:p.Val57Met	-	mtrR:c.-53Adel	NGO0116	s__Neisseria gonorrhoeae	1.1.0
+GCA_001661085.1_ASM166108v1_genomic.fna	(n/a)	antibiotic efflux	-	-	-	-	norM;mtrA;mtrC;mtrR;farB	-	none (default nwtR)	s__Neisseria gonorrhoeae	1.1.0

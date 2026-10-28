@@ -2,6 +2,7 @@ from typing import Any, Optional
 import re
 from amrrules import __version__
 from amrrules.utils import aa_conversion, minimal_columns, full_columns
+from amrrules.rules_io import parse_multicopy_rule_mutation
 
 
 class GenoResult:
@@ -25,6 +26,8 @@ class GenoResult:
         self.print_row: bool = False
         # whether this gene is a partial hit or not
         self.partial: bool = False
+        # whether this object is now a record of a multi-copy gene rule
+        self.copy_number_row: bool = False
 
         # amrfp relevant fields(filled by parser)
         self.nodeID: Optional[str] = None
@@ -139,17 +142,21 @@ class GenoResult:
                 # our coordinates are the original pos, and original - 1
                 pos_coords = str(int(pos) - 1) + "_" + str(pos)
                 return(f"p.{pos_coords}ins{alt_string}", variation_type)
+
             if len(alt) > 1 and 'Ter' in alt:
-                # then we have a frameshift leading to a stop codon
-                # if the start of alt is Ter, then it's simply ref pos *
+                # nonsense substitution, e.g. ompK35_Y36Ter -> alt is 'Ter'
                 if alt.startswith('Ter'):
                     return(f"p.{aa_conversion.get(ref)}{pos}Ter", variation_type)
+                # no 'fs' in alt means the residue is kept and a stop codon is inserted after it,
+                # e.g. ompK35_Y317YTer -> p.Tyr317insTer
+                elif 'fs' not in alt:
+                    return(f"p.{aa_conversion.get(ref)}{pos}insTer", variation_type)
+                # otherwise it's a frameshift ending in a stop, e.g. ompK35_E42RfsTer47
                 else:
-                    # otherwise we need to get the first aa and convert it
                     alt = aa_conversion.get(alt[0])
-                    # then grab the number after Ter
                     fs_pos = re.search(r'Ter(\d+)', mutation).group(1)
                     return(f"p.{aa_conversion.get(ref)}{pos}{alt}fsTer{fs_pos}", variation_type)
+            
             if len(ref) >= 1 and 'del' in alt:
                 # then this is an in-frame deletion, therefore not an inactivating mutation
                 # we need to convert the single letter to 3-letter aa codes
@@ -229,6 +236,25 @@ class GenoResult:
             for rule in matching_rules:
                 if rule['mutation'] == self.mutation:
                     final_matching_rules.append(rule)
+            # we may not have a rule that matches the mutation because the rule is a multi-copy variant rule
+            if self.variation_type == 'Nucleotide variant detected':
+                multicopy_candidates = []
+                for rule in matching_rules:
+                    if rule.get('variation type') == 'Nucleotide variant detected in multi-copy gene':
+                        base_mutation, copy_threshold = parse_multicopy_rule_mutation(rule.get('mutation'))
+                        if base_mutation == self.mutation:
+                            multicopy_candidates.append((copy_threshold, rule))
+
+                if multicopy_candidates:
+                    one_copy_rules = [rule for copies, rule in multicopy_candidates if copies == 1]
+                    if one_copy_rules:
+                        final_matching_rules.extend(one_copy_rules)
+                    else:
+                        min_threshold = min(copies for copies, _ in multicopy_candidates)
+                        final_matching_rules.extend([rule for copies, rule in multicopy_candidates if copies == min_threshold])
+                    # update the variation type
+                    self.variation_type = 'Nucleotide variant detected in multi-copy gene'
+
             return final_matching_rules
 
     def find_matching_rules(self, rules, amrfp_nodes, guideline_pref = None):
@@ -237,6 +263,8 @@ class GenoResult:
         rules_to_check = []
         for rule in rules:
                 if rule['variation type'] == self.variation_type:
+                    rules_to_check.append(rule)
+                elif self.variation_type == 'Nucleotide variant detected' and rule['variation type'] == 'Nucleotide variant detected in multi-copy gene':
                     rules_to_check.append(rule)
 
         # First we're going to check for the nodeID, and if we have one or matches, we we return that
@@ -330,6 +358,40 @@ class GenoResult:
         self.annotated_row = annotated_rows
         return annotated_rows
 
+    def build_rule_only_row(self, annot_opts):
+        """
+        Build an interpreted-output row for a rule-only Genotype object (a
+        copy-number or combination rule hit) which doesn't match to
+        a single input row. 
+        
+        Populates sample name, AMRFP class/subclass (for
+        copy-number rows only), and rule-derived columns, 
+        everything else is left blank.
+        """
+        row = {'Name': self.sample_name}
+        if getattr(self, 'copy_number_row', False):
+            row['Class'] = self.amrfp_class
+            row['Subclass'] = self.amrfp_subclass
+        # combo rows span multiple genes, so class/subclass don't apply -
+        # confirm this is what you want; easy to add if not
+
+        cols = minimal_columns if annot_opts == 'minimal' else minimal_columns + full_columns
+        row['variation type'] = self.rule.get('variation type', '-')
+        # if it's a combo rule, show the combined marker string, leave mutation blank
+        if self.rule.get('variation type') == 'Combination':
+            row['gene'] = self.marker_amrrules
+            row['mutation'] = '-'
+        # if it's copy number rule, show the gene and mutation in its summarised form
+        # this will only match the rule if that's the total number of copies, it could be higher than the rule
+        else:
+            row['gene'] = self.rule.get('gene', '-')
+            row['mutation'] = getattr(self, "mutation", "-")
+        for col in cols:
+            row[col] = self.rule.get(col, '-')
+        row['version'] = __version__
+        row['organism'] = self.organism
+        return row
+
 # we now need to take our genotype objects, and instead group them by drug (or class if no drug specified)
 # so each genotype object may have multiple drugs associated with it, regardless of whether it has a matched rule or not
 
@@ -373,6 +435,37 @@ class Genotype(GenoResult):
 
         return new_obj
 
+    @classmethod
+    def create_unknown_mechanism_obj(cls, sample_name, organism, rule):
+        """
+        Placeholder Genotype object for a core, intrinsic resistance
+        mechanism with no specific gene to detect (rule['gene'] is 'unknown'
+        or 'none'). No underlying input row exists, so bypass __init__
+        entirely - same approach from_result_row uses, just with nothing to
+        copy attributes from.
+        """
+        dummy_obj = cls.__new__(cls)
+        dummy_obj.sample_name = sample_name
+        dummy_obj.organism = organism
+        dummy_obj.rule = rule
+        dummy_obj.ruleID = rule.get('ruleID')
+        dummy_obj.has_rule = True
+        dummy_obj.gene_context = rule.get('gene context')
+        dummy_obj.phenotype = rule.get('phenotype')
+        dummy_obj.clinical_category = rule.get('clinical category')
+        dummy_obj.evidence_grade = rule.get('evidence grade')
+        dummy_obj.variation_type = rule.get('variation type')
+        dummy_obj.marker_amrrules = '-'
+        dummy_obj.duplicated_row = False
+        dummy_obj.copy_number_row = False
+        dummy_obj.combo_rule_row = False
+        dummy_obj.unknown_mechanism_row = True 
+        # drug class is already resolved via card_drug_map by
+        # extract_unknown_core_rules, so no need to re-resolve it here
+        dummy_obj.drug = rule.get('drug', '-')
+        dummy_obj.drug_class = rule.get('drug class', '-')
+        return dummy_obj
+
     def _assign_drug_from_rule(self, card_drug_map):
         self.drug = self.rule.get('drug', '-')
         if self.drug != '-':
@@ -397,8 +490,8 @@ class Genotype(GenoResult):
             self.drug_class = 'penicillin beta-lactam'
     
     def _assign_drug_from_amrfp(self, card_amrfp_conversion):
-        self.drug = card_amrfp_conversion.get(self.amrfp_subclass).get('drug', '-')
-        self.drug_class = card_amrfp_conversion.get(self.amrfp_subclass).get('class', '-')
+        self.drug = card_amrfp_conversion.get(self.amrfp_subclass, {}).get('drug', '-')
+        self.drug_class = card_amrfp_conversion.get(self.amrfp_subclass, {}).get('class', '-')
         # if the drug_class is '-', set to 'unassigned markers'
         if self.drug_class == '-':
             self.drug_class = 'unassigned markers'

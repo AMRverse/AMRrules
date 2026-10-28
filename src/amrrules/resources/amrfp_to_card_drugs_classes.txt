@@ -34,6 +34,7 @@ FLUOROQUINOLONE	-	ARO:0000001	fluoroquinolone antibiotic
 FOSFOMYCIN	fosfomycin	ARO:0000025	phosphonic acid antibiotic
 FOSMIDOMYCIN	fosmidomycin	ARO:3000758	phosphonic acid antibiotic
 FUSIDIC ACID	fusidic acid	ARO:3000759	fusidane antibiotic
+FUSIDIC_ACID	fusidic acid	ARO:3000759	fusidane antibiotic
 G418	G418	ARO:3000653	aminoglycoside antibiotic
 GENTAMICIN	gentamicin	ARO:3007382	aminoglycoside antibiotic
 GENTAMICIN C	gentamicin C	ARO:0000014	aminoglycoside antibiotic

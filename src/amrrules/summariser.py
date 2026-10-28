@@ -1,6 +1,9 @@
+from amrrules.genotype_parser import Genotype
 from amrrules.resources import ResourceManager as rm
-from amrrules.utils import CATEGORY_ORDER, PHENOTYPE_ORDER, EVIDENCE_GRADE_ORDER
+from amrrules.utils import PAIRWISE_TABLE, DEFAULT_COMBINE_TABLE, IMPOSSIBLE, ImpossibleCombination, _normalize_call, EVIDENCE_GRADE_ORDER
+from amrrules.rules_io import parse_multicopy_rule_mutation
 from collections import defaultdict
+import re
 
 class SummaryEntry:
     """
@@ -29,123 +32,272 @@ class SummaryEntry:
         self.evidence_grade = None
         self.markers_rule_nonS = None
         self.markers_with_norule = None
-        self.markers_s = None
-        self.ruleIDs = None
-        self.combo_rules = None
+        self.markers_S = None
+        self.supporting_rules = None
+        self.other_rules = None
     
-    def summarise_rules(self, no_rule_interpretation, class_summary=None):
-        """Compute summary values based on geno_objs."""
+    #def summarise_rules(self, no_rule_interpretation, combo_rules, class_summary=None, flag_core=False):
+    def summarise_rules(self, no_rule_interpretation, unknown_rules=None, class_summary=None, flag_core=False, list_all_rules=False, trust_multi_copy=False):
 
-        # Helper to get max by order list
-        def get_max_value(values, order):
-            valid_values = [v for v in values if v in order]
-            if not valid_values:
-                return None
-            return max(valid_values, key=lambda v: order.index(v))
+        """Compute summary values based on geno_objs."""
 
         # full object list creation, if we've got a drug class of objs also to consider
         if class_summary:
-            geno_objs = self.geno_objs + class_summary.geno_objs
+            geno_objs = []
+            # go through the class summary geno objects
+            # only add the ones that have different markers to the drug level objects
+            for g in class_summary.geno_objs:
+                if g.marker_amrrules not in {x.marker_amrrules for x in self.geno_objs}:
+                    geno_objs.append(g)
+            # now add the drug level objects
+            geno_objs.extend(self.geno_objs)
         else:
+            # otherwise our objects to parse are simply the drug level objects
             geno_objs = self.geno_objs
 
-        # if it's 'unassigned markers' or 'partial', then we have no category/phenotype/evidence
+        # if our class is 'unassigned markers' or 'partial', then we have no category/phenotype/evidence
         # so just set these values and exit
         if self.drug_class in ['unassigned markers', 'partial']:
             self.category = '-'
             self.phenotype = '-'
             self.evidence_grade = '-'
+            self.supporting_rules = 'none (unassigned)' if self.drug_class == 'unassigned markers' else 'none (partial hits)'
+            self.other_rules = '-'
             # move the partial call to the ruleID col and set drug and class to '-' to avoid confusion
             if self.drug_class == 'partial':
-                self.ruleIDs = 'none (partial hits)'
                 self.drug_class = '-'
                 self.drug = '-'
+            self.set_markers(geno_objs, {}, flag_core=flag_core)
             return
-        if self.drug_class == 'antibiotic efflux':
-            self.drug = '(n/a)'
+
+        # if we have no rules to apply, then we can't interpret
+        # so set the values to match the no_rule_interpretation setting, and exit
+        if not any(g.has_rule for g in geno_objs):
+            # no rules to apply, so there will be no other rules encountered
+            self.other_rules = '-'
+            if no_rule_interpretation == 'none':
+                self.supporting_rules = 'none'
+                self.category = '-'
+                self.phenotype = '-'
+                self.evidence_grade = 'none'
+            elif no_rule_interpretation == 'nwt':
+                self.supporting_rules = 'none (default nwt)'
+                self.category = '-'
+                self.phenotype = 'nonwildtype'
+                self.evidence_grade = 'none'
+            elif no_rule_interpretation == 'nwtS':
+                self.supporting_rules = 'none (default nwtS)'
+                self.category = 'S'
+                self.phenotype = 'nonwildtype'
+                self.evidence_grade = 'none'
+            elif no_rule_interpretation == 'nwtR':
+                self.supporting_rules = 'none (default nwtR)'
+                self.category = 'R'
+                self.phenotype = 'nonwildtype'
+                self.evidence_grade = 'none'
+            if self.drug_class == 'antibiotic efflux':
+                #override as we can't say anything meaningful for efflux
+                self.category = '-'
+                self.phenotype = '-'
+                self.evidence_grade = '-'
+                self.drug = '(n/a)'
+            self.set_markers(geno_objs, {}, flag_core=flag_core)
+            return
         
-        # otherwise, continue on
-        # Extract values from genotype objects
-        #categories = [g.clinical_category for g in self.geno_objs if hasattr(g, 'clinical_category')]
-        phenotypes = [g.phenotype for g in geno_objs if hasattr(g, 'phenotype')]
-        #evidence_grades = [g.evidence_grade for g in self.geno_objs if hasattr(g, 'evidence_grade')]
+        # otherwise, continue on and get all rule IDs that are being encountered
+        solo_rule_ids = set()
+        combo_rule_ids = set()
+        all_encountered_ids = set()
+        for g in geno_objs:
+            if getattr(g, "ruleID", None) in (None, "-"):
+                continue
+            all_encountered_ids.add(g.ruleID)
+            if getattr(g, "combo_rule_row", False):
+                combo_rule_ids.add(g.ruleID)
+            else:
+                solo_rule_ids.add(g.ruleID)
 
-        # update evidence grade to be linked to the evidence for the highest category call 
-        # (eg if oqx is S with rule, but there is gyrA marker with no rule that's R, category is R but evidence grade is very low)
-        best_obj = max(geno_objs, key=lambda o: (
-            CATEGORY_ORDER.index(o.clinical_category),
-            EVIDENCE_GRADE_ORDER.index(o.evidence_grade)
-            ))
+        # use this to keep track of any rules that are going to be overridden by a combination or multi-copy gene rule
+        rules_to_be_overriden = set()
+        # use this to keep track of rules that need to be assessed for the final interpretation. This will be a combination of solo rules, combination rules, and any multi-copy rules that apply
+        rules_to_assess = []
 
-        # Set the “maximum” according to ordering
-        self.category = best_obj.clinical_category
-        self.phenotype = get_max_value(phenotypes, PHENOTYPE_ORDER)
-        self.evidence_grade = best_obj.evidence_grade
+        # a multi-copy gene object overrides any individual objects that are part of the multi-copy rule
+        marker_for_objs_to_remove = None
+        copy_number_override = False
+        # ruleIDs carried by the surviving copy-number row(s). If a copy-number
+        # row shares its ruleID with the individual object(s) it's replacing
+        # (e.g. a single copy matching a multi-copy family's lowest tier - no
+        # real escalation happened), that ruleID must NOT be treated as
+        # overridden, or the only rule call available gets excluded entirely.
+        copy_number_survivor_ruleids = set()
+        copy_number_sensitive_ruleids = set()
+        combo_markers_to_add = defaultdict(list)
+        for g in geno_objs:
+            if g.copy_number_row:
+                copy_number_override = True
+                marker_for_objs_to_remove = g.original_amrrules_marker
+                copy_number_survivor_ruleids.add(g.ruleID)
+                if getattr(g, "copy_number_sensitive", False):
+                    copy_number_sensitive_ruleids.add(g.ruleID)
+            if getattr(g, "combo_rule_row", False):
+                # this is a combination rule, so add the individual rules that make up the combination
+                # to the list of rules to be overriden (excluded) when generating the final call
+                # only do this if our rules are already present in the solo_rule_ids list, as there may be instances where a combination rule is applied, but the individual rules that make up the combo are not present in our drug specific list, as the individual components are relevant to a different drug
+                # Override whichever individual component rules ARE present in solo_rule_ids
+                present_components = set(g.combo_rule_components) & solo_rule_ids
+                rules_to_be_overriden.update(present_components)
 
-        # alright, but depending on our no_rule_interpretation setting, we may need to override the category and phenotype values
-        # only matters if we have markers with no rules
+                # If there are components not in solo_rule_ids, add markers for the combo rule
+                if not set(g.combo_rule_components).issubset(solo_rule_ids):
+                    solo_rule_ids.update(g.combo_rule_components)
+                    combo_markers_to_add.setdefault(g.clinical_category, set()).update(re.findall(r"[^&|()\s]+", g.marker_amrrules))
+
+        # now remove any geno objects that have the same marker as the multi-copy row, 
+        # and are not the multi-copy row itself
+        to_keep = []
+        for g in geno_objs:
+            if copy_number_override and (g.marker_amrrules == marker_for_objs_to_remove and not g.copy_number_row):
+                # only mark the ruleID as overridden if the survivor is
+                # actually a DIFFERENT rule - otherwise there's no real
+                # escalation, and excluding it leaves nothing to assess
+                if g.ruleID not in copy_number_survivor_ruleids:
+                    rules_to_be_overriden.add(g.ruleID)
+                    solo_rule_ids.discard(g.ruleID)
+                # either way, drop this duplicate object - the copy_number_row's
+                # (correctly formatted) marker represents it in set_markers
+            else:
+                to_keep.append(g)
+        geno_objs = to_keep
+
+        # now set all the markers
+        # only assess the genotype objects that aren't being overridden
+        self.set_markers(geno_objs, combo_markers_to_add, flag_core=flag_core)
+
+        # update the rules to assess list to remove any rules that are 
+        # being overridden by combination or multi-copy rules
+        for g in geno_objs:
+            if g.ruleID not in rules_to_be_overriden and g.ruleID not in (None, "-"):
+                rules_to_assess.append(g.rule)        
+
+        # extract all the calls for the rules we need to assess
+        calls = [(r['phenotype'], r['clinical category']) for r in rules_to_assess]
+        # determine the overall call for this set of rules
+        rule_call = self.combine_many(calls)
+
+        # if we have markers with no rule, then update the rule call based on our default setting
         if self.markers_with_norule != '-':
-            if no_rule_interpretation == 'none' or no_rule_interpretation == 'nwt':
-                # for the category, if we have any nwt markers, then we can't interpret
-                # what this means in combination with an S marker, so set to '-'
-                # however if the rule says 'R', then we can keep the R
-                if self.category == 'S':
-                    self.category = '-'
-                # evidence grade also gets switched to 'none' regardless
-                self.evidence_grade = 'none'
-                # we change the phenotype based on whether its none or nwt
-                if no_rule_interpretation == 'none':
-                # for the phenotype, if we have any nwt markers, then we can't interpret, so set to '-'
-                    self.phenotype = '-'
-                elif no_rule_interpretation == 'nwt':
-                    # in this case,if  our rule markers state we have a wt phenotype, but we have nwt markers
-                    # so we override the penotype to be nwt
-                    # if we had markers with rules that were nwt R, we stay nwt anyway
-                    self.phenotype = 'nonwildtype'
-            if no_rule_interpretation == 'nwtS':
-                # if we have any nwt markers, we're calling nwt and S
-                # but we want the evidence grade to be 'none' to reflect the fact
-                # that the call is being made using markers with no rules
-                self.evidence_grade = 'none'
+            rule_call = self.apply_norule_default(rule_call, no_rule_interpretation)
 
-        # if efflux, then set clinical category to '-'
+        self.phenotype, self.category = rule_call
+
+        # now get the evidence grade for the final call, based only on the rules
+        # that match our final clinical category
+        evidence_grades = [
+        r['evidence grade'] for r in rules_to_assess
+        if 'evidence grade' in r and r.get('clinical category') == self.category]
+
+        # if there are no evidence grades, then we had no rules that match the final category
+        if not evidence_grades:
+            self.evidence_grade = 'none'
+        else:
+            self.evidence_grade = max(evidence_grades, key=lambda v: EVIDENCE_GRADE_ORDER.index(v))
+
+        # identify which rules support the final call, and which are "other"
+        supporting_ids = {
+            r['ruleID'] for r in rules_to_assess
+            if (r.get('phenotype'), r.get('clinical category')) == (self.phenotype, self.category)
+        }
+
+        if supporting_ids:
+            self.supporting_rules = ";".join(sorted(supporting_ids))
+        elif self.markers_with_norule != '-':
+            # final interpretation came entirely from the no_rule_interpretation default -
+            # no actual matched rule agrees with it, so none are supporting
+            if no_rule_interpretation == 'none':
+                self.supporting_rules = 'none'
+            else:
+                self.supporting_rules = f"none (default {no_rule_interpretation})"
+        else:
+            self.supporting_rules = '-'
+
+        other_ids = set(rules_to_be_overriden)
+        if list_all_rules:
+            other_ids |= (all_encountered_ids - supporting_ids)
+        self.other_rules = ";".join(sorted(other_ids)) if other_ids else '-'
+
+        # An S or I interpretation based on a copy-number-sensitive rule is only
+        # reliable if the copy number call itself is correct (e.g. a collapsed repeat
+        # in the assembly would look like fewer copies than really exist).
+        # Here we flag to the user that the evidence for this interpretation may be lower
+        # due to the uncertainty in the copy number call. This is only relevant for S or I calls, 
+        # as R calls are always actionable regardless of the copy number.
+        if (not trust_multi_copy
+                and self.category in ('S', 'I')
+                and supporting_ids & copy_number_sensitive_ruleids):
+            self.evidence_grade = 'low (copy number variant)'
+
         if self.drug_class == 'antibiotic efflux':
-            self.category = '-'
+                    #override as we can't say anything meaningful for efflux
+                    self.category = '-'
+                    self.phenotype = '-'
+                    self.evidence_grade = '-'
+                    self.drug = '(n/a)'
+                    self.supporting_rules = 'none'
+                    self.other_rules = '-'
+
+        return
+
+    def combine_calls(self, call1, call2):
+        """Look up two (phenotype, category) calls in PAIRWISE_TABLE."""
+        call1 = _normalize_call(call1)
+        call2 = _normalize_call(call2)
+        result = PAIRWISE_TABLE[call1][call2]
+        if result is IMPOSSIBLE:
+            raise ImpossibleCombination(f"{call1} + {call2} is not a valid combination")
+        return result
+ 
+    def combine_many(self, calls):
+        """
+        Combine a list of (phenotype, category) calls into one, folding all
+        category == 'S' calls together first, then folding the remaining
+        (non-S) calls in one at a time against the running result.
     
-    def set_ruleIDs_and_combo(self, combo_rules, class_summary=None):
-        # if this is the summary of partial hits, skip all this and return out
-        if self.ruleIDs == 'none (partial hits)':
-            self.combo_rules = '-'
-            return
+        This ordering should never hit an *np cell by design. If it does, a
+        warning is printed and that call is skipped (running result kept
+        unchanged) rather than crashing - so the source rules can be fixed.
+        """
+        if not calls:
+            return None
+        calls = [_normalize_call(c) for c in calls]
+    
+        s_calls = [c for c in calls if c[1] == 'S']
+        non_s_calls = [c for c in calls if c[1] != 'S']
+        ordered_calls = s_calls + non_s_calls
+    
+        result = ordered_calls[0]
+        for call in ordered_calls[1:]:
+            try:
+                result = self.combine_calls(result, call)
+            except ImpossibleCombination as e:
+                print(
+                    f"WARNING: impossible combination hit while combining rules "
+                    f"({e}). This should not happen by design - check the source "
+                    f"rules. Skipping this call and keeping the current result."
+                )
+        return result
+
+    def apply_norule_default(self, rule_call, no_rule_interpretation):
+        """
+        Combine the winning rule-based call with the no_rule_interpretation
+        default, but ONLY if the sample actually has markers with no matching
+        rule. If there are none, the rule-based call passes through unchanged.
+        """
         
-        # add class info if that's provided
-        if class_summary:
-            geno_objs = self.geno_objs + class_summary.geno_objs
-        else:
-            geno_objs = self.geno_objs
-        # deal with the ruleIDs
-        rule_ids = {g.ruleID for g in geno_objs
-            if getattr(g, "ruleID", None) not in (None, "-")}
-        # sets ruleIDs to '-' if there are none at all
-        self.ruleIDs = ";".join(sorted(rule_ids)) if rule_ids else "-"
+        default_row = DEFAULT_COMBINE_TABLE[no_rule_interpretation]
+        return default_row[_normalize_call(rule_call)]
 
-        matched_combo_rules = []
-        # for each rule, we need to extract the ruleID logic and check if it matches our ruleIDs
-        for rule in combo_rules:
-            ruleID_logic = rule.get('gene')
-            # ruleID logic is a string of the form "gene1 & gene2 | gene3"
-            # we need to replace the & with a python 'and' and the | with a python 'or'
-            matched_combo = self._evaluate_logic_string(ruleID_logic, rule_ids)
-            if matched_combo:
-                # add to the list of matched combos
-                matched_combo_rules.append(ruleID_logic)
-        # if we didn't find any matching combo rules, then we return None
-        if len(matched_combo_rules) == 0:
-            self.combo_rules = '-'
-        else:
-            self.combo_rules = ";".join(matched_combo_rules)
-
-    def set_markers(self, flag_core, class_summary=None):
+    def set_markers(self, geno_objs, combo_markers_to_add, flag_core):
         
         # for each object, extract the marker and place it into the correct
         # list based on whether it has a rule, no rule, or is wildtype
@@ -153,11 +305,34 @@ class SummaryEntry:
         markers_with_norule = []
         markers_s = []
 
+        # set up a list of processed markers,
+        # so we can exclude any duplicate markers from
+        # the class level, that are being inherited
+        processed_markers = []
+
         # first loop through the markers for the drug
-        for g in self.geno_objs:
+        for g in geno_objs:
             # set the marker to be the amrrules formatted version
             marker = g.marker_amrrules
+            processed_markers.append(marker)
             if g.has_rule:
+                # skip markers that are part of combo rules, as the individual
+                # markers will be included in the correct marker string already
+                if getattr(g, "combo_rule_row", False):
+                    continue
+                # if it's an unknown rule, add a marker to either S or non-S list, based on the clinical category of the unknown rule
+                if getattr(g, "unknown_mechanism_row", False):
+                    if g.rule.get('gene') == 'none':
+                        marker = '(no target)'
+                    else:
+                        marker = '(unknown mechanism)'
+                    # only append the markers if the list is empty
+                    # if there are other markers (eg nwt acquired) then we don't need to add the unknown or none markers
+                    if g.clinical_category == 'S' and markers_s == []:
+                        markers_s.append(marker)
+                    elif markers_rule_nonS == []:
+                        markers_rule_nonS.append(marker)
+                    continue
                 # only label core genes if it's a core context with gene presence variation type
                 if g.gene_context == 'core' and g.variation_type == 'Gene presence detected' and flag_core:
                     marker = marker + " (core)"
@@ -168,55 +343,59 @@ class SummaryEntry:
             else:
                 markers_with_norule.append(marker)
         
-        # now loop through the markers for the class, if there is one
-        if class_summary:
-            for g in class_summary.geno_objs:
-                # set the marker to be the amrrules formatted version
-                marker = g.marker_amrrules
-                if g.has_rule:
-                    # only label core genes if it's a core context with gene presence variation type
-                    if g.gene_context == 'core' and g.variation_type == 'Gene presence detected' and flag_core:
-                        marker = marker + " (core)"
-                    # append marker only if it's not already present
-                    if g.clinical_category == 'S' and marker not in markers_s:
-                        markers_s.append(marker)
-                    elif g.clinical_category != 'S' and marker not in markers_rule_nonS:
-                        markers_rule_nonS.append(marker)
-                # append marker only if it's not already present
-                elif marker not in markers_with_norule:
-                    markers_with_norule.append(marker)
+        # now loop through any combo markers that need to be added
+        for category, markers in combo_markers_to_add.items():
+            for marker in markers:
+                if marker in processed_markers:
+                    continue
+                processed_markers.append(marker)
+                if category == 'S':
+                    markers_s.append(marker)
+                else:
+                    markers_rule_nonS.append(marker)
 
         self.markers_rule_nonS = ';'.join(markers_rule_nonS) or '-'
         self.markers_with_norule = ';'.join(markers_with_norule) or '-'
         self.markers_S = ';'.join(markers_s) or '-'
 
+    @staticmethod
     def _evaluate_logic_string(logic_string, id_list):
         """
-        Evaluates a logic string against a list of IDs.
+        Evaluates a logic string against a list of IDs using strict word boundaries.
 
         Args:
             logic_string (str): A string containing logical expressions (e.g., "ECO1016 & ECO1026").
-            id_list (list): A list of IDs to compare against (e.g., ["ECO1016", "ECO1026"]).
+            id_list (list/set): A collection of IDs to compare against.
 
         Returns:
             bool: True if the logic evaluates to True, False otherwise.
         """
-        # Convert the list of IDs to a set for efficient membership testing
         id_set = set(id_list)
 
-        # Replace logical operators in the string with Python equivalents
+        # 1. Convert logical operators to Python equivalents
+        # Use word boundaries for 'AND'/'OR' to avoid messing up IDs containing 'AND' or 'OR'
         python_logic = logic_string.replace('&', ' and ').replace('|', ' or ')
 
-        # Wrap each ID in the logic string with a check for membership in the ID set
-        for id_ in id_set.union(set(logic_string.replace('(', '').replace(')', '').split())):
-            python_logic = python_logic.replace(id_, f"'{id_}' in id_set")
+        # 2. Extract all distinct alphanumeric tokens (IDs) from the logic string
+        # This automatically ignores parentheses, spaces, and operators
+        tokens_in_logic = set(re.findall(r'\b\w+\b', logic_string))
 
-        # Evaluate the logic string
+        # 3. Safely substitute each ID with its membership check
+        for id_ in tokens_in_logic:
+            # Skip Python keywords generated from operators
+            if id_ in ('and', 'or', 'not'):
+                continue
+                
+            # \b ensures exact match (e.g., matches "NGO006" but NOT "NGO0065")
+            pattern = r'\b' + re.escape(id_) + r'\b'
+            replacement = f"('{id_}' in id_set)"
+            python_logic = re.sub(pattern, replacement, python_logic)
+
+        # 4. Safely evaluate the expression
         try:
-            return eval(python_logic)
+            return eval(python_logic, {"__builtins__": None}, {"id_set": id_set})
         except Exception as e:
             raise ValueError(f"Error evaluating logic string: {logic_string}") from e
-
 
 def order_summary_objs(objs):
     """
@@ -246,16 +425,48 @@ def order_summary_objs(objs):
 
     return sorted_list
 
-def create_summary_dict(grouped_by_sample, rules, flag_core, no_rule_interpretation):
+def get_combination_rules(rules, organism, drug_class, drug=None):
+    """
+    Extracts combination rules for a given organism and drug/drug class.
+    Always filters first for drug class as this will always be provided.
+    Drug then needs to be added on if a specific drug is provided, in case there are specific rules for the drug
+
+    Returns a list of combination rules that match the organism and drug/drug class.
+    """
+    base_rules = [
+        r for r in rules
+        if r.get('organism') == organism
+        and r.get('variation type') in ('Combination')
+    ]
+    matching_rules = [r for r in base_rules if r.get('drug class') == drug_class]
+    if drug is not None:
+        matching_rules.extend([r for r in base_rules if drug in r.get('drug', '')])
+
+    combo_rules = [r for r in matching_rules if r.get('variation type') == 'Combination']
+
+
+    return combo_rules
+
+def create_summary_dict(grouped_by_sample, unknown_rules, flag_core, no_rule_interpretation, list_all_rules, trust_multi_copy):
 
     summary_entry_dict = {} # key: sample name, value: list of summary entry objs
     for sample_name, genotypes in grouped_by_sample.items():
         summary_entry_list = []
         # for the sample, we need to group by drug class, and then by drug within that
-
         sample_groups = defaultdict(lambda: defaultdict(list))
         for g in genotypes:
             sample_groups[g.drug_class][g.drug].append(g)
+        # added the unknown rule markers here, into the same buckets that
+        # we've already made for the sample. Will be assessed with any existing
+        # markers and rules if applicable, otherwise will be filled as their own entry
+        organism = genotypes[0].organism
+        for drug_class, drugs in unknown_rules.items():
+            for drug, rules in drugs.items():
+                for rule in rules:
+                    if rule.get('organism') != organism:
+                        continue
+                    dummy_obj = Genotype.create_unknown_mechanism_obj(sample_name, organism, rule)
+                    sample_groups[dummy_obj.drug_class][dummy_obj.drug].append(dummy_obj)
         for drug_class in sample_groups.keys():
             # for each drug_class, we first need to apply a summary entry at the class level
             # if the class level exists
@@ -264,21 +475,12 @@ def create_summary_dict(grouped_by_sample, rules, flag_core, no_rule_interpretat
             master_class_entry = None
             if class_level_hits:
                 summary_entry = SummaryEntry(sample_name, class_level_hits)
-                # assign markers with, without rules, and wt markers
-                summary_entry.set_markers(flag_core)
-                # determine the highest category/pheno/evidence grade for this drug_class
-                summary_entry.summarise_rules(no_rule_interpretation)
-                # assign ruleIDs and combo rules
-                #TODO: Test combo rule implementation
-                # to get the list of possible combo rules to evaluate, we need to extract all 'Combination' rules for this organism
-                combo_rules = [r for r in rules if r.get('organism') == summary_entry.organism and r.get('rule type') == 'Combination']
-                # then need to further filter to include only combo rules that apply to the drug class we're assessing
-                combo_rules = [r for r in combo_rules if summary_entry.drug_class in r.get('drug classes', '')]
-                summary_entry.set_ruleIDs_and_combo(combo_rules)
+                summary_entry.summarise_rules(no_rule_interpretation, flag_core=flag_core, list_all_rules=list_all_rules, trust_multi_copy=trust_multi_copy)
                 # this is our master entry for this drug_class, so save it
                 master_class_entry = summary_entry
                 # add it to our list
                 summary_entry_list.append(summary_entry)
+
             
             # otherwise now we're in a specific drug for the class
             # we need to make sure that the interpretation of this drug doesn't conflict with the class level rules
@@ -286,20 +488,10 @@ def create_summary_dict(grouped_by_sample, rules, flag_core, no_rule_interpretat
                 if drug != '-':
                     # create our summary entry
                     summary_entry = SummaryEntry(sample_name, sample_groups[drug_class][drug])
-                    # before assigning markers to columns
-                    # we want to remove any duplicated row markers from the class level
-                    # assign markers
-                    summary_entry.set_markers(flag_core, class_summary=master_class_entry)
-                    # determine highest category/pheno/evidence grade for this drug
-                    # but take into account the rules for the drug class
-                    summary_entry.summarise_rules(no_rule_interpretation, class_summary=master_class_entry)
-                    # assign ruleIDs and combo rules
-                    combo_rules = [r for r in rules if r.get('organism') == summary_entry.organism and r.get('rule type') == 'Combination']
-                    # then need to further filter to include only combo rules that apply to either the drug or class we're assessing
-                    combo_rules = [r for r in combo_rules if summary_entry.drug in r.get('drugs', '') or summary_entry.drug_class in r.get('drug classes', '')]
-                    summary_entry.set_ruleIDs_and_combo(combo_rules, class_summary=master_class_entry)
+                    # determine highest category/pheno/evidence grade for this drug, including combo rules (if any)
+                    summary_entry.summarise_rules(no_rule_interpretation, class_summary=master_class_entry, flag_core=flag_core, list_all_rules=list_all_rules, trust_multi_copy=trust_multi_copy)
                     # add it to our list
                     summary_entry_list.append(summary_entry)
-            summary_entry_dict[sample_name] = order_summary_objs(summary_entry_list)
+        summary_entry_dict[sample_name] = order_summary_objs(summary_entry_list)
     
     return(summary_entry_dict)
