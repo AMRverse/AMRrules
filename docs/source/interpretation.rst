@@ -155,12 +155,12 @@ The final interepretation for a drug or drug class is determined by comparing th
 
 **Combining Two Rules**
 
+*(Note: `*np` denotes “not possible” rule combinations that are logically incompatible within a rule set for a given drug)*
+
 .. image:: images/combining_two_rules.png
    :alt: Table showing how interpretations for two rules are combined
    :align: center
 
-
-*(Note: `*np` denotes “not possible” rule combinations that are logically incompatible within a rule set for a given drug)*
 
 If rule-less markers are present for this particular drug/drug class, then the highest interpretation from the rules is then combined with the selected interpretation for rule-less markers (default ``none``, see :ref:`handling_ruleless_calls` for details). 
 
