@@ -204,41 +204,41 @@ cases:
     organism: s__Acinetobacter baumannii
     nr: nwtR
 
-  - name: test_gono_four23S
-    input: tests/data/input/ngono_4copies23S.tsv
+  - name: test_gono_four23S_WHOQ
+    input: tests/data/input/test_ngono_WHOQ_completeGenome.tsv
     organism: s__Neisseria gonorrhoeae
 
-  - name: test_gono_four23S_nwt
-    input: tests/data/input/ngono_4copies23S.tsv
+  - name: test_gono_four23S_WHOQ_nwt
+    input: tests/data/input/test_ngono_WHOQ_completeGenome.tsv
     organism: s__Neisseria gonorrhoeae
     nr: nwt
 
-  - name: test_gono_four23S_nwtS
-    input: tests/data/input/ngono_4copies23S.tsv
+  - name: test_gono_four23S_WHOQ_nwtS
+    input: tests/data/input/test_ngono_WHOQ_completeGenome.tsv
     organism: s__Neisseria gonorrhoeae
     nr: nwtS
 
-  - name: test_gono_four23S_nwtR
-    input: tests/data/input/ngono_4copies23S.tsv
+  - name: test_gono_four23S_WHOQ_nwtR
+    input: tests/data/input/test_ngono_WHOQ_completeGenome.tsv
     organism: s__Neisseria gonorrhoeae
     nr: nwtR
     
-  - name: test_ngono_single23S_copy
-    input: tests/data/input/ngono_single23S_copy.tsv
+  - name: test_ngono_single23S_WHOQ
+    input: tests/data/input/test_ngono_WHOQ_draft.tsv
     organism: s__Neisseria gonorrhoeae
 
-  - name: test_ngono_single23S_copy_nwt
-    input: tests/data/input/ngono_single23S_copy.tsv
+  - name: test_ngono_single23S_WHOQ_nwt
+    input: tests/data/input/test_ngono_WHOQ_draft.tsv
     organism: s__Neisseria gonorrhoeae
     nr: nwt
 
-  - name: test_ngono_single23S_copy_nwtS
-    input: tests/data/input/ngono_single23S_copy.tsv
+  - name: test_ngono_single23S_WHOQ_nwtS
+    input: tests/data/input/test_ngono_WHOQ_draft.tsv
     organism: s__Neisseria gonorrhoeae
     nr: nwtS
 
-  - name: test_ngono_single23S_copy_nwtR
-    input: tests/data/input/ngono_single23S_copy.tsv
+  - name: test_ngono_single23S_WHOQ_nwtR
+    input: tests/data/input/test_ngono_WHOQ_draft.tsv
     organism: s__Neisseria gonorrhoeae
     nr: nwtR
 
