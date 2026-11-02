@@ -26,7 +26,7 @@
 #   nr           - value for -nr (none / nwt / nwtS / nwtR), omit for default
 #   sample_id    - value for --sample-id, only needed if it's expected to
 #                  differ from the default derived from the input filename
-#   extra_args   - list of any other flags not covered above
+#   list_all_rules - true to pass --list-all-rules to command
 
 cases:
   - name: test_ecoli_wildtype
