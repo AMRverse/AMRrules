@@ -22,7 +22,7 @@ package-dir = {"" = "src"}
 where = ["src"]
 
 [tool.setuptools.package-data]
-amrrules = ["rules/*"]
+amrrules = ["resources/amrfp_to_card_drugs_classes.txt"]
 
 [project.scripts]
 amrrules = "amrrules.cli:main"

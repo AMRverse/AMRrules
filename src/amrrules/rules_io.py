@@ -1,19 +1,20 @@
 from collections import defaultdict
 import csv, re
-from importlib import resources
+from amrrules.rulesdb import get_rules_dir
 
 def parse_rules_file(rule_file_list):
+    rules_dir = get_rules_dir()
     # get the correct rules file based on the organism, from the rules directory
     rules_parsed = []
     for rule_file in rule_file_list:
         rule_file_name = f"{rule_file}.tsv"
         try:
-            with resources.files("amrrules.rules").joinpath(rule_file_name).open('r', encoding='utf-8') as f:
+            with (rules_dir / rule_file_name).open('r', encoding='utf-8') as f:
                 reader = csv.DictReader(f, delimiter='\t')
                 for row in reader:
                     rules_parsed.append(row)
         except FileNotFoundError:
-            raise FileNotFoundError(f"Rules file '{rule_file_name}' not found in packaged rules/")
+            raise FileNotFoundError(f"Rules file '{rule_file_name}' not found in {rules_dir}/. Please ensure the rules database is downloaded. Run amrrules --download-resources rules to download rules database.")
     return rules_parsed
 
 def extract_relevant_rules(rules, organism):

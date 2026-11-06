@@ -29,6 +29,8 @@ import argparse
 import subprocess
 import sys
 from pathlib import Path
+from amrrules.rulesdb import get_rules_db_version
+
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 # use this baseline output if you're comparing back to main
@@ -37,6 +39,10 @@ REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 BASELINE_DIR = REPO_ROOT / "tests" / "data" / "local_output_frozen"
 LOCAL_DIR = REPO_ROOT / "tests" / "data" / "local_output"
 DIFF_DIR = REPO_ROOT / "tests" / "data" / "regression_diffs"
+
+pinned = Path("tests/rules_db_version.txt").read_text().strip()
+if get_rules_db_version() != pinned:
+    print(f"WARNING: rules DB is {get_rules_db_version()}, baseline used {pinned}; diffs may be rule changes, not code changes.")
 
 
 def main():

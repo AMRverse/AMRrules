@@ -1,3 +1,4 @@
+from email import parser
 import argparse, os
 from amrrules import rules_engine, __version__
 from amrrules.utils import get_supported_organisms
@@ -5,7 +6,7 @@ from amrrules.utils import get_supported_organisms
 def main():
 
     # Get list of valid organism names
-    supported_organisms = get_supported_organisms()
+    #supported_organisms = get_supported_organisms()
 
     parser = argparse.ArgumentParser(description="Interpretation engine for AMRrules.")
     parser.add_argument('--input', type=str, help='Path to the tabular input file (must be AMRFinderPlus output for this version). Can be gzipped.')
@@ -29,14 +30,29 @@ def main():
     parser.add_argument('--trust-multi-copy', action='store_true', help='If turned on, trust that multi-copy gene calls are correct, and do not flag them as potentially incorrect due to genotyping a draft, rather than complete, genome assembly.')
     parser.add_argument('--full-disrupt', action='store_true', help='Show the full mutation detected by AMRFinderPlus for POINT_DISRUPT calls in the summary report, rather than just labelling them as gene:-')
     parser.add_argument('--print-non-amr', action='store_true', help='Include non-AMR rows (eg VIRULENCE, STRESS) from the input file in the interpreted output. By default, these rows are skipped.')
-    parser.add_argument('--download-resources', action='store_true', help='Download AMRFinderPlus resource files and exit.')
+   #parser.add_argument('--download-resources', action='store_true', help='Download AMRFinderPlus resource files and exit.')
+    
+    parser.add_argument('--download-resources', nargs='*', default=None, choices=['all', 'rules', 'external'], metavar='RESOURCE',
+                       help='Download resources and exit. Choose from: rules (the AMRrules rules database), external (AMRFinderPlus and CARD files), or all. With no choice, downloads everything. Run again at any time to update databases.')
+    parser.add_argument('--db-version', type=str, default=None,
+                       help='Rules database release to download, e.g. v1.1.0. Default is the latest. Only used with --download-resources.')
+    parser.add_argument('--resource-info', action='store_true',
+                      help='Show where downloaded resources are stored and which versions are installed, then exit.')
+
     parser.add_argument('--version', action='version', version=f"amrrules {__version__}")
 
     args = parser.parse_args()
 
-    if args.download_resources:
-        rules_engine.download_resources()
+    if args.download_resources is not None:
+        rules_engine.download_resources(args.download_resources or ['all'], args.db_version)
         return
+
+    if args.resource_info:
+          rules_engine.show_resources()
+          return
+
+    # only needed from here on, and requires the rules database to be installed
+    supported_organisms = get_supported_organisms()
     
     if args.list_organisms:
         print("Supported organisms:")

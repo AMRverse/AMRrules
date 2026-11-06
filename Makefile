@@ -4,15 +4,12 @@
 
 # Copy rules and install in editable mode
 dev:
-	@echo "🔁 Copying rule files..."
-	python copy_rules.py
 	@echo "📦 Installing package in editable mode..."
 	pip install -e .
+	amrrules --download-resources
 
 # Build distribution packages (wheel + sdist)
 build:
-	@echo "🔁 Copying rule files for build..."
-	python copy_rules.py
 	@echo "🚀 Building package..."
 	python -m build
 

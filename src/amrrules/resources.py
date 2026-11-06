@@ -8,22 +8,25 @@ import re
 import obonet
 import tempfile
 import tarfile
+from amrrules.rulesdb import get_data_dir
 
 class ResourceManager:
     """Manages external resource files required for assigning and annotating rules."""
     
     def __init__(self):
         """Initialize resource manager with default resource directory."""
-        self.dir = Path(__file__).parent / "resources"
+        self.dir = get_data_dir() / "resources"
         self._amrfp_card_convert_cache: Optional[list] = None
         self._amrfp_db_version: Optional[str] = None
         self._refseq_nodes_cache: Optional[dict] = None
         self._card_drug_map: Optional[dict] = None
+        self.shipped_dir = Path(__file__).parent / "resources"
     
     def setup_all_resources(self):
         """
         Download and set up all required external resources, from AMRFP and CARD databases.
         """
+        self.dir.mkdir(parents=True, exist_ok=True)
         amrfp_success = self.download_amrfp_resources()
         card_success = self.download_card_archives()
 
@@ -85,8 +88,8 @@ class ResourceManager:
         Download and extract CARD ontology and data files into the resource directory.
         """
         # URLs for the CARD database files
-        card_ontology_url = "https://card.mcmaster.ca/download/5/ontology-v4.0.1.tar.bz2"
-        card_data_url = "https://card.mcmaster.ca/download/0/broadstreet-v4.0.1.tar.bz2"
+        card_ontology_url = "https://card.mcmaster.ca/latest/ontology"
+        card_data_url = "https://card.mcmaster.ca/latest/data"
 
         # Files to extract from each archive
         card_ontology_files = ["aro.obo", "ncbi_taxonomy.tsv"]
@@ -189,7 +192,7 @@ class ResourceManager:
     def get_amrfp_card_conversion(self) -> dict:
 
         if self._amrfp_card_convert_cache is None:
-            card_file = self.dir / "amrfp_to_card_drugs_classes.txt"
+            card_file = self.shipped_dir / "amrfp_to_card_drugs_classes.txt"
             if card_file.exists():
                 self._amrfp_card_convert_cache = self._load_amrfp_card_conversion(str(card_file))
             else:
@@ -313,7 +316,7 @@ class ResourceManager:
             'ARO:3009105', 'ARO:3009106', 'ARO:3009107', 'ARO:3009108', 
             'ARO:3009109', 'ARO:3009123', 'ARO:3009124', 'ARO:3009125',
             'ARO:3000035', 'ARO:3007783', 'ARO:0000022', 'ARO:3007629',
-            'ARO:3000707'
+            'ARO:3000707', 'ARO:0000050'
         ]
         
         for aro_accession in betalac_aros:

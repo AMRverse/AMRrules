@@ -4,12 +4,30 @@ from amrrules.utils import check_sample_ids, validate_amrfp_file, get_organisms,
 from amrrules.output import write_genotype_report, write_genome_report
 from amrrules.copy_combo_logic import apply_copy_number_rules, apply_combination_rules
 from amrrules.resources import ResourceManager as rm
+from amrrules.rulesdb import download_rules_db, get_data_dir, get_rules_dir, get_rules_db_version
 from amrrules.genotype_parser import GenoResult, Genotype
 import csv
-from importlib import resources
+#from importlib import resources
 from collections import defaultdict
 
-def run(args):
+def download_resources(what=('all',), db_version=None):
+    what = set(what)
+    if 'all' in what:
+        what = {'rules', 'external'}
+    if 'rules' in what:
+        download_rules_db(db_version)
+    if 'external' in what:
+      if not rm().setup_all_resources():
+          raise SystemExit("Some external resources could not be downloaded - see the messages above.")
+    print("Database download complete.")
+
+# rules_engine.py
+def show_resources():
+    print(f"Data folder            : {get_data_dir()}")
+    print(f"Rules database         : {get_rules_db_version()}  ({get_data_dir() / 'rules'})")
+    print(f"AMRFinderPlus database : {rm().get_amrfp_db_version()}")
+
+def run(args):  
 
     # extract all the rules relevant to the organisms we're processing
     if args.organism_file:
@@ -53,7 +71,7 @@ def run(args):
     # collate unique rule files required for the organisms we need to parse
     rule_files = set()
     # open the rules key file and get the organism name
-    key_file_path = resources.files("amrrules.rules").joinpath("rule_key_file.tsv")
+    key_file_path = get_rules_dir() / "rule_key_file.tsv"
     with open(key_file_path, 'r') as key_file:
         for row in key_file:
             # split the row into the organism and rules file
@@ -191,11 +209,3 @@ def run(args):
     print(f"  Genome summary report         : {summary_output_file}")
     print(ruler)
     print("\nAMRrules complete.")
-
-
-def download_resources():
-    """
-    Download and cache the AMRFP and CARD database files required.
-    """
-    rm().setup_all_resources()
-    print("Resource download complete.")

@@ -1,6 +1,6 @@
 import csv, gzip, sys
-from importlib import resources
 import warnings
+from amrrules.rulesdb import get_rules_dir
 
 IMPOSSIBLE = object()  # sentinel for not possible combinations in PAIRWISE_TABLE
 
@@ -131,18 +131,19 @@ def get_supported_organisms(rule_dir: str = None):
     """
     Return a list of organism names by scanning organism names in the rules folder.
     """
-    rule_dir = resources.files("amrrules.rules")
+    rule_dir = get_rules_dir()
     
     if rule_dir is None:
-        raise ValueError("Rules directory not found. Please check your installation.")
+        raise ValueError("Rules directory not found. Please check your installation or run 'amrrules --download-resources rules' to download the rules database.")
 
     organisms = set()
     for entry in rule_dir.iterdir():
         if entry.name != "rule_key_file.tsv" and entry.name.endswith(".tsv"):
             # Extract organism name from filename
-            reader = csv.DictReader(open(entry, 'r'), delimiter='\t')
-            for row in reader:
-                organisms.add(row.get('organism'))
+            with open(entry, 'r') as f:
+                reader = csv.DictReader(f, delimiter='\t')
+                for row in reader:
+                    organisms.add(row.get('organism'))
     return sorted(organisms)
 
 def get_organisms(organism_file):
