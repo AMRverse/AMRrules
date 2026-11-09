@@ -3,10 +3,11 @@ AMRrules Specification
 **************************
 
 .. _specification:
-Rule Specification
-==============
 
-This section details how interpretive rules should be encoded in the AMRrules format. The current version of the AMRrules Specification is v1.0, for use with the AMRrules software package v1.0. The syntax for specifying different types of variants to which a rule should be applied is given in the next section.
+Rule Specification
+==================
+
+This section details how interpretive rules should be encoded in the AMRrules format. The current version of the AMRrules Specification is v1.1, for use with the AMRrules software package v1.0. The syntax for specifying different types of variants to which a rule should be applied is given in the next section.
 
 On this page you will find the full list of fields (indicating which external databases or ontologies apply to each field, along with a description and guidance on defining/interpreting each field), as well as bespoke AMRrules-specific controlled vocabulary for some fields.
 
@@ -14,7 +15,7 @@ On this page you will find the full list of fields (indicating which external da
 AMRrules template (Google sheet)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The v1.0 rule specification is also available in a `Google sheet that includes the AMRrules template <https://docs.google.com/spreadsheets/d/1t6Lr_p-WAOY0yAXWKzoKk4yb56D2JdSqwImg4RZBvFA/edit?usp=sharing>`__, with allowed values encoded in drop-down menus, to facilitate rule curation. 
+The v1.1 rule specification is also available in a `Google sheet that includes the AMRrules template <https://docs.google.com/spreadsheets/d/1fxwlz5BQm9Q2ca7DEpWZMiOMgG0xuF0mSMkbCSgWNxg/edit?usp=sharing>`__, with allowed values encoded in drop-down menus, to facilitate rule curation. 
 
 
 Full list of fields
@@ -24,25 +25,48 @@ The full list of fields is below, with guidelines on how each field should be sp
 
 :download:`Download <tables/specifications_and_guidance.tsv>`
 
-.. csv-table::
-   :file: tables/specifications_and_guidance.tsv
-   :delim: tab
-   :header-rows: 1
+.. container:: table-wrapper table-wrap
+
+   .. csv-filter::
+      :file: tables/specifications_and_guidance.tsv
+      :delim: tab
+      :header-rows: 1
+      :class: full-width
+      :included_cols: 0,1,2,3,5,6,4
+
 
 :download:`Download <tables/specifications_and_guidance.tsv>`
 
 Controlled vocabularies
 =======================
 
+Resistance mechanism
+^^^^^^^^^^^^^^^^^^^^
+
+Specifies the mechanism of resistance which applies to the marker. Uses the CARD ontology for `mechanism of antibiotic resistance <https://card.mcmaster.ca/ontology/36007>`__ (ARO:1000002).
+
+.. container:: table-wrapper table-wrap
+
+   .. csv-filter::
+      :file: tables/mechanisms.tsv
+      :delim: tab
+      :header-rows: 1
+      :included_cols: 2,0,1
+      :class: full-width
+
+
 Variation type
 ^^^^^^^^^^^^^^
 
 Specifies the nature of the type of variation to which the rule applies. Based on the 'variant type' column in the `hAMRonization <https://github.com/pha4ge/hAMRonization>`__ AMR detection specification scheme, with additional terms from the `NCIT <https://www.ebi.ac.uk/ols4/ontologies/ncit>`__ ontology.
 
-.. csv-table::
-   :file: tables/variation_type_spec.tsv
-   :delim: tab
-   :header-rows: 1
+.. container:: table-wrapper table-wrap
+  
+   .. csv-table::
+      :file: tables/variation_type_spec.tsv
+      :delim: tab
+      :header-rows: 1
+      :class: full-width
 
 :download:`Download <tables/variation_type_spec.tsv>`
 
@@ -53,17 +77,21 @@ Specified using the `Evidence and Conclusion Ontology (ECO) <https://www.evidenc
 
 Any `ECO <https://www.evidenceontology.org/>`__ codes can be used, but curators are encouraged to choose from the subset listed here, which covers the types of evidence typically available to support resistance mechanisms in bacteria. Note the literature source for each type of evidence noted here should be indicated in the ``PMID`` field.
 
-.. csv-table::
-   :file: tables/evidence_codes.tsv
-   :delim: tab
-   :header-rows: 0
+.. container:: table-wrapper table-wrap
+
+   .. csv-filter::
+      :file: tables/evidence_codes.tsv
+      :delim: tab
+      :header-rows: 0
+      :class: full-width
+      :included_cols: 0,1,3
 
 :download:`Download <tables/evidence_codes.tsv>`
 
 Evidence grade
 ^^^^^^^^^^^^^^
 
-This fields indicates the expert curators’ overall assessment of the level of support provided by all evidence considered. It is modelled on the `GRADE <https://book.gradepro.org/>`__ (Grading of Recommendations, Assessment, Development, and Evaluation) approach to assessing the certainty of evidence to guide decision making in healthcare.
+This fields indicates the expert curators' overall assessment of the level of support provided by all evidence considered. It is modelled on the `GRADE <https://book.gradepro.org/>`__ (Grading of Recommendations, Assessment, Development, and Evaluation) approach to assessing the certainty of evidence to guide decision making in healthcare.
 
 AMRrules aims to provide rules to interpret all markers that have been detected in a given species, but in many cases the evidence can be quite limited. The ``evidence grade`` field gives users an overall guide to the strength of evidence, and the ``evidence limitations`` field highlights what kind of evidence is lacking. 
 
@@ -71,58 +99,57 @@ Note that if no experimental evidence is available, the rule should NOT be grade
 
 There are four possible 'grades' in AMRrules, these are listed below with guidance on what they mean in the context of AMRrules (modelled on the `GRADE <https://gdt.gradepro.org/app/handbook/handbook.html#h.xr5ac2p2khuq>`__ framework).
 
-.. csv-table::
-   :file: tables/evidence_grades.tsv
-   :delim: tab
-   :header-rows: 1
+Key dimensions on which evidence may be down-rated:
+
+* Imprecision (lack of statistical power to associate with phenotypic resistance)
+* Inconsistency (unexplained variability between studies)
+* Indirectness (evidence has significant differences from the primary question of this species and this drug, e.g. studies in a different species, genus, or family; or a different although closely related drug)
+* Risk of bias (concern for systematic differences due to study conduct)
+
+.. container:: table-wrapper table-wrap
+
+  .. csv-table::
+    :file: tables/evidence_grades.tsv
+    :delim: tab
+    :header-rows: 1
+    :class: full-width
 
 :download:`Download <tables/evidence_grades.tsv>`
 
 
 Evidence limitations
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 This fields indicates highlights what kind of evidence is lacking to support interpretation of this marker in this organism. All rules with an ``evidence grade`` other than 'high' should have at least one limitation recorded.
 
-.. csv-table::
-   :file: tables/evidence_limitations.tsv
-   :delim: tab
-   :header-rows: 1
+.. container:: table-wrapper table-wrap
+
+  .. csv-filter::
+    :file: tables/evidence_limitations.tsv
+    :delim: tab
+    :header-rows: 1
+    :included_cols: 0
 
 :download:`Download <tables/evidence_limitations.tsv>`
-
-Breakpoint condition
-^^^^^^^^^^^^^^
-
-EUCAST, CLSI and others sometimes assign different breakpoints for different clinical conditions, infection sites, or drug delivery routes (e.g. intravenous vs oral). In such cases, this field is used to indicate which specific breakpoint the rule was defined against. This will often be blank, indicating that the rule is not specific to any particular type of infection or delivery route.
-
-The list of allowed terms is taken from the EUCAST and CLSI 2025 Breakpoints, sourced from the digitized versions in the `AMR R package <https://amr-for-r.org/>`__ using this command:
-```
-clinical_breakpoints %>% filter(guideline=="CLSI 2025" | guideline=="EUCAST 2025") %>% group_by(site) %>% count()
-```
-
-.. csv-table::
-   :file: tables/breakpoint_condition_values.tsv
-   :delim: tab
-   :header-rows: 0
-
-:download:`Download <tables/breakpoint_condition_values.tsv>`
 
 Organism code
 ^^^^^^^^^^^^^^
 
 Each rule is assigned a ruleID, which starts with a 3-letter code to indicate the organism subgroup who curated the rule. The list of available organism subgroup codes is below.
 
-.. csv-table::
-   :file: tables/organism_subgroup_codes.tsv
-   :delim: tab
-   :header-rows: 1
+.. container:: table-wrapper table-wrap
+
+  .. csv-table::
+    :file: tables/organism_subgroup_codes.tsv
+    :delim: tab
+    :header-rows: 1
 
 :download:`Download <tables/organism_subgroup_codes.tsv>`
 
 .. _syntax:
+
 Variant Specification
-=======
+=====================
 
 The AMRrules specification needs to be able to encode interpretive rules for all types of genetic variants relevant to AMR in bacteria.
 
@@ -147,22 +174,24 @@ Specific examples of each AMR variant are shown below, with proposed mutation sy
 
 .. |dash| replace:: ``-``
 
-========== ============ ============================= ================================================= ========================== ========== 
-  ID         gene         mutation                      variation type                                    drug                       category           
-========== ============ ============================= ================================================= ========================== ==========
-  KPN0001    blaSHV       |dash|                        Gene presence detected                            ampicillin                 wt R               
-  KPN0002    gyrA         p.Ser83Tyr                    Protein variant detected                          ciprofloxacin              nwt I              
-  KPN0003    parC         p.Ser80Ile                    Protein variant detected                          ciprofloxacin              nwt I              
-  KPN0004    ompK36       c.25C>T                       Nucleotide variant detected                       meropenem                  nwt S              
-  KPN0005    ompK36       p.114_115insGlyAsp            Protein variant detected                          meropenem                  nwt I              
-  KPN0006    mgrB         p.(1_100)                     Gene truncation detected                          colistin                   nwt R              
-  ECO0001    ampC         c.-11C>T                      Promoter variant detected                         ceftriaxone                nwt R              
-  ECO0002    ampC         c.-14_-13insGT                Promoter variant detected                         ceftriaxone                nwt R              
-  ACI0001    blaOXA-58    c.(-35_1)ins[ISAba125:inv]    Promoter variant detected                         ceftriaxone                nwt R              
-  NGO0002    23S rDNA     c.[2045A>G][3]                Nucleotide variant detected in multi-copy gene    azithromycin               nwt R              
-  ECO0003    blaTEM       c.[3]                         Gene copy number variant detected                 piperacillin+tazobactam    nwt R              
-  MTC0001    gyrA         p.[Ala94Gly][0.13]            Low frequency variant detected                    ciprofloxacin              nwt R              
-========== ============ ============================= ================================================= ========================== ==========
+.. container:: table-wrapper
+
+  ========== ============ ============================= ================================================= ========================== ========== 
+    ID         gene         mutation                      variation type                                    drug                       category           
+  ========== ============ ============================= ================================================= ========================== ==========
+    KPN0001    blaSHV       |dash|                        Gene presence detected                            ampicillin                 wt R               
+    KPN0002    gyrA         p.Ser83Tyr                    Protein variant detected                          ciprofloxacin              nwt I              
+    KPN0003    parC         p.Ser80Ile                    Protein variant detected                          ciprofloxacin              nwt I              
+    KPN0004    ompK36       c.25C>T                       Nucleotide variant detected                       meropenem                  nwt S              
+    KPN0005    ompK36       p.114_115insGlyAsp            Protein variant detected                          meropenem                  nwt I              
+    KPN0006    mgrB         p.(1_100)                     Gene truncation detected                          colistin                   nwt R              
+    ECO0001    ampC         c.-11C>T                      Promoter variant detected                         ceftriaxone                nwt R              
+    ECO0002    ampC         c.-14_-13insGT                Promoter variant detected                         ceftriaxone                nwt R              
+    ACI0001    blaOXA-58    c.(-35_1)ins[ISAba125:inv]    Promoter variant detected                         ceftriaxone                nwt R              
+    NGO0002    23S rDNA     c.[2045A>G][3]                Nucleotide variant detected in multi-copy gene    azithromycin               nwt R              
+    ECO0003    blaTEM       c.[3]                         Gene copy number variant detected                 piperacillin+tazobactam    nwt R              
+    MTC0001    gyrA         p.[Ala94Gly][0.13]            Low frequency variant detected                    ciprofloxacin              nwt R              
+  ========== ============ ============================= ================================================= ========================== ==========
 
 
 Syntax for mutations
@@ -195,7 +224,7 @@ AMRrules-specific syntax
 
   * Accordingly, the STOP codon should be specified as 'Ter' rather than '*'
 
-* In HGVS you must specify the reference sequence explicitly using a sequence accession, followed by `:` and then the mutation, e.g. ``NF000285.3:p.Gly238Ser``. In AMRrules the gene is specified in separate column/s (‘gene’, ‘refseq accession’, ‘ARO accession’) and should not be repeated in the mutation column. So the above rule should be coded as:
+* In HGVS you must specify the reference sequence explicitly using a sequence accession, followed by `:` and then the mutation, e.g. ``NF000285.3:p.Gly238Ser``. In AMRrules the gene is specified in separate column/s ('gene', 'refseq accession', 'ARO accession') and should not be repeated in the mutation column. So the above rule should be coded as:
 
   * gene = ``blaSHV``
   * node = ``blaSHV``
@@ -217,7 +246,7 @@ AMRrules-specific syntax
   a. To put another way, in AMRrules the repeat syntax ``[X]`` is interpreted as a minimum copy number if ``X`` is an integer, and as a minimum read fraction if ``X`` is a double/float between 0 and 1. 
 
 
-Explanation of ‘mutation’ syntax relevant to known AMR variants
+Explanation of 'mutation' syntax relevant to known AMR variants
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * ``p.Ser83Tyr``: change to protein sequence from Ser to Tyr at codon 83
@@ -232,31 +261,34 @@ Explanation of ‘mutation’ syntax relevant to known AMR variants
 * ``p.[Ala94Gly][0.13]``: protein variant is present in >13% of reads 
 
 .. _combo_rules_spec:
+
 Combinatorial rules
 ^^^^^^^^^^^^^^^^^^^
 
-Combinatorial rules are defined using logical expressions in the ‘gene’ column, where the objects of the expression are rule identifiers (``ruleID``) that can be used as shorthand labels for the variants defined by ``gene:mutation (variant type)`` specified in the corresponding rules. The ``variation type`` should be specified as ‘Combination’.
+Combinatorial rules are defined using logical expressions in the 'gene' column, where the objects of the expression are rule identifiers (``ruleID``) that can be used as shorthand labels for the variants defined by ``gene:mutation (variant type)`` specified in the corresponding rules. The ``variation type`` should be specified as 'Combination'.
 
 - Each rule must have a unique ``ruleID``, assigned by the curating subgroup and prefixed with a 3-letter code that identifies the subgroup. 
-- E.g. in the table below, ``KPN0008`` can be used in a logical expression in the ‘gene’ column to demarcate ``gyrA:p.Ser83Tyr``, and ``KPN0013`` can be used to demarcate ``qnr (Gene presence detected)``.
+- E.g. in the table below, ``KPN0008`` can be used in a logical expression in the 'gene' column to demarcate ``gyrA:p.Ser83Tyr``, and ``KPN0013`` can be used to demarcate ``qnr (Gene presence detected)``.
 - So, the combination of these two variants can be specified as ``KPN0008 & KPN0013``, which expands to ``gyrA:p.Ser83Tyr & qnr (Gene presence detected)``.
 
-Rules **must** be specified explicitly if the effect of the combination is NOT the same as the ‘most resistant’ (in terms of exceeding breakpoints, R > I > S; or deviation from wildtype, nonwildtype > wildtype) predicted category of the component rules. E.g. in the table below:
+Rules **must** be specified explicitly if the effect of the combination is NOT the same as the 'most resistant' (in terms of exceeding breakpoints, R > I > S; or deviation from wildtype, nonwildtype > wildtype) predicted category of the component rules. E.g. in the table below:
 
-- The individual rules ``KPN0008`` and ``KPN0009`` solo each have expected category ‘nonwildtype I’, but in combination we expect ‘nonwildtype R’, so we need to specify the rule for the combination ``KPN0008 & KPN0009``.
+- The individual rules ``KPN0008`` and ``KPN0009`` solo each have expected category 'nonwildtype I', but in combination we expect 'nonwildtype R', so we need to specify the rule for the combination ``KPN0008 & KPN0009``.
 - The expected category for genomes meeting rule ``KPN0002`` (i.e. carrying core gene oqxA, => wildtype S) in addition to rule ``KPN0008`` (i.e. with an acquired gyrA mutation, => nonwildtype I) is nonwildtype I. This is the same, not greater, than one of the component rules (``KPN0008``) so we do not need to specify the combination explicitly.
 
-Note this means the combination must be specified explicitly if the combined effect is LESS resistant than the ‘most resistant’ component, e.g. in `this example from TB <https://pubmed.ncbi.nlm.nih.gov/34460306/>`__, deletion in one gene renders the resistance mutation in another gene irrelevant so the combination must be specified.
+Note this means the combination must be specified explicitly if the combined effect is LESS resistant than the 'most resistant' component, e.g. in `this example from TB <https://pubmed.ncbi.nlm.nih.gov/34460306/>`__, deletion in one gene renders the resistance mutation in another gene irrelevant so the combination must be specified.
 
-========== ================================ ============= =========================== ================ ========== 
-  ID         gene                             mutation      variation type              drug             category           
-========== ================================ ============= =========================== ================ ========== 
-  KPN0002    oqxA                             |dash|        Gene presence detected      ciprofloxacin    wt S               
-  KPN0008    gyrA                             p.Ser83Tyr    Protein variant detected    ciprofloxacin    nwt I              
-  KPN0009    parC                             p.Ser80Ile    Protein variant detected    ciprofloxacin    nwt I              
-  KPN0013    qnr                              |dash|        Gene presence detected      ciprofloxacin    nwt I              
-  KPN0051    KPN0008 & KPN0009                |dash|        Combination                 ciprofloxacin    nwt R              
-  KPN0052    (KPN0008 | KPN0009) & KPN0013    |dash|        Combination                 ciprofloxacin    nwt R              
-========== ================================ ============= =========================== ================ ==========  
+.. container:: table-wrapper
+
+  ========== ================================ ============= =========================== ================ ========== 
+    ID         gene                             mutation      variation type              drug             category           
+  ========== ================================ ============= =========================== ================ ========== 
+    KPN0002    oqxA                             |dash|        Gene presence detected      ciprofloxacin    wt S               
+    KPN0008    gyrA                             p.Ser83Tyr    Protein variant detected    ciprofloxacin    nwt I              
+    KPN0009    parC                             p.Ser80Ile    Protein variant detected    ciprofloxacin    nwt I              
+    KPN0013    qnr                              |dash|        Gene presence detected      ciprofloxacin    nwt I              
+    KPN0051    KPN0008 & KPN0009                |dash|        Combination                 ciprofloxacin    nwt R              
+    KPN0052    (KPN0008 | KPN0009) & KPN0013    |dash|        Combination                 ciprofloxacin    nwt R              
+  ========== ================================ ============= =========================== ================ ==========  
 
 

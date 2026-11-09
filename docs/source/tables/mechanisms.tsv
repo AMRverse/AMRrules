@@ -1,0 +1,32 @@
+mechanism	mechanism description	ARO ID	ARO number
+antibiotic efflux	Antibiotic resistance via the transport of antibiotics out of the cell.	ARO:0010000	36001
+modification to cell morphology	Antibiotic-induced changes to cell morphology, including shape, volume and surface area, which decrease antibiotic susceptibility.	ARO:3007115	45691
+antibiotic target alteration	Mutational alteration or enzymatic modification of antibiotic target which results in antibiotic resistance.	ARO:0001001	35997
+antibiotic target overexpression	Increased expression of an antibiotic target protein can overcome effective dose of an antibiotic, leading to reduced susceptibility.	ARO:3007609	46382
+antibiotic target replacement	Replacement or substitution of antibiotic action target, which process will result in antibiotic resistance.	ARO:0001002	35998
+resistance by host-dependent nutrient acquisition	Resistance via uptake of host nutrients to bypass antibiotic mechanism.	ARO:3007424	46180
+antibiotic target protection	Protection of antibiotic action target from antibiotic binding, which process will result in antibiotic resistance.	ARO:0001003	35999
+antibiotic inactivation	Enzymatic inactivation of antibiotic to confer drug resistance.	ARO:0001004	36000
+reduced permeability to antibiotic	Reduction in permeability to antibiotic, generally through reduced production of porins, can provide resistance.	ARO:3000244	36383
+resistance by absence	Mechanism of antibiotic resistance conferred by deletion of gene (usually a porin).	ARO:3003764	40429
+reduction in surface-to-volume ratio of cell	Changes to cell morphology by activated growth response in the presence of an antibiotic, leading to a decreased surface-to-volume ratio. Such changes decrease antibiotic influx and increase antibiotic dilution in the cell, thereby increasing survivability, particularly in nutrient-poor environments.	ARO:3007116	45692
+hydrolysis of beta-lactam antibiotic by serine beta-lactamase	Mechanism of enzymatic degradation common to Ambler Class A, C and D beta-lactamases. A serine residue located in the active site is used to form an acyl-enzyme intermediate and subsequent hydrolysis renders the beta-lactam inactive.	ARO:3000187	36326
+hydrolysis of beta-lactam antibiotic by metallo-beta-lactamase	Mechanism of enzymatic degradation common to Ambler Class B beta-lactamases. One or two zinc atoms are used to orient a hydroxide nucleophile for attack of the beta-lactam ring. In contrast to serine beta-lactamases, no acyl-enzyme intermediate is formed.	ARO:3000203	36342
+ADP-ribosylation of antibiotic conferring resistance	The inactivation of antibiotics by the enzymatic addition of ADP-ribose from NAD+.	ARO:3000266	36405
+hydrolysis of antibiotic conferring resistance	Hydrolysis of an antibiotic molecule to confer resistance.	ARO:3000040	36179
+acylation of antibiotic conferring resistance	Addition of an acyl group to an antibiotic, often via acetylation by acetylCoA.	ARO:3000106	36245
+antibiotic inactivation by sequestration	Inactivation of an antibiotic by formation of a complex, preventing interaction of the antibiotic with its target.	ARO:3001206	37587
+nucleotidylation of antibiotic conferring resistance	Modification by NMP, usually AMP.	ARO:3000107	36246
+amidohydrolysis of bacitracin undecaprenyl pyrophosphate	Hydrolysis of amido side-chain of asparagine-12 forming hydrogen bond with undecaprenyl pyrophosphate in bacitracin leading to antibiotic inactivation.	ARO:3003985	40867
+mutation conferring antibiotic resistance	Point mutations in the DNA may lead to an altered gene product that may result in antibiotic resistance. Examples included modified antibiotic targets with lower binding affinities and the deactivation of repressors that result in increased expression of genes that inactivate or pump out antibiotics.	ARO:3000212	36351
+restructuring of bacterial cell wall conferring antibiotic resistance	Peptidoglycan precursors ending in D-Ala-D-Lac or D-Ala-D-Ser instead of D-Ala-D-Ala conferring high level glycopeptide resistance.	ARO:3000213	36352
+hydrolysis of fosfomycin epoxide ring	The use of different nucleophilic molecules by enzymes can break up the epoxide ring of fosfomycin and render the molecule ineffective.	ARO:3000125	36264
+linearization of antibiotic conferring resistance	Genes that confer antibiotic resistance by hydrolyzing bonds to linearize and deactivate antibiotics.	ARO:3000338	36477
+glycosylation of antibiotic conferring resistance	Addition of glycosyl moiety to antibiotics thereby inactivating them.	ARO:3000208	36347
+mechanism of antibiotic resistance	Antibiotic resistance mechanisms evolve naturally via natural selection through random mutation, but it could also be engineered by applying an evolutionary stress on a population.	ARO:1000002	36007
+hydroxylation of antibiotic conferring resistance	Inactivation of an antibiotic via introduction a hydroxyl group (-OH).	ARO:3000450	36589
+ribosomal alteration conferring antibiotic resistance	Chemical alteration of the ribosome results in modification of an antibiotic's target leading to resistance.	ARO:3000211	36350
+hydrolysis of macrolide macrocycle lactone ring	Hydrolysis of the the macrocycle lactone ring of macrolide antibiotics.	ARO:3000321	36460
+phosphorylation of antibiotic conferring resistance	Phosphorylation of antibiotic usually by ATP, sometimes GTP.	ARO:3000105	36244
+hydrolysis of fusidic acid to inactive lactone derivative	Enzymes shown to inactivate fusidic acid by hydrolytic cleavage from the 16 beta-position of fusidic acid and its derivatives. This converts fusidic acid to an inactivate lactone derivative, thus conferring resistance to fusidic acid.	ARO:3004140	41268
+charge alteration conferring antibiotic resistance	The loss or reduction of the net negative charge within the cell wall of gram negative bacteria is a mechanism of resistance for cationic antimicrobials that depend on the negative charge for binding to the surface.	ARO:3003588	40198

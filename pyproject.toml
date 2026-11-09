@@ -1,19 +1,29 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "amrrules"
 version = "1.1.0"
 description = "Organism-specific interpretation of AMR genotypes"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = ["obonet>=1.1.1"]
+
 authors = [
   { name = "Jane Hawkey", email = "jane.hawkey@monash.edu" }
 ]
-requires-python = ">=3.12"
 
-dependencies = [
-    "obonet>=1.1.1",
-]
+[project.urls]
+Homepage = "https://github.com/AMRverse/AMRrules"
+Documentation = "https://docs.amrrules.org"
+Issues = "https://github.com/AMRverse/AMRrules/issues"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
@@ -47,12 +57,23 @@ platforms = ["osx-arm64"]
 python = "3.12.*"
 pandas = "*"
 pyyaml = "*"
+docutils = ">=0.22.4,<0.23"
+sphinx = ">=9.1.1,<10"
+pip = ">=26.2.2,<27"
+sphinx-book-theme = ">=1.4.0,<2"
+sphinx-design = ">=0.7.0,<0.8"
+sphinx-csv-filter = ">=0.3.0,<0.4"
 
 # Installs amrrules itself (editable) into the pixi environment, which also
 # pulls in obonet from [project.dependencies] above via pip - so obonet
 # doesn't need to be listed again here.
 [tool.pixi.pypi-dependencies]
 amrrules = { path = ".", editable = true }
+
+[tool.esbonio.sphinx]
+pythonCommand = [".pixi/envs/default/bin/python"]
+confDir = "docs"
+srcDir = "docs/source"
 
 # Convenience shortcuts - run with `pixi run <task-name>`, no shell
 # activation needed.

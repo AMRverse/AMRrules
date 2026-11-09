@@ -8,15 +8,18 @@ Quickstart
 
 Interpreting AMRFinderPlus results for a single genome:
 
-::
+.. code-block:: bash
 
+    # interpret AMRFinderPlus results for a single E. coli genome
     amrrules --input tests/data/input/test_ecoli_wildtype.tsv --output-prefix test_ecoli_wildtype --organism 's__Escherichia coli'
+
+    # interpret AMRFinderPlus results for a single K. pneumoniae genome 
     amrrules --input tests/data/input/test_kpneumo_wildtype.tsv --output-prefix test_kpneumo_wildtype --organism 's__Klebsiella pneumoniae'
 
 
 Interpret AMRFinderPlus results for multiple genomes of different organisms, by providing a sample/organism mapping file:
 
-::
+.. code-block:: bash
 
     amrrules  --input tests/data/input/test_multispp_amrfp.tsv --output-prefix test_multispp --organism-file tests/data/input/test_multispp_species.tsv
 
@@ -29,9 +32,7 @@ Creating your AMRFinderPlus input
 
 AMRFinderPlus needs to be run with the ``--print_node`` option to include the necessary fields for AMRrules to match against. We recommend that you also provide the ``--name`` flag to ensure that AMRFinderPlus includes a column with the name of the sample you are running.
 
-Eg:
-
-::
+.. code-block:: bash
 
     amrfinder -n Kpn1.fasta --plus --print_node --name Kpn1 --organism Klebsiella_pneumoniae > Kpn1_AMRfp.tsv
 
@@ -40,7 +41,7 @@ Interpreting your AMRFinderPlus result
 
 You can now interpret this output with AMRrules, using the *Klebsiella pneumoniae* rules by providing the organism name with the ``--organism`` flag. The organism name must be provided in the format ``s__Genus species``, and should be supplied in quotes. 
 
-::
+.. code-block:: bash
 
     amrrules --input Kpn1_AMRfp.tsv --output-prefix Kpn1_report --organism 's__Klebsiella pneumoniae'
 
@@ -50,7 +51,7 @@ You can now interpret this output with AMRrules, using the *Klebsiella pneumonia
 
 In this example the user has also specified ``--plus`` when running AMRFinderPlus, which will return additional virulence, stress, or metal resistance genes detected by AMRFinderPlus. By default, these entries **will be omitted** from the final AMRrules interpreted output. If the user wishes to include these entries in the final output, add the ``--print-non-amr`` flag to the AMRrules commmand:
 
-::
+.. code-block:: bash
 
     amrrules --input Kpn1_AMRfp.tsv --output-prefix Kpn1_report --organism 's__Klebsiella pneumoniae' --print-non-amr
 
@@ -59,7 +60,7 @@ Naming samples in the output
 
 We recommend users run AMRFinderPlus with the ``--name`` option to specify the sample name. This is particularly useful if you plan to interpret multiple samples at once using a single ``amrrules`` command. If you forget to set ``--name`` when running AMRFinderPlus, and have a single genome to interpret, you can provide the sample name to AMRrules using the ``--sample-id`` flag:
 
-::
+.. code-block:: bash
 
     amrrules --input Kpn1_AMRfp.tsv --output-prefix Kpn1_report --organism 's__Klebsiella pneumoniae' --sample-id Kpn1
 
@@ -67,35 +68,101 @@ We recommend users run AMRFinderPlus with the ``--name`` option to specify the s
 Detailed options
 =================
 
-::
+**Input & Output Options**
 
-  -h, --help            show this help message and exit
-  --input INPUT         Path to the tabular input file (must be AMRFinderPlus output for this version). Can be gzipped.
-  --output-prefix OUTPUT_PREFIX
-                        Prefix name for the output files.
-  --output-dir, -d OUTPUT_DIR
-                        Output directory. Default is current working directory.
-  --sample-id SAMPLE_ID
-                        If interpreting a single genome, can optionally provide sample ID here. If no sample_id is provided, and the first column of the input file doesn't define a sample_id, then the default value will be 'sample'.
-  --organism, -o ORGANISM
-                        Organism to interpret. Use --list-organisms to see all supported organisms.
-  --organism-file, -of ORGANISM_FILE
-                        Path to the organism file. This file should have two columns: genome name in col1 (matching the sample name in the first col of the input file), and col2 is the organism name, which should be one of the supported organisms. File should be in tab-delimited format, with no header
-  --list-organisms      List all supported organisms and exit.
-  --amr-tool, -t AMR_TOOL
-                        AMR tool used to detect genotypes. Currently only amrfp is supported.
-  --no-rule-interpretation, -nr {nwtR,nwtS,nwt,none}
-                        How to interpret hits that do not match a rule. Default is none. 
-                        Options are: none - hits will be given no phenotype and no clinical category; 
-                        nwt - hits will be flagged as phenotype nonwildtype, but no clinical category will be set; 
-                        nwtR - hits will be interpreted as nonwildtype and given the clinical category resistant;
-                        nwtS - hits will be interpreted as nonwildtype and given the clinical category susceptible.
-  --annot-opts, -a {minimal,full}
-                        Annotation options: minimal (context, drug, phenotype, category, evidence grade), full (everything including breakpoints, standards, etc)
-  --flag-core           Turn on flagging core genes in the summary output
-  --list-all-rules      List all rules encountered for a drug/drug class in the genome summary output file, regardless of whether the rule supports the final interpretation.
-  --trust-multi-copy    If turned on, trust that multi-copy gene calls are correct, and do not flag them as potentially incorrect due to genotyping a draft, rather than complete, genome assembly.
-  --full-disrupt        Show the full mutation detected by AMRFinderPlus for POINT_DISRUPT calls in the summary report, rather than just labelling them as gene:-
-  --print-non-amr       Include non-AMR rows (eg VIRULENCE, STRESS) from the input file in the interpreted output. By default, these rows are skipped.
-  --download-resources  Download AMRFinderPlus resource files and exit.
-  --version             show program's version number and exit
+.. option:: --input <INPUT>
+
+   Path to the tabular input file (must be AMRFinderPlus output for this version). Can be gzipped.
+
+.. option:: --output-prefix <OUTPUT_PREFIX>
+
+   Prefix name for generated output files.
+
+.. option:: -d <OUTPUT_DIR>, --output-dir <OUTPUT_DIR>
+
+   Output directory. **Default:** Current working directory.
+
+.. option:: --sample-id <SAMPLE_ID>
+
+   Sample identifier for single-genome interpretation. If omitted and the first column of the input file lacks a sample ID, defaults to ``sample``.
+
+**Organism Selection**
+
+.. option:: -o <ORGANISM>, --organism <ORGANISM>
+
+   Organism name to interpret (e.g., `'s__Escherichia coli'`). Use :option:`--list-organisms` to see all supported targets.
+
+.. option:: -of <ORGANISM_FILE>, --organism-file <ORGANISM_FILE>
+
+   Path to a two-column, tab-delimited file without headers (`<sample_name>\t<organism_name>`).
+
+.. option:: --list-organisms
+
+   List all supported organisms and exit.
+
+**Interpretation Settings**
+
+.. option:: -t <AMR_TOOL>, --amr-tool <AMR_TOOL>
+
+   AMR detection tool used to generate inputs. **Options:** ``amrfp`` (default).
+
+.. option:: -nr {none,nwt,nwtR,nwtS}, --no-rule-interpretation {none,nwt,nwtR,nwtS}
+
+   Handling for hits that do not match a rule. **Default:** ``none``. See :ref:`handling_ruleless_calls` for more details.
+
+   * ``none``: No phenotype or clinical category assigned.
+   * ``nwt``: Flagged as non-wildtype, but no clinical category set.
+   * ``nwtR``: Interpreted as non-wildtype and marked Resistant.
+   * ``nwtS``: Interpreted as non-wildtype and marked Susceptible.
+
+.. option:: --trust-multi-copy
+
+   Trust multi-copy gene calls without flagging them as potential draft assembly artifacts.
+
+**Output Customization**
+
+.. option:: -a {minimal,full}, --annot-opts {minimal,full}
+
+   * ``minimal``: Context, drug, phenotype, category, and evidence grade.
+   * ``full``: Includes breakpoints, standards, and extended metadata.
+
+.. option:: --flag-core
+
+   Flag core genes in the summary report output.
+
+.. option:: --list-all-rules
+
+   List all rules evaluated for a drug/class, regardless of whether they dictate the final result.
+
+.. option:: --full-disrupt
+
+   Report full mutation details for ``POINT_DISRUPT`` calls instead of truncating to ``gene:-``.
+
+.. option:: --print-non-amr
+
+   Include non-AMR targets (e.g., VIRULENCE, STRESS) in the output.
+
+**Database & Resource Management**
+
+.. option:: --download-resources [RESOURCE ...]
+
+   Download or update reference databases. **Choices:** ``rules``, ``external``, or ``all`` (default).
+
+.. option:: --db-version <DB_VERSION>
+
+   Specific rules database release to download (e.g., ``v1.1.0``). Defaults to latest.
+
+.. option:: --resource-info
+
+   Display installed resource paths and database versions, then exit.
+
+
+**Other**
+
+.. option:: -h, --help
+
+   Show help message and exit.
+
+.. option:: --version
+
+   Show program version number and exit.

@@ -3,6 +3,7 @@ Test Data
 **************************
 
 .. _test:
+
 Test installation
 =================
 
@@ -10,7 +11,7 @@ To test that AMRrules is installed and working correctly, test data is included 
 
 To run the AMRrules test data, use the following commands:
 
-::
+.. code-block:: bash
 
     # test a single E. coli genome (wildtype strain with no acquired resistance phenotypes)
     amrrules --input tests/data/input/test_ecoli_wildtype.tsv --output-prefix test_ecoli_wildtype --organism 's__Escherichia coli'
@@ -36,7 +37,7 @@ Additional test datasets are available for select organisms.
 
 Genomes sourced from Mills et al, 2022, which includes AST profiles available `here <https://doi.org/10.1186/s13073-022-01150-7>`__.
 
-:: 
+.. code-block:: bash 
 
     amrrules --input tests/data/input/test_ecoli_20strains.tsv --output-prefix test_ecoli_20strains --organism 's__Escherichia coli'
 
@@ -44,14 +45,12 @@ Genomes sourced from Mills et al, 2022, which includes AST profiles available `h
 
 Genomes sourced from Heinz et al, 2019, which includes AST profiles available `here <https://doi.org/10.1099/mgen.0.000266>`__.
 
-:: 
+.. code-block:: bash 
 
     amrrules --input tests/data/input/test_kpneumo_20strains.tsv --output-prefix test_kpneumo_20strains --organism 's__Klebsiella pneumoniae'
 
-
-
 **Staphylococcus aureus**: 20 *S. aureus* genomes sourced from Worley et al, 2023, which includes AST profiles available `here <https://doi.org/10.1128/jcm.00014-23>`__.
 
-:: 
+.. code-block:: bash 
 
     amrrules --input tests/data/input/test_saureus_20strains.tsv --output-prefix test_saureus_20strains --organism 's__Staphylococcus aureus'

@@ -18,15 +18,17 @@ When parsing the AMRFinderPlus input file, AMRrules will first identify what ``v
 
 The table below shows the logic of how AMRrules maps AMRFinderPlus genotype calls to the different variation types:
 
-================================ ================================ =====================================================
-Variation type                   AMRFP Method                     Additional logic
-================================ ================================ =====================================================
-Gene presence detected           EXACT, ALLELE, BLAST
-Protein variant detected         POINTX, POINTP
-Nucleotide variant detected      POINTN
-Promoter variant detected        POINTN                           ``-`` symbol present before the nucleotide position
-Inactivating mutation detected   INTERNAL_STOP, PARTIAL, POINTX   If POINTX, Subtype must be POINT_DISRUPT
-================================ ================================ =====================================================
+.. container:: table-wrapper table-wrap
+
+   ================================ ================================ =====================================================
+   Variation type                   AMRFP Method                     Additional logic
+   ================================ ================================ =====================================================
+   Gene presence detected           EXACT, ALLELE, BLAST
+   Protein variant detected         POINTX, POINTP
+   Nucleotide variant detected      POINTN
+   Promoter variant detected        POINTN                           ``-`` symbol present before the nucleotide position
+   Inactivating mutation detected   INTERNAL_STOP, PARTIAL, POINTX   If POINTX, Subtype must be POINT_DISRUPT
+   ================================ ================================ =====================================================
                            
 
 The parsed ``variation type``, ``gene``, and ``mutation`` columns are added to the interpreted output file, next to the original AMRFinderPlus columns.
@@ -41,7 +43,14 @@ Drug mapping
 
 AMRrules maps the AMRFinderPlus calls to ``drug`` or ``drug class`` names from the CARD ARO, by parsing the ``Subclass`` columns. The dictionary used to map AMRFinderPlus ``Subclass`` to CARD ontology is in the AMRrules repository under ``src/amrrules/resources/amrfp_to_card_drugs_classes.txt``.
 
-Some genotype calls have multiple entries in the AMRFinderPlus ``Subclass`` field. In such cases, the annotated calls output by AMRrules will contain multiple copies of the genotype row, one for each mapped drug/class. E.g. `aac6-Ib-cr <https://www.ncbi.nlm.nih.gov/pathogens/refgene/#aac6-Ib-cr>`__ is assigned to Subclass "AMIKACIN/KANAMYCIN/QUINOLONE/TOBRAMYCIN" in RefGene/AMRFinderPlus, so the AMRrules-annotated genotype file will contain 4 rows for this gene, one each for ``drug`` = ``amikacin``, ``drug`` = ``tobramycin``, ``drug`` = ``kanamycin``, and ``drug class`` = ``fluoroquinolone antibiotic``
+Some genotype calls have multiple entries in the AMRFinderPlus ``Subclass`` field. In such cases, the annotated calls output by AMRrules will contain multiple copies of the genotype row, one for each mapped drug/class. 
+
+E.g. `aac6-Ib-cr <https://www.ncbi.nlm.nih.gov/pathogens/refgene/#aac6-Ib-cr>`__ is assigned to Subclass "AMIKACIN/KANAMYCIN/QUINOLONE/TOBRAMYCIN" in RefGene/AMRFinderPlus, so the AMRrules-annotated genotype file will contain 4 rows for this gene, one each for: 
+
+* ``drug`` = ``amikacin``
+* ``drug`` = ``tobramycin``
+* ``drug`` = ``kanamycin``
+* ``drug class`` = ``fluoroquinolone antibiotic``
 
 Rule matching
 -------------
@@ -103,6 +112,7 @@ Combination Rules
 ^^^^^^^^^^^^^^^^^
 
 Combination rules are used to combine the effects of multiple individual rules. Matching combination rules follows this process: 
+
 1. For each drug or drug class, the engine extracts all individual rules that have been applied. 
 2. The engine searches the combination rules for this organism and evaluates the logic strings (e.g. "rule1 & rule2 | rule3") to determine if any apply. 
 3. If a combination rule applies, a new row is added to the interpreted output report. This row sets the original AMRFinderPlus columns to ``-``, while the rule annotation fields display the combination-specific interpretation. The ``gene`` column will display the rule logic using the markers that have been detected in the genome. For example, if a combination rule is defined as (markerA & markerB) & (markerC \| marker D), and the genome has markerA, B and D, then the ``gene`` column will display ``markerA & markerB & markerD``. 
@@ -119,23 +129,25 @@ Some example output files are shown on the :ref:`installation <check-the-install
 
 The following columns are included:
 
-=================== ====================================================================================================
-  Column              Explanation                                                                                                              
-=================== ====================================================================================================
-  sample              Sample ID                                                                                                                
-  drug                Drug, as per CARD ARO. AMRFinderPlus drugs will be converted to CARD ARO format by AMRrules                              
-  drug class          Drug class, as per CARD ARO. AMRFinderPlus drugs will be converted to CARD ARO format by AMRrules                       
-  clinical category   S/I/R. Highest level of resistance based on markers that match this drug/drug class                                  
-  phenotype           Wildtype or nonwildtype. Highest level based on markers that match this drug/drug class                                  
-  evidence grade      None/very low/low/moderate/high. Highest grade of evidence for markers that match to the highest interpretation level (nwt > wt, R > I > S) for this drug/drug class. None is used when we have no evidence for the call, as is the case of rule-less markers.                       
-  markers (non-S)     Markers with rules specifying clinical category I or R, separated by ``;``
-  markers (no rule)   Markers with no rule, separated by ``;``                                                                 
-  markers (S)         Markers with rules specifying clinical category S, separated by ``;``                      
-  supporting rules    List of IDs for rules that support the interpretation for this drug/drug class, separated by ``;``                                                     
-  other rules         List of all other rules encountered for this drug/drug class, separated by ``;``. Off by default, but can be switched on with ``--list-all-rules``.
-  organism            Organism whose rules were applied  
-  version             AMRrules version                                                                                      
-=================== ====================================================================================================
+.. container:: table-wrapper table-wrap
+
+   =================== ====================================================================================================
+   Column              Explanation                                                                                                              
+   =================== ====================================================================================================
+   sample              Sample ID                                                                                                                
+   drug                Drug, as per CARD ARO. AMRFinderPlus drugs will be converted to CARD ARO format by AMRrules                              
+   drug class          Drug class, as per CARD ARO. AMRFinderPlus drugs will be converted to CARD ARO format by AMRrules                       
+   clinical category   S/I/R. Highest level of resistance based on markers that match this drug/drug class                                  
+   phenotype           Wildtype or nonwildtype. Highest level based on markers that match this drug/drug class                                  
+   evidence grade      None/very low/low/moderate/high. Highest grade of evidence for markers that match to the highest interpretation level (nwt > wt, R > I > S) for this drug/drug class. None is used when we have no evidence for the call, as is the case of rule-less markers.                       
+   markers (non-S)     Markers with rules specifying clinical category I or R, separated by ``;``
+   markers (no rule)   Markers with no rule, separated by ``;``                                                                 
+   markers (S)         Markers with rules specifying clinical category S, separated by ``;``                      
+   supporting rules    List of IDs for rules that support the interpretation for this drug/drug class, separated by ``;``                                                     
+   other rules         List of all other rules encountered for this drug/drug class, separated by ``;``. Off by default, but can be switched on with ``--list-all-rules``.
+   organism            Organism whose rules were applied  
+   version             AMRrules version                                                                                      
+   =================== ====================================================================================================
 
 **Marker labels** 
 
@@ -164,9 +176,9 @@ The final interepretation for a drug or drug class is determined by comparing th
 
 If rule-less markers are present for this particular drug/drug class, then the highest interpretation from the rules is then combined with the selected interpretation for rule-less markers (default ``none``, see :ref:`handling_ruleless_calls` for details). 
 
-This table below demonstrates which interpretation "wins" when combining with rule-less markers:
-
 **Combining a rule interpretation with rule-less markers**
+
+This table demonstrates which interpretation "wins" when combining a marker with a rule, with rule-less markers:
 
 .. image:: images/combining_rule_ruleless.png
    :alt: Table showing how interpretations for a rule and rule-less marker are combined
@@ -198,39 +210,59 @@ Example summary outputs
 
 To demonstrate the difference between these options, you can compare the output files for the same genome, a MDR *Klebsiella pneumoniae* strain, using different interpretations for markers with no rules.
 
-Using ``none`` (see ``tests/data/example_output/test_kpneumo_MDR_none_genome_summary.tsv``):
+**Using none**
+
+See ``tests/data/example_output/test_kpneumo_MDR_none_genome_summary.tsv``.
 
 Almost all markers have no rules, and so no clinical category, phenotype or evidence grade are set. In the case of the call for ``penicillin beta-lactam``, we have an existing ``wildtype R`` rule for ``blaSHV-1``. Even though ``blaTEM-1`` is present, which has no rule, we still expect a ``wildtype R`` interpretation. Evidence grades are generally set to ``none``, as we have no rules matching these clinical category interpretations.
 
-.. csv-table::
-   :file: ../../tests/data/example_output/test_kpneumo_MDR_none_genome_summary.tsv
-   :delim: tab
-   :header-rows: 1
+.. container:: table-wrapper
+   
+    .. csv-table::
+      :file: ../../tests/data/example_output/test_kpneumo_MDR_none_genome_summary.tsv
+      :delim: tab
+      :header-rows: 1
+      :class: full-width
 
-Using ``nwt`` (see ``tests/data/example_output/test_kpneumo_MDR_nwt_genome_summary.tsv``):
+**Using nwt**
+
+See ``tests/data/example_output/test_kpneumo_MDR_nwt_genome_summary.tsv``.
 
 Now, all drugs with markers that have no rules have ``nonwildtype`` as their phenotype. This *does not* include the call for ``penicillin beta-lactam``, as a ``wildtype R`` rule overrides the ``nonwildtype`` phenotype, as even due to the presence of ``blaTEM-1`` we still expect a ``wildtype`` phenotype. Evidence grades are set to ``none`` for rows with no clinical category, as we have no evidence for these clinical category interpretations.
 
-.. csv-table::
-   :file: ../../tests/data/example_output/test_kpneumo_MDR_nwt_genome_summary.tsv
-   :delim: tab
-   :header-rows: 1
+.. container:: table-wrapper
+   
+    .. csv-table::
+      :file: ../../tests/data/example_output/test_kpneumo_MDR_nwt_genome_summary.tsv
+      :delim: tab
+      :header-rows: 1
+      :class: full-width
 
-Using ``nwtS`` (see ``tests/data/example_output/test_kpneumo_MDR_nwtS_genome_summary.tsv``):
+**Using nwtS**
+
+See ``tests/data/example_output/test_kpneumo_MDR_nwtS_genome_summary.tsv``.
 
 Now, all drugs with markers that have no rules have ``S`` as their clinical category, and ``nonwildtype`` as their phenotype. This creates an evidence grade of ``moderate`` for the ``ciprofloxacin`` row, as the rules for the markers ``oqxA`` and ``oqxB`` have a ``moderate`` evidence grade, and the addition of the rule-less marker ``qnrB1`` does not change this.
 
-.. csv-table::
-   :file: ../../tests/data/example_output/test_kpneumo_MDR_nwtS_genome_summary.tsv
-   :delim: tab
-   :header-rows: 1
+.. container:: table-wrapper
+   
+    .. csv-table::
+      :file: ../../tests/data/example_output/test_kpneumo_MDR_nwtS_genome_summary.tsv
+      :delim: tab
+      :header-rows: 1
+      :class: full-width
 
-Using ``nwtR`` (see ``tests/data/example_output/test_kpneumo_MDR_nwtR_genome_summary.tsv``):
+**Using nwtR**
+
+See ``tests/data/example_output/test_kpneumo_MDR_nwtR_genome_summary.tsv``.
 
 
 Finally, all drugs with markers that have no rules have ``R`` as their clinical category, and ``nonwildtype`` as their phenotype. Evidence grades are generally set to ``none`` as we have no evidence for these calls.
 
-.. csv-table::
-   :file: ../../tests/data/example_output/test_kpneumo_MDR_nwtR_genome_summary.tsv
-   :delim: tab
-   :header-rows: 1
+.. container:: table-wrapper
+   
+    .. csv-table::
+      :file: ../../tests/data/example_output/test_kpneumo_MDR_nwtR_genome_summary.tsv
+      :delim: tab
+      :header-rows: 1
+      :class: full-width

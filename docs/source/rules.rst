@@ -6,7 +6,9 @@ Rules and supported organisms
 Available rules
 ===============
 
-Currently available rule sets are in the ``rules/`` directory of this repository, named by organism. In this release they focus mainly on core genes and expected resistances, however acquired genes and mutations are included for some organisms already and will be added to others as the necessary data to define them accurately is accumulated and curated by the ESGEM-AMR working group.
+Currently available rule sets are in the `AMRrulesDB <https://github.com/AMRverse/AMRrulesDB>`__ repository, named by organism. 
+
+In this release they focus mainly on core genes and expected resistances, however acquired genes and mutations are included for some organisms already and will be added to others as the necessary data to define them accurately is accumulated and curated by the ESGEM-AMR working group.
 
 Note that multiple organisms can exist within a rules file, particularly if the rules file belongs to a genus, or the named species belongs to a species complex (eg *Klebsiella oxytoca*). 
 
@@ -14,26 +16,26 @@ Rules can be browsed interactively using the `AMRrules Browser <https://browse.a
 
 A full list of supported organisms can be found below.
 
-* `Acinetobacter baumannii <https://github.com/AMRverse/AMRrules/blob/main/rules/Acinetobacter_baumannii.tsv>`__
-* `Bordetella <https://github.com/AMRverse/AMRrules/blob/main/rules/Bordetella.tsv>`__
-* `Burkholderia pseudomallei <https://github.com/AMRverse/AMRrules/blob/main/rules/Burkholderia_pseudomallei.tsv>`__
-* `Campylobacter jejuni <https://github.com/AMRverse/AMRrules/blob/main/rules/Campylobacter_jejuni.tsv>`__
-* `Enterobacter <https://github.com/AMRverse/AMRrules/blob/main/rules/Enterobacter.tsv>`__
-* `Enterococcus faecalis <https://github.com/AMRverse/AMRrules/blob/main/rules/Enterococcus_faecalis.tsv>`__
-* `Enterococcus faecium <https://github.com/AMRverse/AMRrules/blob/main/rules/Enterococcus_faecium.tsv>`__
-* `Escherichia coli <https://github.com/AMRverse/AMRrules/blob/main/rules/Escherichia_coli.tsv>`__
-* `Klebsiella oxytoca <https://github.com/AMRverse/AMRrules/blob/main/rules/Klebsiella_oxytoca_complex.tsv>`__ (including other species in the complex)
-* `Klebsiella pneumoniae <https://github.com/AMRverse/AMRrules/blob/main/rules/Klebsiella_pneumoniae.tsv>`__
-* `Legionella <https://github.com/AMRverse/AMRrules/blob/main/rules/Legionella.tsv>`__
-* `Mycobacterium tuberculosis <https://github.com/AMRverse/AMRrules/blob/main/rules/Mycobacterium_tuberculosis.tsv>`__
-* `Neisseria gonorrhoeae <https://github.com/AMRverse/AMRrules/blob/main/rules/Neisseria_gonorrhoeae.tsv>`__ (includes acquired resistances, based on analysis of geno-pheno data)
-* `Neisseria meningitidis <https://github.com/AMRverse/AMRrules/blob/main/rules/Neisseria_meningitidis.tsv>`__
-* `Proteus mirabilis <https://github.com/AMRverse/AMRrules/blob/main/rules/Proteus_mirabilis.tsv>`__
-* `Pseudomonas aeruginosa <https://github.com/AMRverse/AMRrules/blob/main/rules/Pseudomonas_aeruginosa.tsv>`__
-* `Salmonella enterica <https://github.com/AMRverse/AMRrules/blob/main/rules/Salmonella_enterica.tsv>`__
-* `Shewanella <https://github.com/AMRverse/AMRrules/blob/main/rules/Shewanella.tsv>`__
-* `Staphylococcus aureus <https://github.com/AMRverse/AMRrules/blob/main/rules/Staphylococcus_aureus.tsv>`__
-* `Yersinia <https://github.com/AMRverse/AMRrules/blob/main/rules/Yersinia.tsv>`__
+* `Acinetobacter baumannii <https://github.com/AMRverse/AMRrulesDB/blob/main/rules/Acinetobacter_baumannii.tsv>`__
+* `Bordetella <https://github.com/AMRverse/AMRrulesDB/blob/main/rules/Bordetella.tsv>`__
+* `Burkholderia pseudomallei <https://github.com/AMRverse/AMRrulesDB/blob/main/rules/Burkholderia_pseudomallei.tsv>`__
+* `Campylobacter jejuni <https://github.com/AMRverse/AMRrulesDB/blob/main/rules/Campylobacter_jejuni.tsv>`__
+* `Enterobacter <https://github.com/AMRverse/AMRrulesDB/blob/main/rules/Enterobacter.tsv>`__
+* `Enterococcus faecalis <https://github.com/AMRverse/AMRrulesDB/blob/main/rules/Enterococcus_faecalis.tsv>`__
+* `Enterococcus faecium <https://github.com/AMRverse/AMRrulesDB/blob/main/rules/Enterococcus_faecium.tsv>`__
+* `Escherichia coli <https://github.com/AMRverse/AMRrulesDB/blob/main/rules/Escherichia_coli.tsv>`__
+* `Klebsiella oxytoca <https://github.com/AMRverse/AMRrulesDB/blob/main/rules/Klebsiella_oxytoca_complex.tsv>`__ (including other species in the complex)
+* `Klebsiella pneumoniae <https://github.com/AMRverse/AMRrulesDB/blob/main/rules/Klebsiella_pneumoniae.tsv>`__
+* `Legionella <https://github.com/AMRverse/AMRrulesDB/blob/main/rules/Legionella.tsv>`__
+* `Mycobacterium tuberculosis <https://github.com/AMRverse/AMRrulesDB/blob/main/rules/Mycobacterium_tuberculosis.tsv>`__
+* `Neisseria gonorrhoeae <https://github.com/AMRverse/AMRrulesDB/blob/main/rules/Neisseria_gonorrhoeae.tsv>`__ (includes acquired resistances, based on analysis of geno-pheno data)
+* `Neisseria meningitidis <https://github.com/AMRverse/AMRrulesDB/blob/main/rules/Neisseria_meningitidis.tsv>`__
+* `Proteus mirabilis <https://github.com/AMRverse/AMRrulesDB/blob/main/rules/Proteus_mirabilis.tsv>`__
+* `Pseudomonas aeruginosa <https://github.com/AMRverse/AMRrulesDB/blob/main/rules/Pseudomonas_aeruginosa.tsv>`__
+* `Salmonella enterica <https://github.com/AMRverse/AMRrulesDB/blob/main/rules/Salmonella_enterica.tsv>`__
+* `Shewanella <https://github.com/AMRverse/AMRrulesDB/blob/main/rules/Shewanella.tsv>`__
+* `Staphylococcus aureus <https://github.com/AMRverse/AMRrulesDB/blob/main/rules/Staphylococcus_aureus.tsv>`__
+* `Yersinia <https://github.com/AMRverse/AMRrulesDB/blob/main/rules/Yersinia.tsv>`__
 
 Supported organisms
 ===================

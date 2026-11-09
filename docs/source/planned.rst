@@ -24,6 +24,7 @@ Engine
 ~~~~~~
 
 .. _planned_other_tools:
+
 * Extend compatibility to support additional widely-used AMR databases and tools, including:
 
   * `CARD <https://card.mcmaster.ca/>`_ (Comprehensive Antibiotic Resistance Database)
@@ -34,6 +35,4 @@ Engine
 * Some variation types are currently not by the AMRrules interpretation engine, as there are insufficient rules available for thorough testing. Support for the following variant types is planned for future development:
 
   * Gene truncation detected
-  * Gene copy number variant detected
-  * Nucleotide variant detected in multi-copy gene
   * Low frequency variant detected

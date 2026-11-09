@@ -42,7 +42,7 @@ The rule specification is available :ref:`here <specification>`.
 We are focusing early development on compatibility with NCBI resources (i.e. the `AMRFinderPlus <https://www.ncbi.nlm.nih.gov/pathogens/antimicrobial-resistance/AMRFinder/>`__ genotyping tool, and the associated NCBI databases including `AMR refgene <https://www.ncbi.nlm.nih.gov/pathogens/refgene/>`__, `AMR Reference Gene Hierarchy <https://www.ncbi.nlm.nih.gov/pathogens/genehierarchy>`__, and the `Reference HMM Catalog <https://www.ncbi.nlm.nih.gov/pathogens/hmm/>`__). In future we plan for interoperability with `CARD <https://card.mcmaster.ca/>`__ and `ResFinder <http://genepi.food.dtu.dk/resfinder>`__ (and other tools based on these), using `hAMRonization <https://github.com/pha4ge/hAMRonization>`__.
 
 More information
-========
+================
 
 An overview of the AMRrules initiative, including aims as well as completed and planned implementation phases, is available in `these slides <https://esgem-amr.amrrules.org/slides/AMRrules_WellcomeAMRConf2026.pdf>`__ presented at the Wellcome AMR Big Data conference in March 2026 .
 
@@ -52,7 +52,7 @@ Citation
 If you use the AMRrules software or rules, please cite "AMRrules v1.0, URL: `https://github.com/AMRverse/AMRrules <https://github.com/AMRverse/AMRrules>`__ (DOI: `https://doi.org/10.5281/zenodo.12724317 <10.5281/zenodo.12724317>`__)".
 
 Source code
-========
+===========
 
 Source code is available in the GitHub repository `https://github.com/AMRverse/AMRrules <https://github.com/AMRverse/AMRrules>`__.
 

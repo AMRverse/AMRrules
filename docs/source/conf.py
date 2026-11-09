@@ -9,8 +9,8 @@
 project = 'AMRrules'
 copyright = '2026, Jane Hawkey, Kathryn Holt, Natacha Couto, ESGEM-AMR Working Group'
 author = 'Jane Hawkey'
-release = '1.0.0'
-version = '1.0.0'
+release = '1.1.0'
+version = '1.1.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -18,6 +18,8 @@ version = '1.0.0'
 
 extensions = [
     "sphinx_design",
+    "execute",
+    "crate.sphinx.csv"
 ]
 
 # -- Options for HTML output -------------------------------------------------
@@ -36,6 +38,10 @@ html_theme_options = {
     "repository_branch": "main",
 
 }
-#html_static_path = ['_static']
+html_static_path = ['_static']
+# Register custom CSS stylesheet
+html_css_files = [
+    'custom.css',
+]
 html_logo = 'https://github.com/AMRverse/AMRrules/blob/genome_summary_report_dev/docs/source/images/AMRrules_logo.png?raw=true'
 #html_favicon = 'https://github.com/klebgenomics/Kaptive-Web/blob/master/static/images/favicon.png?raw=true'

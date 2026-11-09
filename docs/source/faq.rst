@@ -2,6 +2,8 @@
 FAQ
 ****
 
+.. _faq:
+
 .. dropdown:: I want to use AMRrules with input from <insert tool here>. Can I?
 
    Currently, AMRrules only supports input from AMRFinderPlus. We are working to include support for other tools and databases, see our :ref:`planned features <planned_other_tools>` for more information.
