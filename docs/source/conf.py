@@ -18,7 +18,6 @@ version = '1.1.0'
 
 extensions = [
     "sphinx_design",
-    "execute",
     "crate.sphinx.csv"
 ]
 
